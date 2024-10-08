@@ -1,0 +1,86 @@
+.articlesSection {
+    padding: 4rem 5%;
+    background-color: #f5f5f5;
+  }
+  
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .articleGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .articleCard {
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .articleImage {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .articleContent {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .articleTitle {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .articleExcerpt {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+  }
+  
+  .articleMeta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+  }
+  
+  .articleDate {
+    color: #888;
+  }
+  
+  .readMore {
+    color: #0066cc;
+    text-decoration: none;
+  }
+  
+  .readMore:hover {
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 1024px) {
+    .articleGrid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .articleGrid {
+      grid-template-columns: 1fr;
+    }
+  }
