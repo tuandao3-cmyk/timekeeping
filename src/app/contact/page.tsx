@@ -1,31 +1,41 @@
 'use client';
-
+import dynamic from 'next/dynamic';
 import React from "react";
-import styles from "@/app/Header.module.css";
+import styles from "@/app/contact/contact.module.css";
 import Link from "next/link";
+import Footer from '../Footer';
+
+const Map = dynamic(() => import('./Map'), { ssr: false });
 
 const ContactPage: React.FC = () => {
     return (
-        <header className={styles.header}>
-            <div className={styles.logo2}></div>
+        <>
+                <header className={styles.header}>
             <nav className={styles.nav}>
                 <div className={styles.logo}>
-                    {/*<button ></button>*/}
+                    <Link href="/">
+                        <button className={styles.logoButton}>
+                        </button>
+                    </Link>
                 </div>
-                <Link href="/about" className={styles.link}>Về chúng tôi</Link>
+                <Link href="/about" className={styles.link}>Giới thiệu</Link>
                 <Link href="/products" className={styles.link}>Sản phẩm</Link>
                 <Link href="/categories" className={styles.link}>Danh mục</Link>
-                <Link href="/guides" className={styles.link}>Hướng dẫn đầu tư</Link>
+                <Link href="/guides" className={styles.link}>Hướng dẫn</Link>
                 <Link href="/news" className={styles.link}>Tin tức</Link>
                 <Link href="/reports" className={styles.link}>Báo cáo</Link>
                 <Link href="/contact" className={styles.link}>Liên hệ</Link>
-                <button className={styles.search_button}>
-                    <i className="fas fa-search"></i>
-                </button>
-                <div className={styles.len_icon}>
-                </div>
+
             </nav>
+
+            {/* Các phần tử header khác */}
+            <div className={styles.mapContainer}>
+                <Map />
+            </div>
+      
         </header>
+        <Footer /> 
+        </>
     );
 };
 export default ContactPage;

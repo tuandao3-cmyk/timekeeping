@@ -3,6 +3,7 @@
 import React from "react";
 import styles from "@/app/guides/guide.module.css";
 import Link from "next/link";
+import Footer from "../Footer";
 
 const GuidePage: React.FC = () => {
     return (
@@ -34,7 +35,41 @@ const GuidePage: React.FC = () => {
                     </div>
             </div>
             </header>
-
+            <section className={styles.benefits}>
+                <h2>Lợi ích khi đầu tư vào Hyracap</h2>
+                <p>Với mong muốn kiến tạo một môi trường đầu tư tốt nhất. Chúng tôi luôn cố gắng phát triển để mang lại những giá trị tốt nhất cho những nhà đầu tư.</p>
+                <div className={styles.benefitsList}>
+                    <div className={styles.benefitItem}>
+                        <div className={styles.benefitIcon}>
+                            <img src="/img/icon/icon8.png" alt="Đa dạng gói đầu tư" />
+                        </div>
+                        <h3>Đa dạng gói đầu tư</h3>
+                        <p>Với mong muốn kiến tạo một môi trường đầu tư tốt nhất. Chúng tôi luôn cố gắng phát triển để mang lại những giá trị tốt nhất</p>
+                    </div>
+                    <div className={styles.benefitItem}>
+                        <div className={styles.benefitIcon}>
+                            <img src="/img/icon/icon9.png" alt="Lợi nhuận hấp dẫn" />
+                        </div>
+                        <h3>Lợi nhuận hấp dẫn</h3>
+                        <p>Với mong muốn kiến tạo một môi trường đầu tư tốt nhất. Chúng tôi luôn cố gắng phát triển để mang lại những giá trị tốt nhất</p>
+                    </div>
+                    <div className={styles.benefitItem}>
+                        <div className={styles.benefitIcon}>
+                            <img src="/img/icon/icon10.png" alt="Thông tin minh bạch" />
+                        </div>
+                        <h3>Thông tin minh bạch</h3>
+                        <p>Với mong muốn kiến tạo một môi trường đầu tư tốt nhất. Chúng tôi luôn cố gắng phát triển để mang lại những giá trị tốt nhất</p>
+                    </div>
+                    <div className={styles.benefitItem}>
+                        <div className={styles.benefitIcon}>
+                            <img src="/img/icon/icon11.png" alt="Bảo mật chặt chẽ" />
+                        </div>
+                        <h3>Bảo mật chặt chẽ</h3>
+                        <p>Với mong muốn kiến tạo một môi trường đầu tư tốt nhất. Chúng tôi luôn cố gắng phát triển để mang lại những giá trị tốt nhất</p>
+                    </div>
+                </div>
+            </section>
+            <Footer />
         </>
     );
 };
