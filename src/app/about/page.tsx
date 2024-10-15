@@ -7,6 +7,7 @@ import Footer from "@/app/Footer";
 import Partner from "../Partner";
 import ArticlesSection from "../ArticlesSection";
 import PressSection from "../PressSection";
+import News from "../news";
 
 const AboutPage: React.FC = () => {
     return (
@@ -20,6 +21,7 @@ const AboutPage: React.FC = () => {
                         </button>
                     </Link>
                 </div>
+                <Link href="/" className={styles.link}>Trang chủ</Link>
                 <Link href="/about" className={styles.link}>Giới thiệu</Link>
                 <Link href="/products" className={styles.link}>Sản phẩm</Link>
                 <Link href="/categories" className={styles.link}>Danh mục</Link>
@@ -29,8 +31,12 @@ const AboutPage: React.FC = () => {
                 <Link href="/contact" className={styles.link}>Liên hệ</Link>
 
             </nav>
-            <div className={styles.textOverlay}>
-                    <p>HyraCap cung cấp cho người dùng ứng dụng đầu tư an toàn, hiệu quả với lợi nhuận hấp dẫn. Mang lại giá trị tốt đẹp cho người dùng</p>
+            <div className={styles.hero}>
+                    <div className={styles.heroContent}>
+                        <h1>Về chúng tôi</h1>
+                        <p>Chúng tôi là Quỹ đầu tư với sứ mệnh ươm mầm và đầu tư dài hạn vào các dự án khởi nghiệp cùng doanh nghiệp vừa và nhỏ có tính đổi mới, sáng tạo và phát triển bền vững</p>
+                        {/* <button className={styles.ctaButton}>Đăng ký ngay!</button> */}
+                    </div>
             </div>
         </header>
         <Partner/>
@@ -66,7 +72,7 @@ const AboutPage: React.FC = () => {
             <img src="/img/mission.png" alt="Mission illustration" />
         </div>
     </section>
-    <section className={styles.values}>
+           <section className={styles.values}>
                 <h2>Giá trị cốt lõi</h2>
                 <p>Tận hưởng giá trị đầu tư uy tín hàng đầu và đạt được những lợi nhuận hấp dẫn cho bạn! Bạn là người tạo ra tài chính của riêng mình và chúng tôi sẽ nâng tầm bạn thực hiện điều đó.</p>
                 <div className={styles.valueGrid}>
@@ -117,6 +123,8 @@ const AboutPage: React.FC = () => {
                     <span className={styles.brandName}>HyraCap</span>
                 </div>
             </section>
+            <PressSection/>
+            <News/>
             <section className={styles.leadership}>
                 <h2>Ban lãnh đạo</h2>
                 <div className={styles.leadershipGrid}>
@@ -179,8 +187,8 @@ const AboutPage: React.FC = () => {
 
         </section>
     </div>
-        <ArticlesSection/>
-        <PressSection/>
+        
+
         <Footer/>
         </>
 

@@ -1,8 +1,10 @@
 .footer {
+    position: absolute;
     margin-top: 3%;
     background-color: #f0f0f0;
     color: #000000;
     padding: 2.5rem;
+    width: 100%;
 }
 
 .content {

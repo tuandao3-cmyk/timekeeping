@@ -16,9 +16,10 @@ const Header: React.FC = () => {
                         </button>
                     </Link>
                 </div>
+                <Link href="/" className={styles.link}>Trang chủ</Link>
                 <Link href="/about" className={styles.link}>Giới thiệu</Link>
-                <Link href="/products" className={styles.link}>Sản phẩm</Link>
                 <Link href="/categories" className={styles.link}>Danh mục</Link>
+                <Link href="/products" className={styles.link}>Sản phẩm</Link>
                 <Link href="/guides" className={styles.link}>Hướng dẫn</Link>
                 <Link href="/news" className={styles.link}>Tin tức</Link>
                 <Link href="/reports" className={styles.link}>Báo cáo</Link>
@@ -30,8 +31,11 @@ const Header: React.FC = () => {
                     <h1 className={styles.heroTitle}>Đầu tư thông minh<br /> sinh lời tuyệt đỉnh</h1>
                     <p className={styles.heroSubtitle}>Trải nghiệm ứng dụng đầu tư HyraCap<br /> mang lại lợi nhuận hấp dẫn dành cho bạn<br /> Tải ứng dụng tại đây!</p>
                     <div className={styles.ctaButtons}>
-                        <a href="#" className={`${styles.ctaButton} ${styles.appleButton}`}>Download on the<br /> App Store</a>
-                        <a href="#" className={`${styles.ctaButton} ${styles.googleButton}`}>Get it on<br /> Google Play</a>
+                        <a href="#" className={`${styles.ctaButton} ${styles.appleButton}`}>
+                        <img src="/img/icon/apic2.png" alt="Apple Store" />Download on the<br /> App Store</a>
+                        <a href="#" className={`${styles.ctaButton} ${styles.googleButton}`}>
+                        <img src="/img/icon/ggpl2.png" alt="Google Play" />
+                            Get it on<br /> Google Play</a>
                     </div>
                 </div>
                 <div className={styles.heroImage}>

@@ -7,6 +7,8 @@ import ProjectSection from "@/app/ProjectSection";
 import PressSection from "@/app/PressSection";
 import ArticlesSection from "@/app/ArticlesSection";
 import Footer from "@/app/Footer";
+import Download from './download';
+import News from './news';
 const Home: React.FC = () => {
     return (
         <div className={styles.container}>
@@ -16,8 +18,9 @@ const Home: React.FC = () => {
             <Header/>
             <Partner/>
             <ProjectSection/>
-            <ArticlesSection/>
+            <News/>
             <PressSection/>
+            <Download/>
             <Footer/>
 
 

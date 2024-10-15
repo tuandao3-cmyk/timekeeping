@@ -9,8 +9,8 @@ const Map = dynamic(() => import('./Map'), { ssr: false });
 
 const ContactPage: React.FC = () => {
     return (
-        <>
-                <header className={styles.header}>
+        <div className={styles.pageContainer}>
+            <header className={styles.header}>
             <nav className={styles.nav}>
                 <div className={styles.logo}>
                     <Link href="/">
@@ -27,15 +27,15 @@ const ContactPage: React.FC = () => {
                 <Link href="/contact" className={styles.link}>Liên hệ</Link>
 
             </nav>
-
-            {/* Các phần tử header khác */}
             <div className={styles.mapContainer}>
-                <Map />
-            </div>
-      
-        </header>
-        <Footer /> 
-        </>
+                    <Map />
+                </div>
+            </header>
+            <main className={styles.main}>
+
+            </main>
+            <Footer /> 
+        </div>
     );
 };
 export default ContactPage;

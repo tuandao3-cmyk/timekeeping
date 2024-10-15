@@ -75,15 +75,14 @@ const ProductPage: React.FC = () => {
                         </button>
                     </Link>
                 </div>
+                <Link href="/" className={styles.link}>Trang chủ</Link>
                 <Link href="/about" className={styles.link}>Giới thiệu</Link>
-                <Link href="/products" className={styles.link}>Sản phẩm</Link>
                 <Link href="/categories" className={styles.link}>Danh mục</Link>
+                <Link href="/products" className={styles.link}>Sản phẩm</Link>
                 <Link href="/guides" className={styles.link}>Hướng dẫn</Link>
                 <Link href="/news" className={styles.link}>Tin tức</Link>
                 <Link href="/reports" className={styles.link}>Báo cáo</Link>
                 <Link href="/contact" className={styles.link}>Liên hệ</Link>
-
-
             </nav>
             <div className={styles.hero}>
                     <div className={styles.heroContent}>

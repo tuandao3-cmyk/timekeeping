@@ -25,8 +25,9 @@
     background-repeat: inherit;
     background-size: cover;
     background-position: center;
-    filter: blur(5px);
-    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.5);
+    filter: blur(2px);
+    z-index: 1;
   }
 
 .logo {
@@ -122,13 +123,14 @@
     }
 }
 .heroSection {
+    font-family: 'Roboto', sans-serif;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 4rem 6rem;
-    /* background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.3)), url('/path-to-your-background-image.jpg'); */
     background-size: cover;
     background-position: center;
+    z-index: 1;
   }
   
   /* .heroContent {
@@ -140,6 +142,7 @@
   } */
   
   .heroTitle {
+
     font-size: 2.5rem;
     font-weight: bold;
     color: #ffffff;
@@ -160,42 +163,50 @@
     flex-wrap: wrap; /* Cho phép các nút xuống dòng trên màn hình nhỏ */
   }
   
-  .ctaButton {
+  .ctaButton { 
     padding: 0.75rem 1rem;
-    border-radius: 5px;
+    border-radius: 15px;
     font-weight: bold;
     text-decoration: none;
     transition: background-color 0.3s, color 0.3s;
-    background: linear-gradient(180deg, #48B96D 0%, #348563 50%, #205331 100%); /* Màu xanh rêu */
+    background: linear-gradient(180deg, #48B96D 0%, #348563 50%, #205331 100%);
     color: #ffffff;
     border: none;
+
     display: flex;
-    flex-direction: column;
+    flex-direction: row; /* Hiển thị logo và text theo hàng ngang */
     align-items: center;
     justify-content: center;
-    width: clamp(150px, 20vw, 200px); /* Chiều rộng thay đổi theo viewport width */
-    height: clamp(50px, 8vh, 70px); /* Chiều cao thay đổi theo viewport height */
-    text-align: center;
-    font-size: clamp(0.5rem, 1vw, 1rem); /* Kích thước chữ thay đổi */
-  }
+    width: clamp(180px, 20vw, 250px);
+    height: clamp(60px, 8vh, 80px);
+    text-align: left; /* Căn trái cho văn bản */
+    gap: 10px; /* Khoảng cách giữa logo và văn bản */
+    font-size: clamp(0.7rem, 1vw, 1rem);
+}
 
-  .ctaButton:hover {
-    background: linear-gradient(180deg, #3da05e 0%, #2d7354 50%, #1b462a 100%); /* Màu xanh rêu đậm hơn khi hover */
-  }
+.ctaButton img {
+  margin-right: 10px;
+  /* padding-right: 10px; */
+    max-width:  40px; /* Kích thước của biểu tượng logo */
+    max-height: 40px;
+}
+
+.ctaButton:hover {
+    background: linear-gradient(180deg, #3da05e 0%, #2d7354 50%, #1b462a 100%);
+}
+
+.appleButton::before, .googleButton::before {
+    content: '';
+}
+
+.ctaButtons {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px; /* Khoảng cách giữa 2 button */
+}
+
+
   
-  .appleButton::before, .googleButton::before {
-    font-size: clamp(0.5rem, 1.2vw, 0.9rem);
-    font-weight: normal;
-    margin-bottom: 0.2rem;
-  }
-  
-  .appleButton::before {
-    content: "Download on the";
-  }
-  
-  .googleButton::before {
-    content: "Get it on";
-  }
   
   .phoneScreen {
     width: 22%;
