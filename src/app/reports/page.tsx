@@ -43,7 +43,7 @@ const ReportPage: React.FC = () => {
                 </nav>
                 <div className={styles.hero}>
                     <div className={styles.heroContent}>
-                        <h1>Báo cáo</h1>
+                        <h1 className="text-4xl font-bold">Báo cáo</h1>
                         <p className="w-full inline">
                             Báo cáo chuyên sâu về thị trường tài chính.
                         </p>
