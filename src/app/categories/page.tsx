@@ -108,37 +108,11 @@ const CategoryPage: React.FC = () => {
     return (
         <>
             <header className={styles.header}>
-                <nav className={styles.nav}>
-                    <div className={styles.logo}>
-                        <Link href="/">
-                            <button className={styles.logoButton}></button>
-                        </Link>
-                    </div>
-                    <Link href="/about" className={styles.link}>
-                        Giới thiệu
-                    </Link>
-                    <Link href="/products" className={styles.link}>
-                        Sản phẩm
-                    </Link>
-                    <Link href="/categories" className={styles.link}>
-                        Danh mục
-                    </Link>
-                    <Link href="/guides" className={styles.link}>
-                        Hướng dẫn
-                    </Link>
-                    <Link href="/news" className={styles.link}>
-                        Tin tức
-                    </Link>
-                    <Link href="/reports" className={styles.link}>
-                        Báo cáo
-                    </Link>
-                    <Link href="/contact" className={styles.link}>
-                        Liên hệ
-                    </Link>
-                </nav>
                 <div className={styles.hero}>
                     <div className={styles.heroContent}>
-                        <h1 className="text-4xl font-bold">Danh mục đầu tư</h1>
+                        <div className="text-[40px] font-bold">
+                            Danh mục đầu tư
+                        </div>
                         <p className="text-3xl font-normal inline">
                             Nghiên cứu và phát triển các dự án công nghệ
                             Blockchain, AI, Fintech, Digital Banking,...
@@ -146,12 +120,12 @@ const CategoryPage: React.FC = () => {
                     </div>
                 </div>
             </header>
-            <div className="flex items-center p-10">
-                <div className="w-[20%] text-2xl font-normal">
+            <div className="flex flex-col gap-3 md:flex-row md:items-center p-10">
+                <div className="md:w-[20%] text-2xl font-normal">
                     Tìm kiếm theo
                 </div>
                 <input
-                    className="w-[80%] h-[57px] border-2 border-[#48B96D] rounded-lg pl-3 pr-10 text-lg"
+                    className="md:w-[80%] h-[57px] border-2 border-[#48B96D] rounded-lg pl-3 pr-10 text-lg"
                     type="text"
                     placeholder="Nhập dự án cần tìm kiếm"
                 />
@@ -314,52 +288,55 @@ const CategoryPage: React.FC = () => {
                                 xs: "1fr",
                                 sm: "repeat(2, 1fr)",
                                 md: "repeat(3, 1fr)",
-                                // lg: "repeat(4, 1fr)",
                             },
                             gap: 2,
                         }}
                     >
                         {projects.map((project, index) => (
-                            <Box key={index} className="p-4">
-                                <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-                                    <img
-                                        src={project.img}
-                                        alt={project.name}
-                                        className="w-full h-80 object-cover"
-                                    />
-                                    <div className="p-4">
-                                        <span className="text-sm bg-blue-500 text-white py-1 px-3 rounded-full">
-                                            Series A
-                                        </span>
-                                        <h3 className="text-lg font-bold mt-2">
-                                            {project.name}
-                                        </h3>
-                                        <div className="mt-4">
-                                            <div className="text-xl font-semibold">
-                                                {project.amount}
-                                            </div>
-                                            <div className="h-2 bg-gray-300 rounded mt-2">
-                                                <div
-                                                    className="bg-green-500 h-full rounded"
-                                                    style={{
-                                                        width: `${project.progress}%`,
-                                                    }}
-                                                ></div>
-                                            </div>
-                                            <div className="flex justify-between mt-2 text-sm text-gray-600">
-                                                <span>{project.funded}</span>
-                                                <span>
-                                                    Được tài trợ{" "}
-                                                    {project.progress}%
-                                                </span>
-                                            </div>
-                                            <div className="text-gray-800 mt-2 font-semibold">
-                                                {project.category}
+                            <Link href={`/detail-category`} passHref>
+                                <Box key={index} className="p-4 cursor-pointer">
+                                    <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+                                        <img
+                                            src={project.img}
+                                            alt={project.name}
+                                            className="w-full h-[300px] object-cover"
+                                        />
+                                        <div className="p-4">
+                                            <span className="text-sm bg-blue-500 text-white py-1 px-3 rounded-full">
+                                                Series A
+                                            </span>
+                                            <h3 className="text-lg font-bold mt-2">
+                                                {project.name}
+                                            </h3>
+                                            <div className="mt-4">
+                                                <div className="text-xl font-semibold">
+                                                    {project.amount}
+                                                </div>
+                                                <div className="h-2 bg-gray-300 rounded mt-2">
+                                                    <div
+                                                        className="bg-green-500 h-full rounded"
+                                                        style={{
+                                                            width: `${project.progress}%`,
+                                                        }}
+                                                    ></div>
+                                                </div>
+                                                <div className="flex justify-between mt-2 text-sm text-gray-600">
+                                                    <span>
+                                                        {project.funded}
+                                                    </span>
+                                                    <span>
+                                                        Được tài trợ{" "}
+                                                        {project.progress}%
+                                                    </span>
+                                                </div>
+                                                <div className="text-gray-800 mt-2 font-semibold">
+                                                    {project.category}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </Box>
+                                </Box>
+                            </Link>
                         ))}
                     </Box>
                 </div>
