@@ -5,10 +5,10 @@ import styles from '@/app/guides/guide.module.css';
 import Link from 'next/link';
 
 import { FiSearch } from 'react-icons/fi';
-import DownloadSection from './downloadSection';
+import DownloadSection from '../downloadSection';
 import { usePathname } from 'next/navigation';
 
-const GuidePage: React.FC = () => {
+const Login: React.FC = () => {
   const pathname = usePathname();
   return (
     <>
@@ -133,7 +133,7 @@ const GuidePage: React.FC = () => {
           </nav>
         </aside>
         <main className={styles.mainContent}>
-          <p>Hướng dẫn &gt; Đăng ký</p>
+          <p>Hướng dẫn &gt; Đăng nhập</p>
           <div className={styles.videoContainer}>
             <div className={styles.videoWrapper}>
               <iframe
@@ -146,38 +146,28 @@ const GuidePage: React.FC = () => {
             </div>
             <p className={styles.videoTitle}>Video hướng dẫn đầu tư HyraCap</p>
           </div>
-          <h1>Đăng ký</h1>
-          <h2>Đăng ký đầu tư HyraCap</h2>
+          <h1>Đăng nhập</h1>
+          <h2>Đăng nhập đầu tư HyraCap</h2>
           <p>
-            Để đăng ký đầu tư vào <strong>HyraCap</strong> bạn làm theo bước
-            sau:
+            Để đăng nhập vào <strong>HyraCap</strong> bạn làm theo bước sau:
           </p>
           <ul>
+            <li>Bước 1: Vào app HyraCap chọn "Đăng nhập"</li>
             <li>
-              Bước 1: Trên điện thoại vào vào <strong>Appstore</strong> hoặc{' '}
-              <strong>Google Play</strong>
-            </li>
-            <li>Bước 2: Tải app HyraCap về điện thoại của bạn.</li>
-            <li>Bước 3: Vào app HyraCap chọn "Đăng ký"</li>
-            <li>
-              Bước 4: Điền các thông tin trên màn hình Đăng ký mở tài khoản
-              HyraCap bao gồm:
+              Bước 2: Điền các thông tin trên màn hình Đăng nhập bao gồm:
               <ul>
-                <li>Số điện thoại</li>
-                <li>Email</li>
+                <li>Số điện thoại hoặc Email</li>
                 <li>Mật khẩu</li>
-                <li>Nhập lại mật khẩu</li>
-                <li>Bấm Đăng ký</li>
+                <li>Bấm Đăng nhập</li>
               </ul>
             </li>
           </ul>
           <div className={styles.imageContainer}>
-            <img src="/img/dky1.png" alt="Màn hình đăng ký HyraCap 1" />
-            <img src="/img/dky2.png" alt="Màn hình đăng ký HyraCap 2" />
+            <img src="/img/dnhap.png" alt="Màn hình đăng nhập HyraCap" />
           </div>
           <ul>
             <li>
-              Bước 5: Nhập mã xác thực OTP và bấm Tiếp tục
+              Bước 3: Nhập mã xác thực OTP và bấm Tiếp tục
               <p>
                 Sau khi nhập mã OTP ứng dụng hiển thị màn hình Tổng quan với
                 popup giới thiệu khách hàng. Bạn có thể Nhập mã giới thiệu hoặc
@@ -190,12 +180,27 @@ const GuidePage: React.FC = () => {
             </li>
           </ul>
           <div className={styles.imageContainer}>
-            <img src="/img/otp1.png" alt="Màn hình nhập OTP" />
-            <img src="/img/popup.png" alt="Màn hình popup giới thiệu" />
-            <img src="/img/dashboard.png" alt="Màn hình tổng quan" />
+            <img
+              src="/img/otp1.png"
+              alt="Màn hình nhập OTP"
+              width={300}
+              height={600}
+            />
+            <img
+              src="/img/popup.png"
+              alt="Màn hình popup giới thiệu"
+              width={300}
+              height={600}
+            />
+            <img
+              src="/img/dashboard.png"
+              alt="Màn hình tổng quan"
+              width={300}
+              height={600}
+            />
           </div>
           <p className={styles.conclusion}>
-            Như vậy, HyraCap đã thực hiện xong phần hướng dẫn Đăng ký sử dụng
+            Như vậy, HyraCap đã thực hiện xong phần hướng dẫn Đăng nhập sử dụng
             ứng dụng HyraCap.
             <br />
             Chúc Quý Khách thành công!
@@ -207,4 +212,4 @@ const GuidePage: React.FC = () => {
   );
 };
 
-export default GuidePage;
+export default Login;

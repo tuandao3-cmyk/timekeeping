@@ -3,92 +3,188 @@
 import React from 'react';
 import styles from '@/app/about/about.module.css';
 import Link from 'next/link';
+
 import Partner from '../partner';
 import ArticlesSection from '../ArticlesSection';
 import PressSection from '../PressSection';
 import News from '../news';
 
+const leaders = [
+  {
+    name: 'Trần Nam Chung',
+    title: 'Chief Strategy Officer - Founder',
+    image: '/img/tran-nam-chung.jpg',
+    description: [
+      'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
+      'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
+      'Là một người đam mê công nghệ và theo đuổi chiến lược định hình giá trị tương lai bằng các giải pháp công nghệ tham gia mạnh mẽ vào cuộc chuyển đổi kinh tế số.',
+      'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.',
+    ],
+  },
+  {
+    name: 'Tuấn Nguyễn',
+    title: 'CEO - Co-Founder',
+    image: '/img/tuan-nguyen.jpg',
+    description: [
+      'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
+      'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
+      'Là một người đam mê công nghệ và theo đuổi chiến lược định hình giá trị tương lai bằng các giải pháp công nghệ tham gia mạnh mẽ vào cuộc chuyển đổi kinh tế số.',
+      'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.',
+    ],
+  },
+  {
+    name: 'Hoàng Thành Đạt',
+    title: 'CEO - CTO-Founder',
+    image: '/img/hoang-thanh-dat.jpg',
+    description: [
+      'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
+      'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
+      'Là một người đam mê công nghệ và theo đuổi chiến lược định hình giá trị tương lai bằng các giải pháp công nghệ tham gia mạnh mẽ vào cuộc chuyển đổi kinh tế số.',
+      'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.',
+    ],
+  },
+  {
+    name: 'Tuấn Đặng',
+    title: 'CFO - Co-Founder',
+    image: '/img/tuan-dang.jpg',
+    description: [
+      'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
+      'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
+      'Là một người đam mê công nghệ và theo đuổi chiến lược định hình giá trị tương lai bằng các giải pháp công nghệ tham gia mạnh mẽ vào cuộc chuyển đổi kinh tế số.',
+      'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.',
+    ],
+  },
+  {
+    name: 'Jun Do',
+    title: 'CMO - Co-Founder',
+    image: '/img/jun-do.jpg',
+    description: [
+      'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
+      'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
+      'Là một người đam mê công nghệ và theo đuổi chiến lược định hình giá trị tương lai bằng các giải pháp công nghệ tham gia mạnh mẽ vào cuộc chuyển đổi kinh tế số.',
+      'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.',
+    ],
+  },
+  // Thêm các thành viên khác tương tự
+];
+
+const staffs = [
+  {
+    name: 'Cris Nguyễn',
+    title: 'Blockchain Leader',
+    image: '/img/staff1.png',
+    description: [
+      'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
+      'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
+      'Là một người đam mê công nghệ và theo đuổi chiến lược định hình giá trị tương lai bằng các giải pháp công nghệ tham gia mạnh mẽ vào cuộc chuyển đổi kinh tế số.',
+      'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.',
+    ],
+  },
+  {
+    name: 'Nguyễn Văn Ngân',
+    title: 'BE Leader',
+    image: '/img/staff2.png',
+    description: [
+      'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
+      'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
+      'Là một người đam mê công nghệ và theo đuổi chiến lược định hình giá trị tương lai bằng các giải pháp công nghệ tham gia mạnh mẽ vào cuộc chuyển đổi kinh tế số.',
+      'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.',
+    ],
+  },
+  {
+    name: 'Trần Quang Tú',
+    title: 'Mobile Leader',
+    image: '/img/staff3.png',
+    description: [
+      'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
+      'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
+      'Là một người đam mê công nghệ và theo đuổi chiến lược định hình giá trị tương lai bằng các giải pháp công nghệ tham gia mạnh mẽ vào cuộc chuyển đổi kinh tế số.',
+      'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.',
+    ],
+  },
+  {
+    name: 'Lê Xuân Minh',
+    title: 'FE Leader',
+    image: '/img/staff4.png',
+    description: [
+      'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
+      'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
+      'Là một người đam mê công nghệ và theo đuổi chiến lược định hình giá trị tương lai bằng các giải pháp công nghệ tham gia mạnh mẽ vào cuộc chuyển đổi kinh tế số.',
+      'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.',
+    ],
+  },
+  {
+    name: 'Bùi Lương Châu',
+    title: 'SA',
+    image: '/img/staff5.png',
+    description: [
+      'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
+      'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
+      'Là một người đam mê công nghệ và theo đuổi chiến lược định hình giá trị tương lai bằng các giải pháp công nghệ tham gia mạnh mẽ vào cuộc chuyển đổi kinh tế số.',
+      'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.',
+    ],
+  },
+  {
+    name: 'Nguyễn mạnh Hưng',
+    title: 'Creative Director',
+    image: '/img/staff6.png',
+    description: [
+      'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
+      'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
+      'Là một người đam mê công nghệ và theo đuổi chiến lược định hình giá trị tương lai bằng các giải pháp công nghệ tham gia mạnh mẽ vào cuộc chuyển đổi kinh tế số.',
+      'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.',
+    ],
+  },
+  // Thêm các thành viên khác tương tự
+];
+
 const AboutPage: React.FC = () => {
   return (
     <>
-      <div
-        className="relative w-full h-screen bg-cover bg-center"
-        style={{ backgroundImage: 'url("/img/00.jpg")' }}
-      >
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-
-        <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 justify-between items-center h-full p-8 gap-4">
-          <div className="w-full md:col-span-1 xl:col-span-1 lg:col-span-2  text-center md:text-left text-white">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              Đầu tư thông minh sinh lời tuyệt đỉnh
-            </h1>
-            <p className="mt-4 text-lg md:text-xl lg:text-2xl">
-              Trải nghiệm ứng dụng đầu tư HyraCap mang lại lợi nhuận hấp dẫn
-              dành cho bạn
-            </p>
-            <h2 className="mt-8 text-2xl md:text-3xl lg:text-4xl font-bold">
-              Tải ứng dụng tại đây!
-            </h2>
-            <div className="mt-8 flex justify-center md:justify-start space-x-4">
-              <a
-                href="https://www.apple.com/app-store/"
-                className="px-6 py-2 bg-black text-white rounded-lg text-lg hover:bg-gray-800 flex items-center justify-center space-x-2 w-full md:w-auto"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="/img/icon/apic2.png"
-                  alt="App Store"
-                  className="w-6 h-6"
-                />
-                <div>
-                  <p className="text-xs font-thin">Download on the</p>
-                  <h3>App Store</h3>
-                </div>
-              </a>
-
-              <a
-                href="https://play.google.com/store"
-                className="px-6 py-2 bg-green-600 text-white rounded-lg text-lg hover:bg-green-700 flex items-center justify-center space-x-2 w-full md:w-auto"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="/img/icon/ggpl2.png"
-                  alt="Google Play"
-                  className="w-6 h-6"
-                />
-                <div>
-                  <p className="text-xs font-thin">Get it on</p>
-                  <h3>Google Play</h3>
-                </div>
-              </a>
-            </div>
+      <header className={styles.header}>
+        <nav className={styles.nav}>
+          <div className={styles.logo}>
+            <Link href="/">
+              <button className={styles.logoButton}></button>
+            </Link>
           </div>
-
-          <div className="w-full  flex md:col-span-1  justify-center items-center mt-8 md:mt-0 xl:p-28 p-4">
-            <div className="relative w-full h-80">
-              <img
-                src="/img/02.png"
-                className="absolute left-1/2 top-0 transform -translate-x-1/2 w-[40%] h-auto  transition-transform duration-300 z-30 scale-125 md:scale-100 lg:scale-150"
-                alt="App Screenshot 3"
-              />
-
-              <img
-                src="/img/01.png"
-                className="absolute top-0 left-0 w-[30%] h-auto  object-contain transition-transform duration-300 z-10 scale-110 md:scale-100 lg:scale-150"
-                alt="App Screenshot 1"
-              />
-
-              <img
-                src="/img/03.png"
-                className="absolute top-0 right-0 w-[30%] h-auto  object-contain transition-transform duration-300 z-10 scale-110 md:scale-100 lg:scale-150"
-                alt="App Screenshot 2"
-              />
-            </div>
+          <Link href="/" className={styles.link}>
+            Trang chủ
+          </Link>
+          <Link href="/about" className={styles.link}>
+            Giới thiệu
+          </Link>
+          <Link href="/products" className={styles.link}>
+            Sản phẩm
+          </Link>
+          <Link href="/categories" className={styles.link}>
+            Danh mục
+          </Link>
+          <Link href="/guides" className={styles.link}>
+            Hướng dẫn
+          </Link>
+          <Link href="/news" className={styles.link}>
+            Tin tức
+          </Link>
+          <Link href="/reports" className={styles.link}>
+            Báo cáo
+          </Link>
+          <Link href="/contact" className={styles.link}>
+            Liên hệ
+          </Link>
+        </nav>
+        <div className={styles.hero}>
+          <div className={styles.heroContent}>
+            <h1>Về chúng tôi</h1>
+            <p>
+              Chúng tôi là Quỹ đầu tư với sứ mệnh ươm mầm và đầu tư dài hạn vào
+              các dự án khởi nghiệp cùng doanh nghiệp vừa và nhỏ có tính đổi
+              mới, sáng tạo và phát triển bền vững
+            </p>
+            {/* <button className={styles.ctaButton}>Đăng ký ngay!</button> */}
           </div>
         </div>
-      </div>
+      </header>
       <Partner />
       <div className={styles['about-container']}>
         <section className={styles.vision}>
@@ -197,142 +293,121 @@ const AboutPage: React.FC = () => {
         </section>
         <PressSection />
         <News />
-        <section className={styles.leadership}>
-          <h2>Ban lãnh đạo</h2>
+        <div className={styles.leadershipSection}>
+          <h2>Đội ngũ sáng lập</h2>
           <div className={styles.leadershipGrid}>
-            <div className={styles.leaderCard}>
-              <img
-                src="/img/CEO.png"
-                alt="Trần Nam Chung"
-                className={styles.leaderImage}
-              />
-              <div className={styles.leaderInfo}>
-                <h3>TRẦN NAM CHUNG</h3>
-                <p className={styles.leaderTitle}>Founder - Chủ Tịch HĐQT</p>
-                <ul>
-                  <li>
-                    Với hơn 10 năm khởi nghiệp trong lĩnh vực công nghệ,
-                    Blockchain.
-                  </li>
-                  <li>
-                    Ông Trần Nam Chung và cộng sự đã và đang phát triển thành
-                    công nhiều giải pháp công nghệ ứng dụng Blockchian, AI với
-                    tầm nhìn tiềm năng dài hạn.
-                  </li>
-                  <li>
-                    Là một người đam mê công nghệ và theo đuổi chiến lược định
-                    hình giá trị tương lai bằng các giải pháp công nghệ tham gia
-                    mạnh mẽ vào cuộc chuyển đổi kinh tế số.
-                  </li>
-                  <li>
-                    Ông Trần Nam Chung được biết đến là một người có tầm nhìn
-                    đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và
-                    các nhà đầu tư.
-                  </li>
-                </ul>
-                <a href="#" className={styles.readMore}>
-                  Xem thêm
-                </a>
+            {leaders.slice(0, 3).map((leader, index) => (
+              <div key={index} className={styles.leaderCard}>
+                <img
+                  src={leader.image}
+                  alt={leader.name}
+                  width={100}
+                  height={100}
+                  className={styles.leaderImage}
+                />
+                <div className={styles.leaderInfo}>
+                  <h3>{leader.name}</h3>
+                  <p className={styles.leaderTitle}>{leader.title}</p>
+                  <ul className={styles.leaderDescription}>
+                    {leader.description.map((item, idx) => (
+                      <li key={idx} className={styles.leaderDescriptionItem}>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-            </div>
-            <div className={styles.leaderCard}>
-              <img
-                src="/img/COF.png"
-                alt="Nguyễn Văn Tuấn"
-                className={styles.leaderImage}
-              />
-              <div className={styles.leaderInfo}>
-                <h3>NGUYỄN VĂN TUẤN</h3>
-                <p className={styles.leaderTitle}>
-                  CO - Founder - Phó Chủ Tịch HĐQT
-                </p>
-                <ul>
-                  <li>
-                    Là người có ảnh hưởng lớn trong giới start-up với vai trò là
-                    người định hướng
-                  </li>
-                  <li>
-                    Huấn luyện và cố vấn cao cấp cho các tổ chức ươm mầm khởi
-                    nghiệp như Hatch!, Startup Weekend, MobileMonday, Kawai...
-                  </li>
-                  <li>
-                    Ông được biết đến với vai trò là người tiên phong trong lĩnh
-                    vực Thương mại điện tử tại Việt Nam.
-                  </li>
-                  <li>
-                    Với kinh nghiệm trên 15 năm nghiên cứu và làm việc về TMĐT
-                    cho các thị trường Nhật Bản và Bắc Mỹ, ông đã đồng sáng lập
-                    và vận hành các website TMĐT hàng đầu tại Việt Nam như
-                    rongbay.com, muachung.vn, enbac.com, muare.vn, nemo.vn,
-                    wepay.vn...
-                  </li>
-                </ul>
-                <a href="#" className={styles.readMore}>
-                  Xem thêm
-                </a>
+            ))}
+          </div>
+          <div className={styles.lastRow}>
+            {leaders.slice(3).map((leader, index) => (
+              <div key={index + 3} className={styles.leaderCard}>
+                <img
+                  src={leader.image}
+                  alt={leader.name}
+                  width={100}
+                  height={100}
+                  className={styles.leaderImage}
+                />
+                <div className={styles.leaderInfo}>
+                  <h3>{leader.name}</h3>
+                  <p className={styles.leaderTitle}>{leader.title}</p>
+                  <ul className={styles.leaderDescription}>
+                    {leader.description.map((item, idx) => (
+                      <li key={idx} className={styles.leaderDescriptionItem}>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-            </div>
-            <div className={styles.leaderCard}>
-              <img
-                src="/img/DSL.png"
-                alt="MR.TUẤN ĐẶNG"
-                className={styles.leaderImage}
-              />
-              <div className={styles.leaderInfo}>
-                <h3>MR.TUẤN ĐẶNG</h3>
-                <p className={styles.leaderTitle}>
-                  Giám đốc tài chính - Đồng sáng lập
-                </p>
-                <ul>
-                  <li>
-                    Với hơn 20 năm kinh nghiệm trong các lĩnh vực auditing,
-                    hospitality, mobility, delivery, e-commerce, fintech,
-                    healthtech...
-                  </li>
-                  <li>
-                    Ông Tuấn Đặng từng giữ các chức vụ quan trọng của rất nhiều
-                    các tập đoàn lớn đa quốc gia như BuyMed, Accor
-                  </li>
-                  <li>
-                    Là một trong những người đầu tiên sáng lập & giữ chức vụ
-                    Giám đốc tài chính Grab Việt Nam trong 8 năm.
-                  </li>
-                </ul>
-                <a href="#" className={styles.readMore}>
-                  Xem thêm
-                </a>
+            ))}
+          </div>
+        </div>
+        <div className={styles.staffSection}>
+          <h2>Nhân sự chủ chốt</h2>
+          <div className={styles.leadershipGrid}>
+            {staffs.slice(0, 6).map((staff, index) => (
+              <div key={index} className={styles.staffCard}>
+                <img
+                  src={staff.image}
+                  alt={staff.name}
+                  width={100}
+                  height={100}
+                  className={styles.leaderImage}
+                />
+                <div className={styles.leaderInfo}>
+                  <h3>{staff.name}</h3>
+                  <p className={styles.leaderTitle}>{staff.title}</p>
+                  <ul className={styles.leaderDescription}>
+                    {staff.description.map((item, idx) => (
+                      <li key={idx} className={styles.leaderDescriptionItem}>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-            </div>
-
-            <div className={styles.leaderCard}>
-              <img
-                src="/img/CTO.png"
-                alt="MR. ĐẠT HOÀNG"
-                className={styles.leaderImage}
-              />
-              <div className={styles.leaderInfo}>
-                <h3>MR. ĐẠT HOÀNG</h3>
-                <p className={styles.leaderTitle}>
-                  Giám đốc công nghệ - Đồng sáng lập
+            ))}
+          </div>
+        </div>
+        <div className={styles.contactSection}>
+          <div className={styles.contactInfo}>
+            <h2>Liên hệ với chúng tôi</h2>
+            <p>Thông tin liên hệ</p>
+            <div className={styles.contactDetails}>
+              <div className={styles.contactItem}>
+                <img src="/img/icon/localicon.png" alt="Địa chỉ" />
+                <p>
+                  Lô CX01, khu đô thị Văn Khê, phường La Khê, quận Hà Đông, Hà
+                  Nội.
                 </p>
-                <ul>
-                  <li>Là chuyên gia công nghệ thông tin đầy dặn kinh nghiệm</li>
-                  <li>
-                    Ông Đạt Hoàng sở hữu thành tích đáng nể trong việc kiến tạo
-                    và phát triển các sản phẩm công nghệ đột phá.
-                  </li>
-                  <li>
-                    Mang lại dấu ấn đậm nét trong sự phát triển không ngừng của
-                    ngành công nghệ thông tin.
-                  </li>
-                </ul>
-                <a href="#" className={styles.readMore}>
-                  Xem thêm
-                </a>
+              </div>
+              <div className={styles.contactItem}>
+                <img src="/img/icon/mailicon.png" alt="Email" />
+                <p>info@hyratek.com</p>
+              </div>
+              <div className={styles.contactItem}>
+                <img src="/img/icon/websiteicon.png" alt="Website" />
+                <p>Hyracap.com</p>
               </div>
             </div>
           </div>
-        </section>
+          <div className={styles.contactForm}>
+            <h3>Chúng tôi sẵn sàng đón nhận bất kỳ đề xuất nào.</h3>
+            <form>
+              <input type="text" placeholder="Tên*" required />
+              <input type="email" placeholder="Email*" required />
+              <input type="tel" placeholder="Số điện thoại" />
+              <textarea placeholder="Câu hỏi của bạn*" required></textarea>
+              <div className={styles.recaptcha}>
+                <input type="checkbox" id="notRobot" />
+                <label htmlFor="notRobot">Tôi không phải là robot</label>
+              </div>
+              <button type="submit">Gửi</button>
+            </form>
+          </div>
+        </div>
       </div>
     </>
   );

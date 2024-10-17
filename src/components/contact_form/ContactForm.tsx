@@ -49,48 +49,40 @@ const ContactForm = () => {
     <div className="flex-1 contain-center min-h-480">
       <div className="h-full">
         <form className="flex-1 p-8 border rounded-lg shadow-lg h-full bg-[#ECECEC80]">
-          <h2 className="font-noto font-medium text-[32px] leading-[40px]">
-            Để lại thông tin lời nhắn
+          <h2 className="font-medium text-[32px] leading-[40px]">
+            Để lại thông tin và lời nhắn
           </h2>
-          <div>
-            <br />
+          <div className="flex flex-col gap-5 pt-5">
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               type="text"
               name="fullName"
               value={formData.fullName}
               onChange={handleChange}
-              placeholder="quang"
+              placeholder="Họ và tên"
               required
             />
-          </div>
-          <div>
-            <br />
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               type="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="quang"
+              placeholder="Email"
               required
             />
-          </div>
-          <div>
-            <br />
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               type="text"
               name="phone"
               value={formData.phone}
-              placeholder="quang"
+              placeholder="Số điện thoại"
               onChange={handleChange}
             />
           </div>
-          <div>
-            <br />
+          <div className="pt-5">
             <label>Vai trò bạn muốn tham gia?</label>
-            <div className="flex justify-between w-full">
+            <div className="flex justify-between w-full py-6">
               <label className="flex items-center w-full">
                 <input
                   type="radio"
@@ -129,28 +121,25 @@ const ContactForm = () => {
             </div>
           </div>
           <div>
-            <br />
             <textarea
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline min-h-[200px]"
               name="message"
               value={formData.message}
               onChange={handleChange}
-              placeholder="quang"
+              placeholder="Nội dung"
               required
             />
           </div>
-          <br />
-          {/* <button type="submit">Gửi</button> */}
-          <button
-            type="submit"
-            className="bg-[#C7C7C7] text-white py-2 px-4 rounded hover:bg-green-700"
-          />
-
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
+          <div className="flex justify-end">
+            <button className="flex items-end px-4 py-2 mt-3 bg-green-500 text-white rounded-lg">
+              Gửi
+              <img
+                src="/img/icon/send.svg"
+                alt="/img/icon/send.svg"
+                className="pl-2"
+              />
+            </button>
+          </div>
         </form>
       </div>
     </div>
