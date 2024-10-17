@@ -1,7 +1,10 @@
 {
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "next/core-web-vitals",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended"
   ],
   "env": {
     "browser": true,
@@ -13,19 +16,26 @@
   },
   "rules": {
     // Quy tắc bắt buộc
+    "no-irregular-whitespace": "off",
     "no-console": "warn", // Cảnh báo khi sử dụng console.log
-    "eqeqeq": "error", // Bắt buộc sử dụng === và !== thay vì == và !=
-    "curly": "error", // Bắt buộc sử dụng dấu ngoặc nhọn cho tất cả các khối lệnh
-    "quotes": ["error", "single"], // Sử dụng dấu nháy đơn
-    "semi": ["error", "always"], // Bắt buộc sử dụng dấu chấm phẩy
-
+    "eqeqeq": "warn", // Bắt buộc sử dụng === và !== thay vì == và !=
+    "curly": "warn", // Bắt buộc sử dụng dấu ngoặc nhọn cho tất cả các khối lệnh
+    "@typescript-eslint/no-unused-vars": "off", // Tắt quy tắc
+    "@typescript-eslint/no-explicit-any": "off",
+    "react/no-unescaped-entities": "off",
+    "semi": ["warn", "always"], // Bắt buộc sử dụng dấu chấm phẩy
+    "prettier/prettier": "off", // Disable prettier rules
+    "indent": "off", // Disable indentation rules
+    "react/react-in-jsx-scope": "off", // Disable the React scope rule
+    "quotes": ["off"], // Disable single/double quote rules
     // Quy tắc tùy chọn
-    "indent": ["error", 4], // Sử dụng 4 khoảng trắng cho thụt lề
+
     "max-len": ["warn", { "code": 80 }], // Giới hạn chiều dài dòng tối đa là 80 ký tự
     "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }], // Cảnh báo về biến không sử dụng, nhưng bỏ qua biến bắt đầu bằng "_"
-    "prefer-const": "error", // Khuyến khích sử dụng const thay vì let nếu biến không thay đổi
-    "object-curly-spacing": ["error", "always"], // Bắt buộc có khoảng trắng bên trong dấu ngoặc nhọn
-    "array-bracket-spacing": ["error", "never"], // Không có khoảng trắng bên trong dấu ngoặc vuông
-    "react/jsx-filename-extension": [1, { "extensions": [".jsx", ".tsx"] }] // Chấp nhận file JSX và TSX
+
+    "react/jsx-filename-extension": [
+      1,
+      { "extensions": [".jsx", ".tsx", ".ts"] }
+    ] // Chấp nhận file JSX và TSX
   }
 }

@@ -1,169 +1,171 @@
 .projectSection {
-    padding: 2rem 5%;
-    background-color: #f5f5f5;
+  padding: 2rem 5%;
+  background-color: #f5f5f5;
 }
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .header h2 {
-    font-size: 24px;
-    font-weight: bold;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .header a {
-    font-size: 16px;
-    color: #007BFF;
-    text-decoration: none;
+  font-size: 16px;
+  color: #007bff;
+  text-decoration: none;
 }
 
 .header a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 cột mỗi hàng */
-    gap: 2%; /* Khoảng cách giữa các grid */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 cột mỗi hàng */
+  gap: 2%; /* Khoảng cách giữa các grid */
 }
 
 .grid_invest {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr); /* 1 cột mỗi hàng */
-    gap: 2%; /* Khoảng cách giữa các grid */
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* 1 cột mỗi hàng */
+  gap: 2%; /* Khoảng cách giữa các grid */
 }
 
 .projectCard {
-    position: relative;
-    background-color: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .projectImage {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .overlay {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    display: flex;
-    justify-content: space-between;
-    width: calc(100% - 20px);
-    padding: 5px 10px;
-    background-color: rgba(0, 0, 0, 0); /* Màu nền trong suốt (50% đen) */
-    color: white;
-    border-radius: 5px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 20px);
+  padding: 5px 10px;
+  background-color: rgba(0, 0, 0, 0); /* Màu nền trong suốt (50% đen) */
+  color: white;
+  border-radius: 5px;
 }
 
 .category {
-    font-size: 14px;
-    font-weight: bold;
-    color: white;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
 }
 
 .readMore {
-    font-size: 14px;
-    color: white;
-    text-decoration: underline;
-    cursor: pointer;
+  font-size: 14px;
+  color: white;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .projectInfo {
-    position: absolute;
-    bottom: 10px;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0); /* Nền trong suốt (50% đen) */
-    color: white;
-    padding: 10px;
-    text-align: left;
-    border-radius: 0 0 8px 8px;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0); /* Nền trong suốt (50% đen) */
+  color: white;
+  padding: 10px;
+  text-align: left;
+  border-radius: 0 0 8px 8px;
 }
 
 .projectInfo h3 {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
 .investInfo {
-    position: absolute;
-    bottom: 10px;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0); /* Nền trong suốt (50% đen) */
-    color: white;
-    padding: 10px;
-    text-align: left;
-    border-radius: 0 0 8px 8px;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0); /* Nền trong suốt (50% đen) */
+  color: white;
+  padding: 10px;
+  text-align: left;
+  border-radius: 0 0 8px 8px;
 }
 
 .investInfo h3 {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 5px;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
 .projectInfo p {
-    margin: 5px 0;
+  margin: 5px 0;
 }
 
 .year {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    font-size: 14px;
-    color: white;
-    background-color: transparent; /* Nền trong suốt cho năm */
-    padding: 2px 6px;
-    border-radius: 4px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 14px;
+  color: white;
+  background-color: transparent; /* Nền trong suốt cho năm */
+  padding: 2px 6px;
+  border-radius: 4px;
 }
 .logoSection {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem ;
-    background-color: white;
-    position: relative;
-    z-index: 10;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 10%;
+  background-color: white;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  margin: 0 auto;
 }
 
 .partnerLogo {
-    max-width: 18vw;
-    /* height: 40px; */
-    /* height: 8vh; */
-    object-fit: contain;
+  max-width: 200px;
+  max-height: 65px;
+  /* height: 40px; */
+  /* height: 8vh; */
+  object-fit: contain;
 }
 
 @media (max-width: 768px) {
-    .logoSection {
-        gap: 1rem;
-        flex-wrap: wrap;
-    }
+  .logoSection {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
 
-    .partnerLogo {
-        height: 30px;
-    }
+  .partnerLogo {
+    height: 30px;
+  }
 }
 
 @media (max-width: 480px) {
-    .logoSection {
-        gap: 0.5rem;
-    }
+  .logoSection {
+    gap: 0.5rem;
+  }
 
-    .partnerLogo {
-        height: 25px;
-    }
+  .partnerLogo {
+    height: 25px;
+  }
 }

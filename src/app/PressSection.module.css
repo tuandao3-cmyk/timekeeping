@@ -1,56 +1,68 @@
 .pressSection {
-    padding: 2rem 3%;
-    background-color: #ffffff;
-    text-align: center;
-  }
-  
-  .title {
-    font-size: clamp(1.5rem, 2vw, 3rem);
-    font-weight: bold;
-    margin-bottom: 3rem;
-  }
-  
-  .logoGrid {
-    display:    grid;
-    flex-wrap: wrap;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    margin: 0 auto;
-  }
-  
+  padding: 2rem 3%;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.title {
+  font-size: clamp(1.5rem, 2vw, 3rem);
+  font-weight: bold;
+  margin-bottom: 3rem;
+}
+
+.logoGrid {
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin: 0 auto;
+}
+
+.logoWrapper {
+  aspect-ratio: 16 / 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
   .logoWrapper {
-    aspect-ratio: 16 / 9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffffff;
-    border-radius: 10px;
-    padding: 1rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 150px;
+    height: 75px;
   }
-  
-  .logo {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
+}
+
+@media (max-width: 480px) {
+  .logoWrapper {
+    width: 120px;
+    height: 60px;
   }
-  
-  @media (max-width: 768px) {
-    .logoWrapper {
-      width: 150px;
-      height: 75px;
-    }
-    .logoGrid {
-        grid-template-columns: repeat(2, 1fr);
-    } 
+}
+
+/* Tailwind config */
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+.whitespace-nowrap {
+  white-space: nowrap;
+}
+
+@keyframes scrollX {
+  0% {
+    transform: translateX(0);
   }
-  
-  @media (max-width: 480px) {
-    .logoWrapper {
-      width: 120px;
-      height: 60px;
-    }
-    .logoGrid {
-        grid-template-columns: repeat(2, 1fr);
-    }  
+  100% {
+    transform: translateX(-100%);
   }
+}
