@@ -1,41 +1,34 @@
-'use client';
-import dynamic from 'next/dynamic';
+"use client";
+import dynamic from "next/dynamic";
 import React from "react";
 import styles from "@/app/contact/contact.module.css";
 import Link from "next/link";
-import Footer from '../Footer';
+import Footer from "../Footer";
+import ContactForm from "@/components/contact_form/ContactForm";
+import ContactInfo from "@/components/contact_information/ContactInfo";
 
-const Map = dynamic(() => import('./Map'), { ssr: false });
+const Map = dynamic(() => import("./Map"), { ssr: false });
 
 const ContactPage: React.FC = () => {
-    return (
-        <div className={styles.pageContainer}>
-            <header className={styles.header}>
-            <nav className={styles.nav}>
-                <div className={styles.logo}>
-                    <Link href="/">
-                        <button className={styles.logoButton}>
-                        </button>
-                    </Link>
-                </div>
-                <Link href="/about" className={styles.link}>Giới thiệu</Link>
-                <Link href="/products" className={styles.link}>Sản phẩm</Link>
-                <Link href="/categories" className={styles.link}>Danh mục</Link>
-                <Link href="/guides" className={styles.link}>Hướng dẫn</Link>
-                <Link href="/news" className={styles.link}>Tin tức</Link>
-                <Link href="/reports" className={styles.link}>Báo cáo</Link>
-                <Link href="/contact" className={styles.link}>Liên hệ</Link>
+  return (
+    <div className="container mx-auto my-10">
+      <h1 className="text-3xl font-bold text-center mb-10">
+        Liên hệ với chúng tôi
+      </h1>
+      <div className="sm:grid-cols-1 grid lg:grid-cols-2 gap-4">
+        {/* Left box: Contact Form */}
 
-            </nav>
-            <div className={styles.mapContainer}>
-                    <Map />
-                </div>
-            </header>
-            <main className={styles.main}>
+        <ContactForm />
 
-            </main>
-            <Footer /> 
+        {/* Right box: Contact Information */}
+        {/* <div className="flex-1 p-8 border rounded-lg shadow-lg max-w-md h-full"> */}
+        <div className="flex-1 contain-center">
+          <ContactInfo />
         </div>
-    );
+        {/* Embed the map inside ContactInfo */}
+        {/* </div> */}
+      </div>
+    </div>
+  );
 };
 export default ContactPage;
