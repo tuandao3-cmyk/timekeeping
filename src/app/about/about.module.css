@@ -700,6 +700,92 @@
     background-color: #444;
 }
 
+.contactSection {
+    display: flex;
+    background-color: #131219;
+    color: white;
+    padding: 50px;
+    gap: 50px;
+    padding-top: 10vh;
+}
+
+.contactInfo,
+.contactForm {
+    flex: 1;
+}
+
+.contactInfo h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.contactInfo > p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.contactDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contactItem {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contactItem img {
+    width: 24px;
+    height: 24px;
+}
+
+.contactForm h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.contactForm form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contactForm input,
+.contactForm textarea {
+    padding: 10px;
+    background-color: #2C2C2C;
+    border: none;
+    color: white;
+}
+
+.contactForm textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.recaptcha {
+    background-color: #2C2C2C;
+    padding: 10px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.contactForm button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background-color 0.3s ease;
+}
+
+.contactForm button:hover {
+    background-color: #444;
+}
+
 @media (max-width: 1200px) {
     .header {
         flex-direction: column;

@@ -1,0 +1,97 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; /* Khoảng cách dưới header */
+}
+
+
+
+.logo {
+    background-image: url('/img/logohyracap.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 150px;
+    height: 30px;
+    position: relative;
+    background-color: transparent;
+}
+
+.logoButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+
+.link {
+    margin-right: 5px;
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px;
+    transition: color 0.3s ease;
+
+}
+
+.link:hover {
+    color: #28a745;
+    text-decoration: underline;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 10px 3%;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    font-size: 24px; /* Kích thước chữ cho tiêu đề */
+    font-weight: bold; /* Đậm cho tiêu đề */
+}
+
+.info {
+    margin-bottom: 20px; /* Khoảng cách dưới phần thông tin */
+}
+
+.details {
+    display: flex;
+    flex-direction: column; /* Sắp xếp theo cột */
+}
+
+.detailItem {
+    margin: 5px 0; /* Khoảng cách giữa các mục chi tiết */
+    font-size: 16px; /* Kích thước chữ cho mục chi tiết */
+}
+
+.activity {
+    margin-top: 20px; /* Khoảng cách trên phần hoạt động gần đây */
+}
+
+.activity h2 {
+    font-size: 20px; /* Kích thước chữ cho tiêu đề hoạt động */
+}
+
+.activity p {
+    margin: 5px 0; /* Khoảng cách giữa các tin tức */
+}
+
+.container {
+    padding: 20px;
+    background-color: #f9f9f9; /* Màu nền cho phần nội dung */
+    border-radius: 8px; /* Bo góc cho phần nội dung */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Đổ bóng cho phần nội dung */
+}
