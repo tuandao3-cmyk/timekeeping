@@ -16,11 +16,17 @@ const Download: React.FC = () => {
             <Image
               src="/img/qrcode.png"
               alt="QR Code"
-              width={200}
-              height={200}
+              width={150}
+              height={150}
+            />
+            <Image
+              src="/img/qrcode.png"
+              alt="QR Code"
+              width={150}
+              height={150}
             />
           </div>
-          <div className="mt-8 flex justify-center md:justify-start space-x-4">
+          <div className="mt-8 flex justify-evenly md:justify-start space-x-4">
             <a
               href="https://play.google.com/store"
               className="px-4 py-1 bg-black text-white rounded-lg text-lg hover:bg-green-700 flex items-center justify-center space-x-2 w-auto"
