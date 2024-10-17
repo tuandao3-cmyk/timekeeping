@@ -1,6 +1,4 @@
-/* Tối ưu hóa và làm đẹp mã CSS */
 
-/* Phần header */
 .header {
     display: flex;
     justify-content: space-between;
@@ -95,7 +93,6 @@
 /* Phần anh hùng */
 .hero {
     color: white;
-    padding: 80px 0;
     text-align: left;
 }
 
@@ -164,14 +161,23 @@
 }
 
 /* Tiêu đề và nội dung phần anh hùng */
-.heroContent h1,
-.heroContent p {
-    font-family: Inter, sans-serif;
+.heroContent h1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
     font-size: clamp(2.5rem, 2vw, 3rem);
     line-height: 1.5;
     max-width: 50vw;
     margin-top: 12vh;
     /* margin-bottom: 20px; */
+}
+
+.heroContent p{
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 50vw;
+  margin-top: 12vh;
 }
 
 /* Nút gọi hành động */
@@ -245,29 +251,30 @@
 
 /* Tiêu đề và nội dung trong phần nội dung chính */
 .mainContent h1{
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.2em;
-  color: #000000;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 2vw, 3rem);
+  color: #03A638;
   text-align: left;
   /* padding-left: 15vw; */
 }
 .mainContent ul{
   font-family: 'Roboto', sans-serif;
-  font-size: 1.2em;
+  font-size: 20px;
   color: #000000;
   text-align: left;
   /* padding-left: 15vw; */
 }
 .mainContent li{
   font-family: 'Roboto', sans-serif;
-  font-size: 0.9em;
+  font-size: 20px;
   color: #000000;
   text-align: left;
-  /* padding-left: 15vw; */
+  padding-left: 1vw;
 }
 .mainContent p {
     font-family: 'Roboto', sans-serif;
-    font-size: 1em;
+    font-size: 20px;
     color: #000000;
     text-align: left;
     /* padding-left: 15vw; */
@@ -275,7 +282,8 @@
 
 /* Tiêu đề trong phần nội dung chính */
 .mainContent h2 {
-    font-family: Inter, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
     font-size: clamp(1.5rem, 2vw, 2rem);
     margin-bottom: 20px;
     color: #000000;
@@ -303,10 +311,11 @@
 
 /* Tiêu đề video */
 .videoTitle {
-    padding-left: 5vw;
+    padding-left: 15vw;
     font-family: Inter, sans-serif;
-    font-size: 1.1em;
+    font-size: 40px;
     margin-bottom: 10px;
+    margin-top: 10px;
     text-align: center;
 }
 
@@ -343,7 +352,9 @@
     text-align: center;
     font-size: 1.5vw;
 }
-
+.textContent{
+  padding: 0;
+}
 /* Phần tải xuống */
 .downloadSection {
     background: linear-gradient(175.74deg, #78CA94 3.66%, #2A7082 96.76%);
@@ -354,17 +365,24 @@
 }
 
 /* Tiêu đề và nội dung trong phần tải xuống */
-.downloadSection h2,
-.downloadSection p {
-    font-size: 24px;
-    margin-bottom: 10px;
-    font-size: 18px;
+.downloadSection h2{
+    font-size: 40px;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
     margin-bottom: 20px;
+}
+.downloadSection p{
+  font-size:35px;
+  font-weight: 400;
+  font-family: 'Inte', sans-serif;
 }
 
 /* Container mã QR */
-.qrContainer {
-    margin-bottom: 20px;
+.qrContainer{
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Mã QR */
@@ -402,16 +420,26 @@
 /* ... existing code ... */
 
 /* Media queries cho responsive design */
-@media  (max-width: 1200px) {
+@media  (max-width: 1280px) {
     .header{
         height: 50vh;
+        align-items: center;
+    }
+    .hero{
+      align-items: center;
     }
 
-    .heroContent h1,
-    .heroContent p {
-      font-size: clamp(2rem, 1.8vw, 2.5rem);
-      max-width: 60vw;
+    .heroContent h1 {
+      font-size: clamp(35px, 1.8vw, 40px);
+      max-width: 80vw;
       padding: 0;
+      margin-top: 0;
+    }
+    .heroContent p{
+      /* padding-left: 20vw; */
+      max-width: 90vw;
+      font-size: clamp(30px, 1.2vw, 35px);
+      margin-top: 0;
     }
     .mainContent h2 {
       font-size: clamp(1.3rem, 1.8vw, 1.8rem);
@@ -421,20 +449,40 @@
         height: 30vh;
     }
   
-
+    .textContent{
+      padding-top: 35vh;
+    }
+  }
+  @media (max-width: 1024px) {
+    .textContent{
+      padding-top: 0;
+    }
   }
   
   @media (max-width: 768px) {
     .header {
-      height: 60vh;
+      height: 50vh;
+    }
+    .hero{
+      padding-top: 0;
+      align-items: center;
     }
   
-
-  
-    .heroContent h1,
-    .heroContent p {
+    .heroContent h1 {
       font-size: clamp(1.8rem, 1.5vw, 2.2rem);
       max-width: 80vw;
+      margin: 0;
+      padding-left: 10vw;
+    }
+    .heroContent p {
+      font-size: clamp(1.3rem, 1.2vw, 2rem);
+      max-width: 90vw;
+      margin: 0;
+      padding-top: 1vh;
+      padding-left: 10vw;
+    }
+    .mainContent{
+      padding-top: 3vh;
     }
   
     .searchContainer {
@@ -444,19 +492,28 @@
     .contentContainer {
       flex-direction: column;
     }
-  
 
-
-  
     .videoContainer {
       width: 80vw;
       height: 40vh;
     }
-  
+    .videoTitle{
+      padding-left: 20vw;
+      font-size: 40px;
+    }
+    .mainContent ul ,.mainContent li ,.mainContent p{
+      font-size: 16px;
+    }
     .imageContainer img {
       width: 45%;
     }
   
+    .qrContainer{
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
     .storeButtons {
       flex-direction: column;
       align-items: center;
@@ -483,6 +540,9 @@
         padding: 5px 10px;
         flex-direction: row;
       } 
+      .textContent{
+        padding-top: 0;
+      }
   }
   
   @media (max-width: 480px) {
@@ -516,7 +576,7 @@
     .heroContent p {
       font-size: clamp(1.3rem, 1.2vw, 2rem);
       max-width: 90vw;
-      padding-top: 5vh;
+      padding: 0;
       margin: 0;
     }
   
@@ -533,7 +593,12 @@
     .mainContent li {
       font-size: 0.9em;
     }
-  
+  .qrContainer{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
     .videoContainer {
       width: 90vw;
       height: 30vh;

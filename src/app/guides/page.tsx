@@ -13,21 +13,7 @@
         return (
             <>
                 <header className={styles.header}>
-                    <nav className={styles.nav}>
-                        <div className={styles.logo}>
-                            <Link href="/">
-                                <button className={styles.logoButton}></button>
-                            </Link>
-                        </div>
-                        <Link href="/" className={styles.link}>Trang chủ</Link>
-                        <Link href="/about" className={styles.link}>Giới thiệu</Link>
-                        <Link href="/products" className={styles.link}>Sản phẩm</Link>
-                        <Link href="/categories" className={styles.link}>Danh mục</Link>
-                        <Link href="/guides" className={styles.link}>Hướng dẫn</Link>
-                        <Link href="/news" className={styles.link}>Tin tức</Link>
-                        <Link href="/reports" className={styles.link}>Báo cáo</Link>
-                        <Link href="/contact" className={styles.link}>Liên hệ</Link>
-                    </nav>
+
                     <div className={styles.hero}>
                         <div className={styles.heroContent}>
                             <h1>Hướng dẫn đầu tư vào HyraCap</h1>
@@ -106,6 +92,7 @@
                             </div>
                             <p className={styles.videoTitle}>Video hướng dẫn đầu tư HyraCap</p>
                         </div> 
+                        <div className={styles.textContent}>
                         <h1>Đăng ký</h1>
                         <h2>Đăng ký đầu tư HyraCap</h2>
                         <p>Để đăng ký đầu tư vào <strong>HyraCap</strong> bạn làm theo bước sau:</p>
@@ -115,11 +102,11 @@
                             <li>Bước 3: Vào app HyraCap chọn "Đăng ký"</li>
                             <li>Bước 4: Điền các thông tin trên màn hình Đăng ký mở tài khoản HyraCap bao gồm:
                                 <ul>
-                                    <li>Số điện thoại</li>
-                                    <li>Email</li>
-                                    <li>Mật khẩu</li>
-                                    <li>Nhập lại mật khẩu</li>
-                                    <li>Bấm Đăng ký</li>
+                                    <li>- Số điện thoại</li>
+                                    <li>- Email</li>
+                                    <li>- Mật khẩu</li>
+                                    <li>- Nhập lại mật khẩu</li>
+                                    <li>- Bấm Đăng ký</li>
                                 </ul>
                             </li>
                         </ul>
@@ -142,6 +129,7 @@
                             Như vậy, HyraCap đã thực hiện xong phần hướng dẫn Đăng ký sử dụng ứng dụng HyraCap.<br/>
                             Chúc Quý Khách thành công!
                         </p>
+                        </div>
                     </main>
                 </div>
                 <DownloadSection />
