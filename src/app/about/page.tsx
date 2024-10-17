@@ -9,170 +9,143 @@ import ArticlesSection from '../ArticlesSection';
 import PressSection from '../PressSection';
 import News from '../news';
 
+
+
 const leaders = [
-  {
-    name: 'Trần Nam Chung',
-    title: 'Chief Strategy Officer - Founder',
-    image: '/img/tran-nam-chung.jpg',
-    description: [
-      'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
-      'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
-      'Là một người đam mê công nghệ và theo đuổi chiến lược định hình giá trị tương lai bằng các giải pháp công nghệ tham gia mạnh mẽ vào cuộc chuyển đổi kinh tế số.',
-      'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.',
-    ],
-  },
-  {
-    name: 'Tuấn Nguyễn',
-    title: 'CEO - Co-Founder',
-    image: '/img/tuan-nguyen.jpg',
-    description: [
-      'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
-      'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
-      'Là một người đam mê công nghệ và theo đuổi chiến lược định hình giá trị tương lai bằng các giải pháp công nghệ tham gia mạnh mẽ vào cuộc chuyển đổi kinh tế số.',
-      'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.',
-    ],
-  },
-  {
-    name: 'Hoàng Thành Đạt',
-    title: 'CEO - CTO-Founder',
-    image: '/img/hoang-thanh-dat.jpg',
-    description: [
-      'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
-      'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
-      'Là một người đam mê công nghệ và theo đuổi chiến lược định hình giá trị tương lai bằng các giải pháp công nghệ tham gia mạnh mẽ vào cuộc chuyển đổi kinh tế số.',
-      'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.',
-    ],
-  },
-  {
-    name: 'Tuấn Đặng',
-    title: 'CFO - Co-Founder',
-    image: '/img/tuan-dang.jpg',
-    description: [
-      'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
-      'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
-      'Là một người đam mê công nghệ và theo đuổi chiến lược định hình giá trị tương lai bằng các giải pháp công nghệ tham gia mạnh mẽ vào cuộc chuyển đổi kinh tế số.',
-      'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.',
-    ],
-  },
-  {
-    name: 'Jun Do',
-    title: 'CMO - Co-Founder',
-    image: '/img/jun-do.jpg',
-    description: [
-      'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
-      'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
-      'Là một người đam mê công nghệ và theo đuổi chiến lược định hình giá trị tương lai bằng các giải pháp công nghệ tham gia mạnh mẽ vào cuộc chuyển đổi kinh tế số.',
-      'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.',
-    ],
-  },
-  // Thêm các thành viên khác tương tự
-];
+    {
+        name: 'Trần Nam Chung',
+        title: 'Chief Strategy Officer - Founder',
+        image: '/img/tran-nam-chung.jpg',
+        description: [
+            'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
+            'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
+            'Là một người đam mê công nghệ và theo đuổi chiến lược định hình giá trị tương lai bằng các giải pháp công nghệ tham gia mạnh mẽ vào cuộc chuyển đổi kinh tế số.',
+            'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.'
+        ]
+    },
+    {
+        name: 'Tuấn Nguyễn',
+        title: 'CEO - Co-Founder',
+        image: '/img/tuan-nguyen.jpg',
+        description: [
+            'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
+            'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
+            'Là một người đam mê công nghệ và theo đuổi chiến lược định hình giá trị tương lai bằng các giải pháp công nghệ tham gia mạnh mẽ vào cuộc chuyển đổi kinh tế số.',
+            'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.'
+        ]
+    },
+    {
+        name: 'Hoàng Thành Đạt',
+        title: 'CEO - CTO-Founder',
+        image: '/img/hoang-thanh-dat.jpg',
+        description: [
+            'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
+            'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
+            'Là một người đam mê công nghệ và theo đuổi chiến lược định hình giá trị tương lai bằng các giải pháp công nghệ tham gia mạnh mẽ vào cuộc chuyển đổi kinh tế số.',
+            'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.'
+        ]
+    },
+    {
+        name: 'Tuấn Đặng',
+        title: 'CFO - Co-Founder',
+        image: '/img/tuan-dang.jpg',
+        description: [
+            'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
+            'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
+            'Là một người đam mê công nghệ và theo đuổi chiến lược định hình giá trị tương lai bằng các giải pháp công nghệ tham gia mạnh mẽ vào cuộc chuyển đổi kinh tế số.',
+            'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.'
+        ]
+    },
+    {
+        name: 'Jun Do',
+        title: 'CMO - Co-Founder',
+        image: '/img/jun-do.jpg',
+        description: [
+            'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
+            'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
+            'Là một người đam mê công nghệ và theo đuổi chiến lược định hình giá trị tương lai bằng các giải pháp công nghệ tham gia mạnh mẽ vào cuộc chuyển đổi kinh tế số.',
+            'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.'
+        ]
+    },
+    // Thêm các thành viên khác tương tự
+]
 
 const staffs = [
-  {
-    name: 'Cris Nguyễn',
-    title: 'Blockchain Leader',
-    image: '/img/staff1.png',
-    description: [
-      'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
-      'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
-      'Là một người đam mê công nghệ và theo đuổi chiến lược định hình giá trị tương lai bằng các giải pháp công nghệ tham gia mạnh mẽ vào cuộc chuyển đổi kinh tế số.',
-      'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.',
-    ],
-  },
-  {
-    name: 'Nguyễn Văn Ngân',
-    title: 'BE Leader',
-    image: '/img/staff2.png',
-    description: [
-      'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
-      'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
-      'Là một người đam mê công nghệ và theo đuổi chiến lược định hình giá trị tương lai bằng các giải pháp công nghệ tham gia mạnh mẽ vào cuộc chuyển đổi kinh tế số.',
-      'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.',
-    ],
-  },
-  {
-    name: 'Trần Quang Tú',
-    title: 'Mobile Leader',
-    image: '/img/staff3.png',
-    description: [
-      'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
-      'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
-      'Là một người đam mê công nghệ và theo đuổi chiến lược định hình giá trị tương lai bằng các giải pháp công nghệ tham gia mạnh mẽ vào cuộc chuyển đổi kinh tế số.',
-      'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.',
-    ],
-  },
-  {
-    name: 'Lê Xuân Minh',
-    title: 'FE Leader',
-    image: '/img/staff4.png',
-    description: [
-      'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
-      'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
-      'Là một người đam mê công nghệ và theo đuổi chiến lược định hình giá trị tương lai bằng các giải pháp công nghệ tham gia mạnh mẽ vào cuộc chuyển đổi kinh tế số.',
-      'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.',
-    ],
-  },
-  {
-    name: 'Bùi Lương Châu',
-    title: 'SA',
-    image: '/img/staff5.png',
-    description: [
-      'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
-      'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
-      'Là một người đam mê công nghệ và theo đuổi chiến lược định hình giá trị tương lai bằng các giải pháp công nghệ tham gia mạnh mẽ vào cuộc chuyển đổi kinh tế số.',
-      'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.',
-    ],
-  },
-  {
-    name: 'Nguyễn mạnh Hưng',
-    title: 'Creative Director',
-    image: '/img/staff6.png',
-    description: [
-      'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
-      'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
-      'Là một người đam mê công nghệ và theo đuổi chiến lược định hình giá trị tương lai bằng các giải pháp công nghệ tham gia mạnh mẽ vào cuộc chuyển đổi kinh tế số.',
-      'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.',
-    ],
-  },
-  // Thêm các thành viên khác tương tự
-];
+    {
+        name: 'Cris Nguyễn',
+        title: 'Blockchain Leader',
+        image: '/img/staff1.png',
+        description: [
+            'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
+            'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
+            'Là một người đam mê công nghệ và theo đuổi chiến lược định hình giá trị tương lai bằng các giải pháp công nghệ tham gia mạnh mẽ vào cuộc chuyển đổi kinh tế số.',
+            'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.'
+        ]
+    },
+    {
+        name: 'Nguyễn Văn Ngân',
+        title: 'BE Leader',
+        image: '/img/staff2.png',
+        description: [
+            'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
+            'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
+            'Là một người đam mê công nghệ và theo đuổi chiến lược định hình giá trị tương lai bằng các giải pháp công nghệ tham gia mạnh mẽ vào cuộc chuyển đổi kinh tế số.',
+            'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.'
+        ]
+    },
+    {
+        name: 'Trần Quang Tú',
+        title: 'Mobile Leader',
+        image: '/img/staff3.png',
+        description: [
+            'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
+            'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
+            'Là một người đam mê công nghệ và theo đuổi chiến lược định hình giá trị tương lai bằng các giải pháp công nghệ tham gia mạnh mẽ vào cuộc chuyển đổi kinh tế số.',
+            'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.'
+        ]
+    },
+    {
+        name: 'Lê Xuân Minh',
+        title: 'FE Leader',
+        image: '/img/staff4.png',
+        description: [
+            'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
+            'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
+            'Là một người đam mê công nghệ và theo đuổi chiến lược định hình giá trị tương lai bằng các giải pháp công nghệ tham gia mạnh mẽ vào cuộc chuyển đổi kinh tế số.',
+            'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.'
+        ]
+    },
+    {
+        name: 'Bùi Lương Châu',
+        title: 'SA',
+        image: '/img/staff5.png',
+        description: [
+            'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
+            'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
+            'Là một người đam mê công nghệ và theo đuổi chiến lược định hình giá trị tương lai bằng các giải pháp công nghệ tham gia mạnh mẽ vào cuộc chuyển đổi kinh tế số.',
+            'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.'
+        ]
+    },
+    {
+        name: 'Nguyễn mạnh Hưng',
+        title: 'Creative Director',
+        image: '/img/staff6.png',
+        description: [
+            'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
+            'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
+            'Là một người đam mê công nghệ và theo đuổi chiến lược định hình giá trị tương lai bằng các giải pháp công nghệ tham gia mạnh mẽ vào cuộc chuyển đổi kinh tế số.',
+            'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.'
+        ]
+    },
+    // Thêm các thành viên khác tương tự
+]
+
+
 
 const AboutPage: React.FC = () => {
   return (
     <>
       <header className={styles.header}>
-        <nav className={styles.nav}>
-          <div className={styles.logo}>
-            <Link href="/">
-              <button className={styles.logoButton}></button>
-            </Link>
-          </div>
-          <Link href="/" className={styles.link}>
-            Trang chủ
-          </Link>
-          <Link href="/about" className={styles.link}>
-            Giới thiệu
-          </Link>
-          <Link href="/products" className={styles.link}>
-            Sản phẩm
-          </Link>
-          <Link href="/categories" className={styles.link}>
-            Danh mục
-          </Link>
-          <Link href="/guides" className={styles.link}>
-            Hướng dẫn
-          </Link>
-          <Link href="/news" className={styles.link}>
-            Tin tức
-          </Link>
-          <Link href="/reports" className={styles.link}>
-            Báo cáo
-          </Link>
-          <Link href="/contact" className={styles.link}>
-            Liên hệ
-          </Link>
-        </nav>
         <div className={styles.hero}>
           <div className={styles.heroContent}>
             <h1>Về chúng tôi</h1>
