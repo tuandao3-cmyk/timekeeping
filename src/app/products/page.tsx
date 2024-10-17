@@ -193,7 +193,7 @@ const ProductPage: React.FC = () => {
           </div>
         </div>
       </section>
-      <section
+      {/* <section
         className="relative w-full h-auto bg-cover bg-center p-6 "
         style={{
           backgroundImage: 'url("/img/stacked-coins.png")',
@@ -210,7 +210,7 @@ const ProductPage: React.FC = () => {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* Các gói đầu tư */}
       <section className="w-full h-auto bg-white py-6 flex flex-col justify-center items-center">
         <h1 className="text-black font-bold text-2xl md:text-4xl text-center">

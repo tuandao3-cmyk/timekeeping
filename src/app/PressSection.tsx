@@ -13,7 +13,7 @@ const pressLogos = [
 
 const PressSection = () => {
   return (
-    <section className="py-8">
+    <section className="py-8 ">
       <h2 className="text-2xl text-center mb-8 font-bold">
         Đối tác truyền thông
       </h2>
