@@ -10,96 +10,104 @@ const ProjectSection = () => {
         <div className="w-full flex justify-center items-center">
           <div className={styles.projectCards}>
             <div className={styles.projectCard}>
-              <img
-                src="/img/19.jpg"
-                alt="Hyperas Chain"
-                className={styles.projectImage}
-              />
-              <div className={styles.badge}>Series A</div>
-              <h3 className={styles.projectName}>Hyperas Chain</h3>
-              <div className={styles.projectInfo}>
-                <div className={styles.amount}>$3.000.000</div>
-                <div className={styles.progress}>
-                  <div
-                    className={styles.progressBar}
-                    style={{ width: "75%" }}
-                  ></div>
+              <a href="/detail-category">
+                <img
+                  src="/img/19.jpg"
+                  alt="Hyperas Chain"
+                  className={styles.projectImage}
+                />
+                <div className={styles.badge}>Series A</div>
+                <h3 className={styles.projectName}>Hyperas Chain</h3>
+                <div className={styles.projectInfo}>
+                  <div className={styles.amount}>$3.000.000</div>
+                  <div className={styles.progress}>
+                    <div
+                      className={styles.progressBar}
+                      style={{ width: "75%" }}
+                    ></div>
+                  </div>
+                  <div className={styles.fundingInfo}>
+                    <span>$1.500.00</span>
+                    <span>Được tài trợ 75%</span>
+                  </div>
+                  <div className={styles.category}>CÔNG NGHỆ</div>
                 </div>
-                <div className={styles.fundingInfo}>
-                  <span>$1.500.00</span>
-                  <span>Được tài trợ 75%</span>
-                </div>
-                <div className={styles.category}>CÔNG NGHỆ</div>
-              </div>
+              </a>
             </div>
             <div className={styles.projectCard}>
-              <img
-                src="/img/18.jpg"
-                alt="Hyperas Chain"
-                className={styles.projectImage}
-              />
-              <div className={styles.badge}>Series B</div>
-              <h3 className={styles.projectName}>Salala AI</h3>
-              <div className={styles.projectInfo}>
-                <div className={styles.amount}>$3.000.000</div>
-                <div className={styles.progress}>
-                  <div
-                    className={styles.progressBar}
-                    style={{ width: "98%" }}
-                  ></div>
+              <a href="/detail-category">
+                <img
+                  src="/img/18.jpg"
+                  alt="Hyperas Chain"
+                  className={styles.projectImage}
+                />
+                <div className={styles.badge}>Series B</div>
+                <h3 className={styles.projectName}>Salala AI</h3>
+                <div className={styles.projectInfo}>
+                  <div className={styles.amount}>$3.000.000</div>
+                  <div className={styles.progress}>
+                    <div
+                      className={styles.progressBar}
+                      style={{ width: "98%" }}
+                    ></div>
+                  </div>
+                  <div className={styles.fundingInfo}>
+                    <span>$1.500.00</span>
+                    <span>Được tài trợ 98%</span>
+                  </div>
+                  <div className={styles.category}>CÔNG NGHỆ</div>
                 </div>
-                <div className={styles.fundingInfo}>
-                  <span>$1.500.00</span>
-                  <span>Được tài trợ 98%</span>
-                </div>
-                <div className={styles.category}>CÔNG NGHỆ</div>
-              </div>
+              </a>
             </div>
             <div className={styles.projectCard}>
-              <img
-                src="/img/16.jpg"
-                alt="Hyperas Chain"
-                className={styles.projectImage}
-              />
-              <div className={styles.badge}>Series A</div>
-              <h3 className={styles.projectName}>Rapital Bank</h3>
-              <div className={styles.projectInfo}>
-                <div className={styles.amount}>$1.000.000</div>
-                <div className={styles.progress}>
-                  <div
-                    className={styles.progressBar}
-                    style={{ width: "75%" }}
-                  ></div>
+              <a href="/detail-category">
+                <img
+                  src="/img/16.jpg"
+                  alt="Hyperas Chain"
+                  className={styles.projectImage}
+                />
+                <div className={styles.badge}>Series A</div>
+                <h3 className={styles.projectName}>Rapital Bank</h3>
+                <div className={styles.projectInfo}>
+                  <div className={styles.amount}>$1.000.000</div>
+                  <div className={styles.progress}>
+                    <div
+                      className={styles.progressBar}
+                      style={{ width: "75%" }}
+                    ></div>
+                  </div>
+                  <div className={styles.fundingInfo}>
+                    <span>$1.500.00</span>
+                    <span>Được tài trợ 75%</span>
+                  </div>
+                  <div className={styles.category}>CÔNG NGHỆ</div>
                 </div>
-                <div className={styles.fundingInfo}>
-                  <span>$1.500.00</span>
-                  <span>Được tài trợ 75%</span>
-                </div>
-                <div className={styles.category}>CÔNG NGHỆ</div>
-              </div>
+              </a>
             </div>
             <div className={styles.projectCard}>
-              <img
-                src="/img/17.jpg"
-                alt="Hyperas Chain"
-                className={styles.projectImage}
-              />
-              <div className={styles.badge}>Series A</div>
-              <h3 className={styles.projectName}>Egabid</h3>
-              <div className={styles.projectInfo}>
-                <div className={styles.amount}>$500.000</div>
-                <div className={styles.progress}>
-                  <div
-                    className={styles.progressBar}
-                    style={{ width: "80%" }}
-                  ></div>
+              <a href="/detail-category">
+                <img
+                  src="/img/17.jpg"
+                  alt="Hyperas Chain"
+                  className={styles.projectImage}
+                />
+                <div className={styles.badge}>Series A</div>
+                <h3 className={styles.projectName}>Egabid</h3>
+                <div className={styles.projectInfo}>
+                  <div className={styles.amount}>$500.000</div>
+                  <div className={styles.progress}>
+                    <div
+                      className={styles.progressBar}
+                      style={{ width: "80%" }}
+                    ></div>
+                  </div>
+                  <div className={styles.fundingInfo}>
+                    <span>$1.500.00</span>
+                    <span>Được tài trợ 80%</span>
+                  </div>
+                  <div className={styles.category}>CÔNG NGHỆ</div>
                 </div>
-                <div className={styles.fundingInfo}>
-                  <span>$1.500.00</span>
-                  <span>Được tài trợ 80%</span>
-                </div>
-                <div className={styles.category}>CÔNG NGHỆ</div>
-              </div>
+              </a>
             </div>
             {/* Repeat similar structure for Salala AI, Rapital Bank, and Egabid */}
           </div>

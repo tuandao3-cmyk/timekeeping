@@ -4,7 +4,7 @@ import React from "react";
 import styles from "@/app/categories/category.module.css";
 import Link from "next/link";
 import Footer from "../Footer";
-import { Box, FormControlLabel, Radio } from "@mui/material";
+import { Box } from "@mui/material";
 
 const CategoryPage: React.FC = () => {
   const projects = [
