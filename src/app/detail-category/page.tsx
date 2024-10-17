@@ -42,57 +42,57 @@ const DetailCategoryPage: React.FC = () => {
                   Dự án Salala AI
                 </h2>
               </div>
-              <div className="lg:flex flex-wrap justify-start hidden ">
+              <div className="lg:flex justify-start hidden ">
                 <a
                   href="#"
-                  className="text-green-600 text-lg font-bold px-10 py-3 bg-white"
+                  className="text-green-600 text-sm font-semibold px-7 py-3 bg-white"
                 >
                   Thông tin
                 </a>
                 <a
                   href="#"
-                  className="text-gray-500 text-lg font-bold px-10 py-3"
+                  className="text-gray-500 text-sm font-semibold px-7 py-3"
                 >
                   Pitchingdeck
                 </a>
                 <a
                   href="#"
-                  className="text-gray-500 text-lg font-bold px-10 py-3"
+                  className="text-gray-500 text-sm font-semibold px-7 py-3"
                 >
                   Hợp đồng mẫu
                 </a>
                 <a
                   href="#"
-                  className="text-gray-500 text-lg font-bold px-10 py-3"
+                  className="text-gray-500 text-sm font-semibold px-7 py-3"
                 >
                   Lộ trình tài chính
                 </a>
                 <a
                   href="#"
-                  className="text-gray-500 text-lg font-bold px-10 py-3"
+                  className="text-gray-500 text-sm font-semibold px-7 py-3"
                 >
                   Kế hoạch kinh doanh
                 </a>
               </div>
             </div>
           </div>
-          <div className="flex flex-wrap justify-start mt-3 lg:hidden ">
+          <div className="flex justify-start mt-3 lg:hidden ">
             <a
               href="#"
-              className="text-green-600 text-lg font-bold px-10 py-3 bg-white"
+              className="text-green-600 text-sm font-semibold px-7 py-3 bg-white"
             >
               Thông tin
             </a>
-            <a href="#" className="text-gray-500 text-lg font-bold px-10 py-3">
+            <a href="#" className="text-gray-500 text-sm font-semibold px-7 py-3">
               Pitchingdeck
             </a>
-            <a href="#" className="text-gray-500 text-lg font-bold px-10 py-3">
+            <a href="#" className="text-gray-500 text-sm font-semibold px-7 py-3">
               Hợp đồng mẫu
             </a>
-            <a href="#" className="text-gray-500 text-lg font-bold px-10 py-3">
+            <a href="#" className="text-gray-500 text-sm font-semibold px-7 py-3">
               Lộ trình tài chính
             </a>
-            <a href="#" className="text-gray-500 text-lg font-bold px-10 py-3">
+            <a href="#" className="text-gray-500 text-sm font-semibold px-7 py-3">
               Kế hoạch kinh doanh
             </a>
           </div>

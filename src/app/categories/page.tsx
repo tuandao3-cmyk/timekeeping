@@ -273,41 +273,43 @@ const CategoryPage: React.FC = () => {
             }}
           >
             {projects.map((project, index) => (
-              <Box key={index} className="p-4">
-                <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-                  <img
-                    src={project.img}
-                    alt={project.name}
-                    className="w-full h-80 object-cover"
-                  />
-                  <div className="p-4">
-                    <span className="text-sm bg-blue-500 text-white py-1 px-3 rounded-full">
-                      Series A
-                    </span>
-                    <h3 className="text-lg font-bold mt-2">{project.name}</h3>
-                    <div className="mt-4">
-                      <div className="text-xl font-semibold">
-                        {project.amount}
-                      </div>
-                      <div className="h-2 bg-gray-300 rounded mt-2">
-                        <div
-                          className="bg-green-500 h-full rounded"
-                          style={{
-                            width: `${project.progress}%`,
-                          }}
-                        ></div>
-                      </div>
-                      <div className="flex justify-between mt-2 text-sm text-gray-600">
-                        <span>{project.funded}</span>
-                        <span>Được tài trợ {project.progress}%</span>
-                      </div>
-                      <div className="text-gray-800 mt-2 font-semibold">
-                        {project.category}
+              <Link href="/detail-category">
+                <Box key={index} className="p-4"> 
+                  <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img
+                      src={project.img}
+                      alt={project.name}
+                      className="w-full h-80 object-cover"
+                    />
+                    <div className="p-4">
+                      <span className="text-sm bg-blue-500 text-white py-1 px-3 rounded-full">
+                        Series A
+                      </span>
+                      <h3 className="text-lg font-bold mt-2">{project.name}</h3>
+                      <div className="mt-4">
+                        <div className="text-xl font-semibold">
+                          {project.amount}
+                        </div>
+                        <div className="h-2 bg-gray-300 rounded mt-2">
+                          <div
+                            className="bg-green-500 h-full rounded"
+                            style={{
+                              width: `${project.progress}%`,
+                            }}
+                          ></div>
+                        </div>
+                        <div className="flex justify-between mt-2 text-sm text-gray-600">
+                          <span>{project.funded}</span>
+                          <span>Được tài trợ {project.progress}%</span>
+                        </div>
+                        <div className="text-gray-800 mt-2 font-semibold">
+                          {project.category}
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </Box>
+                </Box>
+              </Link>
             ))}
           </Box>
         </div>
