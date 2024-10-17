@@ -1,4 +1,4 @@
-import styles from "./PressSection.module.css";
+import styles from './PressSection.module.css';
 
 const pressLogos = [
     { name: "Phụ nữ", src: "/img/icon/bao1.png" },

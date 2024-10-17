@@ -1,14 +1,12 @@
-import React from "react";
-import Head from "next/head";
-import Header from "@/components/header";
-import styles from "./page.module.css";
-import Partner from "@/app/partner";
-import ProjectSection from "@/app/ProjectSection";
-import PressSection from "@/app/PressSection";
-import ArticlesSection from "@/app/ArticlesSection";
-import Footer from "@/app/Footer";
-import Download from "./download";
-import News from "./news";
+import React from 'react';
+
+import styles from './page.module.css';
+import Partner from '@/app/partner';
+import ProjectSection from '@/app/ProjectSection';
+import PressSection from '@/app/PressSection';
+
+import Download from './download';
+import News from './news';
 const Home: React.FC = () => {
     return (
         <div className={styles.container}>
@@ -70,28 +68,9 @@ const Home: React.FC = () => {
                             </a>
                         </div>
                     </div>
-
-                    <div className="w-full  flex md:col-span-1  justify-center items-center mt-8 md:mt-0 xl:p-28 p-4">
-                        <div className="relative w-full h-80">
-                            <img
-                                src="/img/02.png"
-                                className="absolute left-1/2 top-0 transform -translate-x-1/2 w-[40%] h-auto  transition-transform duration-300 z-30 scale-125 md:scale-100 lg:scale-150"
-                                alt="App Screenshot 3"
-                            />
-
-                            <img
-                                src="/img/01.png"
-                                className="absolute top-0 left-0 w-[30%] h-auto  object-contain transition-transform duration-300 z-10 scale-110 md:scale-100 lg:scale-150"
-                                alt="App Screenshot 1"
-                            />
-
-                            <img
-                                src="/img/03.png"
-                                className="absolute top-0 right-0 w-[30%] h-auto  object-contain transition-transform duration-300 z-10 scale-110 md:scale-100 lg:scale-150"
-                                alt="App Screenshot 2"
-                            />
-                        </div>
-                    </div>
+          <div className="w-full h-full  flex md:col-span-1  justify-center items-center mt-8 md:mt-0 xl:p-28 p-4">
+            <img src="/img/homeAppScreenShot.png" alt="App Screen Shot" className="w-full h-auto object-contain bg-no-repeat"/>
+            </div>
                 </div>
             </div>
 

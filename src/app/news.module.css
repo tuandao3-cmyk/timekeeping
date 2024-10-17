@@ -1,12 +1,12 @@
 .newsSection {
-    background-image: url("../../public/img/newsab.jpg");
-    background-size: cover;
-    padding: 40px;
-    border-radius: 10px;
-    color: white;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+  background-image: url('../../public/img/newsab.jpg');
+  background-size: cover;
+  padding: 40px;
+  border-radius: 10px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .newsLink {
@@ -96,10 +96,11 @@
 }
 
 .newsImage {
-    width: 50%;
-    height: auto;
-    border-radius: 10px;
-    margin-right: 15px; /* Đẩy hình ảnh cách text một khoảng */
+  width: 50%;
+  max-width: 233px;
+  height: auto;
+  border-radius: 10px;
+  margin-right: 15px; /* Đẩy hình ảnh cách text một khoảng */
 }
 
 .newsContent {
@@ -151,10 +152,15 @@
         font-size: 1.2rem; /* Giảm kích thước font cho tiêu đề */
     }
 
-    .moreButton {
-        padding: 10px 20px; /* Giảm padding cho nút */
-        font-size: 0.9rem; /* Giảm kích thước font cho nút */
-    }
+  .moreButton {
+    padding: 10px 20px; /* Giảm padding cho nút */
+    font-size: 0.9rem; /* Giảm kích thước font cho nút */
+  }
+  .newsImage {
+    width: 100%; /* Đặt hình ảnh chiếm toàn bộ chiều rộng */
+    margin-right: 0; /* Bỏ khoảng cách bên phải */
+    margin-bottom: 10px; /* Thêm khoảng cách dưới hình ảnh */
+  }
 }
 
 @media (max-width: 768px) {
@@ -195,9 +201,14 @@
         font-size: 1.8rem; /* Giảm kích thước font cho tiêu đề */
     }
 
-    .mainNews {
-        flex: 1; /* Giảm kích thước flex cho phần main news */
-    }
+  .newsImage {
+    width: 100%; /* Đặt hình ảnh chiếm toàn bộ chiều rộng */
+    margin-right: 0; /* Bỏ khoảng cách bên phải */
+    margin-bottom: 10px; /* Thêm khoảng cách dưới hình ảnh */
+  }
+  .mainNews {
+    flex: 1; /* Giảm kích thước flex cho phần main news */
+  }
 
     .sideNews {
         flex: 1; /* Đảm bảo side news cũng chiếm không gian hợp lý */

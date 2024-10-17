@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "./news.module.css";
+import React from 'react';
+import styles from './news.module.css';
 
 const newsData = [
     {

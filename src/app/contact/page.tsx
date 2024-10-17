@@ -1,13 +1,13 @@
-"use client";
-import dynamic from "next/dynamic";
-import React from "react";
-import styles from "@/app/contact/contact.module.css";
-import Link from "next/link";
-import Footer from "../Footer";
-import ContactForm from "@/components/contact_form/ContactForm";
-import ContactInfo from "@/components/contact_information/ContactInfo";
+'use client';
+import dynamic from 'next/dynamic';
+import React from 'react';
+import styles from '@/app/contact/contact.module.css';
+import Link from 'next/link';
 
-const Map = dynamic(() => import("./Map"), { ssr: false });
+import ContactForm from '@/components/contact_form/ContactForm';
+import ContactInfo from '@/components/contact_information/ContactInfo';
+
+const Map = dynamic(() => import('./Map'), { ssr: false });
 
 const ContactPage: React.FC = () => {
     return (

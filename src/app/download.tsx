@@ -1,6 +1,6 @@
-import React from "react";
-import Image from "next/image";
-import styles from "./download.module.css";
+import React from 'react';
+import Image from 'next/image';
+import styles from './download.module.css';
 
 const Download: React.FC = () => {
   return (

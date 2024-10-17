@@ -1,55 +1,53 @@
 .partnersPressSection {
-    padding: 40px 0;
-    background-color: #fff;
+  padding: 40px 0;
+  background-color: #fff;
 }
 
 .partnersPressSection h3 {
-    font-size: 30px;
-    text-align: center;
-    margin-bottom: 20px;
-    font-weight: bold;
-    position: relative;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+  position: relative;
 }
 
 .partnersPressSection .partners h3::before,
 .partnersPressSection .press h3::before {
-    content: "";
-    display: block;
-    width: 86%;
-    height: 1px; /* Độ dày của đường kẻ */
-    background-color: #000; /* Màu đen cho đường kẻ */
-    position: absolute;
-    top: -20px; /* Khoảng cách đường kẻ so với tiêu đề */
-    left: 7%;
+  content: '';
+  display: block;
+  width: 86%;
+  height: 1px; /* Độ dày của đường kẻ */
+  background-color: #000; /* Màu đen cho đường kẻ */
+  position: absolute;
+  top: -20px; /* Khoảng cách đường kẻ so với tiêu đề */
+  left: 7%;
 }
 
 .logoGrid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 20px 0;
-    justify-items: center;
-    align-items: center;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px 0;
+  justify-items: center;
+  align-items: center;
 }
-
 
 .logo {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
-
 .partners {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 .press {
-    margin-top: 40px;
+  margin-top: 40px;
 }
 
 @media (max-width: 768px) {
-    .logo {
-        max-width: 120px;
-        max-height: 80px;
-    }
+  .logo {
+    max-width: 120px;
+    max-height: 80px;
+  }
 }
