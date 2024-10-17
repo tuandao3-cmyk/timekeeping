@@ -1,28 +1,26 @@
-import React from "react";
-import Footer from "../Footer";
-import Image from "next/image";
+import React from 'react';
 
 const DetailCategoryPage: React.FC = () => {
   const projects = [
     {
-      name: "Công việc đã đào tạo",
-      amount: "+2,985,122,684",
-      icon: "/img/icon/google-docs.svg",
+      name: 'Công việc đã đào tạo',
+      amount: '+2,985,122,684',
+      icon: '/img/icon/google-docs.svg',
     },
     {
-      name: "Mô hình đào tạo",
-      amount: "+2,985,122,684",
-      icon: "/img/icon/google-docs.svg",
+      name: 'Mô hình đào tạo',
+      amount: '+2,985,122,684',
+      icon: '/img/icon/google-docs.svg',
     },
     {
-      name: "Mô hình đào tạo",
-      amount: "+2,985,122,684",
-      icon: "/img/icon/device.svg",
+      name: 'Mô hình đào tạo',
+      amount: '+2,985,122,684',
+      icon: '/img/icon/device.svg',
     },
     {
-      name: "Tổng Hyra kiếm được",
-      amount: "+2,985,122,684",
-      icon: "/img/icon/device.svg",
+      name: 'Tổng Hyra kiếm được',
+      amount: '+2,985,122,684',
+      icon: '/img/icon/device.svg',
     },
   ];
   return (
@@ -110,7 +108,7 @@ const DetailCategoryPage: React.FC = () => {
                 <p>📍 10 Anson Road #11 - 20 International Plaza Singapore</p>
                 <p>👥 150 - 200</p>
                 <p>
-                  🌐{" "}
+                  🌐{' '}
                   <a href="https://salala.io" className="">
                     https://salala.io
                   </a>
@@ -219,7 +217,7 @@ const DetailCategoryPage: React.FC = () => {
 
           <div
             style={{
-              background: "linear-gradient(90deg, #2A7082 0%, #73E097 100%)",
+              background: 'linear-gradient(90deg, #2A7082 0%, #73E097 100%)',
             }}
             className="mx-11 rounded-xl"
           >
@@ -246,7 +244,7 @@ const DetailCategoryPage: React.FC = () => {
                 <h5 className="text-xl font-bold text-white mb-4">Thông số</h5>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 md:gap-10 gap-3">
                   {projects.map((project, index) => (
-                    <div className="flex gap-3">
+                    <div className="flex gap-3" key={index}>
                       <img
                         src={project.icon}
                         alt={project.icon}
@@ -282,7 +280,7 @@ const DetailCategoryPage: React.FC = () => {
                   <li className="flex">
                     <div className="m-3 w-1 h-1 rounded-full bg-[#444444]"></div>
                     <div className="text-lg font-normal">
-                      <span className="text-[#444444]">Trụ sở chính</span>{" "}
+                      <span className="text-[#444444]">Trụ sở chính</span>{' '}
                       <p className="text-black">Singapore</p>
                     </div>
                   </li>
@@ -296,14 +294,14 @@ const DetailCategoryPage: React.FC = () => {
                   <li className="flex">
                     <div className="m-3 w-1 h-1 rounded-full bg-[#444444]"></div>
                     <div className="text-lg font-normal">
-                      <span className="text-[#444444]">Email</span>{" "}
+                      <span className="text-[#444444]">Email</span>{' '}
                       <p className="text-black">info@hyraetek.com</p>
                     </div>
                   </li>
                   <li className="flex">
                     <div className="m-3 w-1 h-1 rounded-full bg-[#444444]"></div>
                     <div className="text-lg font-normal">
-                      <span className="text-[#444444]">Ngày thành lập</span>{" "}
+                      <span className="text-[#444444]">Ngày thành lập</span>{' '}
                       <p className="text-black">20/02/2020</p>
                     </div>
                   </li>
@@ -461,7 +459,7 @@ const DetailCategoryPage: React.FC = () => {
                 <div
                   style={{
                     background:
-                      "linear-gradient(180deg, #FFFFFF 0%, #DCFFE8 100%)",
+                      'linear-gradient(180deg, #FFFFFF 0%, #DCFFE8 100%)',
                   }}
                   className="bg-white p-6 rounded-xl shadow"
                 >
@@ -504,7 +502,6 @@ const DetailCategoryPage: React.FC = () => {
           </div>
         </div>
       </main>
-      <Footer />
     </>
   );
 };

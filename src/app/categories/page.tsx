@@ -1,108 +1,108 @@
-"use client";
+'use client';
 
-import React from "react";
-import styles from "@/app/categories/category.module.css";
-import Link from "next/link";
-import Footer from "../Footer";
-import { Box } from "@mui/material";
+import React from 'react';
+import styles from '@/app/categories/category.module.css';
+import Link from 'next/link';
+
+import { Box } from '@mui/material';
 
 const CategoryPage: React.FC = () => {
   const projects = [
     {
-      img: "/img/19.jpg",
-      name: "Hyperas Chain",
-      amount: "$2.000.000",
-      funded: "$1.500.00",
+      img: '/img/19.jpg',
+      name: 'Hyperas Chain',
+      amount: '$2.000.000',
+      funded: '$1.500.00',
       progress: 75,
-      category: "CÔNG NGHỆ",
+      category: 'CÔNG NGHỆ',
     },
     {
-      img: "/img/18.jpg",
-      name: "Hyperas Chain",
-      amount: "$2.000.000",
-      funded: "$1.500.00",
+      img: '/img/18.jpg',
+      name: 'Hyperas Chain',
+      amount: '$2.000.000',
+      funded: '$1.500.00',
       progress: 75,
-      category: "CÔNG NGHỆ",
+      category: 'CÔNG NGHỆ',
     },
     {
-      img: "/img/16.jpg",
-      name: "Hyperas Chain",
-      amount: "$2.000.000",
-      funded: "$1.500.00",
+      img: '/img/16.jpg',
+      name: 'Hyperas Chain',
+      amount: '$2.000.000',
+      funded: '$1.500.00',
       progress: 75,
-      category: "CÔNG NGHỆ",
+      category: 'CÔNG NGHỆ',
     },
     {
-      img: "/img/17.jpg",
-      name: "Hyperas Chain",
-      amount: "$2.000.000",
-      funded: "$1.500.00",
+      img: '/img/17.jpg',
+      name: 'Hyperas Chain',
+      amount: '$2.000.000',
+      funded: '$1.500.00',
       progress: 75,
-      category: "CÔNG NGHỆ",
+      category: 'CÔNG NGHỆ',
     },
     {
-      img: "/img/19.jpg",
-      name: "Hyperas Chain",
-      amount: "$2.000.000",
-      funded: "$1.500.00",
+      img: '/img/19.jpg',
+      name: 'Hyperas Chain',
+      amount: '$2.000.000',
+      funded: '$1.500.00',
       progress: 75,
-      category: "CÔNG NGHỆ",
+      category: 'CÔNG NGHỆ',
     },
     {
-      img: "/img/18.jpg",
-      name: "Hyperas Chain",
-      amount: "$2.000.000",
-      funded: "$1.500.00",
+      img: '/img/18.jpg',
+      name: 'Hyperas Chain',
+      amount: '$2.000.000',
+      funded: '$1.500.00',
       progress: 75,
-      category: "CÔNG NGHỆ",
+      category: 'CÔNG NGHỆ',
     },
     {
-      img: "/img/16.jpg",
-      name: "Hyperas Chain",
-      amount: "$2.000.000",
-      funded: "$1.500.00",
+      img: '/img/16.jpg',
+      name: 'Hyperas Chain',
+      amount: '$2.000.000',
+      funded: '$1.500.00',
       progress: 75,
-      category: "CÔNG NGHỆ",
+      category: 'CÔNG NGHỆ',
     },
     {
-      img: "/img/17.jpg",
-      name: "Hyperas Chain",
-      amount: "$2.000.000",
-      funded: "$1.500.00",
+      img: '/img/17.jpg',
+      name: 'Hyperas Chain',
+      amount: '$2.000.000',
+      funded: '$1.500.00',
       progress: 75,
-      category: "CÔNG NGHỆ",
+      category: 'CÔNG NGHỆ',
     },
     {
-      img: "/img/19.jpg",
-      name: "Hyperas Chain",
-      amount: "$2.000.000",
-      funded: "$1.500.00",
+      img: '/img/19.jpg',
+      name: 'Hyperas Chain',
+      amount: '$2.000.000',
+      funded: '$1.500.00',
       progress: 75,
-      category: "CÔNG NGHỆ",
+      category: 'CÔNG NGHỆ',
     },
     {
-      img: "/img/18.jpg",
-      name: "Hyperas Chain",
-      amount: "$2.000.000",
-      funded: "$1.500.00",
+      img: '/img/18.jpg',
+      name: 'Hyperas Chain',
+      amount: '$2.000.000',
+      funded: '$1.500.00',
       progress: 75,
-      category: "CÔNG NGHỆ",
+      category: 'CÔNG NGHỆ',
     },
     {
-      img: "/img/16.jpg",
-      name: "Hyperas Chain",
-      amount: "$2.000.000",
-      funded: "$1.500.00",
+      img: '/img/16.jpg',
+      name: 'Hyperas Chain',
+      amount: '$2.000.000',
+      funded: '$1.500.00',
       progress: 75,
-      category: "CÔNG NGHỆ",
+      category: 'CÔNG NGHỆ',
     },
     {
-      img: "/img/17.jpg",
-      name: "Hyperas Chain",
-      amount: "$2.000.000",
-      funded: "$1.500.00",
+      img: '/img/17.jpg',
+      name: 'Hyperas Chain',
+      amount: '$2.000.000',
+      funded: '$1.500.00',
       progress: 75,
-      category: "CÔNG NGHỆ",
+      category: 'CÔNG NGHỆ',
     },
   ];
   return (
@@ -135,7 +135,7 @@ const CategoryPage: React.FC = () => {
                   type="radio"
                   name="investmentField"
                   value="tech"
-                />{" "}
+                />{' '}
                 Công nghệ
               </label>
               <label className="flex items-center gap-2 text-[20px] font-normal">
@@ -144,7 +144,7 @@ const CategoryPage: React.FC = () => {
                   type="radio"
                   name="investmentField"
                   value="e-commerce"
-                />{" "}
+                />{' '}
                 Thương mại điện tử
               </label>
               <label className="flex items-center gap-2 text-[20px] font-normal">
@@ -153,7 +153,7 @@ const CategoryPage: React.FC = () => {
                   type="radio"
                   name="investmentField"
                   value="direct"
-                />{" "}
+                />{' '}
                 Đầu tư trực tiếp
               </label>
             </div>
@@ -167,7 +167,7 @@ const CategoryPage: React.FC = () => {
                   type="radio"
                   name="projectStatus"
                   value="all"
-                />{" "}
+                />{' '}
                 Tất cả
               </label>
               <label className="flex items-center gap-2 text-[20px] font-normal">
@@ -176,7 +176,7 @@ const CategoryPage: React.FC = () => {
                   type="radio"
                   name="projectStatus"
                   value="funding"
-                />{" "}
+                />{' '}
                 Đang gọi vốn
               </label>
               <label className="flex items-center gap-2 text-[20px] font-normal">
@@ -185,7 +185,7 @@ const CategoryPage: React.FC = () => {
                   type="radio"
                   name="projectStatus"
                   value="incubator"
-                />{" "}
+                />{' '}
                 Đã đầu tư & ươm tạo
               </label>
             </div>
@@ -199,7 +199,7 @@ const CategoryPage: React.FC = () => {
                   type="radio"
                   name="fundingStage"
                   value="all"
-                />{" "}
+                />{' '}
                 Tất cả
               </label>
               <label className="flex items-center gap-2 text-[20px] font-normal">
@@ -208,7 +208,7 @@ const CategoryPage: React.FC = () => {
                   type="radio"
                   name="fundingStage"
                   value="seed"
-                />{" "}
+                />{' '}
                 Seed
               </label>
               <label className="flex items-center gap-2 text-[20px] font-normal">
@@ -217,7 +217,7 @@ const CategoryPage: React.FC = () => {
                   type="radio"
                   name="fundingStage"
                   value="seriesA"
-                />{" "}
+                />{' '}
                 Series A
               </label>
               <label className="flex items-center gap-2 text-[20px] font-normal">
@@ -226,7 +226,7 @@ const CategoryPage: React.FC = () => {
                   type="radio"
                   name="fundingStage"
                   value="seriesB"
-                />{" "}
+                />{' '}
                 Series B
               </label>
               <label className="flex items-center gap-2 text-[20px] font-normal">
@@ -235,7 +235,7 @@ const CategoryPage: React.FC = () => {
                   type="radio"
                   name="fundingStage"
                   value="seriesC"
-                />{" "}
+                />{' '}
                 Series C
               </label>
               <label className="flex items-center gap-2 text-[20px] font-normal">
@@ -244,7 +244,7 @@ const CategoryPage: React.FC = () => {
                   type="radio"
                   name="fundingStage"
                   value="pe"
-                />{" "}
+                />{' '}
                 PE
               </label>
               <label className="flex items-center gap-2 text-[20px] font-normal">
@@ -253,7 +253,7 @@ const CategoryPage: React.FC = () => {
                   type="radio"
                   name="fundingStage"
                   value="ipo"
-                />{" "}
+                />{' '}
                 IPO
               </label>
             </div>
@@ -262,11 +262,11 @@ const CategoryPage: React.FC = () => {
         <div className="lg:w-[80%] md:w-full md:pt-10 bg-white">
           <Box
             sx={{
-              display: "grid",
+              display: 'grid',
               gridTemplateColumns: {
-                xs: "1fr",
-                sm: "repeat(2, 1fr)",
-                md: "repeat(3, 1fr)",
+                xs: '1fr',
+                sm: 'repeat(2, 1fr)',
+                md: 'repeat(3, 1fr)',
                 // lg: "repeat(4, 1fr)",
               },
               gap: 2,

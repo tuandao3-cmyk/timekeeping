@@ -1,42 +1,42 @@
-"use client";
+'use client';
 
-import React from "react";
-import styles from "@/app/Header.module.css";
-import Link from "next/link";
-import Image from "next/image";
+import React from 'react';
+import styles from '@/app/Header.module.css';
+import Link from 'next/link';
+import Image from 'next/image';
 
-import { ProjectCard } from "./components/card";
+import { ProjectCard } from './components/card';
 
 const newsData = [
   {
     title:
       'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
-    date: "30/08/2024",
-    imageUrl: "/img/20.png",
-    videoLink: "#",
+    date: '30/08/2024',
+    imageUrl: '/img/20.png',
+    videoLink: '#',
   },
   {
     title:
       'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
     subTitle:
       'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
-    date: "30/08/2024",
-    imageUrl: "/img/21.png",
-    link: "#",
+    date: '30/08/2024',
+    imageUrl: '/img/21.png',
+    link: '#',
   },
   {
     title:
       'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
-    date: "30/08/2024",
-    imageUrl: "/img/22.png",
-    link: "#",
+    date: '30/08/2024',
+    imageUrl: '/img/22.png',
+    link: '#',
   },
   {
     title:
       'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
-    date: "30/08/2024",
-    imageUrl: "/img/egabid.png",
-    link: "#",
+    date: '30/08/2024',
+    imageUrl: '/img/egabid.png',
+    link: '#',
   },
 ];
 
@@ -81,15 +81,15 @@ const NewsPage: React.FC = () => {
                   key={index}
                   className={`bg-white rounded-lg  overflow-hidden ${
                     index === 0
-                      ? "lg:row-span-2 lg:col-span-1 md:row-span-1  col-span-1"
-                      : ""
+                      ? 'lg:row-span-2 lg:col-span-1 md:row-span-1  col-span-1'
+                      : ''
                   }`}
                 >
                   <img
                     src={news.imageUrl}
                     alt=""
                     className={`w-full   object-cover object-center md:max-h-[160px] ${
-                      index === 0 ? "lg:h-auto" : ""
+                      index === 0 ? 'lg:h-auto' : ''
                     }
                    
                     `}
@@ -101,11 +101,11 @@ const NewsPage: React.FC = () => {
 
                     <div
                       className={`flex justify-between items-center ${
-                        index === 1 ? "absolute" : ""
+                        index === 1 ? 'absolute' : ''
                       }`}
                     >
                       <Link
-                        href={news.link || "#"}
+                        href={news.link || '#'}
                         className="md:text-[15px] text-[#03A638] text-sm font-semibold"
                       >
                         CÔNG NGHỆ
@@ -149,7 +149,7 @@ const NewsPage: React.FC = () => {
                   </h1>
                   <div className="flex justify-between items-center">
                     <Link
-                      href={news.link || "#"}
+                      href={news.link || '#'}
                       className="md:text-sm text-[#03A638] text-sm font-semibold"
                     >
                       CÔNG NGHỆ
@@ -173,7 +173,7 @@ const NewsPage: React.FC = () => {
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-8">
           <div className="w-full col-span-2 gap-3">
             {newsData.map((news: any, index: number) => (
-              <a href="#" className="p-4">
+              <a href="#" className="p-4" key={index}>
                 <div className="grid md:grid-cols-3  border-[1px]">
                   <img
                     src={news.imageUrl}
@@ -186,7 +186,7 @@ const NewsPage: React.FC = () => {
                     </h1>
                     <div className="flex justify-between items-center">
                       <Link
-                        href={news.link || "#"}
+                        href={news.link || '#'}
                         className="md:text-sm text-[#03A638] text-sm font-semibold"
                       >
                         CÔNG NGHỆ

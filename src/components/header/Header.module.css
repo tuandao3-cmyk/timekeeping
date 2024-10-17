@@ -15,7 +15,7 @@
 }
 
 .header::before {
-  content: "";
+  content: '';
   position: absolute;
   top: -10px;
   left: -10px;
@@ -116,7 +116,7 @@
   }
 }
 .heroSection {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -160,7 +160,9 @@
   border-radius: 15px;
   font-weight: bold;
   text-decoration: none;
-  transition: background-color 0.3s, color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
   background: linear-gradient(180deg, #48b96d 0%, #348563 50%, #205331 100%);
   color: #ffffff;
   border: none;
@@ -189,7 +191,7 @@
 
 .appleButton::before,
 .googleButton::before {
-  content: "";
+  content: '';
 }
 
 .ctaButtons {

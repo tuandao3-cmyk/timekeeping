@@ -1,34 +1,34 @@
-import React from "react";
-import styles from "./news.module.css";
+import React from 'react';
+import styles from './news.module.css';
 
 const newsData = [
   {
     title:
       'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
-    date: "30/08/2024",
-    image: "/img/20.png",
-    videoLink: "#",
+    date: '30/08/2024',
+    image: '/img/20.png',
+    videoLink: '#',
   },
   {
     title:
       'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
-    date: "30/08/2024",
-    image: "/img/21.png",
-    link: "#",
+    date: '30/08/2024',
+    image: '/img/21.png',
+    link: '#',
   },
   {
     title:
       'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
-    date: "30/08/2024",
-    image: "/img/22.png",
-    link: "#",
+    date: '30/08/2024',
+    image: '/img/22.png',
+    link: '#',
   },
   {
     title:
       'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
-    date: "30/08/2024",
-    image: "/img/23.png",
-    link: "#",
+    date: '30/08/2024',
+    image: '/img/23.png',
+    link: '#',
   },
 ];
 
@@ -55,7 +55,7 @@ const News = () => {
             </div>
           </a>
         </div>
-        <div className={"grid-cols-1"}>
+        <div className={'grid-cols-1'}>
           {newsData.slice(1).map((news, index) => (
             <div
               key={index}

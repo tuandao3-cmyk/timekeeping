@@ -1,130 +1,130 @@
-"use client";
+'use client';
 
-import React from "react";
-import styles from "@/app/products/product.module.css";
-import Link from "next/link";
-import Footer from "../Footer";
-import { useState, useEffect } from "react";
-import { ProfitIcon, MoneyIcon, PiggyBankIcon } from "@/components/icons";
-import ProductItem from "./components/productItem";
-import { start } from "repl";
-import Image from "next/image";
+import React from 'react';
+import styles from '@/app/products/product.module.css';
+import Link from 'next/link';
+
+import { useState, useEffect } from 'react';
+import { ProfitIcon, MoneyIcon, PiggyBankIcon } from '@/components/icons';
+import ProductItem from './components/productItem';
+import { start } from 'repl';
+import Image from 'next/image';
 
 const ProductPage: React.FC = () => {
   //
 
   const products = [
     {
-      title: "Đầu tư ngắn hạn",
-      type: "short",
+      title: 'Đầu tư ngắn hạn',
+      type: 'short',
       package: [
         {
-          title: "Gói cơ bản",
-          interest_rate: "3.5%",
+          title: 'Gói cơ bản',
+          interest_rate: '3.5%',
           descriptions: [
-            "Đầu tư thời gian ngắn hạn",
-            "Lợi nhuận hấp dẫn và cố định",
-            "Đầu tư an toàn, dễ dàng quản lý",
+            'Đầu tư thời gian ngắn hạn',
+            'Lợi nhuận hấp dẫn và cố định',
+            'Đầu tư an toàn, dễ dàng quản lý',
           ],
-          term: "3 tháng",
+          term: '3 tháng',
           image: <PiggyBankIcon />,
         },
         {
-          title: "Gói nâng cao",
-          interest_rate: "3.7%",
+          title: 'Gói nâng cao',
+          interest_rate: '3.7%',
           descriptions: [
-            "Đầu tư thời gian ngắn hạn",
-            "Lợi nhuận hấp dẫn và cố định",
-            "Đầu tư an toàn, dễ dàng quản lý",
+            'Đầu tư thời gian ngắn hạn',
+            'Lợi nhuận hấp dẫn và cố định',
+            'Đầu tư an toàn, dễ dàng quản lý',
           ],
-          term: "6 tháng",
+          term: '6 tháng',
           image: <MoneyIcon />,
         },
         {
-          title: "Gói cao cấp",
-          interest_rate: "4.8%",
+          title: 'Gói cao cấp',
+          interest_rate: '4.8%',
           descriptions: [
-            "Đầu tư thời gian ngắn hạn",
-            "Lợi nhuận hấp dẫn và cố định",
-            "Đầu tư an toàn, dễ dàng quản lý",
+            'Đầu tư thời gian ngắn hạn',
+            'Lợi nhuận hấp dẫn và cố định',
+            'Đầu tư an toàn, dễ dàng quản lý',
           ],
-          term: "12 tháng",
+          term: '12 tháng',
           image: <ProfitIcon />,
         },
       ],
     },
     {
-      title: "Đầu tư dài hạn",
-      type: "long",
+      title: 'Đầu tư dài hạn',
+      type: 'long',
       package: [
         {
-          title: "Gói cơ bản",
-          interest_rate: "3.5%",
+          title: 'Gói cơ bản',
+          interest_rate: '3.5%',
           descriptions: [
-            "Đầu tư thời gian ngắn hạn",
-            "Lợi nhuận hấp dẫn và cố định",
-            "Đầu tư an toàn, dễ dàng quản lý",
+            'Đầu tư thời gian ngắn hạn',
+            'Lợi nhuận hấp dẫn và cố định',
+            'Đầu tư an toàn, dễ dàng quản lý',
           ],
-          term: "3 tháng",
+          term: '3 tháng',
           image: <PiggyBankIcon />,
         },
         {
-          title: "Gói nâng cao",
-          interest_rate: "3.7%",
+          title: 'Gói nâng cao',
+          interest_rate: '3.7%',
           descriptions: [
-            "Đầu tư thời gian ngắn hạn",
-            "Lợi nhuận hấp dẫn và cố định",
-            "Đầu tư an toàn, dễ dàng quản lý",
+            'Đầu tư thời gian ngắn hạn',
+            'Lợi nhuận hấp dẫn và cố định',
+            'Đầu tư an toàn, dễ dàng quản lý',
           ],
-          term: "6 tháng",
+          term: '6 tháng',
           image: <MoneyIcon />,
         },
         {
-          title: "Gói cao cấp",
-          interest_rate: "4.8%",
+          title: 'Gói cao cấp',
+          interest_rate: '4.8%',
           descriptions: [
-            "Đầu tư thời gian ngắn hạn",
-            "Lợi nhuận hấp dẫn và cố định",
-            "Đầu tư an toàn, dễ dàng quản lý",
+            'Đầu tư thời gian ngắn hạn',
+            'Lợi nhuận hấp dẫn và cố định',
+            'Đầu tư an toàn, dễ dàng quản lý',
           ],
-          term: "12 tháng",
+          term: '12 tháng',
           image: <ProfitIcon />,
         },
       ],
     },
     {
-      title: "Đầu tư linh hoạt",
-      type: "flexible",
+      title: 'Đầu tư linh hoạt',
+      type: 'flexible',
       package: [
         {
-          title: "Hyperas Chain",
-          start_date: "20/10/2024",
-          descriptions: "Hyperas tận dụng sức mạnh từ hàng tỷ thiết bị... ",
+          title: 'Hyperas Chain',
+          start_date: '20/10/2024',
+          descriptions: 'Hyperas tận dụng sức mạnh từ hàng tỷ thiết bị... ',
           invested: 2500000,
           profit: 200000,
           sponsorship: 75,
           image: <img src="/img/hyperas_chain.png" alt="Hyperas Chain" />,
-          field: "CÔNG NGHỆ",
+          field: 'CÔNG NGHỆ',
         },
         {
-          title: "Salala AI",
-          start_date: "09/09/2024",
-          descriptions: "Hyperas tận dụng sức mạnh từ hàng tỷ thiết bị... ",
+          title: 'Salala AI',
+          start_date: '09/09/2024',
+          descriptions: 'Hyperas tận dụng sức mạnh từ hàng tỷ thiết bị... ',
           invested: 3000000,
           profit: 300000,
           sponsorship: 75,
           image: <img src="/img/salala_ai.png" alt="Salala AI" />,
-          field: "CÔNG NGHỆ",
+          field: 'CÔNG NGHỆ',
         },
         {
-          title: "Rapital Bank",
-          start_date: "08/09/2024",
-          descriptions: "Hyperas tận dụng sức mạnh từ hàng tỷ thiết bị... ",
+          title: 'Rapital Bank',
+          start_date: '08/09/2024',
+          descriptions: 'Hyperas tận dụng sức mạnh từ hàng tỷ thiết bị... ',
           invested: 2500000,
           profit: 100000,
           sponsorship: 75,
           image: <img src="/img/rapital_bank.png" alt="Rapital Bank" />,
-          field: "ĐẦU TƯ TRỰC TIẾP",
+          field: 'ĐẦU TƯ TRỰC TIẾP',
         },
       ],
     },
@@ -186,7 +186,7 @@ const ProductPage: React.FC = () => {
             </p>
             <button
               className="mt-4 px-4 py-2 bg-[#48B96D] text-white rounded-[30px] hover:bg-[#2d834a] max-w-[250px] transition-shadow duration-300"
-              style={{ boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)" }}
+              style={{ boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)' }}
             >
               Đăng kí ngay!
             </button>
@@ -214,16 +214,20 @@ const ProductPage: React.FC = () => {
       {/* Các gói đầu tư */}
       <section className="w-full h-auto bg-white py-6 flex flex-col justify-center items-center">
         <h1 className="text-black font-bold text-2xl md:text-4xl text-center">
-          Các gói đầu tư tại HyraCap{" "}
+          Các gói đầu tư tại HyraCap{' '}
         </h1>
         {products.map((product: (typeof products)[0], index) => (
-          <div className="w-full h-auto bg-white px-1 flex flex-col justify-center items-left">
+          <div
+            className="w-full h-auto bg-white px-1 flex flex-col justify-center items-left"
+            key={index}
+          >
             <h2 className="text-black px-4 font-bold text-2xl md:text-3xl text-left md:text-[35px] text-[20px]">
               {product.title}
             </h2>
             <div className="flex gap-4 items-center  w-full overflow-y-auto py-8 md:px-8 ">
               {product.package.map((packageItem: any, index) => (
                 <ProductItem
+                  key={index}
                   descriptions={packageItem.descriptions}
                   image={packageItem.image}
                   interest_rate={packageItem.interest_rate}

@@ -1,54 +1,54 @@
-import React from "react";
+import React from 'react';
 
 const projects = [
   {
-    title: "Salala AI",
-    totalFunding: "$3.000.000",
-    currentFunding: "$1.500.00",
-    fundingPercent: "Được tài trợ 98%",
-    imageUrl: "/img/salala_ai.png",
+    title: 'Salala AI',
+    totalFunding: '$3.000.000',
+    currentFunding: '$1.500.00',
+    fundingPercent: 'Được tài trợ 98%',
+    imageUrl: '/img/salala_ai.png',
   },
   {
-    title: "Salala AI",
-    totalFunding: "$3.000.000",
-    currentFunding: "$1.500.00",
-    fundingPercent: "Được tài trợ 50%",
-    imageUrl: "/img/salala_egde.png",
+    title: 'Salala AI',
+    totalFunding: '$3.000.000',
+    currentFunding: '$1.500.00',
+    fundingPercent: 'Được tài trợ 50%',
+    imageUrl: '/img/salala_egde.png',
   },
   {
-    title: "Salala AI",
-    totalFunding: "$3.000.000",
-    currentFunding: "$1.500.00",
-    fundingPercent: "Được tài trợ 50%",
-    imageUrl: "/img/salala_ai_blockchain.png",
+    title: 'Salala AI',
+    totalFunding: '$3.000.000',
+    currentFunding: '$1.500.00',
+    fundingPercent: 'Được tài trợ 50%',
+    imageUrl: '/img/salala_ai_blockchain.png',
   },
   {
-    title: "Egabid",
-    totalFunding: "$3.000.000",
-    currentFunding: "$1.500.00",
-    fundingPercent: "Được tài trợ 50%",
-    imageUrl: "/img/egabid.png",
+    title: 'Egabid',
+    totalFunding: '$3.000.000',
+    currentFunding: '$1.500.00',
+    fundingPercent: 'Được tài trợ 50%',
+    imageUrl: '/img/egabid.png',
   },
   {
-    title: "Salala AI",
-    totalFunding: "$3.000.000",
-    currentFunding: "$1.500.00",
-    fundingPercent: "Được tài trợ 50%",
-    imageUrl: "/img/salala_ai1.png",
+    title: 'Salala AI',
+    totalFunding: '$3.000.000',
+    currentFunding: '$1.500.00',
+    fundingPercent: 'Được tài trợ 50%',
+    imageUrl: '/img/salala_ai1.png',
   },
   {
-    title: "Salala AI",
-    totalFunding: "$3.000.000",
-    currentFunding: "$1.500.00",
-    fundingPercent: "Được tài trợ 50%",
-    imageUrl: "/img/salala_ai_blockchain.png",
+    title: 'Salala AI',
+    totalFunding: '$3.000.000',
+    currentFunding: '$1.500.00',
+    fundingPercent: 'Được tài trợ 50%',
+    imageUrl: '/img/salala_ai_blockchain.png',
   },
   {
-    title: "Salala mini bot",
-    totalFunding: "$3.000.000",
-    currentFunding: "$1.500.00",
-    fundingPercent: "Được tài trợ 50%",
-    imageUrl: "/img/salala_minibot.png",
+    title: 'Salala mini bot',
+    totalFunding: '$3.000.000',
+    currentFunding: '$1.500.00',
+    fundingPercent: 'Được tài trợ 50%',
+    imageUrl: '/img/salala_minibot.png',
   },
 ];
 
@@ -85,7 +85,7 @@ const ProjectGrid: React.FC = () => {
         <ProjectCard
           key={index}
           project={project}
-          className={index == 0 ? "md:col-span-2" : ""}
+          className={index == 0 ? 'md:col-span-2' : ''}
         />
       ))}
     </div>

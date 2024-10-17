@@ -1,5 +1,5 @@
 .newsSection {
-  background-image: url("../../public/img/newsab.jpg");
+  background-image: url('../../public/img/newsab.jpg');
   background-size: cover;
   padding: 40px;
   border-radius: 10px;

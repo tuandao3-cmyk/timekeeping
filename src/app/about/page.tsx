@@ -1,13 +1,12 @@
-"use client";
+'use client';
 
-import React from "react";
-import styles from "@/app/about/about.module.css";
-import Link from "next/link";
-import Footer from "@/app/Footer";
-import Partner from "../partner";
-import ArticlesSection from "../ArticlesSection";
-import PressSection from "../PressSection";
-import News from "../news";
+import React from 'react';
+import styles from '@/app/about/about.module.css';
+import Link from 'next/link';
+import Partner from '../partner';
+import ArticlesSection from '../ArticlesSection';
+import PressSection from '../PressSection';
+import News from '../news';
 
 const AboutPage: React.FC = () => {
   return (
@@ -91,7 +90,7 @@ const AboutPage: React.FC = () => {
         </div>
       </div>
       <Partner />
-      <div className={styles["about-container"]}>
+      <div className={styles['about-container']}>
         <section className={styles.vision}>
           <div className={styles.textContent}>
             <h2>Tầm nhìn</h2>

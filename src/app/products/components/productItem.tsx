@@ -1,5 +1,5 @@
-import { TimeLeft } from "@/components/icons";
-import ProgressBar from "@/components/progress";
+import { TimeLeft } from '@/components/icons';
+import ProgressBar from '@/components/progress';
 
 interface ProductItemProps {
   title: string;
@@ -17,8 +17,8 @@ interface ProductItemProps {
 
 function ProductItem(props: ProductItemProps) {
   switch (props.type) {
-    case "short":
-    case "long":
+    case 'short':
+    case 'long':
       return (
         <div className="package-item min-w-[200px] bg-white shadow-md p-4 rounded-lg md:gap-6  border-t-8 border-[#00922F] flex justify-center items-center flex-col flex-grow">
           <div className="w-20 h-20 rounded-full flex justify-center items-center border-2 border-[#00922F] ">
@@ -42,7 +42,7 @@ function ProductItem(props: ProductItemProps) {
           }
           <div
             className="w-[80%] flex justify-center items-center border-dashed border-[#D6D6D6]"
-            style={{ borderWidth: "0.5px" }}
+            style={{ borderWidth: '0.5px' }}
           ></div>
 
           <div
@@ -54,7 +54,7 @@ function ProductItem(props: ProductItemProps) {
           </div>
         </div>
       );
-    case "flexible":
+    case 'flexible':
       return (
         <div className="package-item min-w-[200px] bg-white  rounded-lg md:gap-6   flex justify-center items-left flex-col flex-grow gap-3">
           {props.image}
@@ -70,11 +70,11 @@ function ProductItem(props: ProductItemProps) {
           <ProgressBar progress={props.sponsorship} />
           <div className="flex ">
             <p className="text-[15px]">
-              Đã đầu tư{" "}
+              Đã đầu tư{' '}
               <span className="font-bold text-black">${props.invested}</span>
             </p>
             <p className="text-[15px]">
-              Được tài trợ{" "}
+              Được tài trợ{' '}
               <span className="font-bold text-black">
                 ${props.sponsorship}%
               </span>

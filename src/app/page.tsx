@@ -1,14 +1,12 @@
-import React from "react";
-import Head from "next/head";
-import Header from "@/components/header";
-import styles from "./page.module.css";
-import Partner from "@/app/partner";
-import ProjectSection from "@/app/ProjectSection";
-import PressSection from "@/app/PressSection";
-import ArticlesSection from "@/app/ArticlesSection";
-import Footer from "@/app/Footer";
-import Download from "./download";
-import News from "./news";
+import React from 'react';
+
+import styles from './page.module.css';
+import Partner from '@/app/partner';
+import ProjectSection from '@/app/ProjectSection';
+import PressSection from '@/app/PressSection';
+
+import Download from './download';
+import News from './news';
 const Home: React.FC = () => {
   return (
     <div className={styles.container}>

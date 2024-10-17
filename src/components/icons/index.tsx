@@ -1,7 +1,7 @@
-export const PiggyBankIcon = (props: React.ComponentProps<"svg">) => (
+export const PiggyBankIcon = (props: React.ComponentProps<'svg'>) => (
   <svg
-    width={props.width || "38"}
-    height={props.height || "38"}
+    width={props.width || '38'}
+    height={props.height || '38'}
     viewBox="0 0 38 38"
     fill="currentColor"
     xmlns="http://www.w3.org/2000/svg"
@@ -28,10 +28,10 @@ export const PiggyBankIcon = (props: React.ComponentProps<"svg">) => (
   </svg>
 );
 
-export const MoneyIcon = (props: React.ComponentProps<"svg">) => (
+export const MoneyIcon = (props: React.ComponentProps<'svg'>) => (
   <svg
-    width={props.width || "38"}
-    height={props.height || "38"}
+    width={props.width || '38'}
+    height={props.height || '38'}
     viewBox="0 0 38 38"
     fill="currentColor"
     {...props}
@@ -58,10 +58,10 @@ export const MoneyIcon = (props: React.ComponentProps<"svg">) => (
   </svg>
 );
 
-export const ProfitIcon = (props: React.ComponentProps<"svg">) => (
+export const ProfitIcon = (props: React.ComponentProps<'svg'>) => (
   <svg
-    width={props.width || "38"}
-    height={props.height || "38"}
+    width={props.width || '38'}
+    height={props.height || '38'}
     viewBox="0 0 38 38"
     fill="currentColor"
     {...props}
@@ -88,10 +88,10 @@ export const ProfitIcon = (props: React.ComponentProps<"svg">) => (
   </svg>
 );
 
-export const TimeLeft = (props: React.ComponentProps<"svg">) => (
+export const TimeLeft = (props: React.ComponentProps<'svg'>) => (
   <svg
-    width={props.width || "19"}
-    height={props.height || "18"}
+    width={props.width || '19'}
+    height={props.height || '18'}
     viewBox="0 0 19 18"
     fill="currentColor"
     {...props}

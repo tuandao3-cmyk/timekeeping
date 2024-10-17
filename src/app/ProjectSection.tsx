@@ -1,10 +1,10 @@
-import styles from "./ProjectSection.module.css";
-import ProjectGrid from "@/components/projectGrid";
+import styles from './ProjectSection.module.css';
+import ProjectGrid from '@/components/projectGrid';
 
 const ProjectSection = () => {
   return (
     <>
-      {" "}
+      {' '}
       <section className={styles.showcaseSection}>
         <h2 className={styles.title}>Dự án đang gọi vốn</h2>
         <div className="w-full flex justify-center items-center">
@@ -23,7 +23,7 @@ const ProjectSection = () => {
                   <div className={styles.progress}>
                     <div
                       className={styles.progressBar}
-                      style={{ width: "75%" }}
+                      style={{ width: '75%' }}
                     ></div>
                   </div>
                   <div className={styles.fundingInfo}>
@@ -48,7 +48,7 @@ const ProjectSection = () => {
                   <div className={styles.progress}>
                     <div
                       className={styles.progressBar}
-                      style={{ width: "98%" }}
+                      style={{ width: '98%' }}
                     ></div>
                   </div>
                   <div className={styles.fundingInfo}>
@@ -73,7 +73,7 @@ const ProjectSection = () => {
                   <div className={styles.progress}>
                     <div
                       className={styles.progressBar}
-                      style={{ width: "75%" }}
+                      style={{ width: '75%' }}
                     ></div>
                   </div>
                   <div className={styles.fundingInfo}>
@@ -98,7 +98,7 @@ const ProjectSection = () => {
                   <div className={styles.progress}>
                     <div
                       className={styles.progressBar}
-                      style={{ width: "80%" }}
+                      style={{ width: '80%' }}
                     ></div>
                   </div>
                   <div className={styles.fundingInfo}>

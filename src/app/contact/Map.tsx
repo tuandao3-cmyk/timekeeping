@@ -13,9 +13,11 @@ L.Icon.Default.mergeOptions({
 
 const MapEvents = () => {
   const map = useMap();
-  
+
   useEffect(() => {
-    if (!map) return;
+    if (!map) {
+      return;
+    }
 
     const handleWheel = (e: WheelEvent) => {
       if (e.deltaY > 0) {
@@ -35,19 +37,21 @@ const MapEvents = () => {
   return null;
 };
 
-
 const Map: React.FC = () => {
-  const position: [number, number] = [20.9728503,105.7624381]; // Tọa độ
+  const position: [number, number] = [20.9728503, 105.7624381]; // Tọa độ
   return (
-    <MapContainer center={position} zoom={13} style={{ height: '100%', width: '100%' }} scrollWheelZoom={false}>
+    <MapContainer
+      center={position}
+      zoom={13}
+      style={{ height: '100%', width: '100%' }}
+      scrollWheelZoom={false}
+    >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
       <Marker position={position}>
-        <Popup>
-          Vị trí của công ty
-        </Popup>
+        <Popup>Vị trí của công ty</Popup>
       </Marker>
     </MapContainer>
   );

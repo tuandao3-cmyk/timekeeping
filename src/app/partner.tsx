@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "./Partner.module.css";
+import React from 'react';
+import styles from './Partner.module.css';
 
 const ProjectGrid: React.FC = () => {
   return (
@@ -20,7 +20,7 @@ const ProjectGrid: React.FC = () => {
           alt="Pencil"
           className={styles.partnerLogo}
           style={{
-            width: "200px",
+            width: '200px',
           }}
         />
         <img

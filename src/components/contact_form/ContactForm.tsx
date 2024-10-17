@@ -1,13 +1,13 @@
 // components/ContactForm.tsx
-import { useState } from "react";
+import { useState } from 'react';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    phone: "",
-    role: "",
-    message: "",
+    fullName: '',
+    email: '',
+    phone: '',
+    role: '',
+    message: '',
   });
 
   const handleChange = (
@@ -22,25 +22,25 @@ const ContactForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const response = await fetch("/api/contact", {
-      method: "POST",
+    const response = await fetch('/api/contact', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(formData),
     });
 
     if (response.ok) {
-      alert("Form submitted successfully!");
+      alert('Form submitted successfully!');
       setFormData({
-        fullName: "",
-        email: "",
-        phone: "",
-        role: "",
-        message: "",
+        fullName: '',
+        email: '',
+        phone: '',
+        role: '',
+        message: '',
       });
     } else {
-      alert("Error submitting the form.");
+      alert('Error submitting the form.');
     }
   };
 
@@ -97,7 +97,7 @@ const ContactForm = () => {
                   name="role"
                   value="Startup"
                   className="mr-2"
-                  checked={formData.role === "Startup"}
+                  checked={formData.role === 'Startup'}
                   onChange={handleChange}
                 />
                 Startup
@@ -109,7 +109,7 @@ const ContactForm = () => {
                   name="role"
                   value="Investor"
                   className="mr-2"
-                  checked={formData.role === "Investor"}
+                  checked={formData.role === 'Investor'}
                   onChange={handleChange}
                 />
                 Nhà đầu tư
@@ -121,7 +121,7 @@ const ContactForm = () => {
                   name="role"
                   value="Expert"
                   className="mr-2"
-                  checked={formData.role === "Expert"}
+                  checked={formData.role === 'Expert'}
                   onChange={handleChange}
                 />
                 Chuyên gia
