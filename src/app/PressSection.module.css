@@ -40,6 +40,9 @@
       width: 150px;
       height: 75px;
     }
+    .logoGrid {
+        grid-template-columns: repeat(2, 1fr);
+    } 
   }
   
   @media (max-width: 480px) {
@@ -47,4 +50,7 @@
       width: 120px;
       height: 60px;
     }
+    .logoGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }  
   }

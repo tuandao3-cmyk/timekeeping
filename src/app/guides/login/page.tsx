@@ -9,37 +9,35 @@ import DownloadSection from "../downloadSection";
 import { usePathname } from "next/navigation";
 
 const Login: React.FC = () => {
-const pathname = usePathname();
-return (
-    <>
-        <header className={styles.header}>
-            <nav className={styles.nav}>
-            <div className={styles.logo}>
-                <Link href="/">
-                    <button className={styles.logoButton}>
-                       
-                    </button>
-                </Link>
-            </div>
-            <Link href="/" className={styles.link}>Trang chủ</Link>
-            <Link href="/about" className={styles.link}>Giới thiệu</Link>
-            <Link href="/products" className={styles.link}>Sản phẩm</Link>
-            <Link href="/categories" className={styles.link}>Danh mục</Link>
-            <Link href="/guides" className={styles.link}>Hướng dẫn</Link>
-            <Link href="/news" className={styles.link}>Tin tức</Link>
-            <Link href="/reports" className={styles.link}>Báo cáo</Link>
-            <Link href="/contact" className={styles.link}>Liên hệ</Link>
-
-
-        </nav>
-            <div className={styles.hero}>
-                <div className={styles.heroContent}>
-                    <h1>Hướng dẫn đầu tư vào HyraCap</h1>
-                    <p>Hướng dẫn các bước thực hiện đầu tư</p>
+    const pathname = usePathname();
+    return (
+        <>
+            <header className={styles.header}>
+                <nav className={styles.nav}>
+                    <div className={styles.logo}>
+                        <Link href="/">
+                            <button className={styles.logoButton}>
+                               
+                            </button>
+                        </Link>
+                    </div>
+                    <Link href="/" className={styles.link}>Trang chủ</Link>
+                    <Link href="/about" className={styles.link}>Giới thiệu</Link>
+                    <Link href="/products" className={styles.link}>Sản phẩm</Link>
+                    <Link href="/categories" className={styles.link}>Danh mục</Link>
+                    <Link href="/guides" className={styles.link}>Hướng dẫn</Link>
+                    <Link href="/news" className={styles.link}>Tin tức</Link>
+                    <Link href="/reports" className={styles.link}>Báo cáo</Link>
+                    <Link href="/contact" className={styles.link}>Liên hệ</Link>
+                </nav>
+                <div className={styles.hero}>
+                    <div className={styles.heroContent}>
+                        <h1>Hướng dẫn đầu tư vào HyraCap</h1>
+                        <p>Hướng dẫn các bước thực hiện đầu tư</p>
+                    </div>
                 </div>
-            </div>
                 <div className={styles.searchContainer}>
-                        <button className={styles.searchButton}>
+                    <button className={styles.searchButton}>
                         <FiSearch />
                     </button>
                     <input 
@@ -48,10 +46,10 @@ return (
                         className={styles.searchInput}
                     />
                 </div>
-        </header>
-        <div className={styles.contentContainer}>
-            <aside className={styles.sidebar}>
-            <nav>
+            </header>
+            <div className={styles.contentContainer}>
+                <aside className={styles.sidebar}>
+                    <nav>
                         <ul>
                             <li>
                                 <Link href="/guides" className={pathname === '/guides' ? styles.active : ''}>
@@ -64,40 +62,40 @@ return (
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/guides/kyc" className={pathname === '/guides/kyc' ? styles.active : ''}>
+                                <Link href="/guides" className={pathname === '/guides' ? styles.active : ''}>
                                     Xác thực eKYC
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/guides/contract" className={pathname === '/guides/contract' ? styles.active : ''}>
+                                <Link href="/guides" className={pathname === '/guides' ? styles.active : ''}>
                                     Ký hợp đồng
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/guides/products" className={pathname === '/guides/products' ? styles.active : ''}>
+                                <Link href="/guides" className={pathname === '/guides' ? styles.active : ''}>
                                     Sản phẩm
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/guides/transactions" className={pathname === '/guides/transactions' ? styles.active : ''}>
+                                <Link href="/guides" className={pathname === '/guides' ? styles.active : ''}>
                                     Giao dịch
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/guides/password" className={pathname === '/guides/password' ? styles.active : ''}>
+                                <Link href="/guides" className={pathname === '/guides' ? styles.active : ''}>
                                     Quên mật khẩu
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/guides/logout" className={pathname === '/guides/logout' ? styles.active : ''}>
+                                <Link href="/guides" className={pathname === '/guides' ? styles.active : ''}>
                                     Đăng xuất
                                 </Link>
                             </li>
                         </ul>
                     </nav>
-            </aside>
-            <main className={styles.mainContent}>
-                    <p className={styles.breadcrumb}>Hướng dẫn &gt; Đăng nhập</p>
+                </aside>
+                <main className={styles.mainContent}>
+                    <p>Hướng dẫn &gt; Đăng nhập</p>
                     <div className={styles.videoContainer}>
                         <div className={styles.videoWrapper}>
                             <iframe 
@@ -122,29 +120,31 @@ return (
                                 <li>Bấm Đăng nhập</li>
                             </ul>
                         </li>
+                    </ul>
                     <div className={styles.imageContainer}>
                         <img src="/img/dnhap.png" alt="Màn hình đăng nhập HyraCap" />
                     </div>
-                    <li>Bước 3: Nhập mã xác thực OTP và bấm Tiếp tục
-                        <p>Sau khi nhập mã OTP ứng dụng hiển thị màn hình Tổng quan với popup giới thiệu khách hàng. Bạn có thể Nhập mã giới thiệu hoặc bỏ qua.</p>
-                        <p>Trên màn hình Tổng quan có thể tiếp tục sử dụng các chức năng của HyraCap</p>
-                    </li>
+                    <ul>
+                        <li>Bước 3: Nhập mã xác thực OTP và bấm Tiếp tục
+                            <p>Sau khi nhập mã OTP ứng dụng hiển thị màn hình Tổng quan với popup giới thiệu khách hàng. Bạn có thể Nhập mã giới thiệu hoặc bỏ qua.</p>
+                            <p>Trên màn hình Tổng quan có thể tiếp tục sử dụng các chức năng của HyraCap</p>
+                        </li>
                     </ul>
                     <div className={styles.imageContainer}>
-                <img src="/img/otp1.png" alt="Màn hình nhập OTP" width={300} height={600} />
-                <img src="/img/popup.png" alt="Màn hình popup giới thiệu" width={300} height={600} />
-                <img src="/img/dashboard.png" alt="Màn hình tổng quan" width={300} height={600} />
-            </div>
+                        <img src="/img/otp1.png" alt="Màn hình nhập OTP" width={300} height={600} />
+                        <img src="/img/popup.png" alt="Màn hình popup giới thiệu" width={300} height={600} />
+                        <img src="/img/dashboard.png" alt="Màn hình tổng quan" width={300} height={600} />
+                    </div>
                     <p className={styles.conclusion}>
                         Như vậy, HyraCap đã thực hiện xong phần hướng dẫn Đăng nhập sử dụng ứng dụng HyraCap.<br/>
                         Chúc Quý Khách thành công!
                     </p>
                 </main>
-            
-        </div>
-        <DownloadSection />
-        <Footer />
-    </>
-);
+            </div>
+            <DownloadSection />
+            <Footer />
+        </>
+    );
 };
+
 export default Login;
