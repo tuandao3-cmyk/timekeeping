@@ -21,9 +21,14 @@ const Home: React.FC = () => {
                     if (entry.isIntersecting) {
                         setIsRightFrameVisible(true);
                     }
+                    else {
+                        setIsRightFrameVisible(false);
+                    }
                 });
             },
-            { threshold: 0.1 }
+            { threshold: 0.1,
+                rootMargin: "0px 0px -10% 0px"
+            }
         );
 
         if (rightFrameRef.current) {
@@ -53,16 +58,16 @@ const Home: React.FC = () => {
                         Tham gia cùng chúng tôi
                     </button>
                     
-                    <div className="flex flex-wrap justify-between mt-8 sm:mt-12 space-y-4 sm:space-y-0 sm:space-x-4 md:space-x-4 lg:space-x-12 h-[50%]">
-                        <div className="w-[26%] h-[40%] mb-2 bg-[#FFFFFF]/10 rounded-lg p-3 flex flex-col justify-center">
+                    <div className="flex flex-wrap  mt-8 sm:mt-12 space-y-4 sm:space-y-0 sm:space-x-4 md:space-x-4 lg:space-x-4 h-[50%]">
+                        <div className="w-[30%] h-[40%] mb-2 bg-[#FFFFFF]/10 rounded-lg p-3 flex flex-col justify-center">
                             <p className="text-green-500 text-xl sm:text-2xl font-bold">$1B+</p>
                             <p className="text-[#FFFFFF]/60 text-xs sm:text-sm">Tổng số đã huy động</p>
                         </div>
-                        <div className="w-[26%] h-[40%] bg-[#FFFFFF]/10 rounded-lg p-3 flex flex-col justify-center">
+                        <div className="w-[30%] h-[40%] bg-[#FFFFFF]/10 rounded-lg p-3 flex flex-col justify-center">
                             <p className="text-green-500 mb-2 text-xl sm:text-2xl font-bold">50M+</p>
                             <p className="text-[#FFFFFF]/60 text-xs sm:text-sm">Đã đầu tư thành công</p>
                         </div>
-                        <div className="w-[26%] h-[40%] bg-[#FFFFFF]/10 rounded-lg p-3 flex flex-col justify-center">
+                        <div className="w-[30%] h-[40%] bg-[#FFFFFF]/10 rounded-lg p-3 flex flex-col justify-center">
                             <p className="text-green-500 mb-2 text-xl sm:text-2xl font-bold">771+</p>
                             <p className="text-[#FFFFFF]/60 text-xs sm:text-sm">Nhà đầu tư tham gia</p>
                         </div>
@@ -72,7 +77,9 @@ const Home: React.FC = () => {
                 {/* Phần bên phải */}
                 <div 
                     ref={rightFrameRef} 
-                    className={`w-full md:w-1/2 min-h-[90vh] relative mt-8 md:mt-0 ${isRightFrameVisible ? styles.rightFrameAnimate : 'opacity-0'}`}
+                    className={`w-full md:w-1/2 min-h-[90vh] relative mt-8 md:mt-0 transition-all duration-500 ${
+                        isRightFrameVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'
+                    }`}
                 >
                     <div className="relative w-full h-full">
                     <div className="absolute w-[80%] sm:w-[70%] md:w-[60%] h-[65%] sm:h-[70%] md:h-[65%] top-[5%] sm:top-[8%] md:top-[10%] right-[10%] md:right-[5%]">

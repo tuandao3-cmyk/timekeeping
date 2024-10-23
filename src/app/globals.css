@@ -21,5 +21,5 @@ body {
 }
 
 .animate-in {
-  animation: slideIn 1.5s ease none;
+  animation: slideIn 1.5s ease forwards;
 }
