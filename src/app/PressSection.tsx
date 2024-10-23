@@ -13,20 +13,24 @@ const pressLogos = [
 
 const PressSection = () => {
     return (
-        <section className="py-8">
-            <h2 className="text-2xl text-center mb-8 font-bold">
-                Đối tác truyền thông
+        <section className={styles.pressSection}>
+            <h2 className={styles.title}>
+                TRUYỀN THÔNG NÓI GÌ VỀ CHÚNG TÔI
             </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 py-3 px-11">
-                {pressLogos.map((logo, index) => (
-                    <div key={index} className={styles.logoWrapper}>
-                        <img
-                            src={logo.src}
-                            alt={logo.name}
-                            className={styles.logo}
-                        />
-                    </div>
-                ))}
+            <p className="font-inter text-[#000000]/60 font-normal text-base leading-6 max-w-[54%] mx-auto mb-4 text-center">
+            Khám phá các bài viết và nhận xét từ báo chí, nơi chúng tôi được công nhận là một trong những nền tảng đầu tư hàng đầu, mang lại cơ hội và giá trị bền vững cho nhà đầu tư.
+            </p>
+            <div className={styles.logoContainer}>
+               
+                    {pressLogos.map((logo, index) => (
+                        <div key={index} className={styles.logoWrapper}>
+                            <img
+                                src={logo.src}
+                                alt={logo.name}
+                                className={styles.logo}
+                            />
+                        </div>
+                    ))}             
             </div>
         </section>
     );

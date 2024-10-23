@@ -1,9 +1,9 @@
 .newsSection {
-  background-image: url('../../public/img/newsab.jpg');
+  /* background-image: url('../../public/img/newsab.jpg'); */
   background-size: cover;
   padding: 40px;
   border-radius: 10px;
-  color: white;
+  color: #04141A;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -15,9 +15,10 @@
 }
 
 .title {
-    text-align: center;
+    text-align: left;
     font-size: 2rem;
     margin-bottom: 30px;
+    font-weight: bold;
 }
 
 .newsContainer {
