@@ -46,7 +46,7 @@ const Home: React.FC = () => {
 
     return (
         <div className={styles.container}>
-            <div className="bg-[#07212C] text-white p-8 flex min-h-[90vh]">
+            <div className="bg-[#07212C] text-white p-8 flex min-h-[800px]">
                 {/* Phần bên trái */}
                 <div className="w-full md:ml-[50px]  md:w-1/2 md:max-w-[45%] px-4 md:pr-8">
                     <h1 className="font-inter font-bold pt-[130px]   max-w-[450px]  md:leading-[48px] text-[32px] mb-4">
@@ -59,7 +59,7 @@ const Home: React.FC = () => {
                         Tham gia cùng chúng tôi
                     </button>
                     
-                    <div className="flex flex-wrap max-sm:justify-between mt-8 space-y-0 sm:space-x-4 md:space-x-4 lg:space-x-4 h-[50%]">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 justify-items-center mt-8 space-y-0 space-x-4 h-[50%]">
                         <div className="w-[172px] h-[150px] bg-[#FFFFFF]/10 rounded-lg p-1 md:p-3 pl-5 flex flex-col justify-center">
                             <p className="text-[#48B96D] lg:pl-4 mb-4 text-xl leading-8 sm:text-2xl font-semibold">$1B+</p>
                             <p className="text-[#FFFFFF]/80 lg:pl-4 sm:max-w-[105px]  text-xs sm:text-sm">Tổng số đã huy động</p>
@@ -146,7 +146,7 @@ const Home: React.FC = () => {
             <div className="bg-white py-16">
                 <div className="container mx-auto px-4">
                     <h2 className="text-3xl font-bold text-center mb-12">GIẢI PHÁP ĐẦU TƯ VƯỢT TRỘI</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
                         {[
                             {
                                 icon: "/img/icon/icon15.png",
@@ -166,7 +166,7 @@ const Home: React.FC = () => {
                         ].map((item, index) => (
                             <div 
                                 key={index} 
-                                className="bg-[#F3F7F4] p-6 rounded-[1.25rem] w-[400px] h-[300px] transition-all duration-300 hover:bg-[#48B96D] hover:text-white group"
+                                className="bg-[#F3F7F4] p-6 rounded-[1.25rem] w-[250px] md:w-[400px]  h-[300px] transition-all duration-300 hover:bg-[#48B96D] hover:text-white group"
                             >
                                 <img src={item.icon} alt={item.title} className="w-16 h-16 mb-4" />
                                 <h3 className="text-2xl text-[#000000]/90 leading-8 group-hover:text-white font-inter font-semibold mb-2">{item.title}</h3>

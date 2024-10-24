@@ -57,7 +57,7 @@ const FeedbackSection: React.FC = () => {
   return (
     <div className="bg-[#F3F7F4] py-16 relative overflow-hidden">
       {/* Vòng tròn đồng tâm */}
-      <div className="absolute top-[55%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0">
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0">
         {/* <div className="w-[800px] h-[800px] rounded-full border-2 border-[#48B96D] opacity-20"></div> */}
         <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] rounded-full border-2 border-[#48B96D] opacity-20 transform -translate-x-1/2 -translate-y-1/2"></div>
         <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] rounded-full border-2 border-[#48B96D] opacity-20 transform -translate-x-1/2 -translate-y-1/2"></div>
@@ -69,7 +69,7 @@ const FeedbackSection: React.FC = () => {
   <p className="text-center font-inter text-3xl leading-10 text-gray-600 mb-12 max-w-[42vw] mx-auto">
     HYRACAP LUÔN QUAN TÂM ĐẾN PHẢN HỒI CỦA TỪNG KHÁCH HÀNG
   </p>
-  <div className="relative h-[90vh]">
+  <div className="relative h-[800px]">
     {feedbacks.map((feedback, index) => (
       <div
         key={feedback.id}

@@ -65,12 +65,12 @@ const News = () => {
                             </button>
                         </div>
                 </div>
-                <div className={styles.sideNews}>
+                <div className={`${styles.sideNews} flex flex-col h-full`}>
                     {newsData.slice(1).map((news, index) => (
-                        <div key={index} className={styles.newsItem}>
+                        <div key={index} className={`${styles.newsItem} flex-1`}>
                             <a
                                 href={news.link}
-                                className={`${styles.newsLink}`}
+                                className={`${styles.newsLink} h-full flex flex-col`}
                             >
                                 <div className={styles.newsContent}>
                                     <div className={styles.sideBorder}>

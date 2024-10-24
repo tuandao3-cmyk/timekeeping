@@ -167,7 +167,7 @@ const ProjectSlider: React.FC = () => {
                       <p className="text-gray-300 leading-6 text-sm mb-4">{project.description}</p>
                     </div>
                     <div>
-                      <div className="bg-white rounded-lg p-5 max-sm:m-1 m-3 mb-7">
+                      <div className="bg-white rounded-lg p-5 m-3 mb-7">
                         <p className="text-sm font-inter text-[#000000]/64 mb-1">MỤC TIÊU HUY ĐỘNG</p>
                         <p className="text-xl leading-6 font-semibold">${project.target.toLocaleString()}</p>
                         <div className="flex justify-between text-xs mt-2">
@@ -216,7 +216,7 @@ const ProjectSlider: React.FC = () => {
         <MdArrowForwardIos className="text-3xl text-gray-700 mr-1" />
       </div>
       <div className="flex justify-center mt-6 w-full pb-6">
-        <div className="bg-gray-200 h-2 rounded-full w-[85vw] ">
+        <div className="bg-gray-200 h-2 rounded-full hidden sm:block w-[85vw] ">
           <div 
             ref={progressBarRef} 
             className="bg-[#31814B] h-2 rounded-full transition-all duration-300"
