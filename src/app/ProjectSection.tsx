@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from './ProjectSection.module.css';
 import ProjectGrid from '@/components/projectGrid';
 

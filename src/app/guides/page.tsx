@@ -1,4 +1,4 @@
-'use client';
+    'use client';
 
 import React from 'react';
 import styles from '@/app/guides/guide.module.css';
@@ -13,41 +13,11 @@ const GuidePage: React.FC = () => {
   return (
     <>
       <header className={styles.header}>
-        <nav className={styles.nav}>
-          <div className={styles.logo}>
-            <Link href="/">
-              <button className={styles.logoButton}></button>
-            </Link>
-          </div>
-          <Link href="/" className={styles.link}>
-            Trang chủ
-          </Link>
-          <Link href="/about" className={styles.link}>
-            Giới thiệu
-          </Link>
-          <Link href="/products" className={styles.link}>
-            Sản phẩm
-          </Link>
-          <Link href="/categories" className={styles.link}>
-            Danh mục
-          </Link>
-          <Link href="/guides" className={styles.link}>
-            Hướng dẫn
-          </Link>
-          <Link href="/news" className={styles.link}>
-            Tin tức
-          </Link>
-          <Link href="/reports" className={styles.link}>
-            Báo cáo
-          </Link>
-          <Link href="/contact" className={styles.link}>
-            Liên hệ
-          </Link>
-        </nav>
+        
         <div className={styles.hero}>
           <div className={styles.heroContent}>
-            <h1>Hướng dẫn đầu tư vào HyraCap</h1>
-            <p>Hướng dẫn các bước thực hiện đầu tư</p>
+            <div className='font-bold text-4xl pb-5'>Hướng dẫn đầu tư vào HyraCap</div>
+            <div className='font-normal text-2xl'>Hướng dẫn các bước thực hiện đầu tư</div>
           </div>
         </div>
         <div className={styles.searchContainer}>
