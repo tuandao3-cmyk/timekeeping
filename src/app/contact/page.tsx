@@ -11,7 +11,7 @@ const Map = dynamic(() => import('./Map'), { ssr: false });
 
 const ContactPage: React.FC = () => {
     return (
-        <div className="container mx-auto px-11">
+        <div className=" px-[120px] my-8 max-md:!px-8">
             <h1 className="text-4xl font-bold text-start mb-10">
                 Liên hệ với chúng tôi
             </h1>

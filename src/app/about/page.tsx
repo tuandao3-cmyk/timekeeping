@@ -145,7 +145,7 @@ const AboutPage: React.FC = () => {
     <>
       {/* <div className="max-h-max"> */}
       <div className="bg-[#07212C] min-h-[820px]  w-[100%] flex flex-col justify-end items-end relative px-32">
-        <div className="flex justify-between items-center h-auto w-full mt-16">
+        <div className="flex justify-between items-center h-auto w-full mt-16 max-md:!flex-col">
           <div className="flex-1 gap-2">
             <p className="text-[40px] leading-[56px] text-white font-bold uppercase">
               Investment Fund
@@ -157,8 +157,6 @@ const AboutPage: React.FC = () => {
               Nurturing Innovation
             </p>
           </div>
-
-
           <div className="flex-1 flex flex-col gap-[32px] justify-end items-end">
             <p className="text-[20px] text-[#F3F7F4] leading-[32px] max-w-[500px]">
               We are committed to investing in innovative startups and
@@ -256,8 +254,6 @@ const AboutPage: React.FC = () => {
               </li>
             </ul>
           </div>
-
-
           <div className={styles.imageContent}>
             <img src="/img/about/about1.svg" alt="Vision illustration" />
           </div>
@@ -327,11 +323,11 @@ const AboutPage: React.FC = () => {
             </ul>
           </div>
           <div className={styles.imageContent}>
-            <img src="/img/mission.png" alt="Mission illustration" />
+            <img src="/img/about/sm.svg" alt="Mission illustration" />
           </div>
         </section>
         <section className={styles.values}>
-         <div className='flex flex-col text-center gap-10 w-[780px]'>
+         <div className='flex flex-col text-center gap-10 w-[780px] max-[768px]:!w-full'>
             <h2>Giá trị cốt lõi</h2>
             <p>
               Tận hưởng giá trị đầu tư uy tín hàng đầu và đạt được những lợi nhuận
@@ -429,7 +425,7 @@ const AboutPage: React.FC = () => {
               nhuận hấp dẫn cho bạn! Bạn là người tạo ra tài chính của riêng
               mình và chúng tôi sẽ nâng tầm bạn thực hiện điều đó.
             </p>
-            <div className='w-[106%] flex flex-row justify-end items-center gap-1 '>
+            <div className='w-[106%] flex flex-row justify-end items-center gap-1 max-lg:!w-[90%]'>
               <div className='h-0.5 w-4 bg-[#48B96D]' />
               <span className="text-xl font-bold text-[#48B96D] uppercase">
                 HyraCap
@@ -443,7 +439,7 @@ const AboutPage: React.FC = () => {
       
         <div className={styles.leadershipSection}>
           <h2>Đội ngũ sáng lập</h2>
-          <p className='text-base text-[#323232] text-center w-3/5'>
+          <p className='text-base text-[#323232] text-center w-3/5 sm:!w-full'>
             Tận hưởng giá trị đầu tư uy tín hàng đầu và đạt được những lợi nhuận hấp dẫn cho bạn!
              Bạn là người tạo ra tài chính của riêng mình và chúng tôi sẽ nâng tầm bạn thực hiện điều đó. 
           </p>
@@ -506,7 +502,7 @@ const AboutPage: React.FC = () => {
             <img src='/img/about/contact.svg'/>
           </div>
 
-          <div className='flex-1 p-[1px] rounded-t-[40px] bg-gradient-to-b from-[#00000016] to-[#00000000]'>
+          <div className='flex-1 p-[1px] rounded-t-[40px] bg-gradient-to-b from-[#00000016] to-[#00000000] max-md:!w-full'>
             <div className={styles.contactForm}>
               <div className='p-8 rounded-t-[32px] bg-gradient-to-b from-[#00000014] to-[#00000000]'>
                 <h3>We’re open for any suggestion or just have a chat.</h3>
@@ -524,7 +520,7 @@ const AboutPage: React.FC = () => {
                     <span className='text-lg font-medium '>
                       Send 
                     </span>
-                    <img src='/img/icon/send.svg'/>
+                    <img src='/img/icon/sendBlack.svg'/>
 
                   </button>
                 </form>
