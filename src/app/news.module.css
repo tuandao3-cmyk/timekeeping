@@ -12,7 +12,7 @@
 
 .newsLink {
     text-decoration: none;
-    color: inherit; /* Không thay đổi màu của văn bản bên trong thẻ a */
+    color: inherit; 
 }
 
 .title {
@@ -35,7 +35,6 @@
     position: relative;
     display: flex;
     flex-direction: column; 
-    /* justify-content: center;  */
     align-items: center;
 }
 
@@ -94,7 +93,6 @@
 
 .newsItem {
     display: flex;
-    /* margin-bottom: 20px; */
     text-decoration: none;
     width: 100%;
     padding-bottom: 10px;
@@ -106,7 +104,7 @@
   max-width: 233px;
   height: auto;
   border-radius: 10px;
-  margin-right: 15px; /* Đẩy hình ảnh cách text một khoảng */
+  margin-right: 15px; 
   aspect-ratio: 1/1;
   object-fit: cover;
 }
