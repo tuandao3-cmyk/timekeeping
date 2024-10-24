@@ -79,7 +79,7 @@ const Footer: React.FC = () => {
     //   </footer>
     // </div>
 
-    <footer className="bg-white dark:bg-[#F6F6F6]">
+    <footer className="bg-[#04141A] dark:bg-[#F6F6F6]">
       <div className="mx-auto w-full max-w-screen-xl pt-16 pl-3 pr-3">
         <div>
           <img
@@ -90,8 +90,8 @@ const Footer: React.FC = () => {
         </div>
         <div className="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
           <div>
-            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-black">
-              Công ty cổ phần HYRATEK
+            <h2 className="mb-6 text-[#FFFFFF] text-base font-semibold leading-6 uppercase dark:text-black">
+            CÔNG TY CỔ PHẦN HYRATEK
             </h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
               <li className="mb-4 max-w-md">
@@ -104,8 +104,8 @@ const Footer: React.FC = () => {
             </ul>
           </div>
           <div>
-            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase  dark:text-black">
-              Công ty
+            <h2 className="mb-6 font-inter text-sm md:text-base leading-4 md:leading-6 font-semibold text-[#ffffff] uppercase  dark:text-black">
+              CÔNG TY
             </h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
               <li className="mb-4">
@@ -126,7 +126,7 @@ const Footer: React.FC = () => {
             </ul>
           </div>
           <div>
-            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase  dark:text-black">
+            <h2 className="mb-6 font-inter text-sm md:text-base leading-4 md:leading-6 font-semibold text-[#ffffff] uppercase  dark:text-black">
               Hệ sinh thái
             </h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
@@ -148,7 +148,7 @@ const Footer: React.FC = () => {
             </ul>
           </div>
           <div>
-            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase  dark:text-black">
+            <h2 className="mb-6 font-inter text-sm md:text-base leading-4 md:leading-6 font-semibold text-[#ffffff] uppercase  dark:text-black">
               Khác
             </h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">

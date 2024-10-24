@@ -1,4 +1,5 @@
-import React from 'react';
+'use client'
+import React, { useEffect, useRef, useState } from 'react';
 
 import styles from './page.module.css';
 import Partner from '@/app/partner';
@@ -7,78 +8,149 @@ import PressSection from '@/app/PressSection';
 
 import Download from './download';
 import News from './news';
+import FeedbackSection from './FeedbackSection';
+
 const Home: React.FC = () => {
+    const rightFrameRef = useRef<HTMLDivElement>(null);
+    const [isRightFrameVisible, setIsRightFrameVisible] = useState(false);
+    
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setIsRightFrameVisible(true);
+                    }
+                    else {
+                        setIsRightFrameVisible(false);
+                    }
+                });
+            },
+            { threshold: 0.1,
+                // rootMargin: "0px 0px -10% 0px"
+            }
+        );
+
+        if (rightFrameRef.current) {
+            observer.observe(rightFrameRef.current);
+        }
+
+        return () => {
+            if (rightFrameRef.current) {
+                observer.unobserve(rightFrameRef.current);
+            }
+        };
+    }, []);
+    
+
     return (
         <div className={styles.container}>
-            <div
-                className="relative w-full h-screen bg-cover bg-center"
-                style={{ backgroundImage: 'url("/img/00.jpg")' }}
-            >
-                <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-
-                <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 justify-between items-center h-full p-8 gap-4">
-                    <div className="w-full md:col-span-1 xl:col-span-1 lg:col-span-2  text-center md:text-left text-white">
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                            Đầu tư thông minh sinh lời tuyệt đỉnh
-                        </h1>
-                        <p className="mt-4 text-lg md:text-xl lg:text-2xl">
-                            Trải nghiệm ứng dụng đầu tư HyraCap mang lại lợi
-                            nhuận hấp dẫn dành cho bạn
-                        </p>
-                        <h2 className="mt-8 text-2xl md:text-3xl lg:text-4xl font-bold">
-                            Tải ứng dụng tại đây!
-                        </h2>
-                        <div className="mt-8 flex justify-center md:justify-start space-x-4">
-                            <a
-                                href="https://www.apple.com/app-store/"
-                                className="px-6 py-2 bg-black text-white rounded-lg text-lg hover:bg-gray-800 flex items-center justify-center space-x-2 w-full md:w-auto"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <img
-                                    src="/img/icon/apic2.png"
-                                    alt="App Store"
-                                    className="w-6 h-6"
-                                />
-                                <div>
-                                    <p className="text-xs font-thin">
-                                        Download on the
-                                    </p>
-                                    <h3>App Store</h3>
-                                </div>
-                            </a>
-
-                            <a
-                                href="https://play.google.com/store"
-                                className="px-6 py-2 bg-green-600 text-white rounded-lg text-lg hover:bg-green-700 flex items-center justify-center space-x-2 w-full md:w-auto"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <img
-                                    src="/img/icon/ggpl2.png"
-                                    alt="Google Play"
-                                    className="w-6 h-6"
-                                />
-                                <div>
-                                    <p className="text-xs font-thin">
-                                        Get it on
-                                    </p>
-                                    <h3>Google Play</h3>
-                                </div>
-                            </a>
+            <div className="bg-[#07212C] text-white p-8 flex min-h-[90vh]">
+                {/* Phần bên trái */}
+                <div className="w-full md:ml-[10%]  md:w-1/2 md:max-w-[45%] px-4 md:pr-8">
+                    <h1 className="font-inter font-bold pt-[20%] pb-[5%] sm:text-3xl md:leading-[56px] md:text-5xl mb-2 sm:mb-4">
+                        ĐẦU TƯ THÔNG MINH SINH LỜI TUYỆT ĐỈNH
+                    </h1>
+                    <p className="text-base font-inter pb-[5%] sm:text-base md:max-w-[85%] mb-4 sm:mb-6 text-[#FFFFFF]/60">
+                        Trải nghiệm ứng dụng đầu tư HyraCap mang lại lợi nhuận hấp dẫn dành cho bạn
+                    </p>
+                    <button className="bg-[#48B96D] text-[#ffffff] md:px-4 py-3 max-sm:px-4 rounded-full text-sm sm:text-base">
+                        Tham gia cùng chúng tôi
+                    </button>
+                    
+                    <div className="flex flex-wrap max-sm:justify-between mt-8 space-y-0 sm:space-x-4 md:space-x-4 lg:space-x-4 h-[50%]">
+                        <div className="w-[30%] h-[40%] bg-[#FFFFFF]/10 rounded-lg p-1 md:p-3 pl-5 flex flex-col justify-center">
+                            <p className="text-[#48B96D] mb-4 text-xl leading-8 sm:text-2xl font-semibold">$1B+</p>
+                            <p className="text-[#FFFFFF]/80 sm:max-w-[60%] max-w-[100%] text-xs sm:text-sm">Tổng số đã huy động</p>
+                        </div>
+                        <div className="w-[30%] h-[40%] bg-[#FFFFFF]/10 rounded-lg p-1 md:p-3 pl-5 flex flex-col justify-center">
+                            <p className="text-[#48B96D] mb-4 text-xl leading-8 sm:text-2xl font-semibold">50M+</p>
+                            <p className="text-[#FFFFFF]/80 sm:max-w-[60%] max-w-[100%] text-xs sm:text-sm">Đã đầu tư thành công</p>
+                        </div>
+                        <div className="w-[30%] h-[40%] bg-[#FFFFFF]/10 rounded-lg p-1 md:p-3 pl-5 flex flex-col justify-center">
+                            <p className="text-[#48B96D] mb-4 text-xl leading-8 sm:text-2xl font-semibold">771+</p>
+                            <p className="text-[#FFFFFF]/80 sm:max-w-[60%] max-w-[100%] text-xs sm:text-sm">Nhà đầu tư tham gia</p>
                         </div>
                     </div>
-          <div className="w-full h-full  flex md:col-span-1  justify-center items-center mt-8 md:mt-0 xl:p-28 p-4">
-            <img src="/img/homeAppScreenShot.png" alt="App Screen Shot" className="w-full h-auto object-contain bg-no-repeat"/>
-            </div>
+                </div>
+                
+                {/* Phần bên phải */}
+                <div 
+                    ref={rightFrameRef} 
+                    className={`w-full md:w-1/2 min-h-[90vh] max-sm:hidden relative mt-8 md:mt-0 transition-all duration-500 ${
+                        isRightFrameVisible ? 'opacity-100' : 'opacity-0'
+                    }`}
+                >
+                    <div className="relative w-full h-full">
+                    <div className="absolute w-[80%] sm:w-[70%] md:w-[60%] h-[65%] sm:h-[70%] md:h-[65%] top-[5%] sm:top-[8%] md:top-[10%] right-[10%] md:right-[5%] mr-[20%]">
+                            <img 
+                                src="/img/invest.png" 
+                                alt="Investment Dashboard" 
+                                className=" w-full h-full rounded-[1.25rem] opacity-100 object-cover" 
+                            />
+                            
+                            {/* Khung Hyperas */}
+                            <div className="absolute w-[58%] sm:w-[50%] h-[31%] sm:h-[31%] md:h-[33%] top-[7%] sm:top-[5%] md:top-[7%] left-[-30%] sm:left-[-25%] md:left-[-25%] bg-white text-[#04141A] rounded-[1.25rem] shadow overflow-hidden flex flex-col">
+                                <div className="relative h-1/2 w-full overflow-hidden bg-[#0B3546]">
+                                    <img 
+                                        src="/img/hyperas1.png" 
+                                        alt="Hyperas Chain" 
+                                        className="absolute w-full h-auto object-cover "
+                                    />
+                                </div>
+                                <div className="h-1/2 w-full sm:p-1 flex flex-col justify-center">
+                                    <p className="font-bold pl-1 text-xs leading-4 xl:leading-6 xl:text-base">HYPERAS CHAIN</p>
+                                    <p className="text-[#31814B] font-inter pl-1 text-sm leading-6 sm:text-lg md:text-sm font-medium">$1,500,000</p>
+                                    <p className="text-[12px] leading-5 pl-1 sm:text-xs md:text-[12px] text-[#000000]/60 mt-1">TECHNOLOGY</p>
+                                </div>
+                            </div>
+                            
+                            {/* Khung Salala */}
+                            <div className="absolute w-[67%] sm:w-[58%] md:w-[66%] h-[38%] sm:h-[40%] md:h-[43%] bottom-[-15%] sm:bottom-[-18%] md:bottom-[-18%] right-[-5%] sm:right-[-4%] md:right-[-28%] bg-[#F3F7F4] rounded-[1.25rem] shadow overflow-hidden flex flex-col p-2 xl:p-3">
+                                <div className="border-b-2 border-[#1C4A2B]/10 flex items-center pb-1">
+                                    <div className="w-8 h-8 sm:w-9 sm:h-9 xl:w-12 xl:h-12 flex items-center justify-center mr-2 sm:mr-3">
+                                        <img src="/img/icon/salala.png" alt="Salala AI" className="w-full h-full rounded-lg" />
+                                    </div>
+                                    <div>
+                                        <p className="font-bold font-inter text-[#04141A] text-sm ">SALALA AI</p>
+                                        <p className="text-[#31814B] font-inter pl-1 text-sm leading-4 xl:leading-6 md:text-sm font-medium">$1,500,000</p>
+                                    </div>
+                                </div>
+                                
+                                <div className="border-b-2 border-[#1C4A2B]/10 flex items-center my-1 pb-1 ">
+                                    <div className=" w-8 h-8 sm:w-9 sm:h-9 md:w-12 md:h-12 rounded-lg flex items-center justify-center mr-2 sm:mr-3">
+                                        <img src="/img/icon/rapital.png" alt="Rapital Bank" className="w-full h-full rounded-lg" />
+                                    </div>
+                                    <div>
+                                        <p className="font-bold font-inter text-[#04141A] text-sm sm:text-sm">RAPITAL BANK</p>
+                                        <p className="text-[#31814B] font-inter pl-1 text-sm leading-4 xl:leading-6 md:text-sm font-medium">$1,500,000</p>
+                                    </div>
+                                </div>
+                                
+                                <div className="flex items-center mt-1 pb-1">
+                                    <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-12 md:h-12 rounded-lg flex items-center justify-center mr-2 sm:mr-3">
+                                        <img src="/img/icon/egabid.png" alt="Egabid" className="w-full h-full rounded-lg" />
+                                    </div>
+                                    <div>
+                                        <p className="font-bold font-inter text-[#04141A] text-sm sm:text-sm">EGABID</p>
+                                        <p className="text-[#31814B] font-inter pl-1 text-sm leading-4 xl:leading-6 md:text-sm font-medium">$1,500,000</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+            {/* Chỉ số trang */}
 
             <Partner />
             <ProjectSection />
             <News />
-            <PressSection />
+            
+            <FeedbackSection />
             <Download />
+            <PressSection />
         </div>
     );
 };
