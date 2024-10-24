@@ -31,7 +31,7 @@ const newsData = [
 const News = () => {
     return (
         <div className={styles.newsSection}>
-            <h2 className={styles.title}>TIN MỚI NHẤT VỀ HYRACAP</h2>
+            <h2 className="font-inter font-bold pl-[5%] text-[40px] leading-[48px]">TIN MỚI NHẤT VỀ HYRACAP</h2>
             <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 p-3 w-full">
                 <div className={styles.mainNews}>
                     <a
@@ -44,14 +44,14 @@ const News = () => {
                             className={styles.mainImage}
                         />
                     </a>
-                        <div className={styles.overlay}>
+                        
                             <h2 className={styles.newsTitle}>
                                 {newsData[0].title}
                             </h2>
-                            <span className="font-inter text-sm leading-6 text-[#000000]/56">
-                                Tìm hiểu thêm
+                            <span className="font-inter text-sm leading-6 text-[#000000]/60 max-w-[80%]">
+                            HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.
                             </span>
-                        </div>
+                        
                 </div>
                 <div className={styles.sideNews}>
                     {newsData.slice(1).map((news, index) => (
@@ -66,8 +66,8 @@ const News = () => {
                                             {news.title}
                                         </h2>
                                         <div className={styles.newsContent}>
-                                            <span className="font-inter text-sm leading-6 text-[#000000]/56">
-                                                Tìm hiểu thêm
+                                            <span className="font-inter text-sm leading-6 text-[#000000]/60">
+                                            HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.
                                             </span>
                                             <span className={styles.date}>
                                                 {news.date}

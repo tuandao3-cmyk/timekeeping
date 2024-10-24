@@ -104,7 +104,7 @@ const Footer: React.FC = () => {
             </ul>
           </div>
           <div>
-            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase  dark:text-black">
+            <h2 className="mb-6 font-inter text-sm md:text-base leading-4 md:leading-6 font-semibold text-[#ffffff] uppercase  dark:text-black">
               CÔNG TY
             </h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
@@ -126,7 +126,7 @@ const Footer: React.FC = () => {
             </ul>
           </div>
           <div>
-            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase  dark:text-black">
+            <h2 className="mb-6 font-inter text-sm md:text-base leading-4 md:leading-6 font-semibold text-[#ffffff] uppercase  dark:text-black">
               Hệ sinh thái
             </h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
@@ -148,7 +148,7 @@ const Footer: React.FC = () => {
             </ul>
           </div>
           <div>
-            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase  dark:text-black">
+            <h2 className="mb-6 font-inter text-sm md:text-base leading-4 md:leading-6 font-semibold text-[#ffffff] uppercase  dark:text-black">
               Khác
             </h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">

@@ -36,11 +36,18 @@
 
 .projectCard {
   flex: 1;
-  background-color: #ffffff;
+  background-color: #f3f7f4;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* */
   position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.projectCard:hover {
+
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
 .projectImage {
@@ -65,8 +72,18 @@
 .projectName {
   font-size: clamp(1.2rem, 2vw, 2.4rem);
   font-weight: bold;
-  margin: 1rem 0;
-  /* font-family: Roboto, serif; */
+  margin: 0.5rem 0;
+  width: 100%;
+  text-align: left;
+}
+
+.projectTarget {
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: normal;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  text-align: left;
 }
 
 .projectInfo {
@@ -117,12 +134,28 @@
   font-weight: bold;
   border-radius: 25px;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
   transition: all 0.3s ease;
 }
 
 .moreProjectsButton:hover {
-  background-color: #000000;
-  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #000000;
+}
+
+.moreProjectsButton svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+}
+
+.moreProjectsButton:hover svg {
+  transform: translateX(4px);
+}
+
+.moreProjectsButton:hover svg path {
+  fill: #ffffff;
 }
 
 .mainProject {
@@ -154,8 +187,8 @@
 }
 
 .showcaseSection {
-  padding: 2rem 5%;
-  background-color: #ffffff;
+  padding: 2rem;
+  background-color: #f3f7f4;
   text-align: center;
   /* max-width: 70%; */
   /* display: flex;

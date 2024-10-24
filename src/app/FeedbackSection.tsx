@@ -55,49 +55,49 @@ const FeedbackSection: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-white py-16 relative overflow-hidden">
+    <div className="bg-[#F3F7F4] py-16 relative overflow-hidden">
       {/* Vòng tròn đồng tâm */}
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0">
-        <div className="w-[800px] h-[800px] rounded-full border-2 border-[#48B96D] opacity-20"></div>
+      <div className="absolute top-[55%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0">
+        {/* <div className="w-[800px] h-[800px] rounded-full border-2 border-[#48B96D] opacity-20"></div> */}
         <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] rounded-full border-2 border-[#48B96D] opacity-20 transform -translate-x-1/2 -translate-y-1/2"></div>
         <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] rounded-full border-2 border-[#48B96D] opacity-20 transform -translate-x-1/2 -translate-y-1/2"></div>
         <div className="absolute top-1/2 left-1/2 w-[200px] h-[200px] rounded-full border-2 border-[#48B96D] opacity-20 transform -translate-x-1/2 -translate-y-1/2"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <h2 className="text-4xl font-inter leading-[48px] font-bold text-center mb-2">PHẢN HỒI VỀ KHÁCH HÀNG</h2>
-        <p className="text-center font-inter text-3xl leading-10 text-gray-600 mb-12 max-w-[42vw] mx-auto">
-          HYRACAP LUÔN QUAN TÂM ĐẾN PHẢN HỒI CỦA TỪNG KHÁCH HÀNG
-        </p>
-        <div className="relative h-[90vh]"> {/* Điều chỉnh chiều cao nếu cần */}
-          {feedbacks.map((feedback, index) => (
-            <div
-              key={feedback.id}
-              ref={(el) => {
-                if (el) feedbackRefs.current[index] = el;
-              }}
-              className={`bg-white rounded-lg shadow-lg p-6 max-w-md absolute transition-all duration-500 opacity-0 ${
-                index === 0 ? 'top-[0%] right-1/2' : 
-                index === 1 ? 'top-[25%] left-1/2 -translate-x-1/2' : 
-                'top-[60%]  right-1/2'
-              } ${index === 0 ? '-translate-x-full' : index === 2 ? 'translate-x-full' : ''}`}
-            >
-              <p className="text-[#000000]/90 font-semibold text-base leading-7 font-inter mb-4">{feedback.content}</p>
-              <div className="flex items-center">
-                <img
-                  src={feedback.image}
-                  alt={feedback.name}
-                  className="w-12 h-12 rounded-full mr-4"
-                />
-                <div>
-                  <p className="font-semibold">{feedback.name}</p>
-                  <p className="text-gray-600 text-sm">{feedback.position}</p>
-                </div>
-              </div>
-            </div>
-          ))}
+  <h2 className="text-4xl font-inter leading-[48px] font-bold text-center mb-2">PHẢN HỒI VỀ KHÁCH HÀNG</h2>
+  <p className="text-center font-inter text-3xl leading-10 text-gray-600 mb-12 max-w-[42vw] mx-auto">
+    HYRACAP LUÔN QUAN TÂM ĐẾN PHẢN HỒI CỦA TỪNG KHÁCH HÀNG
+  </p>
+  <div className="relative h-[90vh]">
+    {feedbacks.map((feedback, index) => (
+      <div
+        key={feedback.id}
+        ref={(el) => {
+          if (el) feedbackRefs.current[index] = el;
+        }}
+        className={`bg-white rounded-lg shadow-lg p-6 absolute transition-all duration-500 opacity-0 hover:bg-[#48B96D] group ${
+          index === 0 ? 'top-[5%] right-1/2 max-w-md' : 
+          index === 1 ? 'top-[30%] left-1/4 -translate-x-1/2 max-w-xl' : 
+          'top-[60%] right-1/2 max-w-xl'
+        } ${index === 0 ? '-translate-x-full' : index === 2 ? 'translate-x-full' : ''}`}
+      >
+        <p className="text-[#000000]/90 font-semibold text-base leading-7 font-inter mb-4 group-hover:text-white transition-colors duration-300">{feedback.content}</p>
+        <div className="flex items-center">
+          <img
+            src={feedback.image}
+            alt={feedback.name}
+            className="w-12 h-12 rounded-full mr-4"
+          />
+          <div>
+            <p className="font-semibold group-hover:text-white transition-colors duration-300">{feedback.name}</p>
+            <p className="text-gray-600 text-sm group-hover:text-white transition-colors duration-300">{feedback.position}</p>
+          </div>
         </div>
       </div>
+    ))}
+  </div>
+</div>
     </div>
   );
 }
