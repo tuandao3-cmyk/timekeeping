@@ -187,7 +187,7 @@ const AboutPage: React.FC = () => {
       </div>
 
       <Partner />
-      <div className={styles['about-container']}>
+      {/* <div className={styles['about-container']}>
         <section className={styles.vision}>
           <div className={styles.textContent}>
             <Typography
@@ -415,7 +415,7 @@ const AboutPage: React.FC = () => {
             </form>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

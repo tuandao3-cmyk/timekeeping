@@ -1,9 +1,14 @@
 'use client';
 import Link from 'next/link';
+import { useInView } from 'react-intersection-observer';
 import styles from './ProjectSection.module.css';
 import ProjectGrid from '@/components/projectGrid';
 
 const ProjectSection = () => {
+  const { ref, inView, entry } = useInView({
+    threshold: 0.1,
+  });
+
   const projects = [
     {
       title: 'Hyperas Chain',
@@ -51,8 +56,11 @@ const ProjectSection = () => {
             {projects.map((project, index) => (
               <a href="/detail-category" key={index}>
                 <div
+                  ref={ref}
                   key={index}
-                  className={`${styles.projectCard} group relative`}
+                  className={`${styles.projectCard} group relative duration-700 ease-in-out delay-${index * 100} transform ${
+                    inView ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
+                  }`}
                 >
                   <img
                     src={project.image}

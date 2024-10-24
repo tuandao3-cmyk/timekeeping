@@ -41,8 +41,8 @@ const Header = () => {
     <header
       className={` w-full z-50 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
     >
-      <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 border-b-2 shadow-md">
-        <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+      <nav className="bg-white border-gray-200 px-4 lg:px-[120px] py-2.5 border-b-2 shadow-md">
+        <div className="flex flex-wrap justify-around items-center mx-auto max-w-screen-[1200px] max-w-[1200px]">
           <Link href="/" className="flex items-center">
             <img
               src="/img/logohyracap.png"
