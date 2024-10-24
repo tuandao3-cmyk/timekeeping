@@ -83,7 +83,7 @@ const Home: React.FC = () => {
                     }`}
                 >
                     <div className="relative w-full h-full">
-                    <div className="absolute   lg:w-[400px]   lg:h-[470px] top-[45px]  lg:top-[90px] right-[96px] lg:right-[48px] mr-[92px]">
+                    <div className="absolute sm:w-[300px] sm:h-[350px] lg:w-[400px]   lg:h-[470px] 2xl:w-[500px] 2xl:h-[570px] 3xl:w-[600px] 3xl:h-[670px] top-[45px]  lg:top-[90px] right-[96px] lg:right-[48px] mr-[92px]">
                             <img 
                                 src="/img/invest.png" 
                                 alt="Investment Dashboard" 

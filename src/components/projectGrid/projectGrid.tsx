@@ -38,7 +38,7 @@ const projects = [
     id: 3,
     name: 'EGABID',
     series: 'SERIES B',
-    description: 'Trải nghiệm ứng dụng đầu tư HyraCap mang lại lợi nhuận hấp dẫn dành cho bạn',
+    description: 'Trải nghiệm ứng d���ng đầu tư HyraCap mang lại lợi nhuận hấp dẫn dành cho bạn',
     target: 2000000,
     raised: 1091591,
     percentage: 51,
@@ -87,8 +87,22 @@ const ProjectSlider: React.FC = () => {
   const windowSize = useWindowSize();
 
   const isMobile = windowSize.width < 640;
+  const isTablet = windowSize.width >= 640 && windowSize.width < 1024;
+  const isDesktop = windowSize.width >= 1024 && windowSize.width < 1280;
+  const isLargeDesktop = windowSize.width >= 1280;  
   const slidesOffsetBefore = isMobile ? 0 : 100;
-  const slidesPerView = isMobile ? 1 : 1.5;
+  let slidesPerView;
+  if (isMobile) {
+    slidesPerView = 1;
+  } else if (isTablet) {
+    slidesPerView = 1.5;
+  } else if (isDesktop) {
+    slidesPerView = 2;
+  } else if (isLargeDesktop) {
+    slidesPerView = 2.5;
+  } else {
+    slidesPerView = 1; // Giá trị mặc định
+  }
 
   const handlePrev = () => {
     if (swiper) {
