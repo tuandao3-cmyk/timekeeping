@@ -43,7 +43,7 @@ const ProjectSection = () => {
       {' '}
       <ProjectGrid /> 
       <section className={styles.showcaseSection}>
-        <h2 className={styles.title}>DỰ ÁN ĐÃ ĐẦU TƯ VÀ ƯƠM TẠO</h2>
+        <h2 className="text-center text-[40px] font-bold leading-[48px] pb-10">DỰ ÁN ĐÃ ĐẦU TƯ VÀ ƯƠM TẠO</h2>
         <div className="w-full flex justify-center items-center">
           <div className={styles.projectCards}>
             {projects.map((project, index) => (
@@ -60,10 +60,10 @@ const ProjectSection = () => {
                 <h3 className="text-[clamp(1.2rem,2vw,2.4rem)] font-bold my-2 w-full pl-4">
                    {project.title}
                 </h3>
-                <span className="text-sm text-[#000000]/70 font-normal mb-2 block pl-4">
+                <span className="text-sm text-[#000000]/70 font-normal mb-2 block pl-4 pb-2">
                     MỤC TIÊU HUY ĐỘNG
                 </span>
-                <div className="font-inter font-semibold text-xl leading-7 pl-4">{project.amount}</div>
+                <div className="font-inter font-semibold text-xl leading-7 pl-4 pb-2">{project.amount}</div>
                 </div>
                   <div className={styles.projectInfo}>
 

@@ -13,6 +13,7 @@ import FeedbackSection from './FeedbackSection';
 const Home: React.FC = () => {
     const rightFrameRef = useRef<HTMLDivElement>(null);
     const [isRightFrameVisible, setIsRightFrameVisible] = useState(false);
+    
 
     useEffect(() => {
         const observer = new IntersectionObserver(
