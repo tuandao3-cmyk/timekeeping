@@ -10,6 +10,7 @@ import PressSection from '../PressSection';
 import News from '../news';
 import { Typography } from '@mui/material';
 
+
 const leaders = [
   {
     name: 'Trần Nam Chung',
@@ -143,19 +144,21 @@ const AboutPage: React.FC = () => {
   return (
     <>
       {/* <div className="max-h-max"> */}
-      <div className="bg-[#07212C] min-h-[820px] w-[100%] flex flex-col justify-center items-center pt-[75px] relative">
-        <div className="flex justify-between items-center h-auto w-full max-w-[1200px]">
-          <div className="flex-1">
-            <p className="text-[40px] leading-[48px] text-white font-bold ml-10">
+      <div className="bg-[#07212C] min-h-[820px]  w-[100%] flex flex-col justify-end items-end relative px-32">
+        <div className="flex justify-between items-center h-auto w-full mt-16">
+          <div className="flex-1 gap-2">
+            <p className="text-[40px] leading-[56px] text-white font-bold uppercase">
               Investment Fund
             </p>
-            <p className="text-[40px] leading-[48px] text-[#48B96D] font-bold ml-10">
+            <p className="text-[40px] leading-[56px] text-[#48B96D] font-bold uppercase">
               Sustainable Growth
             </p>
-            <p className="text-[40px] leading-[48px] text-[#48B96D] font-bold ml-10">
+            <p className="text-[40px] leading-[56px] text-[#48B96D] font-bold uppercase">
               Nurturing Innovation
             </p>
           </div>
+
+
           <div className="flex-1 flex flex-col gap-[32px] justify-end items-end">
             <p className="text-[20px] text-[#F3F7F4] leading-[32px] max-w-[500px]">
               We are committed to investing in innovative startups and
@@ -164,7 +167,7 @@ const AboutPage: React.FC = () => {
             </p>
 
             <div className="flex w-[100%] justify-start items-start gap-[24px] max-w-[500px]">
-              <button className="bg-[#48B96D] text-white text-[16px] leading-[20px]  px-[16px] py-[14px] rounded-[999px] text-center  hover:bg-[#379256] transition-colors duration-300">
+              <button className=" bg-[#48B96D] text-white text-[16px] leading-[20px]  px-[16px] py-[14px] rounded-[999px] text-center  hover:bg-[#379256] transition-colors duration-300">
                 Explore Opportunities
               </button>
               <button className="bg-transparent border border-[#FFFFFF29] text-[#FFFFFF] text-[16px] leading-[20px] text-center   px-[16px] py-[14px]  rounded-[999px]  hover:bg-[#379256]  transition-colors duration-300">
@@ -173,9 +176,9 @@ const AboutPage: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-center items-center w-full h-auto bg-transparent mt-[48px] relative -bottom-20 ">
+        <div className="flex justify-center items-center w-full  bg-transparent relative -bottom-20 ">
           <video
-            className="w-full h-auto max-w-[1200px] border border-gray-200 rounded-lg dark:border-gray-700"
+            className="w-full border border-gray-200 rounded-lg dark:border-gray-700"
             muted
             autoPlay
             loop
@@ -190,27 +193,73 @@ const AboutPage: React.FC = () => {
       <div className={styles['about-container']}>
         <section className={styles.vision}>
           <div className={styles.textContent}>
-            <Typography
-              textTransform={'uppercase'}
-              fontWeight={700}
-              className="text-[40px] text-[#04141A]"
-            >
+            <h2>
               Tầm nhìn
-            </Typography>
+            </h2>
             <p>
-              HyraCap mong muốn trở thành nhà cung cấp nền tảng đầu tư uy tín
-              tốt nhất, giúp người dùng phát triển tự do tài chính. Với thông
-              tin minh bạch rõ ràng.
+              HyraCap mong muốn trở thành nhà cung cấp nền tảng đầu tư uy tín hàng đầu,
+              đồng hành cùng người dùng trên con đường đạt được tự do tài chính. 
+              Chúng tôi cam kết mang đến các dự án đầu tư tiềm năng với thông tin minh bạch, rõ ràng, 
+              giúp người dùng tự tin đưa ra những quyết định đầu tư sáng suốt và hiệu quả.
             </p>
             <ul className={styles.bulletPoints}>
-              <li>Phù hợp với mọi nhà đầu tư</li>
-              <li>Nền tảng đầu tư tốt nhất</li>
-              <li>Sinh lời bền vững</li>
-              <li>Dữ liệu bảo mật tuyệt đối</li>
+              <li>
+                <div className='flex flex-row gap-6 py-4'>
+                  <img
+                  alt='icon'
+                  className='w-14 h-14'
+                    src='/img/icon/seen.svg'
+                  />
+                  <div className='gap-1'>
+                    <Typography className='text-base text-black font-semibold'>
+                      Uy tín hàng đầu
+                    </Typography>
+                    <Typography className='!text-[14px]'>
+                      Chúng tôi cam kết xây dựng lòng tin bằng sự minh bạch và rõ ràng trong mọi dự án.
+                    </Typography>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div className='flex flex-row gap-6 py-4'>
+                  <img
+                    alt='icon'
+                    className='w-14 h-14'
+                    src='/img/icon/finance.svg'
+                  />
+                  <div className='gap-1'>
+                    <Typography className='text-base text-black font-semibold'>
+                      Tự do tài chính
+                    </Typography>
+                    <Typography className='!text-[14px]'>
+                      Hỗ trợ người dùng phát triển tài sản và đạt được mục tiêu tài chính lâu dài.
+                    </Typography>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div className='flex flex-row gap-6 py-4'>
+                  <img
+                    alt='icon'
+                    className='w-14 h-14'
+                    src='/img/icon/search.svg'
+                  />
+                  <div className='gap-1'>
+                    <Typography className='text-base text-black font-semibold'>
+                      Minh bạch thông tin
+                    </Typography>
+                    <Typography className='!text-[14px] '>
+                      Mọi thông tin về dự án đều được cung cấp rõ ràng, giúp người dùng dễ dàng đưa ra quyết định.
+                    </Typography>
+                  </div>
+                </div>
+              </li>
             </ul>
           </div>
+
+
           <div className={styles.imageContent}>
-            <img src="/img/vision.png" alt="Vision illustration" />
+            <img src="/img/about/about1.svg" alt="Vision illustration" />
           </div>
         </section>
 
@@ -218,15 +267,63 @@ const AboutPage: React.FC = () => {
           <div className={styles.textContent}>
             <h2>Sứ mệnh</h2>
             <p>
-              HyraCap mong muốn trở thành nhà cung cấp nền tảng đầu tư uy tín
-              tốt nhất, giúp người dùng phát triển tự do tài chính. Với thông
-              tin minh bạch rõ ràng.
+              Tại HyraCap, chúng tôi cam kết tạo ra một môi trường kinh doanh nơi các tài 
+              nguyên và cơ hội được phân bổ công bằng và minh bạch. Chúng tôi luôn nỗ lực 
+              thúc đẩy sự phát triển bền vững và không ngừng đổi mới trong thị trường tài chính, 
+              nhằm mang lại giá trị lâu dài cho các nhà đầu tư và doanh nghiệp.
             </p>
             <ul className={styles.bulletPoints}>
-              <li>Phù hợp với mọi nhà đầu tư</li>
-              <li>Nền tảng đầu tư tốt nhất</li>
-              <li>Sinh lời bền vững</li>
-              <li>Dữ liệu bảo mật tuyệt đối</li>
+              <li>
+                <div className='flex flex-row gap-6 py-4'>
+                  <img
+                    alt='icon'
+                    className='w-14 h-14'
+                    src='/img/icon/justice.svg'
+                  />
+                  <div className='gap-1'>
+                    <Typography className='text-base text-black font-semibold'>
+                      Công bằng và minh bạch
+                    </Typography>
+                    <Typography className='!text-[14px]'>
+                      Phân bổ tài nguyên và cơ hội một cách rõ ràng, minh bạch.
+                    </Typography>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div className='flex flex-row gap-6 py-4'>
+                  <img
+                    alt='icon'
+                    className='w-14 h-14'
+                    src='/img/icon/develop.svg'
+                  />
+                  <div className='gap-1'>
+                    <Typography className='text-base text-black font-semibold'>
+                      Phát triển bền vững
+                    </Typography>
+                    <Typography className='!text-[14px] '>
+                      Luôn tìm kiếm những cơ hội đầu tư để thúc đẩy sự phát triển liên tục.
+                    </Typography>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div className='flex flex-row gap-6 py-4'>
+                  <img
+                    alt='icon'
+                    className='w-14 h-14'
+                    src='/img/icon/renew.svg'
+                  />
+                  <div className='gap-1'>
+                    <Typography className='text-base text-black font-semibold'>
+                      Đổi mới tài chính
+                    </Typography>
+                    <Typography className='!text-[14px]'>
+                      Liên tục đổi mới để dẫn đầu trong các xu hướng của thị trường tài chính.
+                    </Typography>
+                  </div>
+                </div>
+              </li>
             </ul>
           </div>
           <div className={styles.imageContent}>
@@ -234,58 +331,95 @@ const AboutPage: React.FC = () => {
           </div>
         </section>
         <section className={styles.values}>
-          <h2>Giá trị cốt lõi</h2>
-          <p>
-            Tận hưởng giá trị đầu tư uy tín hàng đầu và đạt được những lợi nhuận
-            hấp dẫn cho bạn! Bạn là người tạo ra tài chính của riêng mình và
-            chúng tôi sẽ nâng tầm bạn thực hiện điều đó.
-          </p>
+         <div className='flex flex-col text-center gap-10 w-[780px]'>
+            <h2>Giá trị cốt lõi</h2>
+            <p>
+              Tận hưởng giá trị đầu tư uy tín hàng đầu và đạt được những lợi nhuận
+              hấp dẫn cho bạn! Bạn là người tạo ra tài chính của riêng mình và
+              chúng tôi sẽ nâng tầm bạn thực hiện điều đó.
+            </p>
+         </div>
           <div className={styles.valueGrid}>
-            <div className={styles.valueItem}>
-              <div className={styles.valueIcon}>
-                <img src="/img/icon/idea.png" alt="Đổi mới sáng tạo" />
+            <div className="relative h-[280px] ">
+              <div className="rounded-lg p-4 flex flex-col gap-2 w-[90%] shadow-md absolute -bottom-0 z-50 bg-white">
+                <p className='!text-xl font-semibold !text-black'>
+                  Đổi mới sáng tạo
+                </p>
+                <p className='!text-sm text-clip'>
+                  Hyracap luôn cập nhật những công nghệ tiên tiến hiện đại nhất.
+                   Chúng tôi thúc đẩy sự sáng tạo và phát triển liên tục.
+                </p>
               </div>
-              <div className={styles.valueTitle}>Đổi mới sáng tạo</div>
-            </div>
-            <div className={styles.valueItem}>
               <div className={styles.valueIcon}>
-                <img src="/img/icon/security.png" alt="Trách nhiệm uy tín" />
+                <img 
+                style={{objectFit:"cover"}}
+                  src="/img/about/value1.svg" 
+                alt="Đổi mới sáng tạo" />
               </div>
-              <div className={styles.valueTitle}>Trách nhiệm uy tín</div>
+            
             </div>
-            <div className={styles.valueItem}>
-              <div className={styles.valueIcon}>
-                <img src="/img/icon/cloud.png" alt="Xây dựng vững mạnh" />
+            <div className="relative h-[280px] ">
+              <div className="rounded-lg p-4 flex flex-col gap-2 w-[90%] shadow-md absolute -bottom-0 z-50 bg-white">
+                <p className='!text-xl font-semibold !text-black'>
+                  Bền vững
+                </p>
+                <p className='!text-sm text-clip'>
+                  Tạo nên mô hình đầu tư bền vững.
+                   Giúp mọi người có nguồn thu nhập thụ động vững vàng tự do tài chính
+                </p>
               </div>
-              <div className={styles.valueTitle}>Xây dựng vững mạnh</div>
-            </div>
-            <div className={styles.valueItem}>
               <div className={styles.valueIcon}>
                 <img
-                  src="/img/icon/documentation.png"
-                  alt="Đảm bảo quyền lợi"
-                />
+                  style={{ objectFit: "cover" }}
+                  src="/img/about/value2.svg"
+                  alt="Bền vững" />
               </div>
-              <div className={styles.valueTitle}>Đảm bảo quyền lợi</div>
+
             </div>
+            <div className="relative h-[280px] ">
+              <div className="rounded-lg p-4 flex flex-col gap-2 w-[90%] shadow-md absolute -bottom-0 z-50 bg-white">
+                <p className='!text-xl font-semibold !text-black'>
+                  Minh bạch an toàn
+                </p>
+                <p className='!text-sm text-clip'>
+                  Đảm bảo rằng tất cả các giao dịch và hoạt động trên nền tảng là minh bạch, an toàn và có thể được kiểm tra
+                </p>
+              </div>
+              <div className={styles.valueIcon}>
+                <img
+                  style={{ objectFit: "cover" }}
+                  src="/img/about/value3.svg"
+                  alt="Minh bạch an toàn" />
+              </div>
+
+            </div>
+            <div className="relative h-[280px] ">
+              <div className="rounded-lg p-4 flex flex-col gap-2 w-[90%] shadow-md absolute -bottom-0 z-50 bg-white">
+                <p className='!text-xl font-semibold !text-black'>
+                  Hợp lực
+                </p>
+                <p className='!text-sm text-clip'>
+                  Khuyến khích sự hợp tác giữa các cá nhân và tổ chức. Mang lại lợi ích và giá trị tốt đẹp cho
+                  cộng đồng
+                </p>
+              </div>
+              <div className={styles.valueIcon}>
+                <img
+                  style={{ objectFit: "cover" }}
+                  src="/img/about/value1.svg"
+                  alt="Hợp lực" />
+              </div>
+
+            </div>
+         
+            
           </div>
         </section>
         <section className={styles.founder}>
           <div className={styles.founderImage}>
-            <img src="/img/founder.png" alt="Trần Thị Thu Hương" />
+            <img src="/img/about/founder.svg" alt="Trần Thị Thu Hương" />
           </div>
-          <div className={styles.founderContent}>
-            <h2 className={styles.founderTitle}>Lời nhắn từ nhà sáng tạo</h2>
-            <p className={styles.founderMessage}>
-              "Tại Hyra Capital, chúng tôi không chỉ đơn thuần là một quỹ đầu
-              tư. Chúng tôi là đối tác của bạn, cánh tay nối dài giúp bạn đạt
-              được mục tiêu và ước mơ của mình. Với tầm nhìn xa và đội ngũ
-              chuyên nghiệp, chúng tôi cam kết đem đến cho bạn các giải pháp tài
-              chính và đào tạo toàn diện, giúp bạn vượt qua mọi thách thức và
-              hướng đến thành công."
-            </p>
-            <p className={styles.founderName}>Trần Thị Thu Hương</p>
-          </div>
+      
         </section>
         <section className={styles.promise}>
           <div className={styles.promiseContent}>
@@ -295,124 +429,107 @@ const AboutPage: React.FC = () => {
               nhuận hấp dẫn cho bạn! Bạn là người tạo ra tài chính của riêng
               mình và chúng tôi sẽ nâng tầm bạn thực hiện điều đó.
             </p>
-            <span className={styles.brandName}>HyraCap</span>
-          </div>
-        </section>
-        <PressSection />
-        <News />
-        <div className={styles.leadershipSection}>
-          <h2>Đội ngũ sáng lập</h2>
-          <div className={styles.leadershipGrid}>
-            {leaders.slice(0, 3).map((leader, index) => (
-              <div key={index} className={styles.leaderCard}>
-                <img
-                  src={leader.image}
-                  alt={leader.name}
-                  width={100}
-                  height={100}
-                  className={styles.leaderImage}
-                />
-                <div className={styles.leaderInfo}>
-                  <h3>{leader.name}</h3>
-                  <p className={styles.leaderTitle}>{leader.title}</p>
-                  <ul className={styles.leaderDescription}>
-                    {leader.description.map((item, idx) => (
-                      <li key={idx} className={styles.leaderDescriptionItem}>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className={styles.lastRow}>
-            {leaders.slice(3).map((leader, index) => (
-              <div key={index + 3} className={styles.leaderCard}>
-                <img
-                  src={leader.image}
-                  alt={leader.name}
-                  width={100}
-                  height={100}
-                  className={styles.leaderImage}
-                />
-                <div className={styles.leaderInfo}>
-                  <h3>{leader.name}</h3>
-                  <p className={styles.leaderTitle}>{leader.title}</p>
-                  <ul className={styles.leaderDescription}>
-                    {leader.description.map((item, idx) => (
-                      <li key={idx} className={styles.leaderDescriptionItem}>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className={styles.staffSection}>
-          <h2>Nhân sự chủ chốt</h2>
-          <div className={styles.leadershipGrid}>
-            {staffs.slice(0, 6).map((staff, index) => (
-              <div key={index} className={styles.staffCard}>
-                <img
-                  src={staff.image}
-                  alt={staff.name}
-                  width={100}
-                  height={100}
-                  className={styles.leaderImage}
-                />
-                <div className={styles.leaderInfo}>
-                  <h3>{staff.name}</h3>
-                  <p className={styles.leaderTitle}>{staff.title}</p>
-                  <ul className={styles.leaderDescription}>
-                    {staff.description.map((item, idx) => (
-                      <li key={idx} className={styles.leaderDescriptionItem}>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className={styles.contactSection}>
-          <div className={styles.contactInfo}>
-            <h2>Liên hệ với chúng tôi</h2>
-            <p>Thông tin liên hệ</p>
-            <div className={styles.contactDetails}>
-              <div className={styles.contactItem}>
-                <img src="/img/icon/localicon.png" alt="Địa chỉ" />
-                <p>
-                  Lô CX01, khu đô thị Văn Khê, phường La Khê, quận Hà Đông, Hà
-                  Nội.
-                </p>
-              </div>
-              <div className={styles.contactItem}>
-                <img src="/img/icon/mailicon.png" alt="Email" />
-                <p>info@hyratek.com</p>
-              </div>
-              <div className={styles.contactItem}>
-                <img src="/img/icon/websiteicon.png" alt="Website" />
-                <p>Hyracap.com</p>
-              </div>
+            <div className='w-[106%] flex flex-row justify-end items-center gap-1 '>
+              <div className='h-0.5 w-4 bg-[#48B96D]' />
+              <span className="text-xl font-bold text-[#48B96D] uppercase">
+                HyraCap
+              </span>
             </div>
           </div>
-          <div className={styles.contactForm}>
-            <h3>Chúng tôi sẵn sàng đón nhận bất kỳ đề xuất nào.</h3>
-            <form>
-              <input type="text" placeholder="Tên*" required />
-              <input type="email" placeholder="Email*" required />
-              <input type="tel" placeholder="Số điện thoại" />
-              <textarea placeholder="Câu hỏi của bạn*" required></textarea>
-              <div className={styles.recaptcha}>
-                <input type="checkbox" id="notRobot" />
-                <label htmlFor="notRobot">Tôi không phải là robot</label>
+        
+        </section>
+        <News />
+        <PressSection />
+      
+        <div className={styles.leadershipSection}>
+          <h2>Đội ngũ sáng lập</h2>
+          <p className='text-base text-[#323232] text-center w-3/5'>
+            Tận hưởng giá trị đầu tư uy tín hàng đầu và đạt được những lợi nhuận hấp dẫn cho bạn!
+             Bạn là người tạo ra tài chính của riêng mình và chúng tôi sẽ nâng tầm bạn thực hiện điều đó. 
+          </p>
+          <div className={styles.leadershipGrid}>
+            {leaders.slice(0, 4).map((leader, index) => (
+              <div key={index} className={styles.leaderCard}>
+                <div className='pt-6'>
+                  <img
+                    src={"/img/about/lead.svg"}
+                    alt={leader.name}
+                    className={styles.leaderImage}
+                  />
+                </div>
+                <div className={styles.leaderInfo}>
+                  <div className='h-12 w-12 bg-[#48B96D] absolute text-center left-0 flex items-center justify-center'>
+                    <img src='/img/icon/arrow-right.svg' />
+                  </div>
+                  <div className='w-[90%] bg-white p-6 pb-8'>
+                    <h3>{leader.name}</h3>
+                    <p className={styles.leaderTitle}>{leader.title}</p>
+                  </div>
+                
+                </div>
               </div>
-              <button type="submit">Gửi</button>
-            </form>
+            ))}
+          </div>
+        
+        </div>
+        <div className={styles.leadershipSection}>
+          <h2>Nhân sự chủ chốt</h2>
+          <p className='text-base text-[#323232] text-center w-3/5'>
+            Tận hưởng giá trị đầu tư uy tín hàng đầu và đạt được những lợi nhuận hấp dẫn cho bạn!
+            Bạn là người tạo ra tài chính của riêng mình và chúng tôi sẽ nâng tầm bạn thực hiện điều đó.
+          </p>
+          <div className={styles.leadershipGrid}>
+            {leaders.slice(0, 4).map((leader, index) => (
+              <div key={index} style={{ backgroundColor:"#F3F7F4"}}  className={styles.leaderCard}>
+                <div className='pt-6'>
+                  <img
+                    src={"/img/about/lead.svg"}
+                    alt={leader.name}
+                    className={styles.leaderImage}
+                  />
+                </div>
+                <div className={styles.leaderInfo}>
+                  <div className='w-full bg-white p-6 pb-8 text-center'>
+                    <h3>{leader.name}</h3>
+                    <p className={styles.leaderTitle}>{leader.title}</p>
+                  </div>
+
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+   
+        <div className={styles.contactSection}>
+          <div className={styles.contactInfo}>
+            <img src='/img/about/contact.svg'/>
+          </div>
+
+          <div className='flex-1 p-[1px] rounded-t-[40px] bg-gradient-to-b from-[#00000016] to-[#00000000]'>
+            <div className={styles.contactForm}>
+              <div className='p-8 rounded-t-[32px] bg-gradient-to-b from-[#00000014] to-[#00000000]'>
+                <h3>We’re open for any suggestion or just have a chat.</h3>
+                <form>
+                  <input type="text" placeholder="Tên*" required />
+                  <input type="email" placeholder="Email*" required />
+                  <input type="tel" placeholder="Số điện thoại" />
+                  <textarea placeholder="Câu hỏi của bạn*" required></textarea>
+                  <div className={styles.recaptcha}>
+                    <input type="checkbox" id="notRobot" className='w-5 h-5'/>
+                    <label htmlFor="notRobot">Tôi không phải là robot</label>
+                    <img src='/img/icon/cacha.svg' />
+                  </div>
+                  <button type="submit">
+                    <span className='text-lg font-medium '>
+                      Send 
+                    </span>
+                    <img src='/img/icon/send.svg'/>
+
+                  </button>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       </div>
