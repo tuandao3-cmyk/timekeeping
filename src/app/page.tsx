@@ -48,29 +48,29 @@ const Home: React.FC = () => {
         <div className={styles.container}>
             <div className="bg-[#07212C] text-white p-8 flex min-h-[90vh]">
                 {/* Phần bên trái */}
-                <div className="w-full md:ml-[10%]  md:w-1/2 md:max-w-[45%] px-4 md:pr-8">
-                    <h1 className="font-inter font-bold pt-[20%] pb-[5%] sm:text-3xl md:leading-[56px] md:text-5xl mb-2 sm:mb-4">
-                        ĐẦU TƯ THÔNG MINH SINH LỜI TUYỆT ĐỈNH
+                <div className="w-full md:ml-[50px]  md:w-1/2 md:max-w-[45%] px-4 md:pr-8">
+                    <h1 className="font-inter font-bold pt-[130px]   max-w-[450px]  md:leading-[48px] text-[32px] mb-4">
+                        NỀN TẢNG HỢP TÁC ĐẦU TƯ ĐỘT PHÁ CHO TƯƠNG LAI
                     </h1>
-                    <p className="text-base font-inter pb-[5%] sm:text-base md:max-w-[85%] mb-4 sm:mb-6 text-[#FFFFFF]/60">
-                        Trải nghiệm ứng dụng đầu tư HyraCap mang lại lợi nhuận hấp dẫn dành cho bạn
+                    <p className="text-base font-inter pb-[30px] sm:text-base max-w-[450px] md:max-w-[85%] mb-4 sm:mb-6 text-[#FFFFFF]/60">
+                    Cung cấp cho các nhà đầu tư và doanh nghiệp những dự án tiềm năng phát triển để chia sẻ sự tăng trưởng tài chính.
                     </p>
-                    <button className="bg-[#48B96D] text-[#ffffff] md:px-4 py-3 max-sm:px-4 rounded-full text-sm sm:text-base">
+                    <button className="bg-[#48B96D] text-[#ffffff] md:px-4 py-3 max-sm:px-4 rounded-full text-base">
                         Tham gia cùng chúng tôi
                     </button>
                     
                     <div className="flex flex-wrap max-sm:justify-between mt-8 space-y-0 sm:space-x-4 md:space-x-4 lg:space-x-4 h-[50%]">
-                        <div className="w-[30%] h-[40%] bg-[#FFFFFF]/10 rounded-lg p-1 md:p-3 pl-5 flex flex-col justify-center">
-                            <p className="text-[#48B96D] mb-4 text-xl leading-8 sm:text-2xl font-semibold">$1B+</p>
-                            <p className="text-[#FFFFFF]/80 sm:max-w-[60%] max-w-[100%] text-xs sm:text-sm">Tổng số đã huy động</p>
+                        <div className="w-[172px] h-[150px] bg-[#FFFFFF]/10 rounded-lg p-1 md:p-3 pl-5 flex flex-col justify-center">
+                            <p className="text-[#48B96D] lg:pl-4 mb-4 text-xl leading-8 sm:text-2xl font-semibold">$1B+</p>
+                            <p className="text-[#FFFFFF]/80 lg:pl-4 sm:max-w-[105px]  text-xs sm:text-sm">Tổng số đã huy động</p>
                         </div>
-                        <div className="w-[30%] h-[40%] bg-[#FFFFFF]/10 rounded-lg p-1 md:p-3 pl-5 flex flex-col justify-center">
-                            <p className="text-[#48B96D] mb-4 text-xl leading-8 sm:text-2xl font-semibold">50M+</p>
-                            <p className="text-[#FFFFFF]/80 sm:max-w-[60%] max-w-[100%] text-xs sm:text-sm">Đã đầu tư thành công</p>
+                        <div className="w-[172px] h-[150px] bg-[#FFFFFF]/10 rounded-lg p-1 md:p-3 pl-5 flex flex-col justify-center">
+                            <p className="text-[#48B96D] lg:pl-4 mb-4 text-xl leading-8 sm:text-2xl font-semibold">50M+</p>
+                            <p className="text-[#FFFFFF]/80 lg:pl-4 sm:max-w-[105px]  text-xs sm:text-sm">Đã đầu tư thành công</p>
                         </div>
-                        <div className="w-[30%] h-[40%] bg-[#FFFFFF]/10 rounded-lg p-1 md:p-3 pl-5 flex flex-col justify-center">
-                            <p className="text-[#48B96D] mb-4 text-xl leading-8 sm:text-2xl font-semibold">771+</p>
-                            <p className="text-[#FFFFFF]/80 sm:max-w-[60%] max-w-[100%] text-xs sm:text-sm">Nhà đầu tư tham gia</p>
+                        <div className="w-[172px] h-[150px] bg-[#FFFFFF]/10 rounded-lg p-1 md:p-3 pl-5 flex flex-col justify-center">
+                            <p className="text-[#48B96D] lg:pl-4 mb-4 text-xl leading-8 sm:text-2xl font-semibold">771+</p>
+                            <p className="text-[#FFFFFF]/80 lg:pl-4 sm:max-w-[105px]  text-xs sm:text-sm">Nhà đầu tư tham gia</p>
                         </div>
                     </div>
                 </div>
@@ -83,7 +83,7 @@ const Home: React.FC = () => {
                     }`}
                 >
                     <div className="relative w-full h-full">
-                    <div className="absolute w-[80%] sm:w-[70%] md:w-[60%] h-[65%] sm:h-[70%] md:h-[65%] top-[5%] sm:top-[8%] md:top-[10%] right-[10%] md:right-[5%] mr-[20%]">
+                    <div className="absolute   lg:w-[400px]   lg:h-[470px] top-[45px]  lg:top-[90px] right-[96px] lg:right-[48px] mr-[92px]">
                             <img 
                                 src="/img/invest.png" 
                                 alt="Investment Dashboard" 
@@ -91,7 +91,7 @@ const Home: React.FC = () => {
                             />
                             
                             {/* Khung Hyperas */}
-                            <div className="absolute w-[58%] sm:w-[50%] h-[31%] sm:h-[31%] md:h-[33%] top-[7%] sm:top-[5%] md:top-[7%] left-[-30%] sm:left-[-25%] md:left-[-25%] bg-white text-[#04141A] rounded-[1.25rem] shadow overflow-hidden flex flex-col">
+                            <div className="absolute w-[200px]  h-[200px] lg:-left-[110px] lg:h-[200px] top-[63px]  bg-white text-[#04141A] rounded-[1.25rem] shadow overflow-hidden flex flex-col">
                                 <div className="relative h-1/2 w-full overflow-hidden bg-[#0B3546]">
                                     <img 
                                         src="/img/hyperas1.png" 
@@ -107,7 +107,7 @@ const Home: React.FC = () => {
                             </div>
                             
                             {/* Khung Salala */}
-                            <div className="absolute w-[67%] sm:w-[58%] md:w-[66%] h-[38%] sm:h-[40%] md:h-[43%] bottom-[-15%] sm:bottom-[-18%] md:bottom-[-18%] right-[-5%] sm:right-[-4%] md:right-[-28%] bg-[#F3F7F4] rounded-[1.25rem] shadow overflow-hidden flex flex-col p-2 xl:p-3">
+                            <div className="absolute lg:w-[250px] lg:h-[200px] lg:-bottom-[100px] lg:-right-[100px] bg-[#F3F7F4] rounded-[1.25rem] shadow overflow-hidden flex flex-col p-2 xl:p-3">
                                 <div className="border-b-2 border-[#1C4A2B]/10 flex items-center pb-1">
                                     <div className="w-8 h-8 sm:w-9 sm:h-9 xl:w-12 xl:h-12 flex items-center justify-center mr-2 sm:mr-3">
                                         <img src="/img/icon/salala.png" alt="Salala AI" className="w-full h-full rounded-lg" />
@@ -142,9 +142,42 @@ const Home: React.FC = () => {
                     </div>
                 </div>
             </div>
-            {/* Chỉ số trang */}
-
             <Partner />
+            <div className="bg-white py-16">
+                <div className="container mx-auto px-4">
+                    <h2 className="text-3xl font-bold text-center mb-12">GIẢI PHÁP ĐẦU TƯ VƯỢT TRỘI</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        {[
+                            {
+                                icon: "/img/icon/icon15.png",
+                                title: "Lợi nhuận vượt trội",
+                                description: "Tạo nên mô hình đầu tư bền vững. Giúp mọi người có nguồn thu nhập thụ động vững vàng từ đó tài chính."
+                            },
+                            {
+                                icon: "/img/icon/icon14.png",
+                                title: "Thông tin minh bạch",
+                                description: "Tạo nên mô hình đầu tư bền vững. Giúp mọi người có nguồn thu nhập thụ động vững vàng từ đó tài chính."
+                            },
+                            {
+                                icon: "/img/icon/icon16.png",
+                                title: "Bảo mật tuyệt đối",
+                                description: "Tạo nên mô hình đầu tư bền vững. Giúp mọi người có nguồn thu nhập thụ động vững vàng từ đó tài chính."
+                            }
+                        ].map((item, index) => (
+                            <div 
+                                key={index} 
+                                className="bg-[#F3F7F4] p-6 rounded-[1.25rem] w-[400px] h-[300px] transition-all duration-300 hover:bg-[#48B96D] hover:text-white group"
+                            >
+                                <img src={item.icon} alt={item.title} className="w-16 h-16 mb-4" />
+                                <h3 className="text-2xl text-[#000000]/90 leading-8 group-hover:text-white font-inter font-semibold mb-2">{item.title}</h3>
+                                <p className="text-gray-700 text-base leading-6 group-hover:text-white">{item.description}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+                    
+
             <ProjectSection />
             <News />
             

@@ -26,7 +26,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   margin-bottom: 2rem;
-  max-width: 90%;
+  max-width: 1200px;
   width: 100%
 }
 
@@ -217,6 +217,12 @@
   width: 100%;
   height: auto;
   display: block;
+}
+
+@media (max-width: 1024px) {
+  .projectCards {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 @media (max-width: 768px) {

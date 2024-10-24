@@ -77,9 +77,9 @@ const FeedbackSection: React.FC = () => {
           if (el) feedbackRefs.current[index] = el;
         }}
         className={`bg-white rounded-lg shadow-lg p-6 absolute transition-all duration-500 opacity-0 hover:bg-[#48B96D] group ${
-          index === 0 ? 'top-[5%] right-1/2 max-w-md' : 
-          index === 1 ? 'top-[30%] left-1/4 -translate-x-1/2 max-w-xl' : 
-          'top-[60%] right-1/2 max-w-xl'
+          index === 0 ? 'top-[30px] right-1/2 max-w-md' : 
+          index === 1 ? 'top-[210px] left-1/4 -translate-x-1/2 max-w-xl' : 
+          'top-[418px] right-1/2 max-w-xl'
         } ${index === 0 ? '-translate-x-full' : index === 2 ? 'translate-x-full' : ''}`}
       >
         <p className="text-[#000000]/90 font-semibold text-base leading-7 font-inter mb-4 group-hover:text-white transition-colors duration-300">{feedback.content}</p>

@@ -34,8 +34,8 @@
     flex: 1.5;
     position: relative;
     display: flex;
-    flex-direction: column; /* Đảm bảo rằng nó cũng là một flex container nếu cần */
-    justify-content: center; /* Căn giữa nội dung bên trong */
+    flex-direction: column; 
+    /* justify-content: center;  */
     align-items: center;
 }
 
@@ -49,7 +49,7 @@
 }
 
 .mainImage {
-    max-width: 80%;
+    width: 80%;
     border-radius: 10px;
     aspect-ratio: 1/1;
     object-fit: cover;  
@@ -76,12 +76,7 @@
     color: white;
 }
 
-/* .readMore {
-  font-size: 0.9rem;
-  color: #48b96d;
-  text-transform: uppercase;
-  font-weight: bold;
-} */
+
 
 .sideNews {
     flex: 1;
@@ -170,9 +165,10 @@
     font-size: 0.9rem; /* Giảm kích thước font cho nút */
   }
   .newsImage {
-    width: 100%; /* Đặt hình ảnh chiếm toàn bộ chiều rộng */
-    margin-right: 0; /* Bỏ khoảng cách bên phải */
-    margin-bottom: 10px; /* Thêm khoảng cách dưới hình ảnh */
+    width: 100%; 
+
+    /* margin-right: 0; 
+    margin-bottom: 10px;  */
   }
 }
 
@@ -189,11 +185,11 @@
         border-radius: 5px; /* Giảm độ bo góc cho hình ảnh */
     }
 
-    .newsImage {
-        width: 100%; /* Đặt hình ảnh chiếm toàn bộ chiều rộng */
-        margin-right: 0; /* Bỏ khoảng cách bên phải */
-        margin-bottom: 10px; /* Thêm khoảng cách dưới hình ảnh */
-    }
+    /* .newsImage {
+        width: 100%; 
+        margin-right: 0; 
+        margin-bottom: 10px; 
+    } */
 
     .newsContent {
         flex-direction: column; /* Đặt nội dung thành cột */
@@ -206,6 +202,10 @@
 }
 
 @media (max-width: 1200px) {
+    .sideBorder{
+        align-items: center;
+        
+    }
     .newsSection {
         padding: 30px; /* Giảm padding cho màn hình nhỏ hơn */
     }
@@ -215,15 +215,16 @@
     }
 
   .newsImage {
-    width: 100%; /* Đặt hình ảnh chiếm toàn bộ chiều rộng */
-    margin-right: 0; /* Bỏ khoảng cách bên phải */
-    margin-bottom: 10px; /* Thêm khoảng cách dưới hình ảnh */
+    width: 100%; 
+    margin: 0;
+    /* margin-right: 0; 
+    margin-bottom: 10px;  */
   }
   .mainNews {
-    flex: 1; /* Giảm kích thước flex cho phần main news */
+    flex: 1; 
   }
 
     .sideNews {
-        flex: 1; /* Đảm bảo side news cũng chiếm không gian hợp lý */
+        flex: 1; 
     }
 }

@@ -148,14 +148,13 @@ const ProjectSlider: React.FC = () => {
               <a href='/detail-category' className={`bg-[#07212C] rounded-xl overflow-hidden transition-all duration-300 flex flex-col sm:flex-row ${isActive ? 'scale-100' : 'scale-90'}`}>      
                 
                   <div className="md:w-1/2 w-full relative p-8">
-                    <div className="w-full h-full rounded-lg overflow-hidden">
-                      <img src={project.image} alt={project.name} className="w-full h-full object-cover" />
-                      <a 
-                        href="/detail-category" 
-                        className="absolute top-[90%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-500 text-white px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer text-center"
-                      >
-                        Xem chi tiết 
-                      </a>
+                  <div className="w-full h-full rounded-lg overflow-hidden relative group">
+                      <img src={project.image} alt={project.name} className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-70" />
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <button className="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition-colors duration-300">
+                        Xem chi tiết
+                      </button>
+                    </div>
                     </div>
                   </div>
                   <div className="md:w-1/2 w-full p-8 flex flex-col justify-between">
