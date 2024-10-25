@@ -1,5 +1,5 @@
 .newsSection {
-  background-color: #f3f7f4;
+  /* background-color: #FFFFFF; */
   background-size: cover;
   padding: 40px 0;
   border-radius: 10px;
@@ -34,15 +34,13 @@
 }
 
 .mainNews {
-  flex: 1.5;
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 5;
 }
 
 .mainNewsLink {
-  position: relative;
   display: flex;
   flex-direction: column;
   text-decoration: none;
@@ -50,9 +48,8 @@
 }
 
 .mainImage {
-  /* width: 80%; */
-  /* max-width: 486px; */
   border-radius: 10px;
+  height: 426px;
   /* aspect-ratio: 1/1; */
   object-fit: cover;
 }
@@ -61,7 +58,6 @@
   /* font-size: clamp(1.5rem, 2vw, 2.5rem); */
   font-weight: bold;
   margin: 0;
-  /* max-width: 80%; */
 }
 .newsTitle:hover {
   color: #48b96d;
@@ -79,7 +75,6 @@
 }
 
 .sideNews {
-  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -103,12 +98,10 @@
 }
 
 .newsImage {
-  /* width: 50%; */
-  /* max-width: 233px; */
-  height: auto;
+  height: 203px;
+  width: 203px;
   border-radius: 10px;
   margin-right: 15px;
-  aspect-ratio: 1/1;
   object-fit: cover;
 }
 
@@ -167,7 +160,8 @@
     font-size: 0.9rem; /* Giảm kích thước font cho nút */
   }
   .newsImage {
-    width: 100%;
+    height: 204px;
+    width: 204px;
 
     /* margin-right: 0; 
     margin-bottom: 10px;  */

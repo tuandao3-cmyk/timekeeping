@@ -4,7 +4,7 @@ import { useInView } from 'react-intersection-observer';
 const DownloadSection = () => {
   const { ref, inView, entry } = useInView({
     threshold: 0.1,
-    // triggerOnce: true,
+    triggerOnce: true,
   });
   return (
     <div className="bg-[#FCFCFD] overflow-hidden flex flex-col justify-center items-center">

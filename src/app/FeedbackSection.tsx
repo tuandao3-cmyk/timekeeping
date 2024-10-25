@@ -36,7 +36,7 @@ const FeedbackSection: React.FC = () => {
   const feedbackRefs = useRef<(HTMLDivElement | null)[]>([]);
   const { ref, inView, entry } = useInView({
     threshold: 0.1,
-    // triggerOnce: true,
+    triggerOnce: true,
   });
   useEffect(() => {
     const observer = new IntersectionObserver(

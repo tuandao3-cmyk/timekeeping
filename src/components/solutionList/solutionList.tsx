@@ -132,7 +132,7 @@ const DATA = [
 function SolutionList() {
   const { ref, inView, entry } = useInView({
     threshold: 0.1,
-    // triggerOnce: true,
+    triggerOnce: true,
   });
   return (
     <section className="py-[61px]">

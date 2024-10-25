@@ -16,7 +16,7 @@ const pressLogos = [
 const PressSection = () => {
   const { ref, inView, entry } = useInView({
     threshold: 0.1,
-    // triggerOnce: true,
+    triggerOnce: true,
   });
   return (
     <section className={styles.pressSection}>

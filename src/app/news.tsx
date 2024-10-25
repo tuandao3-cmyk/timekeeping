@@ -45,6 +45,7 @@ const newsData = [
 const News = () => {
   const { ref, inView, entry } = useInView({
     threshold: 0.1,
+    triggerOnce: true,
   });
   return (
     <div className={styles.newsSection}>

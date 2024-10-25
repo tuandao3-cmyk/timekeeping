@@ -7,6 +7,7 @@ import ProjectGrid from '@/components/projectGrid';
 const ProjectSection = () => {
   const { ref, inView, entry } = useInView({
     threshold: 0.1,
+    triggerOnce: true,
   });
 
   const projects = [
