@@ -58,10 +58,10 @@ const Home: React.FC = () => {
             ref={ref}
             className={`duration-700 ease-in-out transform ${
               inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-            } font-inter font-bold pt-[20%] pb-[5%] sm:text-3xl md:leading-[56px] md:text-5xl mb-2 sm:mb-4`}
+            } font-inter font-bold pt-[20%] pb-[5%] sm:text-[32px] md:leading-[56px] md:text-[40px] mb-2 sm:mb-4 uppercase`}
           >
-            ĐẦU TƯ THÔNG MINH
-            <br /> SINH LỜI TUYỆT ĐỈNH
+            Ủy thác niềm tin
+            <br /> gặt hái thịnh vượng
           </h1>
           <p
             ref={ref}
@@ -69,8 +69,8 @@ const Home: React.FC = () => {
               inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             } text-base font-inter pb-[5%] sm:text-base md:max-w-[85%] mb-4 sm:mb-6 text-[#FFFFFF]/60`}
           >
-            Trải nghiệm ứng dụng đầu tư HyraCap mang lại lợi nhuận hấp dẫn dành
-            cho bạn
+            Cung cấp cho các nhà đầu tư và doanh nghiệp những dự án <br /> tiềm
+            năng phát triển để chia sẻ sự tăng trưởng tài chính.
           </p>
           <button
             ref={ref}
@@ -89,10 +89,11 @@ const Home: React.FC = () => {
               }`}
             >
               <p className="text-[#48B96D] mb-4 text-xl leading-8 sm:text-2xl font-semibold">
-                $1B+
+                $20M+
               </p>
-              <p className="text-[#FFFFFF]/80 sm:max-w-[60%] max-w-[100%] text-xs sm:text-sm">
-                Tổng số đã huy động
+              <p className="text-[#FFFFFF]/80  max-w-[100%] text-xs sm:text-sm">
+                Tổng vốn đang
+                <br /> huy động
               </p>
             </div>
             <div
@@ -102,10 +103,10 @@ const Home: React.FC = () => {
               }`}
             >
               <p className="text-[#48B96D] mb-4 text-xl leading-8 sm:text-2xl font-semibold">
-                50M+
+                10M+
               </p>
-              <p className="text-[#FFFFFF]/80 sm:max-w-[60%] max-w-[100%] text-xs sm:text-sm">
-                Đã đầu tư thành công
+              <p className="text-[#FFFFFF]/80   w-full text-xs sm:text-sm">
+                Tổng vốn đang <br /> đầu tư
               </p>
             </div>
             <div
@@ -118,7 +119,7 @@ const Home: React.FC = () => {
                 771+
               </p>
               <p className="text-[#FFFFFF]/80 sm:max-w-[60%] max-w-[100%] text-xs sm:text-sm">
-                Nhà đầu tư tham gia
+                Nhà đầu tư
               </p>
             </div>
           </div>

@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
       className={`bg-[#04141A] dark:bg-[#04141A] duration-700 ease-in-out transform `}
     >
       <div className="mx-auto w-full max-w-screen-xl pt-16 pl-3 pr-3">
-        <div>
+        {/* <div>
           <img
             ref={ref}
             src="/img/logohyracap.png"
@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
               inView ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
             }`}
           />
-        </div>
+        </div> */}
         <div className="grid grid-cols-1 gap-8 px-4 py-6 lg:py-8 md:grid-cols-5">
           <div>
             <h2

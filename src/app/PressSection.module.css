@@ -1,8 +1,12 @@
 .pressSection {
-  padding: 2rem 3%;
+  /* padding: 2rem 3%; */
   background-color: #ffffff;
   text-align: center;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .title {
@@ -53,4 +57,3 @@
     padding: 0.5rem;
   }
 }
-

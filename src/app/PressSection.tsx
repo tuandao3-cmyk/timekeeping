@@ -20,36 +20,38 @@ const PressSection = () => {
   });
   return (
     <section className={styles.pressSection}>
-      <h2
-        ref={ref}
-        className={`${styles.title} duration-700 ease-in-out transform ${
-          inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}
-      >
-        TRUYỀN THÔNG NÓI GÌ VỀ CHÚNG TÔI?
-      </h2>
-      <p
-        ref={ref}
-        className={`font-inter text-[#000000]/60 font-normal text-base leading-6 max-w-[54%] mx-auto mb-4 text-center duration-700 delay-200 ease-in-out transform ${
-          inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}
-      >
-        Khám phá các bài viết và nhận xét từ báo chí, nơi chúng tôi được công
-        nhận là một trong những nền tảng đầu tư hàng đầu, mang lại cơ hội và giá
-        trị bền vững cho nhà đầu tư.
-      </p>
-      <div className={styles.logoContainer}>
-        {pressLogos.map((logo, index) => (
-          <div
-            key={index}
-            ref={ref}
-            className={`${styles.logoWrapper} duration-700 ease-in-out delay-${logo.delay} transform ${
-              inView ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
-            }`}
-          >
-            <img src={logo.src} alt={logo.name} className={styles.logo} />
-          </div>
-        ))}
+      <div className="flex flex-col items-center justify-center max-w-[1200px] py-[62px] ">
+        <h2
+          ref={ref}
+          className={`${styles.title} duration-700 ease-in-out transform ${
+            inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
+          TRUYỀN THÔNG NÓI GÌ VỀ CHÚNG TÔI?
+        </h2>
+        <p
+          ref={ref}
+          className={`font-inter text-[#000000]/60 font-normal text-base leading-6 max-w-[54%] mx-auto mb-4 text-center duration-700 delay-200 ease-in-out transform ${
+            inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
+          Khám phá các bài viết và nhận xét từ báo chí, nơi chúng tôi được công
+          nhận là một trong những nền tảng đầu tư hàng đầu, mang lại cơ hội và
+          giá trị bền vững cho nhà đầu tư.
+        </p>
+        <div className={styles.logoContainer}>
+          {pressLogos.map((logo, index) => (
+            <div
+              key={index}
+              ref={ref}
+              className={`${styles.logoWrapper} duration-700 ease-in-out delay-${logo.delay} transform ${
+                inView ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
+              }`}
+            >
+              <img src={logo.src} alt={logo.name} className={styles.logo} />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
