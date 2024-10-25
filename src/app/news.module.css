@@ -1,7 +1,7 @@
 .newsSection {
-  background-color: #FFFFFF;
+  /* background-color: #FFFFFF; */
   background-size: cover;
-  padding: 40px;
+  padding: 40px 120px;
   border-radius: 10px;
   color: #04141A;
   display: flex;
@@ -35,8 +35,6 @@
     position: relative;
     display: flex;
     flex-direction: column; /* Đảm bảo rằng nó cũng là một flex container nếu cần */
-    justify-content: center; /* Căn giữa nội dung bên trong */
-    align-items: center;
 }
 
 .mainNewsLink {
@@ -45,7 +43,6 @@
     flex-direction: column;
     text-decoration: none;
     color: inherit;
-    align-items: center;
 }
 
 .mainImage {
@@ -111,7 +108,6 @@
   max-width: 233px;
   height: auto;
   border-radius: 10px;
-  margin-right: 15px; /* Đẩy hình ảnh cách text một khoảng */
   aspect-ratio: 1/1;
   object-fit: cover;
 }
