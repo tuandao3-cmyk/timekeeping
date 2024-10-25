@@ -45,31 +45,31 @@ const DetailCategoryPage: React.FC = () => {
               <div className="lg:flex justify-start hidden ">
                 <a
                   href="#"
-                  className="text-green-600 text-sm font-semibold px-7 py-3 bg-white"
+                  className="text-green-600 text-sm font-semibold px-5 py-3 bg-white flex-1 flex-grow"
                 >
                   Thông tin
                 </a>
                 <a
                   href="#"
-                  className="text-gray-500 text-sm font-semibold px-7 py-3"
+                  className="text-gray-500 text-sm font-semibold px-5 py-3"
                 >
                   Pitchingdeck
                 </a>
                 <a
                   href="#"
-                  className="text-gray-500 text-sm font-semibold px-7 py-3"
+                  className="text-gray-500 text-sm font-semibold px-5 py-3"
                 >
                   Hợp đồng mẫu
                 </a>
                 <a
                   href="#"
-                  className="text-gray-500 text-sm font-semibold px-7 py-3"
+                  className="text-gray-500 text-sm font-semibold px-5 py-3"
                 >
                   Lộ trình tài chính
                 </a>
                 <a
                   href="#"
-                  className="text-gray-500 text-sm font-semibold px-7 py-3"
+                  className="text-gray-500 text-sm font-semibold px-5 py-3"
                 >
                   Kế hoạch kinh doanh
                 </a>
