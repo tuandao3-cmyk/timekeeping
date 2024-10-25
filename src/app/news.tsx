@@ -9,7 +9,7 @@ const newsData = [
       'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
     date: '30/08/2024',
     image: '/img/20.png',
-    videoLink: '#',
+    videoLink: '/news/newsdetail',
     description:
       'Hôm 30/8, Hyratek, công ty công nghệ tiên phong trong lĩnh vực cơ sở hạ tầng điện toán biên  cho trí tuệ nhân tạo (AI)...',
   },
@@ -18,7 +18,7 @@ const newsData = [
       'Egabid áp dụng công nghệ blockchain đảm bảo tính minh bạch và an toàn cho mỗi lượt đấu giá',
     date: '10 tháng 10, 2024',
     image: '/img/21.png',
-    link: '#',
+    videoLink: '/news/newsdetail',
     description:
       'Egabid là sàn thương mại điện tử đấu giá ngược trong hệ sinh thái Hyperas, cung cấp một nền tảng đấu giá ngược độc đáo',
   },
@@ -27,7 +27,7 @@ const newsData = [
       'Giải pháp hạ tầng điện toán biên chi phí thấp giúp xử lý dữ liệu lớn',
     date: '10 tháng 10, 2024',
     image: '/img/22.png',
-    link: '#',
+    videoLink: '/news/newsdetail',
     description:
       'Salala là một nền tảng kinh tế chia sẻ dựa trên điện toán biên, cho phép người dùng chia sẻ tài nguyên để cùng nhau huấn luyện và suy luận các mô hình AI.',
   },
@@ -36,7 +36,7 @@ const newsData = [
       'Hyperas thúc đẩy một hệ sinh thái AI toàn diện với sự đổi mới, hợp tác và phát triển bền vững.',
     date: '10 tháng 10, 2024',
     image: '/img/23.png',
-    link: '#',
+    videoLink: '/news/newsdetail',
     description:
       'Hyperas hướng tới việc trở thành một nền tảng hàng đầu trong việc cung cấp giải pháp cho các vấn đề về hạ tầng tính toán trong ngành công nghệ AI. ',
   },
@@ -136,7 +136,7 @@ const News = () => {
                   : 'opacity-0 translate-y-10'
               }`}
             >
-              <a href={news.link} className={`${styles.newsLink}`}>
+              <a href={news.videoLink} className={`${styles.newsLink}`}>
                 <div className={styles.newsContent}>
                   <div className={styles.sideBorder}>
                     <h2 className={`${styles.newsTitle} text-16px`}>
