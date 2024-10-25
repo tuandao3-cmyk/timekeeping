@@ -72,41 +72,53 @@ const FeedbackSection: React.FC = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-  <h2 ref={ref} className={`4xl:text-[72px] 4xl:leading-[80px] 3xl:text-[48px] 3xl:leading-[50px] 4xl:mb-8 3xl:mb-6 text-4xl font-inter leading-[48px] font-bold text-center mb-2
-   ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
-          }`}>PHẢN HỒI VỀ KHÁCH HÀNG</h2>
-  <p className="4xl:text-[60px] 4xl:leading-[72px] 4xl:max-w-[40vw] 3xl:text-[36px] 3xl:leading-[42px] text-center font-inter text-3xl leading-10 text-gray-600 mb-12 max-w-[42vw] mx-auto">
-    HYRACAP LUÔN QUAN TÂM ĐẾN PHẢN HỒI CỦA TỪNG KHÁCH HÀNG
-  </p>
-  <div className="relative 4xl:h-[1400px] 3xl:h-[1000px] h-[800px]">
-    {feedbacks.map((feedback, index) => (
-      <div
-        key={feedback.id}
-        ref={(el) => {
-          if (el) feedbackRefs.current[index] = el;
-        }}
-        className={`bg-white rounded-lg shadow-lg p-6 absolute transition-all duration-500 opacity-0 hover:bg-[#48B96D] group ${
-          index === 0 ? 'top-[30px]  right-1/2 max-w-md 4xl:top-[130px] 4xl:max-w-[800px] 3xl:top-[50px] 3xl:max-w-[700px]' : 
-          index === 1 ? 'top-[210px] 4xl:top-[390px] 4xl:max-w-[1100px] left-1/4 -translate-x-1/2 max-w-xl 3xl:top-[280px] 3xl:max-w-[800px]' : 
-          'top-[418px] 4xl:top-[690px] 4xl:max-w-[1100px] right-1/2 max-w-xl 3xl:top-[540px] 3xl:max-w-[800px]'
-        } ${index === 0 ? '-translate-x-full' : index === 2 ? 'translate-x-full' : ''}`}
-      >
-        <p className="text-[#000000]/90 font-semibold text-base 4xl:text-[30px] 4xl:leading-[40px] 3xl:text-[20px] 3xl:leading-[25px] leading-7 font-inter mb-4 group-hover:text-white transition-colors duration-300">{feedback.content}</p>
-        <div className="flex items-center">
-          <img
-            src={feedback.image}
-            alt={feedback.name}
-            className="4xl:w-[100px] 4xl:h-[100px] 3xl:w-[80px] 3xl:h-[80px] w-12 h-12 rounded-full mr-4"
-          />
-          <div>
-            <p className="4xl:text-[30px] 4xl:leading-[40px] 3xl:text-[20px] 3xl:leading-[25px] font-semibold group-hover:text-white transition-colors duration-300">{feedback.name}</p>
-            <p className="4xl:text-[30px] 4xl:leading-[40px] 3xl:text-[20px] 3xl:leading-[25px] text-gray-600 text-sm group-hover:text-white transition-colors duration-300">{feedback.position}</p>
-          </div>
+        <h2
+          ref={ref}
+          className={`4xl:text-[72px] 4xl:leading-[80px] 3xl:text-[48px] 3xl:leading-[50px] 4xl:mb-8 3xl:mb-6 text-4xl font-inter leading-[48px] font-bold text-center mb-2
+   ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}
+        >
+          PHẢN HỒI VỀ KHÁCH HÀNG
+        </h2>
+        <p className="4xl:text-[60px] 4xl:leading-[72px] 4xl:max-w-[40vw] 3xl:text-[36px] 3xl:leading-[42px] text-center font-inter text-3xl leading-10 text-gray-600 mb-12 max-w-[42vw] mx-auto">
+          HYRACAP LUÔN QUAN TÂM ĐẾN PHẢN HỒI CỦA TỪNG KHÁCH HÀNG
+        </p>
+        <div className="relative 4xl:h-[1400px] 3xl:h-[1000px] h-[800px]">
+          {feedbacks.map((feedback, index) => (
+            <div
+              key={feedback.id}
+              ref={(el) => {
+                if (el) feedbackRefs.current[index] = el;
+              }}
+              className={`bg-white rounded-lg shadow-lg p-6 absolute transition-all duration-500 opacity-0 hover:bg-[#48B96D] group ${
+                index === 0
+                  ? 'top-[30px]  right-1/2 max-w-md 4xl:top-[130px] 4xl:max-w-[800px] 3xl:top-[50px] 3xl:max-w-[700px]'
+                  : index === 1
+                    ? 'top-[210px] 4xl:top-[390px] 4xl:max-w-[1100px] left-1/4 -translate-x-1/2 max-w-xl 3xl:top-[280px] 3xl:max-w-[800px]'
+                    : 'top-[418px] 4xl:top-[690px] 4xl:max-w-[1100px] right-1/2 max-w-xl 3xl:top-[540px] 3xl:max-w-[800px]'
+              } ${index === 0 ? '-translate-x-full' : index === 2 ? 'translate-x-full' : ''}`}
+            >
+              <p className="text-[#000000]/90 font-semibold text-base 4xl:text-[30px] 4xl:leading-[40px] 3xl:text-[20px] 3xl:leading-[25px] leading-7 font-inter mb-4 group-hover:text-white transition-colors duration-300">
+                {feedback.content}
+              </p>
+              <div className="flex items-center">
+                <img
+                  src={feedback.image}
+                  alt={feedback.name}
+                  className="4xl:w-[100px] 4xl:h-[100px] 3xl:w-[80px] 3xl:h-[80px] w-12 h-12 rounded-full mr-4"
+                />
+                <div>
+                  <p className="4xl:text-[30px] 4xl:leading-[40px] 3xl:text-[20px] 3xl:leading-[25px] font-semibold group-hover:text-white transition-colors duration-300">
+                    {feedback.name}
+                  </p>
+                  <p className="4xl:text-[30px] 4xl:leading-[40px] 3xl:text-[20px] 3xl:leading-[25px] text-gray-600 text-sm group-hover:text-white transition-colors duration-300">
+                    {feedback.position}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-    ))}
-  </div>
-</div>
     </div>
   );
 };

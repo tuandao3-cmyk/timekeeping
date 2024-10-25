@@ -145,20 +145,20 @@ const Home: React.FC = () => {
               {/* Khung Hyperas */}
               <div
                 ref={ref}
-                className={`absolute w-[58%] sm:w-[50%] h-[31%] sm:h-[31%] md:h-[33%] top-[7%] sm:top-[5%] md:top-[7%] left-[-30%] sm:left-[-25%] md:left-[-25%] bg-white text-[#04141A] rounded-[1.25rem] shadow overflow-hidden flex flex-col duration-700 delay-700 ease-in-out transform ${
+                className={`absolute w-[58%] sm:w-[50%] top-[7%] sm:top-[5%] md:top-[7%] left-[-30%] sm:left-[-25%] md:left-[-25%] bg-white text-[#04141A] rounded-[1.25rem] shadow overflow-hidden flex flex-col duration-700 delay-700 ease-in-out transform ${
                   inView
                     ? 'opacity-100 translate-x-0'
                     : 'opacity-0 translate-x-[-50%]'
                 }`}
               >
-                <div className="relative h-1/2 w-full overflow-hidden bg-[#0B3546]">
+                <div className="relative h-[100px] w-full overflow-hidden bg-[#0B3546]">
                   <img
                     src="/img/hyperas1.png"
                     alt="Hyperas Chain"
-                    className="absolute w-full h-auto object-cover "
+                    className="absolute w-full object-cover"
                   />
                 </div>
-                <div className="h-1/2 w-full sm:p-1 flex flex-col justify-center">
+                <div className=" w-full p-2 flex flex-col justify-center">
                   <p className="font-bold pl-1 text-xs leading-4 xl:leading-6 xl:text-base">
                     HYPERAS CHAIN
                   </p>
@@ -178,7 +178,7 @@ const Home: React.FC = () => {
                   inView
                     ? 'opacity-100 translate-x-0'
                     : 'opacity-0 translate-x-[-50%]'
-                } absolute w-[67%] sm:w-[58%] md:w-[66%] h-[38%] sm:h-[40%] md:h-[43%] bottom-[-15%] sm:bottom-[-18%] md:bottom-[-18%] right-[-5%] sm:right-[-4%] md:right-[-28%] bg-[#F3F7F4] rounded-[1.25rem] shadow overflow-hidden flex flex-col p-2 xl:p-3 `}
+                } absolute w-[67%] sm:w-[58%] md:w-[66%] bottom-[-15%] sm:bottom-[-18%] md:bottom-[-18%] right-[-5%] sm:right-[-4%] md:right-[-28%] bg-[#F3F7F4] rounded-[1.25rem] shadow overflow-hidden flex flex-col p-2 xl:p-3 `}
               >
                 <div className="border-b-2 border-[#1C4A2B]/10 flex items-center pb-1">
                   <div className="w-8 h-8 sm:w-9 sm:h-9 xl:w-12 xl:h-12 flex items-center justify-center mr-2 sm:mr-3">
