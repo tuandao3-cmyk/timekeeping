@@ -48,7 +48,7 @@ const ProjectSection = () => {
       {' '}
       <ProjectGrid />
       <section
-        className={`${styles.showcaseSection} flex flex-col justify-center items-center`}
+        className={`${styles.showcaseSection} flex flex-col justify-center items-center bg-[#FFFFFF]`}
       >
         <h2 className="text-center text-[40px] font-bold leading-[48px] pb-10">
           DỰ ÁN ĐÃ ĐẦU TƯ VÀ ƯƠM TẠO
@@ -62,12 +62,12 @@ const ProjectSection = () => {
                   key={index}
                   className={`${styles.projectCard} group relative duration-700 ease-in-out delay-${index * 100} transform ${
                     inView ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
-                  }`}
+                  } max-w-[384px]`}
                 >
                   <img
                     src={project.image}
                     alt={project.title}
-                    className={styles.projectImage}
+                    className={`${styles.projectImage} md:min-h-[250px]`}
                   />
                   <div className={styles.badge}>{project.badge}</div>
 

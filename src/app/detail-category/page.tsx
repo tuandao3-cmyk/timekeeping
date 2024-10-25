@@ -45,31 +45,31 @@ const DetailCategoryPage: React.FC = () => {
               <div className="lg:flex justify-start hidden ">
                 <a
                   href="#"
-                  className="text-green-600 text-sm font-semibold px-7 py-3 bg-white"
+                  className="text-green-600 text-sm font-semibold px-5 py-3 bg-white flex-1 flex-grow"
                 >
                   Thông tin
                 </a>
                 <a
                   href="#"
-                  className="text-gray-500 text-sm font-semibold px-7 py-3"
+                  className="text-gray-500 text-sm font-semibold px-5 py-3"
                 >
                   Pitchingdeck
                 </a>
                 <a
                   href="#"
-                  className="text-gray-500 text-sm font-semibold px-7 py-3"
+                  className="text-gray-500 text-sm font-semibold px-5 py-3"
                 >
                   Hợp đồng mẫu
                 </a>
                 <a
                   href="#"
-                  className="text-gray-500 text-sm font-semibold px-7 py-3"
+                  className="text-gray-500 text-sm font-semibold px-5 py-3"
                 >
                   Lộ trình tài chính
                 </a>
                 <a
                   href="#"
-                  className="text-gray-500 text-sm font-semibold px-7 py-3"
+                  className="text-gray-500 text-sm font-semibold px-5 py-3"
                 >
                   Kế hoạch kinh doanh
                 </a>
@@ -83,16 +83,28 @@ const DetailCategoryPage: React.FC = () => {
             >
               Thông tin
             </a>
-            <a href="#" className="text-gray-500 text-sm font-semibold px-7 py-3">
+            <a
+              href="#"
+              className="text-gray-500 text-sm font-semibold px-7 py-3"
+            >
               Pitchingdeck
             </a>
-            <a href="#" className="text-gray-500 text-sm font-semibold px-7 py-3">
+            <a
+              href="#"
+              className="text-gray-500 text-sm font-semibold px-7 py-3"
+            >
               Hợp đồng mẫu
             </a>
-            <a href="#" className="text-gray-500 text-sm font-semibold px-7 py-3">
+            <a
+              href="#"
+              className="text-gray-500 text-sm font-semibold px-7 py-3"
+            >
               Lộ trình tài chính
             </a>
-            <a href="#" className="text-gray-500 text-sm font-semibold px-7 py-3">
+            <a
+              href="#"
+              className="text-gray-500 text-sm font-semibold px-7 py-3"
+            >
               Kế hoạch kinh doanh
             </a>
           </div>
@@ -122,26 +134,34 @@ const DetailCategoryPage: React.FC = () => {
               <h3 className="text-xl font-bold mb-2">Dữ liệu nổi bật</h3>
               <div className="grid grid-cols-2 gap-7">
                 <div className="flex flex-col bg-white shadow-lg rounded-md p-4">
-                  <span className="font-normal text-lg">Slot</span>
+                  <span className="font-normal text-lg">Vốn huy động</span>
+                  <span className="font-bold text-xl text-[#009467]">$1M</span>
+                </div>
+                <div className="flex flex-col bg-white shadow-lg rounded-md p-4">
+                  <span className="font-normal text-lg">Vốn đầu tư</span>
+                  <span className="font-bold text-xl text-[#009467]">
+                    $850,000
+                  </span>
+                </div>
+                <div className="flex flex-col bg-white shadow-lg rounded-md p-4">
+                  <span className="font-normal text-lg">Tổng Slot</span>
                   <span className="font-bold text-xl text-[#009467]">20</span>
                 </div>
                 <div className="flex flex-col bg-white shadow-lg rounded-md p-4">
-                  <span className="font-normal text-lg">
-                    Tổng số tiền đầu tư
-                  </span>
+                  <span className="font-normal text-lg">Giá trị/slot</span>
                   <span className="font-bold text-xl text-[#009467]">
-                    $220.5M
+                    $50,000
                   </span>
+                </div>
+                <div className="flex flex-col bg-white shadow-lg rounded-md p-4">
+                  <span className="font-normal text-lg">Nhà đầu tư</span>
+                  <span className="font-bold text-xl text-[#009467]">18</span>
                 </div>
                 <div className="flex flex-col bg-white shadow-lg rounded-md p-4">
                   <span className="font-normal text-lg">Vòng đầu tư</span>
                   <span className="font-bold text-xl text-[#009467]">
                     Series C
                   </span>
-                </div>
-                <div className="flex flex-col bg-white shadow-lg rounded-md p-4">
-                  <span className="font-normal text-lg">Nhà đầu tư</span>
-                  <span className="font-bold text-xl text-[#009467]">18</span>
                 </div>
               </div>
             </div>

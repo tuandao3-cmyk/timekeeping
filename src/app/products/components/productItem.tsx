@@ -67,7 +67,7 @@ const ProductItem = forwardRef<HTMLDivElement, ProductItemProps>(
             ref={ref}
             className={`package-item min-w-[200px] bg-white  rounded-lg md:gap-6   flex justify-center items-left flex-col flex-grow gap-3 ${props.className}`}
           >
-            {props.image}
+            <div className="max-h-[336px] max-w-[411px]">{props.image}</div>
             <h2 className="text-lg md:text-[30px] font-bold">{props.title}</h2>
             <div className="flex justify-items-start items-center gap-2">
               <TimeLeft />
@@ -99,5 +99,7 @@ const ProductItem = forwardRef<HTMLDivElement, ProductItemProps>(
     }
   }
 );
+
+ProductItem.displayName = 'ProductItem';
 
 export default ProductItem;

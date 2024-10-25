@@ -5,9 +5,9 @@ import { useInView } from 'react-intersection-observer';
 
 const DATA = [
   {
-    title: 'Lợi nhuận vượt trội',
+    title: 'Nâng tầm tài chính',
     description:
-      'Tạo nên mô hình đầu tư bền vững. Giúp mọi người có nguồn thu nhập thụ động vững vàng tự do tài chính.',
+      'Chúng tôi mang đến giá trị đầu tư tối ưu nhất, dành cho những nhà đầu tư mong muốn gửi gắm niềm tin vào một tương lai tài chính thịnh vượng.',
     image: (
       <svg
         width="58"
@@ -50,7 +50,7 @@ const DATA = [
   {
     title: 'Thông tin minh bạch',
     description:
-      'Tạo nên mô hình đầu tư bền vững. Giúp mọi người có nguồn thu nhập thụ động vững vàng tự do tài chính.',
+      'Sự minh bạch trong mọi giao dịch giúp nhà đầu tư luôn yên tâm, từ đó xây dựng niềm tin và hỗ trợ việc ra quyết định đầu tư thông thái.',
     image: (
       <svg
         width="64"
@@ -88,9 +88,9 @@ const DATA = [
     ),
   },
   {
-    title: 'Bảo mật tuyệt đối',
+    title: 'Giá trị bền vững',
     description:
-      'Tạo nên mô hình đầu tư bền vững. Giúp mọi người có nguồn thu nhập thụ động vững vàng tự do tài chính.',
+      'Khởi tạo mô hình đầu tư vững vàng, giúp các nhà đầu tư xây dựng nguồn thu nhập ổn định, tiến tới một cuộc sống tự do tài chính bền vững.',
     image: (
       <svg
         width="51"
@@ -149,7 +149,7 @@ function SolutionList() {
         {DATA.map((item, index) => (
           <div
             ref={ref}
-            className={`flex rounded-[24px] max-w-[384px] bg-[#F3F7F4] transition duration-500  flex-col hover:bg-[#48B96DCC] hover:bg-opacity-80 justify-start items-start group p-[40px] ease-in-out delay-${index * 100} transform ${
+            className={`flex rounded-[24px] max-w-[384px] bg-[#F3F7F4] transition duration-500 gap-[24px]  flex-col hover:bg-[#48B96DCC] hover:bg-opacity-80 justify-start items-start group p-[40px] ease-in-out delay-${index * 100} transform ${
               inView ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
             }`}
             key={index}

@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useInView } from 'react-intersection-observer';
 import styles from '@/app/Header.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -13,7 +14,7 @@ const newsData = [
       'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
     date: '30/08/2024',
     imageUrl: '/img/20.png',
-    videoLink: '#',
+    videoLink: '/news/newsdetail',
   },
   {
     title:
@@ -22,28 +23,41 @@ const newsData = [
       'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
     date: '30/08/2024',
     imageUrl: '/img/21.png',
-    link: '#',
+    link: '/news/newsdetail',
   },
   {
     title:
       'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
     date: '30/08/2024',
     imageUrl: '/img/22.png',
-    link: '#',
+    link: '/news/newsdetail',
   },
   {
     title:
       'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
     date: '30/08/2024',
     imageUrl: '/img/egabid.png',
-    link: '#',
+    link: '/news/newsdetail',
   },
 ];
 
 const NewsPage: React.FC = () => {
+  const { ref, inView, entry } = useInView({
+    threshold: 0.1,
+    // triggerOnce: true,
+  });
+  const {
+    ref: ref2,
+    inView: inView2,
+    entry: entry2,
+  } = useInView({
+    threshold: 0.1,
+    // triggerOnce: true,
+  });
   return (
     <>
       <div
+        ref={ref}
         className="relative w-full h-screen bg-cover bg-center"
         style={{ backgroundImage: 'url("/img/news/news_banner.png")' }}
       >
@@ -52,10 +66,24 @@ const NewsPage: React.FC = () => {
         <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 justify-between items-center h-full p-8 gap-4">
           <div className="w-full md:col-span-1 xl:col-span-1 lg:col-span-2  text-center md:text-left text-white flex justify-center items-center">
             <div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+              <h1
+                className={`text-4xl md:text-5xl lg:text-6xl font-bold leading-tight
+              duration-700 ease-in-out transform ${
+                inView
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-10'
+              }
+              `}
+              >
                 Tin tức
               </h1>
-              <p className="mt-4 text-lg md:text-xl lg:text-2xl">
+              <p
+                className={`mt-4 text-lg md:text-xl lg:text-2xl duration-700 ease-in-out transform ${
+                  inView
+                    ? 'opacity-100 translate-y-0'
+                    : 'opacity-0 translate-y-10'
+                }`}
+              >
                 Tin tức mới nhất về thị trường tài chính
               </p>
             </div>
@@ -63,9 +91,16 @@ const NewsPage: React.FC = () => {
         </div>
       </div>
 
-      <section className="w-full flex flex-col justify-center items-center">
+      <section
+        ref={ref2}
+        className="w-full flex flex-col justify-center items-center"
+      >
         <div className="flex flex-col max-w-[1200px]">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 p-8">
+          <h1
+            className={`text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 p-8 duration-700 ease-in-out transform ${
+              inView2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}
+          >
             Sự kiện nổi bật
           </h1>
           <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:grid-rows-2 gap-4 p-8 md:max-h-[600px]">
@@ -75,7 +110,11 @@ const NewsPage: React.FC = () => {
                   <ProjectCard
                     key={index}
                     project={news}
-                    className="lg:col-span-2 lg:row-span-2 md:col-span-1 md:row-span-1"
+                    className={`lg:col-span-2 lg:row-span-2 md:col-span-1 md:row-span-1 duration-700 ease-in-out transform ${
+                      inView2
+                        ? 'opacity-100 translate-y-0'
+                        : 'opacity-0 translate-y-10'
+                    } `}
                   />
                 ) : (
                   <div
@@ -135,7 +174,7 @@ const NewsPage: React.FC = () => {
       {/* upcomming */}
       <section className="w-full bg-cover bg-center flex justify-center flex-col items-center gap-3">
         <div className="max-w-[1200px] ">
-          <h1 className="w-full text-left text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 px-8">
+          <h1 className="w-full text-left text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 p-8">
             Sự kiện sắp tới
           </h1>
 

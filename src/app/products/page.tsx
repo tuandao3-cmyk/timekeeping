@@ -225,7 +225,7 @@ const ProductPage: React.FC = () => {
       <section className="w-full h-auto bg-white py-6 flex flex-col justify-center items-center px-[120px]">
         <h1
           ref={ref}
-          className={`text-black font-bold text-2xl md:text-4xl text-center `}
+          className={`text-black font-bold text-2xl md:text-4xl text-center min-h-11`}
         >
           Các gói đầu tư tại HyraCap{' '}
         </h1>
