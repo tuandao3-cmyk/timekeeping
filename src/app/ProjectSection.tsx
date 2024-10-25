@@ -1,9 +1,14 @@
 'use client';
 import Link from 'next/link';
+import { useInView } from 'react-intersection-observer';
 import styles from './ProjectSection.module.css';
 import ProjectGrid from '@/components/projectGrid';
 
 const ProjectSection = () => {
+  const { ref, inView, entry } = useInView({
+    threshold: 0.1,
+  });
+
   const projects = [
     {
       title: 'Hyperas Chain',
@@ -42,22 +47,27 @@ const ProjectSection = () => {
     <>
       {' '}
       <ProjectGrid />
-      <section className={styles.showcaseSection}>
+      <section
+        className={`${styles.showcaseSection} flex flex-col justify-center items-center bg-[#FFFFFF]`}
+      >
         <h2 className="text-center text-[40px] font-bold leading-[48px] pb-10">
           DỰ ÁN ĐÃ ĐẦU TƯ VÀ ƯƠM TẠO
         </h2>
-        <div className="w-full flex justify-center items-center">
-          <div className={styles.projectCards}>
+        <div className="w-full flex justify-center items-center max-w-[1200px]">
+          <div className="4xl:max-w-[2100px] 3xl:max-w-[1600px] 2xl:max-w-[1400px] 4xl:gap-16 3xl:gap-8 grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 max-w-[1200px] w-full">
             {projects.map((project, index) => (
               <a href="/detail-category" key={index}>
                 <div
+                  ref={ref}
                   key={index}
-                  className={`${styles.projectCard} group relative`}
+                  className={`${styles.projectCard} group relative duration-700 ease-in-out delay-${index * 100} transform ${
+                    inView ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
+                  } max-w-[384px]`}
                 >
                   <img
                     src={project.image}
                     alt={project.title}
-                    className={styles.projectImage}
+                    className={`${styles.projectImage} md:min-h-[250px]`}
                   />
                   <div className={styles.badge}>{project.badge}</div>
 
@@ -77,7 +87,7 @@ const ProjectSection = () => {
                   <div className={styles.projectInfo}>
                     <div className={styles.progress}>
                       <div
-                        className={styles.progressBar}
+                        className="bg-[#4caf50] h-full rounded"
                         style={{ width: project.progress }}
                       ></div>
                     </div>

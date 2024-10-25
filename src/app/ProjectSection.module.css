@@ -19,15 +19,13 @@
   margin-bottom: 2rem;
 }
 
-
-
 .projectCards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   margin-bottom: 2rem;
-  max-width: 90%;
-  width: 100%
+  max-width: 1200px;
+  width: 100%;
 }
 
 .projectCard {
@@ -42,15 +40,13 @@
 }
 
 .projectCard:hover {
-
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .projectImage {
   width: 100%;
-  /* max-width: 250px; */
   max-height: 200px;
-  height: 60%;
+  /* height: 60%; */
   object-fit: cover;
 }
 
@@ -184,12 +180,8 @@
 
 .showcaseSection {
   padding: 2rem;
-  background-color: #f3f7f4;
+  background-color: #fff;
   text-align: center;
-  /* max-width: 70%; */
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
 }
 
 .title {
@@ -217,6 +209,12 @@
   width: 100%;
   height: auto;
   display: block;
+}
+
+@media (max-width: 1024px) {
+  .projectCards {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
