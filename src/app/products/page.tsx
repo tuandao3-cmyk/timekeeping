@@ -177,7 +177,7 @@ const ProductPage: React.FC = () => {
                   <div className="flex flex-col gap-8 py-10">
                     <div className="flex gap-3">
                       <img
-                        className=" p-1 rounded-full bg-[#48B96D]"
+                        className=" p-1 rounded-full bg-[#48B96D] w-[24px] h-[24px]"
                         src="/img/icon/check.svg"
                         alt=""
                       />
@@ -187,7 +187,7 @@ const ProductPage: React.FC = () => {
                     </div>
                     <div className="flex gap-3">
                       <img
-                        className=" p-1 rounded-full bg-[#48B96D]"
+                        className=" p-1 rounded-full bg-[#48B96D] w-[24px] h-[24px]"
                         src="/img/icon/check.svg"
                         alt=""
                       />
@@ -197,7 +197,7 @@ const ProductPage: React.FC = () => {
                     </div>
                     <div className="flex gap-3">
                       <img
-                        className=" p-1 rounded-full bg-[#48B96D]"
+                        className=" p-1 rounded-full bg-[#48B96D] w-[24px] h-[24px]"
                         src="/img/icon/check.svg"
                         alt=""
                       />
@@ -231,7 +231,7 @@ const ProductPage: React.FC = () => {
                   <div className="flex flex-col gap-8 py-10">
                     <div className="flex gap-3">
                       <img
-                        className=" p-1 rounded-full bg-[#48B96D]"
+                        className=" p-1 rounded-full bg-[#48B96D] w-[24px] h-[24px]"
                         src="/img/icon/check.svg"
                         alt=""
                       />
@@ -241,7 +241,7 @@ const ProductPage: React.FC = () => {
                     </div>
                     <div className="flex gap-3">
                       <img
-                        className=" p-1 rounded-full bg-[#48B96D]"
+                        className=" p-1 rounded-full bg-[#48B96D] w-[24px] h-[24px]"
                         src="/img/icon/check.svg"
                         alt=""
                       />
@@ -251,7 +251,7 @@ const ProductPage: React.FC = () => {
                     </div>
                     <div className="flex gap-3">
                       <img
-                        className=" p-1 rounded-full bg-[#48B96D]"
+                        className=" p-1 rounded-full bg-[#48B96D] w-[24px] h-[24px]"
                         src="/img/icon/check.svg"
                         alt=""
                       />
@@ -282,7 +282,7 @@ const ProductPage: React.FC = () => {
                   <div className="flex flex-col gap-8 py-10">
                     <div className="flex gap-3">
                       <img
-                        className=" p-1 rounded-full bg-[#48B96D]"
+                        className=" p-1 rounded-full bg-[#48B96D] w-[24px] h-[24px]"
                         src="/img/icon/check.svg"
                         alt=""
                       />
@@ -292,7 +292,7 @@ const ProductPage: React.FC = () => {
                     </div>
                     <div className="flex gap-3">
                       <img
-                        className=" p-1 rounded-full bg-[#48B96D]"
+                        className=" p-1 rounded-full bg-[#48B96D] w-[24px] h-[24px]"
                         src="/img/icon/check.svg"
                         alt=""
                       />
@@ -302,7 +302,7 @@ const ProductPage: React.FC = () => {
                     </div>
                     <div className="flex gap-3">
                       <img
-                        className=" p-1 rounded-full bg-[#48B96D]"
+                        className=" p-1 rounded-full bg-[#48B96D] w-[24px] h-[24px]"
                         src="/img/icon/check.svg"
                         alt=""
                       />
