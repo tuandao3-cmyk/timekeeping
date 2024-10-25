@@ -13,7 +13,7 @@ const newsData = [
       'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
     date: '30/08/2024',
     imageUrl: '/img/20.png',
-    videoLink: '#',
+    videoLink: '/news/newsdetail',
   },
   {
     title:
@@ -22,21 +22,21 @@ const newsData = [
       'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
     date: '30/08/2024',
     imageUrl: '/img/21.png',
-    link: '#',
+    link: '/news/newsdetail',
   },
   {
     title:
       'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
     date: '30/08/2024',
     imageUrl: '/img/22.png',
-    link: '#',
+    link: '/news/newsdetail',
   },
   {
     title:
       'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
     date: '30/08/2024',
     imageUrl: '/img/egabid.png',
-    link: '#',
+    link: '/news/newsdetail',
   },
 ];
 
@@ -105,7 +105,7 @@ const NewsPage: React.FC = () => {
                       }`}
                     >
                       <Link
-                        href={news.link || '#'}
+                        href={news.link || '/news/newsdetail'}
                         className="md:text-[15px] text-[#03A638] text-sm font-semibold"
                       >
                         CÔNG NGHỆ
@@ -173,7 +173,7 @@ const NewsPage: React.FC = () => {
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-8">
           <div className="w-full col-span-2 gap-3">
             {newsData.map((news: any, index: number) => (
-              <a href="#" className="p-4" key={index}>
+              <a href="/news/newsdetail" className="p-4" key={index}>
                 <div className="grid md:grid-cols-3  border-[1px]">
                   <img
                     src={news.imageUrl}
@@ -214,7 +214,7 @@ const NewsPage: React.FC = () => {
                   />
                   <p className="text-black font-bold">50,987 Fans</p>
                 </div>
-                <a href="#" className="text-[#4D69A2] font-bold">
+                <a href="/news/newsdetail" className="text-[#4D69A2] font-bold">
                   LIKE
                 </a>
               </div>
@@ -227,7 +227,7 @@ const NewsPage: React.FC = () => {
                   />
                   <p className="text-black font-bold">8,987 Follower</p>
                 </div>
-                <a href="#" className="text-[#4D69A2] font-bold">
+                <a href="/news/newsdetail" className="text-[#4D69A2] font-bold">
                   FOLLOW
                 </a>
               </div>
@@ -240,7 +240,7 @@ const NewsPage: React.FC = () => {
                   />
                   <p className="text-black font-bold">50,987 Fans</p>
                 </div>
-                <a href="#" className="text-[#4D69A2] font-bold">
+                <a href="/news/newsdetail" className="text-[#4D69A2] font-bold">
                   SUBSCRIBE
                 </a>
               </div>

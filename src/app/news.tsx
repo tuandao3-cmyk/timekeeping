@@ -6,25 +6,25 @@ const newsData = [
         title: 'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
         date: "30/08/2024",
         image: "/img/20.png",
-        videoLink: "#",
+        videoLink: "/news/newsdetail",
     },
     {
         title: 'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
         date: "30/08/2024",
         image: "/img/21.png",
-        link: "#",
+        link: "/news/newsdetail",
     },
     {
         title: 'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
         date: "30/08/2024",
         image: "/img/22.png",
-        link: "#",
+        link: "/news/newsdetail",
     },
     {
         title: 'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
         date: "30/08/2024",
         image: "/img/23.png",
-        link: "#",
+        link: "/news/newsdetail",
     },
 ];
 
@@ -51,20 +51,21 @@ const News = () => {
                             alt="Main News"
                             className="w-[80%] rounded-[10px] object-cover aspect-square"
                         />
-                    </a>
-                        
                             <h2 className="4xl:text-[48px] 4xl:leading-[60px] 4xl:max-w-[70%] 4xl:mb-4 
-                            3xl:mb-[20px] 3xl:text-[36px] 3xl:leading-[40px] 3xl:max-w-[80%] 
-                            2xl:mb-[15px] 2xl:text-[30px] 2xl:leading-[36px] 2xl:max-w-[90%]
+                            3xl:mb-[20px] 3xl:text-[36px] 3xl:leading-[40px] 
+                            2xl:mb-[15px] 2xl:text-[24px] 2xl:leading-[28px] 
+                            xl:mb-[10px] xl:text-[20px] xl:leading-[24px] xl:mt-[10px]
                             font-bold m-0 max-w-[80%]">
                                 {newsData[0].title}
                             </h2>
                             <span className="4xl:text-[30px] 4xl:leading-[40px] 4xl:max-w-[70%] 
-                            3xl:text-[24px] 3xl:leading-[30px] 3xl:max-w-[80%] 
-                            2xl:text-[18px] 2xl:leading-[22px] 2xl:max-w-[90%]
+                            3xl:text-[24px] 3xl:leading-[30px]  
+                            2xl:text-[18px] 2xl:leading-[22px] 
                             font-inter text-sm leading-6 text-gray-600 max-w-[80%]">
                             HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.
                             </span>
+                    </a>
+                        
                         <div className="w-full flex justify-end">
                         <button className="4xl:text-[40px] 4xl:leading-[50px] 4xl:mr-[200px] 4xl:px-[40px] 4xl:py-[20px] 3xl:text-[24px] 3xl:leading-[30px] 3xl:mr-[80px] 3xl:px-[30px] 3xl:py-[15px] mr-16 bg-white text-gray-950 font-semibold py-2 px-4 border border-gray-300 rounded-full hover:bg-green-500 hover:text-white transition duration-300 flex items-center">
                                 Chi tiết
@@ -79,7 +80,7 @@ const News = () => {
                         <div key={index} className={"flex w-full pb-[10px] border-b border-[#E6E8EC] no-underline flex-1"}>
                             <a
                                 href={news.link}
-                                className="h-full flex flex-col no-underline text-inherit"
+                                className="h-full flex flex-col no-underline "
                             >
                                 <div className="flex flex-row">
                                     <div className="flex flex-col ">
