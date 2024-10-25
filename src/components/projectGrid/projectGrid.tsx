@@ -1,95 +1,275 @@
-import React from 'react';
+'use client';
+import React, { useEffect, useRef, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import type { Swiper as SwiperType } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { FaChevronLeft, FaFlag } from 'react-icons/fa';
+import useWindowSize from './useWindowSize';
+import { FaChevronRight } from 'react-icons/fa6';
+import { MdArrowBackIos, MdArrowForwardIos } from 'react-icons/md';
 
 const projects = [
   {
-    title: 'Salala AI',
-    totalFunding: '$3.000.000',
-    currentFunding: '$1.500.00',
-    fundingPercent: 'Được tài trợ 98%',
-    imageUrl: '/img/salala_ai.png',
+    id: 1,
+    name: 'HYPERAS CHAIN',
+    series: 'SERIES A',
+    description:
+      'Trải nghiệm ứng dụng đầu tư HyraCap mang lại lợi nhuận hấp dẫn dành cho bạn',
+    target: 2000000,
+    raised: 1091591,
+    percentage: 51,
+    image: '/img/hyperas_chain.png',
+    tags: ['CÔNG NGHỆ', 'CÔNG NGHỆ'],
   },
   {
-    title: 'Salala AI',
-    totalFunding: '$3.000.000',
-    currentFunding: '$1.500.00',
-    fundingPercent: 'Được tài trợ 50%',
-    imageUrl: '/img/salala_egde.png',
+    id: 2,
+    name: 'EGABID',
+    series: 'SERIES B',
+    description:
+      'Trải nghiệm ứng dụng đầu tư HyraCap mang lại lợi nhuận hấp dẫn dành cho bạn',
+    target: 2000000,
+    raised: 1091591,
+    percentage: 51,
+    image: '/img/egabid_pc.png',
+    tags: ['CÔNG NGHỆ', 'CÔNG NGHỆ'],
   },
   {
-    title: 'Salala AI',
-    totalFunding: '$3.000.000',
-    currentFunding: '$1.500.00',
-    fundingPercent: 'Được tài trợ 50%',
-    imageUrl: '/img/salala_ai_blockchain.png',
+    id: 3,
+    name: 'EGABID',
+    series: 'SERIES B',
+    description:
+      'Trải nghiệm ứng dụng đầu tư HyraCap mang lại lợi nhuận hấp dẫn dành cho bạn',
+    target: 2000000,
+    raised: 1091591,
+    percentage: 51,
+    image: '/img/egabid_pc.png',
+    tags: ['CÔNG NGHỆ', 'CÔNG NGHỆ'],
   },
   {
-    title: 'Egabid',
-    totalFunding: '$3.000.000',
-    currentFunding: '$1.500.00',
-    fundingPercent: 'Được tài trợ 50%',
-    imageUrl: '/img/egabid.png',
+    id: 4,
+    name: 'EGABID',
+    series: 'SERIES B',
+    description:
+      'Trải nghiệm ứng dụng đầu tư HyraCap mang lại lợi nhuận hấp dẫn dành cho bạn',
+    target: 2000000,
+    raised: 1091591,
+    percentage: 51,
+    image: '/img/egabid_pc.png',
+    tags: ['CÔNG NGHỆ', 'CÔNG NGHỆ'],
   },
   {
-    title: 'Salala AI',
-    totalFunding: '$3.000.000',
-    currentFunding: '$1.500.00',
-    fundingPercent: 'Được tài trợ 50%',
-    imageUrl: '/img/salala_ai1.png',
+    id: 5,
+    name: 'EGABID',
+    series: 'SERIES B',
+    description:
+      'Trải nghiệm ứng dụng đầu tư HyraCap mang lại lợi nhuận hấp dẫn dành cho bạn',
+    target: 2000000,
+    raised: 1091591,
+    percentage: 51,
+    image: '/img/egabid_pc.png',
+    tags: ['CÔNG NGHỆ', 'CÔNG NGHỆ'],
   },
   {
-    title: 'Salala AI',
-    totalFunding: '$3.000.000',
-    currentFunding: '$1.500.00',
-    fundingPercent: 'Được tài trợ 50%',
-    imageUrl: '/img/salala_ai_blockchain.png',
-  },
-  {
-    title: 'Salala mini bot',
-    totalFunding: '$3.000.000',
-    currentFunding: '$1.500.00',
-    fundingPercent: 'Được tài trợ 50%',
-    imageUrl: '/img/salala_minibot.png',
+    id: 6,
+    name: 'EGABID',
+    series: 'SERIES B',
+    description:
+      'Trải nghiệm ứng dụng đầu tư HyraCap mang lại lợi nhuận hấp dẫn dành cho bạn',
+    target: 2000000,
+    raised: 1091591,
+    percentage: 51,
+    image: '/img/egabid_pc.png',
+    tags: ['CÔNG NGHỆ', 'CÔNG NGHỆ'],
   },
 ];
 
-export const ProjectCard: React.FC<{
-  project: (typeof projects)[0];
-  className?: string;
-}> = ({ project, className }) => {
+const ProjectSlider: React.FC = () => {
+  const { ref, inView, entry } = useInView({
+    threshold: 0.1,
+  });
+  const [swiper, setSwiper] = useState<SwiperType | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const progressBarRef = useRef<HTMLDivElement>(null);
+  const windowSize = useWindowSize();
+
+  const isMobile = windowSize.width < 640;
+  const slidesOffsetBefore = isMobile ? 0 : 100;
+  const slidesPerView = isMobile ? 1 : 1.5;
+
+  const handlePrev = () => {
+    if (swiper) {
+      swiper.slidePrev();
+    }
+  };
+
+  const handleNext = () => {
+    if (swiper) {
+      swiper.slideNext();
+    }
+  };
+
+  useEffect(() => {
+    if (swiper) {
+      swiper.params.slidesOffsetBefore = slidesOffsetBefore;
+      swiper.params.slidesPerView = slidesPerView;
+      swiper.update();
+    }
+  }, [swiper, slidesOffsetBefore, slidesPerView]);
+
+  useEffect(() => {
+    if (progressBarRef.current) {
+      const percentage = ((activeIndex + 1) / projects.length) * 100;
+      progressBarRef.current.style.width = `${percentage}%`;
+    }
+  }, [activeIndex, projects.length]);
+
   return (
-    <div className={`${className} relative w-full h-[268px]`}>
-      <img
-        src={project.imageUrl}
-        alt={project.title}
-        className="w-full h-full object-cover rounded-lg"
-      />
-      <div className="absolute bottom-0 w-full flex flex-col justify-end p-4 bg-black bg-opacity-50 rounded-lg">
-        <h2 className="text-lg font-bold text-white">{project.title}</h2>
-        <div className="flex justify-between gap-5">
-          <p className="text-xs font-semibold text-white">
-            {project.totalFunding}
-          </p>
-          <p className="text-xs text-gray-300">
-            {project.currentFunding} | {project.fundingPercent}
-          </p>
+    <div className="w-full relative">
+      <h2 className="text-3xl font-bold mb-8 text-center">
+        DỰ ÁN ĐANG GỌI VỐN
+      </h2>
+      <Swiper
+        modules={[Navigation, Pagination]}
+        spaceBetween={isMobile ? 20 : 100}
+        slidesPerView={slidesPerView}
+        centeredSlides={false}
+        slidesOffsetBefore={slidesOffsetBefore}
+        navigation={{
+          prevEl: '.swiper-button-prev',
+          nextEl: '.swiper-button-next',
+        }}
+        onSwiper={setSwiper}
+        onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+        className="mySwiper"
+        effect="coverflow"
+        coverflowEffect={{
+          rotate: 0,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: false,
+        }}
+      >
+        {projects.map((project) => (
+          <SwiperSlide key={project.id}>
+            {({ isActive }) => (
+              <a
+                ref={ref}
+                href="/detail-category"
+                className={`bg-[#07212C] rounded-xl overflow-hidden transition-all duration-300 flex flex-col sm:flex-row ${isActive ? 'scale-100' : 'scale-90'} `}
+              >
+                <div
+                  ref={ref}
+                  className={`md:w-1/2 w-full relative p-8 duration-700 ease-in-out transform `}
+                >
+                  <div className="w-full h-full rounded-lg overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.name}
+                      className="w-full h-full object-cover"
+                    />
+                    <a
+                      href="/detail-category"
+                      className="absolute top-[90%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-500 text-white px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer text-center"
+                    >
+                      Xem chi tiết
+                    </a>
+                  </div>
+                </div>
+                <div className="md:w-1/2 w-full p-8 flex flex-col justify-between">
+                  <div>
+                    <span className="top-4 left-4 bg-[#FFFFFF]/20 text-[#0298F4] px-2 py-1 text-xs rounded flex items-center inline-flex">
+                      <FaFlag className="w-4 h-4 mr-1" />
+                      {project.series}
+                    </span>
+                    <h3 className="text-2xl font-semibold leading-8 text-white mb-2">
+                      {project.name}
+                    </h3>
+                    <p className="text-gray-300 leading-6 text-sm mb-4">
+                      {project.description}
+                    </p>
+                  </div>
+                  <div>
+                    <div className="bg-white rounded-lg p-5 max-sm:m-1 m-3 mb-7">
+                      <p className="text-sm font-inter text-[#000000]/64 mb-1">
+                        MỤC TIÊU HUY ĐỘNG
+                      </p>
+                      <p className="text-xl leading-6 font-semibold">
+                        ${project.target.toLocaleString()}
+                      </p>
+                      <div className="flex justify-between text-xs mt-2">
+                        <div>
+                          <span className="font-bold font-inter text-green-500 text-sm">
+                            ${project.raised.toLocaleString()}
+                          </span>
+                          <span className="text-[#000000]/64 max-w-[10%] pl-0">
+                            {' '}
+                            Đã huy động
+                          </span>
+                        </div>
+                        <div>
+                          <span className="font-bold font-inter text-green-500 text-sm">
+                            {project.percentage}%
+                          </span>
+                          <span className="text-[#000000]/64 pl-0">
+                            {' '}
+                            Hoàn thành
+                          </span>
+                        </div>
+                      </div>
+                      <div className="w-full bg-gray-200 rounded-full h-1.5 mt-2">
+                        <div
+                          className="bg-green-500 h-1.5 rounded-full"
+                          style={{ width: `${project.percentage}%` }}
+                        ></div>
+                      </div>
+                    </div>
+                    <div className="flex gap-2 ml-3">
+                      {project.tags.map((tag, index) => (
+                        <span
+                          key={index}
+                          className="bg-gray-700 text-white text-xs px-2 py-1 rounded"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </a>
+            )}
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      <div className="swiper-button-prev !hidden"></div>
+      <div className="swiper-button-next !hidden"></div>
+      <div
+        onClick={handlePrev}
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 w-12 h-12 bg-[#F3F7F4] rounded-full flex items-center justify-center cursor-pointer hover:bg-[#E0E7E2] transition-colors duration-300 shadow-md"
+      >
+        <MdArrowBackIos className="text-3xl text-gray-700 ml-1" />
+      </div>
+      <div
+        onClick={handleNext}
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 w-12 h-12 bg-[#F3F7F4] rounded-full flex items-center justify-center cursor-pointer hover:bg-[#E0E7E2] transition-colors duration-300 shadow-md"
+      >
+        <MdArrowForwardIos className="text-3xl text-gray-700 mr-1" />
+      </div>
+      <div className="flex justify-center mt-6 w-full pb-6">
+        <div className="bg-gray-200 h-2 rounded-full w-[85vw] ">
+          <div
+            ref={progressBarRef}
+            className="bg-[#31814B] h-2 rounded-full transition-all duration-300"
+            style={{ width: `${100 / projects.length}%` }} // Giá trị mặc định
+          ></div>
         </div>
       </div>
     </div>
   );
 };
 
-const ProjectGrid: React.FC = () => {
-  return (
-    <div className="grid w-full grid-cols-1 sm:grid-cols-1  md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
-      {projects.map((project, index) => (
-        <ProjectCard
-          key={index}
-          project={project}
-          className={index == 0 ? 'md:col-span-2' : ''}
-        />
-      ))}
-    </div>
-  );
-};
-
-export default ProjectGrid;
+export default ProjectSlider;

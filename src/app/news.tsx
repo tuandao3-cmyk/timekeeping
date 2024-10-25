@@ -1,38 +1,49 @@
 import React from 'react';
+import { useInView } from 'react-intersection-observer';
 import styles from './news.module.css';
 
 const newsData = [
-    {
-        title: 'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
-        date: "30/08/2024",
-        image: "/img/20.png",
-        videoLink: "#",
-    },
-    {
-        title: 'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
-        date: "30/08/2024",
-        image: "/img/21.png",
-        link: "#",
-    },
-    {
-        title: 'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
-        date: "30/08/2024",
-        image: "/img/22.png",
-        link: "#",
-    },
-    {
-        title: 'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
-        date: "30/08/2024",
-        image: "/img/23.png",
-        link: "#",
-    },
+  {
+    title:
+      'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
+    date: '30/08/2024',
+    image: '/img/20.png',
+    videoLink: '#',
+  },
+  {
+    title:
+      'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
+    date: '30/08/2024',
+    image: '/img/21.png',
+    link: '#',
+  },
+  {
+    title:
+      'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
+    date: '30/08/2024',
+    image: '/img/22.png',
+    link: '#',
+  },
+  {
+    title:
+      'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
+    date: '30/08/2024',
+    image: '/img/23.png',
+    link: '#',
+  },
 ];
 
 const News = () => {
     return (
         <div className={styles.newsSection}>
-            <h2 className={styles.title}>Tin mới nhất về HyraCap</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 p-3 w-full">
+            <h2 className="font-inter font-bold pb-6 text-[40px] leading-[48px]">TIN MỚI NHẤT VỀ HYRACAP</h2>
+            <button className="absolute top-10 right-32 bg-white text-gray-950 font-semibold py-2 px-4 border
+             border-gray-300 rounded-full hover:bg-green-500 hover:text-white transition duration-300 flex items-center
+             max-sm:bottom-1 max-sm:!top-auto
+             ">
+                Xem thêm
+            </button>
+            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6  w-full">
                 <div className={styles.mainNews}>
                     <a
                         href={newsData[0].videoLink}
@@ -43,15 +54,23 @@ const News = () => {
                             alt="Main News"
                             className={styles.mainImage}
                         />
-                        <div className={styles.overlay}>
+                    </a>
+                        
                             <h2 className={styles.newsTitle}>
                                 {newsData[0].title}
                             </h2>
-                            <span className="font-bold text-sm  text-[#48b96d]">
-                                Tìm hiểu thêm
+                            <span className="font-inter text-sm leading-6 text-gray-600 max-w-[80%]">
+                            HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.
                             </span>
-                        </div>
-                    </a>
+                            <button className="absolute bottom-0 right-16 bg-white text-gray-950 font-semibold py-2 px-4 border
+                             border-gray-300 rounded-full hover:bg-green-500 hover:text-white transition duration-300 flex items-center
+                             ">
+                                Chi tiết
+                                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                </svg>
+                            </button>
+                        
                 </div>
                 <div className={styles.sideNews}>
                     {newsData.slice(1).map((news, index) => (
@@ -65,14 +84,14 @@ const News = () => {
                                         <h2 className={styles.newsTitle}>
                                             {news.title}
                                         </h2>
-                                        <div className={styles.newsContent}>
-                                            <span className="font-bold text-sm text-[#48b96d]">
-                                                Tìm hiểu thêm
+                                        
+                                            <span className="font-inter text-sm max-w-[80%] leading-6 text-gray-600">
+                                            HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.
                                             </span>
-                                            <span className={styles.date}>
+                                            <span className="text-gray-600 text-sm leading-6 ">
                                                 {news.date}
                                             </span>
-                                        </div>
+                                       
                                     </div>
                                     <img
                                         src={news.image}
@@ -86,11 +105,7 @@ const News = () => {
                 </div>
             </div>
 
-            <div className="flex justify-center items-center  md:mt-0">
-                <a className="border rounded-xl border-[#7EFFD8] text-white py-2 px-4  hover:border-gray-600 transition-colors duration-300 max-w-[250px]">
-                    TÌM HIỂU THÊM CÁC DỰ ÁN
-                </a>
-            </div>
+           
         </div>
     );
 };

@@ -13,3 +13,13 @@ body {
 * {
   box-sizing: border-box;
 }
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-in {
+  animation: slideIn 1.5s ease forwards;
+}

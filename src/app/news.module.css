@@ -1,12 +1,13 @@
 .newsSection {
-  background-image: url('../../public/img/newsab.jpg');
+  /* background-color: #FFFFFF; */
   background-size: cover;
-  padding: 40px;
+  padding: 40px 120px;
   border-radius: 10px;
-  color: white;
+  color: #04141A;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  position: relative;
 }
 
 .newsLink {
@@ -15,9 +16,10 @@
 }
 
 .title {
-    text-align: center;
+    text-align: left;
     font-size: 2rem;
     margin-bottom: 30px;
+    font-weight: bold;
 }
 
 .newsContainer {
@@ -31,9 +33,8 @@
 .mainNews {
     flex: 1.5;
     position: relative;
-    display: flex; /* Đảm bảo rằng nó cũng là một flex container nếu cần */
-    justify-content: center; /* Căn giữa nội dung bên trong */
-    align-items: center;
+    display: flex;
+    flex-direction: column; /* Đảm bảo rằng nó cũng là một flex container nếu cần */
 }
 
 .mainNewsLink {
@@ -42,19 +43,23 @@
     flex-direction: column;
     text-decoration: none;
     color: inherit;
-    align-items: center;
 }
 
 .mainImage {
-    width: 100%;
-    height: auto;
+    max-width: 80%;
     border-radius: 10px;
+    aspect-ratio: 1/1;
+    object-fit: cover;  
 }
 
 .newsTitle {
     font-size: clamp(1.5rem, 2vw, 2.5rem);
     font-weight: bold;
     margin: 0;
+    max-width: 80%;
+}
+.newsTitle:hover {
+    color: #48b96d;
 }
 
 .overlay {
@@ -79,7 +84,8 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
+
 }
 
 .sideBorder {
@@ -90,9 +96,11 @@
 
 .newsItem {
     display: flex;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     text-decoration: none;
     width: 100%;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #E6E8EC;
 }
 
 .newsImage {
@@ -100,7 +108,8 @@
   max-width: 233px;
   height: auto;
   border-radius: 10px;
-  margin-right: 15px; /* Đẩy hình ảnh cách text một khoảng */
+  aspect-ratio: 1/1;
+  object-fit: cover;
 }
 
 .newsContent {

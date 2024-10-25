@@ -1,16 +1,16 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const pathname = usePathname();
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const handleScroll = () => {
     if (window.scrollY > 100 && window.scrollY > lastScrollY) {
@@ -23,34 +23,44 @@ const Header = () => {
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
-    return (
-        <header>
-            <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 border-b-2">
-                <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-                    <a href="/" className="flex items-center">
-                        <img
-                            src="/img/logohyracap.png"
-                            className="mr-3 h-6 sm:h-9"
-                            alt="Flowbite Logo"
-                        />
-                    </a>
-                    <div className="flex items-center lg:order-2">
-                        <button
-                            onClick={toggleMenu}
-                            data-colab-toggle="mobile-menu-2"
-                            type="button"
-                            className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden  focus:outline-none focus:ring-2  dark:text-gray-400 "
-                            aria-controls="mobile-menu-2"
-                            aria-expanded={isMenuOpen}
-                        >
-                            <span className="sr-only">Open main menu</span>
+  const menuItems = [
+    { href: '/', text: 'Trang chủ' },
+    { href: '/about', text: 'Giới thiệu' },
+    { href: '/categories', text: 'Danh mục' },
+    { href: '/products', text: 'Sản phẩm' },
+    { href: '/guides', text: 'Hướng dẫn' },
+    { href: '/news', text: 'Tin tức' },
+    { href: '/reports', text: 'Báo cáo' },
+    { href: '/contact', text: 'Liên hệ' },
+  ];
 
+  return (
+    // <header className={`fixed w-full z-50 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+    //   <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 border-b-2 shadow-md">
+    //     <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+    <header
+      className={` w-full z-50 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
+    >
+      <nav className="bg-white border-gray-200 px-4 lg:px-[120px] py-2.5 border-b-2 shadow-md">
+        <div className="flex flex-wrap justify-around items-center mx-auto max-w-screen-[1200px] max-w-[1200px]">
+          <Link href="/" className="flex items-center">
+            <img
+              src="/img/logohyracap.png"
+              className="mr-3 h-6 sm:h-9"
+              alt="HyraCap Logo"
+            />
+          </Link>
+          <div className="flex items-center lg:order-2">
+            <button
+              onClick={toggleMenu}
+              className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden focus:outline-none focus:ring-2 focus:ring-gray-200 hover:bg-gray-100"
+              aria-controls="mobile-menu-2"
+              aria-expanded={isMenuOpen}
+            >
+              <span className="sr-only">Mở menu chính</span>
               {isMenuOpen ? (
                 <svg
                   className="w-6 h-6"
@@ -80,79 +90,27 @@ const Header = () => {
               )}
             </button>
           </div>
-
           <div
             className={`${
               isMenuOpen ? 'block' : 'hidden'
-            } justify-between items-center w-full lg:flex lg:w-auto lg:order-1`}
+            } justify-between items-center w-full lg:flex lg:w-auto lg:order-1 transition-all duration-300 ease-in-out lg:ml-auto`}
             id="mobile-menu-2"
           >
-            <ul className="flex flex-col font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-              <li>
-                <a
-                  href="/"
-                  className="block py-2 pr-4 pl-3 text-black rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-black"
-                  aria-current="page"
-                >
-                  Trang chủ
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/about"
-                  className="block py-2 pr-4 pl-3 text-black rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-black"
-                >
-                  Giới thiệu
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/categories"
-                  className="block py-2 pr-4 pl-3 text-black rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-black"
-                >
-                  Danh mục
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/products"
-                  className="block py-2 pr-4 pl-3 text-black rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-black"
-                >
-                  Sản phẩm
-                </a>
-              </li>
-              <li>
-                <a
-                  href="guides"
-                  className="block py-2 pr-4 pl-3 text-black rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-black"
-                >
-                  Hướng dẫn
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/news"
-                  className="block py-2 pr-4 pl-3 text-black rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-black"
-                >
-                  Tin tức
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/reports"
-                  className="block py-2 pr-4 pl-3 text-black rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-black"
-                >
-                  Báo cáo
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/contact"
-                  className="block py-2 pr-4 pl-3 text-black rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-black"
-                >
-                  Liên hệ
-                </a>
-              </li>
+            <ul className="flex flex-col text-sm text-[#000000]/90 leading-6 font-medium lg:flex-row lg:space-x-6 lg:mt-0">
+              {menuItems.map((item, index) => (
+                <li key={index}>
+                  <Link
+                    href={item.href}
+                    className={`block py-2 pr-4 pl-3 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:p-0 transition duration-300 ${
+                      pathname === item.href
+                        ? 'text-[#48B96D] lg:text-[#48B96D]'
+                        : 'text-[#000000]/90 lg:hover:text-[#48B96D]'
+                    }`}
+                  >
+                    {item.text}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>

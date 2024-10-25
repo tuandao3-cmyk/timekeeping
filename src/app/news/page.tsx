@@ -86,18 +86,26 @@ const NewsPage: React.FC = () => {
                   }`}
                 >
                   <img
-                    src={news.imageUrl}
+                    src={index === 3 ? 'img/news_ima1.png' : news.imageUrl}
                     alt=""
-                    className={`w-full   object-cover object-center md:max-h-[160px] ${
-                      index === 0 ? 'lg:h-auto' : ''
+                    className={`w-full   object-cover object-center rounded-lg  ${
+                      index === 0 ? 'md:h-auto' : 'md:max-h-[160px]'
                     }
                    
                     `}
                   />
                   <div className="p-4">
-                    <h1 className="md:text-[15px] text-[15px] font-bold text-gray-800 line-clamp-2">
+                    <h1
+                      className={`md:text-[15px] text-[15px] font-bold text-gray-800 ${index !== 0 && 'line-clamp-2'}`}
+                    >
                       {news.title}
                     </h1>
+                    {index === 0 && (
+                      <p className="text-gray-600 md:text-[15px] text-sm line-clamp-3 mt-6">
+                        Hyratek và Qualcomm hợp tác chiến lược về AI, đồng hành
+                        cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội
+                      </p>
+                    )}
 
                     <div
                       className={`flex justify-between items-center ${
@@ -126,41 +134,43 @@ const NewsPage: React.FC = () => {
           Sự kiện sắp tới
         </h1>
 
-        <img
-          className="h-auto max-w-[90%]"
-          src="/img/news/news_upcomming.png"
-          alt="image description"
-        />
-        <div className="container mx-auto md:max-w-[90%] overflow-x-auto">
-          <div className="flex gap-6 flex-nowrap">
-            {newsData.map((news: any, index: number) => (
-              <div
-                key={index}
-                className="bg-white rounded-lg shadow-lg overflow-hidden min-w-[250px] "
-              >
-                <img
-                  src={news.imageUrl}
-                  alt=""
-                  className="w-full object-cover object-center bg-center max-h-[200px] h-auto"
-                />
-                <div className="p-4 ">
-                  <h1 className="md:text-[18px] text-[12px] font-bold text-gray-800">
-                    {news.title}
-                  </h1>
-                  <div className="flex justify-between items-center">
-                    <Link
-                      href={news.link || '#'}
-                      className="md:text-sm text-[#03A638] text-sm font-semibold"
-                    >
-                      CÔNG NGHỆ
-                    </Link>
-                    <p className="text-sm text-gray-600 text-center">
-                      {news.date}
-                    </p>
+        <div className="flex flex-col justify-center items-center gap-4 md:max-w-[80%]">
+          <img
+            className="h-auto max-w-[100%]"
+            src="/img/news/news_upcomming.png"
+            alt="image description"
+          />
+          <div className="container mx-auto md:max-w-[90%] overflow-x-auto">
+            <div className="flex gap-6 flex-nowrap">
+              {newsData.map((news: any, index: number) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-lg shadow-lg overflow-hidden min-w-[250px] "
+                >
+                  <img
+                    src={news.imageUrl}
+                    alt=""
+                    className="w-full object-cover object-center bg-center max-h-[200px] h-auto"
+                  />
+                  <div className="p-4 ">
+                    <h1 className="md:text-[18px] text-[12px] font-bold text-gray-800">
+                      {news.title}
+                    </h1>
+                    <div className="flex justify-between items-center">
+                      <Link
+                        href={news.link || '#'}
+                        className="md:text-sm text-[#03A638] text-sm font-semibold"
+                      >
+                        CÔNG NGHỆ
+                      </Link>
+                      <p className="text-sm text-gray-600 text-center">
+                        {news.date}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>

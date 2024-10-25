@@ -3,120 +3,236 @@
 import React from 'react';
 import styles from '@/app/categories/category.module.css';
 import Link from 'next/link';
+import { Box, FormControl, InputLabel, MenuItem, Select } from '@mui/material';
 
-import { Box } from '@mui/material';
-
+const projects = [
+  {
+    img: '/img/19.jpg',
+    name: 'EGABID',
+    amount: '$2.000.000',
+    funded: '$1.500.00',
+    progress: 75,
+    category: 'CÔNG NGHỆ',
+  },
+  {
+    img: '/img/18.jpg',
+    name: 'SALALA AI',
+    amount: '$2.000.000',
+    funded: '$1.500.00',
+    progress: 75,
+    category: 'CÔNG NGHỆ',
+  },
+  {
+    img: '/img/16.jpg',
+    name: 'Hyperas Chain',
+    amount: '$2.000.000',
+    funded: '$1.500.00',
+    progress: 75,
+    category: 'CÔNG NGHỆ',
+  },
+  {
+    img: '/img/19.jpg',
+    name: 'EGABID',
+    amount: '$2.000.000',
+    funded: '$1.500.00',
+    progress: 75,
+    category: 'CÔNG NGHỆ',
+  },
+  {
+    img: '/img/18.jpg',
+    name: 'SALALA AI',
+    amount: '$2.000.000',
+    funded: '$1.500.00',
+    progress: 75,
+    category: 'CÔNG NGHỆ',
+  },
+  {
+    img: '/img/16.jpg',
+    name: 'Hyperas Chain',
+    amount: '$2.000.000',
+    funded: '$1.500.00',
+    progress: 75,
+    category: 'CÔNG NGHỆ',
+  },
+];
+const projects2 = [
+  {
+    img: '/img/19.jpg',
+    name: 'EGABID',
+    amount: '$2.000.000',
+    funded: '$2.000.000',
+    progress: 100,
+    category: 'CÔNG NGHỆ',
+  },
+  {
+    img: '/img/18.jpg',
+    name: 'SALALA AI',
+    amount: '$2.000.000',
+    funded: '$2.000.000',
+    progress: 100,
+    category: 'CÔNG NGHỆ',
+  },
+  {
+    img: '/img/16.jpg',
+    name: 'Hyperas Chain',
+    amount: '$2.000.000',
+    funded: '$2.000.000',
+    progress: 100,
+    category: 'CÔNG NGHỆ',
+  },
+  {
+    img: '/img/19.jpg',
+    name: 'EGABID',
+    amount: '$2.000.000',
+    funded: '$2.000.000',
+    progress: 100,
+    category: 'CÔNG NGHỆ',
+  },
+  {
+    img: '/img/18.jpg',
+    name: 'SALALA AI',
+    amount: '$2.000.000',
+    funded: '$2.000.000',
+    progress: 100,
+    category: 'CÔNG NGHỆ',
+  },
+  {
+    img: '/img/16.jpg',
+    name: 'Hyperas Chain',
+    amount: '$2.000.000',
+    funded: '$2.000.000',
+    progress: 100,
+    category: 'CÔNG NGHỆ',
+  },
+];
 const CategoryPage: React.FC = () => {
-  const projects = [
-    {
-      img: '/img/19.jpg',
-      name: 'Hyperas Chain',
-      amount: '$2.000.000',
-      funded: '$1.500.00',
-      progress: 75,
-      category: 'CÔNG NGHỆ',
-    },
-    {
-      img: '/img/18.jpg',
-      name: 'Hyperas Chain',
-      amount: '$2.000.000',
-      funded: '$1.500.00',
-      progress: 75,
-      category: 'CÔNG NGHỆ',
-    },
-    {
-      img: '/img/16.jpg',
-      name: 'Hyperas Chain',
-      amount: '$2.000.000',
-      funded: '$1.500.00',
-      progress: 75,
-      category: 'CÔNG NGHỆ',
-    },
-    {
-      img: '/img/17.jpg',
-      name: 'Hyperas Chain',
-      amount: '$2.000.000',
-      funded: '$1.500.00',
-      progress: 75,
-      category: 'CÔNG NGHỆ',
-    },
-    {
-      img: '/img/19.jpg',
-      name: 'Hyperas Chain',
-      amount: '$2.000.000',
-      funded: '$1.500.00',
-      progress: 75,
-      category: 'CÔNG NGHỆ',
-    },
-    {
-      img: '/img/18.jpg',
-      name: 'Hyperas Chain',
-      amount: '$2.000.000',
-      funded: '$1.500.00',
-      progress: 75,
-      category: 'CÔNG NGHỆ',
-    },
-    {
-      img: '/img/16.jpg',
-      name: 'Hyperas Chain',
-      amount: '$2.000.000',
-      funded: '$1.500.00',
-      progress: 75,
-      category: 'CÔNG NGHỆ',
-    },
-    {
-      img: '/img/17.jpg',
-      name: 'Hyperas Chain',
-      amount: '$2.000.000',
-      funded: '$1.500.00',
-      progress: 75,
-      category: 'CÔNG NGHỆ',
-    },
-    {
-      img: '/img/19.jpg',
-      name: 'Hyperas Chain',
-      amount: '$2.000.000',
-      funded: '$1.500.00',
-      progress: 75,
-      category: 'CÔNG NGHỆ',
-    },
-    {
-      img: '/img/18.jpg',
-      name: 'Hyperas Chain',
-      amount: '$2.000.000',
-      funded: '$1.500.00',
-      progress: 75,
-      category: 'CÔNG NGHỆ',
-    },
-    {
-      img: '/img/16.jpg',
-      name: 'Hyperas Chain',
-      amount: '$2.000.000',
-      funded: '$1.500.00',
-      progress: 75,
-      category: 'CÔNG NGHỆ',
-    },
-    {
-      img: '/img/17.jpg',
-      name: 'Hyperas Chain',
-      amount: '$2.000.000',
-      funded: '$1.500.00',
-      progress: 75,
-      category: 'CÔNG NGHỆ',
-    },
-  ];
+  const [age, setAge] = React.useState('10');
+
+  const handleChange = (event: any) => {
+    setAge(event.target.value);
+  };
   return (
     <>
-      <div className="flex items-center p-10">
-        <div className="w-[20%] text-2xl font-normal">Tìm kiếm theo</div>
+      <div className="flex items-center px-32">
         <input
-          className="w-[80%] h-[57px] border-2 border-[#48B96D] rounded-lg pl-3 pr-10 text-lg"
+          className="w-full h-[57px] border-2 border-[#48B96D] rounded-lg pl-3 pr-10 text-lg"
           type="text"
           placeholder="Nhập dự án cần tìm kiếm"
         />
       </div>
-      <div className="flex flex-col lg:flex-row px-10">
-        <div className="lg:w-[20%] md:w-full">
+      <div className="px-32 pt-4 flex flex-row justify-end gap-4 items-center">
+        <p>Hiển thị </p>
+        <FormControl sx={{ m: 1, minWidth: 100 }} size="small">
+          <Select
+            className="rounded-full text-center"
+            labelId="demo-select-small-label"
+            id="demo-select-small"
+            value={age}
+            onChange={handleChange}
+          >
+            <MenuItem value={10}>Tất cả</MenuItem>
+            <MenuItem value={20}>Seed</MenuItem>
+            <MenuItem value={30}>Series A</MenuItem>
+            <MenuItem value={40}>Series B</MenuItem>
+            <MenuItem value={50}>Series C</MenuItem>
+            <MenuItem value={60}>PE</MenuItem>
+            <MenuItem value={70}>IPO</MenuItem>
+          </Select>
+        </FormControl>
+      </div>
+      <h2 className="px-32 py-4 font-bold text-4xl text-[#04141A] uppercase">
+        dự án đang gọi vốn
+      </h2>
+      <div className="flex flex-col lg:flex-row px-32">
+        <div className="w-full bg-white">
+          <Box
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: {
+                xs: '1fr',
+                sm: 'repeat(2, 1fr)',
+                md: 'repeat(3, 1fr)',
+              },
+              gap: 2,
+            }}
+          >
+            {projects.map((project, index) => (
+              <Link href="/detail-category">
+                <Box key={index} className="py-4">
+                  <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img
+                      src={project.img}
+                      alt={project.name}
+                      className="w-full h-[250px] object-cover"
+                    />
+                    <div className="p-4">
+                      <span className="text-sm bg-blue-500 text-white py-1 px-3 rounded-full">
+                        Series A
+                      </span>
+                      <h3 className="text-lg font-bold mt-2 uppercase">
+                        {project.name}
+                      </h3>
+                      <div className="mt-4">
+                        <div className="text-sm font-normal uppercase">
+                          Mục tiêu huy động
+                        </div>
+                        <div className="text-xl font-semibold">
+                          {project.amount}
+                        </div>
+                        <div className="h-2 bg-gray-300 rounded mt-2">
+                          <div
+                            className="bg-green-500 h-full rounded"
+                            style={{
+                              width: `${project.progress}%`,
+                            }}
+                          ></div>
+                        </div>
+                        <div className="flex justify-between my-2 text-sm text-gray-600">
+                          <span className="text-[#48B96D] font-semibold">
+                            {project.funded}
+                          </span>
+                          <div className="flex gap-1">
+                            <span>Hoàn thành</span>
+                            <p className="text-[#48B96D] font-semibold">
+                              {project.progress}%
+                            </p>
+                          </div>
+                        </div>
+                        <div className="flex gap-2">
+                          <span className="text-gray-800 px-2 py-1 rounded-md font-bold bg-[#F6F6F6]">
+                            {project.category}
+                          </span>
+                          <span className="text-gray-800 px-2 py-1 rounded-md font-bold bg-[#F6F6F6]">
+                            {project.category}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Box>
+              </Link>
+            ))}
+          </Box>
+        </div>
+      </div>
+      <div className="flex flex-row justify-center mb-8">
+        <button className="uppercase flex items-center bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black">
+          xem thêm
+          <svg
+            className="w-4 h-4 transition-transform duration-300 ease-linear"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path d="M13.1714 12.0007L8.22168 7.05093L9.63589 5.63672L15.9999 12.0007L9.63589 18.3646L8.22168 16.9504L13.1714 12.0007Z" />
+          </svg>
+        </button>
+      </div>
+      <h2 className="px-32 py-4 font-bold text-4xl text-[#04141A] uppercase">
+        dỰ ÁN ĐÃ ĐẦU TƯ ƯƠM TẠ0
+      </h2>
+      <div className="flex flex-col lg:flex-row px-32">
+        {/* <div className="lg:w-[20%] md:w-full">
           <div className="flex flex-col gap-4">
             <h4 className="text-[22px] font-bold mb-1">Lĩnh vực đầu tư</h4>
             <div className="flex lg:flex-col md:flex-row flex-wrap gap-4">
@@ -258,8 +374,8 @@ const CategoryPage: React.FC = () => {
               </label>
             </div>
           </div>
-        </div>
-        <div className="lg:w-[80%] md:w-full md:pt-10 bg-white">
+        </div> */}
+        <div className="w-full bg-white">
           <Box
             sx={{
               display: 'grid',
@@ -267,26 +383,30 @@ const CategoryPage: React.FC = () => {
                 xs: '1fr',
                 sm: 'repeat(2, 1fr)',
                 md: 'repeat(3, 1fr)',
-                // lg: "repeat(4, 1fr)",
               },
               gap: 2,
             }}
           >
-            {projects.map((project, index) => (
+            {projects2.map((project, index) => (
               <Link href="/detail-category">
-                <Box key={index} className="p-4"> 
+                <Box key={index} className="py-4">
                   <div className="bg-white shadow-lg rounded-lg overflow-hidden">
                     <img
                       src={project.img}
                       alt={project.name}
-                      className="w-full h-80 object-cover"
+                      className="w-full h-[250px] object-cover"
                     />
                     <div className="p-4">
                       <span className="text-sm bg-blue-500 text-white py-1 px-3 rounded-full">
                         Series A
                       </span>
-                      <h3 className="text-lg font-bold mt-2">{project.name}</h3>
+                      <h3 className="text-lg font-bold mt-2 uppercase">
+                        {project.name}
+                      </h3>
                       <div className="mt-4">
+                        <div className="text-sm font-normal uppercase">
+                          Mục tiêu huy động
+                        </div>
                         <div className="text-xl font-semibold">
                           {project.amount}
                         </div>
@@ -299,11 +419,23 @@ const CategoryPage: React.FC = () => {
                           ></div>
                         </div>
                         <div className="flex justify-between mt-2 text-sm text-gray-600">
-                          <span>{project.funded}</span>
-                          <span>Được tài trợ {project.progress}%</span>
+                          <span className="text-[#48B96D] font-semibold">
+                            {project.funded}
+                          </span>
+                          <div className="flex gap-1">
+                            <span>Hoàn thành</span>
+                            <p className="text-[#48B96D] font-semibold">
+                              {project.progress}%
+                            </p>
+                          </div>
                         </div>
-                        <div className="text-gray-800 mt-2 font-semibold">
-                          {project.category}
+                        <div className="flex gap-2">
+                          <span className="text-gray-800 px-2 py-1 rounded-md font-bold bg-[#F6F6F6]">
+                            {project.category}
+                          </span>
+                          <span className="text-gray-800 px-2 py-1 rounded-md font-bold bg-[#F6F6F6]">
+                            {project.category}
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -313,6 +445,19 @@ const CategoryPage: React.FC = () => {
             ))}
           </Box>
         </div>
+      </div>
+      <div className="flex flex-row justify-center mb-8">
+        <button className="uppercase flex items-center bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black">
+          xem thêm
+          <svg
+            className="w-4 h-4 transition-transform duration-300 ease-linear"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path d="M13.1714 12.0007L8.22168 7.05093L9.63589 5.63672L15.9999 12.0007L9.63589 18.3646L8.22168 16.9504L13.1714 12.0007Z" />
+          </svg>
+        </button>
       </div>
     </>
   );
