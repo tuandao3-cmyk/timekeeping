@@ -97,8 +97,36 @@ const ProjectSlider: React.FC = () => {
   const windowSize = useWindowSize();
 
   const isMobile = windowSize.width < 640;
+  const isTablet = windowSize.width >= 640 && windowSize.width < 768;
+  const isSmallDesktop = windowSize.width >= 768 && windowSize.width < 1024;
+  const isDesktop = windowSize.width >= 1024 && windowSize.width < 1280;
+  const isLargeDesktop = windowSize.width >= 1280 && windowSize.width < 1536;
+  const isXLargeDesktop = windowSize.width >= 1536 && windowSize.width < 1920;
+  const isXXLargeDesktop = windowSize.width >= 1920 && windowSize.width < 2560;
+  const isUltraWide = windowSize.width >= 2560;
+  
   const slidesOffsetBefore = isMobile ? 0 : 100;
-  const slidesPerView = isMobile ? 1 : 1.5;
+  let slidesPerView;
+  
+  if (isMobile) {
+    slidesPerView = 1;
+  } else if (isTablet) {
+    slidesPerView = 1.5;
+  } else if (isSmallDesktop) {
+    slidesPerView = 1.5;
+  } else if (isDesktop) {
+    slidesPerView = 1.5;
+  } else if (isLargeDesktop) {
+    slidesPerView = 1.5;
+  } else if (isXLargeDesktop) {
+    slidesPerView = 1.5;
+  } else if (isXXLargeDesktop) {
+    slidesPerView = 1.75;
+  } else if (isUltraWide) {
+    slidesPerView = 2;
+  } else {
+    slidesPerView = 1; // Giá trị mặc định
+  }
 
   const handlePrev = () => {
     if (swiper) {
@@ -273,3 +301,4 @@ const ProjectSlider: React.FC = () => {
 };
 
 export default ProjectSlider;
+
