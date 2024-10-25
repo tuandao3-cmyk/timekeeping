@@ -3,7 +3,7 @@ import styles from './Partner.module.css';
 
 const ProjectGrid: React.FC = () => {
   return (
-    <div className="overflow-hidden whitespace-nowrap py-10 pt-32 bg-[#F3F7F4]">
+    <div className="overflow-hidden whitespace-nowrap py-10  bg-[#F3F7F4]">
       <div className={`inline-flex ${styles.animateSlide}`}>
         <div className="flex items-center space-x-8">
           <img
