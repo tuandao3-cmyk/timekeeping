@@ -22,7 +22,7 @@ const ProjectSection = () => {
     },
     {
       title: 'Salala AI',
-      image: '/img/salala.png',
+      image: '/img/Salala.png',
       badge: 'Series B',
       amount: '$3.000.000',
       progress: '98%',
@@ -50,7 +50,7 @@ const ProjectSection = () => {
       <section
         className={`${styles.showcaseSection} flex flex-col justify-center items-center bg-[#FFFFFF]`}
       >
-        <h2 className="text-center text-[40px] font-bold leading-[48px] pb-10">
+        <h2 className="text-center text-[38px] font-bold leading-[48px] pb-10">
           DỰ ÁN ĐÃ ĐẦU TƯ VÀ ƯƠM TẠO
         </h2>
         <div className="w-full flex justify-center items-center max-w-[1200px]">

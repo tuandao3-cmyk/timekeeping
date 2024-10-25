@@ -140,7 +140,7 @@ function SolutionList() {
         <Typography
           component={'p'}
           textTransform={'uppercase'}
-          className={`text-[40px] font-bold leading-[48px] text-center text-[#04141A]`}
+          className={`text-[38px] font-bold leading-[48px] text-center text-[#04141A]`}
         >
           giải pháp đầu tư vượt trội
         </Typography>
