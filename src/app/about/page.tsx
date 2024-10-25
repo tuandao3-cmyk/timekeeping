@@ -212,8 +212,8 @@ const AboutPage: React.FC = () => {
   return (
     <>
       {/* <div className="max-h-max"> */}
-      <div className="bg-[#07212C] min-h-[820px]  w-[100%] flex flex-col justify-end items-end relative px-32">
-        <div className="flex justify-between items-center h-auto w-full mt-16 max-md:!flex-col">
+      <div className="bg-[#07212C] min-h-[820px]  w-[100%] flex flex-col justify-end items-end relative">
+        <div className="flex justify-between items-center h-auto w-full mt-16 max-md:!flex-col pl-32 pr-12">
           <div className="flex-1 gap-2">
             <p
               ref={ref}
@@ -223,7 +223,7 @@ const AboutPage: React.FC = () => {
                   : 'opacity-0 translate-y-10'
               }`}
             >
-              Investment Fund
+              về chúng tôi
             </p>
             <p
               ref={ref}
@@ -233,7 +233,7 @@ const AboutPage: React.FC = () => {
                   : 'opacity-0 translate-y-10'
               }`}
             >
-              Sustainable Growth
+              nền tảng giúp tăng
             </p>
             <p
               ref={ref}
@@ -243,7 +243,7 @@ const AboutPage: React.FC = () => {
                   : 'opacity-0 translate-y-10'
               }`}
             >
-              Nurturing Innovation
+              trưởng tài sản nhanh hơn
             </p>
           </div>
           <div className="flex-1 flex flex-col gap-[32px] justify-end items-end">
@@ -255,9 +255,9 @@ const AboutPage: React.FC = () => {
                   : 'opacity-0 translate-y-10'
               }`}
             >
-              We are committed to investing in innovative startups and
-              small-to-medium enterprises, fostering creativity, innovation, and
-              sustainable development.
+              Chúng tôi là quỹ đầu tư với sứ mệnh ươm mầm và đầu tư dài hạn vào
+              các dự án khởi nghiệp tiềm năng mang lại giá trị phát triển bền
+              vững.
             </p>
 
             <div className="flex w-[100%] justify-start items-start gap-[24px] max-w-[500px]">
@@ -269,7 +269,7 @@ const AboutPage: React.FC = () => {
                     : 'opacity-0 translate-y-10'
                 }`}
               >
-                Explore Opportunities
+                Khám phá
               </button>
               <button
                 ref={ref}
@@ -279,12 +279,12 @@ const AboutPage: React.FC = () => {
                     : 'opacity-0 translate-y-10'
                 } `}
               >
-                Contact Us
+                Liên hệ
               </button>
             </div>
           </div>
         </div>
-        <div className="flex justify-center items-center w-full  bg-transparent relative -bottom-20 ">
+        <div className="flex justify-center items-center w-full  bg-transparent relative -bottom-20 px-32">
           <video
             ref={ref}
             className={`w-full border border-gray-200 rounded-lg dark:border-gray-700  duration-1000  ease-in-out transform ${
@@ -748,7 +748,7 @@ const AboutPage: React.FC = () => {
                     : 'opacity-0 translate-y-10 scale-50'
                 }`}
               >
-                <div className="pt-6">
+                <div className="px-6 pt-6 bg-[#48b96d1a]">
                   <img
                     src={'/img/about/lead.svg'}
                     alt={leader.name}
