@@ -159,7 +159,7 @@ const ProjectSlider: React.FC = () => {
     <div className="flex w-full flex-col justify-center items-center">
       <div className="max-w-7xl">
         <div className="w-full relative">
-          <h2 className="text-3xl font-bold mb-8 text-center">
+          <h2 className="text-[38px] font-bold mb-8 text-center">
             DỰ ÁN ĐANG GỌI VỐN
           </h2>
           <Swiper

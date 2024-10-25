@@ -4,7 +4,7 @@ import { useInView } from 'react-intersection-observer';
 const DownloadSection = () => {
   const { ref, inView, entry } = useInView({
     threshold: 0.1,
-    // triggerOnce: true,
+    triggerOnce: true,
   });
   return (
     <div className="bg-[#FCFCFD] overflow-hidden flex flex-col justify-center items-center">
@@ -13,15 +13,15 @@ const DownloadSection = () => {
           <div className="md:w-1/2 mb-8 md:mb-0 ">
             <h2
               ref={ref}
-              className={`text-3xl font-bold mb-4 duration-700 ease-in-out transform ${
+              className={`text-3xl font-bold mb-4 duration-700 ease-in-out transform uppercase ${
                 inView
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-10'
               }`}
             >
-              INVEST PROFITABLY{' '}
-              <span className="text-green-500 delay-150">
-                ANYWHERE, ANYTIME
+              Đầu tư sinh lời{' '}
+              <span className="text-green-500 delay-150 uppercase">
+                Mọi lúc, mọi nơi
               </span>
             </h2>
             <p
@@ -32,8 +32,8 @@ const DownloadSection = () => {
                   : 'opacity-0 translate-y-10'
               }`}
             >
-              Download our app now to access real-time investment tools and grow
-              your wealth with ease!
+              Tải ứng dụng HyraCap để trải nghiệm những tính năng đầu tư sinh
+              lời hiệu quả.
             </p>
             <div className="flex flex-col beetween sm:flex-row gap-6 mb-8">
               <button

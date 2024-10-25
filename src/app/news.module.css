@@ -1,7 +1,7 @@
 .newsSection {
-  background-color: #f3f7f4;
+  /* background-color: #FFFFFF; */
   background-size: cover;
-  padding: 40px 120px;
+  padding: 40px 0;
   border-radius: 10px;
   color: #04141a;
   display: flex;
@@ -13,6 +13,9 @@
 .newsLink {
   text-decoration: none;
   color: inherit;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .title {
@@ -31,15 +34,13 @@
 }
 
 .mainNews {
-  flex: 1.5;
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 5;
 }
 
 .mainNewsLink {
-  position: relative;
   display: flex;
   flex-direction: column;
   text-decoration: none;
@@ -47,10 +48,9 @@
 }
 
 .mainImage {
-  /* width: 80%; */
-  /* max-width: 486px; */
   border-radius: 10px;
-  aspect-ratio: 1/1;
+  height: 426px;
+  /* aspect-ratio: 1/1; */
   object-fit: cover;
 }
 
@@ -58,7 +58,6 @@
   /* font-size: clamp(1.5rem, 2vw, 2.5rem); */
   font-weight: bold;
   margin: 0;
-  /* max-width: 80%; */
 }
 .newsTitle:hover {
   color: #48b96d;
@@ -76,9 +75,10 @@
 }
 
 .sideNews {
-  flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: end;
   gap: 10px;
 }
 
@@ -91,18 +91,17 @@
 .newsItem {
   display: flex;
   text-decoration: none;
+  justify-content: space-between;
   width: 100%;
   padding-bottom: 10px;
   border-bottom: 1px solid #e6e8ec;
 }
 
 .newsImage {
-  width: 50%;
-  max-width: 233px;
-  height: auto;
+  height: 203px;
+  width: 203px;
   border-radius: 10px;
   margin-right: 15px;
-  aspect-ratio: 1/1;
   object-fit: cover;
 }
 
@@ -111,6 +110,7 @@
   flex-direction: row; /* Đảm bảo hiển thị ngang hàng */
   justify-content: space-between; /* Căn chỉnh khoảng cách giữa ảnh và tiêu đề */
   width: 100%; /* Đảm bảo chiếm toàn bộ chiều rộng */
+  gap: 16px;
 }
 
 .newsContent h2 {
@@ -160,7 +160,8 @@
     font-size: 0.9rem; /* Giảm kích thước font cho nút */
   }
   .newsImage {
-    width: 100%;
+    height: 204px;
+    width: 204px;
 
     /* margin-right: 0; 
     margin-bottom: 10px;  */

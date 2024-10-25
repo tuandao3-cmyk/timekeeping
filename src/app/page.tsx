@@ -84,7 +84,7 @@ const Home: React.FC = () => {
           <div className="flex flex-wrap max-sm:justify-between mt-8 space-y-0 sm:space-x-4 md:space-x-4 lg:space-x-4 h-[50%]">
             <div
               ref={ref}
-              className={`w-[30%] h-[40%] bg-[#FFFFFF]/10 rounded-lg p-1 md:p-3 pl-5 flex flex-col justify-center duration-700 ease-in-out transform ${
+              className={`w-[30%] h-[40%] bg-[#FFFFFF]/10 rounded-lg p-1 md:p-3 pl-5 flex flex-col  justify-start items-start duration-700 ease-in-out transform ${
                 inView ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
               }`}
             >
@@ -98,7 +98,7 @@ const Home: React.FC = () => {
             </div>
             <div
               ref={ref}
-              className={`w-[30%] h-[40%] bg-[#FFFFFF]/10 rounded-lg p-1 md:p-3 pl-5 flex flex-col justify-center duration-700 delay-700 ease-in-out transform ${
+              className={`w-[30%] h-[40%] bg-[#FFFFFF]/10 rounded-lg p-1 md:p-3 pl-5 flex flex-col  justify-start items-start duration-700 delay-700 ease-in-out transform ${
                 inView ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
               }`}
             >
@@ -111,7 +111,7 @@ const Home: React.FC = () => {
             </div>
             <div
               ref={ref}
-              className={`w-[30%] h-[40%] bg-[#FFFFFF]/10 rounded-lg p-1 md:p-3 pl-5 flex flex-col justify-center duration-700 delay-1000 ease-in-out transform ${
+              className={`w-[30%] h-[40%] bg-[#FFFFFF]/10 rounded-lg p-1 md:p-3 pl-5 flex flex-col justify-start items-start duration-700 delay-1000 ease-in-out transform ${
                 inView ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
               }`}
             >
@@ -240,52 +240,6 @@ const Home: React.FC = () => {
         </div>
       </div>
       <Partner />
-      {/* <div className="bg-white py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="4xl:text-[72px] 3xl:text-[48px] text-3xl font-bold text-center mb-12">
-            GIẢI PHÁP ĐẦU TƯ VƯỢT TRỘI
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
-            {[
-              {
-                icon: '/img/icon/icon15.png',
-                title: 'Lợi nhuận vượt trội',
-                description:
-                  'Tạo nên mô hình đầu tư bền vững. Giúp mọi người có nguồn thu nhập thụ động vững vàng từ đó tài chính.',
-              },
-              {
-                icon: '/img/icon/icon14.png',
-                title: 'Thông tin minh bạch',
-                description:
-                  'Tạo nên mô hình đầu tư bền vững. Giúp mọi người có nguồn thu nhập thụ động vững vàng từ đó tài chính.',
-              },
-              {
-                icon: '/img/icon/icon16.png',
-                title: 'Bảo mật tuyệt đối',
-                description:
-                  'Tạo nên mô hình đầu tư bền vững. Giúp mọi người có nguồn thu nhập thụ động vững vàng từ đó tài chính.',
-              },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="bg-[#F3F7F4] p-6 rounded-[1.25rem] 4xl:w-[660px] 4xl:h-[500px] 3xl:w-[500px] 3xl:h-[400px] w-[250px] md:w-[400px]  h-[300px] transition-all duration-300 hover:bg-[#48B96D] hover:text-white group"
-              >
-                <img
-                  src={item.icon}
-                  alt={item.title}
-                  className="w-16 h-16 4xl:w-[100px] 4xl:h-[100px] 3xl:w-[80px] 3xl:h-[80px] mb-4"
-                />
-                <h3 className="text-2xl 4xl:text-[60px] 4xl:leading-[80px] 3xl:text-[40px] 3xl:leading-[60px] text-[#000000]/90 leading-8 group-hover:text-white font-inter font-semibold mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-gray-700 text-base leading-6 4xl:leading-[40px] 4xl:text-[32px] 3xl:text-[24px] 3xl:leading-[30px] group-hover:text-white">
-                  {item.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div> */}
       <SolutionList />
 
       <ProjectSection />
