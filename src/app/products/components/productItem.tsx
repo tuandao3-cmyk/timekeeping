@@ -100,4 +100,6 @@ const ProductItem = forwardRef<HTMLDivElement, ProductItemProps>(
   }
 );
 
+ProductItem.displayName = 'ProductItem';
+
 export default ProductItem;

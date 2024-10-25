@@ -169,8 +169,8 @@ const CategoryPage: React.FC = () => {
                 }}
               >
                 {projects.map((project, index) => (
-                  <Link href="/detail-category">
-                    <Box key={index} className="py-4">
+                  <Link href="/detail-category" key={index}>
+                    <Box className="py-4">
                       <div className="bg-white shadow-lg rounded-lg overflow-hidden">
                         <img
                           src={project.img}
@@ -257,8 +257,8 @@ const CategoryPage: React.FC = () => {
                 }}
               >
                 {projects.map((project, index) => (
-                  <Link href="/detail-category">
-                    <Box key={index} className="py-4">
+                  <Link href="/detail-category" key={index}>
+                    <Box className="py-4">
                       <div className="bg-white shadow-lg rounded-lg overflow-hidden">
                         <img
                           src={project.img}
@@ -488,8 +488,8 @@ const CategoryPage: React.FC = () => {
                 }}
               >
                 {projects2.map((project, index) => (
-                  <Link href="/detail-category">
-                    <Box key={index} className="py-4">
+                  <Link href="/detail-category" key={index}>
+                    <Box className="py-4">
                       <div className="bg-white shadow-lg rounded-lg overflow-hidden">
                         <img
                           src={project.img}
