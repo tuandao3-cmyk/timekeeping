@@ -55,21 +55,21 @@ const FeedbackSection: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-[#F3F7F4] 4xl:py-10 py-16 relative overflow-hidden">
+    <div className="bg-[#F3F7F4] 4xl:py-10 3xl:py-8 py-16 relative overflow-hidden">
       {/* Vòng tròn đồng tâm */}
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0">
         {/* <div className="w-[800px] h-[800px] rounded-full border-2 border-[#48B96D] opacity-20"></div> */}
-        <div className="absolute top-1/2 left-1/2 4xl:w-[1200px] 4xl:h-[1200px] w-[600px] h-[600px] rounded-full border-2 border-[#48B96D] opacity-20 transform -translate-x-1/2 -translate-y-1/2"></div>
-        <div className="absolute top-1/2 left-1/2 4xl:w-[800px] 4xl:h-[800px] w-[400px] h-[400px] rounded-full border-2 border-[#48B96D] opacity-20 transform -translate-x-1/2 -translate-y-1/2"></div>
-        <div className="absolute top-1/2 left-1/2 4xl:w-[400px] 4xl:h-[400px] w-[200px] h-[200px] rounded-full border-2 border-[#48B96D] opacity-20 transform -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute top-1/2 left-1/2 4xl:w-[1200px] 4xl:h-[1200px] 3xl:w-[800px] 3xl:h-[800px] w-[600px] h-[600px] rounded-full border-2 border-[#48B96D] opacity-20 transform -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute top-1/2 left-1/2 4xl:w-[800px] 4xl:h-[800px] 3xl:w-[600px] 3xl:h-[600px] w-[400px] h-[400px] rounded-full border-2 border-[#48B96D] opacity-20 transform -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute top-1/2 left-1/2 4xl:w-[400px] 4xl:h-[400px] 3xl:w-[300px] 3xl:h-[300px] w-[200px] h-[200px] rounded-full border-2 border-[#48B96D] opacity-20 transform -translate-x-1/2 -translate-y-1/2"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-  <h2 className="4xl:text-[72px] 4xl:leading-[80px] 4xl:mb-8 text-4xl font-inter leading-[48px] font-bold text-center mb-2">PHẢN HỒI VỀ KHÁCH HÀNG</h2>
-  <p className="4xl:text-[60px] 4xl:leading-[72px] 4xl:max-w-[40vw] text-center font-inter text-3xl leading-10 text-gray-600 mb-12 max-w-[42vw] mx-auto">
+  <h2 className="4xl:text-[72px] 4xl:leading-[80px] 3xl:text-[48px] 3xl:leading-[50px] 4xl:mb-8 3xl:mb-6 text-4xl font-inter leading-[48px] font-bold text-center mb-2">PHẢN HỒI VỀ KHÁCH HÀNG</h2>
+  <p className="4xl:text-[60px] 4xl:leading-[72px] 4xl:max-w-[40vw] 3xl:text-[36px] 3xl:leading-[42px] text-center font-inter text-3xl leading-10 text-gray-600 mb-12 max-w-[42vw] mx-auto">
     HYRACAP LUÔN QUAN TÂM ĐẾN PHẢN HỒI CỦA TỪNG KHÁCH HÀNG
   </p>
-  <div className="relative 4xl:h-[1400px] h-[800px]">
+  <div className="relative 4xl:h-[1400px] 3xl:h-[1000px] h-[800px]">
     {feedbacks.map((feedback, index) => (
       <div
         key={feedback.id}
@@ -77,21 +77,21 @@ const FeedbackSection: React.FC = () => {
           if (el) feedbackRefs.current[index] = el;
         }}
         className={`bg-white rounded-lg shadow-lg p-6 absolute transition-all duration-500 opacity-0 hover:bg-[#48B96D] group ${
-          index === 0 ? 'top-[30px]  right-1/2 max-w-md 4xl:top-[130px] 4xl:max-w-[800px]' : 
-          index === 1 ? 'top-[210px] 4xl:top-[390px] 4xl:max-w-[1100px] left-1/4 -translate-x-1/2 max-w-xl' : 
-          'top-[418px] 4xl:top-[690px] 4xl:max-w-[1100px] right-1/2 max-w-xl'
+          index === 0 ? 'top-[30px]  right-1/2 max-w-md 4xl:top-[130px] 4xl:max-w-[800px] 3xl:top-[50px] 3xl:max-w-[700px]' : 
+          index === 1 ? 'top-[210px] 4xl:top-[390px] 4xl:max-w-[1100px] left-1/4 -translate-x-1/2 max-w-xl 3xl:top-[280px] 3xl:max-w-[800px]' : 
+          'top-[418px] 4xl:top-[690px] 4xl:max-w-[1100px] right-1/2 max-w-xl 3xl:top-[540px] 3xl:max-w-[800px]'
         } ${index === 0 ? '-translate-x-full' : index === 2 ? 'translate-x-full' : ''}`}
       >
-        <p className="text-[#000000]/90 font-semibold text-base 4xl:text-[30px] 4xl:leading-[40px] leading-7 font-inter mb-4 group-hover:text-white transition-colors duration-300">{feedback.content}</p>
+        <p className="text-[#000000]/90 font-semibold text-base 4xl:text-[30px] 4xl:leading-[40px] 3xl:text-[20px] 3xl:leading-[25px] leading-7 font-inter mb-4 group-hover:text-white transition-colors duration-300">{feedback.content}</p>
         <div className="flex items-center">
           <img
             src={feedback.image}
             alt={feedback.name}
-            className="4xl:w-[100px] 4xl:h-[100px] w-12 h-12 rounded-full mr-4"
+            className="4xl:w-[100px] 4xl:h-[100px] 3xl:w-[80px] 3xl:h-[80px] w-12 h-12 rounded-full mr-4"
           />
           <div>
-            <p className="4xl:text-[30px] 4xl:leading-[40px] font-semibold group-hover:text-white transition-colors duration-300">{feedback.name}</p>
-            <p className="4xl:text-[30px] 4xl:leading-[40px] text-gray-600 text-sm group-hover:text-white transition-colors duration-300">{feedback.position}</p>
+            <p className="4xl:text-[30px] 4xl:leading-[40px] 3xl:text-[20px] 3xl:leading-[25px] font-semibold group-hover:text-white transition-colors duration-300">{feedback.name}</p>
+            <p className="4xl:text-[30px] 4xl:leading-[40px] 3xl:text-[20px] 3xl:leading-[25px] text-gray-600 text-sm group-hover:text-white transition-colors duration-300">{feedback.position}</p>
           </div>
         </div>
       </div>

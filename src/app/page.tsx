@@ -49,29 +49,38 @@ const Home: React.FC = () => {
             <div className="bg-[#07212C] text-white p-8 flex xl:min-h-[800px]">
                 {/* Phần bên trái */}
                 <div className="w-full md:ml-[50px]  md:w-1/2 md:max-w-[45%] px-4 md:pr-8">
-                    <h1 className="4xl:pt-[300px] 4xl:text-[64px] 4xl:max-w-[900px] 4xl:leading-[72px] 4xl:ml-[150px] font-inter font-bold pt-[50px] md:pt-[130px]   max-w-[450px]  md:leading-[48px] text-[32px] mb-4">
-                        NỀN TẢNG HỢP TÁC ĐẦU TƯ ĐỘT PHÁ CHO TƯƠNG LAI
+                    <h1 className="4xl:pt-[300px] 4xl:text-[72px] 4xl:max-w-[840px] 4xl:leading-[84px] 4xl:ml-[150px]
+                    3xl:text-[48px] 3xl:leading-[56px] 3xl:max-w-[700px] 3xl:ml-[100px]
+                    2xl:text-[40px] 2xl:leading-[48px] 2xl:max-w-[600px] 2xl:ml-[80px]
+                     font-inter font-bold pt-[50px] md:pt-[130px]   max-w-[450px]  md:leading-[48px] text-[32px] mb-4">
+                        ỦY THÁC NIỀM TIN GẶT HÁI THỊNH VƯỢNG
                     </h1>
-                    <p className="4xl:pt-[80px] 4xl:text-[48px] 4xl:max-w-[900px] 4xl:leading-[60px] 4xl:ml-[150px] text-base font-inter pb-[30px] sm:text-base max-w-[450px] md:max-w-[85%] mb-4 sm:mb-6 text-[#FFFFFF]/60">
+                    <p className="4xl:pt-[60px] 4xl:text-[32px] 4xl:max-w-[900px] 4xl:leading-[48px] 4xl:ml-[150px] 
+                    3xl:pt-[40px] 3xl:text-[24px] 3xl:leading-[30px] 3xl:max-w-[650px] 3xl:ml-[100px]
+                    2xl:pt-[30px] 2xl:text-[20px] 2xl:leading-[25px] 2xl:max-w-[550px] 2xl:ml-[80px]
+                    text-base font-inter pb-[30px] sm:text-base max-w-[450px] md:max-w-[85%] mb-4 sm:mb-6 text-[#FFFFFF]/60">
                     Cung cấp cho các nhà đầu tư và doanh nghiệp những dự án tiềm năng phát triển để chia sẻ sự tăng trưởng tài chính.
                     </p>
                     <div className="flex max-sm:justify-center max-sm:items-center max-sm:flex">
-                           <button className="4xl:mt-[60px] 4xl:text-[40px] 4xl:max-w-[900px] 4xl:leading-[60px] 4xl:ml-[150px] bg-[#48B96D] text-[#ffffff] md:px-4 py-3 max-sm:px-4 rounded-full text-base">
+                           <button className="4xl:mt-[20px] 4xl:text-[30px] 4xl:max-w-[900px] 4xl:leading-[40px] 4xl:ml-[150px] 4xl:py-[20px] 4xl:px-[20px]
+                           3xl:text-[20px] 3xl:leading-[30px] 3xl:max-w-[600px] 3xl:ml-[100px] 3xl:py-[15px] 3xl:px-[18px]
+                           2xl:text-[16px] 2xl:leading-[20px] 2xl:max-w-[500px] 2xl:ml-[80px] 2xl:py-[10px] 2xl:px-[14px]
+                            bg-[#48B96D] text-[#ffffff] md:px-4 py-3 max-sm:px-4 rounded-full text-base">
                             Tham gia cùng chúng tôi
                         </button>
                     </div>
-                    <div className="4xl:ml-[150px] grid grid-cols-1 sm:grid-cols-3 justify-items-center mt-8 space-y-0 space-x-4 gap-4 max-h-[50%]">
-                        <div className=" 4xl:w-[300px] 4xl:h-[300px] w-[196px] h-[75px] xl:w-[172px] xl:h-[150px] bg-[#FFFFFF]/10 rounded-lg p-1 md:p-3 pl-5 flex flex-col justify-center">
-                            <p className="4xl:text-[54px] 4xl:leading-[72px] 4xl:ml-[45px] text-[#48B96D] lg:pl-4 lg:mb-4 mb-2 text-xl leading-8 sm:text-2xl font-semibold">$1B+</p>
-                            <p className="4xl:text-[30px] 4xl:leading-[42px] 4xl:ml-[45px] 4xl:max-w-[180px] text-[#FFFFFF]/80 lg:pl-4 sm:max-w-[105px]  text-xs sm:text-sm">Tổng số đã huy động</p>
+                    <div className="4xl:ml-[120px] 4xl:mt-[140px] 3xl:ml-[80px] 3xl:mt-[100px] 2xl:ml-[60px] 2xl:mt-[80px] grid grid-cols-1 sm:grid-cols-3 justify-items-center mt-8 space-y-0 space-x-4 gap-4 max-h-[50%]">
+                        <div className=" 4xl:w-[300px] 4xl:h-[300px] 3xl:w-[200px] 3xl:h-[200px] 2xl:h-[180px] 2xl:w-[180px] w-[196px]  h-[75px] xl:w-[172px] xl:h-[150px] bg-[#FFFFFF]/10 rounded-lg p-1 md:p-3 pl-5 flex flex-col justify-center">
+                            <p className="4xl:text-[54px] 4xl:leading-[72px] 4xl:ml-[45px] 3xl:text-[40px] 3xl:leading-[50px] 2xl:text-[30px] 2xl:leading-[38px] text-[#48B96D] lg:pl-4 lg:mb-4 mb-2 text-xl leading-8 sm:text-2xl font-semibold">$1B+</p>
+                            <p className="4xl:text-[30px] 4xl:leading-[42px] 4xl:ml-[45px] 4xl:max-w-[200px] 3xl:text-[20px] 3xl:leading-[28px] 3xl:max-w-[150px] 2xl:text-[18px] 2xl:leading-[22px] 2xl:max-w-[140px] text-[#FFFFFF]/80 lg:pl-4 sm:max-w-[105px]  text-xs sm:text-sm">Tổng vốn đang huy động</p>
                         </div>
-                        <div className=" 4xl:w-[300px] 4xl:h-[300px] w-[196px] h-[75px] xl:w-[172px] xl:h-[150px] bg-[#FFFFFF]/10 rounded-lg p-1 md:p-3 pl-5 flex flex-col justify-center">
-                            <p className="4xl:text-[54px] 4xl:leading-[72px] 4xl:ml-[45px] text-[#48B96D] lg:pl-4 lg:mb-4 mb-2 text-xl leading-8 sm:text-2xl font-semibold">50M+</p>
-                            <p className="4xl:text-[30px] 4xl:leading-[42px] 4xl:ml-[45px] 4xl:max-w-[180px] text-[#FFFFFF]/80 lg:pl-4 sm:max-w-[105px]  text-xs sm:text-sm">Đã đầu tư thành công</p>
+                        <div className=" 4xl:w-[300px] 4xl:h-[300px] 3xl:w-[200px] 3xl:h-[200px] 2xl:h-[180px] 2xl:w-[180px] w-[196px]  h-[75px] xl:w-[172px] xl:h-[150px] bg-[#FFFFFF]/10 rounded-lg p-1 md:p-3 pl-5 flex flex-col justify-center">
+                            <p className="4xl:text-[54px] 4xl:leading-[72px] 4xl:ml-[45px] 3xl:text-[40px] 3xl:leading-[50px] 2xl:text-[30px] 2xl:leading-[38px] text-[#48B96D] lg:pl-4 lg:mb-4 mb-2 text-xl leading-8 sm:text-2xl font-semibold">50M+</p>
+                            <p className="4xl:text-[30px] 4xl:leading-[42px] 4xl:ml-[45px] 4xl:max-w-[200px] 3xl:text-[20px] 3xl:leading-[28px] 3xl:max-w-[150px] 2xl:text-[18px] 2xl:leading-[22px] 2xl:max-w-[140px] text-[#FFFFFF]/80 lg:pl-4 sm:max-w-[105px]  text-xs sm:text-sm">Đã đầu tư thành công</p>
                         </div>
-                        <div className="4xl:w-[300px] 4xl:h-[300px] w-[196px] h-[75px] xl:w-[172px] xl:h-[150px] bg-[#FFFFFF]/10 rounded-lg p-1 md:p-3 pl-5 flex flex-col justify-center">
-                            <p className="4xl:text-[54px] 4xl:leading-[72px] 4xl:ml-[45px] text-[#48B96D] lg:pl-4 lg:mb-4 mb-2 text-xl leading-8 sm:text-2xl font-semibold">771+</p>
-                            <p className="4xl:text-[30px] 4xl:leading-[42px] 4xl:ml-[45px] 4xl:max-w-[180px] text-[#FFFFFF]/80 lg:pl-4 sm:max-w-[105px]  text-xs sm:text-sm">Nhà đầu tư tham gia</p>
+                        <div className="4xl:w-[300px] 4xl:h-[300px] 3xl:w-[200px] 3xl:h-[200px] 2xl:h-[180px] 2xl:w-[180px] w-[196px]  h-[75px] xl:w-[172px] xl:h-[150px] bg-[#FFFFFF]/10 rounded-lg p-1 md:p-3 pl-5 flex flex-col justify-center">
+                            <p className="4xl:text-[54px] 4xl:leading-[72px] 4xl:ml-[45px] 3xl:text-[40px] 3xl:leading-[50px] 2xl:text-[30px] 2xl:leading-[38px] text-[#48B96D] lg:pl-4 lg:mb-4 mb-2 text-xl leading-8 sm:text-2xl font-semibold">771+</p>
+                            <p className="4xl:text-[30px] 4xl:leading-[42px] 4xl:ml-[45px] 4xl:max-w-[200px] 3xl:text-[20px] 3xl:leading-[28px] 3xl:max-w-[150px] 2xl:text-[18px] 2xl:leading-[22px] 2xl:max-w-[140px] text-[#FFFFFF]/80 lg:pl-4 sm:max-w-[105px]  text-xs sm:text-sm">Nhà đầu tư tham gia</p>
                         </div>
                     </div>
                 </div>
@@ -146,7 +155,7 @@ const Home: React.FC = () => {
             <Partner />
             <div className="bg-white py-16">
                 <div className="container mx-auto px-4">
-                    <h2 className="4xl:text-[72px] text-3xl font-bold text-center mb-12">GIẢI PHÁP ĐẦU TƯ VƯỢT TRỘI</h2>
+                    <h2 className="4xl:text-[72px] 3xl:text-[48px] text-3xl font-bold text-center mb-12">GIẢI PHÁP ĐẦU TƯ VƯỢT TRỘI</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
                         {[
                             {
@@ -167,11 +176,11 @@ const Home: React.FC = () => {
                         ].map((item, index) => (
                             <div 
                                 key={index} 
-                                className="bg-[#F3F7F4] p-6 rounded-[1.25rem] 4xl:w-[660px] 4xl:h-[500px] w-[250px] md:w-[400px]  h-[300px] transition-all duration-300 hover:bg-[#48B96D] hover:text-white group"
+                                className="bg-[#F3F7F4] p-6 rounded-[1.25rem] 4xl:w-[660px] 4xl:h-[500px] 3xl:w-[500px] 3xl:h-[400px] w-[250px] md:w-[400px]  h-[300px] transition-all duration-300 hover:bg-[#48B96D] hover:text-white group"
                             >
-                                <img src={item.icon} alt={item.title} className="w-16 h-16 4xl:w-[100px] 4xl:h-[100px] mb-4" />
-                                <h3 className="text-2xl 4xl:text-[60px] 4xl:leading-[80px] text-[#000000]/90 leading-8 group-hover:text-white font-inter font-semibold mb-2">{item.title}</h3>
-                                <p className="text-gray-700 text-base leading-6 4xl:leading-[40px] 4xl:text-[32px] group-hover:text-white">{item.description}</p>
+                                <img src={item.icon} alt={item.title} className="w-16 h-16 4xl:w-[100px] 4xl:h-[100px] 3xl:w-[80px] 3xl:h-[80px] mb-4" />
+                                <h3 className="text-2xl 4xl:text-[60px] 4xl:leading-[80px] 3xl:text-[40px] 3xl:leading-[60px] text-[#000000]/90 leading-8 group-hover:text-white font-inter font-semibold mb-2">{item.title}</h3>
+                                <p className="text-gray-700 text-base leading-6 4xl:leading-[40px] 4xl:text-[32px] 3xl:text-[24px] 3xl:leading-[30px] group-hover:text-white">{item.description}</p>
                             </div>
                         ))}
                     </div>

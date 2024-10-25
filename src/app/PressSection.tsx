@@ -14,10 +14,10 @@ const pressLogos = [
 const PressSection = () => {
     return (
         <section className={styles.pressSection}>
-            <h2 className="4xl:text-[72px] 4xl:leading-[80px] 4xl:mb-10 font-bold mb-4 text-[clamp(1.5rem,2vw,3rem)]">
+            <h2 className="4xl:text-[72px] 4xl:leading-[80px] 3xl:text-[48px] 3xl:leading-[50px] 4xl:mb-10 3xl:mb-6 font-bold mb-4 text-[clamp(1.5rem,2vw,3rem)]">
                 TRUYỀN THÔNG NÓI GÌ VỀ CHÚNG TÔI? 
             </h2>
-            <p className="4xl:text-[36px] 4xl:leading-[48px] font-inter text-[#000000]/60 font-normal text-base leading-6 max-w-[54%] mx-auto mb-4 text-center">
+            <p className="4xl:text-[36px] 4xl:leading-[48px] 3xl:text-[20px] 3xl:leading-[25px] font-inter text-[#000000]/60 font-normal text-base leading-6 max-w-[54%] mx-auto mb-4 text-center">
             Khám phá các bài viết và nhận xét từ báo chí, nơi chúng tôi được công nhận là một trong những nền tảng đầu tư hàng đầu, mang lại cơ hội và giá trị bền vững cho nhà đầu tư.
             </p>
             <div className={styles.logoContainer}>
