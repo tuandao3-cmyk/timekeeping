@@ -1,5 +1,6 @@
 'use client'
 import React, { useEffect, useRef } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 const feedbacks = [
   {
@@ -30,7 +31,10 @@ const feedbacks = [
 
 const FeedbackSection: React.FC = () => {
   const feedbackRefs = useRef<(HTMLDivElement | null)[]>([]);
-
+  const { ref, inView, entry } = useInView({
+    threshold: 0.1,
+    // triggerOnce: true,
+  });
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -65,7 +69,9 @@ const FeedbackSection: React.FC = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-  <h2 className="4xl:text-[72px] 4xl:leading-[80px] 3xl:text-[48px] 3xl:leading-[50px] 4xl:mb-8 3xl:mb-6 text-4xl font-inter leading-[48px] font-bold text-center mb-2">PHẢN HỒI VỀ KHÁCH HÀNG</h2>
+  <h2 ref={ref} className={`4xl:text-[72px] 4xl:leading-[80px] 3xl:text-[48px] 3xl:leading-[50px] 4xl:mb-8 3xl:mb-6 text-4xl font-inter leading-[48px] font-bold text-center mb-2
+   ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
+          }`}>PHẢN HỒI VỀ KHÁCH HÀNG</h2>
   <p className="4xl:text-[60px] 4xl:leading-[72px] 4xl:max-w-[40vw] 3xl:text-[36px] 3xl:leading-[42px] text-center font-inter text-3xl leading-10 text-gray-600 mb-12 max-w-[42vw] mx-auto">
     HYRACAP LUÔN QUAN TÂM ĐẾN PHẢN HỒI CỦA TỪNG KHÁCH HÀNG
   </p>
