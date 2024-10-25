@@ -6,10 +6,12 @@ import styles from './page.module.css';
 import Partner from '@/app/partner';
 import ProjectSection from '@/app/ProjectSection';
 import PressSection from '@/app/PressSection';
+import SolutionList from '@/components/solutionList/solutionList';
 
 import Download from './download';
 import News from './news';
 import FeedbackSection from './FeedbackSection';
+import { Typography } from '@mui/material';
 
 const Home: React.FC = () => {
   const rightFrameRef = useRef<HTMLDivElement>(null);
@@ -236,9 +238,10 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div>
-      {/* Chỉ số trang */}
 
       <Partner />
+      <SolutionList />
+
       <ProjectSection />
       <News />
 

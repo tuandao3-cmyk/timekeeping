@@ -3,6 +3,7 @@
 import React from 'react';
 import styles from '@/app/products/product.module.css';
 import Link from 'next/link';
+import { useInView } from 'react-intersection-observer';
 
 import { useState, useEffect } from 'react';
 import { ProfitIcon, MoneyIcon, PiggyBankIcon } from '@/components/icons';
@@ -11,6 +12,10 @@ import { start } from 'repl';
 import Image from 'next/image';
 
 const ProductPage: React.FC = () => {
+  const { ref, inView, entry } = useInView({
+    threshold: 0.1,
+    // triggerOnce: true,
+  });
   //
 
   const products = [
@@ -172,20 +177,42 @@ const ProductPage: React.FC = () => {
   return (
     <>
       <section
-        className="relative w-full h-auto bg-cover bg-center"
+        ref={ref}
+        className={`relative w-full h-auto bg-cover bg-center px-[120px] duration-700 ease-in-out transform ${
+          inView ? 'opacity-100 scale-100' : 'opacity-0 scale-70'
+        }`}
         style={{ backgroundImage: 'url("/img/productbg.png")' }}
       >
         <div className="flex justify-start max-w-[50%] px-5 pt-[20%] pb-5">
           <div className="flex flex-col justify-center items-left text-left gap-6">
-            <h1 className="text-white font-bold md:text-[35px]  text-xl">
+            <h1
+              ref={ref}
+              className={`text-white font-bold md:text-[35px]  text-xl duration-700 ease-in-out transform ${
+                inView
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-10'
+              }`}
+            >
               Sản phẩm đầu tư tại HyraCap
             </h1>
-            <p className="text-white text-left text-[11px]  md:text-[25px]">
+            <p
+              ref={ref}
+              className={`text-white text-left text-[11px]  md:text-[25px] duration-700 delay-300 ease-in-out transform ${
+                inView
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-10'
+              }`}
+            >
               Chúng tôi cung cấp các gói sản phẩm đầu tư phù hợp với từng nhu
               cầu của khách hàng.
             </p>
             <button
-              className="mt-4 px-4 py-2 bg-[#48B96D] text-white rounded-[30px] hover:bg-[#2d834a] max-w-[250px] transition-shadow duration-300"
+              ref={ref}
+              className={`mt-4 px-4 py-2 bg-[#48B96D] text-white rounded-[30px] hover:bg-[#2d834a] max-w-[250px] transition-shadow  duration-700 delay-1000 ease-in-out transform ${
+                inView
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-10'
+              }`}
               style={{ boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)' }}
             >
               Đăng kí ngay!
@@ -193,27 +220,13 @@ const ProductPage: React.FC = () => {
           </div>
         </div>
       </section>
-      {/* <section
-        className="relative w-full h-auto bg-cover bg-center p-6 "
-        style={{
-          backgroundImage: 'url("/img/stacked-coins.png")',
-          backgroundPosition: "bottom center",
-        }}
-      >
-        <div className="flex justify-center  pb-[20%] min-h-[20%]">
-          <div className="flex flex-col justify-center items-left text-center gap-6">
-            <h1 className="text-transparent font-bold md:text-[35px] md:min-h-20 text-xl bg-clip-text bg-gradient-to-r from-[#04402E] to-[#088E66]">
-              Cùng HyraCap nâng tầm tài chính của bạn
-            </h1>
-            <p className="text-[#04422F] text-center text-[11px]  md:text-[25px]">
-              Đầu tư thông minh - Sinh lời vượt trội
-            </p>
-          </div>
-        </div>
-      </section> */}
+
       {/* Các gói đầu tư */}
-      <section className="w-full h-auto bg-white py-6 flex flex-col justify-center items-center">
-        <h1 className="text-black font-bold text-2xl md:text-4xl text-center">
+      <section className="w-full h-auto bg-white py-6 flex flex-col justify-center items-center px-[120px]">
+        <h1
+          ref={ref}
+          className={`text-black font-bold text-2xl md:text-4xl text-center `}
+        >
           Các gói đầu tư tại HyraCap{' '}
         </h1>
         {products.map((product: (typeof products)[0], index) => (
@@ -221,7 +234,9 @@ const ProductPage: React.FC = () => {
             className="w-full h-auto bg-white px-1 flex flex-col justify-center items-left"
             key={index}
           >
-            <h2 className="text-black px-4 font-bold text-2xl md:text-3xl text-left md:text-[35px] text-[20px]">
+            <h2
+              className={`text-black px-4 font-bold text-2xl md:text-3xl text-left md:text-[35px] text-[20px] duration-300 `}
+            >
               {product.title}
             </h2>
             <div className="flex gap-4 items-center  w-full overflow-y-auto py-8 md:px-8 ">
@@ -247,7 +262,7 @@ const ProductPage: React.FC = () => {
       </section>
 
       {/* dowwnlaod */}
-      <section className="w-full h-auto bg-white py-6 flex flex-col-reverse md:flex-row gap-4 justify-center items-center">
+      <section className="w-full h-auto bg-white py-6 flex flex-col-reverse md:flex-row gap-4 justify-center items-center px-[120px]">
         <div className="px-8 flex flex-col gap-2 justify-center items-center">
           <h1 className="text-black font-bold text-2xl md:text-4xl text-center">
             Trải nghiệm ngay ứng dụng đầu tư HyraCap
