@@ -125,7 +125,7 @@ const ProjectSlider: React.FC = () => {
   } else if (isUltraWide) {
     slidesPerView = 2;
   } else {
-    slidesPerView = 1; // Giá trị mặc định
+    slidesPerView = 1; 
   }
 
   const handlePrev = () => {
@@ -232,20 +232,22 @@ const ProjectSlider: React.FC = () => {
                             ${project.target.toLocaleString()}
                           </p>
                           <div className="flex justify-between text-xs mt-2">
-                            <div>
+                            <div className="flex flex-row items-center gap-1 3xl:gap-0 3xl:flex-col ">
                               <span className="font-bold font-inter text-green-500 text-sm">
                                 ${project.raised.toLocaleString()}
                               </span>
-                              <span className="text-[#000000]/64 max-w-[10%] pl-0">
+                                                            
+                                <span className="text-[#000000]/60 pl-0">
                                 {' '}
                                 Đã huy động
-                              </span>
+                                </span>
+                              
                             </div>
-                            <div>
+                            <div className=" flex flex-row items-center gap-1 3xl:gap-0 3xl:flex-col">
                               <span className="font-bold font-inter text-green-500 text-sm">
                                 {project.percentage}%
                               </span>
-                              <span className="text-[#000000]/64 pl-0">
+                              <span className="text-[#000000]/60 pl-0">
                                 {' '}
                                 Hoàn thành
                               </span>

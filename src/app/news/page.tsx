@@ -58,7 +58,7 @@ const NewsPage: React.FC = () => {
     <>
       <div
         ref={ref}
-        className="relative w-full h-screen bg-cover bg-center"
+        className="relative w-full h-screen bg-cover bg-center h-[479px] "
         style={{ backgroundImage: 'url("/img/news/news_banner.png")' }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
