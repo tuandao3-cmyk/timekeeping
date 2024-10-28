@@ -65,7 +65,7 @@ const NewsPage: React.FC = () => {
     <>
       <div
         ref={ref}
-        className="relative w-full h-screen bg-cover bg-center "
+        className="relative w-full h-[479px] bg-cover bg-center "
         style={{ backgroundImage: 'url("/img/news/news_banner.png")' }}
       >
         <div className="absolute top-0 left-0 w-[40vw] h-full bg-[#07212c] bg-opacity-100">
@@ -181,7 +181,7 @@ const NewsPage: React.FC = () => {
               src="/img/news/upcoming.png"
               alt="image description"
             />
-            <div className="container mx-auto  overflow-x-auto">
+            {/* <div className="container mx-auto  overflow-x-auto">
               <div className="flex gap-6 flex-nowrap">
                 {newsData.map((news: any, index: number) => (
                   <div
@@ -212,7 +212,7 @@ const NewsPage: React.FC = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -258,7 +258,7 @@ const NewsPage: React.FC = () => {
             </div>
             <div className="w-full col-span-1 items-center  justify-center">
               <h2 className="w-full text-center md:text-[30px] text-[15px] font-bold text-gray-800">
-                Mạng xã hội
+                Theo dõi chúng tôi
               </h2>
               <div className="flex flex-col gap-4">
                 <div className="flex justify-between items-center ">
@@ -268,11 +268,13 @@ const NewsPage: React.FC = () => {
                       alt="Facebook"
                       className="w-auto h-auto max-w-[50px] max-h-[50px]  rounded-full  "
                     />
-                    <p className="text-black font-bold">50,987 Fans</p>
+                    <p className="text-gray-700 font-normal text-base">50,987 Follow</p>
                   </div>
-                  <a href="#" className="text-[#4D69A2] font-bold">
-                    LIKE
-                  </a>
+                  <button className="flex bg-gray-100 items-center justify-center w-8 h-8 rounded-xs border border-gray-300 hover:border-gray-400 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 text-gray-500">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                    </svg>
+                  </button>
                 </div>
                 <div className="flex justify-between items-center">
                   <div className="flex items-center gap-7">
@@ -281,11 +283,13 @@ const NewsPage: React.FC = () => {
                       alt="X"
                       className="w-auto h-auto max-w-[50px] max-h-[50px]  rounded-full  "
                     />
-                    <p className="text-black font-bold">8,987 Follower</p>
+                    <p className="text-gray-700 font-normal text-base">8,987 Follower</p>
                   </div>
-                  <a href="#" className="text-[#4D69A2] font-bold">
-                    FOLLOW
-                  </a>
+                  <button className="flex bg-gray-100 items-center justify-center w-8 h-8 rounded-xs border border-gray-300 hover:border-gray-400 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 text-gray-500">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                    </svg>
+                  </button>
                 </div>
                 <div className="flex justify-between items-center">
                   <div className="flex items-center gap-7">
@@ -294,11 +298,13 @@ const NewsPage: React.FC = () => {
                       alt="Youtube"
                       className="w-auto h-auto max-w-[50px] max-h-[50px]  rounded-full  "
                     />
-                    <p className="text-black font-bold">50,987 Fans</p>
+                    <p className="text-gray-700 font-normal text-base">50,987 Fans</p>
                   </div>
-                  <a href="#" className="text-[#4D69A2] font-bold">
-                    SUBSCRIBE
-                  </a>
+                  <button className="flex bg-gray-100 items-center justify-center w-8 h-8 rounded-xs border border-gray-300 hover:border-gray-400 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 text-gray-500">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                    </svg>
+                  </button>
                 </div>
               </div>
               <div
