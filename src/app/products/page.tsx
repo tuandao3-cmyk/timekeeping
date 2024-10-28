@@ -1,8 +1,7 @@
 'use client';
 
 import React from 'react';
-import styles from '@/app/products/product.module.css';
-import Link from 'next/link';
+
 import { useInView } from 'react-intersection-observer';
 
 import { useState, useEffect } from 'react';
@@ -31,9 +30,15 @@ const ProductPage: React.FC = () => {
           start_date: '20/10/2024',
           descriptions: 'Hyperas tận dụng sức mạnh từ hàng tỷ thiết bị... ',
           invested: 2500000,
-          profit: 200000,
-          sponsorship: 75,
-          image: <img src="/img/hyperas_chain.png" alt="Hyperas Chain" />,
+          profit: 2000000,
+          sponsorship: 21762,
+          image: (
+            <img
+              src="/img/hyperas_chain.png"
+              alt="Hyperas Chain"
+              className="md:h-[250px] md:w-[384px]"
+            />
+          ),
           field: 'CÔNG NGHỆ',
         },
         {
@@ -41,20 +46,32 @@ const ProductPage: React.FC = () => {
           start_date: '09/09/2024',
           descriptions: 'Hyperas tận dụng sức mạnh từ hàng tỷ thiết bị... ',
           invested: 3000000,
-          profit: 300000,
-          sponsorship: 75,
-          image: <img src="/img/salala_ai.png" alt="Salala AI" />,
+          profit: 3000000,
+          sponsorship: 21762,
+          image: (
+            <img
+              src="/img/salala_ai.png"
+              alt="Salala AI"
+              className="md:h-[250px] md:w-[384px]"
+            />
+          ),
           field: 'CÔNG NGHỆ',
         },
         {
-          title: 'Rapital Bank',
+          title: 'HYPERAS CHAIN',
           start_date: '08/09/2024',
           descriptions: 'Hyperas tận dụng sức mạnh từ hàng tỷ thiết bị... ',
           invested: 2500000,
-          profit: 100000,
-          sponsorship: 75,
-          image: <img src="/img/rapital_bank.png" alt="Rapital Bank" />,
-          field: 'ĐẦU TƯ TRỰC TIẾP',
+          profit: 1000000,
+          sponsorship: 21762,
+          image: (
+            <img
+              src="/img/rapital_bank.png"
+              alt="Rapital Bank"
+              className="md:h-[250px] md:w-[384px]"
+            />
+          ),
+          field: 'CÔNG NGHỆ',
         },
       ],
     },
@@ -188,7 +205,7 @@ const ProductPage: React.FC = () => {
             >
               {product.title}
             </h2>
-            <div className="flex gap-4 items-center  w-full overflow-y-auto py-8 md:px-8 ">
+            <div className="flex gap-[24px] items-center  w-full overflow-y-auto justify-center py-8 md:px-8  ">
               {product.package.map((packageItem: any, index) => (
                 <ProductItem
                   key={index}
@@ -208,6 +225,9 @@ const ProductPage: React.FC = () => {
             </div>
           </div>
         ))}
+        <button className="border-[#0000003D] border-[1px] rounded-[999px] py-[14px] px-[16px] font-[500] text-[16px] text-black text-opacity-90 hover:bg-[#48B96D] hover:text-white transform ease-in-out duration-100 hover:border-transparent">
+          Tìm hiểu thêm các dự án &gt;
+        </button>
       </section>
 
       {/* dowwnlaod */}

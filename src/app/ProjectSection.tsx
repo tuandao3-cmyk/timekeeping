@@ -51,112 +51,120 @@ const ProjectSection = () => {
       <section
         className={`${styles.showcaseSection} flex flex-col justify-center items-center bg-[#FFFFFF]`}
       >
-        <h2 className="text-center text-[38px] font-bold leading-[48px] pb-10">
-          DỰ ÁN ĐÃ ĐẦU TƯ VÀ ƯƠM TẠO
-        </h2>
-        <div className="w-full flex justify-center items-center max-w-[1200px]">
-          <div className="4xl:max-w-[2100px] 3xl:max-w-[1600px] 2xl:max-w-[1400px] 4xl:gap-16 3xl:gap-8 grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 max-w-[1200px] w-full">
-            {projects.map((project, index) => (
-              <a href="/detail-category" key={index}>
-                <div
-                  ref={ref}
+        <div className="flex flex-col justify-center items-center max-w-screen-xl w-full">
+          <h2 className="text-center text-[38px] font-bold leading-[48px] pb-10 uppercase">
+            DỰ ÁN ĐÃ ĐẦU TƯ VÀ ƯƠM TẠO
+          </h2>
+          <div className="w-full flex justify-center items-center max-w-[1440px]">
+            <div className="4xl:max-w-[2100px] 3xl:max-w-[1600px] 2xl:max-w-[1400px] 4xl:gap-16 3xl:gap-8 grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 max-w-[1440px] w-full">
+              {projects.map((project, index) => (
+                <a
+                  href="/detail-category"
                   key={index}
-                  className={`${styles.projectCard} group relative duration-700 ease-in-out delay-${index * 100} transform ${
-                    inView ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
-                  } max-w-[384px]`}
+                  className="flex flex-col justify-center items-center flex-grow"
                 >
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className={`${styles.projectImage} md:min-h-[250px]`}
-                  />
-                  <div className={styles.badge}>{project.badge}</div>
+                  <div
+                    ref={ref}
+                    key={index}
+                    className={`${styles.projectCard} group relative duration-300 ease-in-out delay-${index * 100} transform ${
+                      inView ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
+                    } max-w-[384px]
+                    
+                    `}
+                  >
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className={` md:h-[250px] md:w-[384px]`}
+                    />
+                    <div className={styles.badge}>{project.badge}</div>
 
-                  <div className="text-left !text-left">
-                    {' '}
-                    {/* Sử dụng !important */}
-                    <h3 className="text-[clamp(1.2rem,2vw,2.4rem)] font-bold my-2 w-full pl-4">
-                      {project.title}
-                    </h3>
-                    <span className="text-sm text-[#000000]/70 font-normal mb-2 block pl-4 pb-2">
-                      MỤC TIÊU HUY ĐỘNG
-                    </span>
-                    <div className="font-inter font-semibold text-xl leading-7 pl-4 pb-2">
-                      {project.amount}
-                    </div>
-                  </div>
-                  <div className={styles.projectInfo}>
-                    <div className={styles.progress}>
-                      <div
-                        className="bg-[#4caf50] h-full rounded"
-                        style={{ width: project.progress }}
-                      ></div>
-                    </div>
-                    <div className={styles.fundingInfo}>
-                      <div>
-                        <span>{project.fundingAmount}</span>
-                        <span className="text-[#000000]/70 pl-0">
-                          {' '}
-                          Đã huy động
-                        </span>
-                      </div>
-                      <div>
-                        <span>{project.fundingPercent}</span>
-                        <span className="text-[#000000]/70 pl-0">
-                          {' '}
-                          Hoàn thành
-                        </span>
+                    <div className="text-left !text-left">
+                      {' '}
+                      {/* Sử dụng !important */}
+                      <h3 className="text-[clamp(1.2rem,2vw,2.4rem)] font-bold my-2 w-full pl-4">
+                        {project.title}
+                      </h3>
+                      <span className="text-sm text-[#000000]/70 font-normal mb-2 block pl-4 pb-2">
+                        MỤC TIÊU HUY ĐỘNG
+                      </span>
+                      <div className="font-inter font-semibold text-xl leading-7 pl-4 pb-2">
+                        {project.amount}
                       </div>
                     </div>
-                    <div className="flex gap-2 mt-2">
-                      {project.category.map((cat, index) => (
-                        <span
-                          key={index}
-                          className="bg-[#000000]/10 text-[#000000]/70 font-inter leading-4 px-2 py-1  text-xs font-medium"
-                        >
-                          {cat}
-                        </span>
-                      ))}
+                    <div className={styles.projectInfo}>
+                      <div className={styles.progress}>
+                        <div
+                          className="bg-[#4caf50] h-full rounded"
+                          style={{ width: project.progress }}
+                        ></div>
+                      </div>
+                      <div className={styles.fundingInfo}>
+                        <div>
+                          <span>{project.fundingAmount}</span>
+                          <span className="text-[#000000]/70 pl-0">
+                            {' '}
+                            Đã huy động
+                          </span>
+                        </div>
+                        <div>
+                          <span>{project.fundingPercent}</span>
+                          <span className="text-[#000000]/70 pl-0">
+                            {' '}
+                            Hoàn thành
+                          </span>
+                        </div>
+                      </div>
+                      <div className="flex gap-2 mt-2">
+                        {project.category.map((cat, index) => (
+                          <span
+                            key={index}
+                            className="bg-[#000000]/10 text-[#000000]/70 font-inter leading-4 px-2 py-1  text-xs font-medium"
+                          >
+                            {cat}
+                          </span>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                  <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#FFFFFF] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute inset-x-0 bottom-4 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <a
-                      href="/detail-category"
-                      className="bg-[#4CAF50] text-white text-sm font-medium px-6 py-2 rounded-full cursor-pointer text-center flex items-center"
-                    >
-                      Xem chi tiết
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-4 w-4 ml-2"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
+                    <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#FFFFFF] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-x-0 bottom-4 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <a
+                        href="/detail-category"
+                        className="bg-[#4CAF50] text-white text-sm font-medium px-6 py-2 rounded-full cursor-pointer text-center flex items-center"
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
-                    </a>
+                        Xem chi tiết
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-4 w-4 ml-2"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 5l7 7-7 7"
+                          />
+                        </svg>
+                      </a>
+                    </div>
                   </div>
-                </div>
-              </a>
-            ))}
+                </a>
+              ))}
+            </div>
           </div>
+          <button className={styles.moreProjectsButton}>
+            TÌM HIỂU THÊM CÁC DỰ ÁN{' '}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M13.1714 12.0007L8.22168 7.05093L9.63589 5.63672L15.9999 12.0007L9.63589 18.3646L8.22168 16.9504L13.1714 12.0007Z" />
+            </svg>
+          </button>
         </div>
-        <button className={styles.moreProjectsButton}>
-          TÌM HIỂU THÊM CÁC DỰ ÁN{' '}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-          >
-            <path d="M13.1714 12.0007L8.22168 7.05093L9.63589 5.63672L15.9999 12.0007L9.63589 18.3646L8.22168 16.9504L13.1714 12.0007Z" />
-          </svg>
-        </button>
       </section>
     </>
   );

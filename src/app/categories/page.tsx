@@ -15,7 +15,7 @@ const projects = [
     category: 'CÔNG NGHỆ',
   },
   {
-    img: '/img/salala.png',
+    img: '/img/Salala.png',
     name: 'SALALA AI',
     amount: '$2.000.000',
     funded: '$1.500.00',
@@ -39,7 +39,7 @@ const projects = [
     category: 'CÔNG NGHỆ',
   },
   {
-    img: '/img/salala.png',
+    img: '/img/Salala.png',
     name: 'SALALA AI',
     amount: '$2.000.000',
     funded: '$1.500.00',

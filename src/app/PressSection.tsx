@@ -20,10 +20,10 @@ const PressSection = () => {
   });
   return (
     <section className={styles.pressSection}>
-      <div className="flex flex-col items-center justify-center max-w-[1200px] py-[62px] ">
+      <div className="flex flex-col items-center justify-center max-w-[1440px] py-[62px] ">
         <h2
           ref={ref}
-          className={`${styles.title} duration-700 ease-in-out transform ${
+          className={`${styles.title} duration-300 ease-in-out transform ${
             inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
@@ -31,7 +31,7 @@ const PressSection = () => {
         </h2>
         <p
           ref={ref}
-          className={`font-inter text-[#000000]/60 font-normal text-base leading-6 max-w-[54%] mx-auto mb-4 text-center duration-700 delay-200 ease-in-out transform ${
+          className={`font-inter text-[#000000]/60 font-normal text-base leading-6 max-w-[54%] mx-auto mb-4 text-center duration-300 delay-200 ease-in-out transform ${
             inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
@@ -44,7 +44,7 @@ const PressSection = () => {
             <div
               key={index}
               ref={ref}
-              className={`${styles.logoWrapper} duration-700 ease-in-out delay-${logo.delay} transform ${
+              className={`${styles.logoWrapper} duration-300 ease-in-out delay-${logo.delay} transform ${
                 inView ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
               }`}
             >
