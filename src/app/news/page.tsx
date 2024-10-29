@@ -68,31 +68,42 @@ const NewsPage: React.FC = () => {
         className="relative w-full h-[479px] bg-cover bg-center "
         style={{ backgroundImage: 'url("/img/news/news_banner.png")' }}
       >
-        <div className="absolute top-0 left-0 w-[40%] h-full bg-[#07212c] bg-opacity-100">
-        <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 justify-between items-center h-full p-8 gap-4">
-          <div className="w-full md:col-span-1 xl:col-span-1 lg:col-span-2  text-center md:text-left text-white flex justify-center items-center">
-            <div>
+        <div className=" top-0 left-0 w-[40%] h-full bg-[#07212c] bg-opacity-100">
+        <div className=" z-10  h-full p-8 lg:p-12 ">
+          <div className=" lg:pl-[60px] mt-8 text-center md:text-left text-white flex flex-col justify-between items-left gap-4">
+            
+              <Link
+                href={'/news/newsdetail'}
+                className="md:text-[15px] text-[#579DFF] text-sm font-semibold "
+              >
+               CÔNG NGHỆ
+              </Link>
               <h1
-                className={`text-4xl md:text-5xl lg:text-6xl font-bold leading-tight
-              duration-700 ease-in-out transform ${
+                className={`text-xl md:text-2xl  font-bold leading-tight lg:line-clamp-2
+                duration-700 ease-in-out transform ${
                 inView
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-10'
-              }
-              `}
+                }
+                `}
               >
-                Tin tức
+              Hyratek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội
               </h1>
               <p
-                className={`mt-4 text-lg md:text-xl lg:text-2xl duration-700 ease-in-out transform ${
+                className={`mt-4 text-sm leading-6 line-clamp-6 max-lg:hidden opacity-70 duration-700 ease-in-out transform ${
                   inView
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-10'
                 }`}
               >
-                Tin tức mới nhất về thị trường tài chính
+                Hyratek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội Hyratek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội Hyratek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội
               </p>
-            </div>
+                <div>
+                <button className= "text-[#FFFFFF]/90 bg-[#48B96D] border-[#FFFFFF]/20 font-medium border-[1px]  rounded-full px-3 py-2 inline-flex">
+                Đọc thêm
+              </button>
+                </div>
+            
           </div>
         </div>
         </div>
@@ -220,10 +231,10 @@ const NewsPage: React.FC = () => {
       {/*  */}
       <section className="w-full bg-cover bg-center flex justify-center flex-col items-center gap-3">
         <div className="max-w-[1200px]">
-          <h1 className="w-full text-left text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 pt-8">
+          <h1 className="w-full max-lg:px-8 text-left text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 pt-8">
             Sự kiện đã diễn ra
           </h1>
-          <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
+          <div className="w-full max-lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
             <div className="w-full col-span-2 gap-3">
               {newsData.map((news: any, index: number) => (
                 <a href="#" className="p-4" key={index}>
@@ -256,7 +267,7 @@ const NewsPage: React.FC = () => {
                 </a>
               ))}
             </div>
-            <div className="w-full col-span-1 items-center  justify-center">
+            <div className="w-full  col-span-1 items-center  justify-center">
               <h2 className="w-full text-center md:text-[30px] text-[15px] font-bold text-gray-800">
                 Theo dõi chúng tôi
               </h2>
