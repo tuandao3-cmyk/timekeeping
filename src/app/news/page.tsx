@@ -68,7 +68,7 @@ const NewsPage: React.FC = () => {
         className="relative w-full h-[479px] bg-cover bg-center "
         style={{ backgroundImage: 'url("/img/news/news_banner.png")' }}
       >
-        <div className="absolute top-0 left-0 w-[40vw] h-full bg-[#07212c] bg-opacity-100">
+        <div className="absolute top-0 left-0 w-[40%] h-full bg-[#07212c] bg-opacity-100">
         <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 justify-between items-center h-full p-8 gap-4">
           <div className="w-full md:col-span-1 xl:col-span-1 lg:col-span-2  text-center md:text-left text-white flex justify-center items-center">
             <div>

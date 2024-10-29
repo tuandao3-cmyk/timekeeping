@@ -8,7 +8,7 @@ const DetailCategoryPage: React.FC = () => {
       icon: '/img/icon/google-docs.svg',
     },
     {
-      name: 'Mô hình đào tạo',
+      name: 'Tổng thiết bị',
       amount: '+2,985,122,684',
       icon: '/img/icon/google-docs.svg',
     },
@@ -260,11 +260,11 @@ const DetailCategoryPage: React.FC = () => {
                   className="m-auto"
                 />
               </div>
-              <div className="w-full lg:w-2/3 lg:ml-10">
-                <h5 className="text-xl font-bold text-white mb-4">Thông số</h5>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 md:gap-10 gap-3">
+              <div className="w-full lg:w-2/3 lg:ml-10 lg:mt-5">
+                <h5 className="text-xl font-bold text-white mb-4 lg:mb-10">Thông số</h5>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 md:gap-12 gap-3">
                   {projects.map((project, index) => (
-                    <div className="flex gap-3" key={index}>
+                    <div className="flex gap-5" key={index}>
                       <img
                         src={project.icon}
                         alt={project.icon}
@@ -287,7 +287,7 @@ const DetailCategoryPage: React.FC = () => {
 
           <div className="px-11 pt-6 bg-white">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <div className="bg-white py-6 px-11 rounded-lg shadow">
+              <div className="bg-white py-6 px-11 rounded-lg shadow-lg">
                 <h2 className="text-xl font-bold mb-4">Chi tiết</h2>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-5">
                   <li className="flex">
@@ -300,29 +300,15 @@ const DetailCategoryPage: React.FC = () => {
                   <li className="flex">
                     <div className="m-3 w-1 h-1 rounded-full bg-[#444444]"></div>
                     <div className="text-lg font-normal">
-                      <span className="text-[#444444]">Trụ sở chính</span>{' '}
-                      <p className="text-black">Singapore</p>
-                    </div>
-                  </li>
-                  <li className="flex">
-                    <div className="m-3 w-1 h-1 rounded-full bg-[#444444]"></div>
-                    <div className="text-lg font-normal">
-                      <span className="text-[#444444]">Người sáng lập</span>
-                      <p className="text-black">Trần Nam Chung</p>
-                    </div>
-                  </li>
-                  <li className="flex">
-                    <div className="m-3 w-1 h-1 rounded-full bg-[#444444]"></div>
-                    <div className="text-lg font-normal">
-                      <span className="text-[#444444]">Email</span>{' '}
-                      <p className="text-black">info@hyraetek.com</p>
-                    </div>
-                  </li>
-                  <li className="flex">
-                    <div className="m-3 w-1 h-1 rounded-full bg-[#444444]"></div>
-                    <div className="text-lg font-normal">
                       <span className="text-[#444444]">Ngày thành lập</span>{' '}
                       <p className="text-black">20/02/2020</p>
+                    </div>
+                  </li>
+                  <li className="flex">
+                    <div className="m-3 w-1 h-1 rounded-full bg-[#444444]"></div>
+                    <div className="text-lg font-normal">
+                      <span className="text-[#444444]">Trụ sở chính</span>{' '}
+                      <p className="text-black">Singapore</p>
                     </div>
                   </li>
                   <li className="flex">
@@ -337,8 +323,22 @@ const DetailCategoryPage: React.FC = () => {
                   <li className="flex">
                     <div className="m-3 w-1 h-1 rounded-full bg-[#444444]"></div>
                     <div className="text-lg font-normal">
+                      <span className="text-[#444444]">Người sáng lập</span>
+                      <p className="text-black">Trần Nam Chung</p>
+                    </div>
+                  </li>
+                  <li className="flex">
+                    <div className="m-3 w-1 h-1 rounded-full bg-[#444444]"></div>
+                    <div className="text-lg font-normal">
                       <span className="text-[#444444]">Tên công ty</span>
-                      <p className="text-black">Công ty cổ phần Hyraetek</p>
+                      <p className="text-black">Công ty cổ phần Hyratek</p>
+                    </div>
+                  </li>
+                  <li className="flex">
+                    <div className="m-3 w-1 h-1 rounded-full bg-[#444444]"></div>
+                    <div className="text-lg font-normal">
+                      <span className="text-[#444444]">Email</span>{' '}
+                      <p className="text-black">info@hyraetek.com</p>
                     </div>
                   </li>
                   <li className="flex">

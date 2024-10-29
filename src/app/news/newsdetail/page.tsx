@@ -2,18 +2,18 @@ import Image from 'next/image';
 
 export default function NewsDetail() {
   return (
-        <> 
+      <div className='max-w-[1200px] mx-auto'> 
         <div className="relative mb-8 w-full">
-        <img
-            src="/img/aboutbg.jpg"
-            alt="Header image"
-            className="rounded-lg shadow-lg w-full h-[600px] object-cover"
-            />
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-start  text-white">
-            <h1 className="text-4xl xl:text-6xl leading-10 px-10 md:px-20 xl:px-[150px] 2xl:px-[200px] font-bold mb-4">Lễ ký kết quan hệ hợp tác với Qualcomm</h1>
-    </div>
-    </div>
-        <div className=" w-full px-10 md:px-20 xl:px-[150px] 2xl:px-[200px] ">
+            <img
+                src="/img/aboutbg.jpg"
+                alt="Header image"
+                className="rounded-lg shadow-lg w-full h-[600px] object-cover"
+                />
+            <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-start  text-white">
+                <h1 className="text-4xl xl:text-6xl leading-10 px-10 md:px-20 xl:px-[150px] 2xl:px-[200px] font-bold mb-4">Lễ ký kết quan hệ hợp tác với Qualcomm</h1>
+        </div>
+          </div>
+            <div className=" w-full px-10 md:px-20 xl:px-[150px] 2xl:px-[200px] ">
     
           <h1 className="text-2xl md:text-3xl font-bold mb-4">
             Hyratek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.
@@ -66,6 +66,6 @@ export default function NewsDetail() {
           <p className="mb-6 text-xs md:text-base text-gray-600">Dự án phục dựng ảnh liệt sĩ bằng AI của Hyratek không chỉ là một sáng kiến nhân văn, mà còn là một bước đột phá trong việc sử dụng công nghệ AI để bảo tồn lịch sử và tôn vinh những người đã hy sinh. Hyratek hy vọng rằng, với sự hợp tác cùng Qualcomm, dự án sẽ mang lại những kết quả đáng kinh ngạc và góp phần tôn vinh những hành động anh dũng của các liệt sĩ.</p>
           <p className="mb-6 text-xs md:text-base text-gray-600">Sự hợp tác này không chỉ góp phần vào sự phát triển của lĩnh vực công nghệ AI tại Việt Nam mà còn là nguồn cảm hứng cho các dự án sử dụng AI vào các mục đích nhân văn khác.</p>
         </div>
-        </>
+      </div>
   );
 }
