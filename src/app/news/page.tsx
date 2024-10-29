@@ -65,12 +65,12 @@ const NewsPage: React.FC = () => {
     <>
       <div
         ref={ref}
-        className="relative w-full h-[479px] bg-cover bg-center "
+        className="flex max-md:items-center max-md:justify-center m-auto max-w-[1440px] h-[479px] bg-cover  "
         style={{ backgroundImage: 'url("/img/news/news_banner.png")' }}
       >
-        <div className=" top-0 left-0 w-[40%] h-full bg-[#07212c] bg-opacity-100">
-        <div className=" z-10  h-full p-8 lg:p-12 ">
-          <div className=" lg:pl-[60px] max-lg:mt-4 mt-8 text-center md:text-left text-white flex flex-col justify-between items-left gap-4">
+        <div className=" top-0 w-[40%] h-full bg-[#07212c] bg-opacity-100">
+        <div className=" z-10 my-auto  h-full p-8 lg:p-12 ">
+          <div className=" lg:pl-[60px] lg:mt-8 text-center md:text-left text-white flex flex-col justify-between items-left gap-4">
             
               <Link
                 href={'/news/newsdetail'}
