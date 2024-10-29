@@ -12,8 +12,8 @@ export const ProjectCard: React.FC<{
         className="w-full h-full object-cover rounded-lg"
       />
       <div className="absolute bottom-0 w-2/3 h-1/2 flex justify-between flex-col justify-end p-4 bg-[#FFFFFF]/80 bg-opacity-50 rounded-lg">
-        <p className="text-base font-bold text-[#579DFF]">CÔNG NGHỆ</p>
-        <h2 className="md:text-lg xl:text-3xl text-xs font-bold text-[#151515]">
+        <p className="text-base max-sm:hidden font-bold text-[#579DFF]">CÔNG NGHỆ</p>
+        <h2 className="md:text-xl max-md:text-base xl:text-3xl text-sm  font-bold text-[#151515] line-clamp-3">
           {project.title}
         </h2>
         <p className="md:text-lg text-xs  text-white">{project.subTitle}</p>
