@@ -74,7 +74,7 @@ const NewsPage: React.FC = () => {
             
               <Link
                 href={'/news/newsdetail'}
-                className="md:text-[15px] text-[#579DFF] text-sm font-semibold "
+                className="md:text-[15px] text-[#579DFF] text-xs font-semibold "
               >
                CÔNG NGHỆ
               </Link>
@@ -186,7 +186,7 @@ const NewsPage: React.FC = () => {
             Sự kiện sắp tới
           </h1>
 
-          <div className="flex flex-col justify-center items-center gap-4">
+          <div className="flex flex-col justify-center items-center gap-4 ">
             <img
               className="h-auto max-w-[100%]"
               src="/img/news/upcoming.png"
@@ -319,19 +319,11 @@ const NewsPage: React.FC = () => {
                 </div>
               </div>
               <div
-                className="flex justify-center items-center gap-4 bg-no-repeat bg-cover bg-center w-full h-[200px] rounded-lg mt-2 p-2"
-                style={{ backgroundImage: 'url("/img/69.png")' }}
+                className="flex justify-center items-center gap-4 bg-[#07212C] bg-no-repeat bg-cover bg-center w-full h-[300px] rounded-lg mt-2 p-2" 
               >
-                <div className="text-white font-bold text-[11px] px-2 md:text-[15px]">
+                <div className="text-white  font-bold text-[11px] px-2 md:text-[15px]">
                   <p>Trải nghiệm ngay </p>
                   <p>nền tảng đầu tư HyraCap</p>
-                </div>
-                <div>
-                  <img
-                    src="/img/product/product_image.png"
-                    alt="screenshot"
-                    className="max-w-[150px] max-h-[150px]"
-                  />
                   <div className="bg-white flex p-2 rounded-lg">
                     <a href="" className="px-2">
                       <img
@@ -348,6 +340,13 @@ const NewsPage: React.FC = () => {
                       />
                     </a>
                   </div>
+                </div>
+                <div>
+                  <img
+                    src="/img/product/app_log.png"
+                    alt="screenshot"
+                    className="max-w-[150px] max-h-[150px]"
+                  />
                 </div>
               </div>
             </div>
