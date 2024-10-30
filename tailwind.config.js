@@ -12,6 +12,10 @@ module.exports = {
         '3xl': '1920px',
         '4xl': '2560px',
       },
+      fontFamily: {
+        'inter': ['Inter', 'sans-serif'],
+        'roboto': ['Roboto', 'sans-serif'],
+      },
     },
   },
   plugins: [],

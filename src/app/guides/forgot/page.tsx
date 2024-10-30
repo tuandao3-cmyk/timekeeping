@@ -1,17 +1,13 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
-import { FiSearch } from 'react-icons/fi';
-import DownloadSection from '../downloadSection';
 import { usePathname } from 'next/navigation';
 
-const Login: React.FC = () => {
+const ForgotSection: React.FC = () => {
   const pathname = usePathname();
   return (
     <>
-
-      <main className=" pt-[50px] pl-[70px] text-black text-left font-roboto ">
+        <main className=" pt-[50px] pl-[70px] text-black text-left font-roboto ">
             <p className=" text-3xl font-bold text-[#000000]  text-left">Video hướng dẫn</p>
           
             <div className="flex justify-center  my-[50px]  ">
@@ -100,8 +96,9 @@ const Login: React.FC = () => {
             Chúc Quý Khách thành công!
           </p>
         </main>
+
     </>
   );
 };
 
-export default Login;
+export default ForgotSection;

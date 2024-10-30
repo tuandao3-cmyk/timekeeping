@@ -65,10 +65,10 @@ const NewsPage: React.FC = () => {
     <>
       <div
         ref={ref}
-        className="flex max-md:items-center max-md:justify-center m-auto max-w-[1440px] h-[479px] bg-cover  "
+        className=" flex max-md:items-center max-md:justify-center m-auto w-full h-[479px] bg-cover  "
         style={{ backgroundImage: 'url("/img/news/news_banner.png")' }}
       >
-        <div className=" top-0 w-[40%] h-full bg-[#07212c] bg-opacity-100">
+        <div className="  top-0 w-[40%] max-w-[576px] h-full bg-[#07212c] bg-opacity-100">
         <div className=" z-10 my-auto  h-full p-8 lg:p-12 ">
           <div className=" lg:pl-[60px] lg:mt-8 text-center md:text-left text-white flex flex-col justify-between items-left gap-4">
             
@@ -99,7 +99,7 @@ const NewsPage: React.FC = () => {
                 Hyratek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội Hyratek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội Hyratek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội
               </p>
                 <div>
-                <button className= "max-sm:hidden text-[#FFFFFF]/90 bg-[#48B96D] border-[#FFFFFF]/20 font-medium border-[1px]  rounded-full px-3 py-2 inline-flex">
+                <button className= "max-lg:hidden text-[#FFFFFF]/90 bg-[#48B96D] border-[#FFFFFF]/20 font-medium border-[1px]  rounded-full px-3 py-2 inline-flex">
                 Đọc thêm
               </button>
                 </div>
