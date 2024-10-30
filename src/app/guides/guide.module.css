@@ -1,6 +1,4 @@
-/* Tối ưu hóa và làm đẹp mã CSS */
 
-/* Phần header */
 .header {
   display: flex;
   justify-content: space-between;
@@ -92,7 +90,7 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Phần anh hùng */
+
 .hero {
   color: white;
   display: flex;
@@ -101,7 +99,7 @@
   text-align: left;
 }
 
-/* Hiệu ứng mờ cho phần anh hùng */
+
 .hero::before {
   content: '';
   position: absolute;
@@ -117,7 +115,7 @@
   z-index: -1;
 }
 
-/* Nội dung phần anh hùng */
+
 .heroContent {
   margin-top: 60px;
   display: flex;
@@ -126,7 +124,7 @@
   /* text-align: center; */
 }
 
-/* Container tìm kiếm */
+
 .searchContainer {
   display: flex;
   align-items: center;
@@ -175,6 +173,15 @@
   max-width: 50vw;
   margin-top: 12vh;
   /* margin-bottom: 20px; */
+}
+
+.heroContent p{
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 50vw;
+  margin-top: 12vh;
 }
 
 /* Nút gọi hành động */
@@ -256,17 +263,17 @@
 }
 .mainContent ul {
   font-family: 'Roboto', sans-serif;
-  font-size: 1.2em;
+  font-size: 20px;
   color: #000000;
   text-align: left;
   /* padding-left: 15vw; */
 }
 .mainContent li {
   font-family: 'Roboto', sans-serif;
-  font-size: 0.9em;
+  font-size: 20px;
   color: #000000;
   text-align: left;
-  /* padding-left: 15vw; */
+  padding-left: 1vw;
 }
 .mainContent p {
   font-family: 'Roboto', sans-serif;
@@ -346,7 +353,9 @@
   text-align: center;
   font-size: 1.5vw;
 }
-
+.textContent{
+  padding: 0;
+}
 /* Phần tải xuống */
 .downloadSection {
   background: linear-gradient(175.74deg, #78ca94 3.66%, #2a7082 96.76%);
@@ -363,6 +372,11 @@
   margin-bottom: 10px;
   font-size: 18px;
   margin-bottom: 20px;
+}
+.downloadSection p{
+  font-size:35px;
+  font-weight: 400;
+  font-family: 'Inte', sans-serif;
 }
 
 /* Container mã QR */
