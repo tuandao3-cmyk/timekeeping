@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 export const ProjectCard: React.FC<{
@@ -5,7 +6,7 @@ export const ProjectCard: React.FC<{
   className?: string;
 }> = ({ project, className }) => {
   return (
-    <div className={`${className} relative w-full h-auto`}>
+    <Link href={'/news/newsdetail'} className={`${className} relative w-full h-auto`}>
       <img
         src={project.imageUrl}
         alt={project.title}
@@ -26,6 +27,6 @@ export const ProjectCard: React.FC<{
               </button>
                 </div>
       </div>
-    </div>
+    </Link>
   );
 };

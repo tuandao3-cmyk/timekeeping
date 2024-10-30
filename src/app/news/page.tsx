@@ -72,14 +72,13 @@ const NewsPage: React.FC = () => {
       >
         <div className="  top-0 w-[40%] max-w-[576px] h-full bg-[#07212c] bg-opacity-100">
         <div className=" z-10 my-auto  h-full p-8 lg:p-12 ">
-          <div className=" lg:pl-[60px] lg:mt-8 text-center md:text-left text-white flex flex-col justify-between items-left gap-4">
+          <Link href={'/news/newsdetail'} className=" lg:pl-[60px] lg:mt-8 text-center md:text-left text-white flex flex-col justify-between items-left gap-4">
             
-              <Link
-                href={'/news/newsdetail'}
+              <div 
                 className="md:text-[15px] text-[#579DFF] text-xs font-semibold "
               >
                CÔNG NGHỆ
-              </Link>
+              </div>
               <h1
                 className={`text-xl md:text-2xl  font-bold leading-tight lg:line-clamp-2 max-lg:line-clamp-10
                 duration-700 ease-in-out transform ${
@@ -106,7 +105,7 @@ const NewsPage: React.FC = () => {
               </button>
                 </div>
             
-          </div>
+          </Link>
         </div>
         </div>
 
@@ -139,7 +138,7 @@ const NewsPage: React.FC = () => {
                   />
                 ) : (
                   
-                  <div
+                  <Link href={'/news/newsdetail'}
                     key={index}
                     className={` rounded-lg overflow-hidden ${
                       index === 1 
@@ -154,13 +153,12 @@ const NewsPage: React.FC = () => {
                         index === 1 ? 'md:h-[300px]' : 'md:h-[200px]'
                       }`}
                     />
-                    <div className="p-4">
-                      <Link
-                        href={news.link || '#'}
+                    <div  className="p-4">
+                      <div
                         className="md:text-[15px] text-[#579DFF] text-sm font-semibold"
                       >
                         CÔNG NGHỆ
-                      </Link>
+                      </div>
                       <h1 className={`  font-medium  line-clamp-2 ${index === 1 ? 'text-white text-lg' : 'text-gray-800  text-[15px]'}`}>
                         {news.title}
                       </h1>
@@ -173,7 +171,7 @@ const NewsPage: React.FC = () => {
                         </button>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 )}
               </>
             ))}
@@ -238,8 +236,8 @@ const NewsPage: React.FC = () => {
           </h1>
           <div className="w-full max-lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
             <div className="w-full col-span-2 gap-3">
-              {newsData.map((news: any, index: number) => (
-                <a href="#" className="p-4" key={index}>
+              {newsData.slice(0, 3).map((news: any, index: number) => (
+                <Link href={'/news/newsdetail'} className="p-4" key={index}>
                   <div className="grid md:grid-cols-3  border-[1px]">
                     <img
                       src={news.imageUrl}
@@ -266,7 +264,7 @@ const NewsPage: React.FC = () => {
                       </div>
                     </div>
                   </div>
-                </a>
+                </Link>
               ))}
             </div>
             <div className="w-full col-span-1 items-center justify-center">
