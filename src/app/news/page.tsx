@@ -7,6 +7,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import { ProjectCard } from './components/card';
+import { FaGooglePlay } from 'react-icons/fa';
+import { FaApple } from 'react-icons/fa';
 
 const newsData = [
   {
@@ -267,13 +269,14 @@ const NewsPage: React.FC = () => {
                 </a>
               ))}
             </div>
-            <div className="w-full  col-span-1 items-center  justify-center">
-              <h2 className="w-full text-center md:text-[30px] text-[15px] font-bold text-gray-800">
-                Theo dõi chúng tôi
-              </h2>
-              <div className="flex flex-col gap-4">
-                <div className="flex justify-between items-center ">
-                  <div className="flex items-center gap-7">
+            <div className="w-full col-span-1 items-center justify-center">
+              <div>              
+                <h2 className="w-full text-center md:text-[30px] text-[15px] font-bold text-gray-800">
+                  Theo dõi chúng tôi
+                </h2>
+                <div className="flex flex-col gap-4">
+                  <div className="flex justify-between items-center ">
+                    <div className="flex items-center gap-7">
                     <img
                       src="/img/facebook_logo.png"
                       alt="Facebook"
@@ -317,36 +320,41 @@ const NewsPage: React.FC = () => {
                     </svg>
                   </button>
                 </div>
+                </div>
               </div>
               <div
-                className="flex justify-center items-center gap-4 bg-[#07212C] bg-no-repeat bg-cover bg-center w-full h-[300px] rounded-lg mt-2 p-2" 
+                className="flex index-2 justify-center items-center bg-[#07212C] w-full h-full max-lg:max-h-[300px] lg:max-h-[390px] rounded-lg my-8  p-6" 
               >
-                <div className="text-white  font-bold text-[11px] px-2 md:text-[15px]">
-                  <p>Trải nghiệm ngay </p>
-                  <p>nền tảng đầu tư HyraCap</p>
-                  <div className="bg-white flex p-2 rounded-lg">
-                    <a href="" className="px-2">
-                      <img
-                        src="/img/googlePLay.png"
-                        alt="Google play"
-                        className="max-w-[70px]"
-                      />
-                    </a>
-                    <a href="" className="border-l-2 border-gray-300 px-2">
-                      <img
-                        src="/img/appStore.png"
-                        alt="App store"
-                        className="max-w-[70px]"
-                      />
-                    </a>
+                <div className="index-3 relative flex flex-row text-white  font-bold text-[11px] bg-[#48B96D] w-full h-full md:text-[15px] rounded-lg">
+                <div className=" flex  flex-col h-full text-2xl lg:text-3xl  justify-between gap-4 py-10 px-8 ">
+                  <p className='max-w-[250px]'>Trải nghiệm ngay nền tảng đầu tư HyraCap</p>
+                  
+                  <div className="flex text-xs font-medium flex-col max-w-[140px] pb-10 gap-2">
+                      <a 
+                      href="https://play.google.com/store/apps/details?id=com.hyracap" 
+                      className="flex items-center inline-flex gap-2 bg-white text-[#34A853] px-4 py-2 rounded-full hover:bg-gray-100 transition-colors"
+                      >
+                      <FaGooglePlay className="text-xl" />
+                      <span>GOOGLE PLAY</span>
+                        </a>
+
+                      <a 
+                          href="https://apps.apple.com/app/hyracap" 
+                        className="flex items-center gap-2 bg-white text-[#34A853] px-4 py-2 rounded-full hover:bg-gray-100 transition-colors"
+                      >
+                        <FaApple className="text-xl" />
+                        <span>APP STORE</span>
+                      </a>
                   </div>
+                  
                 </div>
                 <div>
                   <img
                     src="/img/product/app_log.png"
                     alt="screenshot"
-                    className="max-w-[150px] max-h-[150px]"
+                    className="max-w-[216px] max-h-[228px] absolute -right-10 -bottom-4"
                   />
+                </div>
                 </div>
               </div>
             </div>
