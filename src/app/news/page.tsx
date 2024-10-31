@@ -69,25 +69,25 @@ const NewsPage: React.FC = () => {
         style={{ backgroundImage: 'url("/img/news/news_banner.png")' }}
       >
         <div className=" top-0 w-[40%] h-full bg-[#07212c] bg-opacity-100">
-        <div className=" z-10 my-auto  h-full p-8 lg:p-12 ">
-          <div className=" lg:pl-[60px] lg:mt-8 text-center md:text-left text-white flex flex-col justify-between items-left gap-4">
-            
+          <div className=" z-10 my-auto  h-full p-8 lg:p-12 ">
+            <div className=" lg:pl-[60px] lg:mt-8 text-center md:text-left text-white flex flex-col justify-between items-left gap-4">
               <Link
                 href={'/news/newsdetail'}
                 className="md:text-[15px] text-[#579DFF] text-xs font-semibold "
               >
-               CÔNG NGHỆ
+                CÔNG NGHỆ
               </Link>
               <h1
                 className={`text-xl md:text-2xl  font-bold leading-tight lg:line-clamp-2 max-lg:line-clamp-10
                 duration-700 ease-in-out transform ${
-                inView
-                  ? 'opacity-100 translate-y-0'
-                  : 'opacity-0 translate-y-10'
+                  inView
+                    ? 'opacity-100 translate-y-0'
+                    : 'opacity-0 translate-y-10'
                 }
                 `}
               >
-              Hyratek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội
+                Hyratek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự
+                án "Phục dựng ảnh liệt sĩ" của Hà Nội
               </h1>
               <p
                 className={`mt-4 text-sm leading-6 line-clamp-6 max-lg:hidden opacity-70 duration-700 ease-in-out transform ${
@@ -96,52 +96,53 @@ const NewsPage: React.FC = () => {
                     : 'opacity-0 translate-y-10'
                 }`}
               >
-                Hyratek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội Hyratek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội Hyratek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội
+                Hyratek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự
+                án "Phục dựng ảnh liệt sĩ" của Hà Nội Hyratek và Qualcomm hợp
+                tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt
+                sĩ" của Hà Nội Hyratek và Qualcomm hợp tác chiến lược về AI,
+                đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội
               </p>
-                <div>
-                <button className= "max-sm:hidden text-[#FFFFFF]/90 bg-[#48B96D] border-[#FFFFFF]/20 font-medium border-[1px]  rounded-full px-3 py-2 inline-flex">
-                Đọc thêm
-              </button>
-                </div>
-            
+              <div>
+                <button className="max-sm:hidden text-[#FFFFFF]/90 bg-[#48B96D] border-[#FFFFFF]/20 font-medium border-[1px]  rounded-full px-3 py-2 inline-flex">
+                  Đọc thêm
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-        </div>
-
-
       </div>
 
       <section
         ref={ref2}
         className="w-full flex flex-col justify-center items-center"
       >
-        <div className="flex flex-col max-w-[1200px]">
+        <div className="flex flex-col max-w-[1201px] gap-[40px] py-[62px]">
           <h1
-            className={`text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 p-8 duration-700 ease-in-out transform ${
+            className={`text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800  duration-700 ease-in-out transform ${
               inView2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
           >
             Sự kiện nổi bật
           </h1>
-          <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:grid-rows-2 gap-4 p-8">
+          <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:grid-rows-2 gap-4 ">
             {newsData.map((news: any, index: number) => (
               <>
                 {index === 0 ? (
-                 
                   <ProjectCard
                     key={index}
                     project={news}
                     className={`lg:col-span-2 lg:row-span-2 md:col-span-1 md:row-span-1 h-auto duration-700 ease-in-out transform ${
-                      inView2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                      inView2
+                        ? 'opacity-100 translate-y-0'
+                        : 'opacity-0 translate-y-10'
                     }`}
                   />
                 ) : (
-                  
                   <div
                     key={index}
                     className={` rounded-lg overflow-hidden ${
-                      index === 1 
-                        ? 'lg:row-span-2 lg:col-span-1 bg-[#07212C] md:row-span-1 col-span-1 md:max-h-[600px]' 
+                      index === 1
+                        ? 'lg:row-span-2 lg:col-span-1 bg-[#07212C] md:row-span-1 col-span-1 md:max-h-[600px]'
                         : 'bg-white md:max-h-[550px]'
                     }`}
                   >
@@ -159,14 +160,20 @@ const NewsPage: React.FC = () => {
                       >
                         CÔNG NGHỆ
                       </Link>
-                      <h1 className={`  font-medium  line-clamp-2 ${index === 1 ? 'text-white text-lg' : 'text-gray-800  text-[15px]'}`}>
+                      <h1
+                        className={`  font-medium  line-clamp-2 ${index === 1 ? 'text-white text-lg' : 'text-gray-800  text-[15px]'}`}
+                      >
                         {news.title}
                       </h1>
                       <div className="flex justify-between items-center text-sm mt-8">
-                        <p className={`${index === 1 ? 'text-[#CBCBCD]' : 'text-gray-600'}`}>
+                        <p
+                          className={`${index === 1 ? 'text-[#CBCBCD]' : 'text-gray-600'}`}
+                        >
                           {news.date}
                         </p>
-                        <button className={`${index === 1 ? 'text-[#FFFFFF]/90 border-[#FFFFFF]/20' : 'text-[#000000]/90 border-[#000000]/90'} font-medium border-[1px]  rounded-full px-2 py-1`}>
+                        <button
+                          className={`${index === 1 ? 'text-[#FFFFFF]/90 border-[#FFFFFF]/20' : 'text-[#000000]/90 border-[#000000]/90'} font-medium border-[1px]  rounded-full px-2 py-1`}
+                        >
                           Đọc thêm
                         </button>
                       </div>
@@ -180,9 +187,9 @@ const NewsPage: React.FC = () => {
       </section>
 
       {/* upcomming */}
-      <section className="w-full bg-cover bg-center flex justify-center flex-col items-center gap-3">
-        <div className="max-w-[1200px] ">
-          <h1 className="w-full text-left text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 p-8">
+      <section className="w-full bg-cover bg-center flex justify-center flex-col items-center gap-3 bg-[#F3F7F4]">
+        <div className="max-w-[1201px] py-[62px] flex flex-col gap-[40px] ">
+          <h1 className="w-full text-left text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 ">
             Sự kiện sắp tới
           </h1>
 
@@ -245,12 +252,12 @@ const NewsPage: React.FC = () => {
                       className="w-full h-auto md:max-w-[500px] md:max-h-[233px] object-cover rounded-lg md:col-span-1"
                     />
                     <div className="p-4 md:col-span-2 flex flex-col justify-between">
-                        <Link
-                          href={news.link || '#'}
-                          className="md:text-sm text-[#579DFF] text-sm font-semibold"
-                        >
-                          CÔNG NGHỆ
-                        </Link>
+                      <Link
+                        href={news.link || '#'}
+                        className="md:text-sm text-[#579DFF] text-sm font-semibold"
+                      >
+                        CÔNG NGHỆ
+                      </Link>
                       <h1 className="md:text-[18px] text-[12px] font-bold text-gray-800">
                         {news.title}
                       </h1>
@@ -258,7 +265,9 @@ const NewsPage: React.FC = () => {
                         <p className=" text-gray-600 text-center">
                           {news.date}
                         </p>
-                        <button className={`${index === 1 ? 'text-[#FFFFFF]/90 border-[#FFFFFF]/20' : 'text-[#000000]/90 border-[#000000]/90'} font-medium border-[1px]  rounded-full px-2 py-1`}>
+                        <button
+                          className={`${index === 1 ? 'text-[#FFFFFF]/90 border-[#FFFFFF]/20' : 'text-[#000000]/90 border-[#000000]/90'} font-medium border-[1px]  rounded-full px-2 py-1`}
+                        >
                           Đọc thêm
                         </button>
                       </div>
@@ -279,11 +288,24 @@ const NewsPage: React.FC = () => {
                       alt="Facebook"
                       className="w-auto h-auto max-w-[50px] max-h-[50px]  rounded-full  "
                     />
-                    <p className="text-gray-700 font-normal text-base">50,987 Follow</p>
+                    <p className="text-gray-700 font-normal text-base">
+                      50,987 Follow
+                    </p>
                   </div>
                   <button className="flex bg-gray-100 items-center justify-center w-8 h-8 rounded-xs border border-gray-300 hover:border-gray-400 transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 text-gray-500">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-4 h-4 text-gray-500"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                      />
                     </svg>
                   </button>
                 </div>
@@ -294,11 +316,24 @@ const NewsPage: React.FC = () => {
                       alt="X"
                       className="w-auto h-auto max-w-[50px] max-h-[50px]  rounded-full  "
                     />
-                    <p className="text-gray-700 font-normal text-base">8,987 Follower</p>
+                    <p className="text-gray-700 font-normal text-base">
+                      8,987 Follower
+                    </p>
                   </div>
                   <button className="flex bg-gray-100 items-center justify-center w-8 h-8 rounded-xs border border-gray-300 hover:border-gray-400 transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 text-gray-500">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-4 h-4 text-gray-500"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                      />
                     </svg>
                   </button>
                 </div>
@@ -309,18 +344,29 @@ const NewsPage: React.FC = () => {
                       alt="Youtube"
                       className="w-auto h-auto max-w-[50px] max-h-[50px]  rounded-full  "
                     />
-                    <p className="text-gray-700 font-normal text-base">50,987 Fans</p>
+                    <p className="text-gray-700 font-normal text-base">
+                      50,987 Fans
+                    </p>
                   </div>
                   <button className="flex bg-gray-100 items-center justify-center w-8 h-8 rounded-xs border border-gray-300 hover:border-gray-400 transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 text-gray-500">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-4 h-4 text-gray-500"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                      />
                     </svg>
                   </button>
                 </div>
               </div>
-              <div
-                className="flex justify-center items-center gap-4 bg-[#07212C] bg-no-repeat bg-cover bg-center w-full h-[300px] rounded-lg mt-2 p-2" 
-              >
+              <div className="flex justify-center items-center gap-4 bg-[#07212C] bg-no-repeat bg-cover bg-center w-full h-[300px] rounded-lg mt-2 p-2">
                 <div className="text-white  font-bold text-[11px] px-2 md:text-[15px]">
                   <p>Trải nghiệm ngay </p>
                   <p>nền tảng đầu tư HyraCap</p>

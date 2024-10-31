@@ -8,13 +8,13 @@ const DetailCategoryPage: React.FC = () => {
       icon: '/img/icon/google-docs.svg',
     },
     {
-      name: 'Tổng thiết bị',
-      amount: '+2,985,122,684',
+      name: 'Mô hình đào tạo',
+      amount: '+14,319',
       icon: '/img/icon/google-docs.svg',
     },
     {
-      name: 'Mô hình đào tạo',
-      amount: '+2,985,122,684',
+      name: 'Tổng thiết bị',
+      amount: '+1,082,033',
       icon: '/img/icon/device.svg',
     },
     {
@@ -261,7 +261,9 @@ const DetailCategoryPage: React.FC = () => {
                 />
               </div>
               <div className="w-full lg:w-2/3 lg:ml-10 lg:mt-5">
-                <h5 className="text-xl font-bold text-white mb-4 lg:mb-10">Thông số</h5>
+                <h5 className="text-xl font-bold text-white mb-4 lg:mb-10">
+                  Thông số
+                </h5>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 md:gap-12 gap-3">
                   {projects.map((project, index) => (
                     <div className="flex gap-5" key={index}>
@@ -287,7 +289,7 @@ const DetailCategoryPage: React.FC = () => {
 
           <div className="px-11 pt-6 bg-white">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <div className="bg-white py-6 px-11 rounded-lg shadow-lg">
+              <div className="bg-white py-6 px-11 rounded-lg shadow-lg border-[#E1E1E1] border-[1px]">
                 <h2 className="text-xl font-bold mb-4">Chi tiết</h2>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-5">
                   <li className="flex">
@@ -358,7 +360,7 @@ const DetailCategoryPage: React.FC = () => {
                 </p>
               </div>
 
-              <div className="bg-white p-6 rounded-lg shadow">
+              <div className="bg-white p-6 rounded-lg shadow border-[#E1E1E1] border-[1px]">
                 <h2 className="text-xl font-bold mb-4">Có thể bạn quan tâm</h2>
                 <ul className="space-y-4">
                   <li className="flex items-center gap-5 py-3">
@@ -425,7 +427,7 @@ const DetailCategoryPage: React.FC = () => {
                 </ul>
               </div>
 
-              <div className="bg-white rounded-2xl shadow">
+              <div className="bg-white rounded-2xl shadow border-[#E1E1E1] border-[1px]">
                 <table className="w-full text-left">
                   <thead>
                     <tr>
@@ -481,7 +483,7 @@ const DetailCategoryPage: React.FC = () => {
                     background:
                       'linear-gradient(180deg, #FFFFFF 0%, #DCFFE8 100%)',
                   }}
-                  className="bg-white p-6 rounded-xl shadow"
+                  className="bg-white p-6 rounded-xl shadow border-[#E1E1E1] border-[1px]"
                 >
                   <h2 className="text-lg font-bold mb-4">
                     Cập nhật thông tin mới nhất

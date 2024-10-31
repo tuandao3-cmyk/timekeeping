@@ -62,7 +62,7 @@ const FeedbackSection: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-[#F3F7F4] 4xl:py-10 3xl:py-8 py-16 relative overflow-hidden">
+    <div className="bg-[#FFFFFF] 4xl:py-10 3xl:py-8 py-16 relative overflow-hidden">
       {/* Vòng tròn đồng tâm */}
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0">
         {/* <div className="w-[800px] h-[800px] rounded-full border-2 border-[#48B96D] opacity-20"></div> */}
