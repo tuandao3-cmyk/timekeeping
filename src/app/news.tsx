@@ -48,9 +48,9 @@ const News = () => {
     triggerOnce: true,
   });
   return (
-    <div className={styles.newsSection}>
+    <div className={`${styles.newsSection} bg-[#F3F7F4]`}>
       <div className="flex flex-col justify-center items-center w-full">
-        <div className="max-w-screen-3xl">
+        <div className="max-w-[1440px]">
           <div className=" flex justify-between ">
             <h2 className="font-inter font-bold pb-6  text-[36px] leading-[48px]">
               TIN MỚI NHẤT VỀ HYRACAP
@@ -69,7 +69,7 @@ const News = () => {
                   ref={ref}
                   src={newsData[0].image}
                   alt="Main News"
-                  className={`${styles.mainImage} duration-700 max-w-[486px]  ease-in-out transform ${
+                  className={`${styles.mainImage} duration-300 max-w-[486px]  ease-in-out transform ${
                     inView
                       ? 'opacity-100 translate-y-0'
                       : 'opacity-0 translate-y-10'
@@ -80,7 +80,7 @@ const News = () => {
               <div className="flex flex-col items-start justify-start">
                 <p
                   ref={ref}
-                  className={`${styles.newsTitle}  duration-700 delay-200 text-[24px] text-[#31814B]  ease-in-out transform ${
+                  className={`${styles.newsTitle}  duration-300 delay-200 text-[24px] text-[#31814B]  ease-in-out transform ${
                     inView
                       ? 'opacity-100 translate-y-0'
                       : 'opacity-0 translate-y-10'
@@ -92,7 +92,7 @@ const News = () => {
               <div className="flex flex-col items-start  justify-start">
                 <span
                   ref={ref}
-                  className={`font-inter text-sm leading-6 text-gray-600 duration-700 delay-500  ease-in-out transform ${
+                  className={`font-inter text-sm leading-6 text-gray-600 duration-300 delay-500  ease-in-out transform ${
                     inView
                       ? 'opacity-100 translate-y-0'
                       : 'opacity-0 translate-y-10'
@@ -130,12 +130,12 @@ const News = () => {
                 </div>
               </div>
             </div>
-            <div className={styles.sideNews}>
+            <div className={`${styles.sideNews} `}>
               {newsData.slice(1).map((news, index) => (
                 <div
                   ref={ref}
                   key={index}
-                  className={`${styles.newsItem} duration-700 delay-${index * 100} max-w-[650px] ease-in-out transform ${
+                  className={`${styles.newsItem} duration-300 delay-${index * 100} pb-[20px] pt-[20px] max-w-[650px] ease-in-out transform ${
                     inView
                       ? 'opacity-100 translate-y-0'
                       : 'opacity-0 translate-y-10'

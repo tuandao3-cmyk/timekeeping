@@ -140,7 +140,14 @@ function SolutionList() {
         <Typography
           component={'p'}
           textTransform={'uppercase'}
-          className={`text-[38px] font-bold leading-[48px] text-center text-[#04141A]`}
+          // className={`text-[38px] font-bold leading-[48px] text-center text-[#04141A]`}
+          sx={{
+            color: '#04141A',
+            fontSize: 38,
+            fontWeight: 'bold',
+            lineHeight: '48px',
+            textAlign: 'center',
+          }}
         >
           giải pháp đầu tư vượt trội
         </Typography>
@@ -149,7 +156,7 @@ function SolutionList() {
         {DATA.map((item, index) => (
           <div
             ref={ref}
-            className={`flex rounded-[24px] max-w-[384px] bg-[#F3F7F4] transition duration-500 gap-[24px]  flex-col hover:bg-[#48B96DCC] hover:bg-opacity-80 justify-start items-start group p-[40px] ease-in-out delay-${index * 100} transform ${
+            className={`flex rounded-[24px] max-w-[384px] bg-[#F3F7F4] transition duration-300 gap-[24px]  flex-col hover:bg-[#48B96DCC] hover:bg-opacity-80 justify-start items-start group p-[40px] ease-in-out delay-${index * 100} transform ${
               inView ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
             }`}
             key={index}

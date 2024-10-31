@@ -187,7 +187,7 @@
 }
 
 .textContent {
-  max-width: 40%;
+  max-width: 486px;
   display: flex;
   gap: 24px;
   flex-direction: column;
@@ -408,7 +408,9 @@
 }
 
 .leadershipSection {
-  padding: 62px 120px;
+  /* padding: 62px 120px;
+   */
+   max-width: 1440px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -762,7 +764,7 @@
 
   .values p,
   .textContent {
-    max-width: 90vw;
+    max-width: 486;
   }
   .vision,
   .mission {

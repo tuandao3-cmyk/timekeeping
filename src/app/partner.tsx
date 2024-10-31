@@ -3,7 +3,7 @@ import styles from './Partner.module.css';
 
 const ProjectGrid: React.FC = () => {
   return (
-    <div className="overflow-hidden whitespace-nowrap pt-28 pb-10  bg-[#F3F7F4]">
+    <div className="overflow-hidden whitespace-nowrap pt-28 pb-10  bg-[#F3F7F4] flex justify-center items-center">
       <div className={`inline-flex ${styles.animateSlide}`}>
         <div className="flex items-center space-x-8">
           <img
@@ -41,11 +41,11 @@ const ProjectGrid: React.FC = () => {
             alt="Eureka"
             className={`h-16 object-contain ${styles.partnerLogo}`}
           />
-          {/* <img
+          <img
             src="/img/icon/coop8.png"
             alt="Corex"
             className={`h-16 object-contain ${styles.partnerLogo}`}
-          /> */}
+          />
         </div>
         {/* Lặp lại các biểu tượng để tạo hiệu ứng liên tục */}
         <div className="flex items-center space-x-8">

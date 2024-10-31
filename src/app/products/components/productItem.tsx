@@ -26,9 +26,9 @@ const ProductItem = forwardRef<HTMLDivElement, ProductItemProps>(
         return (
           <div
             ref={ref}
-            className={`package-item min-w-[200px] bg-white shadow-md p-4 rounded-lg md:gap-6  border-t-8 border-[#00922F] flex justify-center items-center flex-col flex-grow ${props.className}`}
+            className={`package-item md:w-[384px] bg-white shadow-md p-4 rounded-lg md:gap-6  border-t-8 border-[#00922F] flex justify-center items-center flex-col flex-grow ${props.className}`}
           >
-            <div className="w-20 h-20 rounded-full flex justify-center items-center border-2 border-[#00922F] ">
+            <div className="w-full h-20 rounded-full flex justify-center items-center border-2 border-[#00922F] ">
               {props.image}
             </div>
             <h2 className="text-lg mf:text-[30px] font-bold">{props.title}</h2>
@@ -65,32 +65,40 @@ const ProductItem = forwardRef<HTMLDivElement, ProductItemProps>(
         return (
           <div
             ref={ref}
-            className={`package-item min-w-[200px] bg-white  rounded-lg md:gap-6   flex justify-center items-left flex-col flex-grow gap-3 ${props.className}`}
+            className={`package-item md:max-w-[384px] bg-white  rounded-lg md:gap-6   flex justify-center items-left flex-col flex-grow gap-3 ${props.className}`}
           >
-            <div className="max-h-[336px] max-w-[411px]">{props.image}</div>
+            {props.image}
+
             <h2 className="text-lg md:text-[30px] font-bold">{props.title}</h2>
-            <div className="flex justify-items-start items-center gap-2">
-              <TimeLeft />
-              {props.startDate}
+
+            <div>
+              <p className="uppercase font-[400] text-[14px] text-[#000] text-opacity-70">
+                mục tiêu huy động
+              </p>
+              <p className="text-[20px] font-bold text-[#04141A] ">
+                ${props.profit.toLocaleString('en-US')}
+              </p>
             </div>
-            <p>{props.descriptions}</p>
-            <p className="text-[20px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#305D3E] to-[#64C383]">
-              ${props.profit}
-            </p>
             <ProgressBar progress={props.sponsorship} />
-            <div className="flex ">
+            <div className="flex justify-between">
               <p className="text-[15px]">
-                Đã đầu tư{' '}
-                <span className="font-bold text-black">${props.invested}</span>
+                <span className="font-bold text-[#48B96D]">
+                  ${props.invested.toLocaleString('en-US')}
+                </span>{' '}
+                Đã huy động
               </p>
               <p className="text-[15px]">
-                Được tài trợ{' '}
-                <span className="font-bold text-black">
+                <span className="font-bold text-[#48B96D]">
                   ${props.sponsorship}%
-                </span>
+                </span>{' '}
+                Hoàn thành
               </p>
             </div>
-            <p className="text-[13px]">{props.field}</p>
+            <div className="w-min">
+              <p className="text-[13px] text-nowrap p-[3px] rounded-[3px] bg-[#0000000F] text-[#000000B2] uppercase font-[700]">
+                {props.field}
+              </p>
+            </div>
           </div>
         );
 

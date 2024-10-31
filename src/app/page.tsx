@@ -56,7 +56,7 @@ const Home: React.FC = () => {
         <div className="w-full md:ml-[10%]  md:w-1/2 md:max-w-[45%]  md:pr-8">
           <h1
             ref={ref}
-            className={`duration-700 ease-in-out transform ${
+            className={`duration-300 ease-in-out transform ${
               inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             } font-inter font-bold pt-[20%] pb-[5%] sm:text-[32px] md:leading-[56px] md:text-[40px] mb-2 sm:mb-4 uppercase`}
           >
@@ -65,7 +65,7 @@ const Home: React.FC = () => {
           </h1>
           <p
             ref={ref}
-            className={`duration-700 ease-in-out delay-200 transform ${
+            className={`duration-300 ease-in-out delay-200 transform ${
               inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             } text-base font-inter pb-[5%] sm:text-base md:max-w-[85%] mb-4 sm:mb-6 text-[#FFFFFF]/60`}
           >
@@ -74,7 +74,7 @@ const Home: React.FC = () => {
           </p>
           <button
             ref={ref}
-            className={`bg-[#48B96D] text-[#ffffff] md:px-4 py-3 max-sm:px-4 rounded-full text-sm sm:text-base duration-700 ease-in-out delay-500 transform ${
+            className={`bg-[#48B96D] text-[#ffffff] md:px-4 py-3 max-sm:px-4 rounded-full text-sm sm:text-base duration-300 ease-in-out delay-500 transform ${
               inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             } `}
           >
@@ -84,7 +84,7 @@ const Home: React.FC = () => {
           <div className="flex flex-wrap max-sm:justify-between mt-8 space-y-0 sm:space-x-4 md:space-x-4 lg:space-x-4 h-[50%]">
             <div
               ref={ref}
-              className={`w-[30%] h-[40%] bg-[#FFFFFF]/10 rounded-lg p-1 md:p-3 pl-5 flex flex-col  justify-start items-start duration-700 ease-in-out transform ${
+              className={`w-[30%] h-[40%] bg-[#FFFFFF]/10 rounded-lg p-1 md:p-3 pl-5 flex flex-col  justify-start items-start duration-300 ease-in-out transform ${
                 inView ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
               }`}
             >
@@ -98,7 +98,7 @@ const Home: React.FC = () => {
             </div>
             <div
               ref={ref}
-              className={`w-[30%] h-[40%] bg-[#FFFFFF]/10 rounded-lg p-1 md:p-3 pl-5 flex flex-col  justify-start items-start duration-700 delay-700 ease-in-out transform ${
+              className={`w-[30%] h-[40%] bg-[#FFFFFF]/10 rounded-lg p-1 md:p-3 pl-5 flex flex-col  justify-start items-start duration-300 delay-300 ease-in-out transform ${
                 inView ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
               }`}
             >
@@ -111,7 +111,7 @@ const Home: React.FC = () => {
             </div>
             <div
               ref={ref}
-              className={`w-[30%] h-[40%] bg-[#FFFFFF]/10 rounded-lg p-1 md:p-3 pl-5 flex flex-col justify-start items-start duration-700 delay-1000 ease-in-out transform ${
+              className={`w-[30%] h-[40%] bg-[#FFFFFF]/10 rounded-lg p-1 md:p-3 pl-5 flex flex-col justify-start items-start duration-300 delay-500 ease-in-out transform ${
                 inView ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
               }`}
             >
@@ -128,7 +128,7 @@ const Home: React.FC = () => {
         {/* Phần bên phải */}
         <div
           ref={rightFrameRef}
-          className={`w-full md:w-1/2 min-h-[90vh] max-sm:hidden relative mt-8 md:mt-0 transition-all duration-500 ${
+          className={`w-full md:w-1/2 min-h-[90vh] max-sm:hidden relative mt-8 md:mt-0 transition-all duration-300 ${
             isRightFrameVisible ? 'opacity-100' : 'opacity-0'
           }`}
         >
@@ -138,7 +138,7 @@ const Home: React.FC = () => {
                 ref={ref}
                 src="/img/invest.png"
                 alt="Investment Dashboard"
-                className={` w-full h-full rounded-[1.25rem] opacity-100 object-cover duration-700  ease-in-out transform ${
+                className={` w-full h-full rounded-[1.25rem] opacity-100 object-cover duration-300  ease-in-out transform ${
                   inView ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
                 }`}
               />
@@ -146,7 +146,7 @@ const Home: React.FC = () => {
               {/* Khung Hyperas */}
               <div
                 ref={ref}
-                className={`absolute w-[58%] sm:w-[50%] top-[7%] sm:top-[5%] md:top-[7%] left-[-30%] sm:left-[-25%] md:left-[-25%] bg-white text-[#04141A] rounded-[1.25rem] shadow overflow-hidden flex flex-col duration-700 delay-700 ease-in-out transform ${
+                className={`absolute w-[58%] sm:w-[50%] top-[7%] sm:top-[5%] md:top-[7%] left-[-30%] sm:left-[-25%] md:left-[-25%] bg-white text-[#04141A] rounded-[1.25rem] shadow overflow-hidden flex flex-col duration-300 delay-300 ease-in-out transform ${
                   inView
                     ? 'opacity-100 translate-x-0'
                     : 'opacity-0 translate-x-[-50%]'
