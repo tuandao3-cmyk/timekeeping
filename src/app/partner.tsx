@@ -41,11 +41,11 @@ const ProjectGrid: React.FC = () => {
             alt="Eureka"
             className={`h-16 object-contain ${styles.partnerLogo}`}
           />
-          {/* <img
+          <img
             src="/img/icon/coop8.png"
             alt="Corex"
             className={`h-16 object-contain ${styles.partnerLogo}`}
-          /> */}
+          />
         </div>
         {/* Lặp lại các biểu tượng để tạo hiệu ứng liên tục */}
         <div className="flex items-center space-x-8">

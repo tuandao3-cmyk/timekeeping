@@ -7,7 +7,11 @@ import { useInView } from 'react-intersection-observer';
 import { useState, useEffect } from 'react';
 import { ProfitIcon, MoneyIcon, PiggyBankIcon } from '@/components/icons';
 import ProductItem from './components/productItem';
+import { start } from 'repl';
+import Image from 'next/image';
 import DownloadSection from '../download';
+import ShortTermSection from './short-term/page';
+import LongTermSection from './long-term/page';
 
 const ProductPage: React.FC = () => {
   const { ref, inView, entry } = useInView({
@@ -120,6 +124,21 @@ const ProductPage: React.FC = () => {
     threshold: 0.1,
     // triggerOnce: true,
   });
+  const [activeSection, setActiveSection] = useState<string>('short-term');
+
+  const renderContent = () => {
+    switch(activeSection) {
+      case 'short-term':
+        return <ShortTermSection />;
+      case 'long-term':
+        return <LongTermSection />;
+      
+      default:
+        return (
+          <ShortTermSection />
+        );
+    }
+  };
 
   return (
     <>
@@ -149,228 +168,29 @@ const ProductPage: React.FC = () => {
           <div className="flex w-[100%] justify-center items-start gap-[24px]">
             <button
               ref={ref2}
-              className={` bg-[#48B96D] text-white text-[16px]  px-[16px] py-[14px] rounded-[999px] text-center  hover:bg-[#379256] transition-all  duration-300 delay-200 ease-in-out transform ${
+              onClick={() => setActiveSection('short-term')}
+              className={` hover:bg-[#48B96D] text-white text-[16px] px-[20px] py-[14px] rounded-[999px] text-center transition-all duration-300 delay-200 ease-in-out transform ${
                 inView2
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-10'
-              }`}
+              } ${activeSection === 'short-term' ? 'bg-[#48B96D]' : 'bg-[#ffffff]/10'}`}
             >
               Đầu tư ngắn hạn
             </button>
             <button
               ref={ref2}
-              className={`bg-[#ffffff]/10 border border-[#FFFFFF29] text-[#FFFFFF] text-[16px]text-center px-[16px] py-[14px]  rounded-[999px]  hover:bg-[#379256]  transition-all  duration-300 delay-500 ease-in-out transform ${
+              onClick={() => setActiveSection('long-term')}
+              className={` hover:bg-[#48B96D] text-white text-[16px] px-[20px] py-[14px] rounded-[999px] text-center transition-all duration-300 delay-500 ease-in-out transform ${
                 inView2
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-10'
-              } `}
+              } ${activeSection === 'long-term' ? 'bg-[#48B96D]' : 'bg-[#ffffff]/10'}`}
             >
               Đầu tư dài hạn
             </button>
           </div>
         </div>
-        <div className="flex justify-center items-center w-full absolute top-1/2 px-32">
-          <div
-            ref={ref2}
-            className={` rounded-lg duration-1000  ease-in-out transform ${
-              inView2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-15'
-            }`}
-            // controls
-          >
-            <div className="grid grid-cols-3 gap-5">
-              <div className="bg-white shadow-lg   rounded-lg">
-                <div
-                  className="border-b-2 flex flex-col justify-between items-center pt-4  h-[205px]
-
-                "
-                >
-                  <p className="text-2xl font-medium uppercase">Gói cơ bản</p>
-                  <div
-                    className="w-full flex justify-center items-center"
-                    style={{
-                      background:
-                        'linear-gradient(to bottom, rgba(35, 125, 161, 0) 0%, rgba(35, 125, 161, 0.2) 100%, rgba(35, 125, 161, 0) 56%)',
-                    }}
-                  >
-                    <img src="/img/icon1.png" alt="" />
-                  </div>
-                </div>
-                <div className="flex flex-col py-11 px-14">
-                  <p className="text-center font-bold text-[40px] text-[#04141A]">
-                    3.5%/năm
-                  </p>
-                  <p className="text-center font-normal text-base text-[#000000A3] text-opacity-64">
-                    Kỳ hạn 3 tháng
-                  </p>
-                  <div className="flex flex-col gap-8 py-10">
-                    <div className="flex gap-3">
-                      <img
-                        className=" p-1 rounded-full bg-[#48B96D] w-[24px] h-[24px]"
-                        src="/img/icon/check.svg"
-                        alt=""
-                      />
-                      <p className="font-medium text-base">
-                        Đầu tư thời gian ngắn hạn
-                      </p>
-                    </div>
-                    <div className="flex gap-3">
-                      <img
-                        className=" p-1 rounded-full bg-[#48B96D] w-[24px] h-[24px]"
-                        src="/img/icon/check.svg"
-                        alt=""
-                      />
-                      <p className="font-medium text-base">
-                        Lợi nhuận hấp dẫn và cố định
-                      </p>
-                    </div>
-                    <div className="flex gap-3">
-                      <img
-                        className=" p-1 rounded-full bg-[#48B96D] w-[24px] h-[24px]"
-                        src="/img/icon/check.svg"
-                        alt=""
-                      />
-                      <p className="font-medium text-base">
-                        Đầu tư an toàn, dễ dàng quản lý
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex justify-center items-center">
-                    <button
-                      className={`uppercase  max-w-[116px]  bg-[#48B96D] text-white text-[16px]  px-[16px] py-[14px] rounded-[999px] text-center  hover:bg-[#379256] transition-all  duration-300 delay-200 ease-in-out transform`}
-                    >
-                      mua ngay
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div className="bg-white shadow-lg  rounded-lg">
-                <div className="border-b-2 flex flex-col justify-between items-center pt-4  h-[205px]">
-                  <p className="text-2xl font-medium uppercase">Gói NÂNG CAO</p>
-                  <p className="px-2 py-1 text-[#0048FF] bg-[#3E91FF]/30 rounded-full">
-                    Best value
-                  </p>
-                  <div
-                    className="w-full flex justify-center items-center"
-                    style={{
-                      background:
-                        'linear-gradient(to bottom, #FFAB5000 0%, #FFAB5033 100%,#99673000 56%)',
-                    }}
-                  >
-                    <img src="/img/icon2.png" alt="" />
-                  </div>
-                </div>
-                <div className="flex flex-col py-11 px-14">
-                  <p className="text-center font-bold text-[40px] text-[#04141A]">
-                    3.7%/năm
-                  </p>
-                  <p className="text-center font-normal text-base text-[#000000A3] text-opacity-64">
-                    Kỳ hạn 6 tháng
-                  </p>
-                  <div className="flex flex-col gap-8 py-10">
-                    <div className="flex gap-3">
-                      <img
-                        className=" p-1 rounded-full bg-[#48B96D] w-[24px] h-[24px]"
-                        src="/img/icon/check.svg"
-                        alt=""
-                      />
-                      <p className="font-medium text-base">
-                        Đầu tư thời gian ngắn hạn
-                      </p>
-                    </div>
-                    <div className="flex gap-3">
-                      <img
-                        className=" p-1 rounded-full bg-[#48B96D] w-[24px] h-[24px]"
-                        src="/img/icon/check.svg"
-                        alt=""
-                      />
-                      <p className="font-medium text-base">
-                        Lợi nhuận hấp dẫn và cố định
-                      </p>
-                    </div>
-                    <div className="flex gap-3">
-                      <img
-                        className=" p-1 rounded-full bg-[#48B96D] w-[24px] h-[24px]"
-                        src="/img/icon/check.svg"
-                        alt=""
-                      />
-                      <p className="font-medium text-base">
-                        Đầu tư an toàn, dễ dàng quản lý
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex justify-center items-center">
-                    <button
-                      className={`uppercase  max-w-[116px]  bg-[#48B96D] text-white text-[16px]  px-[16px] py-[14px] rounded-[999px] text-center  hover:bg-[#379256] transition-all  duration-300 delay-200 ease-in-out transform`}
-                    >
-                      mua ngay
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div className="bg-white shadow-lg  rounded-lg">
-                <div className="border-b-2 flex flex-col justify-between items-center pt-4 h-[205px]">
-                  <p className="text-2xl font-medium uppercase">Gói cao cấp</p>
-                  <div
-                    className="w-full flex justify-center items-center"
-                    style={{
-                      background:
-                        'linear-gradient(to bottom,#48B96D00 0%, #48B96D33 100%,#48B96D00 56%)',
-                    }}
-                  >
-                    <img src="/img/icon3.png" alt="" />
-                  </div>
-                </div>
-                <div className="flex flex-col py-11 px-14">
-                  <p className="text-center font-bold text-[40px] text-[#04141A]">
-                    4.7%/năm
-                  </p>
-                  <p className="text-center font-normal text-base text-[#000000A3] text-opacity-64">
-                    Kỳ hạn 12 tháng
-                  </p>
-                  <div className="flex flex-col gap-8 py-10">
-                    <div className="flex gap-3">
-                      <img
-                        className=" p-1 rounded-full bg-[#48B96D] w-[24px] h-[24px]"
-                        src="/img/icon/check.svg"
-                        alt=""
-                      />
-                      <p className="font-medium text-base">
-                        Đầu tư thời gian ngắn hạn
-                      </p>
-                    </div>
-                    <div className="flex gap-3">
-                      <img
-                        className=" p-1 rounded-full bg-[#48B96D] w-[24px] h-[24px]"
-                        src="/img/icon/check.svg"
-                        alt=""
-                      />
-                      <p className="font-medium text-base">
-                        Lợi nhuận hấp dẫn và cố định
-                      </p>
-                    </div>
-                    <div className="flex gap-3">
-                      <img
-                        className=" p-1 rounded-full bg-[#48B96D] w-[24px] h-[24px]"
-                        src="/img/icon/check.svg"
-                        alt=""
-                      />
-                      <p className="font-medium text-base">
-                        Đầu tư an toàn, dễ dàng quản lý
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex justify-center items-center">
-                    <button
-                      className={`uppercase  max-w-[116px]  bg-[#48B96D] text-white text-[16px]  px-[16px] py-[14px] rounded-[999px] text-center  hover:bg-[#379256] transition-all  duration-300 delay-200 ease-in-out transform`}
-                    >
-                      mua ngay
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        {renderContent()}
       </div>
 
       {/* Các gói đầu tư */}
@@ -410,74 +230,8 @@ const ProductPage: React.FC = () => {
         </button>
       </section>
 
-      <DownloadSection />
-
-      {/* dowwnlaod
-      <div className="w-full flex flex-col justify-center items-center">
-        <section className="w-full h-auto bg-white py-6 flex flex-col-reverse md:flex-row gap-4 justify-center items-center px-[120px] max-w-[1440px]">
-          <div className="px-8 flex flex-col gap-2 justify-center items-center">
-            <h1 className="text-black font-bold text-2xl md:text-4xl text-center">
-              Trải nghiệm ngay ứng dụng đầu tư HyraCap
-            </h1>
-            <p className="text-[#009467] text-center text-[11px]  md:text-[25px]">
-              Quét mã QR tại đây!
-            </p>
-            <img
-              src="/img/qrcode.png"
-              alt="qr code"
-              className="max-w-[200px] max-h-[200px]"
-            />
-            <div className="flex justify-center  flex-grow gap-4 w-full">
-              <a
-                href="https://www.apple.com/app-store/"
-                className="px-2 flex-grow py-2 bg-black md:max-w-[250px] text-white rounded-lg  hover:bg-gray-800 flex items-center justify-center space-x-2 w-full md:w-auto"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="/img/icon/apic2.png"
-                  alt="App Store"
-                  className="w-4 h-4 md:w-6 md:h-6"
-                />
-                <div>
-                  <p className="text-[10px] font-thin md:text-xs ">
-                    Download on the
-                  </p>
-                  <h3 className="text-[14px] font-bold md:text-xs">
-                    App Store
-                  </h3>
-                </div>
-              </a>
-
-              <a
-                href="https://play.google.com/store"
-                className="px-4 flex-grow py-2 bg-green-600 md:max-w-[250px] text-white rounded-lg  hover:bg-green-700 flex items-center justify-center space-x-2 w-full md:w-auto"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="/img/icon/ggpl2.png"
-                  alt="Google Play"
-                  className="w-4 h-4 md:w-6 md:h-6"
-                />
-                <div>
-                  <p className="text-[10px] font-thin md:text-xs">Get it on</p>
-                  <h3 className="text-[14px] font-bold md:text-xs">
-                    Google Play
-                  </h3>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div className="flex-grow ">
-            <img
-              src="/img/product/product_image.png"
-              alt="image"
-              className=""
-            />
-          </div>
-        </section>
-      </div> */}
+      {/* dowwnlaod */}
+        <DownloadSection/>
     </>
   );
 };
