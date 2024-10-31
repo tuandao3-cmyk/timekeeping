@@ -87,7 +87,7 @@ const LongTermSection: React.FC = () => {
                         alt=""
                       />
                       <p className="font-medium text-base">
-                        Đầu tư thời gian ngắn hạn
+                        Đầu tư thời gian dài hạn
                       </p>
                     </div>
                     <div className="flex gap-3">
@@ -141,7 +141,7 @@ const LongTermSection: React.FC = () => {
                         alt=""
                       />
                       <p className="font-medium text-base">
-                        Đầu tư thời gian ngắn hạn
+                        Đầu tư thời gian dài hạn
                       </p>
                     </div>
                     <div className="flex gap-3">
@@ -192,7 +192,7 @@ const LongTermSection: React.FC = () => {
                         alt=""
                       />
                       <p className="font-medium text-base">
-                        Đầu tư thời gian ngắn hạn
+                        Đầu tư thời gian dài hạn
                       </p>
                     </div>
                     <div className="flex gap-3">
