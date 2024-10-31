@@ -29,75 +29,137 @@ const AuthSection: React.FC = () => {
           
           
         </div>
-
-          <h1 className="text-3xl 3xl:text-4xl  text-[#009467] py-6">Đăng nhập</h1>
-          <h1 className=" text-3xl 3xl:text-4xl font-bold text-center ">Đăng nhập đầu tư HyraCap</h1>
+        <h1 className="text-3xl 3xl:text-4xl font-bold">Các bước thực hiện</h1>
+          <h1 className="text-3xl 3xl:text-4xl  text-[#009467] py-6">Xác thực eKYC</h1>
           <p className=" text-xl 3xl:text-2xl mt-4">
-            Để đăng nhập vào <strong>HyraCap</strong> bạn làm theo bước sau:
+            Để xác thực eKYC bạn làm theo bước sau:
           </p>
 
           <ul className=" text-xl 3xl:text-2xl leading-7 text-[#000000] text-left">
             <li className="pl-2">
-            Bước 1: Vào app HyraCap chọn “Đăng nhập”
+            Bước 1: Trên ứng dụng HyraCap &gt; vào tính năng <strong>Tài khoản</strong> &gt; chọn <strong>Chưa xác thực</strong>
             </li>
 
             <li className="pl-2">
-            Bước 2: Điền các thông tin trên màn hình Đăng nhập bao gồm:
-              <ul className=" text-xl ">
-                <li className="pl-4">+   Số điện thoại</li>
-                <li className="pl-4">+   hoặc Email</li>
-                <li className="pl-4">+   Mật khẩu</li>
-                <li className="pl-4">+   Bấm Đăng nhập</li>
+            Bước 2: Đọc hướng dẫn chụp ảnh CCCD gắn chíp
+            </li>
+            <li className="pl-2">
+              <em>Lưu ý:</em>
+            <ul className=" text-xl list-disc list-inside">
+                <li className="pl-4 marker:text-black"> <em>Giấy tờ còn hạn sử dụng, là hình gốc</em></li>
+                <li className="pl-4 marker:text-black"> <em>Không scan và photocopy</em></li>
+                <li className="pl-4 marker:text-black"> <em>Đặt giấy tờ trên mặt phẳng</em></li>
+                <li className="pl-4 marker:text-black"> <em>Đảm bảo ảnh rõ nét, không bị mờ lóa</em></li>
               </ul>
             </li>
           </ul>
 
          
-          <div className="flex justify-start my-5 flex-wrap gap-10 mb-3.5 pl-5">
+          <div className="flex justify-center my-5 flex-wrap gap-10 mb-3.5 pl-5">
             <img 
-              src="/img/dnhap.png" 
-              alt="Màn hình đăng nhập HyraCap"
+              src="/img/cccd1.png" 
+              alt="Màn hình chụp ảnh CCCD"
+              className="w-[30%] max-w-[300px] "
+            />
+            <img 
+              src="/img/cccd2.png" 
+              alt="Màn hình chụp ảnh CCCD"
               className="w-[30%] max-w-[300px] "
             />
           </div>
           <ul className=" text-xl 3xl:text-2xl leading-7 text-[#000000] pl-4 ">
-            <li className="">
-              Bước 3: Nhập mã xác thực OTP và bấm Tiếp tục
-              <p >
-              Sau khi nhập mã OTP ứng dụng hiển thị màn hình Tổng quan với popup giới thiệu khách hàng. 
-              </p>
-              <p>Bạn có thể Nhập mã giới thiệu hoặc bỏ qua.</p>
-              <p>Trên màn hình Tổng quan có thể tiếp tục sử dụng các chức năng của HyraCap</p>
-
+            <li className=" py-1">
+            Bước 3: Chụp mặt trước
+            </li>
+            <li className=" py-1">
+              Bước 4: Chụp mặt sau
             </li>
           </ul>
           {/* Phần hình ảnh cuối */}
-          <div className="flex justify-start mt-5 flex-wrap gap-5 pl-[3vw]">
+          <div className="flex justify-center mt-5 flex-wrap gap-5 pl-[3vw]">
+
             <img
-              src="/img/otp1.png"
-              alt="Màn hình nhập OTP"
+              src="/img/mattruoc.png"
+              alt="Màn hình chụp mặt trước"
               width={300}
               height={600}
               className="w-[30%] max-w-[300px] mb-3.5"
             />
             <img
-              src="/img/popup.png"
-              alt="Màn hình popup giới thiệu"
-              width={300}
-              height={600}
-              className="w-[30%] max-w-[300px] mb-3.5"
-            />
-            <img
-              src="/img/dashboard.png"
-              alt="Màn hình tổng quan"
+              src="/img/mattruoc.png"
+              alt="Màn hình chụp mặt sau"
               width={300}
               height={600}
               className="w-[30%] max-w-[300px] mb-3.5"
             />
           </div>
+          <ul className=" text-xl 3xl:text-2xl leading-7 text-[#000000] pl-4 py-8 ">
+            <li className="">
+            Bước 5: Kiểm tra và chỉnh sửa thông tin nếu chưa chính xác bạn có thể  bổ sung các thông tin còn thiếu
+            </li>
+
+          </ul>
+          {/* Phần hình ảnh cuối */}
+          <div className="flex justify-center mt-5 flex-wrap gap-5 pl-[3vw]">
+
+            <img
+              src="/img/ekyctt.png"
+              alt="Màn hình ekyc"
+              width={300}
+              height={600}
+              className="w-[30%] max-w-[300px] mb-3.5"
+            />
+
+          </div>
+          <ul className=" text-xl 3xl:text-2xl leading-7 text-[#000000] pl-4 ">
+            <li className="">
+            Bước 6: Đọc hướng dẫn xác thực khuôn mặt
+            </li>
+          </ul>
+          {/* Phần hình ảnh cuối */}
+          <div className="flex justify-center mt-5 flex-wrap gap-5 pl-[3vw]">
+            <img
+              src="/img/ekyctt1.png"
+              alt="Màn hình ekyc"
+              width={300}
+              height={600}
+              className="w-[30%] max-w-[300px] mb-3.5"
+            />
+          </div>
+          <ul className=" text-xl 3xl:text-2xl leading-7 text-[#000000] pl-4 ">
+            <li className="">
+            Bước 7: Thực hiện xác thực khuôn mặt
+            </li>
+          </ul>
+          {/* Phần hình ảnh cuối */}
+          <div className="flex justify-center mt-5 flex-wrap gap-5 pl-[3vw]">
+            <img
+              src="/img/ekyctt2.png"
+              alt="Màn hình ekyc"
+              width={1200}
+              height={600}
+              className="w-[100%] max-w-[1200px] mb-3.5"
+            />
+          </div>
+          <ul className=" text-xl 3xl:text-2xl leading-7 text-[#000000] pl-4 ">
+            <li className="">
+            Sau khi hoàn tất quá trình xác thực ứng dụng hiển thị thông báo Xác thực tài khoản thành công 
+            </li>
+          </ul>
+          {/* Phần hình ảnh cuối */}
+          <div className="flex justify-center mt-5 flex-wrap gap-5 pl-[3vw]">
+            <img
+              src="/img/ekycend.png"
+              alt="Màn hình ekyc"
+              width={300}
+              height={600}
+              className="w-[30%] max-w-[300px] mb-3.5"
+            />
+          </div>
+          
 
           <p className="mt-5 font-normal text-left text-xl 3xl:text-2xl">
-            Như vậy, HyraCap đã thực hiện xong phần hướng dẫn Đăng Nhập sử dụng ứng dụng HyraCap.
+            Như vậy, HyraCap đã thực hiện xong phần hướng dẫn xác thực tài khoản để sử dụng ứng dụng HyraCap.
             <br />
             Chúc Quý Khách thành công!
           </p>

@@ -23,9 +23,9 @@ const ForgotSection: React.FC = () => {
           
           
         </div>
+        <h1 className="text-3xl 3xl:text-4xl font-bold">Các bước thực hiện</h1>
+          <h1 className="text-3xl 3xl:text-4xl  text-[#009467] py-6">Quên mật khẩu</h1>
 
-          <h1 className="text-3xl 3xl:text-4xl  text-[#009467] py-6">Đăng nhập</h1>
-          <h1 className=" text-3xl 3xl:text-4xl font-bold text-center ">Đăng nhập đầu tư HyraCap</h1>
           <p className=" text-xl 3xl:text-2xl mt-4">
             Để đăng nhập vào <strong>HyraCap</strong> bạn làm theo bước sau:
           </p>

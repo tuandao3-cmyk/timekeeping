@@ -26,7 +26,7 @@ const SigninSection: React.FC = () => {
             
           </div>
           <h1 className=" text-3xl 3xl:text-4xl font-bold ">Các bước thực hiện</h1>
-          <h1 className="text-3xl 3xl:text-4xl  text-[#009467] text-left py-6">Đăng ký</h1>
+          <h1 className="text-3xl 3xl:text-4xl  text-[#009467] py-6">Đăng ký</h1>
           
           <p className=" text-xl 3xl:text-2xl ">
             Để đăng ký đầu tư vào <strong>HyraCap</strong> bạn làm theo bước sau:
@@ -41,12 +41,12 @@ const SigninSection: React.FC = () => {
             <li className="pl-2">Bước 3: Vào app HyraCap chọn "Đăng ký"</li>
             <li className="pl-2">
               Bước 4: Điền các thông tin trên màn hình Đăng ký mở tài khoản HyraCap bao gồm:
-              <ul className=" text-xl ">
-                <li className="pl-4">+  Số điện thoại</li>
-                <li className="pl-4">+  Email</li>
-                <li className="pl-4">+  Mật khẩu</li>
-                <li className="pl-4">+  Nhập lại mật khẩu</li>
-                <li className="pl-4">+  Bấm Đăng ký</li>
+              <ul className=" text-xl list-disc list-inside">
+                <li className="pl-4 marker:text-black"> Số điện thoại</li>
+                <li className="pl-4 marker:text-black"> Email</li>
+                <li className="pl-4 marker:text-black"> Mật khẩu</li>
+                <li className="pl-4 marker:text-black"> Nhập lại mật khẩu</li>
+                <li className="pl-4 marker:text-black"> Bấm Đăng ký</li>
               </ul>
             </li>
           </ul>

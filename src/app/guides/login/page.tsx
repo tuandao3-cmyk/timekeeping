@@ -27,9 +27,8 @@ const Login: React.FC = () => {
           
           
         </div>
-
+          <h1 className="text-3xl 3xl:text-4xl font-bold">Các bước thực hiện</h1>
           <h1 className="text-3xl 3xl:text-4xl  text-[#009467] py-6">Đăng nhập</h1>
-          <h1 className=" text-3xl 3xl:text-4xl font-bold text-center ">Đăng nhập đầu tư HyraCap</h1>
           <p className=" text-xl 3xl:text-2xl mt-4">
             Để đăng nhập vào <strong>HyraCap</strong> bạn làm theo bước sau:
           </p>
@@ -41,17 +40,17 @@ const Login: React.FC = () => {
 
             <li className="pl-2">
             Bước 2: Điền các thông tin trên màn hình Đăng nhập bao gồm:
-              <ul className=" text-xl ">
-                <li className="pl-4">+   Số điện thoại</li>
-                <li className="pl-4">+   hoặc Email</li>
-                <li className="pl-4">+   Mật khẩu</li>
-                <li className="pl-4">+   Bấm Đăng nhập</li>
+              <ul className=" text-xl list-disc list-inside">
+                <li className="pl-4 marker:text-black"> Số điện thoại</li>
+                <li className="pl-4 marker:text-black"> hoặc Email</li>
+                <li className="pl-4 marker:text-black"> Mật khẩu</li>
+                <li className="pl-4 marker:text-black"> Bấm Đăng nhập</li>
               </ul>
             </li>
           </ul>
 
          
-          <div className="flex justify-start my-5 flex-wrap gap-10 mb-3.5 pl-5">
+          <div className="flex justify-center my-5 flex-wrap gap-10 mb-3.5 pl-5">
             <img 
               src="/img/dnhap.png" 
               alt="Màn hình đăng nhập HyraCap"

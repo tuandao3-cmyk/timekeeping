@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 
 import { FiSearch } from 'react-icons/fi';
-import DownloadSection from './downloadSection';
+
 import { usePathname } from 'next/navigation';
 import AuthSection from './auth/page';
 import ContractSection from './contract/page';
@@ -14,6 +14,7 @@ import SigninSection from './signin/page';
 import TransactionSection from './transaction/page';
 import Login from './login/page';
 import LogoutSection from './logout/page';
+import DownloadSection from '../download';
 
 const GuidePage: React.FC = () => {
   const pathname = usePathname();
