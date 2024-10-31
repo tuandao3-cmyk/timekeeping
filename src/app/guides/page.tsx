@@ -123,7 +123,7 @@ const GuidePage: React.FC = () => {
                   activeSection === 'product' ? 'text-[#28a745]' : ''
                 }`}
               >
-                Sản phẩm
+                Thực hiện đầu tư
               </button>
               </li>
               <li className="mb-2.5">
