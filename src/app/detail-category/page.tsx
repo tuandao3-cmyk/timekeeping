@@ -34,8 +34,8 @@ const DetailCategoryPage: React.FC = () => {
   return (
     <>
       <main className=" bg-[#F7F9FC] flex justify-center items-center font-roboto">
-        <div className="py-6   rounded-lg shadow-md md:max-w-[80%]">
-          <div className="flex flex-col gap-3 sm:flex-row px-11 lg:px-32">
+        <div className="py-6 rounded-lg shadow-md md:max-w-[80%]">
+          <div className="flex flex-col gap-3 sm:flex-row px-11 lg:px-28">
             <img
               src="/img/19.jpg"
               alt="/img/19.jpg"
@@ -53,31 +53,31 @@ const DetailCategoryPage: React.FC = () => {
               <div className="lg:flex justify-start hidden ">
                 <a
                   onClick={() => setActiveSection('info')}
-                  className={`text-sm font-semibold px-5 py-3 ${activeSection === 'info' ? 'text-[#009467] bg-white' : 'text-gray-500'}`}
+                  className={`text-lg font-semibold px-5 py-3 ${activeSection === 'info' ? 'text-[#009467] bg-white' : 'text-gray-500'}`}
                 >
                   Thông tin
                 </a>
                 <a
                   onClick={() => setActiveSection('pitchingdeck')}
-                  className={`text-sm font-semibold px-5 py-3 ${activeSection === 'pitchingdeck' ? 'text-[#009467] bg-white' : 'text-gray-500'}`}
+                  className={`text-lg font-semibold px-5 py-3 ${activeSection === 'pitchingdeck' ? 'text-[#009467] bg-white' : 'text-gray-500'}`}
                 >
                   Pitchingdeck
                 </a>
                 <a
                   onClick={() => setActiveSection('contract_sample')}
-                  className={`text-sm font-semibold px-5 py-3 ${activeSection === 'contract_sample' ? 'text-[#009467] bg-white' : 'text-gray-500'}`}
+                  className={`text-lg font-semibold px-5 py-3 ${activeSection === 'contract_sample' ? 'text-[#009467] bg-white' : 'text-gray-500'}`}
                 >
                   Hợp đồng mẫu
                 </a>
                 <a
                   onClick={() => setActiveSection('finance_road')}
-                  className={`text-sm font-semibold px-5 py-3 ${activeSection === 'finance_road' ? 'text-[#009467] bg-white' : 'text-gray-500'}`}
+                  className={`text-lg font-semibold px-5 py-3 ${activeSection === 'finance_road' ? 'text-[#009467] bg-white' : 'text-gray-500'}`}
                 >
                   Lộ trình tài chính
                 </a>
                 <a
                   onClick={() => setActiveSection('business_plan')}
-                  className={`text-sm font-semibold px-5 py-3 ${activeSection === 'business_plan' ? 'text-[#009467] bg-white' : 'text-gray-500'}`}
+                  className={`text-lg font-semibold px-5 py-3 ${activeSection === 'business_plan' ? 'text-[#009467] bg-white' : 'text-gray-500'}`}
                 >
                   Kế hoạch kinh doanh
                 </a>
@@ -87,31 +87,31 @@ const DetailCategoryPage: React.FC = () => {
           <div className="flex justify-start mt-3 lg:hidden ">
             <a
               onClick={() => setActiveSection('info')}
-              className={`text-sm font-semibold px-7 py-3 ${activeSection === 'info' ? 'text-[#009467] bg-white' : 'text-gray-500'}`}
+              className={`text-lg font-semibold px-7 py-3 ${activeSection === 'info' ? 'text-[#009467] bg-white' : 'text-gray-500'}`}
             >
               Thông tin
             </a>
             <a
               onClick={() => setActiveSection('pitchingdeck')}
-              className={`text-sm font-semibold px-7 py-3 ${activeSection === 'pitchingdeck' ? 'text-[#009467] bg-white' : 'text-gray-500'}`}
+              className={`text-lg font-semibold px-7 py-3 ${activeSection === 'pitchingdeck' ? 'text-[#009467] bg-white' : 'text-gray-500'}`}
             >
               Pitchingdeck
             </a>
             <a
               onClick={() => setActiveSection('contract_sample')}
-              className={`text-sm font-semibold px-7 py-3 ${activeSection === 'contract_sample' ? 'text-[#009467] bg-white' : 'text-gray-500'}`}
+              className={`text-lg font-semibold px-7 py-3 ${activeSection === 'contract_sample' ? 'text-[#009467] bg-white' : 'text-gray-500'}`}
             >
               Hợp đồng mẫu
             </a>
             <a
               onClick={() => setActiveSection('finance_road')}
-              className={`text-sm font-semibold px-7 py-3 ${activeSection === 'finance_road' ? 'text-[#009467] bg-white' : 'text-gray-500'}`}
+              className={`text-lg font-semibold px-7 py-3 ${activeSection === 'finance_road' ? 'text-[#009467] bg-white' : 'text-gray-500'}`}
             >
               Lộ trình tài chính
             </a>
             <a
               onClick={() => setActiveSection('business_plan')}
-              className={`text-sm font-semibold px-7 py-3 ${activeSection === 'business_plan' ? 'text-[#009467] bg-white' : 'text-gray-500'}`}
+              className={`text-lg font-semibold px-7 py-3 ${activeSection === 'business_plan' ? 'text-[#009467] bg-white' : 'text-gray-500'}`}
             >
               Kế hoạch kinh doanh
             </a>
