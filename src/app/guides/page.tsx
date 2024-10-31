@@ -55,11 +55,11 @@ const GuidePage: React.FC = () => {
       <div className=" flex flex-col justify-between  bg-white bg-[url('/img/guidebg.png')] bg-no-repeat bg-cover bg-center w-full h-full">
         <div className="text-white flex flex-col my-auto text-left pl-5 lg:pl-[100px]">
           <div className="flex flex-col mt-[60px]">
-          <div className='font-bold text-4xl 3xl:text-6xl 4xl:text-8xl pb-5'>Hướng dẫn đầu tư vào HyraCap</div>
+          <div className='font-bold text-4xl 2xl:text-6xl 4xl:text-8xl pb-5'>Hướng dẫn đầu tư vào HyraCap</div>
           <div className='font-normal text-2xl 3xl:text-3xl 4xl:text-4xl'>Hướng dẫn các bước thực hiện đầu tư</div>
           </div>
         </div>
-        <div className=" flex text-left ml-[50px] lg:ml-[150px] my-[50px] lg:my-[100px] 3xl:mx-auto items-center max-h-[50px] w-[80vw] max-w-[1200px]  bg-white rounded-[30px] overflow-hidden shadow-md ">
+        <div className=" flex text-left ml-[50px] lg:ml-[150px] my-[50px] lg:my-[100px] 2xl:mx-auto items-center max-h-[50px] w-[80vw] max-w-[1200px]  bg-white rounded-[30px] overflow-hidden shadow-md ">
           <button className="bg-transparent border-none px-5 py-4 cursor-pointer">
             <FiSearch />
           </button>

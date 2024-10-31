@@ -67,7 +67,7 @@ const NewsPage: React.FC = () => {
     <>
       <div
         ref={ref}
-        className=" flex max-md:items-center max-md:justify-center m-auto w-full h-[479px] bg-cover  "
+        className=" flex max-md:items-center max-md:justify-center m-auto w-full max-w-[1568px] h-[479px] bg-cover  "
         style={{ backgroundImage: 'url("/img/news/news_banner.png")' }}
       >
         <div className="  top-0 w-[40%] max-w-[576px] h-full bg-[#07212c] bg-opacity-100">
@@ -116,7 +116,7 @@ const NewsPage: React.FC = () => {
         ref={ref2}
         className="w-full flex flex-col justify-center items-center"
       >
-        <div className="flex flex-col max-w-[1200px]">
+        <div className="flex flex-col max-w-[1440px]">
           <h1
             className={`text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 p-8 duration-700 ease-in-out transform ${
               inView2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
@@ -181,14 +181,14 @@ const NewsPage: React.FC = () => {
 
       {/* upcomming */}
       <section className="w-full bg-cover bg-center flex justify-center flex-col items-center gap-3">
-        <div className="max-w-[1200px] ">
-          <h1 className="w-full text-left text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 p-8">
+        <div className="max-w-[1440px] w-full px-8">
+          <h1 className="w-full text-left text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 py-8">
             Sự kiện sắp tới
           </h1>
 
-          <div className="flex flex-col justify-center items-center gap-4 ">
+          <div className="flex flex-col h-auto w-[100%] justify-center items-center gap-4 ">
             <img
-              className="h-auto max-w-[100%]"
+              className="h-auto w-[100%]"
               src="/img/news/upcoming.png"
               alt="image description"
             />
@@ -230,11 +230,11 @@ const NewsPage: React.FC = () => {
 
       {/*  */}
       <section className="w-full bg-cover bg-center flex justify-center flex-col items-center gap-3">
-        <div className="max-w-[1200px]">
+        <div className="max-w-[1440px] px-8">
           <h1 className="w-full max-lg:px-8 text-left text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 pt-8">
             Sự kiện đã diễn ra
           </h1>
-          <div className="w-full max-lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
+          <div className="w-full  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
             <div className="w-full col-span-2 gap-3">
               {newsData.slice(0, 3).map((news: any, index: number) => (
                 <Link href={'/news/newsdetail'} className="p-4" key={index}>

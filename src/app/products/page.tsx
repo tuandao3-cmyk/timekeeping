@@ -10,6 +10,7 @@ import { ProfitIcon, MoneyIcon, PiggyBankIcon } from '@/components/icons';
 import ProductItem from './components/productItem';
 import { start } from 'repl';
 import Image from 'next/image';
+import DownloadSection from '../download';
 
 const ProductPage: React.FC = () => {
   const { ref, inView, entry } = useInView({
@@ -358,63 +359,7 @@ const ProductPage: React.FC = () => {
       </section>
 
       {/* dowwnlaod */}
-      <section className="w-full h-auto bg-white py-6 flex flex-col-reverse md:flex-row gap-4 justify-center items-center px-[120px]">
-        <div className="px-8 flex flex-col gap-2 justify-center items-center">
-          <h1 className="text-black font-bold text-2xl md:text-4xl text-center">
-            Trải nghiệm ngay ứng dụng đầu tư HyraCap
-          </h1>
-          <p className="text-[#009467] text-center text-[11px]  md:text-[25px]">
-            Quét mã QR tại đây!
-          </p>
-          <img
-            src="/img/qrcode.png"
-            alt="qr code"
-            className="max-w-[200px] max-h-[200px]"
-          />
-          <div className="flex justify-center  flex-grow gap-4 w-full">
-            <a
-              href="https://www.apple.com/app-store/"
-              className="px-2 flex-grow py-2 bg-black md:max-w-[250px] text-white rounded-lg  hover:bg-gray-800 flex items-center justify-center space-x-2 w-full md:w-auto"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="/img/icon/apic2.png"
-                alt="App Store"
-                className="w-4 h-4 md:w-6 md:h-6"
-              />
-              <div>
-                <p className="text-[10px] font-thin md:text-xs ">
-                  Download on the
-                </p>
-                <h3 className="text-[14px] font-bold md:text-xs">App Store</h3>
-              </div>
-            </a>
-
-            <a
-              href="https://play.google.com/store"
-              className="px-4 flex-grow py-2 bg-green-600 md:max-w-[250px] text-white rounded-lg  hover:bg-green-700 flex items-center justify-center space-x-2 w-full md:w-auto"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="/img/icon/ggpl2.png"
-                alt="Google Play"
-                className="w-4 h-4 md:w-6 md:h-6"
-              />
-              <div>
-                <p className="text-[10px] font-thin md:text-xs">Get it on</p>
-                <h3 className="text-[14px] font-bold md:text-xs">
-                  Google Play
-                </h3>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div className="flex-grow ">
-          <img src="/img/product/product_image.png" alt="image" className="" />
-        </div>
-      </section>
+        <DownloadSection/>
     </>
   );
 };
