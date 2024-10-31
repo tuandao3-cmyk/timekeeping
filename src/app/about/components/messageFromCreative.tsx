@@ -13,13 +13,16 @@ function MessageFromCreative() {
         <div className="flex flex-col justify-center items-center w-full max-w-[1440px] h-full relative">
           <div className="absolute z-10 left-[20%] bottom-[-150px] flex flex-col justify-end items-start pb-[40px] transform translate-all duration-200 bg-[url('/img/about/msc-bg-1.png')]  h-[486px] w-full max-w-[486px] hover:max-w-[1200px]  bg-[length:100%_100%] hover:w-auto  bg-top rounded-[24px] bg-no-repeat gap-[23px]  px-[56px]">
             <Typography
-              className="text-white text-left text-[30px]  bg-no-repeat"
               sx={{
                 display: '-webkit-box',
                 overflow: 'hidden',
                 textOverflow: 'ellipsis',
                 WebkitLineClamp: 6,
                 WebkitBoxOrient: 'vertical',
+                fontSize: '30px',
+                backgroundRepeat: 'no-repeat',
+                color: '#fff',
+                textAlign: 'left',
               }}
             >
               Tại Hyra Capital, chúng tôi không chỉ đơn thuần là một quỹ đầu tư.
