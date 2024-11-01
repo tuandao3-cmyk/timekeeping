@@ -69,12 +69,14 @@ const LongTermSection: React.FC = () => {
           <div className="grid grid-cols-3 gap-5">
             <div className="bg-white shadow-lg   rounded-lg">
               <div
-                className="border-b-2 flex flex-col justify-between items-center pt-4  h-[205px]
+                className="  flex flex-col justify-between items-center pt-4  h-[205px]
                 "
               >
-                <p className="text-2xl font-medium uppercase">Gói cơ bản</p>
+                <p className="text-2xl font-medium uppercase text-[#0B3546]">
+                  Gói cơ bản
+                </p>
                 <div
-                  className="w-full flex justify-center items-center"
+                  className=" pb-[4px] w-full flex justify-center items-center"
                   style={{
                     background:
                       'linear-gradient(to bottom, #FFAB5000 0%, #FFAB5033 100%,#99673000 56%)',
@@ -132,13 +134,15 @@ const LongTermSection: React.FC = () => {
               </div>
             </div>
             <div className="bg-white shadow-lg  rounded-lg">
-              <div className="border-b-2 flex flex-col justify-between items-center pt-4  h-[205px]">
-                <p className="text-2xl font-medium uppercase">Gói NÂNG CAO</p>
+              <div className="  flex flex-col justify-between items-center pt-4  h-[205px]">
+                <p className="text-2xl font-medium uppercase text-[#F68225]">
+                  Gói NÂNG CAO
+                </p>
                 <p className="px-2 py-1 text-[#0048FF] bg-[#3E91FF]/30 rounded-full">
                   Best value
                 </p>
                 <div
-                  className="w-full flex justify-center items-center"
+                  className=" pb-[4px] w-full flex justify-center items-center"
                   style={{
                     background:
                       'linear-gradient(to bottom,#48B96D00 0%, #48B96D33 100%,#48B96D00 56%)',
@@ -196,10 +200,12 @@ const LongTermSection: React.FC = () => {
               </div>
             </div>
             <div className="bg-white shadow-lg  rounded-lg">
-              <div className="border-b-2 flex flex-col justify-between items-center pt-4 h-[205px]">
-                <p className="text-2xl font-medium uppercase">Gói cao cấp</p>
+              <div className=" flex flex-col justify-between items-center pt-4 h-[205px]">
+                <p className="text-2xl font-medium uppercase text-[#31814B]">
+                  Gói cao cấp
+                </p>
                 <div
-                  className="w-full flex justify-center items-center"
+                  className=" pb-[4px] w-full flex justify-center items-center"
                   style={{
                     background:
                       'linear-gradient(to bottom,#48B96D00 0%, #B9484833 100%,#48B96D00 56%)',

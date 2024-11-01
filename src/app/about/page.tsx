@@ -226,7 +226,7 @@ const AboutPage: React.FC = () => {
   return (
     <>
       {/* <div className="max-h-max"> */}
-      <div className="bg-[#07212C] min-h-[820px]  w-full flex flex-col justify-center items-center relative">
+      <div className="bg-[#07212C] min-h-[820px]  w-full flex flex-col justify-center items-center gap-[48px] pb-[32px]">
         <div className="flex flex-col items-center justify-center w-full max-w-[1440px]">
           <div className="flex justify-between items-center h-auto w-full mt-16 max-md:!flex-col pl-32 pr-12">
             <div className="flex-1 gap-2">
@@ -301,7 +301,7 @@ const AboutPage: React.FC = () => {
           </div>
         </div>
         <div className="w-full flex flex-col items-center justify-center max-w-[1440px]">
-          <div className="flex justify-center items-center w-full  bg-transparent relative -bottom-20 px-32">
+          <div className="flex justify-center items-center w-full  bg-transparent  px-32">
             <video
               ref={ref}
               className={`w-full border border-gray-200 rounded-lg dark:border-gray-700  duration-1000  ease-in-out transform ${
@@ -369,7 +369,14 @@ const AboutPage: React.FC = () => {
                       src="/img/icon/seen.svg"
                     />
                     <div className="gap-1">
-                      <Typography className="text-base text-black font-[600] uppercase">
+                      <Typography
+                        sx={{
+                          fontSize: '16px',
+                          fontWeight: 'bold',
+                          lineHeight: '20px',
+                          transform: 'uppercase',
+                        }}
+                      >
                         Uy tín hàng đầu
                       </Typography>
                       <Typography className="!text-[14px]">
@@ -394,7 +401,14 @@ const AboutPage: React.FC = () => {
                       src="/img/icon/finance.svg"
                     />
                     <div className="gap-1">
-                      <Typography className="text-base text-black font-[600] uppercase">
+                      <Typography
+                        sx={{
+                          fontSize: '16px',
+                          fontWeight: 'bold',
+                          lineHeight: '20px',
+                          transform: 'uppercase',
+                        }}
+                      >
                         Tự do tài chính
                       </Typography>
                       <Typography className="!text-[14px]">
@@ -419,7 +433,14 @@ const AboutPage: React.FC = () => {
                       src="/img/icon/search.svg"
                     />
                     <div className="gap-1">
-                      <Typography className="text-base text-black font-[600] uppercase">
+                      <Typography
+                        sx={{
+                          fontSize: '16px',
+                          fontWeight: 'bold',
+                          lineHeight: '20px',
+                          transform: 'uppercase',
+                        }}
+                      >
                         Minh bạch thông tin
                       </Typography>
                       <Typography className="!text-[14px] ">
@@ -492,7 +513,14 @@ const AboutPage: React.FC = () => {
                       src="/img/icon/justice.svg"
                     />
                     <div className="gap-1">
-                      <Typography className="text-base text-black font-[600] uppercase">
+                      <Typography
+                        sx={{
+                          fontSize: '16px',
+                          fontWeight: 'bold',
+                          lineHeight: '20px',
+                          transform: 'uppercase',
+                        }}
+                      >
                         Công bằng và minh bạch
                       </Typography>
                       <Typography className="!text-[14px]">
@@ -517,7 +545,14 @@ const AboutPage: React.FC = () => {
                       src="/img/icon/develop.svg"
                     />
                     <div className="gap-1">
-                      <Typography className="text-base text-black font-[600] uppercase">
+                      <Typography
+                        sx={{
+                          fontSize: '16px',
+                          fontWeight: 'bold',
+                          lineHeight: '20px',
+                          transform: 'uppercase',
+                        }}
+                      >
                         Phát triển bền vững
                       </Typography>
                       <Typography className="!text-[14px] ">
@@ -542,7 +577,14 @@ const AboutPage: React.FC = () => {
                       src="/img/icon/renew.svg"
                     />
                     <div className="gap-1">
-                      <Typography className="text-base text-black font-[600] uppercase">
+                      <Typography
+                        sx={{
+                          fontSize: '16px',
+                          fontWeight: 'bold',
+                          lineHeight: '20px',
+                          transform: 'uppercase',
+                        }}
+                      >
                         Đổi mới tài chính
                       </Typography>
                       <Typography className="!text-[14px]">

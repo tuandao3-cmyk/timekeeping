@@ -125,7 +125,7 @@ const ProjectSlider: React.FC = () => {
   } else if (isUltraWide) {
     slidesPerView = 2;
   } else {
-    slidesPerView = 1; 
+    slidesPerView = 1;
   }
 
   const handlePrev = () => {
@@ -139,6 +139,10 @@ const ProjectSlider: React.FC = () => {
       swiper.slideNext();
     }
   };
+
+  useEffect(() => {
+    console.log('activeIndex', activeIndex);
+  }, [activeIndex]);
 
   useEffect(() => {
     if (swiper) {
@@ -184,7 +188,7 @@ const ProjectSlider: React.FC = () => {
               slideShadows: false,
             }}
           >
-            {projects.map((project) => (
+            {projects.map((project, index) => (
               <SwiperSlide key={project.id} className="max-w-[778px]">
                 {({ isActive }) => (
                   <a
@@ -224,11 +228,21 @@ const ProjectSlider: React.FC = () => {
                         </p>
                       </div>
                       <div>
-                        <div className="bg-white rounded-lg p-5 max-sm:m-1 m-3 mb-7">
-                          <p className="text-sm font-inter text-[#000000]/64 mb-1">
+                        <div
+                          className={` rounded-lg p-5 max-sm:m-1 m-3 mb-7
+                            ${index === activeIndex ? 'bg-[#F3F7F4]' : 'bg-transparent'}
+                            transition-all duration-300
+                          
+                            `}
+                        >
+                          <p
+                            className={`text-sm font-inter ${index === activeIndex ? 'text-[#000000]/64' : 'text-white'} mb-1`}
+                          >
                             MỤC TIÊU HUY ĐỘNG
                           </p>
-                          <p className="text-xl leading-6 font-semibold">
+                          <p
+                            className={`text-xl leading-6 font-semibold  ${index === activeIndex ? 'text-[#04141A]' : 'text-[#FFFFFF]'}`}
+                          >
                             ${project.target.toLocaleString()}
                           </p>
                           <div className="flex justify-between text-xs mt-2">
@@ -236,18 +250,21 @@ const ProjectSlider: React.FC = () => {
                               <span className="font-bold font-inter text-green-500 text-sm">
                                 ${project.raised.toLocaleString()}
                               </span>
-                                                            
-                                <span className="text-[#000000]/60 pl-0">
+
+                              <span
+                                className={`${index === activeIndex ? 'text-[#000000]/60' : 'text-[#FFFFFF]'} pl-0`}
+                              >
                                 {' '}
                                 Đã huy động
-                                </span>
-                              
+                              </span>
                             </div>
                             <div className=" flex flex-row items-center gap-1 3xl:gap-0 3xl:flex-col">
                               <span className="font-bold font-inter text-green-500 text-sm">
                                 {project.percentage}%
                               </span>
-                              <span className="text-[#000000]/60 pl-0">
+                              <span
+                                className={`${index === activeIndex ? 'text-[#000000]/60' : 'text-[#FFFFFF]'} pl-0`}
+                              >
                                 {' '}
                                 Hoàn thành
                               </span>

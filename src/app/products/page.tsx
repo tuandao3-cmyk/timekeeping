@@ -26,7 +26,7 @@ const ProductPage: React.FC = () => {
       type: 'flexible',
       package: [
         {
-          title: 'Hyperas Chain',
+          title: 'Egabid',
           start_date: '20/10/2024',
           descriptions: 'Hyperas tận dụng sức mạnh từ hàng tỷ thiết bị... ',
           invested: 2500000,
@@ -34,7 +34,7 @@ const ProductPage: React.FC = () => {
           sponsorship: 21762,
           image: (
             <img
-              src="/img/hyperas_chain.png"
+              src="/img/egabid_pc.png"
               alt="Hyperas Chain"
               className="md:h-[250px] md:w-[384px]"
             />
@@ -50,7 +50,7 @@ const ProductPage: React.FC = () => {
           sponsorship: 21762,
           image: (
             <img
-              src="/img/salala_ai.png"
+              src="/img/salala2.png"
               alt="Salala AI"
               className="md:h-[250px] md:w-[384px]"
             />
@@ -66,7 +66,7 @@ const ProductPage: React.FC = () => {
           sponsorship: 21762,
           image: (
             <img
-              src="/img/rapital_bank.png"
+              src="/img/hyperas_chain1.png"
               alt="Rapital Bank"
               className="md:h-[250px] md:w-[384px]"
             />
@@ -127,16 +127,14 @@ const ProductPage: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>('short-term');
 
   const renderContent = () => {
-    switch(activeSection) {
+    switch (activeSection) {
       case 'short-term':
         return <ShortTermSection />;
       case 'long-term':
         return <LongTermSection />;
-      
+
       default:
-        return (
-          <ShortTermSection />
-        );
+        return <ShortTermSection />;
     }
   };
 
@@ -231,7 +229,7 @@ const ProductPage: React.FC = () => {
       </section>
 
       {/* dowwnlaod */}
-        <DownloadSection/>
+      <DownloadSection />
     </>
   );
 };
