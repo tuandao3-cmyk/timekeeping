@@ -78,20 +78,20 @@ const News = () => {
               </a>
 
               <div className="flex flex-col items-start justify-start">
-                <p
-                  ref={ref}
-                  className={`${styles.newsTitle}  duration-300 delay-200 text-[24px] text-[#31814B]  ease-in-out transform ${
+                <a
+                  href={newsData[0].videoLink}
+                  className={`${styles.newsTitle}  duration-300 delay-200 text-[24px] text-[#000000]/80  ease-in-out transform ${
                     inView
                       ? 'opacity-100 translate-y-0'
                       : 'opacity-0 translate-y-10'
                   }`}
                 >
                   {newsData[0].title}
-                </p>
+                </a>
               </div>
               <div className="flex flex-col items-start  justify-start">
-                <span
-                  ref={ref}
+                <a
+                  href={newsData[0].videoLink}
                   className={`font-inter text-sm leading-6 text-gray-600 duration-300 delay-500  ease-in-out transform ${
                     inView
                       ? 'opacity-100 translate-y-0'
@@ -99,7 +99,7 @@ const News = () => {
                   }`}
                 >
                   {newsData[0].description}
-                </span>
+                </a>
               </div>
               <div className="w-full flex justify-end items-end ">
                 <div className="w-[100%] flex justify-end items-end ">
