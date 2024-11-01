@@ -42,7 +42,7 @@ function MessageFromCreative() {
             </div>
           </div>
           <img
-            className="absolute z-0 left-[50%] translate-x-[-20%] hover:z-20 hover:scale-125 transition ease-in-out duration-100"
+            className="absolute z-0 left-[50%] translate-x-[-20%] hover:z-20 hover:scale-105 transition ease-in-out duration-100"
             src={'/img/about/tran-thi-thu-huong.png'}
             alt="Trần Thị Thu Hương"
           />

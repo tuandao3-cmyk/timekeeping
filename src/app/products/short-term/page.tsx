@@ -67,7 +67,7 @@ const ShortTermSection: React.FC = () => {
           // controls
         >
           <div className="grid grid-cols-3 gap-5">
-            <div className="bg-white shadow-lg   rounded-lg">
+            <div className="bg-white shadow-lg   rounded-[20px]">
               <div className=" flex flex-col justify-between items-center pt-4  h-[205px]">
                 <p className="text-2xl font-medium uppercase text-[#0B3546] ">
                   Gói cơ bản
@@ -130,7 +130,7 @@ const ShortTermSection: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-white shadow-lg  rounded-lg">
+            <div className="bg-white shadow-lg  rounded-[20px]">
               <div className=" flex flex-col justify-between items-center pt-4  h-[205px]">
                 <p className="text-2xl font-medium uppercase text-[#F68225]">
                   Gói NÂNG CAO
@@ -196,7 +196,7 @@ const ShortTermSection: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-white shadow-lg  rounded-lg">
+            <div className="bg-white shadow-lg  rounded-[20px]">
               <div className=" flex flex-col justify-between items-center pt-4 h-[205px]">
                 <p className="text-2xl font-medium uppercase text-[#31814B]">
                   Gói cao cấp

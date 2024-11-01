@@ -11,6 +11,7 @@ import {
   Select,
   Typography,
 } from '@mui/material';
+import { useInView } from 'react-intersection-observer';
 
 const projects = [
   {
@@ -118,9 +119,43 @@ const CategoryPage: React.FC = () => {
   const handleChange = (event: any) => {
     setAge(event.target.value);
   };
+
+  const { ref, inView, entry } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
+  const {
+    ref: ref1,
+    inView: inView1,
+    entry: entry1,
+  } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+  const {
+    ref: ref2,
+    inView: inView2,
+    entry: entry2,
+  } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+  const {
+    ref: ref3,
+    inView: inView3,
+    entry: entry3,
+  } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
   return (
     <>
-      <div className="relative w-full h-[520px] bg-[#07212C] bg-[url('/img/category/category_banner.png')] bg-no-repeat bg-cover bg-center">
+      <div
+        ref={ref}
+        className="relative w-full h-[520px] bg-[#07212C] bg-[url('/img/category/category_banner.png')] bg-no-repeat bg-cover bg-center"
+      >
         <div
           className="absolute inset-0 bg-gradient-to-b flex items-end pb-[107px] justify-center"
           style={{
@@ -136,6 +171,8 @@ const CategoryPage: React.FC = () => {
                 lineHeight: '56px',
                 textAlign: 'center',
               }}
+              className={`${inView ? 'animate-fadeIn' : 'translate-y-20 opacity-0'} transition
+               duration-300 ease-in-out`}
             >
               Danh mục đầu tư
             </Typography>
@@ -146,6 +183,8 @@ const CategoryPage: React.FC = () => {
                 lineHeight: '24px',
                 textAlign: 'center',
               }}
+              className={`${inView ? 'animate-fadeIn' : 'translate-y-20 opacity-0'} transition
+               duration-300 delay-300 ease-in-out`}
             >
               Nghiên cứu và phát triển các dự án công nghệ Blockchain, AI,
               Fintech, Digital Banking,...
@@ -187,7 +226,7 @@ const CategoryPage: React.FC = () => {
             dỰ ÁN đã hoàn thành
           </h2>
           <div className="flex flex-col lg:flex-row ">
-            <div className="w-full bg-white">
+            <div className="w-full bg-white" ref={ref1}>
               <Box
                 sx={{
                   display: 'grid',
@@ -201,7 +240,10 @@ const CategoryPage: React.FC = () => {
               >
                 {projects.map((project, index) => (
                   <Link href="/detail-category" key={index}>
-                    <Box className="py-4">
+                    <Box
+                      className={`${inView1 ? 'animate-fadeIn scale-100' : 'translate-y-20 opacity-0 scale-0'} py-4 transition
+               duration-300 ease-in-out delay-${index === 4 ? 300 : index * 100}`}
+                    >
                       <div className="bg-white shadow-lg rounded-lg overflow-hidden">
                         <img
                           src={project.img}
@@ -275,7 +317,7 @@ const CategoryPage: React.FC = () => {
             dự án đang gọi vốn
           </h2>
           <div className="flex flex-col lg:flex-row ">
-            <div className="w-full bg-white">
+            <div className="w-full bg-white" ref={ref2}>
               <Box
                 sx={{
                   display: 'grid',
@@ -289,7 +331,10 @@ const CategoryPage: React.FC = () => {
               >
                 {projects.map((project, index) => (
                   <Link href="/detail-category" key={index}>
-                    <Box className="py-4">
+                    <Box
+                      className={`${inView2 ? 'animate-fadeIn scale-100' : 'translate-y-20 opacity-0 scale-0'} py-4 transition
+               duration-300 ease-in-out delay-${index === 4 ? 300 : index * 100}`}
+                    >
                       <div className="bg-white shadow-lg rounded-lg overflow-hidden">
                         <img
                           src={project.img}
@@ -506,7 +551,7 @@ const CategoryPage: React.FC = () => {
             </div>
           </div>
         </div> */}
-            <div className="w-full bg-white">
+            <div className="w-full bg-white" ref={ref3}>
               <Box
                 sx={{
                   display: 'grid',
@@ -520,7 +565,10 @@ const CategoryPage: React.FC = () => {
               >
                 {projects2.map((project, index) => (
                   <Link href="/detail-category" key={index}>
-                    <Box className="py-4">
+                    <Box
+                      className={`${inView3 ? 'animate-fadeIn scale-100' : 'translate-y-20 opacity-0 scale-0'} py-4 transition
+               duration-300 ease-in-out delay-${index === 4 ? 300 : index * 100}`}
+                    >
                       <div className="bg-white shadow-lg rounded-lg overflow-hidden">
                         <img
                           src={project.img}

@@ -160,8 +160,8 @@ const ProjectSlider: React.FC = () => {
   }, [activeIndex, projects.length]);
 
   return (
-    <div className="flex w-full flex-col justify-center items-center">
-      <div className="max-w-7xl">
+    <div className="flex w-full flex-col justify-center items-center overflow-x-hidden ">
+      <div className="w-full overflow-hidden">
         <div className="w-full relative">
           <h2 className="text-[38px] font-bold mb-8 text-center">
             DỰ ÁN ĐANG GỌI VỐN
@@ -176,6 +176,7 @@ const ProjectSlider: React.FC = () => {
               prevEl: '.swiper-button-prev',
               nextEl: '.swiper-button-next',
             }}
+            loop={true}
             onSwiper={setSwiper}
             onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
             className="mySwiper"

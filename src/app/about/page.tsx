@@ -304,7 +304,7 @@ const AboutPage: React.FC = () => {
           <div className="flex justify-center items-center w-full  bg-transparent  px-32">
             <video
               ref={ref}
-              className={`w-full border border-gray-200 rounded-lg dark:border-gray-700  duration-1000  ease-in-out transform ${
+              className={`w-full border  border-gray-200 rounded-[16px] dark:border-gray-700  duration-1000  ease-in-out transform ${
                 inView
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-15'
@@ -609,7 +609,7 @@ const AboutPage: React.FC = () => {
           </div>
         </section>
         <section className="flex flex-col justify-center items-center w-full py-[62px]">
-          <div className="flex flex-col items-center justify-center w-full max-w-[1440px] gap-[40px]">
+          <div className="flex flex-col items-center justify-center w-full max-w-[1440px] px-[120px] gap-[40px]">
             <div className="flex flex-col text-center gap-10 w-[780px] max-[768px]:!w-full">
               <Typography
                 ref={ref4}

@@ -9,7 +9,7 @@ const DownloadSection = () => {
   return (
     <div className="bg-[#F3F7F4] overflow-hidden flex flex-col justify-center items-center">
       <div className="max-w-[1440px]">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center">
+        <div className="container mx-auto  flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-8 md:mb-0 ">
             <h2
               ref={ref}
@@ -106,14 +106,14 @@ const DownloadSection = () => {
               </div>
             </div>
           </div>
-          <div className="relative w-[50%]  ">
+          <div className="relative  max-h-[600px] flex items-center justify-center overflow-hidden ">
             <Image
               ref={ref}
               src="/img/downloadimg.png"
               alt="App Screenshot"
               width={708}
               height={812}
-              className={`w-full h-auto duration-300 delay-200 ease-in-out transform ${
+              className={`h-[812px] w-[708px] duration-300 delay-200 ease-in-out transform ${
                 inView ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
               } `}
             />

@@ -115,6 +115,7 @@ const FeedbackSection: React.FC = () => {
           {feedbacks.map((feedback, index) => {
             return (
               <div
+                key={feedback.id}
                 className={`flex w-full ${
                   index === 1
                     ? 'justify-end items-end'

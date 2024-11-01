@@ -26,45 +26,40 @@ const TransactionSection: React.FC = () => {
           
         </div>
         <h1 className="text-3xl 3xl:text-4xl font-bold">Các bước thực hiện</h1>
-          <h1 className="text-3xl 3xl:text-4xl  text-[#009467] py-6">Đăng nhập</h1>
+          <h1 className="text-3xl 3xl:text-4xl  text-[#009467] py-6">Thực hiện đầu tư</h1>
           <p className=" text-xl 3xl:text-2xl mt-4">
-            Để đăng nhập vào <strong>HyraCap</strong> bạn làm theo bước sau:
+          Để đầu tư bạn làm theo các bước sau:
           </p>
 
           <ul className=" text-xl 3xl:text-2xl leading-7 text-[#000000] text-left">
             <li className="pl-2">
-            Bước 1: Vào app HyraCap chọn “Đăng nhập”
+            Bước 1: Trên ứng dụng HyraCap &gt; vào tính năng <strong>Sản phẩm</strong>
             </li>
 
             <li className="pl-2">
-            Bước 2: Điền các thông tin trên màn hình Đăng nhập bao gồm:
-              <ul className=" text-xl ">
-                <li className="pl-4">+   Số điện thoại</li>
-                <li className="pl-4">+   hoặc Email</li>
-                <li className="pl-4">+   Mật khẩu</li>
-                <li className="pl-4">+   Bấm Đăng nhập</li>
-              </ul>
+            Bước 2: Chọn gói sản phẩm đầu tư phù hợp
+
             </li>
           </ul>
 
          
-          <div className="flex justify-start my-5 flex-wrap gap-10 mb-3.5 pl-5">
+          <div className="flex justify-center my-5 flex-wrap gap-10 mb-3.5 pl-5">
             <img 
-              src="/img/dnhap.png" 
+              src="/img/product1.png" 
               alt="Màn hình đăng nhập HyraCap"
               className="w-[30%] max-w-[300px] "
             />
           </div>
           <ul className=" text-xl 3xl:text-2xl leading-7 text-[#000000] pl-4 ">
-            <li className="">
-              Bước 3: Nhập mã xác thực OTP và bấm Tiếp tục
-              <p >
-              Sau khi nhập mã OTP ứng dụng hiển thị màn hình Tổng quan với popup giới thiệu khách hàng. 
-              </p>
-              <p>Bạn có thể Nhập mã giới thiệu hoặc bỏ qua.</p>
-              <p>Trên màn hình Tổng quan có thể tiếp tục sử dụng các chức năng của HyraCap</p>
-
+            <li className="pl-2">
+            Bước 3: Điền thông tin vào gói đầu tư đã chọn bao gồm:
+              <ul className=" text-xl list-disc list-inside">
+                <li className="pl-4 marker:text-black"> Số tiền đầu tư</li>
+                <li className="pl-4 marker:text-black"> Chọn kỳ hạn</li>
+                <li className="pl-4 marker:text-black"> Chọn Nhân viên tư vấn</li>
+              </ul>
             </li>
+            Hệ thống sẽ tự động tính lãi suất  từng quý dựa trên số tiền đầu tư và kỳ hạn bạn chọn
           </ul>
           {/* Phần hình ảnh cuối */}
           <div className="flex justify-start mt-5 flex-wrap gap-5 pl-[3vw]">

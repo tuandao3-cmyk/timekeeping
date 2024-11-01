@@ -82,9 +82,9 @@ const GuidePage: React.FC = () => {
           <input
             type="text"
             placeholder="Nhập thông tin bạn cần tìm"
-            className="w-full h-[56px] bg-[#FFFFFF] border-none rounded-[10px] px-[20px] text-[#686868] font-400 text-[16px] leading-[24px]"
+            className="w-full h-[56px] bg-[#FFFFFF] border-none rounded-[10px] px-[20px] text-[#686868] font-400 text-[16px] leading-[24px] focus:outline-[#28a745]"
           />
-          <button className="bg-[#48B96D] px-[32px] py-[18px] rounded-[16px] text-[#fff] text-[15px] font-500 leading-[20px] min-w-[140px]">
+          <button className="bg-[#48B96D] transition ease-in-out duration-300 hover:bg-[#297241] px-[32px] py-[18px] rounded-[16px] text-[#fff] text-[15px] font-500 leading-[20px] min-w-[140px]">
             Tìm kiếm
           </button>
         </div>
@@ -140,7 +140,7 @@ const GuidePage: React.FC = () => {
                     activeSection === 'product' ? 'text-[#28a745]' : ''
                   }`}
                 >
-                  Sản phẩm
+                  Thực hiện đầu tư
                 </button>
               </li>
               <li className="mb-2.5">
