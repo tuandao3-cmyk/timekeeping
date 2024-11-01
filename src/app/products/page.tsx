@@ -31,7 +31,7 @@ const ProductPage: React.FC = () => {
           descriptions: 'Hyperas tận dụng sức mạnh từ hàng tỷ thiết bị... ',
           invested: 2500000,
           profit: 2000000,
-          sponsorship: 21762,
+          sponsorship: 75,
           image: (
             <img
               src="/img/egabid_pc.png"
@@ -47,7 +47,7 @@ const ProductPage: React.FC = () => {
           descriptions: 'Hyperas tận dụng sức mạnh từ hàng tỷ thiết bị... ',
           invested: 3000000,
           profit: 3000000,
-          sponsorship: 21762,
+          sponsorship: 98,
           image: (
             <img
               src="/img/salala2.png"
@@ -63,7 +63,7 @@ const ProductPage: React.FC = () => {
           descriptions: 'Hyperas tận dụng sức mạnh từ hàng tỷ thiết bị... ',
           invested: 2500000,
           profit: 1000000,
-          sponsorship: 21762,
+          sponsorship: 80,
           image: (
             <img
               src="/img/hyperas_chain1.png"
@@ -142,7 +142,7 @@ const ProductPage: React.FC = () => {
     <>
       <div
         style={{ backgroundImage: 'url("/img/productbg.png")' }}
-        className=" min-h-[620px]  w-[100%] flex flex-col justify-start items-end relative"
+        className=" min-h-[620px]  w-[100%] flex flex-col justify-start items-end relative font-sans"
       >
         <div className="flex flex-col gap-8 justify-center items-center w-full mt-16 max-md:!flex-col pl-32 pr-12">
           <p

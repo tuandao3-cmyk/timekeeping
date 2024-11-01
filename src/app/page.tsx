@@ -55,31 +55,31 @@ const Home: React.FC = () => {
         <div className=" text-white py-8 flex max-h-[748px]  max-w-[1440px] w-full">
           {/* Phần bên trái */}
           <div className="w-full md:ml-[10%]  md:w-1/2 md:max-w-[45%]  md:pr-8">
-            <h1
+            <p
               ref={ref}
               className={`duration-300 ease-in-out transform ${
                 inView
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-10'
-              } font-inter font-bold pt-[20%] pb-[5%] sm:text-[32px] md:leading-[56px] md:text-[40px] mb-2 sm:mb-4 uppercase`}
+              } font-sans   font-bold pt-[20%] pb-[5%] sm:text-[32px] md:leading-[56px] md:text-[40px] mb-2 sm:mb-4 uppercase`}
             >
               Ủy thác niềm tin
               <br /> gặt hái thịnh vượng
-            </h1>
+            </p>
             <p
               ref={ref}
               className={`duration-300 ease-in-out delay-200 transform ${
                 inView
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-10'
-              } text-base font-inter pb-[5%] sm:text-base md:max-w-[85%] mb-4 sm:mb-6 text-[#FFFFFF]/60`}
+              } text-base font-sans pb-[5%] sm:text-base md:max-w-[85%] mb-4 sm:mb-6 text-[#FFFFFF]/60`}
             >
               Cung cấp cho các nhà đầu tư và doanh nghiệp những dự án <br />{' '}
               tiềm năng phát triển để chia sẻ sự tăng trưởng tài chính.
             </p>
             <button
               ref={ref}
-              className={`bg-[#48B96D] text-[#ffffff] md:px-4 py-3 max-sm:px-4 rounded-full text-sm sm:text-base duration-300 ease-in-out delay-500 transform ${
+              className={`bg-[#48B96D] text-[#ffffff] md:px-4 py-3 max-sm:px-4 rounded-full font-sans text-sm sm:text-base duration-300 ease-in-out delay-500 transform ${
                 inView
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-10'
@@ -95,10 +95,10 @@ const Home: React.FC = () => {
                   inView ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
                 }`}
               >
-                <p className="text-[#48B96D] mb-4 text-xl leading-8 sm:text-2xl font-semibold">
+                <p className="text-[#48B96D] mb-4 text-xl leading-8 sm:text-2xl font-semibold font-sans">
                   $20M+
                 </p>
-                <p className="text-[#FFFFFF]/80  max-w-[100%] text-xs sm:text-sm">
+                <p className="text-[#FFFFFF]/80  max-w-[100%] text-xs sm:text-sm font-sans">
                   Tổng vốn đang
                   <br /> huy động
                 </p>
@@ -109,10 +109,10 @@ const Home: React.FC = () => {
                   inView ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
                 }`}
               >
-                <p className="text-[#48B96D] mb-4 text-xl leading-8 sm:text-2xl font-semibold">
+                <p className="text-[#48B96D] mb-4 text-xl leading-8 sm:text-2xl font-semibold font-sans">
                   10M+
                 </p>
-                <p className="text-[#FFFFFF]/80   w-full text-xs sm:text-sm">
+                <p className="text-[#FFFFFF]/80   w-full text-xs sm:text-sm font-sans">
                   Tổng vốn đang <br /> đầu tư
                 </p>
               </div>
@@ -122,10 +122,10 @@ const Home: React.FC = () => {
                   inView ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
                 }`}
               >
-                <p className="text-[#48B96D] mb-4 text-xl leading-8 sm:text-2xl font-semibold">
+                <p className="text-[#48B96D] mb-4 text-xl leading-8 sm:text-2xl font-semibold font-sans">
                   771+
                 </p>
-                <p className="text-[#FFFFFF]/80 sm:max-w-[60%] max-w-[100%] text-xs sm:text-sm">
+                <p className="text-[#FFFFFF]/80 sm:max-w-[60%] max-w-[100%] text-xs sm:text-sm font-sans">
                   Nhà đầu tư
                 </p>
               </div>
@@ -167,13 +167,13 @@ const Home: React.FC = () => {
                     />
                   </div>
                   <div className=" w-full p-2 flex flex-col justify-center">
-                    <p className="font-bold pl-1 text-xs leading-4 xl:leading-6 xl:text-base">
+                    <p className="font-bold pl-1 text-xs leading-4 xl:leading-6 xl:text-base font-sans">
                       HYPERAS CHAIN
                     </p>
-                    <p className="text-[#31814B] font-inter pl-1 text-sm leading-6 sm:text-lg md:text-sm font-medium">
+                    <p className="text-[#31814B] font-inter pl-1 text-sm leading-6 sm:text-lg md:text-sm font-medium font-sans">
                       $1,500,000
                     </p>
-                    <p className="text-[12px] leading-5 pl-1 sm:text-xs md:text-[12px] text-[#000000]/60 mt-1">
+                    <p className="text-[12px] leading-5 pl-1 sm:text-xs md:text-[12px] text-[#000000]/60 mt-1 font-sans">
                       TECHNOLOGY
                     </p>
                   </div>
@@ -197,10 +197,10 @@ const Home: React.FC = () => {
                       />
                     </div>
                     <div>
-                      <p className="font-bold font-inter text-[#04141A] text-sm ">
+                      <p className="font-bold font-inter text-[#04141A] text-sm font-sans">
                         SALALA AI
                       </p>
-                      <p className="text-[#31814B] font-inter pl-1 text-sm leading-4 xl:leading-6 md:text-sm font-medium">
+                      <p className="text-[#31814B] font-inter pl-1 text-sm leading-4 xl:leading-6 md:text-sm font-medium font-sans">
                         $1,500,000
                       </p>
                     </div>
@@ -215,10 +215,10 @@ const Home: React.FC = () => {
                       />
                     </div>
                     <div>
-                      <p className="font-bold font-inter text-[#04141A] text-sm sm:text-sm">
+                      <p className="font-bold font-inter text-[#04141A] text-sm sm:text-sm font-sans">
                         RAPITAL BANK
                       </p>
-                      <p className="text-[#31814B] font-inter pl-1 text-sm leading-4 xl:leading-6 md:text-sm font-medium">
+                      <p className="text-[#31814B] font-inter pl-1 text-sm leading-4 xl:leading-6 md:text-sm font-medium font-sans">
                         $1,500,000
                       </p>
                     </div>
@@ -233,10 +233,10 @@ const Home: React.FC = () => {
                       />
                     </div>
                     <div>
-                      <p className="font-bold font-inter text-[#04141A] text-sm sm:text-sm">
+                      <p className="font-bold font-inter text-[#04141A] text-sm sm:text-sm font-sans">
                         EGABID
                       </p>
-                      <p className="text-[#31814B] font-inter pl-1 text-sm leading-4 xl:leading-6 md:text-sm font-medium">
+                      <p className="text-[#31814B] font-inter pl-1 text-sm leading-4 xl:leading-6 md:text-sm font-medium font-sans">
                         $1,500,000
                       </p>
                     </div>

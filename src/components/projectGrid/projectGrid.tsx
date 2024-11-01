@@ -163,7 +163,7 @@ const ProjectSlider: React.FC = () => {
     <div className="flex w-full flex-col justify-center items-center overflow-x-hidden ">
       <div className="w-full overflow-hidden">
         <div className="w-full relative">
-          <h2 className="text-[38px] font-bold mb-8 text-center">
+          <h2 className="text-[38px] font-bold mb-8 text-center font-sans">
             DỰ ÁN ĐANG GỌI VỐN
           </h2>
           <Swiper
@@ -209,7 +209,7 @@ const ProjectSlider: React.FC = () => {
                         />
                         <a
                           href="/detail-category"
-                          className="absolute top-[90%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-500 text-white px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer text-center"
+                          className="absolute font-sans top-[90%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-500 text-white px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer text-center"
                         >
                           Xem chi tiết
                         </a>
@@ -218,13 +218,13 @@ const ProjectSlider: React.FC = () => {
                     <div className="md:w-1/2 w-full p-8 flex flex-col justify-between">
                       <div>
                         <span className="top-4 left-4 bg-[#FFFFFF]/20 text-[#0298F4] px-2 py-1 text-xs rounded flex items-center inline-flex">
-                          <FaFlag className="w-4 h-4 mr-1" />
+                          <FaFlag className="w-4 h-4 mr-1 font-sans" />
                           {project.series}
                         </span>
-                        <h3 className="text-2xl font-semibold leading-8 text-white mb-2">
+                        <h3 className="text-2xl font-semibold leading-8 text-white mb-2 font-sans">
                           {project.name}
                         </h3>
-                        <p className="text-gray-300 leading-6 text-sm mb-4">
+                        <p className="text-gray-300 leading-6 text-sm mb-4 font-sans">
                           {project.description}
                         </p>
                       </div>
@@ -237,34 +237,34 @@ const ProjectSlider: React.FC = () => {
                             `}
                         >
                           <p
-                            className={`text-sm font-inter ${index === activeIndex ? 'text-[#000000]/64' : 'text-white'} mb-1`}
+                            className={`text-sm font-sans ${index === activeIndex ? 'text-[#000000]/64' : 'text-white'} mb-1`}
                           >
                             MỤC TIÊU HUY ĐỘNG
                           </p>
                           <p
-                            className={`text-xl leading-6 font-semibold  ${index === activeIndex ? 'text-[#04141A]' : 'text-[#FFFFFF]'}`}
+                            className={`text-xl leading-6 font-semibold font-sans  ${index === activeIndex ? 'text-[#04141A]' : 'text-[#FFFFFF]'}`}
                           >
                             ${project.target.toLocaleString()}
                           </p>
                           <div className="flex justify-between text-xs mt-2">
                             <div className="flex flex-row items-center gap-1 3xl:gap-0 3xl:flex-col ">
-                              <span className="font-bold font-inter text-green-500 text-sm">
+                              <span className="font-bold font-inter text-green-500 text-sm font-sans">
                                 ${project.raised.toLocaleString()}
                               </span>
 
                               <span
-                                className={`${index === activeIndex ? 'text-[#000000]/60' : 'text-[#FFFFFF]'} pl-0`}
+                                className={`${index === activeIndex ? 'text-[#000000]/60' : 'text-[#FFFFFF]'} pl-0 font-sans`}
                               >
                                 {' '}
                                 Đã huy động
                               </span>
                             </div>
                             <div className=" flex flex-row items-center gap-1 3xl:gap-0 3xl:flex-col">
-                              <span className="font-bold font-inter text-green-500 text-sm">
+                              <span className="font-bold font-inter text-green-500 text-sm font-sans">
                                 {project.percentage}%
                               </span>
                               <span
-                                className={`${index === activeIndex ? 'text-[#000000]/60' : 'text-[#FFFFFF]'} pl-0`}
+                                className={`${index === activeIndex ? 'text-[#000000]/60' : 'text-[#FFFFFF]'} pl-0 font-sans`}
                               >
                                 {' '}
                                 Hoàn thành
@@ -273,7 +273,7 @@ const ProjectSlider: React.FC = () => {
                           </div>
                           <div className="w-full bg-gray-200 rounded-full h-1.5 mt-2">
                             <div
-                              className="bg-green-500 h-1.5 rounded-full"
+                              className="bg-green-500 h-1.5 rounded-full font-sans"
                               style={{ width: `${project.percentage}%` }}
                             ></div>
                           </div>
@@ -282,7 +282,7 @@ const ProjectSlider: React.FC = () => {
                           {project.tags.map((tag, index) => (
                             <span
                               key={index}
-                              className="bg-gray-700 text-white text-xs px-2 py-1 rounded"
+                              className="bg-gray-700 text-white text-xs px-2 py-1 rounded font-sans"
                             >
                               {tag}
                             </span>
@@ -313,7 +313,7 @@ const ProjectSlider: React.FC = () => {
             <div className="bg-gray-200 h-2 rounded-full w-[85vw] ">
               <div
                 ref={progressBarRef}
-                className="bg-[#31814B] h-2 rounded-full transition-all duration-300"
+                className="bg-[#31814B] h-2 rounded-full transition-all duration-300 font-sans"
                 style={{ width: `${100 / projects.length}%` }} // Giá trị mặc định
               ></div>
             </div>

@@ -232,7 +232,7 @@ const AboutPage: React.FC = () => {
             <div className="flex-1 gap-2">
               <p
                 ref={ref}
-                className={`text-[40px] leading-[56px] text-white font-bold uppercase duration-700 ease-in-out transform ${
+                className={`text-[40px] leading-[56px] text-white font-sans font-bold uppercase duration-700 ease-in-out transform ${
                   inView
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-10'
@@ -242,7 +242,7 @@ const AboutPage: React.FC = () => {
               </p>
               <p
                 ref={ref}
-                className={`text-[40px] leading-[56px] text-[#48B96D] font-bold uppercase duration-700 delay-200 ease-in-out transform ${
+                className={`text-[40px] leading-[56px] text-[#48B96D] font-sans font-bold uppercase duration-700 delay-200 ease-in-out transform ${
                   inView
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-10'
@@ -252,7 +252,7 @@ const AboutPage: React.FC = () => {
               </p>
               <p
                 ref={ref}
-                className={`text-[40px] leading-[56px] text-[#48B96D] font-bold uppercase duration-700 delay-500 ease-in-out transform ${
+                className={`text-[40px] leading-[56px] font-sans text-[#48B96D] font-bold uppercase duration-700 delay-500 ease-in-out transform ${
                   inView
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-10'
@@ -264,7 +264,7 @@ const AboutPage: React.FC = () => {
             <div className="flex-1 flex flex-col gap-[32px] justify-end items-end">
               <p
                 ref={ref}
-                className={`text-[20px] text-[#F3F7F4] leading-[32px] max-w-[500px]  duration-700  ease-in-out transform ${
+                className={`text-[20px] text-[#F3F7F4] font-sans leading-[32px] max-w-[500px]  duration-700  ease-in-out transform ${
                   inView
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-10'
@@ -278,7 +278,7 @@ const AboutPage: React.FC = () => {
               <div className="flex w-[100%] justify-start items-start gap-[24px] max-w-[500px]">
                 <button
                   ref={ref}
-                  className={` bg-[#48B96D] text-white text-[16px] leading-[20px]  px-[16px] py-[14px] rounded-[999px] text-center  hover:bg-[#379256] transition-all  duration-300 delay-200 ease-in-out transform ${
+                  className={` bg-[#48B96D] text-white font-sans text-[16px] leading-[20px]  px-[16px] py-[14px] rounded-[999px] text-center  hover:bg-[#379256] transition-all  duration-300 delay-200 ease-in-out transform ${
                     inView
                       ? 'opacity-100 translate-y-0'
                       : 'opacity-0 translate-y-10'
@@ -288,7 +288,7 @@ const AboutPage: React.FC = () => {
                 </button>
                 <button
                   ref={ref}
-                  className={`bg-transparent border border-[#FFFFFF29] text-[#FFFFFF] text-[16px] leading-[20px] text-center   px-[16px] py-[14px]  rounded-[999px]  hover:bg-[#379256]  transition-all  duration-300 delay-500 ease-in-out transform ${
+                  className={`bg-transparent border font-sans border-[#FFFFFF29] text-[#FFFFFF] text-[16px] leading-[20px] text-center   px-[16px] py-[14px]  rounded-[999px]  hover:bg-[#379256]  transition-all  duration-300 delay-500 ease-in-out transform ${
                     inView
                       ? 'opacity-100 translate-y-0'
                       : 'opacity-0 translate-y-10'
@@ -335,13 +335,14 @@ const AboutPage: React.FC = () => {
                   fontSize: '40px',
                   fontWeight: 'bold',
                   lineHeight: '48px',
+                  fontFamily: 'Inter',
                 }}
               >
                 Tầm nhìn
               </Typography>
               <p
                 ref={ref2}
-                className={` duration-700 ease-in-out transform ${
+                className={` duration-700 ease-in-out font-sans transform ${
                   inView2
                     ? 'opacity-100 scale-100 translate-y-0'
                     : 'opacity-0 translate-y-10 scale-50'
@@ -375,11 +376,12 @@ const AboutPage: React.FC = () => {
                           fontWeight: 'bold',
                           lineHeight: '20px',
                           transform: 'uppercase',
+                          fontFamily: 'Inter',
                         }}
                       >
                         Uy tín hàng đầu
                       </Typography>
-                      <Typography className="!text-[14px]">
+                      <Typography className="!text-[14px]" fontFamily={'Inter'}>
                         Chúng tôi cam kết xây dựng lòng tin bằng sự minh bạch và
                         rõ ràng trong mọi dự án.
                       </Typography>
@@ -407,11 +409,12 @@ const AboutPage: React.FC = () => {
                           fontWeight: 'bold',
                           lineHeight: '20px',
                           transform: 'uppercase',
+                          fontFamily: 'Inter',
                         }}
                       >
                         Tự do tài chính
                       </Typography>
-                      <Typography className="!text-[14px]">
+                      <Typography className="!text-[14px]" fontFamily={'Inter'}>
                         Hỗ trợ người dùng phát triển tài sản và đạt được mục
                         tiêu tài chính lâu dài.
                       </Typography>
@@ -439,11 +442,15 @@ const AboutPage: React.FC = () => {
                           fontWeight: 'bold',
                           lineHeight: '20px',
                           transform: 'uppercase',
+                          fontFamily: 'Inter',
                         }}
                       >
                         Minh bạch thông tin
                       </Typography>
-                      <Typography className="!text-[14px] ">
+                      <Typography
+                        className="!text-[14px] "
+                        fontFamily={'Inter'}
+                      >
                         Mọi thông tin về dự án đều được cung cấp rõ ràng, giúp
                         người dùng dễ dàng đưa ra quyết định.
                       </Typography>
@@ -479,13 +486,14 @@ const AboutPage: React.FC = () => {
                   fontSize: '40px',
                   fontWeight: 'bold',
                   lineHeight: '48px',
+                  fontFamily: 'Inter',
                 }}
               >
                 Sứ mệnh
               </Typography>
               <p
                 ref={ref3}
-                className={` duration-700 ease-in-out transform ${
+                className={` duration-700 ease-in-out font-sans transform ${
                   inView3
                     ? 'opacity-100 scale-100 translate-y-0'
                     : 'opacity-0 translate-y-10 scale-50'
@@ -519,11 +527,15 @@ const AboutPage: React.FC = () => {
                           fontWeight: 'bold',
                           lineHeight: '20px',
                           transform: 'uppercase',
+                          fontFamily: 'Inter',
                         }}
                       >
                         Công bằng và minh bạch
                       </Typography>
-                      <Typography className="!text-[14px]">
+                      <Typography
+                        className="!text-[14px] "
+                        fontFamily={'Inter'}
+                      >
                         Phân bổ tài nguyên và cơ hội một cách rõ ràng, minh
                         bạch.
                       </Typography>
@@ -551,11 +563,15 @@ const AboutPage: React.FC = () => {
                           fontWeight: 'bold',
                           lineHeight: '20px',
                           transform: 'uppercase',
+                          fontFamily: 'Inter',
                         }}
                       >
                         Phát triển bền vững
                       </Typography>
-                      <Typography className="!text-[14px] ">
+                      <Typography
+                        className="!text-[14px] "
+                        fontFamily={'Inter'}
+                      >
                         Luôn tìm kiếm những cơ hội đầu tư để thúc đẩy sự phát
                         triển liên tục.
                       </Typography>
@@ -583,11 +599,12 @@ const AboutPage: React.FC = () => {
                           fontWeight: 'bold',
                           lineHeight: '20px',
                           transform: 'uppercase',
+                          fontFamily: 'Inter',
                         }}
                       >
                         Đổi mới tài chính
                       </Typography>
-                      <Typography className="!text-[14px]">
+                      <Typography className="!text-[14px]" fontFamily={'Inter'}>
                         Liên tục đổi mới để dẫn đầu trong các xu hướng của thị
                         trường tài chính.
                       </Typography>
@@ -623,13 +640,14 @@ const AboutPage: React.FC = () => {
                   fontSize: '40px',
                   fontWeight: 'bold',
                   lineHeight: '48px',
+                  fontFamily: 'Inter',
                 }}
               >
                 Giá trị cốt lõi
               </Typography>
               <p
                 ref={ref4}
-                className={`duration-700 text-[16px] font-[400px] leading-[24px]  ease-in-out transform ${
+                className={`duration-700 text-[16px] font-[400px] font-sans leading-[24px]  ease-in-out transform ${
                   inView4
                     ? 'opacity-100 scale-100 translate-y-0'
                     : 'opacity-0 translate-y-10 scale-50'
@@ -652,10 +670,10 @@ const AboutPage: React.FC = () => {
               `}
               >
                 <div className="rounded-lg p-4 flex flex-col gap-2 w-[90%] shadow-md absolute -bottom-0 z-50 bg-white min-h-[164px]">
-                  <p className="!text-xl font-semibold !text-black">
+                  <p className="!text-xl font-semibold !text-black font-sans">
                     Đổi mới sáng tạo
                   </p>
-                  <p className="!text-sm text-clip">
+                  <p className="!text-sm text-clip font-sans">
                     Hyracap luôn cập nhật những công nghệ tiên tiến hiện đại
                     nhất. Chúng tôi thúc đẩy sự sáng tạo và phát triển liên tục.
                   </p>
@@ -677,8 +695,10 @@ const AboutPage: React.FC = () => {
                 }`}
               >
                 <div className="rounded-lg p-4 flex flex-col gap-2 w-[90%] shadow-md absolute -bottom-0 z-50 bg-white  min-h-[164px]">
-                  <p className="!text-xl font-semibold !text-black">Bền vững</p>
-                  <p className="!text-sm text-clip">
+                  <p className="!text-xl font-semibold !text-black font-sans">
+                    Bền vững
+                  </p>
+                  <p className="!text-sm text-clip font-sans">
                     Tạo nên mô hình đầu tư bền vững. Giúp mọi người có nguồn thu
                     nhập thụ động vững vàng tự do tài chính
                   </p>
@@ -700,10 +720,10 @@ const AboutPage: React.FC = () => {
                 }`}
               >
                 <div className="rounded-lg p-4 flex flex-col gap-2 w-[90%] shadow-md absolute -bottom-0 z-50 bg-white  min-h-[164px]">
-                  <p className="!text-xl font-semibold !text-black">
+                  <p className="!text-xl font-semibold !text-black font-sans">
                     Minh bạch an toàn
                   </p>
-                  <p className="!text-sm text-clip">
+                  <p className="!text-sm text-clip font-sans">
                     Đảm bảo rằng tất cả các giao dịch và hoạt động trên nền tảng
                     là minh bạch, an toàn và có thể được kiểm tra
                   </p>
@@ -725,8 +745,10 @@ const AboutPage: React.FC = () => {
                 }`}
               >
                 <div className="rounded-lg p-4 flex flex-col gap-2 w-[90%] shadow-md absolute -bottom-0 z-50 bg-white  min-h-[164px]">
-                  <p className="!text-xl font-semibold !text-black">Hợp lực</p>
-                  <p className="!text-sm text-clip">
+                  <p className="!text-xl font-semibold !text-black font-sans">
+                    Hợp lực
+                  </p>
+                  <p className="!text-sm text-clip font-sans">
                     Khuyến khích sự hợp tác giữa các cá nhân và tổ chức. Mang
                     lại lợi ích và giá trị tốt đẹp cho cộng đồng
                   </p>
@@ -747,7 +769,7 @@ const AboutPage: React.FC = () => {
           <div className={styles.promiseContent}>
             <h2
               ref={ref6}
-              className={`duration-700  ease-in-out transform ${
+              className={`duration-700  font-sans ease-in-out transform ${
                 inView6
                   ? 'opacity-100 scale-100 translate-y-0'
                   : 'opacity-0 translate-y-10 scale-50'
@@ -757,7 +779,7 @@ const AboutPage: React.FC = () => {
             </h2>
             <p
               ref={ref6}
-              className={`duration-700  ease-in-out transform ${
+              className={`duration-700 font-sans  ease-in-out transform ${
                 inView6
                   ? 'opacity-100 scale-100 translate-y-0'
                   : 'opacity-0 translate-y-10 scale-50'
@@ -771,7 +793,7 @@ const AboutPage: React.FC = () => {
               <div className="h-0.5 w-4 bg-[#48B96D]" />
               <span
                 ref={ref6}
-                className={`text-xl font-bold text-[#48B96D] uppercase duration-700  ease-in-out transform ${
+                className={`text-xl font-bold font-sans text-[#48B96D] uppercase duration-700  ease-in-out transform ${
                   inView6
                     ? 'opacity-100 scale-100 translate-y-0'
                     : 'opacity-0 translate-y-10 scale-50'
@@ -801,13 +823,14 @@ const AboutPage: React.FC = () => {
                   fontSize: '40px',
                   fontWeight: 'bold',
                   lineHeight: '48px',
+                  fontFamily: 'Inter',
                 }}
               >
                 Đội ngũ sáng lập
               </Typography>
               <p
                 ref={ref7}
-                className={`text-base text-[#323232] text-center w-3/5 sm:!w-full duration-700  ease-in-out transform ${
+                className={`text-base text-[#323232] font-sans text-center w-3/5 sm:!w-full duration-700  ease-in-out transform ${
                   inView7
                     ? 'opacity-100 scale-100 translate-y-0'
                     : 'opacity-0 translate-y-10 scale-50'
@@ -830,6 +853,7 @@ const AboutPage: React.FC = () => {
                           lineHeight: '28px',
                           width: '100%',
                           textAlign: 'center',
+                          fontFamily: 'Inter',
                         }}
                       >
                         {leader.name}
@@ -841,6 +865,7 @@ const AboutPage: React.FC = () => {
                           marginBottom: '14px',
                           width: '100%',
                           textAlign: 'center',
+                          fontFamily: 'Inter',
                         }}
                       >
                         {leader.title}
@@ -853,6 +878,7 @@ const AboutPage: React.FC = () => {
                           textAlign: 'center',
                           fontWeight: 400,
                           padding: '0 16px',
+                          fontFamily: 'Inter',
                         }}
                       >
                         {leader.description}
@@ -885,7 +911,7 @@ const AboutPage: React.FC = () => {
                         {leader.name}
                       </div>
                       <div className="  rounded-[4px] pt-[31px] pb-[13px]">
-                        <p className="w-full text-center text-[#fff] font-[400] text-[14px] leading-[24px]">
+                        <p className="w-full text-center text-[#fff] font-[400] font-sans text-[14px] leading-[24px]">
                           {leader.title}
                         </p>
                       </div>
@@ -901,7 +927,7 @@ const AboutPage: React.FC = () => {
           <div className={styles.leadershipSection}>
             <h2
               ref={ref8}
-              className={`text-base text-[#323232] text-center w-3/5 sm:!w-full duration-700  ease-in-out transform ${
+              className={`text-base font-sans text-[#323232] text-center w-3/5 sm:!w-full duration-700  ease-in-out transform ${
                 inView8
                   ? 'opacity-100 scale-100 translate-y-0'
                   : 'opacity-0 translate-y-10 scale-50'
@@ -913,7 +939,7 @@ const AboutPage: React.FC = () => {
             </h2>
             <p
               ref={ref8}
-              className={`text-base text-[#323232] text-center w-3/5 duration-700  ease-in-out transform ${
+              className={`text-base font-sans text-[#323232] text-center w-3/5 duration-700  ease-in-out transform ${
                 inView8
                   ? 'opacity-100 scale-100 translate-y-0'
                   : 'opacity-0 translate-y-10 scale-50'
@@ -943,7 +969,7 @@ const AboutPage: React.FC = () => {
                     />
                   </div>
                   <div className={styles.leaderInfo}>
-                    <div className="w-full bg-[#F3F7F4] p-6 pb-8 text-center">
+                    <div className="w-full bg-[#F3F7F4] p-6 pb-8 text-center font-sans">
                       <h3>{leader.name}</h3>
                       <p className={styles.leaderTitle}>{leader.title}</p>
                     </div>
@@ -980,7 +1006,7 @@ const AboutPage: React.FC = () => {
                 >
                   <h3
                     ref={ref9}
-                    className={` duration-700   ease-in-out transform ${
+                    className={` duration-700  font-sans  ease-in-out transform ${
                       inView9
                         ? 'opacity-100 scale-100 translate-y-0'
                         : 'opacity-0 translate-y-10 scale-50'
@@ -991,7 +1017,7 @@ const AboutPage: React.FC = () => {
                   <form>
                     <input
                       ref={ref9}
-                      className={` duration-700   ease-in-out transform ${
+                      className={` duration-700 font-sans   ease-in-out transform ${
                         inView9
                           ? 'opacity-100 scale-100 translate-y-0'
                           : 'opacity-0 translate-y-10 scale-50'
@@ -1002,7 +1028,7 @@ const AboutPage: React.FC = () => {
                     />
                     <input
                       ref={ref9}
-                      className={` duration-700  delay-100  ease-in-out transform ${
+                      className={` duration-700 font-sans  delay-100  ease-in-out transform ${
                         inView9
                           ? 'opacity-100 scale-100 translate-y-0'
                           : 'opacity-0 translate-y-10 scale-50'
@@ -1013,7 +1039,7 @@ const AboutPage: React.FC = () => {
                     />
                     <input
                       ref={ref9}
-                      className={` duration-700 delay-200   ease-in-out transform ${
+                      className={` duration-700 delay-200  font-sans  ease-in-out transform ${
                         inView9
                           ? 'opacity-100 scale-100 translate-y-0'
                           : 'opacity-0 translate-y-10 scale-50'
@@ -1023,7 +1049,7 @@ const AboutPage: React.FC = () => {
                     />
                     <textarea
                       ref={ref9}
-                      className={` duration-700  delay-300  ease-in-out transform ${
+                      className={` duration-700  delay-300 font-sans ease-in-out transform ${
                         inView9
                           ? 'opacity-100 scale-100 translate-y-0'
                           : 'opacity-0 translate-y-10 scale-50'
@@ -1042,21 +1068,25 @@ const AboutPage: React.FC = () => {
                       <input
                         type="checkbox"
                         id="notRobot"
-                        className="w-5 h-5"
+                        className="w-5 h-5 font-sans"
                       />
-                      <label htmlFor="notRobot">Tôi không phải là robot</label>
+                      <label htmlFor="notRobot " className="font-sans">
+                        Tôi không phải là robot
+                      </label>
                       <img src="/img/icon/cacha.svg" />
                     </div>
                     <button
                       ref={ref9}
-                      className={`duration-700  delay-500  ease-in-out transform ${
+                      className={`duration-700   delay-500  ease-in-out transform ${
                         inView9
                           ? 'opacity-100 scale-100 translate-y-0'
                           : 'opacity-0 translate-y-10 scale-50'
                       }`}
                       type="submit"
                     >
-                      <span className="text-lg font-medium ">Send</span>
+                      <span className="text-lg font-medium font-sans ">
+                        Send
+                      </span>
                       <img src="/img/icon/sendBlack.svg" />
                     </button>
                   </form>

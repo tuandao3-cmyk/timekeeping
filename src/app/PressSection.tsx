@@ -24,14 +24,16 @@ const PressSection = () => {
         <h2
           ref={ref}
           className={`${styles.title} duration-300 ease-in-out transform ${
-            inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            inView
+              ? 'opacity-100 translate-y-0'
+              : 'opacity-0 translate-y-10 font-sans'
           }`}
         >
           TRUYỀN THÔNG NÓI GÌ VỀ CHÚNG TÔI?
         </h2>
         <p
           ref={ref}
-          className={`font-inter text-[#000000]/60 font-normal text-base leading-6 max-w-[54%] mx-auto mb-4 text-center duration-300 delay-200 ease-in-out transform ${
+          className={`font-inter text-[#000000]/60 font-normal text-base font-sans leading-6 max-w-[54%] mx-auto mb-4 text-center duration-300 delay-200 ease-in-out transform ${
             inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >

@@ -54,10 +54,10 @@ const News = () => {
       <div className="flex flex-col justify-center items-center w-full">
         <div className="max-w-[1440px]">
           <div className=" flex justify-between ">
-            <h2 className="font-inter font-bold pb-6  text-[36px] leading-[48px]">
+            <h2 className="font-inter font-bold pb-6  text-[36px] leading-[48px] font-sans">
               TIN MỚI NHẤT VỀ HYRACAP
             </h2>
-            <button className=" max-h-[48px]  bg-white text-gray-950 font-semibold  px-4 border border-gray-300 rounded-full hover:bg-green-500 hover:text-white transition duration-300 flex items-center">
+            <button className=" max-h-[48px] font-sans  bg-white text-gray-950 font-semibold  px-4 border border-gray-300 rounded-full hover:bg-green-500 hover:text-white transition duration-300 flex items-center">
               Xem thêm
             </button>
           </div>
@@ -82,7 +82,7 @@ const News = () => {
               <div className="flex flex-col items-start justify-start">
                 <a
                   href={newsData[0].videoLink}
-                  className={`${styles.newsTitle}  duration-300 delay-200 text-[24px] text-[#000000]/80  ease-in-out transform ${
+                  className={`${styles.newsTitle} font-sans  duration-300 delay-200 text-[24px] text-[#000000]/80  ease-in-out transform ${
                     inView
                       ? 'opacity-100 translate-y-0'
                       : 'opacity-0 translate-y-10'
@@ -94,7 +94,7 @@ const News = () => {
               <div className="flex flex-col items-start  justify-start">
                 <a
                   href={newsData[0].videoLink}
-                  className={`font-inter text-sm leading-6 text-gray-600 duration-300 delay-500  ease-in-out transform ${
+                  className={`font-inter text-sm font-sans leading-6 text-gray-600 duration-300 delay-500  ease-in-out transform ${
                     inView
                       ? 'opacity-100 translate-y-0'
                       : 'opacity-0 translate-y-10'
@@ -107,7 +107,7 @@ const News = () => {
                 <div className="w-[100%] flex justify-end items-end ">
                   <button
                     ref={ref}
-                    className={` bg-white text-gray-950 font-semibold py-2 px-4 border border-gray-300 rounded-full hover:bg-green-500 hover:text-white transition duration-300 flex items-center   ease-in-out transform ${
+                    className={` bg-white text-gray-950 font-sans font-semibold py-2 px-4 border border-gray-300 rounded-full hover:bg-green-500 hover:text-white transition duration-300 flex items-center   ease-in-out transform ${
                       inView
                         ? 'opacity-100 translate-y-0'
                         : 'opacity-0 translate-y-10'
@@ -149,16 +149,16 @@ const News = () => {
                       <div className={styles.sideBorder}>
                         <div className="flex flex-col gap-[16px]">
                           <p
-                            className={`${styles.newsTitle} max-w-[400px] text-16px text-[#000000CC] text-opacity-80`}
+                            className={`${styles.newsTitle} max-w-[400px] font-sans text-16px text-[#000000CC] text-opacity-80`}
                           >
                             {news.title}
                           </p>
 
-                          <span className="font-inter text-sm max-w-[400px] leading-6 text-gray-600">
+                          <span className="font-inter text-sm max-w-[400px] font-sans leading-6 text-gray-600">
                             {news.description}
                           </span>
                         </div>
-                        <span className="text-gray-600 text-sm leading-6 ">
+                        <span className="text-gray-600 text-sm font-sans leading-6 ">
                           {news.date}
                         </span>
                       </div>

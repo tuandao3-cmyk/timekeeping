@@ -150,8 +150,8 @@ const NewsPage: React.FC = () => {
                     key={index}
                     className={` rounded-lg overflow-hidden shadow-lg p-5 hover:scale-105 transition ease-in-out duration-150 hover:cursor-pointer ${
                       index === 1
-                        ? 'p-4 lg:row-span-2 lg:col-span-1 bg-[#07212C] md:row-span-1 col-span-1 md:max-h-[526px]'
-                        : 'bg-white md:max-h-[517px]'
+                        ? 'p-4 lg:row-span-2 lg:col-span-1 bg-[#07212C] md:row-span-1 col-span-1 '
+                        : 'bg-white '
                     }`}
                   >
                     <img

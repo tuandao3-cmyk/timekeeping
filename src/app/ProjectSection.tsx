@@ -52,7 +52,7 @@ const ProjectSection = () => {
         className={`${styles.showcaseSection} flex flex-col justify-center items-center bg-[#FFFFFF]`}
       >
         <div className="flex flex-col justify-center items-center max-w-screen-xl w-full">
-          <h2 className="text-center text-[38px] font-bold leading-[48px] pb-10 uppercase">
+          <h2 className="text-center text-[38px] font-bold leading-[48px] pb-10 uppercase font-sans">
             DỰ ÁN ĐÃ ĐẦU TƯ VÀ ƯƠM TẠO
           </h2>
           <div className="w-full flex justify-center items-center max-w-[1440px]">
@@ -77,18 +77,18 @@ const ProjectSection = () => {
                       alt={project.title}
                       className={` md:h-[250px] md:w-[384px]`}
                     />
-                    <div className={styles.badge}>{project.badge}</div>
+                    <div className={`${styles.badge} font-sans`}>{project.badge}</div>
 
                     <div className="text-left !text-left">
                       {' '}
                       {/* Sử dụng !important */}
-                      <h3 className="text-[clamp(1.2rem,2vw,2.4rem)] font-bold my-2 w-full pl-4">
+                      <h3 className="text-[clamp(1.2rem,2vw,2.4rem)] font-bold my-2 w-full pl-4 font-sans">
                         {project.title}
                       </h3>
-                      <span className="text-sm text-[#000000]/70 font-normal mb-2 block pl-4 pb-2">
+                      <span className="text-sm text-[#000000]/70 font-normal mb-2 block pl-4 pb-2 font-sans">
                         MỤC TIÊU HUY ĐỘNG
                       </span>
-                      <div className="font-inter font-semibold text-xl leading-7 pl-4 pb-2">
+                      <div className="font-inter font-semibold text-xl leading-7 pl-4 pb-2 font-sans">
                         {project.amount}
                       </div>
                     </div>
@@ -102,14 +102,14 @@ const ProjectSection = () => {
                       <div className={styles.fundingInfo}>
                         <div>
                           <span>{project.fundingAmount}</span>
-                          <span className="text-[#000000]/70 pl-0">
+                          <span className="text-[#000000]/70 pl-0 font-sans">
                             {' '}
                             Đã huy động
                           </span>
                         </div>
                         <div>
                           <span>{project.fundingPercent}</span>
-                          <span className="text-[#000000]/70 pl-0">
+                          <span className="text-[#000000]/70 pl-0 font-sans">
                             {' '}
                             Hoàn thành
                           </span>
@@ -119,7 +119,7 @@ const ProjectSection = () => {
                         {project.category.map((cat, index) => (
                           <span
                             key={index}
-                            className="bg-[#000000]/10 text-[#000000]/70 font-inter leading-4 px-2 py-1  text-xs font-medium"
+                            className="bg-[#000000]/10 text-[#000000]/70 font-inter leading-4 px-2 py-1  text-xs font-medium font-sans"
                           >
                             {cat}
                           </span>
@@ -130,7 +130,7 @@ const ProjectSection = () => {
                     <div className="absolute inset-x-0 bottom-4 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-4">
                       <a
                         href="/detail-category"
-                        className="bg-[#4CAF50] w-full text-white text-sm font-medium  py-2 rounded-full cursor-pointer text-center justify-center flex items-center"
+                        className="bg-[#4CAF50] w-full font-sans text-white text-sm font-medium  py-2 rounded-full cursor-pointer text-center justify-center flex items-center"
                       >
                         Xem chi tiết
                         <svg
@@ -154,7 +154,7 @@ const ProjectSection = () => {
               ))}
             </div>
           </div>
-          <a href="/products" className={styles.moreProjectsButton}>
+          <a href="/products" className={`${styles.moreProjectsButton} font-sans`}>
             TÌM HIỂU THÊM CÁC DỰ ÁN{' '}
             <svg
               xmlns="http://www.w3.org/2000/svg"
