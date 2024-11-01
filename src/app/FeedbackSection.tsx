@@ -78,13 +78,14 @@ const FeedbackSection: React.FC = () => {
               lineHeight: '48px',
               textAlign: 'center',
               textTransform: 'uppercase',
+              fontFamily: 'Inter',
             }}
             className={`${
               inView
                 ? 'opacity-1 translate-y-0'
                 : 'opacity-0 translate-y-[20px]'
             }
-            transition ease-in-out duration-300
+            transition ease-in-out duration-300 
             `}
           >
             Phản hồi về khách hàng
@@ -97,6 +98,7 @@ const FeedbackSection: React.FC = () => {
               lineHeight: '40px',
               textAlign: 'center',
               textTransform: 'uppercase',
+              fontFamily: 'Inter',
             }}
             className={`${
               inView
@@ -138,6 +140,7 @@ const FeedbackSection: React.FC = () => {
                       fontWeight: 600,
                       lineHeight: '26px',
                       textAlign: 'left',
+                      fontFamily: 'Inter',
                     }}
                     className="group-hover:text-white"
                   >
@@ -158,6 +161,7 @@ const FeedbackSection: React.FC = () => {
                           fontWeight: 600,
                           fontSize: 14,
                           lineHeight: '24px',
+                          fontFamily: 'Inter',
                         }}
                         className="group-hover:text-white"
                       >
@@ -169,6 +173,7 @@ const FeedbackSection: React.FC = () => {
                           fontSize: 12,
                           lineHeight: '20px',
                           color: '#0000008F',
+                          fontFamily: 'Inter',
                         }}
                         className="group-hover:text-white"
                       >

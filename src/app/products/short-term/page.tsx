@@ -123,7 +123,7 @@ const ShortTermSection: React.FC = () => {
                 </div>
                 <div className="flex justify-center items-center">
                   <button
-                    className={`uppercase  max-w-[116px]  bg-[#48B96D] text-white text-[16px]  px-[16px] py-[14px] rounded-[999px] text-center  hover:bg-[#379256] transition-all  duration-300 delay-200 ease-in-out transform`}
+                    className={`uppercase  max-w-[116px]  bg-[#48B96D] text-white text-[16px] tracking-tight px-[16px] py-[14px] rounded-[999px] text-center  hover:bg-[#379256] transition-all  duration-300 delay-200 ease-in-out transform`}
                   >
                     mua ngay
                   </button>
@@ -189,7 +189,7 @@ const ShortTermSection: React.FC = () => {
                 </div>
                 <div className="flex justify-center items-center">
                   <button
-                    className={`uppercase  max-w-[116px]  bg-[#48B96D] text-white text-[16px]  px-[16px] py-[14px] rounded-[999px] text-center  hover:bg-[#379256] transition-all  duration-300 delay-200 ease-in-out transform`}
+                    className={`uppercase  max-w-[116px] w-[116px] bg-[#48B96D] tracking-tight text-white text-[16px]  px-[16px] py-[14px] rounded-[999px] text-center  hover:bg-[#379256] transition-all  duration-300 delay-200 ease-in-out transform`}
                   >
                     mua ngay
                   </button>
@@ -252,7 +252,7 @@ const ShortTermSection: React.FC = () => {
                 </div>
                 <div className="flex justify-center items-center">
                   <button
-                    className={`uppercase  max-w-[116px]  bg-[#48B96D] text-white text-[16px]  px-[16px] py-[14px] rounded-[999px] text-center  hover:bg-[#379256] transition-all  duration-300 delay-200 ease-in-out transform`}
+                    className={`uppercase  max-w-[116px]  bg-[#48B96D] text-white text-[16px] tracking-tight px-[16px] py-[14px] rounded-[999px] text-center  hover:bg-[#379256] transition-all  duration-300 delay-200 ease-in-out transform`}
                   >
                     mua ngay
                   </button>
