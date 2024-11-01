@@ -3,23 +3,57 @@ import React from 'react';
 import styles from '@/app/reports/report.module.css';
 
 import { FaDownload, FaEye } from 'react-icons/fa';
+import { Typography } from '@mui/material';
+import PdfView from '@/components/pdfView';
 
 // report
 const ReportPage: React.FC = () => {
+  const [activeTab, setActiveTab] = React.useState(0);
+  const [openPdf, setOpenPdf] = React.useState(false);
+
+  const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = '/pdfs/report.pdf';
+    link.setAttribute('download', 'report.pdf');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <>
-      <header className={styles.header}>
-        <div className={styles.hero}>
-          <div className={styles.heroContent}>
-            <h1 className="text-4xl font-bold">Báo cáo</h1>
-            <p className="w-full inline">
-              Báo cáo chuyên sâu về thị trường tài chính.
-            </p>
+      <div className="relative w-full h-[520px] bg-[#07212C] bg-[url('/img/report/report_banner.png')] bg-no-repeat bg-cover bg-center">
+        <div
+          className="absolute inset-0 bg-gradient-to-b flex  items-end pb-[107px] justify-center"
+          style={{
+            background:
+              'linear-gradient(180deg, rgba(11, 53, 70, 0.08) 17.75%, rgba(11, 53, 70, 0.747169) 51.39%, rgba(11, 53, 70, 0.862047) 71.15%, #0B3546 88.52%)',
+          }}
+        >
+          <div className="flex flex-col items-center justify-end text-center max-w-[1440px] text-white gap-[22px]">
+            <Typography
+              sx={{
+                fontWeight: 700,
+                fontSize: '48px',
+                lineHeight: '56px',
+                textAlign: 'center',
+              }}
+            >
+              Báo cáo
+            </Typography>
+            <Typography
+              sx={{
+                fontWeight: 400,
+                fontSize: '18px',
+                lineHeight: '24px',
+                textAlign: 'center',
+              }}
+            >
+              Báo cáo chuyên sâu về thị trường tài chính
+            </Typography>
           </div>
         </div>
-      </header>
-      {/* <div className="w-full flex flex-col justify-center items-center">
-        <div className="max-w-[1200px]"> */}
+      </div>
       <main className=" mx-12 bg-white w-full">
         <section className="flex flex-col items-center justify-center">
           <div className="max-w-[1200px] w-full">
@@ -28,10 +62,18 @@ const ReportPage: React.FC = () => {
               <h2 className="font-bold text-4xl">BÁO CÁO TÀI CHÍNH</h2>
             </div>
             <div className={styles.reportTabs}>
-              <button className={`${styles.tabButton} ${styles.active}`}>
+              <button
+                className={`${styles.tabButton} ${activeTab === 0 && styles.active}`}
+                onClick={() => setActiveTab(0)}
+              >
                 Hàng Quý
               </button>
-              <button className={styles.tabButton}>Hàng Năm</button>
+              <button
+                className={`${styles.tabButton} ${activeTab === 1 && styles.active}`}
+                onClick={() => setActiveTab(1)}
+              >
+                Hàng Năm
+              </button>
             </div>
             <div>
               {[
@@ -60,10 +102,16 @@ const ReportPage: React.FC = () => {
                       <span className={styles.reportDate}>{report.date}</span>
                     </div>
                     <div className={styles.reportActions}>
-                      <button className={styles.viewButton}>
+                      <button
+                        className={styles.viewButton}
+                        onClick={() => setOpenPdf(true)}
+                      >
                         <FaEye />
                       </button>
-                      <button className={styles.downloadButton}>
+                      <button
+                        className={styles.downloadButton}
+                        onClick={handleDownload}
+                      >
                         <FaDownload />
                       </button>
                     </div>
@@ -102,10 +150,16 @@ const ReportPage: React.FC = () => {
                       <span className={styles.reportDate}>{report.date}</span>
                     </div>
                     <div className={styles.reportActions}>
-                      <button className={styles.viewButton}>
+                      <button
+                        className={styles.viewButton}
+                        onClick={() => setOpenPdf(true)}
+                      >
                         <FaEye />
                       </button>
-                      <button className={styles.downloadButton}>
+                      <button
+                        className={styles.downloadButton}
+                        onClick={handleDownload}
+                      >
                         <FaDownload />
                       </button>
                     </div>
@@ -140,10 +194,16 @@ const ReportPage: React.FC = () => {
                       <span className={styles.reportDate}>{report.date}</span>
                     </div>
                     <div className={styles.reportActions}>
-                      <button className={styles.viewButton}>
+                      <button
+                        className={styles.viewButton}
+                        onClick={() => setOpenPdf(true)}
+                      >
                         <FaEye />
                       </button>
-                      <button className={styles.downloadButton}>
+                      <button
+                        className={styles.downloadButton}
+                        onClick={handleDownload}
+                      >
                         <FaDownload />
                       </button>
                     </div>
@@ -178,10 +238,16 @@ const ReportPage: React.FC = () => {
                       <span className={styles.reportDate}>{report.date}</span>
                     </div>
                     <div className={styles.reportActions}>
-                      <button className={styles.viewButton}>
+                      <button
+                        className={styles.viewButton}
+                        onClick={() => setOpenPdf(true)}
+                      >
                         <FaEye />
                       </button>
-                      <button className={styles.downloadButton}>
+                      <button
+                        className={styles.downloadButton}
+                        onClick={handleDownload}
+                      >
                         <FaDownload />
                       </button>
                     </div>
@@ -194,6 +260,13 @@ const ReportPage: React.FC = () => {
       </main>
       {/* </div>
       </div> */}
+
+      {/* pdf View */}
+      <PdfView
+        openPdf={openPdf}
+        setOpenPdf={setOpenPdf}
+        pdfPath={'/pdfs/report.pdf'}
+      />
     </>
   );
 };

@@ -12,29 +12,27 @@ const DetailCategoryPage: React.FC = () => {
   const pathname = usePathname();
   const [activeSection, setActiveSection] = useState<string>('default');
   const renderContent = () => {
-    switch(activeSection) {
-      case 'info':
-        return <InfoSection />;
-      case 'business_plan':
-        return <BusinessPlanSection />;
-      case 'contract_sample':
-        return <ContractSampleSection />;
-      case 'finance_road':
-        return <FinanceRoadSection />;
-      case 'pitchingdeck':
-        return <PitchingDeckSection />;
-      case 'product':
-        return <ProductSection />;
+    switch (activeSection) {
+      // case 'info':
+      //   return <InfoSection />;
+      // case 'business_plan':
+      //   return <BusinessPlanSection />;
+      // case 'contract_sample':
+      //   return <ContractSampleSection />;
+      // case 'finance_road':
+      //   return <FinanceRoadSection />;
+      // case 'pitchingdeck':
+      //   return <PitchingDeckSection />;
+      // case 'product':
+      //   return <ProductSection />;
       default:
-        return (
-          <InfoSection />
-        );
+        return <InfoSection />;
     }
   };
   return (
     <>
       <main className=" bg-[#F7F9FC] flex justify-center items-center font-roboto">
-        <div className="py-6 rounded-lg shadow-md md:max-w-[80%]">
+        <div className="py-6 rounded-lg shadow-md max-w-[1440px]">
           <div className="flex flex-col gap-3 sm:flex-row px-11 lg:px-28">
             <img
               src="/img/19.jpg"

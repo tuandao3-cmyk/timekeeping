@@ -2,6 +2,7 @@ import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import styles from './news.module.css';
 import { desc } from 'framer-motion/client';
+import { useRouter } from 'next/navigation';
 
 const newsData = [
   {
@@ -43,6 +44,7 @@ const newsData = [
 ];
 
 const News = () => {
+  const router = useRouter();
   const { ref, inView, entry } = useInView({
     threshold: 0.1,
     triggerOnce: true,
@@ -78,20 +80,20 @@ const News = () => {
               </a>
 
               <div className="flex flex-col items-start justify-start">
-                <p
-                  ref={ref}
-                  className={`${styles.newsTitle}  duration-300 delay-200 text-[24px] text-[#31814B]  ease-in-out transform ${
+                <a
+                  href={newsData[0].videoLink}
+                  className={`${styles.newsTitle}  duration-300 delay-200 text-[24px] text-[#000000]/80  ease-in-out transform ${
                     inView
                       ? 'opacity-100 translate-y-0'
                       : 'opacity-0 translate-y-10'
                   }`}
                 >
                   {newsData[0].title}
-                </p>
+                </a>
               </div>
               <div className="flex flex-col items-start  justify-start">
-                <span
-                  ref={ref}
+                <a
+                  href={newsData[0].videoLink}
                   className={`font-inter text-sm leading-6 text-gray-600 duration-300 delay-500  ease-in-out transform ${
                     inView
                       ? 'opacity-100 translate-y-0'
@@ -99,17 +101,18 @@ const News = () => {
                   }`}
                 >
                   {newsData[0].description}
-                </span>
+                </a>
               </div>
               <div className="w-full flex justify-end items-end ">
                 <div className="w-[100%] flex justify-end items-end ">
                   <button
                     ref={ref}
-                    className={` bg-white text-gray-950 font-semibold py-2 px-4 border border-gray-300 rounded-full hover:bg-green-500 hover:text-white transition duration-300 flex items-center delay-700  ease-in-out transform ${
+                    className={` bg-white text-gray-950 font-semibold py-2 px-4 border border-gray-300 rounded-full hover:bg-green-500 hover:text-white transition duration-300 flex items-center   ease-in-out transform ${
                       inView
                         ? 'opacity-100 translate-y-0'
                         : 'opacity-0 translate-y-10'
                     }`}
+                    onClick={() => router.push('/news/newsdetail')}
                   >
                     Chi tiết
                     <svg

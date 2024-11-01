@@ -5,17 +5,18 @@ import { useInView } from 'react-intersection-observer';
 import styles from '@/app/Header.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Calendar } from 'lucide-react';
 
 import { ProjectCard } from './components/card';
 import { FaApple, FaGooglePlay } from 'react-icons/fa';
 
 const newsData = [
   {
-    title:
-      'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
+    title: 'CÔNG NGHỆ TRAO QUYỀN QUYẾT ĐỊNH TƯƠNG LAI',
     date: '30/08/2024',
-    imageUrl: '/img/20.png',
+    imageUrl: '/img/news/newsimg1.png',
     videoLink: '/news/newsdetail',
+    text: 'Cập nhật những tin tức và kiến thức công nghệ từ Hyratek. Cập nhật những tin tức và kiến thức công nghệ từ Hyratek. Cập nhật những tin tức và kiến thức công...',
   },
   {
     title:
@@ -23,29 +24,33 @@ const newsData = [
     subTitle:
       'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
     date: '30/08/2024',
-    imageUrl: '/img/21.png',
+    imageUrl: '/img/news/newsimg2.png',
     link: '/news/newsdetail',
+    text: 'Cập nhật những tin tức và kiến thức công nghệ từ Hyratek. Cập nhật những tin tức và kiến thức công nghệ từ Hyratek. Cập nhật những tin tức và kiến thức công...',
   },
   {
     title:
       'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
     date: '30/08/2024',
-    imageUrl: '/img/22.png',
+    imageUrl: '/img/news/newsimg3.png',
     link: '/news/newsdetail',
+    text: 'Cập nhật những tin tức và kiến thức công nghệ từ Hyratek. Cập nhật những tin tức và kiến thức công nghệ từ Hyratek. Cập nhật những tin tức và kiến thức công...',
   },
   {
     title:
       'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
     date: '30/08/2024',
-    imageUrl: '/img/art6.png',
+    imageUrl: '/img/news/newsimg4.png',
     link: '/news/newsdetail',
+    text: 'Cập nhật những tin tức và kiến thức công nghệ từ Hyratek. Cập nhật những tin tức và kiến thức công nghệ từ Hyratek. Cập nhật những tin tức và kiến thức công...',
   },
   {
     title:
       'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
     date: '30/08/2024',
-    imageUrl: '/img/art2.png',
+    imageUrl: '/img/news/newsimg5.png',
     link: '/news/newsdetail',
+    text: 'Cập nhật những tin tức và kiến thức công nghệ từ Hyratek. Cập nhật những tin tức và kiến thức công nghệ từ Hyratek. Cập nhật những tin tức và kiến thức công...',
   },
 ];
 
@@ -64,49 +69,51 @@ const NewsPage: React.FC = () => {
   });
   return (
     <>
-      <div
-        ref={ref}
-        className="flex max-md:items-center max-md:justify-center m-auto max-w-[1440px] h-[479px] bg-cover  "
-        style={{ backgroundImage: 'url("/img/news/news_banner.png")' }}
-      >
-        <div className=" top-0 w-[40%] h-full bg-[#07212c] bg-opacity-100">
-          <div className=" z-10 my-auto  h-full p-8 lg:p-12 ">
-            <div className=" lg:pl-[60px] lg:mt-8 text-center md:text-left text-white flex flex-col justify-between items-left gap-4">
-              <Link
-                href={'/news/newsdetail'}
-                className="md:text-[15px] text-[#579DFF] text-xs font-semibold "
-              >
-                CÔNG NGHỆ
-              </Link>
-              <h1
-                className={`text-xl md:text-2xl  font-bold leading-tight lg:line-clamp-2 max-lg:line-clamp-10
+      <div className="flex flex-col justify-center items-center bg-[#07212c] ">
+        <div
+          ref={ref}
+          className="flex max-md:items-center max-md:justify-center m-auto max-w-[1440px] h-[479px] bg-cover  "
+          style={{ backgroundImage: 'url("/img/news/news_banner.png")' }}
+        >
+          <div className=" top-0 w-[40%] h-full bg-[#07212c] bg-opacity-100">
+            <div className=" z-10 my-auto  h-full p-8 lg:p-12 ">
+              <div className=" lg:pl-[60px] lg:mt-8 text-center md:text-left text-white flex flex-col justify-between items-left gap-4">
+                <Link
+                  href={'/news/newsdetail'}
+                  className="md:text-[15px] text-[#579DFF] text-xs font-semibold "
+                >
+                  CÔNG NGHỆ
+                </Link>
+                <h1
+                  className={`text-xl md:text-2xl  font-bold leading-tight lg:line-clamp-2 max-lg:line-clamp-10
                 duration-700 ease-in-out transform ${
                   inView
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-10'
                 }
                 `}
-              >
-                Hyratek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự
-                án "Phục dựng ảnh liệt sĩ" của Hà Nội
-              </h1>
-              <p
-                className={`mt-4 text-sm leading-6 line-clamp-6 max-lg:hidden opacity-70 duration-700 ease-in-out transform ${
-                  inView
-                    ? 'opacity-100 translate-y-0'
-                    : 'opacity-0 translate-y-10'
-                }`}
-              >
-                Hyratek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự
-                án "Phục dựng ảnh liệt sĩ" của Hà Nội Hyratek và Qualcomm hợp
-                tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt
-                sĩ" của Hà Nội Hyratek và Qualcomm hợp tác chiến lược về AI,
-                đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội
-              </p>
-              <div>
-                <button className="max-sm:hidden text-[#FFFFFF]/90 bg-[#48B96D] border-[#FFFFFF]/20 font-medium border-[1px]  rounded-full px-3 py-2 inline-flex">
-                  Đọc thêm
-                </button>
+                >
+                  Hyratek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng
+                  dự án "Phục dựng ảnh liệt sĩ" của Hà Nội
+                </h1>
+                <p
+                  className={`mt-4 text-sm leading-6 line-clamp-6 max-lg:hidden opacity-70 duration-700 ease-in-out transform ${
+                    inView
+                      ? 'opacity-100 translate-y-0'
+                      : 'opacity-0 translate-y-10'
+                  }`}
+                >
+                  Hyratek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng
+                  dự án "Phục dựng ảnh liệt sĩ" của Hà Nội Hyratek và Qualcomm
+                  hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh
+                  liệt sĩ" của Hà Nội Hyratek và Qualcomm hợp tác chiến lược về
+                  AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội
+                </p>
+                <div>
+                  <button className="max-sm:hidden text-[#FFFFFF]/90 bg-[#48B96D] border-[#FFFFFF]/20 font-medium border-[1px]  rounded-full px-3 py-2 inline-flex">
+                    Đọc thêm
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -115,7 +122,7 @@ const NewsPage: React.FC = () => {
 
       <section
         ref={ref2}
-        className="w-full flex flex-col justify-center items-center"
+        className="w-full font-inter flex flex-col justify-center items-center"
       >
         <div className="flex flex-col max-w-[1201px] gap-[40px] py-[62px]">
           <h1
@@ -141,42 +148,48 @@ const NewsPage: React.FC = () => {
                 ) : (
                   <div
                     key={index}
-                    className={` rounded-lg overflow-hidden ${
+                    className={` rounded-lg overflow-hidden shadow-lg p-5 hover:scale-105 transition ease-in-out duration-150 hover:cursor-pointer ${
                       index === 1
-                        ? 'lg:row-span-2 lg:col-span-1 bg-[#07212C] md:row-span-1 col-span-1 md:max-h-[600px]'
-                        : 'bg-white md:max-h-[550px]'
+                        ? 'p-4 lg:row-span-2 lg:col-span-1 bg-[#07212C] md:row-span-1 col-span-1 md:max-h-[526px]'
+                        : 'bg-white md:max-h-[517px]'
                     }`}
                   >
                     <img
-                      src={index === 3 ? 'img/art6.png' : news.imageUrl}
+                      src={news.imageUrl}
                       alt=""
                       className={`w-full object-cover object-center rounded-lg ${
-                        index === 1 ? 'md:h-[300px]' : 'md:h-[200px]'
+                        index === 1 ? 'md:h-[245px] ' : 'md:h-[234px]'
                       }`}
                     />
-                    <div className="p-4">
+                    <div className="mt-3">
                       <Link
                         href={news.link || '#'}
-                        className="md:text-[15px] text-[#579DFF] text-sm font-semibold"
+                        className="md:text-[15px]  text-[#579DFF]  text-sm font-semibold"
                       >
                         CÔNG NGHỆ
                       </Link>
                       <h1
-                        className={`  font-medium  line-clamp-2 ${index === 1 ? 'text-white text-lg' : 'text-gray-800  text-[15px]'}`}
+                        className={` font-bold mt-3 line-clamp-2 text-lg ${index === 1 ? 'text-white ' : 'text-[#151515]  '}`}
                       >
                         {news.title}
                       </h1>
+                      <p
+                        className={`text-sm mt-3 ${index === 1 ? 'text-[#CBCBCD]' : 'text-gray-600'}`}
+                      >
+                        {news.text}
+                      </p>
                       <div className="flex justify-between items-center text-sm mt-8">
                         <p
-                          className={`${index === 1 ? 'text-[#CBCBCD]' : 'text-gray-600'}`}
+                          className={`flex flex-row items-center gap-2 ${index === 1 ? 'text-[#CBCBCD]' : 'text-gray-600'}`}
                         >
-                          {news.date}
+                          <Calendar size={16} /> {news.date}
                         </p>
-                        <button
-                          className={`${index === 1 ? 'text-[#FFFFFF]/90 border-[#FFFFFF]/20' : 'text-[#000000]/90 border-[#000000]/90'} font-medium border-[1px]  rounded-full px-2 py-1`}
+                        <a
+                          href={news.link || '#'}
+                          className={`md:px-6 md:py-3 px-3 py-2 ${index === 1 ? 'text-[#FFFFFF]/90 border-[#FFFFFF]/20' : 'text-[#000000]/90 border-[#000000]/90 mx-4'} font-medium border-[1px] mb-2 rounded-full `}
                         >
                           Đọc thêm
-                        </button>
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -244,13 +257,13 @@ const NewsPage: React.FC = () => {
           </h1>
           <div className="w-full max-lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
             <div className="w-full col-span-2 gap-3">
-              {newsData.map((news: any, index: number) => (
-                <a href="#" className="p-4" key={index}>
-                  <div className="grid md:grid-cols-3  border-[1px]">
+              {newsData.slice(1, 4).map((news: any, index: number) => (
+                <a href="/news/newsdetail" className="p-4" key={index}>
+                  <div className="grid md:grid-cols-3  border-[1px] hover:scale-105 transition ease-in-out duration-150 hover:cursor-pointer">
                     <img
                       src={news.imageUrl}
                       alt=""
-                      className="w-full h-auto md:max-w-[500px] md:max-h-[233px] object-cover rounded-lg md:col-span-1"
+                      className="w-[320px] h-[188px]  object-cover rounded-lg md:col-span-1"
                     />
                     <div className="p-4 md:col-span-2 flex flex-col justify-between">
                       <Link
@@ -259,15 +272,18 @@ const NewsPage: React.FC = () => {
                       >
                         CÔNG NGHỆ
                       </Link>
-                      <h1 className="md:text-[18px] text-[12px] font-bold text-gray-800">
+                      <h1 className="md:text-[18px] text-[12px] font-medium text-gray-800">
                         {news.title}
                       </h1>
+                      <p className="text-sm line-clamp-1 text-gray-600">
+                        {news.text}
+                      </p>
                       <div className="flex justify-between items-center text-sm">
-                        <p className=" text-gray-600 text-center">
-                          {news.date}
+                        <p className="flex flex-row items-center gap-2 text-gray-600 text-center">
+                          <Calendar size={16} /> {news.date}
                         </p>
                         <button
-                          className={`${index === 1 ? 'text-[#FFFFFF]/90 border-[#FFFFFF]/20' : 'text-[#000000]/90 border-[#000000]/90'} font-medium border-[1px]  rounded-full px-2 py-1`}
+                          className={`md:px-6 md:py-3 px-3 py-2 text-[#000000]/90 border-[#000000]/90'} font-medium border-[1px]  rounded-full `}
                         >
                           Đọc thêm
                         </button>
@@ -283,11 +299,11 @@ const NewsPage: React.FC = () => {
               </h2>
               <div className="flex flex-col gap-4">
                 <div className="flex justify-between items-center ">
-                  <div className="flex items-center gap-7">
+                  <div className="flex items-center gap-5">
                     <img
                       src="/img/facebook_logo.png"
                       alt="Facebook"
-                      className="w-auto h-auto max-w-[50px] max-h-[50px]  rounded-full  "
+                      className=" w-[40px] h-[40px]  rounded-lg  "
                     />
                     <p className="text-gray-700 font-normal text-base">
                       50,987 Follow
@@ -311,11 +327,11 @@ const NewsPage: React.FC = () => {
                   </button>
                 </div>
                 <div className="flex justify-between items-center">
-                  <div className="flex items-center gap-7">
+                  <div className="flex items-center gap-5">
                     <img
                       src="/img/x_logo.jpg"
                       alt="X"
-                      className="w-auto h-auto max-w-[50px] max-h-[50px]  rounded-full  "
+                      className=" w-[40px] h-[40px]   "
                     />
                     <p className="text-gray-700 font-normal text-base">
                       8,987 Follower
@@ -339,11 +355,11 @@ const NewsPage: React.FC = () => {
                   </button>
                 </div>
                 <div className="flex justify-between items-center">
-                  <div className="flex items-center gap-7">
+                  <div className="flex items-center gap-5">
                     <img
                       src="/img/youtube_logo.jpg"
                       alt="Youtube"
-                      className="w-auto h-auto max-w-[50px] max-h-[50px]  rounded-full  "
+                      className="w-auto h-auto w-[40px] h-[40px]  rounded-lg  "
                     />
                     <p className="text-gray-700 font-normal text-base">
                       50,987 Fans

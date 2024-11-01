@@ -1,3 +1,4 @@
+import { Calendar } from 'lucide-react';
 import Link from 'next/link';
 import React from 'react';
 
@@ -19,10 +20,10 @@ export const ProjectCard: React.FC<{
         </h2>
         <p className="md:text-lg text-xs text-white">{project.subTitle}</p>
         <div className="flex justify-between gap-5">
-          <p className="text-xs text-[#656468]">{project.date}</p>
+          <p className="flex flex-row gap-2 text-sm text-[#656468]"><Calendar size={16} /> {project.date}</p>
         </div>
         <div>
-                <button className= "max-sm:hidden text-[#FFFFFF]/90 bg-[#48B96D] border-[#FFFFFF]/20 font-medium border-[1px]  rounded-full px-3 py-2 inline-flex">
+                <button className= "max-sm:hidden text-[#FFFFFF]/90 bg-[#48B96D] border-[#FFFFFF]/20 font-medium border-[1px]  rounded-full md:px-6 md:py-3 px-3 py-2 inline-flex">
                 Đọc thêm
               </button>
                 </div>

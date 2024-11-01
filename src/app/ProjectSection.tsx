@@ -127,10 +127,10 @@ const ProjectSection = () => {
                       </div>
                     </div>
                     <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#FFFFFF] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div className="absolute inset-x-0 bottom-4 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute inset-x-0 bottom-4 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-4">
                       <a
                         href="/detail-category"
-                        className="bg-[#4CAF50] text-white text-sm font-medium px-6 py-2 rounded-full cursor-pointer text-center flex items-center"
+                        className="bg-[#4CAF50] w-full text-white text-sm font-medium  py-2 rounded-full cursor-pointer text-center justify-center flex items-center"
                       >
                         Xem chi tiết
                         <svg
@@ -154,7 +154,7 @@ const ProjectSection = () => {
               ))}
             </div>
           </div>
-          <button className={styles.moreProjectsButton}>
+          <a href="/products" className={styles.moreProjectsButton}>
             TÌM HIỂU THÊM CÁC DỰ ÁN{' '}
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -163,7 +163,7 @@ const ProjectSection = () => {
             >
               <path d="M13.1714 12.0007L8.22168 7.05093L9.63589 5.63672L15.9999 12.0007L9.63589 18.3646L8.22168 16.9504L13.1714 12.0007Z" />
             </svg>
-          </button>
+          </a>
         </div>
       </section>
     </>
