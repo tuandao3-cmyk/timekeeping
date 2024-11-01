@@ -62,7 +62,7 @@ const FeedbackSection: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-[#FFFFFF] 4xl:py-10 3xl:py-8 py-16 relative overflow-hidden">
+    <div className="bg-[#FFFFFF] py-8 relative overflow-hidden">
       {/* Vòng tròn đồng tâm */}
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0">
         {/* <div className="w-[800px] h-[800px] rounded-full border-2 border-[#48B96D] opacity-20"></div> */}
@@ -71,7 +71,7 @@ const FeedbackSection: React.FC = () => {
         <div className="absolute top-1/2 left-1/2 4xl:w-[400px] 4xl:h-[400px] 3xl:w-[300px] 3xl:h-[300px] w-[200px] h-[200px] rounded-full border-2 border-[#48B96D] opacity-20 transform -translate-x-1/2 -translate-y-1/2"></div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container max-h-[900px] mx-auto px-4 relative z-10">
         <h2
           ref={ref}
           className={`4xl:text-[72px] 4xl:leading-[80px] 3xl:text-[48px] 3xl:leading-[50px] 4xl:mb-8 3xl:mb-6 text-4xl font-inter leading-[48px] font-bold text-center mb-2
@@ -82,7 +82,7 @@ const FeedbackSection: React.FC = () => {
         <p className="4xl:text-[60px] 4xl:leading-[72px] 4xl:max-w-[40vw] 3xl:text-[36px] 3xl:leading-[42px] text-center font-inter text-3xl leading-10 text-gray-600 mb-12 max-w-[42vw] mx-auto">
           HYRACAP LUÔN QUAN TÂM ĐẾN PHẢN HỒI CỦA TỪNG KHÁCH HÀNG
         </p>
-        <div className="relative 4xl:h-[1400px] 3xl:h-[1000px] h-[800px]">
+        <div className="relative   h-[800px]">
           {feedbacks.map((feedback, index) => (
             <div
               key={feedback.id}
@@ -91,7 +91,7 @@ const FeedbackSection: React.FC = () => {
               }}
               className={`bg-white rounded-lg shadow-lg p-6 absolute transition-all duration-500 opacity-0 hover:bg-[#48B96D] group ${
                 index === 0
-                  ? 'top-[30px]  right-1/2 max-w-md 4xl:top-[130px] 4xl:max-w-[800px] 3xl:top-[50px] 3xl:max-w-[700px]'
+                  ? 'top-0  right-1/2 max-w-md 4xl:top-[130px] 4xl:max-w-[800px] 3xl:top-[50px] 3xl:max-w-[700px]'
                   : index === 1
                     ? 'top-[210px] 4xl:top-[390px] 4xl:max-w-[1100px] left-1/4 -translate-x-1/2 max-w-xl 3xl:top-[280px] 3xl:max-w-[800px]'
                     : 'top-[418px] 4xl:top-[690px] 4xl:max-w-[1100px] right-1/2 max-w-xl 3xl:top-[540px] 3xl:max-w-[800px]'
