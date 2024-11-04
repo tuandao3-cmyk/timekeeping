@@ -12,13 +12,13 @@ const ProjectSection = () => {
 
   const projects = [
     {
-      title: 'Hyperas Chain',
-      image: '/img/hyperas_chain.png',
+      title: 'Egabid',
+      image: '/img/egabid_pc.png',
       badge: 'Series A',
-      amount: '$3.000.000',
-      progress: '75%',
+      amount: '$500.000',
+      progress: '80%',
       fundingAmount: '$1.500.00',
-      fundingPercent: '75%',
+      fundingPercent: '80%',
       category: ['CÔNG NGHỆ', 'CÔNG NGHỆ'],
     },
     {
@@ -31,17 +31,17 @@ const ProjectSection = () => {
       fundingPercent: '98%',
       category: ['CÔNG NGHỆ', 'CÔNG NGHỆ'],
     },
-
     {
-      title: 'Egabid',
-      image: '/img/egabid_pc.png',
+      title: 'Hyperas Chain',
+      image: '/img/hyperas_chain.png',
       badge: 'Series A',
-      amount: '$500.000',
-      progress: '80%',
+      amount: '$3.000.000',
+      progress: '75%',
       fundingAmount: '$1.500.00',
-      fundingPercent: '80%',
+      fundingPercent: '75%',
       category: ['CÔNG NGHỆ', 'CÔNG NGHỆ'],
     },
+
   ];
 
   return (
@@ -77,7 +77,7 @@ const ProjectSection = () => {
                       alt={project.title}
                       className={` md:h-[250px] md:w-[384px]`}
                     />
-                    <div className={`${styles.badge} font-sans`}>{project.badge}</div>
+                    {/* <div className={`${styles.badge} font-sans`}>{project.badge}</div> */}
 
                     <div className="text-left !text-left">
                       {' '}
