@@ -82,7 +82,7 @@ const NewsPage: React.FC = () => {
                   href={'/news/newsdetail'}
                   className="md:text-[15px] text-[#579DFF] text-xs font-semibold "
                 >
-                  CÔNG NGHỆ
+                  TIN TÀI CHÍNH
                 </Link>
                 <h1
                   className={`text-xl md:text-2xl  font-bold leading-tight lg:line-clamp-2 max-lg:line-clamp-10
@@ -166,7 +166,7 @@ const NewsPage: React.FC = () => {
                         href={news.link || '#'}
                         className="md:text-[15px]  text-[#579DFF]  text-sm font-semibold"
                       >
-                        CÔNG NGHỆ
+                        TIN TÀI CHÍNH
                       </Link>
                       <h1
                         className={` font-bold mt-3 line-clamp-2 text-lg ${index === 1 ? 'text-white ' : 'text-[#151515]  '}`}
@@ -270,7 +270,7 @@ const NewsPage: React.FC = () => {
                         href={news.link || '#'}
                         className="md:text-sm text-[#579DFF] text-sm font-semibold"
                       >
-                        CÔNG NGHỆ
+                        TIN TÀI CHÍNH
                       </Link>
                       <h1 className="md:text-[18px] text-[12px] font-medium text-gray-800">
                         {news.title}
@@ -298,7 +298,7 @@ const NewsPage: React.FC = () => {
                 Theo dõi chúng tôi
               </h2>
               <div className="flex flex-col gap-4">
-              <div className="flex justify-between items-center">
+                <div className="flex justify-between items-center">
                   <div className="flex items-center gap-5">
                     <img
                       src="/img/youtube_logo.jpg"
@@ -382,7 +382,6 @@ const NewsPage: React.FC = () => {
                     </svg>
                   </button>
                 </div>
-
               </div>
               <div className="flex index-2 justify-center items-center bg-[#07212C] w-full h-full max-lg:max-h-[300px] lg:max-h-[390px] rounded-lg my-8  p-6">
                 <div className="index-3 relative flex flex-row text-white  font-bold text-[11px] bg-[#48B96D] w-full h-full md:text-[15px] rounded-lg">

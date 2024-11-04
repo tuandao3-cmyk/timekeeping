@@ -34,10 +34,10 @@ const Footer: React.FC = () => {
           />
         </div> */}
         <div className="grid grid-cols-1 gap-8 px-4   md:grid-cols-5">
-          <div>
+          <div className="md:col-span-2 md:max-w-[258px]">
             <h2
               ref={ref}
-              className={`mb-6 text-[#FFFFFF] text-[16px] text-base font-semibold leading-6 uppercase duration-1000 ease-in-out transform ${
+              className={`mb-6 font-sans text-[#FFFFFF] text-[16px] text-base font-semibold leading-6 uppercase duration-1000 ease-in-out transform ${
                 inView
                   ? 'opacity-100 scale-100 translate-y-0'
                   : 'opacity-0 scale-90 translate-y-10'
@@ -54,7 +54,10 @@ const Footer: React.FC = () => {
                 }`}
                 ref={ref}
               >
-                <a href="#" className=" hover:underline text-[14px] font-[400]">
+                <a
+                  href="#"
+                  className=" hover:underline text-[14px] font-[400] font-sans"
+                >
                   Địa chỉ: Lô CX01, khu đô thị Văn Khê, phường La Khê, quận Hà
                   Đông, Hà Nội.
                 </a>
@@ -69,7 +72,7 @@ const Footer: React.FC = () => {
               >
                 <a
                   href="#"
-                  className=" hover:underline text-[14px] font-[400] flex gap-[8px] justify-start"
+                  className=" hover:underline text-[14px] font-[400] flex gap-[8px] justify-start font-sans"
                 >
                   <SmsIcon className="w-4 h-4 mr-2" />
                   info@hyratek.com
@@ -79,7 +82,7 @@ const Footer: React.FC = () => {
                 <a
                   ref={ref}
                   href="#"
-                  className={` hover:underline text-[14px] font-[400] flex gap-[8px] justify-start duration-2500 ease-in-out transform ${
+                  className={` font-sans hover:underline text-[14px] font-[400] flex gap-[8px] justify-start duration-2500 ease-in-out transform ${
                     inView
                       ? 'opacity-100 scale-100 translate-y-0'
                       : 'opacity-0 scale-90 translate-y-10'
@@ -91,11 +94,11 @@ const Footer: React.FC = () => {
               </li>
             </ul>
           </div>
-          <div></div>
+
           <div>
             <h2
               ref={ref}
-              className={`mb-6 font-inter text-sm md:text-base leading-4 md:leading-6 font-semibold text-[#ffffff] uppercase text-[16px] duration-1000 ease-in-out transform ${
+              className={`mb-6 font-sans  text-sm md:text-base leading-4 md:leading-6 font-semibold text-[#ffffff] uppercase text-[16px] duration-1000 ease-in-out transform ${
                 inView
                   ? 'opacity-100 scale-100 translate-y-0'
                   : 'opacity-0 scale-90 translate-y-10'
@@ -105,17 +108,20 @@ const Footer: React.FC = () => {
             </h2>
             <ul className="text-gray-500 dark:text-gray-400 ">
               <li className="mb-4">
-                <a href="/about" className="hover:underline">
+                <a
+                  href="/about"
+                  className="hover:underline font-sans text-[14px]"
+                >
                   Về chúng tôi
                 </a>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline">
+                <a href="#" className="hover:underline font-sans text-[14px]">
                   Công nghệ của chúng tôi
                 </a>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline">
+                <a href="#" className="hover:underline font-sans text-[14px]">
                   Bộ phương tiện truyền thông
                 </a>
               </li>
@@ -124,7 +130,7 @@ const Footer: React.FC = () => {
           <div>
             <h2
               ref={ref}
-              className={`mb-6 font-inter text-sm md:text-base leading-4 md:leading-6 font-semibold text-[#ffffff] uppercase  text-[16px] duration-1000 ease-in-out transform ${
+              className={`mb-6 font-sans text-sm md:text-base leading-4 md:leading-6 font-semibold text-[#ffffff] uppercase  text-[16px] duration-1000 ease-in-out transform ${
                 inView
                   ? 'opacity-100 scale-100 translate-y-0'
                   : 'opacity-0 scale-90 translate-y-10'
@@ -134,17 +140,17 @@ const Footer: React.FC = () => {
             </h2>
             <ul className="text-gray-500 dark:text-gray-400 ">
               <li className="mb-4">
-                <a href="#" className="hover:underline">
+                <a href="#" className="hover:underline font-sans text-[14px]">
                   Hyperas
                 </a>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline">
+                <a href="#" className="hover:underline font-sans text-[14px]">
                   Salala AI
                 </a>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline">
+                <a href="#" className="hover:underline font-sans text-[14px]">
                   Egabid
                 </a>
               </li>
@@ -153,7 +159,7 @@ const Footer: React.FC = () => {
           <div>
             <h2
               ref={ref}
-              className={`mb-6 font-inter text-sm md:text-base leading-4 md:leading-6 font-semibold text-[#ffffff] uppercase  text-[16px] duration-1000 ease-in-out transform ${
+              className={`mb-6 font-sans text-sm md:text-base leading-4 md:leading-6 font-semibold text-[#ffffff] uppercase  text-[16px] duration-1000 ease-in-out transform ${
                 inView
                   ? 'opacity-100 scale-100 translate-y-0'
                   : 'opacity-0 scale-90 translate-y-10'
@@ -163,22 +169,22 @@ const Footer: React.FC = () => {
             </h2>
             <ul className="text-gray-500 dark:text-gray-400 ">
               <li className="mb-4">
-                <a href="#" className="hover:underline">
+                <a href="#" className="hover:underline font-sans text-[14px]">
                   Tin tức
                 </a>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline">
+                <a href="#" className="hover:underline font-sans text-[14px]">
                   Tuyển dụng
                 </a>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline">
+                <a href="#" className="hover:underline font-sans text-[14px]">
                   Liên hệ chúng tôi
                 </a>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline">
+                <a href="#" className="hover:underline font-sans text-[14px]">
                   Quan hệ cổ đông
                 </a>
               </li>
@@ -193,7 +199,7 @@ const Footer: React.FC = () => {
               : 'opacity-0 scale-90 translate-y-10'
           }`}
         >
-          <span className="text-sm text-gray-500 dark:text-gray-300 sm:text-center">
+          <span className="text-sm text-gray-500 dark:text-gray-300 sm:text-center font-sans">
             Hyratek là nhãn hiệu đã đăng ký. 2022 - 2027 Bảo lưu mọi quyền.
           </span>
           <div className="flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse">
