@@ -22,15 +22,9 @@ const ReportPage: React.FC = () => {
 
   return (
     <>
-      <div className="relative w-full h-[520px] bg-[#07212C] bg-[url('/img/report/report_banner.png')] bg-no-repeat bg-cover bg-center">
-        <div
-          className="absolute inset-0 bg-gradient-to-b flex  items-end pb-[107px] justify-center"
-          style={{
-            background:
-              'linear-gradient(180deg, rgba(11, 53, 70, 0.08) 17.75%, rgba(11, 53, 70, 0.747169) 51.39%, rgba(11, 53, 70, 0.862047) 71.15%, #0B3546 88.52%)',
-          }}
-        >
-          <div className="flex flex-col items-center justify-end text-center max-w-[1440px] text-white gap-[22px]">
+      <div className="flex flex-col items-center justify-center w-full h-[520px] bg-[#07212C] bg-[url('/img/report/baocao_bg.jpg')] bg-no-repeat bg-cover bg-center">
+        <div className="  pb-[107px]">
+          <div className="flex flex-col items-center justify-end text-center max-w-[1440px] text-[#0B3546] gap-[22px]">
             <Typography
               sx={{
                 fontWeight: 700,

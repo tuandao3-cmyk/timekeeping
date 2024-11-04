@@ -46,15 +46,9 @@ const GuidePage: React.FC = () => {
 
   return (
     <>
-      <div className="relative w-full h-[520px] bg-[#07212C] bg-[url('/img/guides/guides_banner.png')] bg-no-repeat bg-cover bg-center">
-        <div
-          className="absolute inset-0 bg-gradient-to-b flex  items-end pb-[107px] justify-center"
-          style={{
-            background:
-              'linear-gradient(180deg, rgba(11, 53, 70, 0.08) 17.75%, rgba(11, 53, 70, 0.747169) 51.39%, rgba(11, 53, 70, 0.862047) 71.15%, #0B3546 88.52%)',
-          }}
-        >
-          <div className="flex flex-col items-center justify-end text-center max-w-[1440px] text-white gap-[22px]">
+      <div className=" w-full h-[520px]  bg-[#07212C] bg-[url('/img/guides/guide_bg.png')] bg-no-repeat bg-cover bg-center">
+        <div className="  flex flex-col w-full h-full items-center pb-[107px]  gap-10 justify-center">
+          <div className="flex flex-col items-center justify-end text-center max-w-[1440px] text-[#0B3546] gap-[22px]">
             <Typography
               sx={{
                 fontWeight: 700,
@@ -77,19 +71,19 @@ const GuidePage: React.FC = () => {
               cơ hội sinh lợi hấp dẫn.
             </Typography>
           </div>
-        </div>
-        <div className="bg-[#F3F7F4]  gap-[24px] w-full max-w-[1200px] absolute -bottom-[68px] p-[40px] flex left-1/2 transform -translate-x-1/2 rounded-[20px]  ">
-          <input
-            type="text"
+          <div className="bg-white h-[56px] gap-[24px] w-full max-w-[800px]  p-2 flex  rounded-[20px]  ">
+            <input
+              type="text"
             placeholder="Nhập thông tin bạn cần tìm"
-            className="w-full h-[56px] bg-[#FFFFFF] border-none rounded-[10px] px-[20px] text-[#686868] font-400 text-[16px] leading-[24px] focus:outline-[#28a745]"
+            className="w-full  bg-[#FFFFFF] border-none px-[20px] text-[#686868] font-400 text-[16px] leading-[24px] focus:outline-[#28a745]"
           />
-          <button className="bg-[#48B96D] transition ease-in-out duration-300 hover:bg-[#297241] px-[32px] py-[18px] rounded-[16px] text-[#fff] text-[15px] font-500 leading-[20px] min-w-[140px]">
+          <button className="bg-[#48B96D] transition ease-in-out duration-300 hover:bg-[#297241] px-[16px] py-[10px] rounded-[16px] text-[#fff] text-[15px] font-500 leading-[20px] min-w-[140px]">
             Tìm kiếm
           </button>
         </div>
+        </div>
       </div>
-      <div className="flex max-w-[1440px] mx-auto pt-[68px] ">
+      <div className="flex max-w-[1440px] mx-auto  ">
         <aside className="max-w-[330px] w-[23vw] p-5 border-r border-[#E0E0E0]">
           <nav>
             <ul className=" flex flex-col gap-10 text-xl 3xl:text-2xl text-left pt-[50px] lg:ml-[60px] ">
