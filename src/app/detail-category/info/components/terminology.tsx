@@ -62,7 +62,7 @@ function Terminology() {
             fontSize={'14px'}
             lineHeight={'24px'}
             fontFamily={'Inter'}
-            color="#0000008F"
+            color="#rgb(76,76,76)"
             flexGrow={1}
           >
             {item.title}
@@ -71,7 +71,7 @@ function Terminology() {
             fontWeight={500}
             fontSize={'14px'}
             lineHeight={'24px'}
-            color="#000000B2"
+            color="#rgb(76,76,76)"
             fontFamily={'Inter'}
             flexGrow={1}
             maxWidth={'50%'}

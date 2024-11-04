@@ -110,7 +110,7 @@ const NewsPage: React.FC = () => {
                   AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội
                 </p>
                 <div>
-                  <button className="max-sm:hidden text-[#FFFFFF]/90 bg-[#48B96D] border-[#FFFFFF]/20 font-medium border-[1px]  rounded-full px-3 py-2 inline-flex">
+                  <button className="max-sm:hidden text-[#FFFFFF]/90 bg-[#48B96D] border-[#c2c2c2] font-medium border-[1px]  rounded-full px-3 py-2 inline-flex">
                     Đọc thêm
                   </button>
                 </div>
@@ -186,7 +186,7 @@ const NewsPage: React.FC = () => {
                         </p>
                         <a
                           href={news.link || '#'}
-                          className={`md:px-6 md:py-3 px-3 py-2 ${index === 1 ? 'text-[#FFFFFF]/90 border-[#FFFFFF]/20' : 'text-[#000000]/90 border-[#000000]/90 mx-4'} font-medium border-[1px] mb-2 rounded-full `}
+                          className={`md:px-6 md:py-3 px-3 py-2 ${index === 1 ? 'text-[#FFFFFF]/90 border-[#2f454e]' : 'text-[#000000]/90 border-[#c2c2c2] mx-4'} font-medium border-[1px] mb-2 rounded-full `}
                         >
                           Đọc thêm
                         </a>
@@ -253,7 +253,7 @@ const NewsPage: React.FC = () => {
       <section className="w-full bg-cover bg-center flex justify-center flex-col items-center gap-3">
         <div className="max-w-[1200px]">
           <h1 className="w-full max-lg:px-8 text-left text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 pt-8">
-            Sự kiện đã diễn ra
+            Sự kiện nổi bật
           </h1>
           <div className="w-full max-lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
             <div className="w-full col-span-2 gap-3">
@@ -283,7 +283,7 @@ const NewsPage: React.FC = () => {
                           <Calendar size={16} /> {news.date}
                         </p>
                         <button
-                          className={`md:px-6 md:py-3 px-3 py-2 text-[#000000]/90 border-[#000000]/90'} font-medium border-[1px]  rounded-full `}
+                          className={`md:px-6 md:py-3 px-3 py-2 text-[#000000]/90 border-[#c2c2c2] font-medium border-[1px]  rounded-full `}
                         >
                           Đọc thêm
                         </button>
@@ -298,6 +298,34 @@ const NewsPage: React.FC = () => {
                 Theo dõi chúng tôi
               </h2>
               <div className="flex flex-col gap-4">
+              <div className="flex justify-between items-center">
+                  <div className="flex items-center gap-5">
+                    <img
+                      src="/img/youtube_logo.jpg"
+                      alt="Youtube"
+                      className="w-auto h-auto w-[40px] h-[40px]  rounded-lg  "
+                    />
+                    <p className="text-gray-700 font-normal text-base">
+                      50,987 Fans
+                    </p>
+                  </div>
+                  <button className="flex bg-gray-100 items-center justify-center w-8 h-8 rounded-xs border border-gray-300 hover:border-gray-400 transition-colors">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-4 h-4 text-gray-500"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                      />
+                    </svg>
+                  </button>
+                </div>
                 <div className="flex justify-between items-center ">
                   <div className="flex items-center gap-5">
                     <img
@@ -334,7 +362,7 @@ const NewsPage: React.FC = () => {
                       className=" w-[40px] h-[40px]   "
                     />
                     <p className="text-gray-700 font-normal text-base">
-                      8,987 Follower
+                      50,987 Follower
                     </p>
                   </div>
                   <button className="flex bg-gray-100 items-center justify-center w-8 h-8 rounded-xs border border-gray-300 hover:border-gray-400 transition-colors">
@@ -354,34 +382,7 @@ const NewsPage: React.FC = () => {
                     </svg>
                   </button>
                 </div>
-                <div className="flex justify-between items-center">
-                  <div className="flex items-center gap-5">
-                    <img
-                      src="/img/youtube_logo.jpg"
-                      alt="Youtube"
-                      className="w-auto h-auto w-[40px] h-[40px]  rounded-lg  "
-                    />
-                    <p className="text-gray-700 font-normal text-base">
-                      50,987 Fans
-                    </p>
-                  </div>
-                  <button className="flex bg-gray-100 items-center justify-center w-8 h-8 rounded-xs border border-gray-300 hover:border-gray-400 transition-colors">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="w-4 h-4 text-gray-500"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                      />
-                    </svg>
-                  </button>
-                </div>
+
               </div>
               <div className="flex index-2 justify-center items-center bg-[#07212C] w-full h-full max-lg:max-h-[300px] lg:max-h-[390px] rounded-lg my-8  p-6">
                 <div className="index-3 relative flex flex-row text-white  font-bold text-[11px] bg-[#48B96D] w-full h-full md:text-[15px] rounded-lg">

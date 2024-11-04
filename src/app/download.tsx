@@ -106,7 +106,7 @@ const DownloadSection = () => {
               </div>
             </div>
           </div>
-          <div className="relative  max-h-[600px] flex items-center justify-center overflow-hidden ">
+          <div className="relative  max-h-[660px] flex items-center justify-center overflow-hidden ">
             <Image
               ref={ref}
               src="/img/downloadimg.png"

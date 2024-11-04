@@ -7,23 +7,23 @@ function Growth() {
     {
       name: 'Công việc đã đào tạo',
       amount: '+2,985,122,684',
-      icon: '/img/icon/google-docs.svg',
+      icon: '/img/icon/bag.png',
     },
     {
       name: 'Mô hình đào tạo',
       amount: '+2,985,122,684',
-      icon: '/img/icon/device.svg',
+      icon: '/img/icon/brand.png',
     },
     {
       name: 'Tổng thiết bị',
       amount: '+2,985,122,684',
-      icon: '/img/icon/google-docs.svg',
+      icon: '/img/icon/multidevice.png',
     },
 
     {
       name: 'Tổng Hyra kiếm được',
       amount: '+2,985,122,684',
-      icon: '/img/icon/device.svg',
+      icon: '/img/icon/hyracoin.png',
     },
   ];
   return (
