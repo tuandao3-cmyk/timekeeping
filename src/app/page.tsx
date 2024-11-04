@@ -11,7 +11,7 @@ import SolutionList from '@/components/solutionList/solutionList';
 import Download from './download';
 import News from './news';
 import FeedbackSection from './FeedbackSection';
-import { Typography } from '@mui/material';
+import BannerSwipper from '@/components/bannerSwipper';
 
 const Home: React.FC = () => {
   const rightFrameRef = useRef<HTMLDivElement>(null);
@@ -49,11 +49,22 @@ const Home: React.FC = () => {
     };
   }, []);
 
+  const progressCircle = useRef<any>(null);
+  const progressContent = useRef<any>(null);
+  const onAutoplayTimeLeft = (s: any, time: any, progress: any) => {
+    if (progressCircle.current) {
+      progressCircle.current.style.setProperty('--progress', 1 - progress);
+    }
+    if (progressContent.current) {
+      progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
+    }
+  };
+
   return (
     <div className={styles.container}>
       <section className="bg-[#07212C] flex flex-col justify-center items-center w-full ">
+        {/* <BannerSwipper /> */}
         <div className=" text-white py-8 flex max-h-[748px]  max-w-[1440px] w-full">
-          {/* Phần bên trái */}
           <div className="w-full md:ml-[10%]  md:w-1/2 md:max-w-[45%]  md:pr-8">
             <p
               ref={ref}
@@ -74,8 +85,9 @@ const Home: React.FC = () => {
                   : 'opacity-0 translate-y-10'
               } text-base font-sans pb-[5%] sm:text-base md:max-w-[85%] mb-4 sm:mb-6 text-[#FFFFFF]/60`}
             >
-              Cung cấp cho các nhà đầu tư và doanh nghiệp những dự án <br />{' '}
-              tiềm năng phát triển để chia sẻ sự tăng trưởng tài chính.
+              Cung cấp cho các nhà đầu tư và doanh nghiệp những dự án tiềm năng,
+              mở ra cơ hội hợp tác nhằm tối ưu hóa lợi nhuận và thúc đẩy sự phát
+              triển tài chính.
             </p>
             <button
               ref={ref}
@@ -132,7 +144,6 @@ const Home: React.FC = () => {
             </div>
           </div>
 
-          {/* Phần bên phải */}
           <div
             ref={rightFrameRef}
             className={`w-full md:w-1/2  max-sm:hidden relative mt-8 md:mt-0 transition-all duration-300 ${
@@ -150,7 +161,6 @@ const Home: React.FC = () => {
                   }`}
                 />
 
-                {/* Khung Hyperas */}
                 <div
                   ref={ref}
                   className={`absolute w-[58%] sm:w-[50%] top-[7%] sm:top-[5%] md:top-[7%] left-[-30%] sm:left-[-25%] md:left-[-25%] bg-white text-[#04141A] rounded-[1.25rem] shadow overflow-hidden flex flex-col duration-300 delay-300 ease-in-out transform ${
@@ -179,7 +189,6 @@ const Home: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Khung Salala */}
                 <div
                   ref={ref}
                   className={` delay-700 ease-in-out transform ${
@@ -249,10 +258,8 @@ const Home: React.FC = () => {
       </section>
       <Partner />
       <SolutionList />
-
       <ProjectSection />
       <News />
-
       <FeedbackSection />
       <Download />
       <PressSection />
