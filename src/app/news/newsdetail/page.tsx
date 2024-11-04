@@ -60,7 +60,7 @@ const NewsDetail: React.FC = () => {
             Hyratek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.
           </h1>
 
-          <div className='relative flex flex-row gap-4 py-2 items-center'>
+          <div className='relative flex flex-row gap-4 py-4 items-center'>
             <img
               src="/img/logohyracap.png"
               alt="logo"
@@ -103,10 +103,10 @@ const NewsDetail: React.FC = () => {
 
           <div className="mb-8 flex justify-center items-center">
             <Image
-              src="/img/22.png"
+              src="/img/news/chitiet.png"
               alt="Privacy policy"
-              width={800}
-              height={400}
+              width={1200}
+              height={600}
               className="w-full max-w-[1200px] max-h-[600px] object-cover rounded-lg shadow-lg"
             />
           </div>
@@ -147,11 +147,11 @@ const NewsDetail: React.FC = () => {
 
           <div className="mb-8 flex justify-center items-center">
             <Image
-              src="/img/21.png"
+              src="/img/news/chitiet1.png"
               alt="Privacy policy"
-              width={800}
-              height={400}
-              className="w-full max-w-[1200px] max-h-[600px] object-cover rounded-lg shadow-lg"
+              width={1200}
+              height={720}
+              className="w-full max-w-[1200px] max-h-[720px] object-cover rounded-lg shadow-lg"
             />
           </div>
 

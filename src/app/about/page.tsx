@@ -226,13 +226,21 @@ const AboutPage: React.FC = () => {
   return (
     <>
       {/* <div className="max-h-max"> */}
-      <div className="bg-[#07212C] min-h-[820px]  w-full flex flex-col justify-center items-center gap-[48px] pb-[32px]">
+      <div className="bg-white min-h-[812px]  w-full flex flex-col justify-center items-center "
+        style={{
+          backgroundImage: "url('/img/about/bg_about_us.png')",
+          backgroundSize: '170% 170%',
+          backgroundPosition: 'top',
+          backgroundRepeat: 'no-repeat',
+        }}
+      >
         <div className="flex flex-col items-center justify-center w-full max-w-[1440px]">
-          <div className="flex justify-between items-center h-auto w-full mt-16 max-md:!flex-col pl-32 pr-12">
-            <div className="flex-1 gap-2">
+          <div className="flex justify-between items-center w-full h-full mt-16 max-md:!flex-col pl-20 pr-12">
+            <div className="flex flex-col min-h-[620px] justify-start flex-1  gap-10">
+              <div className="flex flex-col gap-2">
               <p
                 ref={ref}
-                className={`text-[40px] leading-[56px] text-white font-sans font-bold uppercase duration-700 ease-in-out transform ${
+                className={`text-[40px] leading-[56px] text-[#04141A] font-sans font-bold uppercase duration-700 ease-in-out transform ${
                   inView
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-10'
@@ -258,13 +266,12 @@ const AboutPage: React.FC = () => {
                     : 'opacity-0 translate-y-10'
                 }`}
               >
-                trưởng tài sản nhanh hơn
-              </p>
-            </div>
-            <div className="flex-1 flex flex-col gap-[32px] justify-end items-end">
+                  trưởng tài sản nhanh hơn
+                </p>
+              </div>
               <p
                 ref={ref}
-                className={`text-[20px] text-[#F3F7F4] font-sans leading-[32px] max-w-[500px]  duration-700  ease-in-out transform ${
+                className={`text-[20px] text-[#000000]/60 font-sans leading-[32px] max-w-[500px]  duration-700  ease-in-out transform ${
                   inView
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-10'
@@ -275,7 +282,7 @@ const AboutPage: React.FC = () => {
                 bền vững.
               </p>
 
-              <div className="flex w-[100%] justify-start items-start gap-[24px] max-w-[500px]">
+              <div className="flex w-[100%] justify-start items-start  max-w-[500px]">
                 <button
                   ref={ref}
                   className={` bg-[#48B96D] text-white font-sans text-[16px] leading-[20px]  px-[16px] py-[14px] rounded-[999px] text-center  hover:bg-[#379256] transition-all  duration-300 delay-200 ease-in-out transform ${
@@ -284,9 +291,9 @@ const AboutPage: React.FC = () => {
                       : 'opacity-0 translate-y-10'
                   }`}
                 >
-                  Khám phá
+                  Khám phá cơ hội
                 </button>
-                <button
+                {/* <button
                   ref={ref}
                   className={`bg-transparent border font-sans border-[#FFFFFF29] text-[#FFFFFF] text-[16px] leading-[20px] text-center   px-[16px] py-[14px]  rounded-[999px]  hover:bg-[#379256]  transition-all  duration-300 delay-500 ease-in-out transform ${
                     inView
@@ -295,13 +302,16 @@ const AboutPage: React.FC = () => {
                   } `}
                 >
                   Liên hệ
-                </button>
+                </button> */}
               </div>
+            </div>
+            <div className="flex-1 flex flex-col gap-[32px] justify-end items-end">
+              <img src="/img/about/about_img_1.png" alt="Vision illustration" />
             </div>
           </div>
         </div>
         <div className="w-full flex flex-col items-center justify-center max-w-[1440px]">
-          <div className="flex justify-center items-center w-full  bg-transparent  px-32">
+          {/* <div className="flex justify-center items-center w-full  bg-transparent  px-32">
             <video
               ref={ref}
               className={`w-full border  border-gray-200 rounded-[16px] dark:border-gray-700  duration-1000  ease-in-out transform ${
@@ -315,7 +325,7 @@ const AboutPage: React.FC = () => {
             >
               <source src="/video/about_vd.mp4" type="video/mp4" />
             </video>
-          </div>
+          </div> */}
         </div>
       </div>
 
