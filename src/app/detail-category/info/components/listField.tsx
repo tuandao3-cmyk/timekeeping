@@ -28,7 +28,7 @@ function ListField(props: ListFieldProps) {
             fontSize={'14px'}
             lineHeight={'24px'}
             fontFamily={'Inter'}
-            color="#0000008F"
+            color="rgb(112,112,112)"
           >
             {item.title}
           </Typography>
@@ -36,7 +36,7 @@ function ListField(props: ListFieldProps) {
             fontWeight={500}
             fontSize={'14px'}
             lineHeight={'24px'}
-            color="#000000B2"
+            color="rgb(76,76,76)"
             fontFamily={'Inter'}
           >
             {item.value}

@@ -155,7 +155,7 @@ const ProjectSection = () => {
             </div>
           </div>
           <a href="/products" className={`${styles.moreProjectsButton} font-sans`}>
-            TÌM HIỂU THÊM CÁC DỰ ÁN{' '}
+            Tìm hiểu thêm các dự án{' '}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"

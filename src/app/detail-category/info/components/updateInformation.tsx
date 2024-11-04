@@ -52,7 +52,7 @@ function UpdateInfo() {
             width={'100%'}
           >
             <Input
-              placeholder="Enter email address..."
+              placeholder="Nhập địa chỉ email"
               disableUnderline
               onFocus={() => setIsFocused(true)}
               onBlur={() => setIsFocused(false)}

@@ -361,7 +361,7 @@ const InfoSection: React.FC = () => {
                   Xem thêm
                 </Button>
               </Stack>
-              <div className="flex gap-[24px] items-center  w-full overflow-y-auto justify-center py-8 overflow-x-hidden  ">
+              <div className="flex gap-[24px] items-center  w-full overflow-y-auto justify-center py-5 overflow-x-hidden  ">
                 {product.package.map((packageItem: any, index) => (
                   <ProductItem
                     key={index}

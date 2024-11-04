@@ -57,7 +57,7 @@ const News = () => {
             <h2 className="font-inter font-bold pb-6  text-[36px] leading-[48px] font-sans">
               TIN MỚI NHẤT VỀ HYRACAP
             </h2>
-            <button className=" max-h-[48px] font-sans  bg-white text-gray-950 font-semibold  px-4 border border-gray-300 rounded-full hover:bg-green-500 hover:text-white transition duration-300 flex items-center">
+            <button className=" max-h-[48px] font-sans text--gray-950 font-medium  px-4 border border-gray-300 rounded-full hover:bg-green-500 hover:text-white transition duration-300 flex items-center">
               Xem thêm
             </button>
           </div>
@@ -107,7 +107,7 @@ const News = () => {
                 <div className="w-[100%] flex justify-end items-end ">
                   <button
                     ref={ref}
-                    className={` bg-white text-gray-950 font-sans font-semibold py-2 px-4 border border-gray-300 rounded-full hover:bg-green-500 hover:text-white transition duration-300 flex items-center   ease-in-out transform ${
+                    className={` text-[#000000]/90 font-sans font-medium py-2 px-4 border border-gray-300 rounded-full hover:bg-green-500 hover:text-white transition duration-300 flex items-center   ease-in-out transform ${
                       inView
                         ? 'opacity-100 translate-y-0'
                         : 'opacity-0 translate-y-10'

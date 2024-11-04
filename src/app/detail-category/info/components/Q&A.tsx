@@ -4,7 +4,7 @@ import Accordion from '@mui/material/Accordion';
 import AccordionActions from '@mui/material/AccordionActions';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import Button from '@mui/material/Button';
 
 const questions = [
@@ -103,11 +103,14 @@ function QandA() {
               }}
             >
               <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
+                expandIcon={<KeyboardArrowRightIcon />}
                 aria-controls="panel1-content"
                 id="panel1-header"
                 sx={{
                   paddingLeft: 0,
+                  '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
+                    transform: 'rotate(90deg)',
+                  },
                 }}
               >
                 <Stack
@@ -159,11 +162,14 @@ function QandA() {
               }}
             >
               <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
+                expandIcon={<KeyboardArrowRightIcon />}
                 aria-controls="panel1-content"
                 id="panel1-header"
                 sx={{
                   paddingLeft: 0,
+                  '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
+                    transform: 'rotate(90deg)',
+                  },
                 }}
               >
                 <Stack

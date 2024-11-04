@@ -348,7 +348,7 @@ const AboutPage: React.FC = () => {
                   fontFamily: 'Inter',
                 }}
               >
-                Tầm nhìn
+                TẦM NHÌN
               </Typography>
               <p
                 ref={ref2}
@@ -499,7 +499,7 @@ const AboutPage: React.FC = () => {
                   fontFamily: 'Inter',
                 }}
               >
-                Sứ mệnh
+                SỨ MỆNH
               </Typography>
               <p
                 ref={ref3}
@@ -785,7 +785,7 @@ const AboutPage: React.FC = () => {
                   : 'opacity-0 translate-y-10 scale-50'
               }`}
             >
-              Lời hứa thương hiệu
+              LỜI HỨA THƯƠNG HIỆU
             </h2>
             <p
               ref={ref6}
@@ -1022,7 +1022,7 @@ const AboutPage: React.FC = () => {
                         : 'opacity-0 translate-y-10 scale-50'
                     }`}
                   >
-                    We’re open for any suggestion or just have a chat.
+                    Chúng tôi sẵn sàng đón nhận mọi ý kiến từ các bạn.
                   </h3>
                   <form>
                     <input
