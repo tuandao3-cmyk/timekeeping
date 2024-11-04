@@ -1,5 +1,10 @@
-'use client'
-import { FacebookIcon, LinkedInIcon, YouTubeIcon, XIcon } from '@/components/icons';
+'use client';
+import {
+  FacebookIcon,
+  LinkedInIcon,
+  YouTubeIcon,
+  XIcon,
+} from '@/components/icons';
 import { Calendar } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -48,23 +53,28 @@ const NewsDetail: React.FC = () => {
   });
 
   return (
-    <div className='w-full'>
-      <div className='max-w-[1440px] mx-auto flex flex-col justify-center items-center'>
+    <div className="w-full">
+      <div className="max-w-[1440px] mx-auto flex flex-col justify-center items-center">
         <div className="w-full max-w-[1200px] p-8 ">
-          <div className='flex flex-row gap-4 items-center'>
-            <div className="w-fit rounded-full bg-[#000000]/10 text-sm font-semibold text-[#000000]/50 px-2 py-1">News</div>
-            <div className='text-sm font-semibold text-[#000000]/50'>5 min read</div>
+          <div className="flex flex-row gap-4 items-center">
+            <div className="w-fit rounded-full bg-[#000000]/10 text-sm font-semibold text-[#000000]/50 px-2 py-1">
+              News
+            </div>
+            <div className="text-sm font-semibold text-[#000000]/50">
+              5 min read
+            </div>
           </div>
 
           <h1 className="text-2xl md:text-3xl font-bold mb-4">
-            Hyratek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.
+            Hyratek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án
+            "Phục dựng ảnh liệt sĩ" của Hà Nội.
           </h1>
 
-          <div className='relative flex flex-row gap-4 py-4 items-center'>
+          <div className="relative flex flex-row gap-4 py-4 items-center">
             <img
               src="/img/logohyracap.png"
               alt="logo"
-              className='flex-start'
+              className="flex-start"
               width={100}
               height={100}
             />
@@ -112,37 +122,73 @@ const NewsDetail: React.FC = () => {
           </div>
 
           <p className="mb-6 text-xs md:text-base text-gray-600">
-            Hà Nội, ngày 30 tháng 8 năm 2024 – Tại buổi lễ long trọng diễn ra sáng nay, Hyratek – công ty công nghệ hàng đầu Việt Nam, đã chính thức ký kết hợp tác chiến lược với Qualcomm – tập đoàn viễn thông và bán dẫn danh tiếng toàn cầu. Đây là cột mốc quan trọng đánh dấu sự hợp tác sâu rộng giữa hai công ty trong việc phát triển các giải pháp công nghệ tiên tiến tại Việt Nam và khu vực Đông Nam Á.
+            Hà Nội, ngày 30 tháng 8 năm 2024 – Tại buổi lễ long trọng diễn ra
+            sáng nay, Hyratek – công ty công nghệ hàng đầu Việt Nam, đã chính
+            thức ký kết hợp tác chiến lược với Qualcomm – tập đoàn viễn thông và
+            bán dẫn danh tiếng toàn cầu. Đây là cột mốc quan trọng đánh dấu sự
+            hợp tác sâu rộng giữa hai công ty trong việc phát triển các giải
+            pháp công nghệ tiên tiến tại Việt Nam và khu vực Đông Nam Á.
           </p>
 
-          <h2 className="text-2xl font-bold mb-4">Mục tiêu và ý nghĩa của dự án phục dựng ảnh liệt sĩ</h2>
+          <h2 className="text-2xl font-bold mb-4">
+            Mục tiêu và ý nghĩa của dự án phục dựng ảnh liệt sĩ
+          </h2>
 
           <p className="mb-6 text-xs md:text-base text-gray-600">
-            Dự án phục dựng ảnh liệt sĩ bằng AI là một sáng kiến của Hyratek, sử dụng các công nghệ tiên tiến như trí tuệ nhân tạo và học máy (machine learning) để tái hiện những bức chân dung của các liệt sĩ đã hy sinh trong cuộc kháng chiến. Rất nhiều bức ảnh tư liệu về các liệt sĩ bị mờ, thiếu chi tiết, hoặc thậm chí bị hư hại hoàn toàn theo thời gian.
-          </p>
-
-          <p className="mb-6 text-xs md:text-base text-gray-600">
-            Ông Trần Nam Chung, CEO của Hyratek, phát biểu tại buổi lễ: "Chúng tôi muốn tôn vinh những người đã cống hiến cuộc đời mình cho độc lập dân tộc. Với sự hỗ trợ từ Qualcomm, dự án này sẽ giúp phục dựng lại những hình ảnh quý giá của các liệt sĩ, giúp thân nhân và cả thế hệ sau có thể nhìn thấy và ghi nhớ."
-          </p>
-
-          <p className="mb-6 text-xs md:text-base text-gray-600">
-            Dự án không chỉ có ý nghĩa về mặt công nghệ mà còn mang tính nhân văn sâu sắc, là một cách để tri ân những người đã hy sinh cho đất nước. Mỗi bức ảnh phục dựng là một câu chuyện, một kỷ niệm đáng trân trọng.
-          </p>
-
-          <h2 className="text-2xl font-bold mb-4">Vai trò của Qualcomm và công nghệ tiên tiến</h2>
-
-          <p className="mb-6 text-xs md:text-base text-gray-600">
-            Với vai trò là đối tác chiến lược, Qualcomm sẽ cung cấp nền tảng công nghệ mạnh mẽ và các giải pháp AI tối ưu nhất cho Hyratek. Bằng việc sử dụng các con chip hiệu suất cao và nền tảng AI tiên tiến của Qualcomm, quy trình phục dựng ảnh sẽ diễn ra nhanh hơn và chính xác hơn, ngay cả với những bức ảnh có chất lượng kém.
+            Dự án phục dựng ảnh liệt sĩ bằng AI là một sáng kiến của Hyratek, sử
+            dụng các công nghệ tiên tiến như trí tuệ nhân tạo và học máy
+            (machine learning) để tái hiện những bức chân dung của các liệt sĩ
+            đã hy sinh trong cuộc kháng chiến. Rất nhiều bức ảnh tư liệu về các
+            liệt sĩ bị mờ, thiếu chi tiết, hoặc thậm chí bị hư hại hoàn toàn
+            theo thời gian.
           </p>
 
           <p className="mb-6 text-xs md:text-base text-gray-600">
-            Ông Alex Rogers, Phó Chủ tịch Qualcomm, chia sẻ: "Chúng tôi rất tự hào khi có cơ hội hợp tác với Hyratek trong dự án đầy ý nghĩa này. Qualcomm luôn cam kết mang công nghệ tiên tiến đến mọi lĩnh vực, và chúng tôi tin rằng trí tuệ nhân tạo có thể làm nên điều kỳ diệu, nhất là trong việc tái hiện lịch sử qua những bức chân dung."
+            Ông Trần Nam Chung, CEO của Hyratek, phát biểu tại buổi lễ: "Chúng
+            tôi muốn tôn vinh những người đã cống hiến cuộc đời mình cho độc lập
+            dân tộc. Với sự hỗ trợ từ Qualcomm, dự án này sẽ giúp phục dựng lại
+            những hình ảnh quý giá của các liệt sĩ, giúp thân nhân và cả thế hệ
+            sau có thể nhìn thấy và ghi nhớ."
           </p>
 
-          <h2 className="text-2xl font-bold mb-4">Lộ trình phát triển và ứng dụng công nghệ AI trong dự án</h2>
+          <p className="mb-6 text-xs md:text-base text-gray-600">
+            Dự án không chỉ có ý nghĩa về mặt công nghệ mà còn mang tính nhân
+            văn sâu sắc, là một cách để tri ân những người đã hy sinh cho đất
+            nước. Mỗi bức ảnh phục dựng là một câu chuyện, một kỷ niệm đáng trân
+            trọng.
+          </p>
+
+          <h2 className="text-2xl font-bold mb-4">
+            Vai trò của Qualcomm và công nghệ tiên tiến
+          </h2>
 
           <p className="mb-6 text-xs md:text-base text-gray-600">
-            Theo kế hoạch, Hyratek sẽ phối hợp với Qualcomm để triển khai dự án theo từng giai đoạn. Trong giai đoạn đầu, công nghệ AI sẽ được thử nghiệm với khoảng 1.000 bức ảnh liệt sĩ từ các kho tư liệu quốc gia. Sau khi đánh giá kết quả, dự án sẽ mở rộng phục dựng hàng chục nghìn bức ảnh khác với sự phối hợp của các cơ quan nhà nước và thân nhân gia đình liệt sĩ.
+            Với vai trò là đối tác chiến lược, Qualcomm sẽ cung cấp nền tảng
+            công nghệ mạnh mẽ và các giải pháp AI tối ưu nhất cho Hyratek. Bằng
+            việc sử dụng các con chip hiệu suất cao và nền tảng AI tiên tiến của
+            Qualcomm, quy trình phục dựng ảnh sẽ diễn ra nhanh hơn và chính xác
+            hơn, ngay cả với những bức ảnh có chất lượng kém.
+          </p>
+
+          <p className="mb-6 text-xs md:text-base text-gray-600">
+            Ông Alex Rogers, Phó Chủ tịch Qualcomm, chia sẻ: "Chúng tôi rất tự
+            hào khi có cơ hội hợp tác với Hyratek trong dự án đầy ý nghĩa này.
+            Qualcomm luôn cam kết mang công nghệ tiên tiến đến mọi lĩnh vực, và
+            chúng tôi tin rằng trí tuệ nhân tạo có thể làm nên điều kỳ diệu,
+            nhất là trong việc tái hiện lịch sử qua những bức chân dung."
+          </p>
+
+          <h2 className="text-2xl font-bold mb-4">
+            Lộ trình phát triển và ứng dụng công nghệ AI trong dự án
+          </h2>
+
+          <p className="mb-6 text-xs md:text-base text-gray-600">
+            Theo kế hoạch, Hyratek sẽ phối hợp với Qualcomm để triển khai dự án
+            theo từng giai đoạn. Trong giai đoạn đầu, công nghệ AI sẽ được thử
+            nghiệm với khoảng 1.000 bức ảnh liệt sĩ từ các kho tư liệu quốc gia.
+            Sau khi đánh giá kết quả, dự án sẽ mở rộng phục dựng hàng chục nghìn
+            bức ảnh khác với sự phối hợp của các cơ quan nhà nước và thân nhân
+            gia đình liệt sĩ.
           </p>
 
           <div className="mb-8 flex justify-center items-center">
@@ -156,39 +202,49 @@ const NewsDetail: React.FC = () => {
           </div>
 
           <p className="mb-6 text-xs md:text-base text-gray-600">
-            Ngoài việc phục dựng ảnh, Hyratek cũng có kế hoạch ứng dụng công nghệ AI để tạo ra các bản phục dựng 3D, cho phép gia đình và người thân có thể nhìn thấy chân dung của các liệt sĩ dưới dạng hình ảnh chân thực, sống động.
+            Ngoài việc phục dựng ảnh, Hyratek cũng có kế hoạch ứng dụng công
+            nghệ AI để tạo ra các bản phục dựng 3D, cho phép gia đình và người
+            thân có thể nhìn thấy chân dung của các liệt sĩ dưới dạng hình ảnh
+            chân thực, sống động.
           </p>
 
-          <h2 className="text-2xl font-bold mb-4">Triển vọng và tác động của dự án</h2>
+          <h2 className="text-2xl font-bold mb-4">
+            Triển vọng và tác động của dự án
+          </h2>
 
           <p className="mb-6 text-xs md:text-base text-gray-600">
-            Dự án phục dựng ảnh liệt sĩ bằng AI của Hyratek không chỉ là một sáng kiến nhân văn, mà còn là một bước đột phá trong việc sử dụng công nghệ AI để bảo tồn lịch sử và tôn vinh những người đã hy sinh. Hyratek hy vọng rằng, với sự hợp tác cùng Qualcomm, dự án sẽ mang lại những kết quả đáng kinh ngạc và góp phần tôn vinh những hành động anh dũng của các liệt sĩ.
+            Dự án phục dựng ảnh liệt sĩ bằng AI của Hyratek không chỉ là một
+            sáng kiến nhân văn, mà còn là một bước đột phá trong việc sử dụng
+            công nghệ AI để bảo tồn lịch sử và tôn vinh những người đã hy sinh.
+            Hyratek hy vọng rằng, với sự hợp tác cùng Qualcomm, dự án sẽ mang
+            lại những kết quả đáng kinh ngạc và góp phần tôn vinh những hành
+            động anh dũng của các liệt sĩ.
           </p>
 
           <p className="mb-6 text-xs md:text-base text-gray-600">
-            Sự hợp tác này không chỉ góp phần vào sự phát triển của lĩnh vực công nghệ AI tại Việt Nam mà còn là nguồn cảm hứng cho các dự án sử dụng AI vào các mục đích nhân văn khác.
+            Sự hợp tác này không chỉ góp phần vào sự phát triển của lĩnh vực
+            công nghệ AI tại Việt Nam mà còn là nguồn cảm hứng cho các dự án sử
+            dụng AI vào các mục đích nhân văn khác.
           </p>
         </div>
       </div>
 
-      <div className='flex flex-col items-center w-full bg-[#F3F7F4] mx-auto'>
-        <div className='max-w-[1280px] my-10'>
-          <div className='text-4xl w-full text-left lg:text-5xl font-bold mb-4'>Bài viết liên quan</div>
+      <div className="flex flex-col items-center w-full bg-[#F3F7F4] mx-auto">
+        <div className="max-w-[1280px] my-10">
+          <div className="text-4xl w-full text-left lg:text-5xl font-bold mb-4">
+            Bài viết liên quan
+          </div>
           <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {newsData.map((news: any, index: number) => (
               <>
                 <div
                   key={index}
-                  className={`rounded-lg overflow-hidden shadow-sm ${
-                    'bg-[#F3F7F4] md:max-h-[517px]'
-                  }`}
+                  className={`rounded-lg p-2 overflow-hidden shadow-sm hover:scale-105 transition ease-in-out duration-100 hover:shadow-lg ${'bg-[#F3F7F4] md:max-h-[517px]'}`}
                 >
                   <img
                     src={news.imageUrl}
                     alt=""
-                    className={`w-full object-cover object-center rounded-lg ${
-                      'md:h-[234px]'
-                    }`}
+                    className={`w-full object-cover object-center rounded-lg ${'md:h-[234px]'}`}
                   />
                   <div className="mt-3">
                     <Link
@@ -202,9 +258,7 @@ const NewsDetail: React.FC = () => {
                     >
                       {news.title}
                     </h1>
-                    <p
-                      className={`text-sm mt-3 ${'text-gray-600'}`}
-                    >
+                    <p className={`text-sm mt-3 ${'text-gray-600'}`}>
                       {news.text}
                     </p>
                     <div className="flex justify-between items-center text-sm mt-8">

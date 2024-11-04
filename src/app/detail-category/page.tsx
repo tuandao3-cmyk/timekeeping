@@ -75,7 +75,7 @@ const DetailCategoryPage: React.FC = () => {
                     fontFamily: 'Inter',
                     color: '#000000A3',
                     '&.Mui-selected': {
-                      color: '#0B3546', // Color for selected tab
+                      color: '#0B3546',
                     },
                   }}
                 />

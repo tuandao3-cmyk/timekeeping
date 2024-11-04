@@ -13,7 +13,7 @@ import { GlobalIcon, ProfileTUser, LocationIcon } from '@/components/icons';
 import Link from 'next/link';
 import Growth from './components/growth';
 import Terminology from './components/terminology';
-import ProductItem from '@/app/products/components/productItem';
+import ProductItem from '@/app/detail-category/components/productItem';
 import QandA from './components/Q&A';
 import UpdateInfo from './components/updateInformation';
 
@@ -246,8 +246,13 @@ const InfoSection: React.FC = () => {
                 bgcolor={'#48B96D1F'}
                 color={'#31814B'}
                 px={'16px'}
-                p={'8px'}
+                fontWeight={700}
+                fontSize={'12px'}
+                lineHeight={'16px'}
+                fontFamily={'Inter'}
+                py={'8px'}
                 borderRadius={'4px'}
+                width={'fit-content'}
               >
                 CÔNG NGHỆ
               </Typography>

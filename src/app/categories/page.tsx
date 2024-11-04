@@ -5,6 +5,7 @@ import styles from '@/app/categories/category.module.css';
 import Link from 'next/link';
 import {
   Box,
+  Button,
   FormControl,
   InputLabel,
   MenuItem,
@@ -141,6 +142,7 @@ const CategoryPage: React.FC = () => {
     threshold: 0.1,
     triggerOnce: true,
   });
+
   const {
     ref: ref3,
     inView: inView3,
@@ -149,17 +151,21 @@ const CategoryPage: React.FC = () => {
     threshold: 0.1,
     triggerOnce: true,
   });
-
+  const {
+    ref: ref4,
+    inView: inView4,
+    entry: entry4,
+  } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
   return (
     <>
       <div
         ref={ref}
         className="flex flex-col items-center justify-center font-sans w-full h-[520px] bg-[#07212C] bg-[url('/img/category/categories_bg.png')] bg-no-repeat bg-cover bg-center"
       >
-        <div
-          className="  pb-[107px] justify-center"
-
-        >
+        <div className="  pb-[107px] justify-center">
           <div className="flex flex-col items-center justify-end text-center max-w-[1440px] text-[#0B3546] gap-[22px]">
             <Typography
               sx={{
@@ -194,37 +200,120 @@ const CategoryPage: React.FC = () => {
 
       <div className="flex flex-col justify-center items-center w-full">
         <div className="max-w-[1200px]">
-          <div className="flex items-center  pt-[51px]">
+          <div className="flex items-center justify-center gap-4  pt-[51px]">
             <input
-              className="w-full h-[57px] border-2 font-sans border-[#48B96D] rounded-lg pl-3 pr-10 text-lg"
+              className=" h-[48px]  font-sans text-[16px] flex-grow  border-[1px]  border-[rgba(60, 60, 67, 0.1)],  rounded-lg pl-3 pr-10 text-lg bg-[#EFEFEF] focus:outline-none "
               type="text"
               placeholder="Nhập dự án cần tìm kiếm"
             />
-          </div>
-          <div className=" pt-4 flex flex-row justify-end gap-4 font-sans  items-center">
-            <p className="font-sans">Hiển thị </p>
-            <FormControl sx={{ m: 1, minWidth: 100 }} size="small">
-              <Select
-                className="rounded-full text-center"
-                labelId="demo-select-small-label"
-                id="demo-select-small"
-                value={age}
-                onChange={handleChange}
+            <div className="  flex flex-row justify-end gap-4 font-sans flex-grow  items-center">
+              {/* <p className="font-sans">Hiển thị </p> */}
+              <FormControl
+                sx={{
+                  minWidth: 100,
+                  height: '48px',
+                  minHeight: '48px',
+                  width: '100%',
+
+                  '&:focus': {
+                    outline: 'none',
+                  },
+                }}
+                // size="medium"
               >
-                <MenuItem value={10}>Tất cả</MenuItem>
-                <MenuItem value={20}>Seed</MenuItem>
-                <MenuItem value={30}>Series A</MenuItem>
-                <MenuItem value={40}>Series B</MenuItem>
-                <MenuItem value={50}>Series C</MenuItem>
-                <MenuItem value={60}>PE</MenuItem>
-                <MenuItem value={70}>IPO</MenuItem>
-              </Select>
-            </FormControl>
+                <Select
+                  labelId="demo-select-small-label"
+                  id="demo-select-small"
+                  value={age}
+                  onChange={handleChange}
+                  sx={{
+                    height: '48px',
+                    minHeight: '48px',
+                    border: '1px solid rgba(60, 60, 67, 0.1)',
+                    textAlign: 'center',
+                    fontFamily: 'Inter',
+                    fontSize: '16px',
+
+                    '&:focus': {
+                      borderColor: '#48B96D',
+                      outline: 'none',
+                    },
+                    '&:hover': {
+                      borderColor: '#48B96D',
+                    },
+                    '& .MuiOutlinedInput-notchedOutline': {
+                      border: 'none',
+                    },
+                  }}
+                >
+                  <MenuItem
+                    value={10}
+                    sx={{ height: '48px', minHeight: '48px' }}
+                  >
+                    Tất cả
+                  </MenuItem>
+                  <MenuItem
+                    value={20}
+                    sx={{ height: '48px', minHeight: '48px' }}
+                  >
+                    Seed
+                  </MenuItem>
+                  <MenuItem
+                    value={30}
+                    sx={{ height: '48px', minHeight: '48px' }}
+                  >
+                    Series A
+                  </MenuItem>
+                  <MenuItem
+                    value={40}
+                    sx={{ height: '48px', minHeight: '48px' }}
+                  >
+                    Series B
+                  </MenuItem>
+                  <MenuItem
+                    value={50}
+                    sx={{ height: '48px', minHeight: '48px' }}
+                  >
+                    Series C
+                  </MenuItem>
+                  <MenuItem
+                    value={60}
+                    sx={{ height: '48px', minHeight: '48px' }}
+                  >
+                    PE
+                  </MenuItem>
+                  <MenuItem
+                    value={70}
+                    sx={{ height: '48px', minHeight: '48px' }}
+                  >
+                    IPO
+                  </MenuItem>
+                </Select>
+              </FormControl>
+            </div>
+            <Button
+              sx={{
+                flexGrow: 1,
+                fontFamily: 'Inter',
+                fontSize: '16px',
+                backgroundColor: '#48B96D',
+                color: 'white',
+                height: '48px',
+                maxWidth: '160px',
+
+                '&:hover': {
+                  backgroundColor: '#48B96D',
+                },
+              }}
+            >
+              Tìm kiếm
+            </Button>
           </div>
-          <h2 className=" py-4 font-bold text-4xl font-sans text-[#04141A] uppercase">
+
+          <h2 className=" py-4 font-bold text-[32px] font-sans mt-[48px]  text-[#04141A] uppercase">
             dỰ ÁN đã hoàn thành
           </h2>
-          <div className="flex flex-col lg:flex-row ">
+          <div ref={ref4} className="flex flex-col lg:flex-row ">
             <div className="w-full bg-white" ref={ref1}>
               <Box
                 sx={{
@@ -240,8 +329,10 @@ const CategoryPage: React.FC = () => {
                 {projects.map((project, index) => (
                   <Link href="/detail-category" key={index}>
                     <Box
-                      className={`${inView1 ? 'animate-fadeIn scale-100' : 'translate-y-20 opacity-0 scale-0'} py-4 transition
-               duration-300 ease-in-out delay-${index === 4 ? 300 : index * 100}`}
+                      className={`${inView4 ? 'animate-fadeIn scale-100' : 'translate-y-20 opacity-0 scale-0'} py-4 transition
+               duration-300 ease-in-out delay-${index === 4 ? 300 : index * 100}
+                 hover:scale-105 hover:transition-all hover:duration-300 hover:ease-in-out
+               `}
                     >
                       <div className="bg-white shadow-lg rounded-lg overflow-hidden">
                         <img
@@ -312,7 +403,7 @@ const CategoryPage: React.FC = () => {
               </svg>
             </button>
           </div>
-          <h2 className=" py-4 font-bold text-4xl font-sans text-[#04141A] uppercase">
+          <h2 className=" py-4 font-bold text-[32px] font-sans text-[#04141A] uppercase">
             dự án đang gọi vốn
           </h2>
           <div className="flex flex-col lg:flex-row ">
@@ -332,7 +423,9 @@ const CategoryPage: React.FC = () => {
                   <Link href="/detail-category" key={index}>
                     <Box
                       className={`${inView2 ? 'animate-fadeIn scale-100' : 'translate-y-20 opacity-0 scale-0'} py-4 transition
-               duration-300 ease-in-out delay-${index === 4 ? 300 : index * 100}`}
+               duration-300 ease-in-out delay-${index === 4 ? 300 : index * 100}
+                hover:scale-105 hover:transition-all hover:duration-300 hover:ease-in-out
+               `}
                     >
                       <div className="bg-white shadow-lg rounded-lg overflow-hidden">
                         <img
@@ -403,153 +496,10 @@ const CategoryPage: React.FC = () => {
               </svg>
             </button>
           </div>
-          <h2 className=" py-4 font-bold text-4xl font-sans text-[#04141A] uppercase">
+          <h2 className=" py-4 font-bold text-[32px] font-sans text-[#04141A] uppercase">
             dỰ ÁN ĐÃ ĐẦU TƯ ƯƠM TẠ0
           </h2>
           <div className="flex flex-col lg:flex-row ">
-            {/* <div className="lg:w-[20%] md:w-full">
-          <div className="flex flex-col gap-4">
-            <h4 className="text-[22px] font-bold mb-1">Lĩnh vực đầu tư</h4>
-            <div className="flex lg:flex-col md:flex-row flex-wrap gap-4">
-              <label className="flex items-center gap-2 text-[20px] font-normal">
-                <input
-                  className="w-[28px] h-[28px] rounded-full"
-                  type="radio"
-                  name="investmentField"
-                  value="all"
-                />
-                Tất cả
-              </label>
-              <label className="flex items-center gap-2 text-[20px] font-normal">
-                <input
-                  className="w-7 h-7 rounded-full"
-                  type="radio"
-                  name="investmentField"
-                  value="tech"
-                />{' '}
-                Công nghệ
-              </label>
-              <label className="flex items-center gap-2 text-[20px] font-normal">
-                <input
-                  className="w-[28px] h-[28px] rounded-full"
-                  type="radio"
-                  name="investmentField"
-                  value="e-commerce"
-                />{' '}
-                Thương mại điện tử
-              </label>
-              <label className="flex items-center gap-2 text-[20px] font-normal">
-                <input
-                  className="w-[28px] h-[28px] rounded-full"
-                  type="radio"
-                  name="investmentField"
-                  value="direct"
-                />{' '}
-                Đầu tư trực tiếp
-              </label>
-            </div>
-          </div>
-          <div className="flex flex-col gap-4 pt-12">
-            <h4 className="text-[22px] font-bold mb-1">Trạng thái dự án</h4>
-            <div className="flex flex-wrap lg:flex-col md:flex-row gap-4">
-              <label className="flex items-center gap-2 text-[20px] font-normal">
-                <input
-                  className="w-[28px] h-[28px] rounded-full"
-                  type="radio"
-                  name="projectStatus"
-                  value="all"
-                />{' '}
-                Tất cả
-              </label>
-              <label className="flex items-center gap-2 text-[20px] font-normal">
-                <input
-                  className="w-[28px] h-[28px] rounded-full"
-                  type="radio"
-                  name="projectStatus"
-                  value="funding"
-                />{' '}
-                Đang gọi vốn
-              </label>
-              <label className="flex items-center gap-2 text-[20px] font-normal">
-                <input
-                  className="w-[28px] h-[28px] rounded-full"
-                  type="radio"
-                  name="projectStatus"
-                  value="incubator"
-                />{' '}
-                Đã đầu tư & ươm tạo
-              </label>
-            </div>
-          </div>
-          <div className="flex flex-col gap-4 pt-12">
-            <h4 className="text-[22px] font-bold mb-1">Giai đoạn gọi vốn</h4>
-            <div className="flex flex-wrap lg:flex-col md:flex-row gap-4">
-              <label className="flex items-center gap-2 text-[20px] font-normal">
-                <input
-                  className="w-[28px] h-[28px] rounded-full"
-                  type="radio"
-                  name="fundingStage"
-                  value="all"
-                />{' '}
-                Tất cả
-              </label>
-              <label className="flex items-center gap-2 text-[20px] font-normal">
-                <input
-                  className="w-[28px] h-[28px] rounded-full"
-                  type="radio"
-                  name="fundingStage"
-                  value="seed"
-                />{' '}
-                Seed
-              </label>
-              <label className="flex items-center gap-2 text-[20px] font-normal">
-                <input
-                  className="w-[28px] h-[28px] rounded-full"
-                  type="radio"
-                  name="fundingStage"
-                  value="seriesA"
-                />{' '}
-                Series A
-              </label>
-              <label className="flex items-center gap-2 text-[20px] font-normal">
-                <input
-                  className="w-[28px] h-[28px] rounded-full"
-                  type="radio"
-                  name="fundingStage"
-                  value="seriesB"
-                />{' '}
-                Series B
-              </label>
-              <label className="flex items-center gap-2 text-[20px] font-normal">
-                <input
-                  className="w-[28px] h-[28px] rounded-full"
-                  type="radio"
-                  name="fundingStage"
-                  value="seriesC"
-                />{' '}
-                Series C
-              </label>
-              <label className="flex items-center gap-2 text-[20px] font-normal">
-                <input
-                  className="w-[28px] h-[28px] rounded-full"
-                  type="radio"
-                  name="fundingStage"
-                  value="pe"
-                />{' '}
-                PE
-              </label>
-              <label className="flex items-center gap-2 text-[20px] font-normal">
-                <input
-                  className="w-[28px] h-[28px] rounded-full"
-                  type="radio"
-                  name="fundingStage"
-                  value="ipo"
-                />{' '}
-                IPO
-              </label>
-            </div>
-          </div>
-        </div> */}
             <div className="w-full bg-white" ref={ref3}>
               <Box
                 sx={{
@@ -566,7 +516,7 @@ const CategoryPage: React.FC = () => {
                   <Link href="/detail-category" key={index}>
                     <Box
                       className={`${inView3 ? 'animate-fadeIn scale-100' : 'translate-y-20 opacity-0 scale-0'} py-4 transition
-               duration-300 ease-in-out delay-${index === 4 ? 300 : index * 100}`}
+               duration-300 ease-in-out delay-${index === 4 ? 300 : index * 100}  hover:scale-105 hover:transition-all hover:duration-300 hover:ease-in-out`}
                     >
                       <div className="bg-white shadow-lg rounded-lg overflow-hidden">
                         <img

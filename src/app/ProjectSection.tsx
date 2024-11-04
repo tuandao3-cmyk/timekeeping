@@ -41,7 +41,6 @@ const ProjectSection = () => {
       fundingPercent: '75%',
       category: ['CÔNG NGHỆ', 'CÔNG NGHỆ'],
     },
-
   ];
 
   return (
@@ -82,7 +81,7 @@ const ProjectSection = () => {
                     <div className="text-left !text-left">
                       {' '}
                       {/* Sử dụng !important */}
-                      <h3 className="text-[clamp(1.2rem,2vw,2.4rem)] font-bold my-2 w-full pl-4 font-sans">
+                      <h3 className="text-[clamp(1.2rem,2vw,2.4rem)] font-bold my-2 w-full pl-4 font-sans uppercase">
                         {project.title}
                       </h3>
                       <span className="text-sm text-[#000000]/70 font-normal mb-2 block pl-4 pb-2 font-sans">
@@ -154,7 +153,10 @@ const ProjectSection = () => {
               ))}
             </div>
           </div>
-          <a href="/products" className={`${styles.moreProjectsButton} font-sans`}>
+          <a
+            href="/products"
+            className={`${styles.moreProjectsButton} font-sans`}
+          >
             Tìm hiểu thêm các dự án{' '}
             <svg
               xmlns="http://www.w3.org/2000/svg"
