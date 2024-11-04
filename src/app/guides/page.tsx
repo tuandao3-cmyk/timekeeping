@@ -74,13 +74,13 @@ const GuidePage: React.FC = () => {
           <div className="bg-white h-[56px] gap-[24px] w-full max-w-[800px]  p-2 flex  rounded-[20px]  ">
             <input
               type="text"
-            placeholder="Nhập thông tin bạn cần tìm"
-            className="w-full  bg-[#FFFFFF] border-none px-[20px] text-[#686868] font-400 text-[16px] leading-[24px] focus:outline-[#28a745]"
-          />
-          <button className="bg-[#48B96D] transition ease-in-out duration-300 hover:bg-[#297241] px-[16px] py-[10px] rounded-[16px] text-[#fff] text-[15px] font-500 leading-[20px] min-w-[140px]">
-            Tìm kiếm
-          </button>
-        </div>
+              placeholder="Nhập thông tin bạn cần tìm"
+              className="w-full  bg-[#FFFFFF] border-none px-[20px] text-[#686868] font-400 text-[16px] leading-[24px] outline-none"
+            />
+            <button className="bg-[#48B96D] transition ease-in-out duration-300 hover:bg-[#297241] px-[16px] py-[10px] rounded-[16px] text-[#fff] text-[15px] font-500 leading-[20px] min-w-[140px]">
+              Tìm kiếm
+            </button>
+          </div>
         </div>
       </div>
       <div className="flex max-w-[1440px] mx-auto  ">

@@ -49,6 +49,18 @@ const theme = createTheme({
             fontFamily: 'Inter, Arial, sans-serif',
           },
         },
+        body: {
+          '&::-webkit-scrollbar': {
+            width: '4px',
+          },
+          '&::-webkit-scrollbar-thumb': {
+            backgroundColor: '#48B96D',
+            borderRadius: '4px',
+          },
+          '&::-webkit-scrollbar-track': {
+            backgroundColor: 'transparent',
+          },
+        },
       },
     },
     MuiBottomNavigationAction: {
