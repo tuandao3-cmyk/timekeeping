@@ -2,9 +2,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  /* background: linear-gradient(
+    180deg,
+    rgba(11, 53, 70, 0.08) 17.75%,
+    rgba(11, 53, 70, 0.747169) 51.39%,
+    rgba(11, 53, 70, 0.862047) 71.15%,
+    #0b3546 88.52%
+  ); */
   /* padding: 10px 5%;
   background-color: white; */
-  background-image: url('/img/qt.png');
+  background-image: url('/img/category/category_banner.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -13,6 +20,15 @@
   /* overflow: hidden; */
   /* position: relative; */
   /* font-family: Roboto, sans-serif; */
+}
+.overlay {
+  background: linear-gradient(
+    180deg, 
+    rgba(11, 53, 70, 0.08) 17.75%,
+    rgba(11, 53, 70, 0.747169) 51.39%,
+    rgba(11, 53, 70, 0.862047) 71.15%,
+    #0b3546 88.52%
+  );
 }
 /* 
 .header::before {

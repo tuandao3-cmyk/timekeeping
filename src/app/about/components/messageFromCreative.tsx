@@ -23,6 +23,7 @@ function MessageFromCreative() {
                 backgroundRepeat: 'no-repeat',
                 color: '#fff',
                 textAlign: 'left',
+                fontFamily: 'Inter',
               }}
             >
               Tại Hyra Capital, chúng tôi không chỉ đơn thuần là một quỹ đầu tư.
@@ -33,16 +34,16 @@ function MessageFromCreative() {
               đến thành công.
             </Typography>
             <div>
-              <Typography className="text-[#48B96D] text-left text-[20px] font-[700]">
+              <Typography className="text-[#48B96D] text-left text-[20px] font-[700] font-sans">
                 Trần Thị Thu Hương
               </Typography>
-              <Typography className="text-[#fff]/60 text-left text-[20px] font-[400]">
+              <Typography className="text-[#fff]/60 text-left text-[20px] font-[400] font-sans">
                 Founder and CEO of HyraCap
               </Typography>
             </div>
           </div>
           <img
-            className="absolute z-0 left-[50%] translate-x-[-20%] hover:z-20 hover:scale-125 transition ease-in-out duration-100"
+            className="absolute z-0 left-[50%] translate-x-[-20%] hover:z-20 hover:scale-105 transition ease-in-out duration-100"
             src={'/img/about/tran-thi-thu-huong.png'}
             alt="Trần Thị Thu Hương"
           />

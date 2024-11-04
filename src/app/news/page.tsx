@@ -12,8 +12,7 @@ import { FaApple, FaGooglePlay } from 'react-icons/fa';
 
 const newsData = [
   {
-    title:
-      'CÔNG NGHỆ TRAO QUYỀN QUYẾT ĐỊNH TƯƠNG LAI',
+    title: 'CÔNG NGHỆ TRAO QUYỀN QUYẾT ĐỊNH TƯƠNG LAI',
     date: '30/08/2024',
     imageUrl: '/img/news/newsimg1.png',
     videoLink: '/news/newsdetail',
@@ -70,49 +69,51 @@ const NewsPage: React.FC = () => {
   });
   return (
     <>
-      <div
-        ref={ref}
-        className="flex max-md:items-center max-md:justify-center m-auto max-w-[1440px] h-[479px] bg-cover  "
-        style={{ backgroundImage: 'url("/img/news/news_banner.png")' }}
-      >
-        <div className=" top-0 w-[40%] h-full bg-[#07212c] bg-opacity-100">
-          <div className=" z-10 my-auto  h-full p-8 lg:p-12 ">
-            <div className=" lg:pl-[60px] lg:mt-8 text-center md:text-left text-white flex flex-col justify-between items-left gap-4">
-              <Link
-                href={'/news/newsdetail'}
-                className="md:text-[15px] text-[#579DFF] text-xs font-semibold "
-              >
-                CÔNG NGHỆ
-              </Link>
-              <h1
-                className={`text-xl md:text-2xl  font-bold leading-tight lg:line-clamp-2 max-lg:line-clamp-10
+      <div className="flex flex-col justify-center items-center bg-[#07212c] ">
+        <div
+          ref={ref}
+          className="flex max-md:items-center max-md:justify-center m-auto max-w-[1440px] h-[479px] bg-cover  "
+          style={{ backgroundImage: 'url("/img/news/news_banner.png")' }}
+        >
+          <div className=" top-0 w-[40%] h-full bg-[#07212c] bg-opacity-100">
+            <div className=" z-10 my-auto  h-full p-8 lg:p-12 ">
+              <div className=" lg:pl-[60px] lg:mt-8 text-center md:text-left text-white flex flex-col justify-between items-left gap-4">
+                <Link
+                  href={'/news/newsdetail'}
+                  className="md:text-[15px] text-[#579DFF] text-xs font-semibold "
+                >
+                  CÔNG NGHỆ
+                </Link>
+                <h1
+                  className={`text-xl md:text-2xl  font-bold leading-tight lg:line-clamp-2 max-lg:line-clamp-10
                 duration-700 ease-in-out transform ${
                   inView
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-10'
                 }
                 `}
-              >
-                Hyratek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự
-                án "Phục dựng ảnh liệt sĩ" của Hà Nội
-              </h1>
-              <p
-                className={`mt-4 text-sm leading-6 line-clamp-6 max-lg:hidden opacity-70 duration-700 ease-in-out transform ${
-                  inView
-                    ? 'opacity-100 translate-y-0'
-                    : 'opacity-0 translate-y-10'
-                }`}
-              >
-                Hyratek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự
-                án "Phục dựng ảnh liệt sĩ" của Hà Nội Hyratek và Qualcomm hợp
-                tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt
-                sĩ" của Hà Nội Hyratek và Qualcomm hợp tác chiến lược về AI,
-                đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội
-              </p>
-              <div>
-                <button className="max-sm:hidden text-[#FFFFFF]/90 bg-[#48B96D] border-[#FFFFFF]/20 font-medium border-[1px]  rounded-full px-3 py-2 inline-flex">
-                  Đọc thêm
-                </button>
+                >
+                  Hyratek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng
+                  dự án "Phục dựng ảnh liệt sĩ" của Hà Nội
+                </h1>
+                <p
+                  className={`mt-4 text-sm leading-6 line-clamp-6 max-lg:hidden opacity-70 duration-700 ease-in-out transform ${
+                    inView
+                      ? 'opacity-100 translate-y-0'
+                      : 'opacity-0 translate-y-10'
+                  }`}
+                >
+                  Hyratek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng
+                  dự án "Phục dựng ảnh liệt sĩ" của Hà Nội Hyratek và Qualcomm
+                  hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh
+                  liệt sĩ" của Hà Nội Hyratek và Qualcomm hợp tác chiến lược về
+                  AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội
+                </p>
+                <div>
+                  <button className="max-sm:hidden text-[#FFFFFF]/90 bg-[#48B96D] border-[#FFFFFF]/20 font-medium border-[1px]  rounded-full px-3 py-2 inline-flex">
+                    Đọc thêm
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -147,14 +148,14 @@ const NewsPage: React.FC = () => {
                 ) : (
                   <div
                     key={index}
-                    className={` rounded-lg overflow-hidden shadow-sm ${
+                    className={` rounded-lg overflow-hidden shadow-lg p-5 hover:scale-105 transition ease-in-out duration-150 hover:cursor-pointer ${
                       index === 1
-                        ? 'p-4 lg:row-span-2 lg:col-span-1 bg-[#07212C] md:row-span-1 col-span-1 md:max-h-[526px]'
-                        : 'bg-white md:max-h-[517px]'
+                        ? 'p-4 lg:row-span-2 lg:col-span-1 bg-[#07212C] md:row-span-1 col-span-1 '
+                        : 'bg-white '
                     }`}
                   >
                     <img
-                      src={ news.imageUrl}
+                      src={news.imageUrl}
                       alt=""
                       className={`w-full object-cover object-center rounded-lg ${
                         index === 1 ? 'md:h-[245px] ' : 'md:h-[234px]'
@@ -182,7 +183,6 @@ const NewsPage: React.FC = () => {
                           className={`flex flex-row items-center gap-2 ${index === 1 ? 'text-[#CBCBCD]' : 'text-gray-600'}`}
                         >
                           <Calendar size={16} /> {news.date}
-                          
                         </p>
                         <a
                           href={news.link || '#'}
@@ -257,9 +257,9 @@ const NewsPage: React.FC = () => {
           </h1>
           <div className="w-full max-lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
             <div className="w-full col-span-2 gap-3">
-              {newsData.slice(1,4).map((news: any, index: number) => (
-                <a href="#" className="p-4" key={index}>
-                  <div className="grid md:grid-cols-3  border-[1px]">
+              {newsData.slice(1, 4).map((news: any, index: number) => (
+                <a href="/news/newsdetail" className="p-4" key={index}>
+                  <div className="grid md:grid-cols-3  border-[1px] hover:scale-105 transition ease-in-out duration-150 hover:cursor-pointer">
                     <img
                       src={news.imageUrl}
                       alt=""

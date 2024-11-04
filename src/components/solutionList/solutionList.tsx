@@ -147,6 +147,7 @@ function SolutionList() {
             fontWeight: 'bold',
             lineHeight: '48px',
             textAlign: 'center',
+            fontFamily: 'Inter',
           }}
         >
           giải pháp đầu tư vượt trội
@@ -169,10 +170,20 @@ function SolutionList() {
               fontWeight={600}
               lineHeight={'32px'}
               className={`text-black group-hover:text-white`}
+              fontFamily={'Inter'}
             >
               {item.title}
             </Typography>
-            <Typography className="group-hover:text-white">
+            <Typography
+              className="group-hover:text-white "
+              sx={{
+                fontWeight: 400,
+                fontSize: 16,
+                lineHeight: '24px',
+                color: '#000000A3',
+                fontFamily: 'Inter',
+              }}
+            >
               {item.description}
             </Typography>
           </div>

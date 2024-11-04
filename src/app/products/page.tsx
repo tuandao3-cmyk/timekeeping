@@ -26,15 +26,15 @@ const ProductPage: React.FC = () => {
       type: 'flexible',
       package: [
         {
-          title: 'Hyperas Chain',
+          title: 'Egabid',
           start_date: '20/10/2024',
           descriptions: 'Hyperas tận dụng sức mạnh từ hàng tỷ thiết bị... ',
           invested: 2500000,
           profit: 2000000,
-          sponsorship: 21762,
+          sponsorship: 75,
           image: (
             <img
-              src="/img/hyperas_chain.png"
+              src="/img/egabid_pc.png"
               alt="Hyperas Chain"
               className="md:h-[250px] md:w-[384px]"
             />
@@ -47,10 +47,10 @@ const ProductPage: React.FC = () => {
           descriptions: 'Hyperas tận dụng sức mạnh từ hàng tỷ thiết bị... ',
           invested: 3000000,
           profit: 3000000,
-          sponsorship: 21762,
+          sponsorship: 98,
           image: (
             <img
-              src="/img/salala_ai.png"
+              src="/img/salala2.png"
               alt="Salala AI"
               className="md:h-[250px] md:w-[384px]"
             />
@@ -63,10 +63,10 @@ const ProductPage: React.FC = () => {
           descriptions: 'Hyperas tận dụng sức mạnh từ hàng tỷ thiết bị... ',
           invested: 2500000,
           profit: 1000000,
-          sponsorship: 21762,
+          sponsorship: 80,
           image: (
             <img
-              src="/img/rapital_bank.png"
+              src="/img/hyperas_chain1.png"
               alt="Rapital Bank"
               className="md:h-[250px] md:w-[384px]"
             />
@@ -127,16 +127,14 @@ const ProductPage: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>('short-term');
 
   const renderContent = () => {
-    switch(activeSection) {
+    switch (activeSection) {
       case 'short-term':
         return <ShortTermSection />;
       case 'long-term':
         return <LongTermSection />;
-      
+
       default:
-        return (
-          <ShortTermSection />
-        );
+        return <ShortTermSection />;
     }
   };
 
@@ -144,7 +142,7 @@ const ProductPage: React.FC = () => {
     <>
       <div
         style={{ backgroundImage: 'url("/img/productbg.png")' }}
-        className=" min-h-[620px]  w-[100%] flex flex-col justify-start items-end relative"
+        className=" min-h-[620px]  w-[100%] flex flex-col justify-start items-end relative font-sans"
       >
         <div className="flex flex-col gap-8 justify-center items-center w-full mt-16 max-md:!flex-col pl-32 pr-12">
           <p
@@ -231,7 +229,7 @@ const ProductPage: React.FC = () => {
       </section>
 
       {/* dowwnlaod */}
-        <DownloadSection/>
+      <DownloadSection />
     </>
   );
 };

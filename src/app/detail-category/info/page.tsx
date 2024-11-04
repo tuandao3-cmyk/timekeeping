@@ -1,451 +1,409 @@
 'use client';
-import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { Box, Button, Stack, Typography } from '@mui/material';
+import Grid from '@mui/material/Grid';
+
+import { desc } from 'framer-motion/client';
+import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+import { title } from 'process';
+import { useState } from 'react';
+import ListField from './components/listField';
+import NearlyActions from './components/nearlyActions';
+import { GlobalIcon, ProfileTUser, LocationIcon } from '@/components/icons';
+import Link from 'next/link';
+import Growth from './components/growth';
+import Terminology from './components/terminology';
+import ProductItem from '@/app/products/components/productItem';
+import QandA from './components/Q&A';
+import UpdateInfo from './components/updateInformation';
 
 const InfoSection: React.FC = () => {
+  const data = [
+    {
+      title: '$1M',
+      desc: 'Vốn huy động',
+    },
+    {
+      title: '$850,000',
+      desc: 'Vốn đầu tư',
+    },
+    {
+      title: '20',
+      desc: 'Tổng Slot',
+    },
+    {
+      title: '$50,000',
+      desc: 'Giá trị/slot',
+    },
+    {
+      title: '$17',
+      desc: 'Nhà đầu tư',
+    },
+    {
+      title: 'Series C',
+      desc: 'Vòng đầu tư',
+    },
+  ];
 
-    const projects = [
+  const field = [
+    {
+      title: 'Lĩnh vực đầu tư',
+      value: 'Công nghệ',
+    },
+    {
+      title: 'Ngày thành lập',
+      value: '20/02/2020',
+    },
+    {
+      title: 'Trụ sở chính',
+      value: 'Singapore',
+    },
+    {
+      title: 'Tình trạng hoạt động',
+      value: 'Đang hoạt động',
+    },
+    {
+      title: 'Người sáng lập',
+      value: 'Trần Nam Chung',
+    },
+    {
+      title: 'Tên công ty ',
+      value: 'Công ty cổ phần Hyratek',
+    },
+    {
+      title: 'Email ',
+      value: 'info@hyratek.com',
+    },
+    {
+      title: 'Số điện thoại',
+      value: '(+84) 58 8668 777',
+    },
+  ];
+
+  const actions = [
+    {
+      img: '/img/product_category/actions',
+      date: 'Tin tức 10/10/2024',
+      title:
+        'Dự án SalalaAI tăng trưởng mạnh mẽ với lượng thiết bị tăng liên tục với lượt tải đã đạt trên 1M',
+    },
+    {
+      img: '/img/product_category/actions',
+      date: 'Tin tức 10/10/2024',
+      title:
+        'Dự án SalalaAI tăng trưởng mạnh mẽ với lượng thiết bị tăng liên tục với lượt tải đã đạt trên 1M',
+    },
+    {
+      img: '/img/product_category/actions',
+      date: 'Tin tức 10/10/2024',
+      title:
+        'Dự án SalalaAI tăng trưởng mạnh mẽ với lượng thiết bị tăng liên tục với lượt tải đã đạt trên 1M',
+    },
+  ];
+
+  const items = [
+    {
+      icon: <LocationIcon />,
+      text: '10 Anson Road # 11- 20 International Plaza Singapore',
+    },
+    {
+      icon: <ProfileTUser />,
+      text: '150-200',
+    },
+    {
+      icon: <GlobalIcon />,
+      text: 'https://salala.io',
+    },
+  ];
+
+  const products = [
+    {
+      title: 'Có thể bạn quan tâm',
+      type: 'flexible',
+      package: [
         {
-          name: 'Công việc đã đào tạo',
-          amount: '+2,985,122,684',
-          icon: '/img/icon/google-docs.svg',
-        },
-        {
-          name: 'Tổng thiết bị',
-          amount: '+2,985,122,684',
-          icon: '/img/icon/google-docs.svg',
-        },
-        {
-          name: 'Mô hình đào tạo',
-          amount: '+2,985,122,684',
-          icon: '/img/icon/device.svg',
-        },
-        {
-          name: 'Tổng Hyra kiếm được',
-          amount: '+2,985,122,684',
-          icon: '/img/icon/device.svg',
-        },
-      ];
-  return (
-    <div className=" bg-[#F7F9FC] flex justify-center items-center">
-    <div className="  rounded-lg shadow-md ">
-
-
-      {/* Thông tin */}
-      <div className="flex flex-col md:flex-row lg:flex-row gap-4 bg-white px-11 py-10">
-        <div className="w-full md:w-1/3 lg:w-1/3">
-          <h3 className="text-xl font-bold mb-2">Thông tin</h3>
-          <p className="font-normal text-lg">
-            Salala là một nền tảng điện toán biên cho phép người dùng tận
-            dụng phần cứng của các thiết bị biên (edge devices) để huấn
-            luyện mô hình trí tuệ nhân tạo (AI).
-          </p>
-          <div className="mt-4 text-lg font-normal text-[#666666]">
-            <p>📍 10 Anson Road #11 - 20 International Plaza Singapore</p>
-            <p>👥 150 - 200</p>
-            <p>
-              🌐{' '}
-              <a href="https://salala.io" className="">
-                https://salala.io
-              </a>
-            </p>
-          </div>
-        </div>
-
-        <div className="hidden md:block lg:block w-[1px] bg-[#DDDDDD] rounded-md"></div>
-
-        <div className="w-full md:w-1/3 lg:w-1/3">
-          <h3 className="text-xl font-bold mb-2">Dữ liệu nổi bật</h3>
-          <div className="grid grid-cols-2 gap-7">
-            <div className="flex flex-col bg-white shadow-lg rounded-md p-4">
-              <span className="font-normal text-lg">Vốn huy động</span>
-              <span className="font-bold text-xl text-[#009467]">$1M</span>
-            </div>
-            <div className="flex flex-col bg-white shadow-lg rounded-md p-4">
-              <span className="font-normal text-lg">Vốn đầu tư</span>
-              <span className="font-bold text-xl text-[#009467]">
-                $850,000
-              </span>
-            </div>
-            <div className="flex flex-col bg-white shadow-lg rounded-md p-4">
-              <span className="font-normal text-lg">Tổng Slot</span>
-              <span className="font-bold text-xl text-[#009467]">20</span>
-            </div>
-            <div className="flex flex-col bg-white shadow-lg rounded-md p-4">
-              <span className="font-normal text-lg">Giá trị/slot</span>
-              <span className="font-bold text-xl text-[#009467]">
-                $50,000
-              </span>
-            </div>
-            <div className="flex flex-col bg-white shadow-lg rounded-md p-4">
-              <span className="font-normal text-lg">Nhà đầu tư</span>
-              <span className="font-bold text-xl text-[#009467]">18</span>
-            </div>
-            <div className="flex flex-col bg-white shadow-lg rounded-md p-4">
-              <span className="font-normal text-lg">Vòng đầu tư</span>
-              <span className="font-bold text-xl text-[#009467]">
-                Series C
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <div className="hidden md:block lg:block w-[1px] bg-[#DDDDDD] rounded-md"></div>
-
-        <div className="w-full md:w-1/3 lg:w-1/3">
-          <h3 className="text-xl font-bold mb-2">Hoạt động gần đây</h3>
-          <div className="space-y-2 text-gray-500">
-            <div className="flex items-start gap-2">
-              <img
-                src="/img/icon/megaphone.svg"
-                alt="/img/icon/megaphone.svg"
-                className="pt-2"
-              />
-              <div className="flex flex-col">
-                <div className="border-b pb-2">
-                  <span className="block text-gray-700">
-                    Tin tức 10/10/2024
-                  </span>
-                </div>
-                <p>
-                  Dự án SalalaAI tăng trưởng mạnh mẽ với lượng thiết bị tăng
-                  liên tục với lượt tải đã đạt trên 1M
-                </p>
-              </div>
-            </div>
-            <div className="flex items-start gap-2">
-              <img
-                src="/img/icon/megaphone.svg"
-                alt="/img/icon/megaphone.svg"
-                className="pt-2"
-              />
-              <div className="flex flex-col">
-                <div className="border-b pb-2">
-                  <span className="block text-gray-700">
-                    Tin tức 10/10/2024
-                  </span>
-                </div>
-                <p>
-                  Dự án SalalaAI tăng trưởng mạnh mẽ với lượng thiết bị tăng
-                  liên tục với lượt tải đã đạt trên 1M
-                </p>
-              </div>
-            </div>
-            <div className="flex items-start gap-2">
-              <img
-                src="/img/icon/megaphone.svg"
-                alt="/img/icon/megaphone.svg"
-                className="pt-2"
-              />
-              <div className="flex flex-col">
-                <div className="border-b pb-2">
-                  <span className="block text-gray-700">
-                    Tin tức 10/10/2024
-                  </span>
-                </div>
-                <p>
-                  Dự án SalalaAI tăng trưởng mạnh mẽ với lượng thiết bị tăng
-                  liên tục với lượt tải đã đạt trên 1M
-                </p>
-              </div>
-            </div>
-
-            <div className="flex justify-center">
-              <a href="#" className="text-green-600 font-semibold">
-                Tìm hiểu thêm
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div
-        style={{
-          background: 'linear-gradient(90deg, #2A7082 0%, #73E097 100%)',
-        }}
-        className="mx-11 rounded-xl"
-      >
-        <div className="flex flex-col lg:flex-row py-9 px-11">
-          <div className="w-full lg:w-1/3 sm:flex sm:gap-3 xs:block md:block lg:block">
-            <div>
-              <h3 className="text-3xl font-bold text-white mb-4">
-                Triển vọng tăng trưởng
-              </h3>
-              <p className="text-base font-bold text-white">
-                Dự án Salala AI đã huy đông được tổng cộng 220,5 triệu đô la
-                vòng đầu tư Series C. Nguồn đầu tư mới nhất được huy động
-                vào ngày 10/10/2024.Với 20 slot được tài trợ bởi 18 nhà đầu
-                tư.
-              </p>
-            </div>
+          title: 'Egabid',
+          start_date: '20/10/2024',
+          descriptions: 'Hyperas tận dụng sức mạnh từ hàng tỷ thiết bị... ',
+          invested: 2500000,
+          profit: 2000000,
+          sponsorship: 21762,
+          image: (
             <img
-              src="/img/raise.png"
-              alt="/img/raise.png"
-              className="m-auto"
+              src="/img/egabid_pc.png"
+              alt="Hyperas Chain"
+              className="md:h-[250px] md:w-[384px]"
             />
-          </div>
-          <div className="w-full lg:w-2/3 lg:ml-10 lg:mt-5">
-            <h5 className="text-xl font-bold text-white mb-4 lg:mb-10">Thông số</h5>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 md:gap-12 gap-3">
-              {projects.map((project, index) => (
-                <div className="flex gap-5" key={index}>
-                  <img
-                    src={project.icon}
-                    alt={project.icon}
-                    className=" bg-white p-[16px] rounded-full"
-                  />
-                  <div className="flex flex-col">
-                    <p className="text-xl font-normal text-white">
-                      {project.name}
-                    </p>
-                    <span className="text-2xl font-bold text-white">
-                      {project.amount}
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="px-11 pt-6 bg-white">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div className="bg-white py-6 px-11 rounded-lg shadow-lg">
-            <h2 className="text-xl font-bold mb-4">Chi tiết</h2>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-5">
-              <li className="flex">
-                <div className="m-3 w-1 h-1 rounded-full bg-[#444444]"></div>
-                <div className="text-lg font-normal">
-                  <span className="text-[#444444]">Lĩnh vực đầu tư</span>
-                  <p className="text-black">Công nghệ</p>
-                </div>
-              </li>
-              <li className="flex">
-                <div className="m-3 w-1 h-1 rounded-full bg-[#444444]"></div>
-                <div className="text-lg font-normal">
-                  <span className="text-[#444444]">Ngày thành lập</span>{' '}
-                  <p className="text-black">20/02/2020</p>
-                </div>
-              </li>
-              <li className="flex">
-                <div className="m-3 w-1 h-1 rounded-full bg-[#444444]"></div>
-                <div className="text-lg font-normal">
-                  <span className="text-[#444444]">Trụ sở chính</span>{' '}
-                  <p className="text-black">Singapore</p>
-                </div>
-              </li>
-              <li className="flex">
-                <div className="m-3 w-1 h-1 rounded-full bg-[#444444]"></div>
-                <div className="text-lg font-normal">
-                  <span className="text-[#444444]">
-                    Tình trạng hoạt động
-                  </span>
-                  <p className="text-black">Đang hoạt động</p>
-                </div>
-              </li>
-              <li className="flex">
-                <div className="m-3 w-1 h-1 rounded-full bg-[#444444]"></div>
-                <div className="text-lg font-normal">
-                  <span className="text-[#444444]">Người sáng lập</span>
-                  <p className="text-black">Trần Nam Chung</p>
-                </div>
-              </li>
-              <li className="flex">
-                <div className="m-3 w-1 h-1 rounded-full bg-[#444444]"></div>
-                <div className="text-lg font-normal">
-                  <span className="text-[#444444]">Tên công ty</span>
-                  <p className="text-black">Công ty cổ phần Hyratek</p>
-                </div>
-              </li>
-              <li className="flex">
-                <div className="m-3 w-1 h-1 rounded-full bg-[#444444]"></div>
-                <div className="text-lg font-normal">
-                  <span className="text-[#444444]">Email</span>{' '}
-                  <p className="text-black">info@hyraetek.com</p>
-                </div>
-              </li>
-              <li className="flex">
-                <div className="m-3 w-1 h-1 rounded-full bg-[#444444]"></div>
-                <div className="text-lg font-normal">
-                  <span className="text-[#444444]">Số điện thoại</span>
-                  <p className="text-black">(+84) 58 8668 777</p>
-                </div>
-              </li>
-            </ul>
-            <p className="mt-4 text-lg font-normal text-black">
-              Dự án Salala là một ứng dụng di động chuyên cung cấp các giải
-              pháp huấn luyện trí tuệ nhân tạo (AI) trên các thiết bị biên.
-              Phạm vi của dự án bao gồm việc phát triển các tính năng huấn
-              luyện mô hình AI ngay trên thiết bị của bạn và hỗ trợ huấn
-              luyện phát triển mô hình AI trên cloud.
-            </p>
-          </div>
-
-          <div className="bg-white p-6 rounded-lg shadow">
-            <h2 className="text-xl font-bold mb-4">Có thể bạn quan tâm</h2>
-            <ul className="space-y-4">
-              <li className="flex items-center gap-5 py-3">
-                <img
-                  src="/img/16.jpg"
-                  alt="/img/16.jpg"
-                  className="w-[53px] h-[48px] object-cover rounded-lg"
+          ),
+          field: 'CÔNG NGHỆ',
+        },
+        {
+          title: 'Salala AI',
+          start_date: '09/09/2024',
+          descriptions: 'Hyperas tận dụng sức mạnh từ hàng tỷ thiết bị... ',
+          invested: 3000000,
+          profit: 3000000,
+          sponsorship: 21762,
+          image: (
+            <img
+              src="/img/salala2.png"
+              alt="Salala AI"
+              className="md:h-[250px] md:w-[384px]"
+            />
+          ),
+          field: 'CÔNG NGHỆ',
+        },
+        {
+          title: 'HYPERAS CHAIN',
+          start_date: '08/09/2024',
+          descriptions: 'Hyperas tận dụng sức mạnh từ hàng tỷ thiết bị... ',
+          invested: 2500000,
+          profit: 1000000,
+          sponsorship: 21762,
+          image: (
+            <img
+              src="/img/hyperas_chain1.png"
+              alt="Rapital Bank"
+              className="md:h-[250px] md:w-[384px]"
+            />
+          ),
+          field: 'CÔNG NGHỆ',
+        },
+      ],
+    },
+  ];
+  return (
+    <Stack
+      flexDirection={'column'}
+      justifyContent={'center'}
+      alignItems={'center'}
+      width={'100%'}
+    >
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          width: '100%',
+          maxWidth: '1440px',
+          px: '120px',
+        }}
+      >
+        <Stack flexDirection={'row'} gap={'24px'}>
+          <Stack
+            flexDirection={'column'}
+            flexGrow={1}
+            justifyContent={'flex-start'}
+          >
+            <Box width={'100%'}>
+              <Stack flexDirection={'column'} gap={'16px'}>
+                <Image
+                  src="/img/product_category/prod_cate_image.png"
+                  alt="product_category"
+                  width={792}
+                  height={400}
                 />
-                <div>
-                  <p className="font-semibold">Hyperas Chain</p>
-                  <p className="text-sm text-gray-500">
-                    Mạng lưới tập trung định hình tương lai của AI
-                  </p>
-                </div>
-              </li>
-              <div className="w-full h-[1px] bg-[#ccc]"></div>
-              <li className="flex items-center gap-5 py-3">
-                <img
-                  src="/img/17.jpg"
-                  alt="/img/17.jpg"
-                  className="w-[53px] h-[48px] object-cover rounded-lg"
-                />
-                <div>
-                  <p className="font-semibold">Hyperas Chain</p>
-                  <p className="text-sm text-gray-500">
-                    Mạng lưới tập trung định hình tương lai của AI
-                  </p>
-                </div>
-              </li>
-              <div className="w-full h-[1px] bg-[#ccc]"></div>
-              <li className="flex items-center gap-5 py-3">
-                <img
-                  src="/img/18.jpg"
-                  alt="/img/18.jpg"
-                  className="w-[53px] h-[48px] object-cover rounded-lg"
-                />
-                <div>
-                  <p className="font-semibold">Hyperas Chain</p>
-                  <p className="text-sm text-gray-500">
-                    Mạng lưới tập trung định hình tương lai của AI
-                  </p>
-                </div>
-              </li>
-              <div className="w-full h-[1px] bg-[#ccc]"></div>
-              <li className="flex items-center gap-5 py-3">
-                <img
-                  src="/img/19.jpg"
-                  alt="/img/19.jpg"
-                  className="w-[53px] h-[48px] object-cover rounded-lg"
-                />
-                <div>
-                  <p className="font-semibold">Hyperas Chain</p>
-                  <p className="text-sm text-gray-500">
-                    Mạng lưới tập trung định hình tương lai của AI
-                  </p>
-                </div>
-              </li>
-              <div className="w-full h-[1px] bg-[#ccc]"></div>
-              <div className="flex justify-center">
-                <a href="#" className="text-green-600 font-semibold">
-                  Tìm hiểu thêm
-                </a>
-              </div>
-            </ul>
-          </div>
-
-          <div className="bg-white rounded-2xl shadow">
-            <table className="w-full text-left">
-              <thead>
-                <tr>
-                  <th className="w-1/2 p-2 text-center border rounded-s font-bold text-lg">
-                    Thuật ngữ
-                  </th>
-                  <th className="w-1/2 p-2 text-center border rounded-s font-bold text-lg">
-                    Mô tả
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td className="pl-8 pt-6">
-                    Huấn luyện AI <br /> (Training AI)
-                  </td>
-                  <td className="p-2 pt-6">
-                    Training AI (Huấn luyện AI) là quá trình trong đó một mô
-                    hình học máy hoặc mạng nơ-ron học từ dữ liệu để thực
-                    hiện một nhiệm vụ cụ thể, chẳng hạn như phân loại hình
-                    ảnh, nhận dạng giọng nói, dự đoán, hoặc đưa ra quyết
-                    định.
-                  </td>
-                </tr>
-                <tr>
-                  <td className="pl-8 pt-6">
-                    Cụm thiết bị <br /> (Cluster)
-                  </td>
-                  <td className="p-2 pt-6">
-                    Điện toán biên (Edge Computing) là một mô hình tính toán
-                    phân tán trong đó việc xử lý dữ liệu được thực hiện gần
-                    với nơi dữ liệu được tạo ra hoặc thu thập, thay vì
-                    chuyển toàn bộ dữ liệu về một trung tâm dữ liệu hoặc đám
-                    mây để xử lý. Mục tiêu chính của điện toán biên là giảm
-                    độ trễ, tiết kiệm băng thông và cải thiện hiệu suất ứng
-                    dụng.
-                  </td>
-                </tr>
-                <tr>
-                  <td className="pl-8 py-6">Cum thiết bị</td>
-                  <td className="p-2 py-6">
-                    Là tập hợp các thiết bị active do người dùng trực tiếp
-                    giới thiệu.
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div>
-            <div
-              style={{
-                background:
-                  'linear-gradient(180deg, #FFFFFF 0%, #DCFFE8 100%)',
-              }}
-              className="bg-white p-6 rounded-xl shadow"
+                <Stack flexDirection={'row'} gap={'16px'}>
+                  {items.map((item, index) => (
+                    <Stack
+                      key={index}
+                      flexDirection={'row'}
+                      gap={'8px'}
+                      justifyItems={'center'}
+                      alignItems={'center'}
+                      bgcolor={'#0000000F'}
+                      borderRadius={'8px'}
+                      px={'8px'}
+                      py={'8px'}
+                    >
+                      {item.icon}
+                      <Typography
+                        fontFamily={'Inter'}
+                        fontWeight={400}
+                        fontSize={'12px'}
+                        lineHeight={'18px'}
+                        color="#000000A3"
+                      >
+                        {index === 2 ? (
+                          <Link href={item.text}>{item.text}</Link>
+                        ) : (
+                          item.text
+                        )}
+                      </Typography>
+                    </Stack>
+                  ))}
+                </Stack>
+                {/* Tăng trưởng */}
+                <Growth />
+                <Terminology />
+              </Stack>
+            </Box>
+          </Stack>
+          <Stack flexDirection={'column'} maxWidth={'385px'} gap={'24px'}>
+            <Stack flexDirection={'column'} gap={'12px'}>
+              <Typography
+                bgcolor={'#48B96D1F'}
+                color={'#31814B'}
+                px={'16px'}
+                p={'8px'}
+                borderRadius={'4px'}
+              >
+                CÔNG NGHỆ
+              </Typography>
+              <Typography
+                fontWeight={700}
+                fontSize={'32px'}
+                lineHeight={'40px'}
+                fontFamily={'Inter'}
+                letterSpacing={'-1%'}
+                color="#363636"
+              >
+                Dự án Salala AI
+              </Typography>
+            </Stack>
+            <Typography
+              fontFamily={'Inter'}
+              fontWeight={400}
+              fontSize={'16px'}
+              lineHeight={'24px'}
+              color="#000000A3"
             >
-              <h2 className="text-lg font-bold mb-4">
-                Cập nhật thông tin mới nhất
-              </h2>
-              <form className="flex gap-2">
-                <input
-                  className="w-full p-3 border rounded-lg"
-                  type="text"
-                  placeholder="Nhập email của bạn"
-                />
-                {/* <input type="email" placeholder="Nhập email của bạn" className="w-full p-3 border rounded-lg"> */}
-                <button className="flex items-center px-4 bg-green-500 text-white rounded-lg">
-                  Gửi
-                  <img
-                    src="/img/icon/send.svg"
-                    alt="/img/icon/send.svg"
-                    className="px-4"
+              Salala là một nền tảng điện toán biên cho phép người dùng tận dụng
+              phần cứng của các thiết bị biên (edge devices) để huấn luyện mô
+              hình trí tuệ nhân tạo (AI).
+            </Typography>
+
+            <Grid container spacing={'8px'}>
+              {data.map((item, index) => (
+                <Grid item xs={4} key={index}>
+                  <Stack
+                    flexDirection={'column'}
+                    gap={'8px'}
+                    bgcolor={'#FFFFFF'}
+                    borderRadius={'8px'}
+                    p={'12px'}
+                    sx={{
+                      transition: 'ease-in-out 0.5s',
+                      '&:hover': {
+                        transform: 'scale(1.05)',
+                        cursor: 'pointer',
+                      },
+                    }}
+                  >
+                    <Typography
+                      fontFamily={'Inter'}
+                      fontWeight={600}
+                      fontSize={'16px'}
+                      lineHeight={'24px'}
+                      color="#31814B"
+                    >
+                      {item.title}
+                    </Typography>
+                    <Typography
+                      fontFamily={'Inter'}
+                      fontWeight={400}
+                      fontSize={'13px'}
+                      lineHeight={'22px'}
+                      color="#0000008F"
+                    >
+                      {item.desc}
+                    </Typography>
+                  </Stack>
+                </Grid>
+              ))}
+            </Grid>
+            <ListField list={field} />
+            <NearlyActions actions={actions} />
+          </Stack>
+        </Stack>
+      </Box>
+      <Box
+        width={'100%'}
+        bgcolor={'#fff'}
+        display={'flex'}
+        flexDirection={'column'}
+        justifyContent={'center'}
+        alignItems={'center'}
+      >
+        <section className="w-full h-auto  bg-white py-[62px] flex flex-col justify-center items-center px-[120px] max-w-[1440px]">
+          {products.map((product: (typeof products)[0], index) => (
+            <div
+              className="w-full h-auto bg-white px-1 flex flex-col justify-center items-left"
+              key={index}
+            >
+              <Stack
+                flexDirection={'row'}
+                justifyContent={'space-between'}
+                alignItems={'center'}
+                px={'20px'}
+              >
+                <Typography
+                  fontFamily={'Inter'}
+                  fontWeight={700}
+                  fontSize={'32px'}
+                  lineHeight={'40px'}
+                  letterSpacing={'-1%'}
+                  color="#000000"
+                >
+                  {product.title}
+                </Typography>
+                <Button
+                  sx={{
+                    color: '#31814B',
+                    fontFamily: 'Inter',
+                    fontWeight: 400,
+                    fontSize: '16px',
+                    lineHeight: '24px',
+                    textTransform: 'none',
+                  }}
+                >
+                  Xem thêm
+                </Button>
+              </Stack>
+              <div className="flex gap-[24px] items-center  w-full overflow-y-auto justify-center py-8 overflow-x-hidden  ">
+                {product.package.map((packageItem: any, index) => (
+                  <ProductItem
+                    key={index}
+                    descriptions={packageItem.descriptions}
+                    image={packageItem.image}
+                    interest_rate={packageItem.interest_rate}
+                    term={packageItem.term}
+                    title={packageItem.title}
+                    type={product.type}
+                    startDate={packageItem.start_date}
+                    profit={packageItem.profit}
+                    sponsorship={packageItem.sponsorship}
+                    invested={packageItem.invested}
+                    field={packageItem.field}
                   />
-                </button>
-              </form>
+                ))}
+              </div>
             </div>
-            <h2 className="text-xl font-bold mt-11 mb-5">
-              Những câu hỏi thường gặp
-            </h2>
-            <ul className="list-disc list-inside space-y-4 text-xl font-normal">
-              <li>Dự án Salala hoạt động như thế nào?</li>
-              <li>Những lợi ích đầu tư và HyraCap là gì?</li>
-              <li>Làm sao để tận dụng các lợi thế trên HyraCap?</li>
-              <li>Mạng lưới tập trung định hình tương lai của AI?</li>
-            </ul>
-            <div className="flex justify-center py-6">
-              <a href="#" className="text-green-600 font-semibold">
-                Tìm hiểu thêm
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+          ))}
+        </section>
+      </Box>
+      <Box
+        width={'100%'}
+        bgcolor={'#fff'}
+        display={'flex'}
+        flexDirection={'column'}
+        justifyContent={'center'}
+        alignItems={'center'}
+      >
+        <QandA />
+      </Box>
+      <Box
+        width={'100%'}
+        bgcolor={'#fff'}
+        display={'flex'}
+        flexDirection={'column'}
+        justifyContent={'center'}
+        alignItems={'center'}
+      >
+        <UpdateInfo />
+      </Box>
+    </Stack>
   );
 };
 

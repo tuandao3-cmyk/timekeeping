@@ -67,18 +67,16 @@ const ShortTermSection: React.FC = () => {
           // controls
         >
           <div className="grid grid-cols-3 gap-5">
-            <div className="bg-white shadow-lg   rounded-lg">
-              <div
-                className="border-b-2 flex flex-col justify-between items-center pt-4  h-[205px]
-
-                "
-              >
-                <p className="text-2xl font-medium uppercase">Gói cơ bản</p>
+            <div className="bg-white shadow-lg   rounded-[20px]">
+              <div className=" flex flex-col justify-between items-center pt-4  h-[205px]">
+                <p className="text-2xl font-medium uppercase text-[#0B3546] ">
+                  Gói cơ bản
+                </p>
                 <div
-                  className="w-full flex justify-center items-center"
+                  className=" pb-[4px] w-full flex justify-center items-center"
                   style={{
                     background:
-                      'linear-gradient(to bottom, rgba(35, 125, 161, 0) 0%, rgba(35, 125, 161, 0.2) 100%, rgba(35, 125, 161, 0) 56%)',
+                      'linear-gradient( rgba(35, 125, 161, 0) 0%, rgba(35, 125, 161, 0.2) 100%, rgba(35, 125, 161, 0) 56%)',
                   }}
                 >
                   <img src="/img/icon1.png" alt="" />
@@ -125,21 +123,23 @@ const ShortTermSection: React.FC = () => {
                 </div>
                 <div className="flex justify-center items-center">
                   <button
-                    className={`uppercase  max-w-[116px]  bg-[#48B96D] text-white text-[16px]  px-[16px] py-[14px] rounded-[999px] text-center  hover:bg-[#379256] transition-all  duration-300 delay-200 ease-in-out transform`}
+                    className={`uppercase  max-w-[116px]  bg-[#48B96D] text-white text-[16px] tracking-tight px-[16px] py-[14px] rounded-[999px] text-center  hover:bg-[#379256] transition-all  duration-300 delay-200 ease-in-out transform`}
                   >
                     mua ngay
                   </button>
                 </div>
               </div>
             </div>
-            <div className="bg-white shadow-lg  rounded-lg">
-              <div className="border-b-2 flex flex-col justify-between items-center pt-4  h-[205px]">
-                <p className="text-2xl font-medium uppercase">Gói NÂNG CAO</p>
+            <div className="bg-white shadow-lg  rounded-[20px]">
+              <div className=" flex flex-col justify-between items-center pt-4  h-[205px]">
+                <p className="text-2xl font-medium uppercase text-[#F68225]">
+                  Gói NÂNG CAO
+                </p>
                 <p className="px-2 py-1 text-[#0048FF] bg-[#3E91FF]/30 rounded-full">
                   Best value
                 </p>
                 <div
-                  className="w-full flex justify-center items-center"
+                  className=" pb-[4px] w-full flex justify-center items-center"
                   style={{
                     background:
                       'linear-gradient(to bottom, #FFAB5000 0%, #FFAB5033 100%,#99673000 56%)',
@@ -189,18 +189,20 @@ const ShortTermSection: React.FC = () => {
                 </div>
                 <div className="flex justify-center items-center">
                   <button
-                    className={`uppercase  max-w-[116px]  bg-[#48B96D] text-white text-[16px]  px-[16px] py-[14px] rounded-[999px] text-center  hover:bg-[#379256] transition-all  duration-300 delay-200 ease-in-out transform`}
+                    className={`uppercase  max-w-[116px] w-[116px] bg-[#48B96D] tracking-tight text-white text-[16px]  px-[16px] py-[14px] rounded-[999px] text-center  hover:bg-[#379256] transition-all  duration-300 delay-200 ease-in-out transform`}
                   >
                     mua ngay
                   </button>
                 </div>
               </div>
             </div>
-            <div className="bg-white shadow-lg  rounded-lg">
-              <div className="border-b-2 flex flex-col justify-between items-center pt-4 h-[205px]">
-                <p className="text-2xl font-medium uppercase">Gói cao cấp</p>
+            <div className="bg-white shadow-lg  rounded-[20px]">
+              <div className=" flex flex-col justify-between items-center pt-4 h-[205px]">
+                <p className="text-2xl font-medium uppercase text-[#31814B]">
+                  Gói cao cấp
+                </p>
                 <div
-                  className="w-full flex justify-center items-center"
+                  className=" pb-[4px] w-full flex justify-center items-center"
                   style={{
                     background:
                       'linear-gradient(to bottom,#48B96D00 0%, #48B96D33 100%,#48B96D00 56%)',
@@ -250,7 +252,7 @@ const ShortTermSection: React.FC = () => {
                 </div>
                 <div className="flex justify-center items-center">
                   <button
-                    className={`uppercase  max-w-[116px]  bg-[#48B96D] text-white text-[16px]  px-[16px] py-[14px] rounded-[999px] text-center  hover:bg-[#379256] transition-all  duration-300 delay-200 ease-in-out transform`}
+                    className={`uppercase  max-w-[116px]  bg-[#48B96D] text-white text-[16px] tracking-tight px-[16px] py-[14px] rounded-[999px] text-center  hover:bg-[#379256] transition-all  duration-300 delay-200 ease-in-out transform`}
                   >
                     mua ngay
                   </button>

@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
       ref={ref}
       className={`bg-[#04141A] dark:bg-[#04141A] duration-700 ease-in-out transform `}
     >
-      <div className="mx-auto w-full max-w-screen-xl pt-16 pl-3 pr-3">
+      <div className="mx-auto w-full max-w-screen-xl py-[62px] pl-3 pr-3">
         {/* <div>
           <img
             ref={ref}
@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
             }`}
           />
         </div> */}
-        <div className="grid grid-cols-1 gap-8 px-4 py-6 lg:py-8 md:grid-cols-5">
+        <div className="grid grid-cols-1 gap-8 px-4   md:grid-cols-5">
           <div>
             <h2
               ref={ref}
@@ -187,7 +187,7 @@ const Footer: React.FC = () => {
         </div>
         <div
           ref={ref}
-          className={`px-4 py-6 bg-transparent dark:bg-transparent md:flex md:items-center md:justify-between duration-1000 ease-in-out transform ${
+          className={`px-4 pt-6 bg-transparent dark:bg-transparent md:flex md:items-center md:justify-between duration-1000 ease-in-out transform ${
             inView
               ? 'opacity-100 scale-100 translate-y-0'
               : 'opacity-0 scale-90 translate-y-10'

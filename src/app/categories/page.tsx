@@ -3,7 +3,15 @@
 import React from 'react';
 import styles from '@/app/categories/category.module.css';
 import Link from 'next/link';
-import { Box, FormControl, InputLabel, MenuItem, Select } from '@mui/material';
+import {
+  Box,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  Typography,
+} from '@mui/material';
+import { useInView } from 'react-intersection-observer';
 
 const projects = [
   {
@@ -111,15 +119,79 @@ const CategoryPage: React.FC = () => {
   const handleChange = (event: any) => {
     setAge(event.target.value);
   };
+
+  const { ref, inView, entry } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
+  const {
+    ref: ref1,
+    inView: inView1,
+    entry: entry1,
+  } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+  const {
+    ref: ref2,
+    inView: inView2,
+    entry: entry2,
+  } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+  const {
+    ref: ref3,
+    inView: inView3,
+    entry: entry3,
+  } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
   return (
     <>
-      <div className={styles.header}>
-        <div className="max-w-[1200px] lg:w-[1200px] flex flex-col justify-start items-start">
-          <p className="text-white text-[40px] font-bold">Danh mục đầu tư</p>
-          <p className="text-white text-[32px] font-normal mt-2">
-            Nghiên cứu và phát triển các dự án công nghệ
-            <br /> Blockchain, AI, Fintech, Digital Banking,...
-          </p>
+      <div
+        ref={ref}
+        className="relative font-sans w-full h-[520px] bg-[#07212C] bg-[url('/img/category/category_banner.png')] bg-no-repeat bg-cover bg-center"
+      >
+        <div
+          className="absolute inset-0 bg-gradient-to-b flex items-end pb-[107px] justify-center"
+          style={{
+            background:
+              'linear-gradient(180deg, rgba(11, 53, 70, 0.08) 17.75%, rgba(11, 53, 70, 0.747169) 51.39%, rgba(11, 53, 70, 0.862047) 71.15%, #0B3546 88.52%)',
+          }}
+        >
+          <div className="flex flex-col items-center justify-end text-center max-w-[1440px] text-white gap-[22px]">
+            <Typography
+              sx={{
+                fontWeight: 700,
+                fontSize: '48px',
+                lineHeight: '56px',
+                textAlign: 'center',
+                fontFamily: 'Inter',
+              }}
+              className={`${inView ? 'animate-fadeIn' : 'translate-y-20 opacity-0'} transition
+               duration-300 ease-in-out`}
+            >
+              Danh mục đầu tư
+            </Typography>
+            <Typography
+              sx={{
+                fontWeight: 400,
+                fontSize: '18px',
+                lineHeight: '24px',
+                textAlign: 'center',
+                fontFamily: 'Inter',
+              }}
+              className={`${inView ? 'animate-fadeIn' : 'translate-y-20 opacity-0'} transition
+               duration-300 delay-300 ease-in-out`}
+            >
+              Nghiên cứu và phát triển các dự án công nghệ Blockchain, AI,
+              Fintech, Digital Banking,...
+            </Typography>
+          </div>
         </div>
       </div>
 
@@ -127,13 +199,13 @@ const CategoryPage: React.FC = () => {
         <div className="max-w-[1200px]">
           <div className="flex items-center  pt-[51px]">
             <input
-              className="w-full h-[57px] border-2 border-[#48B96D] rounded-lg pl-3 pr-10 text-lg"
+              className="w-full h-[57px] border-2 font-sans border-[#48B96D] rounded-lg pl-3 pr-10 text-lg"
               type="text"
               placeholder="Nhập dự án cần tìm kiếm"
             />
           </div>
-          <div className=" pt-4 flex flex-row justify-end gap-4 items-center">
-            <p>Hiển thị </p>
+          <div className=" pt-4 flex flex-row justify-end gap-4 font-sans  items-center">
+            <p className="font-sans">Hiển thị </p>
             <FormControl sx={{ m: 1, minWidth: 100 }} size="small">
               <Select
                 className="rounded-full text-center"
@@ -152,11 +224,11 @@ const CategoryPage: React.FC = () => {
               </Select>
             </FormControl>
           </div>
-          <h2 className=" py-4 font-bold text-4xl text-[#04141A] uppercase">
+          <h2 className=" py-4 font-bold text-4xl font-sans text-[#04141A] uppercase">
             dỰ ÁN đã hoàn thành
           </h2>
           <div className="flex flex-col lg:flex-row ">
-            <div className="w-full bg-white">
+            <div className="w-full bg-white" ref={ref1}>
               <Box
                 sx={{
                   display: 'grid',
@@ -170,7 +242,10 @@ const CategoryPage: React.FC = () => {
               >
                 {projects.map((project, index) => (
                   <Link href="/detail-category" key={index}>
-                    <Box className="py-4">
+                    <Box
+                      className={`${inView1 ? 'animate-fadeIn scale-100' : 'translate-y-20 opacity-0 scale-0'} py-4 transition
+               duration-300 ease-in-out delay-${index === 4 ? 300 : index * 100}`}
+                    >
                       <div className="bg-white shadow-lg rounded-lg overflow-hidden">
                         <img
                           src={project.img}
@@ -181,14 +256,14 @@ const CategoryPage: React.FC = () => {
                           {/* <span className="text-sm bg-blue-500 text-white py-1 px-3 rounded-full">
                             Series A
                           </span> */}
-                          <h3 className="text-lg font-bold mt-2 uppercase">
+                          <h3 className="text-lg font-bold mt-2 font-sans uppercase">
                             {project.name}
                           </h3>
                           <div className="mt-4">
-                            <div className="text-sm font-normal uppercase">
+                            <div className="text-sm font-normal font-sans uppercase">
                               Mục tiêu huy động
                             </div>
-                            <div className="text-xl font-semibold">
+                            <div className="text-xl font-sans font-semibold">
                               {project.amount}
                             </div>
                             <div className="h-2 bg-gray-300 rounded mt-2">
@@ -200,10 +275,10 @@ const CategoryPage: React.FC = () => {
                               ></div>
                             </div>
                             <div className="flex justify-between my-2 text-sm text-gray-600">
-                              <span className="text-[#48B96D] font-semibold">
+                              <span className="text-[#48B96D] font-semibold font-sans">
                                 {project.funded}
                               </span>
-                              <div className="flex gap-1">
+                              <div className="flex gap-1 font-sans">
                                 <span>Hoàn thành</span>
                                 <p className="text-[#48B96D] font-semibold">
                                   {project.progress}%
@@ -211,10 +286,10 @@ const CategoryPage: React.FC = () => {
                               </div>
                             </div>
                             <div className="flex gap-2">
-                              <span className="text-gray-800 px-2 py-1 rounded-md font-bold bg-[#F6F6F6]">
+                              <span className="text-gray-800 px-2 py-1 font-sans rounded-md font-bold bg-[#F6F6F6]">
                                 {project.category}
                               </span>
-                              <span className="text-gray-800 px-2 py-1 rounded-md font-bold bg-[#F6F6F6]">
+                              <span className="text-gray-800 px-2 py-1 font-sans rounded-md font-bold bg-[#F6F6F6]">
                                 {project.category}
                               </span>
                             </div>
@@ -228,7 +303,7 @@ const CategoryPage: React.FC = () => {
             </div>
           </div>
           <div className="flex flex-row justify-center mb-8">
-            <button className="uppercase flex items-center bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black">
+            <button className="uppercase flex items-center font-sans bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black">
               xem thêm
               <svg
                 className="w-4 h-4 transition-transform duration-300 ease-linear"
@@ -240,11 +315,11 @@ const CategoryPage: React.FC = () => {
               </svg>
             </button>
           </div>
-          <h2 className=" py-4 font-bold text-4xl text-[#04141A] uppercase">
+          <h2 className=" py-4 font-bold text-4xl font-sans text-[#04141A] uppercase">
             dự án đang gọi vốn
           </h2>
           <div className="flex flex-col lg:flex-row ">
-            <div className="w-full bg-white">
+            <div className="w-full bg-white" ref={ref2}>
               <Box
                 sx={{
                   display: 'grid',
@@ -258,7 +333,10 @@ const CategoryPage: React.FC = () => {
               >
                 {projects.map((project, index) => (
                   <Link href="/detail-category" key={index}>
-                    <Box className="py-4">
+                    <Box
+                      className={`${inView2 ? 'animate-fadeIn scale-100' : 'translate-y-20 opacity-0 scale-0'} py-4 transition
+               duration-300 ease-in-out delay-${index === 4 ? 300 : index * 100}`}
+                    >
                       <div className="bg-white shadow-lg rounded-lg overflow-hidden">
                         <img
                           src={project.img}
@@ -269,14 +347,14 @@ const CategoryPage: React.FC = () => {
                           {/* <span className="text-sm bg-blue-500 text-white py-1 px-3 rounded-full">
                             Series A
                           </span> */}
-                          <h3 className="text-lg font-bold mt-2 uppercase">
+                          <h3 className="text-lg font-bold font-sans mt-2 uppercase">
                             {project.name}
                           </h3>
                           <div className="mt-4">
-                            <div className="text-sm font-normal uppercase">
+                            <div className="text-sm font-normal font-sans uppercase">
                               Mục tiêu huy động
                             </div>
-                            <div className="text-xl font-semibold">
+                            <div className="text-xl font-sans font-semibold">
                               {project.amount}
                             </div>
                             <div className="h-2 bg-gray-300 rounded mt-2">
@@ -288,21 +366,21 @@ const CategoryPage: React.FC = () => {
                               ></div>
                             </div>
                             <div className="flex justify-between my-2 text-sm text-gray-600">
-                              <span className="text-[#48B96D] font-semibold">
+                              <span className="text-[#48B96D] font-sans font-semibold">
                                 {project.funded}
                               </span>
-                              <div className="flex gap-1">
+                              <div className="flex gap-1 font-sans">
                                 <span>Hoàn thành</span>
-                                <p className="text-[#48B96D] font-semibold">
+                                <p className="text-[#48B96D] font-sans font-semibold">
                                   {project.progress}%
                                 </p>
                               </div>
                             </div>
                             <div className="flex gap-2">
-                              <span className="text-gray-800 px-2 py-1 rounded-md font-bold bg-[#F6F6F6]">
+                              <span className="text-gray-800 font-sans px-2 py-1 rounded-md font-bold bg-[#F6F6F6]">
                                 {project.category}
                               </span>
-                              <span className="text-gray-800 px-2 py-1 rounded-md font-bold bg-[#F6F6F6]">
+                              <span className="text-gray-800 font-sans px-2 py-1 rounded-md font-bold bg-[#F6F6F6]">
                                 {project.category}
                               </span>
                             </div>
@@ -316,7 +394,7 @@ const CategoryPage: React.FC = () => {
             </div>
           </div>
           <div className="flex flex-row justify-center mb-8">
-            <button className="uppercase flex items-center bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black">
+            <button className="uppercase flex font-sans items-center bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black">
               xem thêm
               <svg
                 className="w-4 h-4 transition-transform duration-300 ease-linear"
@@ -328,7 +406,7 @@ const CategoryPage: React.FC = () => {
               </svg>
             </button>
           </div>
-          <h2 className=" py-4 font-bold text-4xl text-[#04141A] uppercase">
+          <h2 className=" py-4 font-bold text-4xl font-sans text-[#04141A] uppercase">
             dỰ ÁN ĐÃ ĐẦU TƯ ƯƠM TẠ0
           </h2>
           <div className="flex flex-col lg:flex-row ">
@@ -475,7 +553,7 @@ const CategoryPage: React.FC = () => {
             </div>
           </div>
         </div> */}
-            <div className="w-full bg-white">
+            <div className="w-full bg-white" ref={ref3}>
               <Box
                 sx={{
                   display: 'grid',
@@ -489,7 +567,10 @@ const CategoryPage: React.FC = () => {
               >
                 {projects2.map((project, index) => (
                   <Link href="/detail-category" key={index}>
-                    <Box className="py-4">
+                    <Box
+                      className={`${inView3 ? 'animate-fadeIn scale-100' : 'translate-y-20 opacity-0 scale-0'} py-4 transition
+               duration-300 ease-in-out delay-${index === 4 ? 300 : index * 100}`}
+                    >
                       <div className="bg-white shadow-lg rounded-lg overflow-hidden">
                         <img
                           src={project.img}
@@ -500,14 +581,14 @@ const CategoryPage: React.FC = () => {
                           {/* <span className="text-sm bg-blue-500 text-white py-1 px-3 rounded-full">
                             Series A
                           </span> */}
-                          <h3 className="text-lg font-bold mt-2 uppercase">
+                          <h3 className="text-lg font-bold font-sans mt-2 uppercase">
                             {project.name}
                           </h3>
                           <div className="mt-4">
-                            <div className="text-sm font-normal uppercase">
+                            <div className="text-sm font-normal font-sans uppercase">
                               Mục tiêu huy động
                             </div>
-                            <div className="text-xl font-semibold">
+                            <div className="text-xl font-sans font-semibold">
                               {project.amount}
                             </div>
                             <div className="h-2 bg-gray-300 rounded mt-2">
@@ -519,10 +600,10 @@ const CategoryPage: React.FC = () => {
                               ></div>
                             </div>
                             <div className="flex justify-between mt-2 text-sm text-gray-600">
-                              <span className="text-[#48B96D] font-semibold">
+                              <span className="text-[#48B96D] font-sans font-semibold">
                                 {project.funded}
                               </span>
-                              <div className="flex gap-1">
+                              <div className="flex gap-1 font-sans">
                                 <span>Hoàn thành</span>
                                 <p className="text-[#48B96D] font-semibold">
                                   {project.progress}%
@@ -530,10 +611,10 @@ const CategoryPage: React.FC = () => {
                               </div>
                             </div>
                             <div className="flex gap-2">
-                              <span className="text-gray-800 px-2 py-1 rounded-md font-bold bg-[#F6F6F6]">
+                              <span className="text-gray-800 px-2 py-1 font-sans rounded-md font-bold bg-[#F6F6F6]">
                                 {project.category}
                               </span>
-                              <span className="text-gray-800 px-2 py-1 rounded-md font-bold bg-[#F6F6F6]">
+                              <span className="text-gray-800 px-2 py-1 font-sans rounded-md font-bold bg-[#F6F6F6]">
                                 {project.category}
                               </span>
                             </div>
@@ -547,7 +628,7 @@ const CategoryPage: React.FC = () => {
             </div>
           </div>
           <div className="flex flex-row justify-center mb-8">
-            <button className="uppercase flex items-center bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black">
+            <button className="uppercase flex items-center font-sans bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black">
               xem thêm
               <svg
                 className="w-4 h-4 transition-transform duration-300 ease-linear"

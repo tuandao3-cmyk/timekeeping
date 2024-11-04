@@ -65,11 +65,13 @@ const ProductItem = forwardRef<HTMLDivElement, ProductItemProps>(
         return (
           <div
             ref={ref}
-            className={`package-item md:max-w-[384px] bg-white  rounded-lg md:gap-6   flex justify-center items-left flex-col flex-grow gap-3 ${props.className}`}
+            className={`package-item md:max-w-[384px] bg-white  rounded-lg md:gap-6   flex justify-center items-left flex-col flex-grow gap-3 ${props.className} hover:shadow-lg p-5 hover:scale-105 transition ease-in-out duration-150 hover:cursor-pointer `}
           >
             {props.image}
 
-            <h2 className="text-lg md:text-[30px] font-bold">{props.title}</h2>
+            <h2 className="text-lg md:text-[30px] font-bold uppercase">
+              {props.title}
+            </h2>
 
             <div>
               <p className="uppercase font-[400] text-[14px] text-[#000] text-opacity-70">
