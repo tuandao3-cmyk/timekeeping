@@ -1,0 +1,247 @@
+.projectSection {
+  margin-top: 2%;
+  padding: 2rem 3%;
+  background-color: #f5f5f5;
+  margin-top: 3%;
+  height: 100%;
+  /* text-align: left; */
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.sectionSubtitle {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.projectCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.projectCard {
+  flex: 1;
+  background-color: #f3f7f4;
+  border-radius: 10px;
+  overflow: hidden;
+  /* */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.projectCard:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.projectImage {
+  width: 100%;
+  max-height: 200px;
+  /* height: 60%; */
+  object-fit: cover;
+}
+
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.projectName {
+  font-size: clamp(1.2rem, 2vw, 2.4rem);
+  font-weight: bold;
+  margin: 0.5rem 0;
+  width: 100%;
+  text-align: left;
+}
+
+.projectTarget {
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: normal;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  text-align: left;
+}
+
+.projectInfo {
+  padding: 0 1rem 1rem;
+}
+
+.amount {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #4caf50;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.progress {
+  background-color: #e0e0e0;
+  height: 5px;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.progressBar {
+  background-color: #4caf50;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.fundingInfo {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: #4caf50;
+}
+
+.category {
+  font-size: 0.8rem;
+  color: #666;
+  text-align: left;
+}
+
+.moreProjectsButton {
+  background-color: #ffffff;
+  border: 2px solid #d8d8d8;
+  color: #000000;
+  padding: 10px 20px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+  border-radius: 25px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.moreProjectsButton:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #000000;
+}
+
+.moreProjectsButton svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+}
+
+.moreProjectsButton:hover svg {
+  transform: translateX(4px);
+}
+
+.moreProjectsButton:hover svg path {
+  fill: #ffffff;
+}
+
+.mainProject {
+  flex: 1 1 calc(66.666% - 1rem);
+  max-width: calc(66.666% - 1rem);
+  height: 100%; /* Chiều cao 100% của container */
+}
+
+.smallProjects {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 calc(33.333% - 1rem);
+  max-width: calc(33.333% - 1rem);
+  gap: 1rem;
+  height: 100%; /* Chiều cao 100% của container */
+}
+
+.smallProject {
+  flex: 1;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.smallProject img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.showcaseSection {
+  padding: 2rem;
+  background-color: #fff;
+  text-align: center;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.imageContainer {
+  width: 100vw;
+  background-size: contain;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.showcaseImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .projectCards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .projectGrid {
+    height: auto;
+  }
+  .projectCards {
+    flex-direction: column;
+  }
+  .projectCard,
+  .mainProject,
+  .smallProjects {
+    flex: 1 1 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .smallProject {
+    height: 200px; /* Đặt chiều cao cố định cho các project nhỏ trên mobile */
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+}

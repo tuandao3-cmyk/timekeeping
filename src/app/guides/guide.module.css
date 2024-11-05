@@ -1,0 +1,576 @@
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 5%;
+  background-color: white;
+  background-image: url('/img/guidebg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Hiệu ứng mờ cho phần header */
+.header::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background-image: inherit;
+  background-repeat: inherit;
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px);
+  z-index: -1;
+}
+
+/* Lớp active cho các phần tử được chọn */
+.active {
+  color: #28a745;
+  font-weight: bold;
+}
+
+/* Logo */
+.logo {
+  background-image: url('/img/logohyracap.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 30px;
+  position: relative;
+  background-color: transparent;
+}
+
+/* Nút logo */
+.logoButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Liên kết */
+.link {
+  margin-right: 5px;
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+
+/* Hiệu ứng hover cho liên kết */
+.link:hover {
+  color: #28a745;
+  text-decoration: underline;
+}
+
+/* Phần điều hướng */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 10px 3%;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.hero {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background-image: inherit;
+  background-repeat: inherit;
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px);
+  z-index: -1;
+}
+
+
+.heroContent {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 80vw;
+  margin-bottom: 20px;
+  background-color: white;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  bottom: 5vh;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Input tìm kiếm */
+.searchInput {
+  flex: 1;
+  padding: 15px 20px;
+  border: none;
+  font-size: 16px;
+  outline: none;
+}
+
+/* Nút tìm kiếm */
+.searchButton {
+  background-color: transparent;
+  border: none;
+  padding: 15px 20px;
+  cursor: pointer;
+}
+
+/* Hình ảnh nút tìm kiếm */
+.searchButton img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Tiêu đề và nội dung phần anh hùng */
+.heroContent h1,
+.heroContent p {
+  font-family: Inter, sans-serif;
+  font-size: clamp(2.5rem, 2vw, 3rem);
+  line-height: 1.5;
+  max-width: 50vw;
+  margin-top: 12vh;
+  /* margin-bottom: 20px; */
+}
+
+.heroContent p{
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 50vw;
+  margin-top: 12vh;
+}
+
+/* Nút gọi hành động */
+.ctaButton {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+/* Hiệu ứng hover cho nút gọi hành động */
+.ctaButton:hover {
+  background-color: #45a049;
+}
+
+/* Container nội dung */
+.contentContainer {
+  display: flex;
+  margin-top: 20px;
+}
+
+/* Thanh bên */
+.sidebar {
+  width: 23vw;
+  padding: 20px;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Danh sách trong thanh bên */
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Mỗi phần tử trong danh sách */
+.sidebar li {
+  margin-bottom: 10px;
+}
+
+/* Liên kết trong thanh bên */
+.sidebar a {
+  text-decoration: none;
+  color: #333;
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+  color: #8a8a8a;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 5vh;
+  padding-left: 5vw;
+}
+
+/* Hiệu ứng hover cho liên kết trong thanh bên */
+.sidebar a:hover {
+  color: #28a745;
+}
+
+/* Nội dung chính */
+.mainContent {
+  flex: 1;
+  padding-left: 5vw;
+  /* display: flex; */
+  text-align: center;
+}
+
+/* Tiêu đề và nội dung trong phần nội dung chính */
+.mainContent h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2em;
+  color: #000000;
+  text-align: left;
+  /* padding-left: 15vw; */
+}
+.mainContent ul {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  color: #000000;
+  text-align: left;
+  /* padding-left: 15vw; */
+}
+.mainContent li {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  color: #000000;
+  text-align: left;
+  padding-left: 1vw;
+}
+.mainContent p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  color: #000000;
+  text-align: left;
+  /* padding-left: 15vw; */
+}
+
+/* Tiêu đề trong phần nội dung chính */
+.mainContent h2 {
+  font-family: Inter, sans-serif;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  margin-bottom: 20px;
+  color: #000000;
+  text-align: left;
+  padding-left: 15vw;
+}
+
+/* Container video */
+.videoContainer {
+  margin-top: 10vh;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 50vw;
+  height: 60vh;
+}
+
+/* Wrapper video */
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* Tỷ lệ 16:9 */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+/* Tiêu đề video */
+.videoTitle {
+  padding-left: 5vw;
+  font-family: Inter, sans-serif;
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Iframe video */
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Container hình ảnh */
+.imageContainer {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 20px; /* Tạo khoảng cách giữa các ảnh */
+  padding-left: 3vw;
+}
+
+/* Hình ảnh trong container */
+.imageContainer img {
+  width: 30%;
+  max-width: 300px;
+  margin-bottom: 15px;
+}
+
+/* Kết luận */
+.conclusion {
+  margin-top: 20px;
+  font-weight: normal;
+  text-align: center;
+  font-size: 1.5vw;
+}
+.textContent{
+  padding: 0;
+}
+/* Phần tải xuống */
+.downloadSection {
+  background: linear-gradient(175.74deg, #78ca94 3.66%, #2a7082 96.76%);
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 40px;
+}
+
+/* Tiêu đề và nội dung trong phần tải xuống */
+.downloadSection h2,
+.downloadSection p {
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.downloadSection p{
+  font-size:35px;
+  font-weight: 400;
+  font-family: 'Inte', sans-serif;
+}
+
+/* Container mã QR */
+.qrContainer {
+  margin-bottom: 20px;
+}
+.qrContainer img {
+  margin: 0 auto;
+}
+
+/* Mã QR */
+.qrCode {
+  width: 150px;
+  height: 150px;
+}
+
+/* Nút cửa hàng */
+.storeButtons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Nút cửa hàng */
+.storeButton {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  color: #333;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Hình ảnh nút cửa hàng */
+.storeButton img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+/* ... existing code ... */
+
+/* Media queries cho responsive design */
+@media (max-width: 1200px) {
+  .header {
+    height: 50vh;
+  }
+
+  .heroContent h1,
+  .heroContent p {
+    font-size: clamp(2rem, 1.8vw, 2.5rem);
+    max-width: 60vw;
+    padding: 0;
+  }
+  .mainContent h2 {
+    font-size: clamp(1.3rem, 1.8vw, 1.8rem);
+  }
+  .videoContainer {
+    width: 66vw;
+    height: 30vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: 60vh;
+  }
+
+  .heroContent h1,
+  .heroContent p {
+    font-size: clamp(1.8rem, 1.5vw, 2.2rem);
+    max-width: 80vw;
+  }
+
+  .searchContainer {
+    max-width: 90vw;
+  }
+
+  .contentContainer {
+    flex-direction: column;
+  }
+
+  .videoContainer {
+    width: 80vw;
+    height: 40vh;
+  }
+
+  .imageContainer img {
+    width: 45%;
+  }
+
+  .storeButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 10px 0;
+  }
+
+  .sidebar ul {
+    display: flex;
+    flex-direction: row;
+    padding: 0 10px;
+  }
+
+  .sidebar li {
+    margin-right: 15px;
+    margin-bottom: 0;
+    white-space: nowrap;
+  }
+  .sidebar a {
+    padding: 5px 10px;
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    height: 45vh;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 10px 0;
+  }
+
+  .sidebar ul {
+    display: flex;
+    flex-direction: row;
+    padding: 0 10px;
+  }
+
+  .sidebar li {
+    margin-right: 15px;
+    margin-bottom: 0;
+    white-space: nowrap;
+  }
+  .sidebar a {
+    padding: 5px 10px;
+    flex-direction: row;
+  }
+  .heroContent h1,
+  .heroContent p {
+    font-size: clamp(1.3rem, 1.2vw, 2rem);
+    max-width: 90vw;
+    padding-top: 5vh;
+    margin: 0;
+  }
+
+  .searchContainer {
+    max-width: 95vw;
+  }
+
+  .mainContent h1,
+  .mainContent h2 {
+    font-size: 1.2em;
+  }
+
+  .mainContent p,
+  .mainContent li {
+    font-size: 0.9em;
+  }
+
+  .videoContainer {
+    width: 90vw;
+    height: 30vh;
+  }
+
+  .imageContainer img {
+    width: 100%;
+  }
+
+  .conclusion {
+    font-size: 3vw;
+  }
+
+  .downloadSection h2 {
+    font-size: 20px;
+  }
+
+  .downloadSection p {
+    font-size: 16px;
+  }
+
+  .qrCode {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* ... existing code ... */
