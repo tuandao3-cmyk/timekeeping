@@ -90,8 +90,8 @@ const GuidePage: React.FC = () => {
               <li className="mb-2.5">
                 <button
                   onClick={() => setActiveSection('signin')}
-                  className={`no-underline text-[#8A8A8A] font-roboto font-bold flex flex-col hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
-                    activeSection === 'signin' ? 'text-[#28a745]' : ''
+                  className={`no-underline font-roboto font-bold flex flex-col hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
+                    activeSection === 'signin' ? 'text-[#28a745]' : 'text-[#8A8A8A]'
                   }`}
                 >
                   Đăng ký
@@ -100,8 +100,8 @@ const GuidePage: React.FC = () => {
               <li className="mb-2.5">
                 <button
                   onClick={() => setActiveSection('login')}
-                  className={`no-underline text-[#8A8A8A] font-roboto font-bold flex flex-col hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
-                    activeSection === 'login' ? 'text-[#28a745]' : ''
+                  className={`no-underline  font-roboto font-bold flex flex-col hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
+                    activeSection === 'login' ? 'text-[#28a745]' : 'text-[#8A8A8A]'
                   }`}
                 >
                   Đăng nhập
@@ -110,8 +110,8 @@ const GuidePage: React.FC = () => {
               <li className="mb-2.5">
                 <button
                   onClick={() => setActiveSection('auth')}
-                  className={`no-underline text-[#8A8A8A] font-roboto font-bold flex flex-col hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
-                    activeSection === 'auth' ? 'text-[#28a745]' : ''
+                  className={`no-underline  font-roboto font-bold flex flex-col hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
+                    activeSection === 'auth' ? 'text-[#28a745]' : 'text-[#8A8A8A]'
                   }`}
                 >
                   Xác thực eKYC
@@ -120,8 +120,8 @@ const GuidePage: React.FC = () => {
               <li className="mb-2.5">
                 <button
                   onClick={() => setActiveSection('contract')}
-                  className={`no-underline text-[#8A8A8A] font-roboto font-bold flex flex-col hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
-                    activeSection === 'contract' ? 'text-[#28a745]' : ''
+                  className={`no-underline  font-roboto font-bold flex flex-col hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
+                    activeSection === 'contract' ? 'text-[#28a745]' : 'text-[#8A8A8A]'
                   }`}
                 >
                   Ký hợp đồng
@@ -130,8 +130,8 @@ const GuidePage: React.FC = () => {
               <li className="mb-2.5">
                 <button
                   onClick={() => setActiveSection('product')}
-                  className={`no-underline text-[#8A8A8A] font-roboto font-bold flex flex-col hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
-                    activeSection === 'product' ? 'text-[#28a745]' : ''
+                  className={`no-underline  font-roboto font-bold flex flex-col hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
+                    activeSection === 'product' ? 'text-[#28a745]' : 'text-[#8A8A8A]'
                   }`}
                 >
                   Thực hiện đầu tư
@@ -140,8 +140,8 @@ const GuidePage: React.FC = () => {
               <li className="mb-2.5">
                 <button
                   onClick={() => setActiveSection('transaction')}
-                  className={`no-underline text-[#8A8A8A] font-roboto font-bold flex flex-col hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
-                    activeSection === 'transaction' ? 'text-[#28a745]' : ''
+                  className={`no-underline  font-roboto font-bold flex flex-col hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
+                    activeSection === 'transaction' ? 'text-[#28a745]' : 'text-[#8A8A8A]'
                   }`}
                 >
                   Giao dịch
@@ -150,8 +150,8 @@ const GuidePage: React.FC = () => {
               <li className="mb-2.5">
                 <button
                   onClick={() => setActiveSection('forgot')}
-                  className={`no-underline text-[#8A8A8A] font-roboto font-bold flex flex-col hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
-                    activeSection === 'forgot' ? 'text-[#28a745]' : ''
+                  className={`no-underline  font-roboto font-bold flex flex-col hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
+                    activeSection === 'forgot' ? 'text-[#28a745]' : 'text-[#8A8A8A]'
                   }`}
                 >
                   Quên mật khẩu
@@ -160,8 +160,8 @@ const GuidePage: React.FC = () => {
               <li className="mb-2.5">
                 <button
                   onClick={() => setActiveSection('logout')}
-                  className={`no-underline text-[#8A8A8A] font-roboto font-bold flex flex-col hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
-                    activeSection === 'logout' ? 'text-[#28a745]' : ''
+                  className={`no-underline  font-roboto font-bold flex flex-col hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
+                    activeSection === 'logout' ? 'text-[#28a745]' : 'text-[#8A8A8A]'
                   }`}
                 >
                   Đăng xuất

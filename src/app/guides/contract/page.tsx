@@ -95,7 +95,7 @@ const ContractSection: React.FC = () => {
           </div>
 
           <p className="mt-5 font-normal text-left text-xl 3xl:text-2xl">
-            Như vậy, HyraCap đã thực hiện xong phần hướng dẫn Đăng Nhập sử dụng ứng dụng HyraCap.
+            Như vậy, HyraCap đã thực hiện xong phần hướng dẫn ký hợp đồng trong ứng dụng HyraCap.
             <br />
             Chúc Quý Khách thành công!
           </p>
