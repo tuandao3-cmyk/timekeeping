@@ -389,7 +389,7 @@
 }
 
 .promise h2 {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 40px;
   font-weight: bold;
   margin-bottom: 20px;
@@ -411,8 +411,7 @@
 }
 
 .leadershipSection {
-  /* padding: 62px 120px;
-   */
+
    max-width: 1440px;
   display: flex;
   flex-direction: column;
@@ -795,7 +794,7 @@
   .leadershipSection,
   .staffSection {
     overflow-x: hidden;
-    padding: 60px;
+
   }
 
   .leadershipSection h2,
@@ -833,10 +832,7 @@
   .mission {
     flex-direction: column;
   }
-  .leadershipSection,
-  .staffSection {
-    padding: 60px 16px;
-  }
+
   .leadershipGrid {
     grid-template-columns: 1fr;
   }

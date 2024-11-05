@@ -236,7 +236,7 @@ const AboutPage: React.FC = () => {
       >
         <div className="flex flex-col items-center justify-center w-full max-w-[1440px]">
           <div className="flex justify-between items-center w-full h-full mt-16 max-md:!flex-col pl-20 pr-12">
-            <div className="flex flex-col min-h-[620px] justify-start flex-1  gap-10">
+            <div className="flex flex-col min-h-[620px] justify-center items-center lg:justify-start flex-1  gap-10">
               <div className="flex flex-col gap-2">
               <p
                 ref={ref}
@@ -282,7 +282,7 @@ const AboutPage: React.FC = () => {
                 bền vững.
               </p>
 
-              <div className="flex w-[100%] justify-start items-start  max-w-[500px]">
+              <div className="flex w-[100%] justify-center lg:justify-start items-center lg:items-start  max-w-[500px]">
                 <button
                   ref={ref}
                   className={` bg-[#48B96D] text-white font-sans text-[16px] leading-[20px]  px-[16px] py-[14px] rounded-[999px] text-center  hover:bg-[#379256] transition-all  duration-300 delay-200 ease-in-out transform ${
@@ -332,11 +332,11 @@ const AboutPage: React.FC = () => {
       <Partner />
       <div className={styles['about-container']}>
         <section className="flex flex-col w-full justify-center items-center bg-white py-[62px]">
-          <div className="flex flex-row-reverse  items-center justify-around w-full max-w-[1440px]">
+          <div className="flex flex-col lg:flex-row-reverse lg:p-0 p-5 items-center justify-around w-full max-w-[1440px]">
             <div className={styles.textContent}>
               <Typography
                 ref={ref2}
-                className={` duration-700 ease-in-out transform ${
+                className={` duration-700 text-center lg:text-left  ease-in-out transform ${
                   inView2
                     ? 'opacity-100 scale-100 translate-y-0'
                     : 'opacity-0 translate-y-10 scale-50'
@@ -352,7 +352,7 @@ const AboutPage: React.FC = () => {
               </Typography>
               <p
                 ref={ref2}
-                className={` duration-700 ease-in-out font-sans transform ${
+                className={` duration-700 text-center lg:text-left ease-in-out font-sans transform ${
                   inView2
                     ? 'opacity-100 scale-100 translate-y-0'
                     : 'opacity-0 translate-y-10 scale-50'
@@ -483,11 +483,11 @@ const AboutPage: React.FC = () => {
         </section>
 
         <section className="flex flex-col justify-around items-center w-full py-[62px]">
-          <div className="flex flex-row items-center justify-around w-full max-w-[1440px]">
+          <div className="flex flex-col lg:flex-row p-5 lg:p-0 items-center justify-around w-full max-w-[1440px]">
             <div className={styles.textContent}>
               <Typography
                 ref={ref3}
-                className={` duration-700 ease-in-out transform ${
+                className={` duration-700 text-center lg:text-left ease-in-out transform ${
                   inView3
                     ? 'opacity-100 scale-100 translate-y-0'
                     : 'opacity-0 translate-y-10 scale-50'
@@ -503,7 +503,7 @@ const AboutPage: React.FC = () => {
               </Typography>
               <p
                 ref={ref3}
-                className={` duration-700 ease-in-out font-sans transform ${
+                className={` duration-700 text-center lg:text-left ease-in-out font-sans transform ${
                   inView3
                     ? 'opacity-100 scale-100 translate-y-0'
                     : 'opacity-0 translate-y-10 scale-50'
@@ -636,7 +636,7 @@ const AboutPage: React.FC = () => {
           </div>
         </section>
         <section className="flex flex-col justify-center items-center w-full py-[62px]">
-          <div className="flex flex-col items-center justify-center w-full max-w-[1440px] px-[120px] gap-[40px]">
+          <div className="flex flex-col items-center justify-center w-full max-w-[1440px] px-5 lg:px-[120px] gap-[40px]">
             <div className="flex flex-col text-center gap-10 w-[780px] max-[768px]:!w-full">
               <Typography
                 ref={ref4}
@@ -679,7 +679,7 @@ const AboutPage: React.FC = () => {
              }
               `}
               >
-                <div className="rounded-lg p-4 flex flex-col gap-2 w-[90%] shadow-md absolute -bottom-0 z-50 bg-white min-h-[164px]">
+                <div className="rounded-lg p-4 flex flex-col gap-2 w-full lg:w-[90%] text-center lg:text-left shadow-md absolute -bottom-0 z-50 bg-white min-h-[164px]">
                   <p className="!text-xl font-semibold !text-black font-sans">
                     Đổi mới sáng tạo
                   </p>
@@ -704,7 +704,7 @@ const AboutPage: React.FC = () => {
                     : 'opacity-0 translate-x-100 scale-50'
                 }`}
               >
-                <div className="rounded-lg p-4 flex flex-col gap-2 w-[90%] shadow-md absolute -bottom-0 z-50 bg-white  min-h-[164px]">
+                <div className="rounded-lg p-4 flex flex-col gap-2 w-full lg:w-[90%] text-center lg:text-left shadow-md absolute -bottom-0 z-50 bg-white  min-h-[164px]">
                   <p className="!text-xl font-semibold !text-black font-sans">
                     Bền vững
                   </p>
@@ -729,7 +729,7 @@ const AboutPage: React.FC = () => {
                     : 'opacity-0 translate-x-100 scale-50'
                 }`}
               >
-                <div className="rounded-lg p-4 flex flex-col gap-2 w-[90%] shadow-md absolute -bottom-0 z-50 bg-white  min-h-[164px]">
+                <div className="rounded-lg p-4 flex flex-col gap-2 w-full lg:w-[90%] text-center lg:text-left shadow-md absolute -bottom-0 z-50 bg-white  min-h-[164px]">
                   <p className="!text-xl font-semibold !text-black font-sans">
                     Minh bạch an toàn
                   </p>
@@ -754,7 +754,7 @@ const AboutPage: React.FC = () => {
                     : 'opacity-0 translate-x-100 scale-50'
                 }`}
               >
-                <div className="rounded-lg p-4 flex flex-col gap-2 w-[90%] shadow-md absolute -bottom-0 z-50 bg-white  min-h-[164px]">
+                <div className="rounded-lg p-4 flex flex-col gap-2 w-full lg:w-[90%] text-center lg:text-left shadow-md absolute -bottom-0 z-50 bg-white  min-h-[164px]">
                   <p className="!text-xl font-semibold !text-black font-sans">
                     Hợp lực
                   </p>
@@ -776,10 +776,10 @@ const AboutPage: React.FC = () => {
         </section>
         <MessageFromCreative />
         <section className={styles.promise}>
-          <div className={styles.promiseContent}>
+          <div className="flex flex-col items-center justify-center relative z-[1] px-5 lg:px-[230px] py-5 lg:py-[60px]">
             <h2
               ref={ref6}
-              className={`duration-700  font-sans ease-in-out transform ${
+              className={` font-inter max-w-[80%] text-[32px] lg:text-[40px] font-bold mb-5 duration-700 font-sans ease-in-out transform ${
                 inView6
                   ? 'opacity-100 scale-100 translate-y-0'
                   : 'opacity-0 translate-y-10 scale-50'
@@ -789,7 +789,7 @@ const AboutPage: React.FC = () => {
             </h2>
             <p
               ref={ref6}
-              className={`duration-700 font-sans  ease-in-out transform ${
+              className={`font-inter text-[16px] lg:text-[24px] font-normal leading-[32px] duration-700 font-sans ease-in-out transform ${
                 inView6
                   ? 'opacity-100 scale-100 translate-y-0'
                   : 'opacity-0 translate-y-10 scale-50'
@@ -840,7 +840,7 @@ const AboutPage: React.FC = () => {
               </Typography>
               <p
                 ref={ref7}
-                className={`text-base text-[#323232] font-sans text-center w-3/5 sm:!w-full duration-700  ease-in-out transform ${
+                className={`text-base text-[#323232] font-sans text-center w-[90%] lg:w-3/5 sm:!w-full duration-700  ease-in-out transform ${
                   inView7
                     ? 'opacity-100 scale-100 translate-y-0'
                     : 'opacity-0 translate-y-10 scale-50'
@@ -851,7 +851,7 @@ const AboutPage: React.FC = () => {
                 mình và chúng tôi sẽ nâng tầm bạn thực hiện điều đó. 
               </p>
             </div>
-            <div className={styles.leadershipGrid}>
+            <div className="grow grid grid-cols-1 lg:grid-cols-4 gap-4 w-full mx-auto place-items-center items-center ">
               {leaders.slice(0, 4).map((leader, index) => (
                 <CustomWidthTooltip
                   title={
@@ -933,14 +933,14 @@ const AboutPage: React.FC = () => {
           </div>
         </section>
 
-        <section className="flex flex-col justify-center items-center w-full py-[62px]">
-          <div className={styles.leadershipSection}>
+        <section className="flex flex-col justify-center items-center w-full py-10 lg:py-[62px]">
+          <div className="max-w-[1440px] flex flex-col items-center gap-6 lg:gap-10">
             <h2
               ref={ref8}
-              className={`text-base font-sans text-[#323232] text-center w-3/5 sm:!w-full duration-700  ease-in-out transform ${
+              className={`text-[28px] leading-[36px] lg:text-[40px] lg:leading-[48px] text-center font-sans font-bold text-[#323232] text-center w-full lg:w-3/5 sm:!w-full lg:duration-700  lg:ease-in-out lg:transform ${
                 inView8
-                  ? 'opacity-100 scale-100 translate-y-0'
-                  : 'opacity-0 translate-y-10 scale-50'
+                  ? 'lg:opacity-100 lg:scale-100 lg:translate-y-0'
+                  : 'lg:opacity-0 lg:translate-y-10 lg:scale-50'
               }
               uppercase
               `}
@@ -949,23 +949,47 @@ const AboutPage: React.FC = () => {
             </h2>
             <p
               ref={ref8}
-              className={`text-base font-sans text-[#323232] text-center w-3/5 duration-700  ease-in-out transform ${
+              className={`text-base font-sans text-[#323232] text-center w-[90vw] lg:w-3/5 duration-700  ease-in-out transform ${
                 inView8
-                  ? 'opacity-100 scale-100 translate-y-0'
-                  : 'opacity-0 translate-y-10 scale-50'
+                  ? 'lg:opacity-100 lg:scale-100 lg:translate-y-0'
+                  : 'lg:opacity-0 lg:translate-y-10 lg:scale-50'
               }`}
             >
               Tận hưởng giá trị đầu tư uy tín hàng đầu và đạt được những lợi
               nhuận hấp dẫn cho bạn! Bạn là người tạo ra tài chính của riêng
               mình và chúng tôi sẽ nâng tầm bạn thực hiện điều đó.
             </p>
-            <div className={`grid grid-cols-4 grid-rows-2`}>
+            <div className="flex flex-row items-center overflow-x-auto scrollbar-hide gap-4 w-[100vw] pb-4 px-10 lg:hidden snap-x snap-mandatory scroll-smooth scroll-p-10">
+                {staffs.map((leader, index) => (
+                <div
+                  key={index}
+                  className="flex-shrink-0 snap-center snap-always min-w-[280px] flex flex-col items-center bg-[#F3F7F4]"
+                >
+                  <div className="pt-6 w-full h-[280px]">
+                    <img
+                      src={leader.image}
+                      alt={leader.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="w-full p-6 pb-8 text-center">
+                    <h3 className="text-[20px] leading-[28px] font-semibold">
+                      {leader.name}
+                    </h3>
+                    <p className="text-base leading-6 text-[#000000b2] mt-2">
+                      {leader.title}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="hidden lg:grid lg:grid-cols-4 lg:grid-rows-2 gap-4 w-full pb-4 ">
               {staffs.map((leader, index) => (
                 <div
                   key={index}
                   style={{ backgroundColor: '#F3F7F4' }}
                   ref={ref8}
-                  className={`${styles.leaderCard} duration-700 delay-${index * 100}  ease-in-out transform ${
+                  className={`flex flex-col items-center relative max-w-[320px] duration-700 delay-${index * 100}  ease-in-out transform ${
                     inView8
                       ? 'opacity-100 scale-100 translate-y-0'
                       : 'opacity-0 translate-y-10 scale-50'
@@ -975,13 +999,13 @@ const AboutPage: React.FC = () => {
                     <img
                       src={leader.image}
                       alt={leader.name}
-                      className={`${styles.leaderImage} hover:scale-125 trasform ease-in-out duration-300`}
+                      className="w-full h-full object-contain hover:scale-125 trasform ease-in-out duration-300"
                     />
                   </div>
-                  <div className={styles.leaderInfo}>
+                  <div className="w-full flex justify-end bg-[#f3f7f4]">
                     <div className="w-full bg-[#F3F7F4] p-6 pb-8 text-center font-sans">
-                      <h3>{leader.name}</h3>
-                      <p className={styles.leaderTitle}>{leader.title}</p>
+                      <h3 className="text-[20px] leading-[28px] font-semibold font-sans text-[#000000e5]">{leader.name}</h3>
+                      <p className="font-sans text-base leading-6 text-[#000000b2] mt-2">{leader.title}</p>
                     </div>
                   </div>
                 </div>
@@ -990,11 +1014,11 @@ const AboutPage: React.FC = () => {
           </div>
         </section>
 
-        <section className="flex flex-col justify-center items-center w-full py-[62px] bg-white">
+        <section className="flex flex-col justify-center items-center w-full py-10 lg:py-[62px] bg-white">
           <div className={styles.contactSection}>
             <div
               ref={ref9}
-              className={`${styles.contactInfo}  duration-300   ease-in-out transform ${
+              className={`${styles.contactInfo} hidden lg:block duration-300   ease-in-out transform ${
                 inView9
                   ? 'opacity-100 scale-100 translate-y-0'
                   : 'opacity-0 translate-y-10 scale-50'
