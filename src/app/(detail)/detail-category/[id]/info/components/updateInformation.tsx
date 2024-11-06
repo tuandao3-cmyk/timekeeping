@@ -9,22 +9,38 @@ function UpdateInfo() {
       flexDirection={'column'}
       maxWidth={'1440px'}
       width={'100%'}
-      px={'120px'}
+      px={{
+        xs: '12px',
+        sm: '16px',
+        md: '120px',
+      }}
       gap={'40px'}
-      py={'62px'}
+      py={{
+        xs: '20px',
+        md: '62px',
+      }}
     >
       <Box
         sx={{
           backgroundImage: 'url(/img/product_category/updateInfoBg.png)',
         }}
         borderRadius={'16px'}
-        height={'313px'}
+        height={{
+          md: '313px',
+        }}
         width={'100%'}
         display={'flex'}
-        flexDirection={'row'}
+        flexDirection={{
+          xs: 'column',
+          md: 'row',
+        }}
         justifyContent={'center'}
         alignItems={'center'}
         gap={'80px'}
+        px={{
+          xs: '20px',
+          md: '0',
+        }}
       >
         <Image
           src={'/img/product_category/content.png'}

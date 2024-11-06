@@ -33,6 +33,11 @@ function Terminology() {
           fontWeight={700}
           textAlign={'center'}
           color="#000000CC"
+          maxWidth={{
+            xs: '100px',
+            sm: '100px',
+            md: '50%',
+          }}
           flexGrow={1}
         >
           Thuật ngữ chính
@@ -64,6 +69,11 @@ function Terminology() {
             fontFamily={'Inter'}
             color="#rgb(76,76,76)"
             flexGrow={1}
+            maxWidth={{
+              xs: '100px',
+              sm: '100px',
+              md: '50%',
+            }}
           >
             {item.title}
           </Typography>
@@ -74,7 +84,10 @@ function Terminology() {
             color="#rgb(76,76,76)"
             fontFamily={'Inter'}
             flexGrow={1}
-            maxWidth={'50%'}
+            maxWidth={{
+              xs: '65%',
+              md: '50%',
+            }}
           >
             {item.desc}
           </Typography>

@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide, SwiperRef } from 'swiper/react';
 import { useInView } from 'react-intersection-observer';
+import Marquee from 'react-fast-marquee';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -189,83 +190,19 @@ function BannerSwipper() {
                   height={289}
                 />
               </div>
-              {/* <div
-                onTouchStart={(e) => e.stopPropagation()}
-                onMouseDown={(e) => e.stopPropagation()}
-                className="w-full h-[72px] absolute bottom-0 overflow-x-auto flex whitespace-nowrap"
-              >
-                {items.map((item, index) => (
-                  <div
-                    key={index}
-                    className="w-[215px] h-[72px] gap-[8px] bg-white p-[12px] rounded-[12px] flex"
-                  >
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      width={48}
-                      height={48}
-                      className="rounded-[10px]"
-                    />
-                    <div className="flex flex-col ">
-                      <p
-                        className="font-sans text-[#04141A] text-[14px] leading-[24px]"
-                        style={{ fontWeight: 700 }}
-                      >
-                        {item.title}
-                      </p>
-                      <p
-                        className="font-sans text-[#31814B] text-[14px] leading-[24px]"
-                        style={{ fontWeight: 500 }}
-                      >
-                        {item.price}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div> */}
 
-              <div
-                className="swiper-pagination"
-                style={{
-                  position: 'absolute',
-                  bottom: '0',
-                }}
-              ></div>
-
-              <Swiper
-                centeredSlides={true}
-                slidesPerView={1}
-                spaceBetween={4}
-                loop={true}
-                autoplay={{
-                  delay: 2000,
-                  disableOnInteraction: false,
-                }}
-                pagination={{
-                  el: '.swiper-pagination',
-                  clickable: true,
-                }}
-                modules={[Autoplay, Pagination, Navigation]}
-                style={{
-                  position: 'absolute',
-                  bottom: '8px',
-                  width: '100%',
-                }}
-                touchRatio={1}
-                freeMode={false}
-              >
-                {items.map((item, index) => (
-                  <SwiperSlide
-                    key={index}
-                    style={{
-                      width: '215px',
-                      height: '100%',
-                      backgroundColor: '#fff',
-                      borderRadius: '12px',
-                      maxWidth: '215px',
-                    }}
-                  >
-                    <div className="w-full h-[72px] gap-[8px] bg-white p-[12px] rounded-[12px] flex">
+              <div className="absolute w-full bottom-[8px] ">
+                <Marquee
+                  autoFill
+                  style={{
+                    display: 'flex',
+                  }}
+                >
+                  {items.map((item, index) => (
+                    <div
+                      key={index}
+                      className="w-auto ml-[4px] h-[72px] gap-[8px] bg-white p-[12px] rounded-[12px] flex"
+                    >
                       <Image
                         src={item.image}
                         alt={item.title}
@@ -288,9 +225,9 @@ function BannerSwipper() {
                         </p>
                       </div>
                     </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
+                  ))}
+                </Marquee>
+              </div>
             </div>
 
             <div
