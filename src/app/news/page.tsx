@@ -259,7 +259,7 @@ const NewsPage: React.FC = () => {
             <div className="w-full col-span-2 gap-3">
               {newsData.slice(1, 4).map((news: any, index: number) => (
                 <a href="/news/newsdetail" className="p-4" key={index}>
-                  <div className="grid md:grid-cols-3  border-[1px] hover:scale-105 transition ease-in-out duration-150 hover:cursor-pointer">
+                  <div className="grid md:grid-cols-3  border-[1px] hover:scale-105 hover:border-none transition ease-in-out duration-150 hover:cursor-pointer">
                     <img
                       src={news.imageUrl}
                       alt=""
@@ -306,7 +306,7 @@ const NewsPage: React.FC = () => {
                       className="w-auto h-auto w-[40px] h-[40px]  rounded-lg  "
                     />
                     <p className="text-gray-700 font-normal text-base">
-                      50,987 Fans
+                      50,987 Subscriber
                     </p>
                   </div>
                   <button className="flex bg-gray-100 items-center justify-center w-8 h-8 rounded-xs border border-gray-300 hover:border-gray-400 transition-colors">

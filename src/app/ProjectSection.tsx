@@ -156,7 +156,7 @@ const ProjectSection = () => {
             </div>
           </div>
           <a
-            href="/products"
+            href="/categories"
             className={`${styles.moreProjectsButton} font-sans`}
           >
             Tìm hiểu thêm các dự án{' '}

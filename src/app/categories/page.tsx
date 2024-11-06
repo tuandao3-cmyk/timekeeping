@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from '@/app/categories/category.module.css';
 import Link from 'next/link';
 import {
@@ -14,8 +14,11 @@ import {
 } from '@mui/material';
 import { useInView } from 'react-intersection-observer';
 
+
+
 const projects = [
   {
+    id: 1,
     img: '/img/egabid_pc.png',
     name: 'EGABID',
     amount: '$2.000.000',
@@ -24,6 +27,7 @@ const projects = [
     category: 'CÔNG NGHỆ',
   },
   {
+    id: 2,
     img: '/img/Salala.png',
     name: 'SALALA AI',
     amount: '$2.000.000',
@@ -32,6 +36,7 @@ const projects = [
     category: 'CÔNG NGHỆ',
   },
   {
+    id: 3,
     img: '/img/hyperas_chain.png',
     name: 'Hyperas Chain',
     amount: '$2.000.000',
@@ -40,6 +45,7 @@ const projects = [
     category: 'CÔNG NGHỆ',
   },
   {
+    id: 4,
     img: '/img/egabid_pc.png',
     name: 'EGABID',
     amount: '$2.000.000',
@@ -48,6 +54,7 @@ const projects = [
     category: 'CÔNG NGHỆ',
   },
   {
+    id: 5,
     img: '/img/Salala.png',
     name: 'SALALA AI',
     amount: '$2.000.000',
@@ -56,6 +63,7 @@ const projects = [
     category: 'CÔNG NGHỆ',
   },
   {
+    id: 6,
     img: '/img/hyperas_chain.png',
     name: 'Hyperas Chain',
     amount: '$2.000.000',
@@ -66,6 +74,7 @@ const projects = [
 ];
 const projects2 = [
   {
+    id: 1,
     img: '/img/19.jpg',
     name: 'EGABID',
     amount: '$2.000.000',
@@ -74,6 +83,7 @@ const projects2 = [
     category: 'CÔNG NGHỆ',
   },
   {
+    id: 2,
     img: '/img/18.jpg',
     name: 'SALALA AI',
     amount: '$2.000.000',
@@ -82,6 +92,7 @@ const projects2 = [
     category: 'CÔNG NGHỆ',
   },
   {
+    id: 3,
     img: '/img/16.jpg',
     name: 'Hyperas Chain',
     amount: '$2.000.000',
@@ -90,6 +101,7 @@ const projects2 = [
     category: 'CÔNG NGHỆ',
   },
   {
+    id: 4,
     img: '/img/19.jpg',
     name: 'EGABID',
     amount: '$2.000.000',
@@ -98,6 +110,7 @@ const projects2 = [
     category: 'CÔNG NGHỆ',
   },
   {
+    id: 5,
     img: '/img/18.jpg',
     name: 'SALALA AI',
     amount: '$2.000.000',
@@ -106,6 +119,7 @@ const projects2 = [
     category: 'CÔNG NGHỆ',
   },
   {
+    id: 6,
     img: '/img/16.jpg',
     name: 'Hyperas Chain',
     amount: '$2.000.000',
@@ -116,6 +130,19 @@ const projects2 = [
 ];
 const CategoryPage: React.FC = () => {
   const [age, setAge] = React.useState('10');
+  const [screenWidth, setScreenWidth] = useState(0);
+
+useEffect(() => {
+
+  setScreenWidth(window.innerWidth);
+  
+  const handleResize = () => {
+    setScreenWidth(window.innerWidth);
+  };
+  
+  window.addEventListener('resize', handleResize);
+  return () => window.removeEventListener('resize', handleResize);
+}, []);
 
   const handleChange = (event: any) => {
     setAge(event.target.value);
@@ -163,7 +190,7 @@ const CategoryPage: React.FC = () => {
     <>
       <div
         ref={ref}
-        className="flex flex-col items-center justify-center font-sans w-full h-[520px] bg-[#07212C] bg-[url('/img/category/categories_bg.png')] bg-no-repeat bg-cover bg-center"
+        className="flex flex-col items-center justify-center font-sans w-full min-h-[772px] lg:h-[520px] bg-[#07212C] bg-[url('/img/category/categories_bg.png')] bg-no-repeat bg-cover bg-center"
       >
         <div className="  pb-[107px] justify-center">
           <div className="flex flex-col items-center justify-end text-center max-w-[1440px] text-[#0B3546] gap-[22px]">
@@ -187,6 +214,7 @@ const CategoryPage: React.FC = () => {
                 lineHeight: '24px',
                 textAlign: 'center',
                 fontFamily: 'Inter',
+                padding: '0 50px',
               }}
               className={`${inView ? 'animate-fadeIn' : 'translate-y-20 opacity-0'} transition
                duration-300 delay-300 ease-in-out`}
@@ -200,9 +228,9 @@ const CategoryPage: React.FC = () => {
 
       <div className="flex flex-col justify-center items-center w-full">
         <div className="max-w-[1200px]">
-          <div className="flex items-center justify-center gap-4  pt-[51px]">
+          <div className="flex items-center px-4 flex-wrap justify-center gap-4  pt-[51px]">
             <input
-              className=" h-[48px]  font-sans text-[16px] flex-grow  border-[1px]  border-[rgba(60, 60, 67, 0.1)],  rounded-lg pl-3 pr-10 text-lg bg-[#EFEFEF] focus:outline-none "
+              className=" h-[48px]   font-sans text-[16px] flex-grow  border-[1px]  border-[rgba(60, 60, 67, 0.1)],  rounded-lg pl-3 pr-10 text-lg bg-[#EFEFEF] focus:outline-none "
               type="text"
               placeholder="Nhập dự án cần tìm kiếm"
             />
@@ -310,10 +338,10 @@ const CategoryPage: React.FC = () => {
             </Button>
           </div>
 
-          <h2 className=" py-4 font-bold text-[32px] font-sans mt-[48px]  text-[#04141A] uppercase">
-            dỰ ÁN đã hoàn thành
+          <h2 className="flex text-center py-4 px-4  font-bold text-[32px] font-sans mt-[48px]  text-[#04141A] uppercase">
+            DỰ ÁN ĐÃ HOÀN THÀNH
           </h2>
-          <div ref={ref4} className="flex flex-col lg:flex-row ">
+          <div ref={ref4} className="flex px-4  flex-col lg:flex-row ">
             <div className="w-full bg-white" ref={ref1}>
               <Box
                 sx={{
@@ -326,8 +354,8 @@ const CategoryPage: React.FC = () => {
                   gap: 2,
                 }}
               >
-                {projects.map((project, index) => (
-                  <Link href="/detail-category" key={index}>
+                {projects.map((project, index) => (index < 3 &&  window.innerWidth <= 500 || (index < 4  && window.innerWidth >= 500) || (index < 6 && window.innerWidth >= 900)) && (
+                  <Link href={`/detail-category/${project.id}`} key={index}>
                     <Box
                       className={`${inView4 ? 'animate-fadeIn scale-100' : 'translate-y-20 opacity-0 scale-0'} py-4 transition
                duration-300 ease-in-out delay-${index === 4 ? 300 : index * 100}
@@ -403,10 +431,10 @@ const CategoryPage: React.FC = () => {
               </svg>
             </button>
           </div>
-          <h2 className=" py-4 font-bold text-[32px] font-sans text-[#04141A] uppercase">
+          <h2 className="flex text-center px-4 py-4 font-bold text-[32px] font-sans text-[#04141A] uppercase">
             dự án đang gọi vốn
           </h2>
-          <div className="flex flex-col lg:flex-row ">
+          <div className="flex px-4  flex-col lg:flex-row ">
             <div className="w-full bg-white" ref={ref2}>
               <Box
                 sx={{
@@ -419,8 +447,8 @@ const CategoryPage: React.FC = () => {
                   gap: 2,
                 }}
               >
-                {projects.map((project, index) => (
-                  <Link href="/detail-category" key={index}>
+                {projects.map((project, index) => (index < 3 &&  window.innerWidth <= 500 || (index < 4  && window.innerWidth >= 500) || (index < 6 && window.innerWidth >= 900))  &&(
+                  <Link href={`/detail-category/${project.id}`} key={index}>
                     <Box
                       className={`${inView2 ? 'animate-fadeIn scale-100' : 'translate-y-20 opacity-0 scale-0'} py-4 transition
                duration-300 ease-in-out delay-${index === 4 ? 300 : index * 100}
@@ -496,10 +524,10 @@ const CategoryPage: React.FC = () => {
               </svg>
             </button>
           </div>
-          <h2 className=" py-4 font-bold text-[32px] font-sans text-[#04141A] uppercase">
-            dỰ ÁN ĐÃ ĐẦU TƯ ƯƠM TẠ0
+          <h2 className="flex text-center px-4  py-4 font-bold text-[32px] font-sans text-[#04141A] uppercase">
+          DỰ ÁN ĐÃ ĐẦU TƯ ƯƠM TẠ0
           </h2>
-          <div className="flex flex-col lg:flex-row ">
+          <div className="flex px-4   flex-col lg:flex-row ">
             <div className="w-full bg-white" ref={ref3}>
               <Box
                 sx={{
@@ -512,8 +540,8 @@ const CategoryPage: React.FC = () => {
                   gap: 2,
                 }}
               >
-                {projects2.map((project, index) => (
-                  <Link href="/detail-category" key={index}>
+                {projects2.map((project, index) => (index < 3 &&  window.innerWidth <= 500 || (index < 4  && window.innerWidth >= 500  ) || (index < 6 && window.innerWidth >= 900))  &&(
+                  <Link href={`/detail-category/${project.id}`} key={index}>
                     <Box
                       className={`${inView3 ? 'animate-fadeIn scale-100' : 'translate-y-20 opacity-0 scale-0'} py-4 transition
                duration-300 ease-in-out delay-${index === 4 ? 300 : index * 100}  hover:scale-105 hover:transition-all hover:duration-300 hover:ease-in-out`}

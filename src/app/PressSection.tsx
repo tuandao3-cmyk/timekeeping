@@ -3,14 +3,14 @@ import styles from './PressSection.module.css';
 import { useInView } from 'react-intersection-observer';
 
 const pressLogos = [
-  { name: 'Phụ nữ', src: '/img/icon/phunu.png', delay: 0 },
-  { name: 'VTC News', src: '/img/icon/vtc.png', delay: 75 },
-  { name: 'Diễn đàn Doanh nghiệp', src: '/img/icon/bao7.png', delay: 150 },
-  { name: 'CafeF', src: '/img/icon/cafef.png', delay: 200 },
-  { name: 'VietnamBiz', src: '/img/icon/bao6.png', delay: 300 },
-  { name: 'Genk', src: '/img/icon/bao4.png', delay: 500 },
-  { name: 'Thanh Niên', src: '/img/icon/thanhnien1.png', delay: 700 },
-  { name: 'Thông tin và Truyền thông', src: '/img/icon/bao8.png', delay: 1000 },
+  { name: 'Phụ nữ', src: '/img/icon/phunu.png', delay: 0, link: 'https://baophunuthudo.vn/' },
+  { name: 'VTC News', src: '/img/icon/vtc.png', delay: 75, link: 'https://vtcnews.vn/' },
+  { name: 'Diễn đàn Doanh nghiệp', src: '/img/icon/bao7.png', delay: 150, link: 'https://diendandoanhnghiep.vn/hyra-holdings-ky-vong-dua-cac-du-an-cong-nghe-ung-dung-ai-va-blockchain-len-ngoi-10132475.html' },
+  { name: 'CafeF', src: '/img/icon/cafef.png', delay: 200, link: 'https://cafef.vn/dhdcd-hyra-holdings-2024-day-manh-cac-du-an-cong-nghe-ai-va-dien-toan-bien-188240427185159324.chn' },
+  { name: 'VietnamBiz', src: '/img/icon/bao6.png', delay: 300, link: 'https://vietnambiz.vn/' },
+  { name: 'Genk', src: '/img/icon/bao4.png', delay: 500, link: 'https://genk.vn/' },
+  { name: 'Thanh Niên', src: '/img/icon/thanhnien1.png', delay: 700, link: 'https://thanhnien.vn/' },
+  { name: 'Thông tin và Truyền thông', src: '/img/icon/bao8.png', delay: 1000, link: 'https://ictvietnam.vn/' },
 ];
 
 const PressSection = () => {
