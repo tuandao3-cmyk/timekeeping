@@ -190,7 +190,7 @@ const ProductPage: React.FC = () => {
       </div>
 
       {/* Các gói đầu tư */}
-      <section className="w-full h-auto mt-[1380px] md:mt-[450px] bg-white py-6 flex flex-col justify-center items-center md:px-[120px]">
+      <section className="w-full h-auto mt-[1420px] md:mt-[450px] bg-white py-6 flex flex-col justify-center items-center md:px-[120px] ">
         {products.map((product: (typeof products)[0], index) => (
           <div
             className="  w-full h-auto  px-1 flex flex-col justify-center items-left "
