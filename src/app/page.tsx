@@ -2,16 +2,15 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 
-import styles from './page.module.css';
 import Partner from '@/app/partner';
-import ProjectSection from '@/app/ProjectSection';
 import PressSection from '@/app/PressSection';
+import ProjectSection from '@/app/ProjectSection';
 import SolutionList from '@/components/solutionList/solutionList';
+import styles from './page.module.css';
 
 import Download from './download';
-import News from './news';
 import FeedbackSection from './FeedbackSection';
-import BannerSwipper from '@/components/bannerSwipper';
+import News from './news';
 
 const Home: React.FC = () => {
   const rightFrameRef = useRef<HTMLDivElement>(null);
@@ -65,7 +64,7 @@ const Home: React.FC = () => {
       <section className="bg-[#07212C] flex flex-col justify-center items-center w-full ">
         {/* <BannerSwipper /> */}
         <div className=" text-white py-8 flex max-h-[748px]  max-w-[1440px] w-full">
-          <div className="w-full md:ml-[10%]  md:w-1/2 md:max-w-[45%]  md:pr-8">
+          <div className="w-full md:ml-[10%]  md:w-1/2 md:max-w-[45%] sm:max-w-[100%]   md:pr-8">
             <p
               ref={ref}
               className={`duration-300 ease-in-out transform ${

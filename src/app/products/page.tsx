@@ -4,14 +4,11 @@ import React from 'react';
 
 import { useInView } from 'react-intersection-observer';
 
-import { useState, useEffect } from 'react';
-import { ProfitIcon, MoneyIcon, PiggyBankIcon } from '@/components/icons';
-import ProductItem from './components/productItem';
-import { start } from 'repl';
-import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import DownloadSection from '../download';
-import ShortTermSection from './short-term/page';
+import ProductItem from './components/productItem';
 import LongTermSection from './long-term/page';
+import ShortTermSection from './short-term/page';
 
 const ProductPage: React.FC = () => {
   const { ref, inView, entry } = useInView({
@@ -142,32 +139,32 @@ const ProductPage: React.FC = () => {
     <>
       <div
         style={{ backgroundImage: 'url("/img/productbg.png")' }}
-        className=" min-h-[620px]  w-[100%] flex flex-col justify-start items-end relative font-sans"
+        className="min-h-[620px] w-full flex flex-col justify-start items-end relative font-sans bg-cover bg-center "
       >
-        <div className="flex flex-col gap-8 justify-center items-center w-full mt-16 max-md:!flex-col pl-32 pr-12">
+        <div className="flex flex-col gap-6 w-full mt-16 md:gap-4 lg:gap-8 ">
           <p
             ref={ref2}
-            className={`text-[40px]  text-white font-bold uppercase duration-700 ease-in-out transform ${
+            className={`text-[35px] sm:text-[40px] lg:text-[40px] text-center text-white font-bold uppercase duration-700 ease-in-out transform ${
               inView2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
           >
             Sản phẩm đầu tư tại HyraCap
           </p>
-
           <p
             ref={ref2}
-            className={`text-[20px] text-[#ffffff]/70 duration-700  ease-in-out transform ${
+            className={`text-[16px]  xs:text-[16px] sm:text-[18px] md:text-[20px] lg:text-[24px] px-1 text-center text-[#ffffff]/70 duration-700 ease-in-out transform ${
               inView2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
           >
             Chúng tôi cung cấp các gói sản phẩm đầu tư phù hợp với từng nhu cầu
             của khách hàng.
           </p>
-          <div className="flex w-[100%] justify-center items-start gap-[24px]">
+
+          <div className="flex w-full justify-center items-start gap-[24px]">
             <button
               ref={ref2}
               onClick={() => setActiveSection('short-term')}
-              className={` hover:bg-[#48B96D] text-white text-[16px] px-[20px] py-[14px] rounded-[999px] text-center transition-all duration-300 delay-200 ease-in-out transform ${
+              className={`hover:bg-[#48B96D] text-white text-[16px] px-[20px] py-[14px] rounded-[999px] text-center transition-all duration-300 delay-200 ease-in-out transform ${
                 inView2
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-10'
@@ -175,10 +172,11 @@ const ProductPage: React.FC = () => {
             >
               Đầu tư ngắn hạn
             </button>
+
             <button
               ref={ref2}
               onClick={() => setActiveSection('long-term')}
-              className={` hover:bg-[#48B96D] text-white text-[16px] px-[20px] py-[14px] rounded-[999px] text-center transition-all duration-300 delay-500 ease-in-out transform ${
+              className={`hover:bg-[#48B96D] text-white text-[16px] px-[20px] py-[14px] rounded-[999px] text-center transition-all duration-300 delay-500 ease-in-out transform ${
                 inView2
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-10'
@@ -192,18 +190,18 @@ const ProductPage: React.FC = () => {
       </div>
 
       {/* Các gói đầu tư */}
-      <section className="w-full h-auto mt-[450px] bg-white py-6 flex flex-col justify-center items-center px-[120px]">
+      <section className="w-full h-auto mt-[1380px] md:mt-[450px] bg-white py-6 flex flex-col justify-center items-center md:px-[120px]">
         {products.map((product: (typeof products)[0], index) => (
           <div
-            className="w-full h-auto bg-white px-1 flex flex-col justify-center items-left"
+            className="  w-full h-auto  px-1 flex flex-col justify-center items-left "
             key={index}
           >
             <h2
-              className={`text-black px-4 font-bold text-5xl uppercase md:text-3xl text-center md:text-[35px] text-[20px] duration-300 `}
+              className={`text-black px-4 font-bold text-5xl uppercase md:text-3xl text-center md:text-[35px] text-[30px] duration-300   sm:mt-0`}
             >
               {product.title}
             </h2>
-            <div className="flex gap-[24px] items-center  w-full overflow-y-auto justify-center py-8 md:px-8  ">
+            <div className="flex  flex-col sm:flex-row gap-4 sm:gap-6 md:gap-8 lg:gap-10 items-center w-full overflow-y-auto justify-center md:py-8  sm:px-6 md:px-8">
               {product.package.map((packageItem: any, index) => (
                 <ProductItem
                   key={index}
@@ -223,7 +221,11 @@ const ProductPage: React.FC = () => {
             </div>
           </div>
         ))}
-        <button className="border-[#0000003D] border-[1px] rounded-[999px] py-[14px] px-[16px] font-[500] text-[16px] text-black text-opacity-90 hover:bg-[#48B96D] hover:text-white transform ease-in-out duration-100 hover:border-transparent">
+        <button className="border-[#0000003D] border-[1px] rounded-[999px] py-[8px] px-[12px] font-[500] text-[16px] text-black text-opacity-90 hover:bg-[#48B96D] hover:text-white transform ease-in-out duration-100 hover:border-transparent sm:hidden">
+          Tìm hiểu thêm các dự án &gt;
+        </button>
+
+        <button className="hidden sm:inline border-[#0000003D] border-[1px] rounded-[999px] py-[14px] px-[16px] font-[500] text-[16px] text-black text-opacity-90 hover:bg-[#48B96D] hover:text-white transform ease-in-out duration-100 hover:border-transparent">
           Tìm hiểu thêm các dự án &gt;
         </button>
       </section>

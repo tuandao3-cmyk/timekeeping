@@ -1,7 +1,5 @@
-import { TimeLeft } from '@/components/icons';
 import ProgressBar from '@/components/progress';
 import { forwardRef } from 'react';
-import { useInView } from 'react-intersection-observer';
 
 interface ProductItemProps {
   title: string;
@@ -65,7 +63,7 @@ const ProductItem = forwardRef<HTMLDivElement, ProductItemProps>(
         return (
           <div
             ref={ref}
-            className={`package-item md:max-w-[384px] bg-white  rounded-lg md:gap-6   flex justify-center items-left flex-col flex-grow gap-3 ${props.className} hover:shadow-lg p-5 hover:scale-105 transition ease-in-out duration-150 hover:cursor-pointer `}
+            className={`package-item w-full mt-5 md:max-w-[384px] bg-white  rounded-lg md:gap-6   flex justify-center items-left flex-col flex-grow gap-3 ${props.className} hover:shadow-lg p-5 hover:scale-105 transition ease-in-out duration-150 hover:cursor-pointer `}
           >
             {props.image}
 

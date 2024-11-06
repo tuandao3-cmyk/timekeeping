@@ -1,8 +1,6 @@
-import React from 'react';
+import { useRouter } from 'next/navigation';
 import { useInView } from 'react-intersection-observer';
 import styles from './news.module.css';
-import { desc } from 'framer-motion/client';
-import { useRouter } from 'next/navigation';
 
 const newsData = [
   {

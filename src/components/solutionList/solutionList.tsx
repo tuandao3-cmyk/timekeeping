@@ -153,16 +153,16 @@ function SolutionList() {
           giải pháp đầu tư vượt trội
         </Typography>
       </div>
-      <div className="flex gap-[24px] px-[120px] justify-center items-center">
+      <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 md:gap-10 lg:gap-12 px-4 sm:px-8 md:px-16 lg:px-32 justify-center items-center">
         {DATA.map((item, index) => (
           <div
             ref={ref}
-            className={`flex rounded-[24px] max-w-[384px] bg-[#F3F7F4] transition duration-300 gap-[24px]  flex-col hover:bg-[#48B96DCC] hover:bg-opacity-80 justify-start items-start group p-[40px] ease-in-out delay-${index * 100} transform ${
+            className={`flex rounded-2xl max-w-[384px] bg-[#F3F7F4] transition duration-300 gap-6 flex-col hover:bg-[#48B96DCC] hover:bg-opacity-80 justify-start items-start group p-10 ease-in-out delay-${index * 100} transform ${
               inView ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
             }`}
             key={index}
           >
-            <div className="rounded-full bg-white h-[80px] w-[80px] flex items-center justify-center overflow-hidden">
+            <div className="rounded-full bg-white h-20 w-20 flex items-center justify-center overflow-hidden">
               {item.image}
             </div>
             <Typography
@@ -175,7 +175,7 @@ function SolutionList() {
               {item.title}
             </Typography>
             <Typography
-              className="group-hover:text-white "
+              className="group-hover:text-white"
               sx={{
                 fontWeight: 400,
                 fontSize: 16,
