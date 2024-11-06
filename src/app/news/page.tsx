@@ -221,45 +221,47 @@ const NewsPage: React.FC = () => {
         </div>
       </section>
       {/* -------------------news----------------------- */}
-      {newsData.map((news: any, index: number) => (
-        <>
-          {index === 0 ? (
-            <div className=""></div>
-          ) : (
-            <div
-              className={`${index == 1 ? 'mt-32' : 'mt-8'} mx-5 flex flex-row items-center gap-5 p-1 border`}
-              style={{ borderRadius: 10 }}
-            >
-              <img
-                src={news.imageUrl}
-                alt=""
-                className={` object-cover object-center rounded-lg 
-                        h-[90px] w-[150px]
+      <div className=" block md:hidden ">
+        {newsData.map((news: any, index: number) => (
+          <>
+            {index === 0 ? (
+              <div className=""></div>
+            ) : (
+              <div
+                className={`${index == 1 ? 'mt-32' : 'mt-8'} mx-5 flex flex-row items-center gap-3 p-1 border`}
+                style={{ borderRadius: 10 }}
+              >
+                <img
+                  src={news.imageUrl}
+                  alt=""
+                  className={` object-cover object-center rounded-lg 
+                        h-[70px] w-[115px]
                     `}
-              />
-              <div className="">
-                <div className="flex flex-row items-center gap-2">
-                  <Link
-                    href={news.link || '#'}
-                    className="md:text-[15px]  text-[#579DFF]  text-sm font-semibold border-r pr-2"
-                    style={{ borderColor: '#e0e0e1' }}
-                  >
-                    TIN TÀI CHÍNH
-                  </Link>
-                  <p
-                    className={` ${index === 1 ? 'text-[#CBCBCD]' : 'text-gray-600'}`}
-                  >
-                    {news.date}
-                  </p>
+                />
+                <div className="">
+                  <div className="flex flex-row items-center gap-2">
+                    <Link
+                      href={news.link || '#'}
+                      className="text-[11px]  text-[#579DFF] font-semibold border-r pr-2"
+                      style={{ borderColor: '#e0e0e1' }}
+                    >
+                      TIN TÀI CHÍNH
+                    </Link>
+                    <p
+                      className={`text-[11px] ${index === 1 ? 'text-[#CBCBCD]' : 'text-gray-600'}`}
+                    >
+                      {news.date}
+                    </p>
+                  </div>
+                  <h1 className={`text-[14px] font-bold mt-2 line-clamp-2  `}>
+                    {news.title}
+                  </h1>
                 </div>
-                <h1 className={` font-bold mt-3 line-clamp-2 text-lg `}>
-                  {news.title}
-                </h1>
               </div>
-            </div>
-          )}
-        </>
-      ))}
+            )}
+          </>
+        ))}
+      </div>
       {/* -------------------Page----------------------- */}
       {/* {
         result.map((news: any, index: number) => (
@@ -275,14 +277,14 @@ const NewsPage: React.FC = () => {
 
       {/* upcomming */}
       <section className="w-full bg-cover bg-center flex justify-center flex-col items-center gap-3 bg-[#F3F7F4] mt-20 md:mt-0">
-        <div className="max-w-[1201px] py-[62px] flex flex-col gap-[40px]  ">
-          <h1 className="w-full text-left text-3xl md:text-3xl lg:text-4xl font-bold text-gray-800 pl-5 md:pl-0 ">
+        <div className="max-w-[1201px] md:py-[62px] py-[50px] flex flex-col md:gap-[40px] gap-[10px] ">
+          <h1 className="w-full text-left text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800  pl-5 md:pl-0 ">
             Sự kiện sắp tới
           </h1>
 
           <div className="flex flex-col justify-center items-center gap-4 pl-5 pr-5 md:pr-0 md:pl-0">
             <img
-              className="h-[252px] max-w-[100%]"
+              className="h-[274px] md:h-auto max-w-[100%] md:w-[100%]"
               src="/img/news/upcoming.png"
               alt="image description"
             />
@@ -323,12 +325,12 @@ const NewsPage: React.FC = () => {
       </section>
 
       {/*  */}
-      <section className="w-full bg-cover bg-center flex justify-center flex-col items-center gap-3">
-        <div className="max-w-[1200px]">
+      <section className="w-full  bg-cover bg-center flex justify-center flex-col items-center gap-8">
+        <div className="max-w-[1200px] ">
           <h1 className="w-full max-lg:px-8 text-left text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 pt-8 hidden md:block ">
             Sự kiện nổi bật
           </h1>
-          <div className="w-full max-lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
+          <div className="w-full  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
             <div className="w-full col-span-2 gap-3 hidden md:block">
               {newsData.slice(1, 4).map((news: any, index: number) => (
                 <a href="/news/newsdetail" className="p-4" key={index}>
@@ -366,7 +368,7 @@ const NewsPage: React.FC = () => {
                 </a>
               ))}
             </div>
-            <div className="w-full  col-span-1 items-center  justify-center ">
+            <div className="w-full  col-span-1 items-center  justify-center px-5 md:px-0">
               <h2 className="w-full md:text-center  md:text-[30px] text-[30px] font-bold text-gray-800 mt-8 md:mt-0">
                 Theo dõi chúng tôi
               </h2>
@@ -456,27 +458,27 @@ const NewsPage: React.FC = () => {
                   </button>
                 </div>
               </div>
-              <div className=" flex index-2 justify-center items-center bg-[#07212C] w-full h-full max-lg:max-h-[300px] lg:max-h-[390px] rounded-lg my-8  p-6 mt-14">
+              <div className=" flex index-2 justify-center items-center bg-[#07212C] w-full h-full max-lg:max-h-[300px] lg:max-h-[390px] rounded-lg my-8  p-5 mt-14">
                 <div className="index-3 relative flex flex-row text-white  font-bold text-[11px] bg-[#48B96D] w-full h-full md:text-[15px] rounded-lg">
-                  <div className=" flex  flex-col h-full text-2xl lg:text-3xl  justify-between gap-4 py-5 px-28 pl-5 md:py-10 md:px-8  ">
+                  <div className=" flex  flex-col h-full text-[20px] md:text-2xl lg:text-3xl  justify-between gap-4 py-5 px-28 pl-5 md:py-10 md:px-8  ">
                     <p className="max-w-[250px] ">
                       Trải nghiệm ngay nền tảng đầu tư HyraCap
                     </p>
 
-                    <div className="flex text-xs font-medium flex-col max-w-[140px] pb-10 gap-2">
+                    <div className="flex text-xs font-medium flex-col max-w-[130px] md:max-w-[140px] pb-10 gap-2">
                       <a
                         href="https://play.google.com/store/apps/details?id=com.hyracap"
                         className="flex items-center  gap-2 bg-white text-[#34A853] p-2 rounded-full hover:bg-gray-100 transition-colors"
                       >
-                        <FaGooglePlay className="text-xl" />
+                        <FaGooglePlay className="md:text-xl text-[14px]" />
                         <span>GOOGLE PLAY</span>
                       </a>
 
                       <a
                         href="https://apps.apple.com/app/hyracap"
-                        className="flex items-center gap-2 bg-white text-[#34A853] p-2 rounded-full hover:bg-gray-100 transition-colors"
+                        className="flex items-center gap-2 bg-white text-[#34A853] p-2 rounded-full hover:bg-gray-100 transition-colors "
                       >
-                        <FaApple className="text-xl" />
+                        <FaApple className="md:text-xl text-[14px]" />
                         <span>APP STORE</span>
                       </a>
                     </div>
