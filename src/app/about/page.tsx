@@ -1057,7 +1057,7 @@ const AboutPage: React.FC = () => {
                           : 'opacity-0 translate-y-10 scale-50'
                       }`}
                       type="text"
-                      placeholder="Tên*"
+                      placeholder="Tên"
                       required
                     />
                     <input
@@ -1068,7 +1068,7 @@ const AboutPage: React.FC = () => {
                           : 'opacity-0 translate-y-10 scale-50'
                       }`}
                       type="email"
-                      placeholder="Email*"
+                      placeholder="Email"
                       required
                     />
                     <input
@@ -1088,7 +1088,7 @@ const AboutPage: React.FC = () => {
                           ? 'opacity-100 scale-100 translate-y-0'
                           : 'opacity-0 translate-y-10 scale-50'
                       }`}
-                      placeholder="Câu hỏi của bạn*"
+                      placeholder="Câu hỏi của bạn"
                       required
                     ></textarea>
                     <div
