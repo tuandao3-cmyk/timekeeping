@@ -22,7 +22,7 @@ const ReportPage: React.FC = () => {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center w-full h-[520px] bg-[#07212C] bg-[url('/img/report/baocao_bg.jpg')] bg-no-repeat bg-cover bg-center">
+      <div className="flex flex-col items-center justify-center w-full min-h-[772px] lg:min-h-[520px] bg-[#07212C] bg-[url('/img/report/baocao_bg.jpg')] bg-no-repeat bg-cover bg-center">
         <div className="  pb-[107px]">
           <div className="flex flex-col items-center justify-end text-center max-w-[1440px] text-[#0B3546] gap-[22px]">
             <Typography
@@ -48,7 +48,7 @@ const ReportPage: React.FC = () => {
           </div>
         </div>
       </div>
-      <main className=" mx-12 bg-white w-full">
+      <main className="px-6 lg:px-12 bg-white w-full">
         <section className="flex flex-col items-center justify-center">
           <div className="max-w-[1200px] w-full">
             <div className="flex text-center items-center gap-2 py-9">
@@ -139,9 +139,9 @@ const ReportPage: React.FC = () => {
                 <div className="flex gap-5 py-5" key={index}>
                   <div className="bg-[#CCCCCC] w-1 h-auto rounded-full"></div>
                   <div key={index} className="flex justify-between w-full">
-                    <div className={styles.reportInfo}>
-                      <h3>{report.title}</h3>
-                      <span className={styles.reportDate}>{report.date}</span>
+                    <div >
+                      <h3 className="text-lg mb-[5px]">{report.title}</h3>
+                      <span className="text-gray-600 text-sm">{report.date}</span>
                     </div>
                     <div className={styles.reportActions}>
                       <button

@@ -20,6 +20,7 @@ import { Typography } from '@mui/material';
 const GuidePage: React.FC = () => {
   const pathname = usePathname();
   const [activeSection, setActiveSection] = useState<string>('default');
+  const [isNavOpen, setIsNavOpen] = useState(false);
 
   const renderContent = () => {
     switch (activeSection) {
@@ -55,6 +56,7 @@ const GuidePage: React.FC = () => {
                 fontSize: '48px',
                 lineHeight: '56px',
                 textAlign: 'center',
+                padding: '0 20px',
               }}
             >
               Hướng dẫn đầu tư vào HyraCap
@@ -65,13 +67,15 @@ const GuidePage: React.FC = () => {
                 fontSize: '18px',
                 lineHeight: '24px',
                 textAlign: 'center',
+                padding: '0 20px',
               }}
             >
               Hướng dẫn chi tiết để đầu tư hiệu quả vào HyraCap và khám phá các
               cơ hội sinh lợi hấp dẫn.
             </Typography>
           </div>
-          <div className="bg-white h-[56px] gap-[24px] w-full max-w-[800px]  p-2 flex  rounded-[20px]  ">
+              <div className="px-[20px] h-[56px] w-full max-w-[800px]">
+              <div className=" h-[56px] bg-white gap-[24px] w-full max-w-[800px]  p-2 flex  rounded-[20px]  ">
             <input
               type="text"
               placeholder="Nhập thông tin bạn cần tìm"
@@ -81,16 +85,17 @@ const GuidePage: React.FC = () => {
               Tìm kiếm
             </button>
           </div>
+              </div>
         </div>
       </div>
-      <div className="flex max-w-[1440px] mx-auto  ">
-        <aside className="max-w-[330px] w-[23vw] p-5 border-r border-[#E0E0E0]">
+      <div className="flex flex-col lg:flex-row max-w-[1440px] mx-auto  ">
+        <aside className="hidden lg:block max-w-[330px] min-w-[210px] w-[23vw] p-5 border-r border-[#E0E0E0]">
           <nav>
-            <ul className=" flex flex-col gap-10 text-xl 3xl:text-2xl text-left pt-[50px] lg:ml-[60px] ">
+            <ul className=" flex flex-col gap-10 text-xl 3xl:text-2xl text-left pt-[50px]  ">
               <li className="mb-2.5">
                 <button
                   onClick={() => setActiveSection('signin')}
-                  className={`no-underline font-roboto font-bold flex flex-col hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
+                  className={`no-underline font-sans font-bold flex flex-col hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
                     activeSection === 'signin' ? 'text-[#28a745]' : 'text-[#8A8A8A]'
                   }`}
                 >
@@ -100,7 +105,7 @@ const GuidePage: React.FC = () => {
               <li className="mb-2.5">
                 <button
                   onClick={() => setActiveSection('login')}
-                  className={`no-underline  font-roboto font-bold flex flex-col hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
+                  className={`no-underline  font-sans font-bold flex flex-col hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
                     activeSection === 'login' ? 'text-[#28a745]' : 'text-[#8A8A8A]'
                   }`}
                 >
@@ -110,7 +115,7 @@ const GuidePage: React.FC = () => {
               <li className="mb-2.5">
                 <button
                   onClick={() => setActiveSection('auth')}
-                  className={`no-underline  font-roboto font-bold flex flex-col hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
+                  className={`no-underline  font-sans font-bold flex flex-col hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
                     activeSection === 'auth' ? 'text-[#28a745]' : 'text-[#8A8A8A]'
                   }`}
                 >
@@ -120,7 +125,7 @@ const GuidePage: React.FC = () => {
               <li className="mb-2.5">
                 <button
                   onClick={() => setActiveSection('contract')}
-                  className={`no-underline  font-roboto font-bold flex flex-col hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
+                  className={`no-underline  font-sans font-bold flex flex-col hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
                     activeSection === 'contract' ? 'text-[#28a745]' : 'text-[#8A8A8A]'
                   }`}
                 >
@@ -130,7 +135,7 @@ const GuidePage: React.FC = () => {
               <li className="mb-2.5">
                 <button
                   onClick={() => setActiveSection('product')}
-                  className={`no-underline  font-roboto font-bold flex flex-col hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
+                  className={`no-underline  font-sans font-bold flex flex-col hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
                     activeSection === 'product' ? 'text-[#28a745]' : 'text-[#8A8A8A]'
                   }`}
                 >
@@ -140,7 +145,7 @@ const GuidePage: React.FC = () => {
               <li className="mb-2.5">
                 <button
                   onClick={() => setActiveSection('transaction')}
-                  className={`no-underline  font-roboto font-bold flex flex-col hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
+                  className={`no-underline  font-sans font-bold flex flex-col hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
                     activeSection === 'transaction' ? 'text-[#28a745]' : 'text-[#8A8A8A]'
                   }`}
                 >
@@ -150,7 +155,7 @@ const GuidePage: React.FC = () => {
               <li className="mb-2.5">
                 <button
                   onClick={() => setActiveSection('forgot')}
-                  className={`no-underline  font-roboto font-bold flex flex-col hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
+                  className={`no-underline  font-sans font-bold flex flex-col hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
                     activeSection === 'forgot' ? 'text-[#28a745]' : 'text-[#8A8A8A]'
                   }`}
                 >
@@ -160,7 +165,7 @@ const GuidePage: React.FC = () => {
               <li className="mb-2.5">
                 <button
                   onClick={() => setActiveSection('logout')}
-                  className={`no-underline  font-roboto font-bold flex flex-col hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
+                  className={`no-underline  font-sans font-bold flex flex-col hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
                     activeSection === 'logout' ? 'text-[#28a745]' : 'text-[#8A8A8A]'
                   }`}
                 >
@@ -170,6 +175,92 @@ const GuidePage: React.FC = () => {
             </ul>
           </nav>
         </aside>
+        <div className="flex items-center  justify-center lg:hidden w-full p-5 border-b border-[#E0E0E0]">
+          <nav>
+            <ul className=" grid grid-cols-4 grid-rows-2 gap-[40px] text-xl 3xl:text-2xl text-center  ">
+              <li className="">
+                <button
+                  onClick={() => setActiveSection('signin')}
+                  className={`no-underline font-sans font-bold  hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
+                    activeSection === 'signin' ? 'text-[#28a745]' : 'text-[#8A8A8A]'
+                  }`}
+                >
+                  Đăng ký
+                </button>
+              </li>
+              <li className="">
+                <button
+                  onClick={() => setActiveSection('login')}
+                  className={`no-underline  font-sans font-bold  hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
+                    activeSection === 'login' ? 'text-[#28a745]' : 'text-[#8A8A8A]'
+                  }`}
+                >
+                  Đăng nhập
+                </button>
+              </li>
+              <li className="">
+                <button
+                  onClick={() => setActiveSection('auth')}
+                  className={`no-underline  font-sans font-bold hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
+                    activeSection === 'auth' ? 'text-[#28a745]' : 'text-[#8A8A8A]'
+                  }`}
+                >
+                  Xác thực eKYC
+                </button>
+              </li>
+              <li className="">
+                <button
+                  onClick={() => setActiveSection('contract')}
+                  className={`no-underline  font-sans font-bold hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
+                    activeSection === 'contract' ? 'text-[#28a745]' : 'text-[#8A8A8A]'
+                  }`}
+                >
+                  Ký hợp đồng
+                </button>
+              </li>
+              <li className="">
+                <button
+                  onClick={() => setActiveSection('product')}
+                  className={`no-underline  font-sans font-bold hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
+                    activeSection === 'product' ? 'text-[#28a745]' : 'text-[#8A8A8A]'
+                  }`}
+                >
+                  Thực hiện đầu tư
+                </button>
+              </li>
+              <li className="">
+                <button
+                  onClick={() => setActiveSection('transaction')}
+                  className={`no-underline  font-sans font-bold hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
+                    activeSection === 'transaction' ? 'text-[#28a745]' : 'text-[#8A8A8A]'
+                  }`}
+                >
+                  Giao dịch
+                </button>
+              </li>
+              <li className="">
+                <button
+                  onClick={() => setActiveSection('forgot')}
+                  className={`no-underline  font-sans font-bold hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
+                    activeSection === 'forgot' ? 'text-[#28a745]' : 'text-[#8A8A8A]'
+                  }`}
+                >
+                  Quên mật khẩu
+                </button>
+              </li>
+              <li className="">
+                <button
+                  onClick={() => setActiveSection('logout')}
+                  className={`no-underline  font-sans font-bold hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
+                    activeSection === 'logout' ? 'text-[#28a745]' : 'text-[#8A8A8A]'
+                  }`}
+                >
+                  Đăng xuất
+                </button>
+              </li>
+            </ul>
+          </nav>
+        </div>
         {renderContent()}
       </div>
       <DownloadSection />
