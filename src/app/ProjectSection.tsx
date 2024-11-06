@@ -50,12 +50,15 @@ const ProjectSection = () => {
       <section
         className={`${styles.showcaseSection} flex flex-col justify-center items-center bg-[#FFFFFF]`}
       >
-        <div className="flex flex-col justify-center items-center max-w-screen-xl w-full">
-          <h2 className="text-center text-[38px] font-bold leading-[48px] pb-10 uppercase font-sans">
+        <div
+          ref={ref}
+          className="flex flex-col justify-center items-center max-w-screen-xl w-full"
+        >
+          <h2 className="text-center text-[28px] md:text-[38px] font-bold leading-[36px] md:leading-[48px] pb-10 uppercase font-sans">
             DỰ ÁN ĐÃ ĐẦU TƯ VÀ ƯƠM TẠO
           </h2>
           <div className="w-full flex justify-center items-center max-w-[1440px]">
-            <div className="4xl:max-w-[2100px] 3xl:max-w-[1600px] 2xl:max-w-[1400px] 4xl:gap-16 3xl:gap-8 grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 max-w-[1440px] w-full">
+            <div className="4xl:max-w-[2100px]   3xl:max-w-[1600px] 2xl:max-w-[1400px] 4xl:gap-16 3xl:gap-8 grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 max-w-[1440px] w-full">
               {projects.map((project, index) => (
                 <a
                   href="/detail-category"
@@ -63,7 +66,6 @@ const ProjectSection = () => {
                   className="flex flex-col justify-center items-center flex-grow"
                 >
                   <div
-                    ref={ref}
                     key={index}
                     className={`${styles.projectCard} group relative duration-300 ease-in-out delay-${index * 100} transform ${
                       inView ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
@@ -74,14 +76,14 @@ const ProjectSection = () => {
                     <img
                       src={project.image}
                       alt={project.title}
-                      className={` md:h-[250px] md:w-[384px]`}
+                      className={` h-[250px] w-[351px]`}
                     />
                     {/* <div className={`${styles.badge} font-sans`}>{project.badge}</div> */}
 
                     <div className="text-left !text-left">
                       {' '}
                       {/* Sử dụng !important */}
-                      <h3 className="text-[clamp(1.2rem,2vw,2.4rem)] font-bold my-2 w-full pl-4 font-sans uppercase">
+                      <h3 className="md:text-[clamp(1.2rem,2vw,2.4rem)] text-[24px] font-bold my-2 w-full pl-4 font-sans uppercase">
                         {project.title}
                       </h3>
                       <span className="text-sm text-[#000000]/70 font-normal mb-2 block pl-4 pb-2 font-sans">
