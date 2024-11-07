@@ -4,61 +4,91 @@ import { Calendar } from 'lucide-react';
 import Link from 'next/link';
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
+import { useQuery } from '@tanstack/react-query';
 
 import { FaApple, FaGooglePlay } from 'react-icons/fa';
 import { ProjectCard } from './components/card';
+import { getNews } from '@/services/news.service';
+import { Page } from '@/type/page.type';
+import { formatDateTimeVn } from '@/util/util';
+import { useRouter } from 'next/navigation';
 
-const newsData = [
+const dataNews = [
   {
     title: 'CÔNG NGHỆ TRAO QUYỀN QUYẾT ĐỊNH TƯƠNG LAI',
-    date: '30/08/2024',
-    imageUrl: '/img/news/newsimg1.png',
+    updated_at: '30/08/2024',
+    link_img: '/img/news/newsimg1.png',
     videoLink: '/news/newsdetail',
-    text: 'Cập nhật những tin tức và kiến thức công nghệ từ Hyratek. Cập nhật những tin tức và kiến thức công nghệ từ Hyratek. Cập nhật những tin tức và kiến thức công...',
+    description:
+      'Cập nhật những tin tức và kiến thức công nghệ từ Hyratek. Cập nhật những tin tức và kiến thức công nghệ từ Hyratek. Cập nhật những tin tức và kiến thức công...',
   },
   {
     title:
       'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
     subTitle:
       'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
-    date: '30/08/2024',
-    imageUrl: '/img/news/newsimg2.png',
+    updated_at: '30/08/2024',
+    link_img: '/img/news/newsimg2.png',
     link: '/news/newsdetail',
-    text: 'Cập nhật những tin tức và kiến thức công nghệ từ Hyratek. Cập nhật những tin tức và kiến thức công nghệ từ Hyratek. Cập nhật những tin tức và kiến thức công...',
+    description:
+      'Cập nhật những tin tức và kiến thức công nghệ từ Hyratek. Cập nhật những tin tức và kiến thức công nghệ từ Hyratek. Cập nhật những tin tức và kiến thức công...',
   },
   {
     title:
       'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
-    date: '30/08/2024',
-    imageUrl: '/img/news/newsimg3.png',
+    updated_at: '30/08/2024',
+    link_img: '/img/news/newsimg3.png',
     link: '/news/newsdetail',
-    text: 'Cập nhật những tin tức và kiến thức công nghệ từ Hyratek. Cập nhật những tin tức và kiến thức công nghệ từ Hyratek. Cập nhật những tin tức và kiến thức công...',
+    description:
+      'Cập nhật những tin tức và kiến thức công nghệ từ Hyratek. Cập nhật những tin tức và kiến thức công nghệ từ Hyratek. Cập nhật những tin tức và kiến thức công...',
   },
   {
     title:
       'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
-    date: '30/08/2024',
-    imageUrl: '/img/news/newsimg4.png',
+    updated_at: '30/08/2024',
+    link_img: '/img/news/newsimg4.png',
     link: '/news/newsdetail',
-    text: 'Cập nhật những tin tức và kiến thức công nghệ từ Hyratek. Cập nhật những tin tức và kiến thức công nghệ từ Hyratek. Cập nhật những tin tức và kiến thức công...',
+    description:
+      'Cập nhật những tin tức và kiến thức công nghệ từ Hyratek. Cập nhật những tin tức và kiến thức công nghệ từ Hyratek. Cập nhật những tin tức và kiến thức công...',
   },
   {
     title:
       'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
-    date: '30/08/2024',
-    imageUrl: '/img/news/newsimg5.png',
+    updated_at: '30/08/2024',
+    link_img: '/img/news/newsimg5.png',
     link: '/news/newsdetail',
-    text: 'Cập nhật những tin tức và kiến thức công nghệ từ Hyratek. Cập nhật những tin tức và kiến thức công nghệ từ Hyratek. Cập nhật những tin tức và kiến thức công...',
+    description:
+      'Cập nhật những tin tức và kiến thức công nghệ từ Hyratek. Cập nhật những tin tức và kiến thức công nghệ từ Hyratek. Cập nhật những tin tức và kiến thức công...',
   },
 ];
-const result = Array.from(
-  { length: newsData.length / 4 },
-  (_, index) => index + 1
-);
+
 const NewsPage: React.FC = () => {
+  const [page, setPage] = React.useState<typeof Page>(Page);
+  const router = useRouter();
+  const [newsData, setNewsData] = React.useState<any[]>(dataNews);
+  const { data, isLoading, error } = useQuery({
+    queryKey: ['news'],
+    queryFn: () => getNews(page),
+  });
+
+  const handleNavigate = (id: any) => {
+    router.push(`/news/${id}`);
+  };
+
+  React.useEffect(() => {
+    if (data) {
+      let dataUpdate = data.data;
+      data.data.length < 4
+        ? (dataUpdate = data.data.concat(dataNews))
+        : (dataUpdate = data.data);
+      console.log('dataUpdate', dataUpdate);
+
+      setNewsData(dataUpdate);
+    }
+  }, [data]);
+
   const { ref, inView, entry } = useInView({
     threshold: 0.1,
-    // triggerOnce: true,
   });
   const {
     ref: ref2,
@@ -174,40 +204,47 @@ const NewsPage: React.FC = () => {
                         ? 'p-4 lg:row-span-2 lg:col-span-1 bg-[#07212C] md:row-span-1 col-span-1 '
                         : 'bg-white '
                     }`}
+                    onClick={() => handleNavigate(news.id)}
                   >
                     <img
-                      src={news.imageUrl}
+                      src={
+                        news.link_img ||
+                        'https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg'
+                      }
                       alt=""
                       className={`w-full object-cover object-center rounded-lg ${
                         index === 1 ? 'md:h-[245px] ' : 'md:h-[234px]'
                       }`}
                     />
-                    <div className="mt-3">
-                      <Link
-                        href={news.link || '#'}
-                        className="md:text-[15px]  text-[#579DFF]  text-sm font-semibold"
-                      >
-                        TIN TÀI CHÍNH
-                      </Link>
-                      <h1
-                        className={` font-bold mt-3 line-clamp-2 text-lg ${index === 1 ? 'text-white ' : 'text-[#151515]  '}`}
-                      >
-                        {news.title}
-                      </h1>
-                      <p
-                        className={`text-sm mt-3 ${index === 1 ? 'text-[#CBCBCD]' : 'text-gray-600'}`}
-                      >
-                        {news.text}
-                      </p>
+                    <div className="mt-3 flex flex-col justify-between ">
+                      <div>
+                        <Link
+                          href={`news/${news.id}` || '#'}
+                          className="md:text-[15px]  text-[#579DFF]  text-sm font-semibold"
+                        >
+                          {news?.blog_category?.name || 'TIN TÀI CHÍNH'}
+                        </Link>
+                        <h1
+                          className={` font-bold mt-3 line-clamp-2 text-lg ${index === 1 ? 'text-white ' : 'text-[#151515] capitalize  '}`}
+                        >
+                          {news.title}
+                        </h1>
+                        <p
+                          className={`text-sm mt-3 ${index === 1 ? 'text-[#CBCBCD]' : 'text-gray-600'}`}
+                        >
+                          {news.description}
+                        </p>
+                      </div>
                       <div className="flex justify-between items-center text-sm mt-8">
                         <p
                           className={`flex flex-row items-center gap-2 ${index === 1 ? 'text-[#CBCBCD]' : 'text-gray-600'}`}
                         >
-                          <Calendar size={16} /> {news.date}
+                          <Calendar size={16} />{' '}
+                          {formatDateTimeVn(news.updated_at)}
                         </p>
                         <a
-                          href={news.link || '#'}
-                          className={`md:px-6 md:py-3 px-3 py-2 ${index === 1 ? 'text-[#FFFFFF]/90 border-[#2f454e]' : 'text-[#000000]/90 border-[#c2c2c2] mx-4'} font-medium border-[1px] mb-2 rounded-full `}
+                          href={`news/${news.id}` || '#'}
+                          className={`md:px-6 hover:bg-[#48B96D] hover:text-white md:py-3 px-3 py-2 ${index === 1 ? 'text-[#FFFFFF]/90 border-[#2f454e]' : 'text-[#000000]/90 border-[#c2c2c2] mx-4'} font-medium border-[1px] mb-2 rounded-full `}
                         >
                           Đọc thêm
                         </a>
@@ -232,7 +269,7 @@ const NewsPage: React.FC = () => {
                 style={{ borderRadius: 10 }}
               >
                 <img
-                  src={news.imageUrl}
+                  src={news?.link_img || ''}
                   alt=""
                   className={` object-cover object-center rounded-lg 
                         h-[70px] w-[115px]
@@ -241,16 +278,16 @@ const NewsPage: React.FC = () => {
                 <div className="">
                   <div className="flex flex-row items-center gap-2">
                     <Link
-                      href={news.link || '#'}
+                      href={`news/${news.id}` || '#'}
                       className="text-[11px]  text-[#579DFF] font-semibold border-r pr-2"
                       style={{ borderColor: '#e0e0e1' }}
                     >
-                      TIN TÀI CHÍNH
+                      {news?.blog_category?.name || 'TIN TÀI CHÍNH'}
                     </Link>
                     <p
                       className={`text-[11px] ${index === 1 ? 'text-[#CBCBCD]' : 'text-gray-600'}`}
                     >
-                      {news.date}
+                      {formatDateTimeVn(news.updated_at)}
                     </p>
                   </div>
                   <h1 className={`text-[14px] font-bold mt-2 line-clamp-2  `}>
@@ -333,16 +370,16 @@ const NewsPage: React.FC = () => {
           <div className="w-full  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
             <div className="w-full col-span-2 gap-3 hidden md:block">
               {newsData.slice(1, 4).map((news: any, index: number) => (
-                <a href="/news/newsdetail" className="p-4" key={index}>
+                <a href={`/news/${news.id}`} className="p-4" key={index}>
                   <div className="grid md:grid-cols-3  border-[1px] hover:scale-105 hover:border-none transition ease-in-out duration-150 hover:cursor-pointer">
                     <img
-                      src={news.imageUrl}
+                      src={news.link_img}
                       alt=""
                       className="w-[320px] h-[188px]  object-cover rounded-lg md:col-span-1"
                     />
                     <div className="p-4 md:col-span-2 flex flex-col justify-between">
                       <Link
-                        href={news.link || '#'}
+                        href={`news/${news.id}` || '#'}
                         className="md:text-sm text-[#579DFF] text-sm font-semibold"
                       >
                         TIN TÀI CHÍNH
@@ -358,7 +395,8 @@ const NewsPage: React.FC = () => {
                           <Calendar size={16} /> {news.date}
                         </p>
                         <button
-                          className={`md:px-6 md:py-3 px-3 py-2 text-[#000000]/90 border-[#c2c2c2] font-medium border-[1px]  rounded-full `}
+                          onClick={() => handleNavigate(news.id)}
+                          className={`md:px-6 md:py-3 px-3 py-2 text-[#000000]/90 border-[#c2c2c2] font-medium border-[1px]  rounded-full hover:bg-[#48B96D] `}
                         >
                           Đọc thêm
                         </button>
