@@ -2,16 +2,16 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 
-import styles from './page.module.css';
 import Partner from '@/app/partner';
-import ProjectSection from '@/app/ProjectSection';
 import PressSection from '@/app/PressSection';
+import ProjectSection from '@/app/ProjectSection';
 import SolutionList from '@/components/solutionList/solutionList';
+import styles from './page.module.css';
+import BannerSwipper from '@/components/bannerSwipper';
 
 import Download from './download';
-import News from './news';
 import FeedbackSection from './FeedbackSection';
-import BannerSwipper from '@/components/bannerSwipper';
+import News from './news';
 
 const Home: React.FC = () => {
   const rightFrameRef = useRef<HTMLDivElement>(null);

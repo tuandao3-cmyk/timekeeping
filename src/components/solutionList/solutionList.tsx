@@ -174,7 +174,7 @@ function SolutionList() {
             }`}
             key={index}
           >
-            <div className="rounded-full bg-white h-[80px] w-[80px] flex items-center justify-center overflow-hidden">
+            <div className="rounded-full bg-white h-20 w-20 flex items-center justify-center overflow-hidden">
               {item.image}
             </div>
             <Typography
@@ -187,7 +187,7 @@ function SolutionList() {
               {item.title}
             </Typography>
             <Typography
-              className="group-hover:text-white "
+              className="group-hover:text-white"
               sx={{
                 fontWeight: 400,
                 fontSize: 16,

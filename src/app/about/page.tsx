@@ -156,7 +156,7 @@ const staffs = [
 
 const AboutPage: React.FC = () => {
   const { ref, inView, entry } = useInView({
-    threshold: 0.1,
+    threshold: 0,
     triggerOnce: true,
   });
   const {
@@ -164,7 +164,7 @@ const AboutPage: React.FC = () => {
     inView: inView2,
     entry: entry2,
   } = useInView({
-    threshold: 0.1,
+    threshold: 0,
     triggerOnce: true,
   });
   const {
@@ -172,7 +172,7 @@ const AboutPage: React.FC = () => {
     inView: inView3,
     entry: entry3,
   } = useInView({
-    threshold: 0.1,
+    threshold: 0,
     triggerOnce: true,
   });
   const {
@@ -180,7 +180,7 @@ const AboutPage: React.FC = () => {
     inView: inView4,
     entry: entry4,
   } = useInView({
-    threshold: 0.1,
+    threshold: 0,
     triggerOnce: true,
   });
   const {
@@ -188,7 +188,7 @@ const AboutPage: React.FC = () => {
     inView: inView5,
     entry: entry5,
   } = useInView({
-    threshold: 0.1,
+    threshold: 0,
     triggerOnce: true,
   });
   const {
@@ -196,7 +196,7 @@ const AboutPage: React.FC = () => {
     inView: inView6,
     entry: entry6,
   } = useInView({
-    threshold: 0.1,
+    threshold: 0,
     triggerOnce: true,
   });
   const {
@@ -204,7 +204,7 @@ const AboutPage: React.FC = () => {
     inView: inView7,
     entry: entry7,
   } = useInView({
-    threshold: 0.1,
+    threshold: 0,
     triggerOnce: true,
   });
   const {
@@ -212,7 +212,7 @@ const AboutPage: React.FC = () => {
     inView: inView8,
     entry: entry8,
   } = useInView({
-    threshold: 0.1,
+    threshold: 0,
     triggerOnce: true,
   });
   const {
