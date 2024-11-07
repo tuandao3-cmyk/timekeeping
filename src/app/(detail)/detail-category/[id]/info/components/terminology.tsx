@@ -2,21 +2,25 @@ import { Stack, Typography } from '@mui/material';
 import exp from 'constants';
 import { desc } from 'framer-motion/client';
 
-function Terminology() {
-  const data = [
-    {
-      title: 'Huấn luyện AI (Training AI)',
-      desc: 'Training AI (Huấn luyện AI) là quá trình trong đó một mô hình học máy hoặc mạng nơ-ron học từ dữ liệu để thực hiện một nhiệm vụ cụ thể, chẳng hạn như phân loại hình ảnh, nhận dạng giọng nói, dự đoán, hoặc đưa ra quyết định.',
-    },
-    {
-      title: 'Điện toán biên (Edge Computing)',
-      desc: 'Điện toán biên (Edge Computing) là một mô hình tính toán phân tán trong đó việc xử lý dữ liệu được thực hiện gần với nơi dữ liệu được tạo ra hoặc thu thập, thay vì chuyển toàn bộ dữ liệu về một trung tâm dữ liệu hoặc đám mây để xử lý. Mục tiêu chính của điện toán biên là giảm độ trễ, tiết kiệm băng thông và cải thiện hiệu suất ứng dụng.',
-    },
-    {
-      title: 'Cụm thiết bị (Cluster)',
-      desc: ' Là tập hợp các thiết bị active do người dùng trực tiếp giới thiệu.',
-    },
-  ];
+interface TerminologyProps {
+  data: any;
+}
+function Terminology(props: TerminologyProps) {
+  const { data } = props;
+  // const data = [
+  //   {
+  //     title: 'Huấn luyện AI (Training AI)',
+  //     desc: 'Training AI (Huấn luyện AI) là quá trình trong đó một mô hình học máy hoặc mạng nơ-ron học từ dữ liệu để thực hiện một nhiệm vụ cụ thể, chẳng hạn như phân loại hình ảnh, nhận dạng giọng nói, dự đoán, hoặc đưa ra quyết định.',
+  //   },
+  //   {
+  //     title: 'Điện toán biên (Edge Computing)',
+  //     desc: 'Điện toán biên (Edge Computing) là một mô hình tính toán phân tán trong đó việc xử lý dữ liệu được thực hiện gần với nơi dữ liệu được tạo ra hoặc thu thập, thay vì chuyển toàn bộ dữ liệu về một trung tâm dữ liệu hoặc đám mây để xử lý. Mục tiêu chính của điện toán biên là giảm độ trễ, tiết kiệm băng thông và cải thiện hiệu suất ứng dụng.',
+  //   },
+  //   {
+  //     title: 'Cụm thiết bị (Cluster)',
+  //     desc: ' Là tập hợp các thiết bị active do người dùng trực tiếp giới thiệu.',
+  //   },
+  // ];
   return (
     <Stack
       flexDirection={'column'}
@@ -25,7 +29,7 @@ function Terminology() {
       p={'20px'}
       borderRadius={'16px'}
     >
-      <Stack flexDirection={'row'} width={'100%'} py={'16px'}>
+      {/* <Stack flexDirection={'row'} width={'100%'} py={'16px'}>
         <Typography
           fontFamily={'Inter'}
           fontSize={'14px'}
@@ -92,7 +96,8 @@ function Terminology() {
             {item.desc}
           </Typography>
         </Stack>
-      ))}
+      ))} */}
+      <div dangerouslySetInnerHTML={{ __html: data?.data?.description }}></div>
     </Stack>
   );
 }

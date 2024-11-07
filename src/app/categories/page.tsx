@@ -13,6 +13,9 @@ import {
   Typography,
 } from '@mui/material';
 import { useInView } from 'react-intersection-observer';
+import { useQuery } from '@tanstack/react-query';
+import { Page } from '@/type/page.type';
+import { getProjects } from '@/services/project.service';
 
 const PROJECTS = [
   {
@@ -139,36 +142,33 @@ const PROJECTS2 = [
   },
 ];
 const CategoryPage: React.FC = () => {
-  const [projects, setProjects] = useState(PROJECTS);
-  const [projects2, setProjects2] = useState(PROJECTS2);
+  const [projects, setProjects] = useState([]);
+  const [projects2, setProjects2] = useState([]);
   const [screenWidth, setScreenWidth] = useState(0);
-
+  const [page, setPage] = useState<typeof Page>(Page);
   const [searchValue, setSearchValue] = useState('');
   const [selectedValue, setSelectedValue] = useState('all');
 
-  const handleSearch = () => {
-    const filteredProjects = PROJECTS.filter((project) => {
-      if (selectedValue === 'all') {
-        return project.name.toLowerCase().includes(searchValue.toLowerCase());
-      }
+  const { data, isLoading, isError, isSuccess, refetch } = useQuery({
+    queryKey: ['projects', page],
+    queryFn: () => getProjects(page),
+  });
 
-      return (
-        project.name.toLowerCase().includes(searchValue.toLowerCase()) &&
-        project.tag.includes(selectedValue)
-      );
-    });
-    const filteredProjects2 = PROJECTS2.filter((project) => {
-      if (selectedValue === 'all') {
-        return project.name.toLowerCase().includes(searchValue.toLowerCase());
-      }
-      return (
-        project.name.toLowerCase().includes(searchValue.toLowerCase()) &&
-        project.tag.includes(selectedValue)
-      );
-    });
-    setProjects(filteredProjects);
-    setProjects2(filteredProjects2);
+  useEffect(() => {
+    if (isSuccess) {
+      setProjects(data.data);
+      setProjects2(data.data);
+    }
+  }, [data]);
+
+  const handleSearch = () => {
+    setPage({ ...page, name__ilike: searchValue });
+    refetch();
   };
+
+  // useEffect(() => {
+  //   setPage({ ...page, name__ilike: searchValue });
+  // }, [searchValue]);
 
   useEffect(() => {
     setScreenWidth(window.innerWidth);
@@ -401,8 +401,8 @@ const CategoryPage: React.FC = () => {
                   gap: 2,
                 }}
               >
-                {projects.map((project, index) => (
-                  <Link href={`/detail-category/${project.name}`} key={index}>
+                {projects.map((project: any, index: number) => (
+                  <Link href={`/detail-category/${project.id}`} key={index}>
                     <Box
                       className={`${inView4 ? 'animate-fadeIn scale-100' : 'translate-y-20 opacity-0 scale-0'} py-4 transition
                duration-300 ease-in-out delay-${index === 4 ? 300 : index * 100}
@@ -411,7 +411,10 @@ const CategoryPage: React.FC = () => {
                     >
                       <div className="bg-white shadow-lg rounded-lg overflow-hidden">
                         <img
-                          src={project.img}
+                          src={
+                            project.images[0] ||
+                            'https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg'
+                          }
                           alt={project.name}
                           className="w-full h-[250px] object-cover"
                         />
@@ -427,13 +430,16 @@ const CategoryPage: React.FC = () => {
                               Mục tiêu huy động
                             </div>
                             <div className="text-xl font-sans font-semibold">
-                              {project.amount}
+                              {new Intl.NumberFormat('en-US', {
+                                style: 'currency',
+                                currency: 'USD',
+                              }).format(project?.capital_raising_target)}
                             </div>
                             <div className="h-2 bg-gray-300 rounded mt-2">
                               <div
                                 className="bg-green-500 h-full rounded"
                                 style={{
-                                  width: `${project.progress}%`,
+                                  width: `${(project?.mobilized_fund / project?.capital_raising_target) * 100}%`,
                                 }}
                               ></div>
                             </div>
@@ -444,17 +450,22 @@ const CategoryPage: React.FC = () => {
                               <div className="flex gap-1 font-sans">
                                 <span>Hoàn thành</span>
                                 <p className="text-[#48B96D] font-semibold">
-                                  {project.progress}%
+                                  $
+                                  {(project?.mobilized_fund /
+                                    project?.capital_raising_target) *
+                                    100}
+                                  %
                                 </p>
                               </div>
                             </div>
                             <div className="flex gap-2">
-                              <span className="text-gray-800 px-2 py-1 font-sans rounded-md font-bold bg-[#F6F6F6]">
-                                {project.category}
-                              </span>
-                              <span className="text-gray-800 px-2 py-1 font-sans rounded-md font-bold bg-[#F6F6F6]">
-                                {project.category}
-                              </span>
+                              {project?.industries.map(
+                                (industry: any, index: number) => (
+                                  <span className="text-gray-800 px-2 py-1 font-sans rounded-md font-bold bg-[#F6F6F6]">
+                                    {industry.name}
+                                  </span>
+                                )
+                              )}
                             </div>
                           </div>
                         </div>
@@ -503,22 +514,28 @@ const CategoryPage: React.FC = () => {
                   gap: 2,
                 }}
               >
-                {projects.map((project, index) => (
-                  <Link href={`/detail-category/${project.name}`} key={index}>
+                {projects.map((project: any, index: number) => (
+                  <Link href={`/detail-category/${project.id}`} key={index}>
                     <Box
-                      className={`${inView2 ? 'animate-fadeIn scale-100' : 'translate-y-20 opacity-0 scale-0'} py-4 transition
-               duration-300 ease-in-out delay-${index === 4 ? 300 : index * 100}
-                hover:scale-105 hover:transition-all hover:duration-300 hover:ease-in-out
-               `}
+                      className={`${inView4 ? 'animate-fadeIn scale-100' : 'translate-y-20 opacity-0 scale-0'} py-4 transition
+             duration-300 ease-in-out delay-${index === 4 ? 300 : index * 100}
+               hover:scale-105 hover:transition-all hover:duration-300 hover:ease-in-out
+             `}
                     >
                       <div className="bg-white shadow-lg rounded-lg overflow-hidden">
                         <img
-                          src={project.img}
+                          src={
+                            project?.images[0] ||
+                            'https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg'
+                          }
                           alt={project.name}
                           className="w-full h-[250px] object-cover"
                         />
                         <div className="p-4">
-                          <h3 className="text-lg font-bold font-sans mt-2 uppercase">
+                          {/* <span className="text-sm bg-blue-500 text-white py-1 px-3 rounded-full">
+                          Series A
+                        </span> */}
+                          <h3 className="text-lg font-bold mt-2 font-sans uppercase">
                             {project.name}
                           </h3>
                           <div className="mt-4">
@@ -526,34 +543,42 @@ const CategoryPage: React.FC = () => {
                               Mục tiêu huy động
                             </div>
                             <div className="text-xl font-sans font-semibold">
-                              {project.amount}
+                              {new Intl.NumberFormat('en-US', {
+                                style: 'currency',
+                                currency: 'USD',
+                              }).format(project?.capital_raising_target)}
                             </div>
                             <div className="h-2 bg-gray-300 rounded mt-2">
                               <div
                                 className="bg-green-500 h-full rounded"
                                 style={{
-                                  width: `${project.progress}%`,
+                                  width: `${(project?.mobilized_fund / project?.capital_raising_target) * 100}%`,
                                 }}
                               ></div>
                             </div>
                             <div className="flex justify-between my-2 text-sm text-gray-600">
-                              <span className="text-[#48B96D] font-sans font-semibold">
+                              <span className="text-[#48B96D] font-semibold font-sans">
                                 {project.funded}
                               </span>
                               <div className="flex gap-1 font-sans">
                                 <span>Hoàn thành</span>
-                                <p className="text-[#48B96D] font-sans font-semibold">
-                                  {project.progress}%
+                                <p className="text-[#48B96D] font-semibold">
+                                  $
+                                  {(project?.mobilized_fund /
+                                    project?.capital_raising_target) *
+                                    100}
+                                  %
                                 </p>
                               </div>
                             </div>
                             <div className="flex gap-2">
-                              <span className="text-gray-800 font-sans px-2 py-1 rounded-md font-bold bg-[#F6F6F6]">
-                                {project.category}
-                              </span>
-                              <span className="text-gray-800 font-sans px-2 py-1 rounded-md font-bold bg-[#F6F6F6]">
-                                {project.category}
-                              </span>
+                              {project?.industries.map(
+                                (industry: any, index: number) => (
+                                  <span className="text-gray-800 px-2 py-1 font-sans rounded-md font-bold bg-[#F6F6F6]">
+                                    {industry.name}
+                                  </span>
+                                )
+                              )}
                             </div>
                           </div>
                         </div>
@@ -602,23 +627,28 @@ const CategoryPage: React.FC = () => {
                   gap: 2,
                 }}
               >
-                {projects2.map((project, index) => (
-                  <Link href={`/detail-category/${project.name}`} key={index}>
+                {projects2.map((project: any, index: any) => (
+                  <Link href={`/detail-category/${project.id}`} key={index}>
                     <Box
-                      className={`${inView3 ? 'animate-fadeIn scale-100' : 'translate-y-20 opacity-0 scale-0'} py-4 transition
-               duration-300 ease-in-out delay-${index === 4 ? 300 : index * 100}  hover:scale-105 hover:transition-all hover:duration-300 hover:ease-in-out`}
+                      className={`${inView4 ? 'animate-fadeIn scale-100' : 'translate-y-20 opacity-0 scale-0'} py-4 transition
+            duration-300 ease-in-out delay-${index === 4 ? 300 : index * 100}
+              hover:scale-105 hover:transition-all hover:duration-300 hover:ease-in-out
+            `}
                     >
                       <div className="bg-white shadow-lg rounded-lg overflow-hidden">
                         <img
-                          src={project.img}
+                          src={
+                            project?.images[0] ||
+                            'https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg'
+                          }
                           alt={project.name}
                           className="w-full h-[250px] object-cover"
                         />
                         <div className="p-4">
                           {/* <span className="text-sm bg-blue-500 text-white py-1 px-3 rounded-full">
-                            Series A
-                          </span> */}
-                          <h3 className="text-lg font-bold font-sans mt-2 uppercase">
+                         Series A
+                       </span> */}
+                          <h3 className="text-lg font-bold mt-2 font-sans uppercase">
                             {project.name}
                           </h3>
                           <div className="mt-4">
@@ -626,34 +656,42 @@ const CategoryPage: React.FC = () => {
                               Mục tiêu huy động
                             </div>
                             <div className="text-xl font-sans font-semibold">
-                              {project.amount}
+                              {new Intl.NumberFormat('en-US', {
+                                style: 'currency',
+                                currency: 'USD',
+                              }).format(project?.capital_raising_target)}
                             </div>
                             <div className="h-2 bg-gray-300 rounded mt-2">
                               <div
                                 className="bg-green-500 h-full rounded"
                                 style={{
-                                  width: `${project.progress}%`,
+                                  width: `${(project?.mobilized_fund / project?.capital_raising_target) * 100}%`,
                                 }}
                               ></div>
                             </div>
-                            <div className="flex justify-between mt-2 text-sm text-gray-600">
-                              <span className="text-[#48B96D] font-sans font-semibold">
+                            <div className="flex justify-between my-2 text-sm text-gray-600">
+                              <span className="text-[#48B96D] font-semibold font-sans">
                                 {project.funded}
                               </span>
                               <div className="flex gap-1 font-sans">
                                 <span>Hoàn thành</span>
                                 <p className="text-[#48B96D] font-semibold">
-                                  {project.progress}%
+                                  $
+                                  {(project?.mobilized_fund /
+                                    project?.capital_raising_target) *
+                                    100}
+                                  %
                                 </p>
                               </div>
                             </div>
                             <div className="flex gap-2">
-                              <span className="text-gray-800 px-2 py-1 font-sans rounded-md font-bold bg-[#F6F6F6]">
-                                {project.category}
-                              </span>
-                              <span className="text-gray-800 px-2 py-1 font-sans rounded-md font-bold bg-[#F6F6F6]">
-                                {project.category}
-                              </span>
+                              {project?.industries.map(
+                                (industry: any, index: number) => (
+                                  <span className="text-gray-800 px-2 py-1 font-sans rounded-md font-bold bg-[#F6F6F6]">
+                                    {industry.name}
+                                  </span>
+                                )
+                              )}
                             </div>
                           </div>
                         </div>

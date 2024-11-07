@@ -3,6 +3,7 @@ import ProgressBar from '@/components/progress';
 import { Typography } from '@mui/material';
 import { forwardRef } from 'react';
 import { useInView } from 'react-intersection-observer';
+import { useRouter } from 'next/navigation';
 
 interface ProductItemProps {
   title: string;
@@ -15,12 +16,17 @@ interface ProductItemProps {
   profit: number;
   sponsorship: number;
   invested: number;
-  field: string;
+  field: any[];
   className?: string;
+  id?: string;
 }
 
 const ProductItem = forwardRef<HTMLDivElement, ProductItemProps>(
   (props: ProductItemProps, ref) => {
+    const router = useRouter();
+    const handleNavigate = (id: string) => {
+      router.push(`/detail-category/${id}`);
+    };
     switch (props.type) {
       case 'short':
       case 'long':
@@ -67,6 +73,7 @@ const ProductItem = forwardRef<HTMLDivElement, ProductItemProps>(
           <div
             ref={ref}
             className={`package-item max-w-none md:max-w-[384px] bg-white  rounded-lg md:gap-6   flex justify-center items-left flex-col flex-grow gap-3 ${props.className} hover:shadow-lg p-5 hover:scale-105 transition ease-in-out duration-150 hover:cursor-pointer `}
+            onClick={() => props.id && handleNavigate(props.id)}
           >
             {props.image}
 
@@ -112,9 +119,11 @@ const ProductItem = forwardRef<HTMLDivElement, ProductItemProps>(
               </p>
             </div>
             <div className="w-min">
-              <p className="text-[13px] text-nowrap p-[3px] rounded-[3px] bg-[#0000000F] text-[#000000B2] uppercase font-[700]">
-                {props.field}
-              </p>
+              {props?.field?.map((item, index) => (
+                <p className="text-[13px] text-nowrap p-[3px] rounded-[3px] bg-[#0000000F] text-[#000000B2] uppercase font-[700]">
+                  {item?.name || ''}
+                </p>
+              ))}
             </div>
           </div>
         );
