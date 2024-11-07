@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import styles from '@/app/about/about.module.css';
 import Link from 'next/link';
 import { useInView } from 'react-intersection-observer';
@@ -14,12 +14,14 @@ import DiamondImage from '@/components/diamond_image';
 import Image from 'next/image';
 import MessageFromCreative from './components/messageFromCreative';
 import CustomWidthTooltip from './components/customToolTip';
+import Header from '@/components/header';
 
-const leaders = [
+export const leaders = [
   {
     name: 'Trần Nam Chung',
     title: 'Chief Strategy Officer - Founder',
-    image: '/img/tran-nam-chung.png',
+    fullTitle: 'Chief Strategy Officer - Founder',
+    image: '/img/about/TNC.png',
     description: [
       'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
       'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
@@ -30,7 +32,8 @@ const leaders = [
   {
     name: 'Tuấn Nguyễn',
     title: 'CEO - Co-Founder',
-    image: '/img/tuan-nguyen.png',
+    fullTitle: 'Chief Executive Officer - Co-Founder',
+    image: '/img/about/TN.png',
     description: [
       'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
       'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
@@ -40,8 +43,9 @@ const leaders = [
   },
   {
     name: 'Hoàng Thành Đạt',
-    title: 'CEO - CTO-Founder',
-    image: '/img/hoang-thanh-dat.png',
+    title: 'CTO - Co-Founder',
+    fullTitle: 'Chief Technology Officer - Co-Founder',
+    image: '/img/about/HTD.png',
     description: [
       'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
       'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
@@ -52,7 +56,8 @@ const leaders = [
   {
     name: 'Tuấn Đặng',
     title: 'CFO - Co-Founder',
-    image: '/img/tuan-dang.png',
+    fullTitle: 'Chief Financial Officer - Co-Founder',
+    image: '/img/about/TD.png',
     description: [
       'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
       'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
@@ -155,6 +160,7 @@ const staffs = [
 ];
 
 const AboutPage: React.FC = () => {
+  const [hoveredLeader, setHoveredLeader] = useState<number | null>(null);
   const { ref, inView, entry } = useInView({
     threshold: 0.1,
     triggerOnce: true,
@@ -853,49 +859,9 @@ const AboutPage: React.FC = () => {
             </div>
             <div className="grow grid grid-cols-1 lg:grid-cols-4 gap-4 w-full mx-auto place-items-center items-center ">
               {leaders.slice(0, 4).map((leader, index) => (
-                <CustomWidthTooltip
-                  title={
-                    <div className="w-[300px] px-[13px] py-[16px] rounded-[4px]">
-                      <Typography
-                        sx={{
-                          fontSize: '20px',
-                          fontWeight: 600,
-                          lineHeight: '28px',
-                          width: '100%',
-                          textAlign: 'center',
-                          fontFamily: 'Inter',
-                        }}
-                      >
-                        {leader.name}
-                      </Typography>
-                      <Typography
-                        sx={{
-                          fontSize: '14px',
-                          lineHeight: '24px',
-                          marginBottom: '14px',
-                          width: '100%',
-                          textAlign: 'center',
-                          fontFamily: 'Inter',
-                        }}
-                      >
-                        {leader.title}
-                      </Typography>
-                      <Typography
-                        sx={{
-                          fontSize: '14px',
-                          lineHeight: '24px',
-                          width: '100%',
-                          textAlign: 'center',
-                          fontWeight: 400,
-                          padding: '0 16px',
-                          fontFamily: 'Inter',
-                        }}
-                      >
-                        {leader.description}
-                      </Typography>
-                    </div>
-                  }
+                <Link
                   key={index}
+                  href={`/about/leaderdetail`}
                   className="mt-5 px-[13px]"
                 >
                   <div
@@ -927,7 +893,8 @@ const AboutPage: React.FC = () => {
                       </div>
                     </div>
                   </div>
-                </CustomWidthTooltip>
+
+                </Link>
               ))}
             </div>
           </div>
