@@ -16,6 +16,7 @@ import Login from './login/page';
 import LogoutSection from './logout/page';
 import DownloadSection from '../download';
 import { Typography } from '@mui/material';
+import { PROJECTS } from '../categories/page';
 
 const GuidePage: React.FC = () => {
   const pathname = usePathname();
@@ -44,7 +45,29 @@ const GuidePage: React.FC = () => {
         return <SigninSection />;
     }
   };
-
+  const [searchValue, setSearchValue] = useState('');
+  const handleSearch = () => {
+    const searchTerm = searchValue.toLowerCase();
+    if (searchTerm) {
+      if (searchTerm.includes('đăng ký') || searchTerm.includes('register')) {
+        setActiveSection('signin');
+      } else if (searchTerm.includes('đăng nhập') || searchTerm.includes('login')) {
+        setActiveSection('login');
+      } else if (searchTerm.includes('ekyc') || searchTerm.includes('xác thực') || searchTerm.includes('auth')) {
+        setActiveSection('auth');
+      } else if (searchTerm.includes('hợp đồng') || searchTerm.includes('contract')) {
+        setActiveSection('contract');
+      } else if (searchTerm.includes('đầu tư') || searchTerm.includes('invest')) {
+        setActiveSection('product');
+      } else if (searchTerm.includes('giao dịch') || searchTerm.includes('transaction')) {
+        setActiveSection('transaction');
+      } else if (searchTerm.includes('quên mật khẩu') || searchTerm.includes('forgot')) {
+        setActiveSection('forgot');
+      } else if (searchTerm.includes('đăng xuất') || searchTerm.includes('logout')) {
+        setActiveSection('logout');
+      }
+    }
+  };
   return (
     <>
       <div className=" w-full h-[520px]  bg-[#07212C] bg-[url('/img/guides/guide_bg.png')] bg-no-repeat bg-cover bg-center">
@@ -78,10 +101,14 @@ const GuidePage: React.FC = () => {
               <div className=" h-[56px] bg-white gap-[24px] w-full max-w-[800px]  p-2 flex  rounded-[20px]  ">
             <input
               type="text"
+              value={searchValue}
+              onChange={(e) => setSearchValue(e.target.value)}
               placeholder="Nhập thông tin bạn cần tìm"
               className="w-full  bg-[#FFFFFF] border-none px-[20px] text-[#686868] font-400 text-[16px] leading-[24px] outline-none"
             />
-            <button className="bg-[#48B96D] transition ease-in-out duration-300 hover:bg-[#297241] px-[16px] py-[10px] rounded-[16px] text-[#fff] text-[15px] font-500 leading-[20px] min-w-[140px]">
+            <button 
+            onClick={handleSearch}
+            className="bg-[#48B96D] transition ease-in-out duration-300 hover:bg-[#297241] px-[16px] py-[10px] rounded-[16px] text-[#fff] text-[15px] font-500 leading-[20px] min-w-[140px]">
               Tìm kiếm
             </button>
           </div>

@@ -7,6 +7,7 @@ import Box from '@mui/material/Box';
 import InfoSection from './info/page';
 import { Stack, Typography } from '@mui/material';
 import CustomTabPanel from '@/components/customTabPanel';
+import PitchingDeckSection from './pitchingdeck/page';
 
 const DetailCategoryPage: React.FC = () => {
   const pathname = usePathname();

@@ -13,8 +13,9 @@ import {
   Typography,
 } from '@mui/material';
 import { useInView } from 'react-intersection-observer';
+import router from 'next/router';
 
-const PROJECTS = [
+export const PROJECTS = [
   {
     id: 1,
     img: '/img/egabid_pc.png',
@@ -145,29 +146,97 @@ const CategoryPage: React.FC = () => {
 
   const [searchValue, setSearchValue] = useState('');
   const [selectedValue, setSelectedValue] = useState('all');
-
-  const handleSearch = () => {
-    const filteredProjects = PROJECTS.filter((project) => {
-      if (selectedValue === 'all') {
-        return project.name.toLowerCase().includes(searchValue.toLowerCase());
+  const SECTIONS = {
+    COMPLETED: "DỰ ÁN ĐÃ HOÀN THÀNH",
+    FUNDING: "dự án đang gọi vốn", 
+    INVESTED: "DỰ ÁN ĐÃ ĐẦU TƯ ƯƠM TẠO"
+  };
+  const handleSearch = (sectionTitle?: string) => {
+    if (sectionTitle) {
+      // Xử lý tìm kiếm dựa trên section
+      switch(sectionTitle) {
+        case SECTIONS.COMPLETED:
+          // Lọc dự án đã hoàn thành và theo điều kiện tìm kiếm
+          const completedProjects = PROJECTS.filter((project) => {
+            const matchesSearch = selectedValue === 'all' 
+              ? project.name.toLowerCase().includes(searchValue.toLowerCase())
+              : project.name.toLowerCase().includes(searchValue.toLowerCase()) && 
+                project.tag.includes(selectedValue);
+            return project.progress === 100 && matchesSearch;
+          });
+          setProjects(completedProjects);
+          break;
+  
+        case SECTIONS.FUNDING:
+          // Lọc dự án đang gọi vốn và theo điều kiện tìm kiếm
+          const fundingProjects = PROJECTS.filter((project) => {
+            const matchesSearch = selectedValue === 'all'
+              ? project.name.toLowerCase().includes(searchValue.toLowerCase())
+              : project.name.toLowerCase().includes(searchValue.toLowerCase()) && 
+                project.tag.includes(selectedValue);
+            return project.progress < 100 && matchesSearch;
+          });
+          setProjects(fundingProjects);
+          break;
+  
+        case SECTIONS.INVESTED:
+          // Lọc dự án đã đầu tư và theo điều kiện tìm kiếm
+          const investedProjects = PROJECTS2.filter((project) => {
+            const matchesSearch = selectedValue === 'all'
+              ? project.name.toLowerCase().includes(searchValue.toLowerCase())
+              : project.name.toLowerCase().includes(searchValue.toLowerCase()) && 
+                project.tag.includes(selectedValue);
+            return matchesSearch;
+          });
+          setProjects2(investedProjects);
+          break;
+  
+        default:
+          // Tìm kiếm mặc định trên tất cả dự án
+          const filteredProjects = PROJECTS.filter((project) => {
+            if (selectedValue === 'all') {
+              return project.name.toLowerCase().includes(searchValue.toLowerCase());
+            }
+            return (
+              project.name.toLowerCase().includes(searchValue.toLowerCase()) &&
+              project.tag.includes(selectedValue)
+            );
+          });
+          const filteredProjects2 = PROJECTS2.filter((project) => {
+            if (selectedValue === 'all') {
+              return project.name.toLowerCase().includes(searchValue.toLowerCase());
+            }
+            return (
+              project.name.toLowerCase().includes(searchValue.toLowerCase()) &&
+              project.tag.includes(selectedValue)
+            );
+          });
+          setProjects(filteredProjects);
+          setProjects2(filteredProjects2);
       }
-
-      return (
-        project.name.toLowerCase().includes(searchValue.toLowerCase()) &&
-        project.tag.includes(selectedValue)
-      );
-    });
-    const filteredProjects2 = PROJECTS2.filter((project) => {
-      if (selectedValue === 'all') {
-        return project.name.toLowerCase().includes(searchValue.toLowerCase());
-      }
-      return (
-        project.name.toLowerCase().includes(searchValue.toLowerCase()) &&
-        project.tag.includes(selectedValue)
-      );
-    });
-    setProjects(filteredProjects);
-    setProjects2(filteredProjects2);
+    } else {
+      // Xử lý tìm kiếm khi không có section được chọn
+      const filteredProjects = PROJECTS.filter((project) => {
+        if (selectedValue === 'all') {
+          return project.name.toLowerCase().includes(searchValue.toLowerCase());
+        }
+        return (
+          project.name.toLowerCase().includes(searchValue.toLowerCase()) &&
+          project.tag.includes(selectedValue)
+        );
+      });
+      const filteredProjects2 = PROJECTS2.filter((project) => {
+        if (selectedValue === 'all') {
+          return project.name.toLowerCase().includes(searchValue.toLowerCase());
+        }
+        return (
+          project.name.toLowerCase().includes(searchValue.toLowerCase()) &&
+          project.tag.includes(selectedValue)
+        );
+      });
+      setProjects(filteredProjects);
+      setProjects2(filteredProjects2);
+    }
   };
 
   useEffect(() => {
@@ -371,7 +440,7 @@ const CategoryPage: React.FC = () => {
                   backgroundColor: '#48B96D',
                 },
               }}
-              onClick={handleSearch}
+              onClick={(e: React.MouseEvent) => handleSearch()}
             >
               Tìm kiếm
             </Button>
@@ -468,7 +537,9 @@ const CategoryPage: React.FC = () => {
           <div
             className={`flex flex-row justify-center mb-8  ${projects.length < 6 && 'hidden'}`}
           >
-            <button className="uppercase flex items-center font-sans bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black">
+              <button
+                onClick={() => handleSearch(SECTIONS.COMPLETED)}
+              className="uppercase flex items-center font-sans bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black">
               xem thêm
               <svg
                 className="w-4 h-4 transition-transform duration-300 ease-linear"
@@ -575,7 +646,9 @@ const CategoryPage: React.FC = () => {
           <div
             className={`flex flex-row justify-center mb-8 ${projects.length < 6 && 'hidden'}`}
           >
-            <button className="uppercase flex font-sans items-center bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black">
+            <button
+              onClick={() => handleSearch(SECTIONS.FUNDING)}
+             className="uppercase flex font-sans items-center bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black">
               xem thêm
               <svg
                 className="w-4 h-4 transition-transform duration-300 ease-linear"
@@ -588,7 +661,7 @@ const CategoryPage: React.FC = () => {
             </button>
           </div>
           <h2 className="flex text-center px-4  py-4 font-bold text-[32px] font-sans text-[#04141A] uppercase">
-            DỰ ÁN ĐÃ ĐẦU TƯ ƯƠM TẠ0
+            DỰ ÁN ĐÃ ĐẦU TƯ ƯƠM TẠO
           </h2>
           <div className="flex px-4   flex-col lg:flex-row ">
             <div className="w-full bg-white" ref={ref3}>
@@ -683,7 +756,9 @@ const CategoryPage: React.FC = () => {
           <div
             className={`flex flex-row justify-center mb-8 ${projects.length < 6 && 'hidden'}`}
           >
-            <button className="uppercase flex items-center font-sans bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black">
+            <button 
+            onClick={() => handleSearch(SECTIONS.INVESTED)}
+            className="uppercase flex items-center font-sans bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black">
               xem thêm
               <svg
                 className="w-4 h-4 transition-transform duration-300 ease-linear"

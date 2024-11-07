@@ -75,9 +75,9 @@ const News = () => {
             >
               TIN MỚI NHẤT VỀ HYRACAP
             </p>
-            <button className=" max-h-[48px]  hidden font-sans text--gray-950 font-medium   px-4 border border-gray-300 rounded-full hover:bg-green-500 hover:text-white transition duration-300 md:flex items-center">
+            <a href='/news' className=" max-h-[48px]  hidden font-sans text--gray-950 font-medium   px-4 border border-gray-300 rounded-full hover:bg-green-500 hover:text-white transition duration-300 md:flex items-center">
               Xem thêm
-            </button>
+            </a>
           </div>
           <div className="flex flex-col md:flex-row md:gap-[126px] p-3 w-full">
             <div

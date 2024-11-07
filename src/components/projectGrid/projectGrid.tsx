@@ -214,7 +214,7 @@ const ProjectSlider: React.FC = () => {
       {({ isActive, isNext, isPrev }) => (
         <a
           ref={ref}
-          href="/detail-category"
+          href={`/detail-category/${project.id}`}
           className={`bg-[#07212C] rounded-xl overflow-visible md:max-h-[386px] pb-[20px] md:pb-0 max-w-[778px] flex flex-col md:flex-row 
           ${isActive ? 'scale-100 z-10' : 'scale-90 z-0'} 
           ${isNext ? 'translate-x-[-5%]' : ''}

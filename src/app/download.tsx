@@ -109,7 +109,9 @@ const DownloadSection = () => {
                 inView ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
               }`}
             >
-              <div className="w-24 h-24 bg-[#FBFFFE] mr-4"></div>
+              <div className="w-24 h-24  mr-4">
+                <img src="/img/qrcode.png" alt="QR Code" className="w-full h-full" />
+              </div>
               <div>
                 <p className="text-normal leading-6 text-[#000000]/60 mb-1 font-sans">
                   Scan to Download

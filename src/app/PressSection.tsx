@@ -21,9 +21,9 @@ const PressSection = () => {
   });
   return (
     <section ref={ref} className={styles.pressSection}>
-      <div className="flex flex-col items-center justify-center max-w-[1440px] py-[62px] ">
+      <div className="flex flex-col items-center justify-center max-w-[1440px] py-4 lg:py-[62px] ">
         <h2
-          className={`${styles.title} duration-300 text-[28px] md:text-[32px] max-w-[351px] md:max-w-none ease-in-out transform ${
+          className={`${styles.title} duration-300 font-sans font-bold text-[28px] md:text-[32px] max-w-[351px] md:max-w-none ease-in-out transform ${
             inView
               ? 'opacity-100 translate-y-0'
               : 'opacity-0 translate-y-10 font-sans'

@@ -61,7 +61,7 @@ const ProjectSection = () => {
             <div className="4xl:max-w-[2100px]   3xl:max-w-[1600px] 2xl:max-w-[1400px] 4xl:gap-16 3xl:gap-8 grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 max-w-[1440px] w-full">
               {projects.map((project, index) => (
                 <a
-                  href="/detail-category"
+                  href={`/detail-category/${project.title}`}
                   key={index}
                   className="flex flex-col justify-center items-center flex-grow"
                 >

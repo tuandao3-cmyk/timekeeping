@@ -12,6 +12,7 @@ import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { Typography } from '@mui/material';
 import Image from 'next/image';
+import { PROJECTS } from '@/app/categories/page';
 function BannerSwipper() {
   const { ref, inView, entry } = useInView({
     threshold: 0.1,
@@ -131,7 +132,8 @@ function BannerSwipper() {
                 năng, mở ra cơ hội hợp tác nhằm tối ưu hóa lợi nhuận và thúc đẩy
                 sự phát triển tài chính.
               </p>
-              <button
+              <a
+                href="/guides"
                 className={`bg-[#48B96D] text-[#ffffff] md:px-4 py-3 max-sm:px-4 rounded-full font-sans text-sm sm:text-base duration-300 ease-in-out delay-500 transform ${
                   inView
                     ? 'opacity-100 translate-y-0'
@@ -139,7 +141,7 @@ function BannerSwipper() {
                 } `}
               >
                 Tham gia cùng chúng tôi
-              </button>
+              </a>
 
               <div className="flex flex-wrap max-sm:justify-between mt-8 space-y-0 sm:space-x-4 md:space-x-4 lg:space-x-4 ">
                 <div
@@ -246,7 +248,7 @@ function BannerSwipper() {
                     }`}
                   />
 
-                  <div
+                  <a href={`/detail-category/${PROJECTS[0].id}`}
                     className={`absolute w-[58%] sm:w-[50%] top-[7%] sm:top-[5%] md:top-[7%] left-[-30%] sm:left-[-25%] md:left-[-25%] bg-white text-[#04141A] rounded-[1.25rem] shadow overflow-hidden flex flex-col duration-300 delay-300 ease-in-out transform ${
                       inView
                         ? 'opacity-100 translate-x-0'
@@ -260,7 +262,10 @@ function BannerSwipper() {
                         className="absolute w-full object-cover"
                       />
                     </div>
-                    <div className=" w-full p-2 flex flex-col justify-center">
+                    <div
+                      
+                      className=" w-full p-2 flex flex-col justify-center"
+                    >
                       <p className="font-bold pl-1 text-xs leading-4 xl:leading-6 xl:text-base font-sans">
                         HYPERAS CHAIN
                       </p>
@@ -271,7 +276,7 @@ function BannerSwipper() {
                         TECHNOLOGY
                       </p>
                     </div>
-                  </div>
+                  </a>
 
                   <div
                     className={` delay-700 ease-in-out transform ${
@@ -280,7 +285,8 @@ function BannerSwipper() {
                         : 'opacity-0 translate-x-[-50%]'
                     } absolute w-[67%] sm:w-[58%] md:w-[66%] bottom-[-15%] sm:bottom-[-18%] md:bottom-[-18%] right-[-5%] sm:right-[-4%] md:right-[-28%] bg-[#F3F7F4] rounded-[1.25rem] shadow overflow-hidden flex flex-col p-2 xl:p-3 `}
                   >
-                    <div className="border-b-2 border-[#1C4A2B]/10 flex items-center pb-1">
+                    <a href={`/detail-category/${PROJECTS[1].id}`} 
+                    className="border-b-2 border-[#1C4A2B]/10 flex items-center pb-1">
                       <div className="w-8 h-8 sm:w-9 sm:h-9 xl:w-12 xl:h-12 flex items-center justify-center mr-2 sm:mr-3">
                         <img
                           src="/img/icon/salala.png"
@@ -296,9 +302,10 @@ function BannerSwipper() {
                           $1,500,000
                         </p>
                       </div>
-                    </div>
+                    </a>
 
-                    <div className="border-b-2 border-[#1C4A2B]/10 flex items-center my-1 pb-1 ">
+                    <a href={`/detail-category/${PROJECTS[2].id}`}
+                     className="border-b-2 border-[#1C4A2B]/10 flex items-center my-1 pb-1 ">
                       <div className=" w-8 h-8 sm:w-9 sm:h-9 md:w-12 md:h-12 rounded-lg flex items-center justify-center mr-2 sm:mr-3">
                         <img
                           src="/img/icon/rapital.png"
@@ -314,9 +321,10 @@ function BannerSwipper() {
                           $1,500,000
                         </p>
                       </div>
-                    </div>
+                    </a>
 
-                    <div className="flex items-center mt-1 pb-1">
+                    <a href={`/detail-category/${PROJECTS[3].id}`}
+                     className="flex items-center mt-1 pb-1">
                       <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-12 md:h-12 rounded-lg flex items-center justify-center mr-2 sm:mr-3">
                         <img
                           src="/img/icon/egabid.png"
@@ -332,7 +340,7 @@ function BannerSwipper() {
                           $1,500,000
                         </p>
                       </div>
-                    </div>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -383,8 +391,8 @@ function BannerSwipper() {
                   </div>
 
                   <div className="flex w-[100%] justify-start items-start gap-[24px]  md:max-w-[500px]">
-                    <button
-                      // ref={ref}
+                    <a
+                      href="/categories"
                       className={` bg-[#48B96D] text-white font-sans text-[16px] leading-[20px] flex-grow   px-[16px] py-[14px] rounded-[999px] text-center  hover:bg-[#379256] transition-all  duration-300 delay-200 ease-in-out transform ${
                         inView1
                           ? 'opacity-100 translate-y-0'
@@ -392,9 +400,9 @@ function BannerSwipper() {
                       }`}
                     >
                       Khám phá cơ hội
-                    </button>
-                    <button
-                      // ref={ref}
+                    </a>
+                    <a
+                      href="/contact"
                       className={` bg-transparent border-[#FFFFFF29] border-[1px] flex-grow text-white font-sans text-[16px] leading-[20px]  px-[16px] py-[14px] rounded-[999px] text-center  hover:bg-[#379256] transition-all  duration-300 delay-200 ease-in-out transform ${
                         inView1
                           ? 'opacity-100 translate-y-0'
@@ -402,7 +410,7 @@ function BannerSwipper() {
                       }`}
                     >
                       Liên hệ ngay
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>
