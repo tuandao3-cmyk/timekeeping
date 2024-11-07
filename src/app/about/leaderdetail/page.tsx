@@ -1,11 +1,13 @@
 'use client';
 import { useState } from 'react';
-
+import { useRouter } from 'next/navigation';
 import { leaders } from '../page';
+import { IoArrowBack } from "react-icons/io5";
 
 export default function LeaderDetail() {
   const [activeLeader, setActiveLeader] = useState(0); // Mặc định hiển thị leader đầu tiên
   const leader = leaders[activeLeader];
+  const router = useRouter();
 
   return (
     <div className="flex flex-col  min-h-[600px]">
@@ -20,8 +22,8 @@ export default function LeaderDetail() {
           />
 
 
-          <div className="flex justify-center absolute pointer-events-none inset-0 flex pt-[120px] lg:pt-[80px] bg-[rgba(72,185,109,0.05)] w-full h-full text-center lg:text-left lg:p-16">
-            <h1 className="text-[#48B96D]/10 text-[52px] lg:text-[155px] font-bold">
+          <div className=" absolute pointer-events-none inset-0 flex whitespace-nowrap overflow-hidden pt-[120px] lg:pt-[80px] bg-[rgba(72,185,109,0.05)] w-full h-full justify-center lg:justify-start text-center lg:text-left lg:p-16">
+            <h1 className="text-[#48B96D]/10 text-[52px] lg:text-[155px] font-bold ">
               {leader.name}
             </h1>
           </div>
@@ -31,7 +33,7 @@ export default function LeaderDetail() {
             <div className="flex flex-col-reverse lg:flex-row">
 
               <div className="flex-1 p-4 lg:p-16 flex flex-col justify-center gap-6 items-center text-center lg:text-left lg:items-start">
-                <h2 className="text-[#48B96D] text-4xl lg:text-[64px] font-bold mb-4">
+                <h2 className="text-[#48B96D] text-4xl lg:text-[64px] leading-[60px] lg:leading-[72px] font-bold mb-4">
                   {leader.name}
                 </h2>
                 <p className="text-gray-600 text-base leading-[24px] lg:text-[24px] lg:leading-[32px]  mb-6">
@@ -47,13 +49,19 @@ export default function LeaderDetail() {
                 <img 
                   src={leader.image} 
                   alt={leader.name} 
-                  className="w-[255px] h-[294px] lg:w-[592px] lg:h-[689px] object-cover" 
+                  className="w-[255px] h-[294px] lg:w-[592px] lg:h-[689px] object-cover px-2" 
                 />
               </div>
             </div>
 
 
             <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full bg-white lg:bg-[#000000]/20 backdrop-blur-[24px] h-auto lg:h-[112px] flex items-center justify-center gap-[24px]">
+            <button 
+                onClick={() => router.back()}
+                className="flex items-center justify-center w-[48px] h-[48px] lg:w-[120px] lg:h-full bg-black lg:bg-transparent "
+              >
+                <IoArrowBack className="w-10 h-10 text-white" />
+              </button>
               {leaders.map((nav, idx) => (
                 <div 
                   key={idx}
