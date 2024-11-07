@@ -177,8 +177,8 @@ const GuidePage: React.FC = () => {
         </aside>
         <div className="flex items-center  justify-center lg:hidden w-full p-5 border-b border-[#E0E0E0]">
           <nav>
-            <ul className=" grid grid-cols-4 grid-rows-2 gap-[40px] text-xl 3xl:text-2xl text-center  ">
-              <li className="">
+            <ul className=" grid grid-cols-2 md:grid-cols-4 grid-rows-4 md:grid-rows-2 gap-[20px] text-xl 3xl:text-2xl   ">
+              <li className="flex border-[2px] border-[#E0E0E0] rounded-[10px] justify-center text-center p-2">
                 <button
                   onClick={() => setActiveSection('signin')}
                   className={`no-underline font-sans font-bold  hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
@@ -188,7 +188,7 @@ const GuidePage: React.FC = () => {
                   Đăng ký
                 </button>
               </li>
-              <li className="">
+              <li className="flex border-[2px] border-[#E0E0E0] rounded-[10px] justify-center text-center p-2">
                 <button
                   onClick={() => setActiveSection('login')}
                   className={`no-underline  font-sans font-bold  hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
@@ -198,7 +198,7 @@ const GuidePage: React.FC = () => {
                   Đăng nhập
                 </button>
               </li>
-              <li className="">
+              <li className="flex border-[2px] border-[#E0E0E0] rounded-[10px] justify-center text-center p-2">
                 <button
                   onClick={() => setActiveSection('auth')}
                   className={`no-underline  font-sans font-bold hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
@@ -208,7 +208,7 @@ const GuidePage: React.FC = () => {
                   Xác thực eKYC
                 </button>
               </li>
-              <li className="">
+              <li className="flex border-[2px] border-[#E0E0E0] rounded-[10px] justify-center text-center p-2">
                 <button
                   onClick={() => setActiveSection('contract')}
                   className={`no-underline  font-sans font-bold hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
@@ -218,7 +218,7 @@ const GuidePage: React.FC = () => {
                   Ký hợp đồng
                 </button>
               </li>
-              <li className="">
+              <li className="flex border-[2px] border-[#E0E0E0] rounded-[10px] justify-center text-center p-2">
                 <button
                   onClick={() => setActiveSection('product')}
                   className={`no-underline  font-sans font-bold hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
@@ -228,7 +228,7 @@ const GuidePage: React.FC = () => {
                   Thực hiện đầu tư
                 </button>
               </li>
-              <li className="">
+              <li className="flex border-[2px] border-[#E0E0E0] rounded-[10px] justify-center text-center p-2">
                 <button
                   onClick={() => setActiveSection('transaction')}
                   className={`no-underline  font-sans font-bold hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
@@ -238,7 +238,7 @@ const GuidePage: React.FC = () => {
                   Giao dịch
                 </button>
               </li>
-              <li className="">
+              <li className="flex border-[2px] border-[#E0E0E0] rounded-[10px] justify-center text-center p-2">
                 <button
                   onClick={() => setActiveSection('forgot')}
                   className={`no-underline  font-sans font-bold hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
@@ -248,7 +248,7 @@ const GuidePage: React.FC = () => {
                   Quên mật khẩu
                 </button>
               </li>
-              <li className="">
+              <li className="flex border-[2px] border-[#E0E0E0] rounded-[10px] justify-center text-center p-2">
                 <button
                   onClick={() => setActiveSection('logout')}
                   className={`no-underline  font-sans font-bold hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
