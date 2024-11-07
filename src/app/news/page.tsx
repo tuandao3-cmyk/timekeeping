@@ -458,7 +458,7 @@ const NewsPage: React.FC = () => {
                   </button>
                 </div>
               </div>
-              <div className="   flex index-2 justify-center items-center  bg-[#07212C] w-full md:w-[450px] md:mx-[25%] lg:mx-0 lg:w-full h-full max-lg:max-h-[300px] lg:max-h-[390px] rounded-lg my-8  p-5 mt-14">
+              <div className="flex index-2 justify-center items-center  bg-[#07212C] w-full md:w-[450px] md:mx-[25%] lg:mx-0 lg:w-full h-full max-lg:max-h-[300px] lg:max-h-[390px] rounded-lg my-8  p-5 mt-14">
                 <div className="index-3 relative flex flex-row text-white  font-bold text-[11px] bg-[#48B96D] w-full h-full md:text-[15px] rounded-lg">
                   <div className=" flex  flex-col h-full text-[20px] md:text-2xl lg:text-3xl  justify-between gap-4 py-5 px-28 pl-5 md:py-10 md:px-8  ">
                     <p className="max-w-[250px] ">

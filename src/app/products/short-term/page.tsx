@@ -5,9 +5,11 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { usePathname } from 'next/navigation';
 import { useInView } from 'react-intersection-observer';
+import ModalDown from '../ModalDownload';
 const ShortTermSection: React.FC = () => {
   const pathname = usePathname();
   const [packages, setPackages] = useState([]);
+  const [modal, setModal] = useState(false);
   const [timeLeft, setTimeLeft] = useState({
     days: 2,
     hours: 3,
@@ -78,6 +80,7 @@ const ShortTermSection: React.FC = () => {
   return (
     <>
       <div className=" flex justify-center items-center w-full mt-10 md:mt-0 lg:mt-0 sm:mt-0 absolute top-1/2 px-4 sm:px-8 md:px-2 lg:px-32 ">
+        <ModalDown modal={modal} setModal={setModal} />
         <div
           ref={ref2}
           className={`w-full  rounded-lg duration-1000 px-1 lg:px-2 xl:px-4 2xl:px-6   ease-in-out transform ${
@@ -91,7 +94,7 @@ const ShortTermSection: React.FC = () => {
                 <div
                   key={index}
                   className="bg-white shadow-lg mt-10 md:mt-0 lg:mt-0 sm:mt-0 rounded-[20px]"
-                  style={{ borderColor: packageData.color }}
+                  style={{ borderColor: '#04141A' }}
                 >
                   <div className="flex flex-col justify-between items-center pt-4 h-[205px]">
                     <p className="text-2xl font-medium uppercase text-[packageData.color]">
@@ -128,10 +131,10 @@ const ShortTermSection: React.FC = () => {
                       {(packageData?.current_interest_rate * 100).toFixed(1)}
                       %/năm
                     </p>
-                    <p className="text-center font-normal text-base text-[#000000A3] text-opacity-64">
+                    <p className="text-center font-normal text-base text-[#000000A3] text-opacity-64 ">
                       Kỳ hạn {index == 0 ? 3 : index == 1 ? 6 : 12} tháng
                     </p>
-                    <div className="flex flex-col gap-4 lg:gap-8 py-4 xl:py-10">
+                    <div className="flex flex-col gap-4 lg:gap-8 py-4 xl:py-10 px-2 xl:px-20">
                       {benefits.map((benefit, index) => (
                         <div className="flex gap-3" key={index}>
                           <img
@@ -145,7 +148,7 @@ const ShortTermSection: React.FC = () => {
                     </div>
                     <div className="flex justify-center items-center">
                       <button
-                        onClick={() => console.log(packages)}
+                        onClick={() => setModal(true)}
                         className="uppercase max-w-[90px] p-2 sm:max-w-[116px] bg-[#48B96D] tracking-tight text-white text-[14px] sm:text-[16px] md:px-4 md:py-3 sm:px-[16px] sm:py-[14px] rounded-[999px] text-center hover:bg-[#379256] transition-all duration-300 delay-200 ease-in-out transform"
                       >
                         Mua ngay

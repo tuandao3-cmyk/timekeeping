@@ -201,7 +201,7 @@ const ProductPage: React.FC = () => {
             >
               {product.title}
             </h2>
-            <div className="flex  flex-col sm:flex-row gap-2 sm:gap-4 md:gap-8 lg:gap-10 items-center w-full overflow-y-auto justify-center xl:py-8  md:px-6 xl:px-8">
+            <div className="flex  flex-col sm:flex-row gap-2 sm:gap-4 md:gap-4 lg:gap-10 items-center w-full overflow-y-auto justify-center xl:py-8  md:px-6 xl:px-8">
               {product.package.map((packageItem: any, index) => (
                 <ProductItem
                   key={index}
