@@ -56,7 +56,7 @@ const ShortTermSection: React.FC = () => {
   });
   return (
     <>
-      <div className="flex justify-center items-center w-full mt-10 md:mt-0 lg:mt-0 sm:mt-0 absolute top-1/2 px-4 sm:px-8 md:px-16 lg:px-32 ">
+      <div className="flex justify-center items-center w-full mt-10 md:mt-0 lg:mt-0 sm:mt-0 absolute top-1/2 px-4 sm:px-8 md:px-2 lg:px-32 ">
         <div
           ref={ref2}
           className={`w-full rounded-lg duration-1000 pr-4 pl-4  ease-in-out transform ${

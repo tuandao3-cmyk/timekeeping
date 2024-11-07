@@ -372,7 +372,7 @@ const NewsPage: React.FC = () => {
               <h2 className="w-full md:text-center  md:text-[30px] text-[30px] font-bold text-gray-800 mt-8 md:mt-0">
                 Theo dõi chúng tôi
               </h2>
-              <div className="flex flex-col gap-4 mt-5 md:mt-0">
+              <div className=" flex flex-col gap-4 mt-5 md:mt-0">
                 <div className="flex justify-between items-center">
                   <div className="flex items-center gap-5">
                     <img
