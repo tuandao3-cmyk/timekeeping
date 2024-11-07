@@ -2,8 +2,8 @@
 import {
   FacebookIcon,
   LinkedInIcon,
-  YouTubeIcon,
   XIcon,
+  YouTubeIcon,
 } from '@/components/icons';
 import { Calendar } from 'lucide-react';
 import Image from 'next/image';
@@ -230,8 +230,8 @@ const NewsDetail: React.FC = () => {
       </div>
 
       <div className="flex flex-col items-center w-full bg-[#F3F7F4] mx-auto">
-        <div className="max-w-[1280px] my-10">
-          <div className="text-4xl w-full text-left lg:text-5xl font-bold mb-4">
+        <div className="max-w-[1280px] my-10 px-5">
+          <div className="text-3xl md:text-4xl w-full text-left lg:text-5xl font-bold mb-4 ">
             Bài viết liên quan
           </div>
           <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

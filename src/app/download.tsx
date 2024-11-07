@@ -1,26 +1,40 @@
 import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
+import { useMediaQuery, useTheme } from '@mui/material';
 
 const DownloadSection = () => {
   const { ref, inView, entry } = useInView({
     threshold: 0.1,
     triggerOnce: true,
   });
+
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+  const isMediumScreen = useMediaQuery(theme.breakpoints.between('sm', 'md'));
+
+  const imageSrc = isSmallScreen
+    ? '/img/screencapture_mb.png'
+    : isMediumScreen
+      ? '/img/downloadimg.png'
+      : '/img/downloadimg.png';
   return (
     <div className="bg-[#F3F7F4] overflow-hidden flex flex-col justify-center items-center">
-      <div className="max-w-[1440px]">
-        <div className="container mx-auto  flex flex-col md:flex-row items-center">
+      <div className="max-w-[1440px] px-[16px] md:px-0">
+        <div className="container mx-auto  flex flex-col-reverse md:flex-row items-center">
           <div className="md:w-1/2 mb-8 md:mb-0 ">
             <p
               ref={ref}
-              className={`text-3xl font-bold mb-4 font-sans duration-300 ease-in-out transform uppercase ${
+              className={`md:text-3xl text-[28px] font-bold mb-4 font-sans duration-300 ease-in-out transform uppercase ${
                 inView
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-10'
               }`}
+              style={{
+                fontWeight: 700,
+              }}
             >
-              Đầu tư sinh lời{' '}
-              <span className="text-green-500 delay-150 uppercase font-sans">
+              Đầu tư sinh lời {isSmallScreen && <br />}
+              <span className="text-green-500 delay-150 uppercase font-sans ">
                 Mọi lúc, mọi nơi
               </span>
             </p>
@@ -38,7 +52,7 @@ const DownloadSection = () => {
             <div className="flex flex-col beetween sm:flex-row gap-6 mb-8">
               <button
                 ref={ref}
-                className={`bg-[#48B96D] text-white px-6 py-3 w-[200px] font-sans rounded-xl flex items-center justify-center gap-[10px] duration-300 delay-500 ease-in-out transform ${
+                className={`bg-[#48B96D] text-white px-6 h-[64px] py-3 md:w-[200px] w-full font-sans rounded-xl flex items-center justify-center gap-[10px] duration-300 delay-500 ease-in-out transform ${
                   inView
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-20'
@@ -60,7 +74,7 @@ const DownloadSection = () => {
               </button>
               <button
                 ref={ref}
-                className={`bg-[#48B96D] text-white px-6 py-3 font-sans w-[200px] rounded-xl flex items-center justify-center gap-[10px] duration-300 delay-500 ease-in-out transform ${
+                className={`bg-[#48B96D] text-white h-[64px] px-6 py-3 font-sans md:w-[200px] rounded-xl flex items-center justify-center gap-[10px] duration-300 delay-500 ease-in-out transform ${
                   inView
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-20'
@@ -91,11 +105,19 @@ const DownloadSection = () => {
             </div>
             <div
               ref={ref}
-              className={`bg-[#000000]/5 p-4 rounded-lg flex md:max-w-[80%] items-center duration-300 delay-700 ease-in-out transform ${
+              className={` md:bg-[#000000]/5 p-4 rounded-lg flex md:max-w-[80%] items-center justify-center  duration-300 delay-700 ease-in-out transform ${
                 inView ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
               }`}
             >
-              <div className="w-24 h-24 bg-[#FBFFFE] mr-4"></div>
+              <div className="w-24 h-24 bg-[#FBFFFE] mr-4 flex items-center justify-center">
+                <Image
+                  ref={ref}
+                  src="/img/qr.png"
+                  alt="App Screenshot"
+                  width={80}
+                  height={24}
+                />
+              </div>
               <div>
                 <p className="text-normal leading-6 text-[#000000]/60 mb-1 font-sans">
                   Scan to Download
@@ -106,14 +128,14 @@ const DownloadSection = () => {
               </div>
             </div>
           </div>
-          <div className="relative  max-h-[660px] flex items-center justify-center overflow-hidden ">
+          <div className="  max-h-[660px] flex items-center justify-center overflow-hidden ">
             <Image
               ref={ref}
-              src="/img/downloadimg.png"
+              src={imageSrc}
               alt="App Screenshot"
               width={708}
               height={812}
-              className={`h-[812px] w-[708px] duration-300 delay-200 ease-in-out transform ${
+              className={`md:h-[812px] md:w-[708px] w-[327px] h-[419px] duration-300 delay-200 ease-in-out transform ${
                 inView ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
               } `}
             />

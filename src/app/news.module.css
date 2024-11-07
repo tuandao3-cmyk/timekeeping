@@ -1,7 +1,7 @@
 .newsSection {
   /* background-color: #FFFFFF; */
   background-size: cover;
-  padding: 40px 0;
+
   border-radius: 10px;
   color: #04141a;
   display: flex;
@@ -34,14 +34,14 @@
 }
 
 .mainNews {
-  display: flex;
+  
   flex-direction: column;
   align-items: center;
   gap: 5;
 }
 
 .mainNewsLink {
-  display: flex;
+ 
   flex-direction: column;
   text-decoration: none;
   color: inherit;
@@ -49,7 +49,7 @@
 
 .mainImage {
   border-radius: 10px;
-  height: 426px;
+
   /* aspect-ratio: 1/1; */
   object-fit: cover;
 }
@@ -88,7 +88,6 @@
 }
 
 .newsItem {
-  display: flex;
   text-decoration: none;
   justify-content: space-between;
   width: 100%;
@@ -105,9 +104,6 @@
 }
 
 .newsContent {
-  display: flex;
-  flex-direction: row; /* Đảm bảo hiển thị ngang hàng */
-  justify-content: space-between; /* Căn chỉnh khoảng cách giữa ảnh và tiêu đề */
   width: 100%; /* Đảm bảo chiếm toàn bộ chiều rộng */
   gap: 16px;
 }
@@ -168,10 +164,6 @@
 }
 
 @media (max-width: 768px) {
-  .newsSection {
-    padding: 20px; /* Giảm padding cho màn hình nhỏ hơn */
-  }
-
   .title {
     font-size: 1.5rem; /* Giảm kích thước font cho tiêu đề */
   }
@@ -186,24 +178,12 @@
         margin-bottom: 10px; 
     } */
 
-  .newsContent {
-    flex-direction: column; /* Đặt nội dung thành cột */
-    align-items: flex-start; /* Căn trái nội dung */
-  }
-
   .readMore {
     font-size: 0.8rem; /* Giảm kích thước font cho nút "Tìm hiểu thêm" */
   }
 }
 
 @media (max-width: 1200px) {
-  .sideBorder {
-    align-items: center;
-  }
-  .newsSection {
-    padding: 30px; /* Giảm padding cho màn hình nhỏ hơn */
-  }
-
   .title {
     font-size: 1.8rem; /* Giảm kích thước font cho tiêu đề */
   }
@@ -214,9 +194,7 @@
     /* margin-right: 0; 
     margin-bottom: 10px;  */
   }
-  .mainNews {
-    flex: 1;
-  }
+  
 
   .sideNews {
     flex: 1;
