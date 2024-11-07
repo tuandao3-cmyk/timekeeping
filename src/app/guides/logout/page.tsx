@@ -12,7 +12,7 @@ const LogoutSection: React.FC = () => {
     <>
 
 
-        <main className=" pt-[50px] pl-[70px] text-black text-left font-roboto ">
+        <main className=" pt-[50px] px-8 pb-[30px]  lg:px-[70px] text-black text-left font-sans ">
             <p className=" text-3xl font-bold text-[#000000]  text-left">Video hướng dẫn</p>
           
             <div className="flex justify-center  my-[50px]  ">
@@ -23,7 +23,7 @@ const LogoutSection: React.FC = () => {
               
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
-              className=" lg:h-[420px] lg:w-[615px] rounded-[20px] "
+              className=" h-[420px] w-[615px] rounded-[20px] "
             ></iframe>
           
           

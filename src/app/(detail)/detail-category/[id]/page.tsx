@@ -5,11 +5,6 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import InfoSection from './info/page';
-import BusinessPlanSection from './business plan/page';
-import ContractSampleSection from './contract_sample/page';
-import FinanceRoadSection from './finance_road/page';
-import ProductSection from '../guides/product/page';
-import PitchingDeckSection from './pitchingdeck/page';
 import { Stack, Typography } from '@mui/material';
 import CustomTabPanel from '@/components/customTabPanel';
 
@@ -38,10 +33,26 @@ const DetailCategoryPage: React.FC = () => {
           justifyContent="flex-start"
           alignItems="flex-start"
           width="100%"
-          maxWidth={'1440px'}
-          px={'120px'}
+          maxWidth="1440px"
+          px={{
+            xs: '12px',
+            sm: '16px',
+            md: '120px',
+          }}
+          sx={{
+            overflowX: 'auto',
+            whiteSpace: 'nowrap',
+          }}
         >
-          <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+          <Box
+            sx={{
+              borderBottom: 1,
+              borderColor: 'divider',
+              width: '100%',
+              overflowX: 'auto', // Cho phép cuộn ngang
+              whiteSpace: 'nowrap', // Đảm bảo nội dung không xuống dòng
+            }}
+          >
             <Tabs
               value={value}
               onChange={handleChange}
@@ -54,7 +65,10 @@ const DetailCategoryPage: React.FC = () => {
                 '& .MuiTabs-indicator': {
                   backgroundColor: '#0B3546',
                 },
+                minWidth: '100%', 
               }}
+              variant="scrollable" 
+              scrollButtons="auto" 
             >
               {[
                 'Thông tin',

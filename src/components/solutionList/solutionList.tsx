@@ -135,29 +135,42 @@ function SolutionList() {
     triggerOnce: true,
   });
   return (
-    <section className="py-[61px]">
-      <div className="pb-[40px]">
+    <section ref={ref} className="py-[61px]">
+      <div className="pb-[40px] items-center flex justify-center">
         <Typography
           component={'p'}
           textTransform={'uppercase'}
           // className={`text-[38px] font-bold leading-[48px] text-center text-[#04141A]`}
           sx={{
             color: '#04141A',
-            fontSize: 38,
+            fontSize: {
+              xs: '28px',
+              sm: '28px',
+              md: '38px',
+              lg: '38px',
+              xl: '38px',
+            },
             fontWeight: 'bold',
             lineHeight: '48px',
             textAlign: 'center',
             fontFamily: 'Inter',
+            maxWidth: {
+              xs: '247px',
+              sm: '247px',
+              md: '100%',
+              lg: '100%',
+              xl: '100%',
+            },
           }}
         >
           giải pháp đầu tư vượt trội
         </Typography>
       </div>
-      <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 md:gap-10 lg:gap-12 px-4 sm:px-8 md:px-16 lg:px-32 justify-center items-center">
+
+      <div className="flex flex-col md:flex-row gap-[24px] md:px-[120px] px-[12px] justify-center items-center">
         {DATA.map((item, index) => (
           <div
-            ref={ref}
-            className={`flex rounded-2xl max-w-[384px] bg-[#F3F7F4] transition duration-300 gap-6 flex-col hover:bg-[#48B96DCC] hover:bg-opacity-80 justify-start items-start group p-10 ease-in-out delay-${index * 100} transform ${
+            className={`flex rounded-[24px] max-w-[384px] bg-[#F3F7F4] transition duration-300 gap-[24px]  flex-col hover:bg-[#48B96DCC] hover:bg-opacity-80 justify-start items-start group p-[40px] ease-in-out delay-${index * 100} transform ${
               inView ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
             }`}
             key={index}

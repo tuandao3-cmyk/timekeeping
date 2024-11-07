@@ -20,7 +20,11 @@ function CustomTabPanel(props: TabPanelProps) {
       {value === index && (
         <Box
           sx={{
-            p: 3,
+            p: {
+              xs: '8px',
+              sm: '16px',
+              md: '24px',
+            },
             background:
               'linear-gradient(180deg, #F9FBFA 0%, #F5F5F5 21%, #FBFBFB 95%)',
           }}

@@ -66,7 +66,7 @@ const ProductItem = forwardRef<HTMLDivElement, ProductItemProps>(
         return (
           <div
             ref={ref}
-            className={`package-item md:max-w-[384px] bg-white  rounded-lg md:gap-6   flex justify-center items-left flex-col flex-grow gap-3 ${props.className} hover:shadow-lg p-5 hover:scale-105 transition ease-in-out duration-150 hover:cursor-pointer `}
+            className={`package-item max-w-none md:max-w-[384px] bg-white  rounded-lg md:gap-6   flex justify-center items-left flex-col flex-grow gap-3 ${props.className} hover:shadow-lg p-5 hover:scale-105 transition ease-in-out duration-150 hover:cursor-pointer `}
           >
             {props.image}
 

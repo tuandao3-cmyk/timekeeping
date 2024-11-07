@@ -11,6 +11,7 @@ import { FaChevronLeft, FaFlag } from 'react-icons/fa';
 import useWindowSize from './useWindowSize';
 import { FaChevronRight } from 'react-icons/fa6';
 import { MdArrowBackIos, MdArrowForwardIos } from 'react-icons/md';
+import { useMediaQuery, useTheme } from '@mui/material';
 
 const projects = [
   {
@@ -96,6 +97,9 @@ const ProjectSlider: React.FC = () => {
   const progressBarRef = useRef<HTMLDivElement>(null);
   const windowSize = useWindowSize();
 
+  const theme = useTheme();
+  const isMdOrLarger = useMediaQuery(theme.breakpoints.up('md'));
+
   const isMobile = windowSize.width < 640;
   const isTablet = windowSize.width >= 640 && windowSize.width < 768;
   const isSmallDesktop = windowSize.width >= 768 && windowSize.width < 1024;
@@ -161,9 +165,9 @@ const ProjectSlider: React.FC = () => {
 
   return (
     <div className="flex w-full flex-col justify-center items-center overflow-x-hidden ">
-      <div className="w-full overflow-hidden">
-        <div className="w-full relative">
-          <h2 className="text-[38px] font-bold mb-8 text-center font-sans">
+      <div className="w-full  overflow-hidden">
+        <div className="w-full px-[12px] md:px-0">
+          <h2 className="text-[28px] md:text-[38px] text-[#04141A] font-[700] leading-[36px]  mb-8 text-center font-sans">
             DỰ ÁN ĐANG GỌI VỐN
           </h2>
           <Swiper
@@ -172,10 +176,14 @@ const ProjectSlider: React.FC = () => {
             slidesPerView={slidesPerView}
             centeredSlides={false}
             slidesOffsetBefore={slidesOffsetBefore}
-            navigation={{
-              prevEl: '.swiper-button-prev',
-              nextEl: '.swiper-button-next',
-            }}
+            navigation={
+              isMdOrLarger
+                ? {
+                    prevEl: '.swiper-button-prev',
+                    nextEl: '.swiper-button-next',
+                  }
+                : false
+            }
             loop={true}
             onSwiper={setSwiper}
             onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
@@ -195,7 +203,7 @@ const ProjectSlider: React.FC = () => {
                   <a
                     ref={ref}
                     href="/detail-category"
-                    className={`bg-[#07212C] rounded-xl max-h-[386px] max-w-[778px] overflow-hidden transition-all duration-300 flex flex-col sm:flex-row ${isActive ? 'scale-100' : 'scale-90'} `}
+                    className={`bg-[#07212C] rounded-xl md:max-h-[386px] pb-[20px] md:pb-0 max-w-[778px] overflow-hidden transition-all duration-300 flex flex-col md:flex-row ${isActive ? 'scale-100' : 'scale-90'} `}
                   >
                     <div
                       ref={ref}
@@ -215,7 +223,7 @@ const ProjectSlider: React.FC = () => {
                         </a>
                       </div>
                     </div>
-                    <div className="md:w-1/2 w-full p-8 flex flex-col justify-between">
+                    <div className="md:w-1/2 w-full px-8 md:py-8  flex flex-col justify-between">
                       <div>
                         <span className="top-4 left-4 bg-[#FFFFFF]/20 text-[#0298F4] px-2 py-1 text-xs rounded flex items-center inline-flex">
                           <FaFlag className="w-4 h-4 mr-1 font-sans" />
@@ -278,7 +286,7 @@ const ProjectSlider: React.FC = () => {
                             ></div>
                           </div>
                         </div>
-                        <div className="flex gap-2 ml-3">
+                        <div className="flex gap-2 ml-3 pt-[16px] md:pt-0">
                           {project.tags.map((tag, index) => (
                             <span
                               key={index}
@@ -297,7 +305,7 @@ const ProjectSlider: React.FC = () => {
           </Swiper>
           <div className="swiper-button-prev !hidden"></div>
           <div className="swiper-button-next !hidden"></div>
-          <div
+          {/* <div
             onClick={handlePrev}
             className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 w-12 h-12 bg-[#F3F7F4] rounded-full flex items-center justify-center cursor-pointer hover:bg-[#E0E7E2] transition-colors duration-300 shadow-md"
           >
@@ -308,7 +316,7 @@ const ProjectSlider: React.FC = () => {
             className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 w-12 h-12 bg-[#F3F7F4] rounded-full flex items-center justify-center cursor-pointer hover:bg-[#E0E7E2] transition-colors duration-300 shadow-md"
           >
             <MdArrowForwardIos className="text-3xl text-gray-700 mr-1" />
-          </div>
+          </div> */}
           <div className="flex justify-center mt-6 w-full pb-6">
             <div className="bg-gray-200 h-2 rounded-full w-[85vw] ">
               <div
