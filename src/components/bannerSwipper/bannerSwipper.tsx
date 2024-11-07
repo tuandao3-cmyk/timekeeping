@@ -12,6 +12,7 @@ import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { Box, Button, Stack, Typography } from '@mui/material';
 import Image from 'next/image';
+import { PROJECTS } from '@/app/categories/page';
 function BannerSwipper() {
   const { ref, inView, entry } = useInView({
     threshold: 0.1,
@@ -623,8 +624,8 @@ function BannerSwipper() {
                   </div>
 
                   <div className="flex w-[100%] justify-start items-start gap-[24px]  md:max-w-[500px]">
-                    <button
-                      // ref={ref}
+                    <a
+                      href="/categories"
                       className={` bg-[#48B96D] text-white font-sans text-[16px] leading-[20px] flex-grow   px-[16px] py-[14px] rounded-[999px] text-center  hover:bg-[#379256] transition-all  duration-300 delay-200 ease-in-out transform ${
                         inView1
                           ? 'opacity-100 translate-y-0'
@@ -632,9 +633,9 @@ function BannerSwipper() {
                       }`}
                     >
                       Khám phá cơ hội
-                    </button>
-                    <button
-                      // ref={ref}
+                    </a>
+                    <a
+                      href="/contact"
                       className={` bg-transparent border-[#FFFFFF29] border-[1px] flex-grow text-white font-sans text-[16px] leading-[20px]  px-[16px] py-[14px] rounded-[999px] text-center  hover:bg-[#379256] transition-all  duration-300 delay-200 ease-in-out transform ${
                         inView1
                           ? 'opacity-100 translate-y-0'
@@ -642,7 +643,7 @@ function BannerSwipper() {
                       }`}
                     >
                       Liên hệ ngay
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>

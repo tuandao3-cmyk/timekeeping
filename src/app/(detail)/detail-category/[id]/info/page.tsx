@@ -522,16 +522,20 @@ const InfoSection = (props: InfoSectionProps) => {
         <section className="w-full h-auto  bg-white py-[62px] flex flex-col justify-center items-center px-[12px] md:px-[120px] max-w-[1440px]">
           {products.map((product: (typeof products)[0], index) => (
             <div
+              onClick={() => router.push(`/detail-category/${product.package[index].title}`)}
               className="w-full h-auto bg-white px-1 flex flex-col justify-center items-left"
               key={index}
             >
               <Stack
+                
                 flexDirection={'row'}
                 justifyContent={'space-between'}
                 alignItems={'center'}
                 px={'20px'}
               >
                 <Typography
+                  
+                  className="cursor-pointer"
                   fontFamily={'Inter'}
                   fontWeight={700}
                   fontSize={{
@@ -565,6 +569,7 @@ const InfoSection = (props: InfoSectionProps) => {
               <div className="flex md:flex-row flex-col gap-[24px] items-center  w-full  justify-center py-5  scrollbar-none ">
                 {product?.package?.map((packageItem: any, index: number) => (
                   <ProductItem
+                    
                     key={index}
                     descriptions={packageItem.descriptions}
                     image={

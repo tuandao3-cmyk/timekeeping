@@ -13,11 +13,12 @@ import {
   Typography,
 } from '@mui/material';
 import { useInView } from 'react-intersection-observer';
+import router from 'next/router';
 import { useQuery } from '@tanstack/react-query';
 import { Page } from '@/type/page.type';
 import { getProjects } from '@/services/project.service';
 
-const PROJECTS = [
+export const PROJECTS = [
   {
     id: 1,
     img: '/img/egabid_pc.png',
@@ -371,7 +372,7 @@ const CategoryPage: React.FC = () => {
                   backgroundColor: '#48B96D',
                 },
               }}
-              onClick={handleSearch}
+              onClick={(e: React.MouseEvent) => handleSearch()}
             >
               Tìm kiếm
             </Button>
@@ -479,7 +480,9 @@ const CategoryPage: React.FC = () => {
           <div
             className={`flex flex-row justify-center mb-8  ${projects.length < 6 && 'hidden'}`}
           >
-            <button className="uppercase flex items-center font-sans bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black">
+              <button
+                onClick={() => handleSearch(SECTIONS.COMPLETED)}
+              className="uppercase flex items-center font-sans bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black">
               xem thêm
               <svg
                 className="w-4 h-4 transition-transform duration-300 ease-linear"
@@ -592,7 +595,9 @@ const CategoryPage: React.FC = () => {
           <div
             className={`flex flex-row justify-center mb-8 ${projects.length < 6 && 'hidden'}`}
           >
-            <button className="uppercase flex font-sans items-center bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black">
+            <button
+              onClick={() => handleSearch(SECTIONS.FUNDING)}
+             className="uppercase flex font-sans items-center bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black">
               xem thêm
               <svg
                 className="w-4 h-4 transition-transform duration-300 ease-linear"
@@ -605,7 +610,7 @@ const CategoryPage: React.FC = () => {
             </button>
           </div>
           <h2 className="flex text-center px-4  py-4 font-bold text-[32px] font-sans text-[#04141A] uppercase">
-            DỰ ÁN ĐÃ ĐẦU TƯ ƯƠM TẠ0
+            DỰ ÁN ĐÃ ĐẦU TƯ ƯƠM TẠO
           </h2>
           <div className="flex px-4   flex-col lg:flex-row ">
             <div className="w-full bg-white" ref={ref3}>
@@ -705,7 +710,9 @@ const CategoryPage: React.FC = () => {
           <div
             className={`flex flex-row justify-center mb-8 ${projects.length < 6 && 'hidden'}`}
           >
-            <button className="uppercase flex items-center font-sans bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black">
+            <button 
+            onClick={() => handleSearch(SECTIONS.INVESTED)}
+            className="uppercase flex items-center font-sans bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black">
               xem thêm
               <svg
                 className="w-4 h-4 transition-transform duration-300 ease-linear"

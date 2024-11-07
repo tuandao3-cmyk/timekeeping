@@ -1,25 +1,22 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import styles from '@/app/about/about.module.css';
 import Link from 'next/link';
 import { useInView } from 'react-intersection-observer';
 import { Typography } from '@mui/material';
-
 import Partner from '../partner';
-import ArticlesSection from '../ArticlesSection';
 import PressSection from '../PressSection';
 import News from '../news';
-import DiamondImage from '@/components/diamond_image';
-import Image from 'next/image';
 import MessageFromCreative from './components/messageFromCreative';
-import CustomWidthTooltip from './components/customToolTip';
 
-const leaders = [
+
+export const leaders = [
   {
     name: 'Trần Nam Chung',
     title: 'Chief Strategy Officer - Founder',
-    image: '/img/tran-nam-chung.png',
+    fullTitle: 'Chief Strategy Officer - Founder',
+    image: '/img/about/TNC.png',
     description: [
       'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
       'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
@@ -30,7 +27,8 @@ const leaders = [
   {
     name: 'Tuấn Nguyễn',
     title: 'CEO - Co-Founder',
-    image: '/img/tuan-nguyen.png',
+    fullTitle: 'Chief Executive Officer - Co-Founder',
+    image: '/img/about/TN.png',
     description: [
       'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
       'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
@@ -40,8 +38,9 @@ const leaders = [
   },
   {
     name: 'Hoàng Thành Đạt',
-    title: 'CEO - CTO-Founder',
-    image: '/img/hoang-thanh-dat.png',
+    title: 'CTO - Co-Founder',
+    fullTitle: 'Chief Technology Officer - Co-Founder',
+    image: '/img/about/HTD.png',
     description: [
       'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
       'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
@@ -52,7 +51,8 @@ const leaders = [
   {
     name: 'Tuấn Đặng',
     title: 'CFO - Co-Founder',
-    image: '/img/tuan-dang.png',
+    fullTitle: 'Chief Financial Officer - Co-Founder',
+    image: '/img/about/TD.png',
     description: [
       'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
       'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
@@ -151,10 +151,11 @@ const staffs = [
       'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.',
     ],
   },
-  // Thêm các thành viên khác tương tự
+
 ];
 
 const AboutPage: React.FC = () => {
+  const [hoveredLeader, setHoveredLeader] = useState<number | null>(null);
   const { ref, inView, entry } = useInView({
     threshold: 0,
     triggerOnce: true,
@@ -241,7 +242,7 @@ const AboutPage: React.FC = () => {
               <div className="flex flex-col md:gap-2">
                 <p
                   ref={ref}
-                  className={`text-[28px] md:text-[40px] leading-[36px] md:leading-[56px] text-[#04141A] font-sans font-bold uppercase duration-700 ease-in-out transform ${
+                  className={`text-[28px] lg:text-[40px] leading-[36px] lg:leading-[56px] text-[#04141A] font-sans font-bold uppercase duration-700 ease-in-out transform ${
                     inView
                       ? 'opacity-100 translate-y-0'
                       : 'opacity-0 translate-y-10'
@@ -251,7 +252,7 @@ const AboutPage: React.FC = () => {
                 </p>
                 <p
                   ref={ref}
-                  className={`text-[28px] md:text-[40px] leading-[36px] md:leading-[56px] text-[#48B96D] font-sans font-bold uppercase duration-700 delay-200 ease-in-out transform ${
+                  className={`text-[28px] lg:text-[40px] leading-[36px] lg:leading-[56px] text-[#48B96D] font-sans font-bold uppercase duration-700 delay-200 ease-in-out transform ${
                     inView
                       ? 'opacity-100 translate-y-0'
                       : 'opacity-0 translate-y-10'
@@ -261,7 +262,7 @@ const AboutPage: React.FC = () => {
                 </p>
                 <p
                   ref={ref}
-                  className={`text-[28px] md:text-[40px] leading-[36px] md:leading-[56px] font-sans text-[#48B96D] font-bold uppercase duration-700 delay-500 ease-in-out transform ${
+                  className={`text-[28px] leading-[36px] lg:text-[40px] lg:leading-[56px] font-sans text-[#48B96D] font-bold uppercase duration-700 delay-500 ease-in-out transform ${
                     inView
                       ? 'opacity-100 translate-y-0'
                       : 'opacity-0 translate-y-10'
@@ -272,7 +273,7 @@ const AboutPage: React.FC = () => {
               </div>
               <p
                 ref={ref}
-                className={`text-[14px] md:text-[20px] text-[#000000]/60 font-sans leading-[24px] md:leading-[32px] max-w-[500px]   duration-700  ease-in-out transform ${
+                className={`text-[14px] lg:text-[20px] text-[#000000]/60 font-sans leading-[24px] lg:leading-[32px] max-w-[500px]   duration-700  ease-in-out transform ${
                   inView
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-10'
@@ -284,26 +285,17 @@ const AboutPage: React.FC = () => {
               </p>
 
               <div className="flex w-[100%] justify-center lg:justify-start items-center lg:items-start  max-w-[500px]">
-                <button
-                  ref={ref}
-                  className={` bg-[#48B96D] text-white font-sans text-[16px] leading-[20px]  px-[16px] py-[14px] rounded-[999px] text-center  hover:bg-[#379256] transition-all  duration-300 delay-200 ease-in-out transform ${
+                <a
+                  href="/guides"
+                  className={` bg-[#48B96D] text-white font-sans text-[14px] lg:text-[16px] leading-[20px]  px-[16px] py-[14px] rounded-[999px] text-center  hover:bg-[#379256] transition-all  duration-300 delay-200 ease-in-out transform ${
                     inView
                       ? 'opacity-100 translate-y-0'
                       : 'opacity-0 translate-y-10'
                   }`}
                 >
-                  Khám phá cơ hội
-                </button>
-                {/* <button
-                  ref={ref}
-                  className={`bg-transparent border font-sans border-[#FFFFFF29] text-[#FFFFFF] text-[16px] leading-[20px] text-center   px-[16px] py-[14px]  rounded-[999px]  hover:bg-[#379256]  transition-all  duration-300 delay-500 ease-in-out transform ${
-                    inView
-                      ? 'opacity-100 translate-y-0'
-                      : 'opacity-0 translate-y-10'
-                  } `}
-                >
-                  Liên hệ
-                </button> */}
+                  Tham gia cùng chúng tôi
+                </a>
+
               </div>
             </div>
             <div className=" flex flex-col gap-[32px] justify-end items-end">
@@ -312,21 +304,7 @@ const AboutPage: React.FC = () => {
           </div>
         </div>
         <div className="w-full flex flex-col items-center justify-center max-w-[1440px]">
-          {/* <div className="flex justify-center items-center w-full  bg-transparent  px-32">
-            <video
-              ref={ref}
-              className={`w-full border  border-gray-200 rounded-[16px] dark:border-gray-700  duration-1000  ease-in-out transform ${
-                inView
-                  ? 'opacity-100 translate-y-0'
-                  : 'opacity-0 translate-y-15'
-              }`}
-              muted
-              autoPlay
-              loop
-            >
-              <source src="/video/about_vd.mp4" type="video/mp4" />
-            </video>
-          </div> */}
+
         </div>
       </div>
 
@@ -334,7 +312,7 @@ const AboutPage: React.FC = () => {
       <div className={styles['about-container']}>
         <section
           ref={ref2}
-          className="flex flex-col w-full justify-center items-center bg-white py-[62px]"
+          className="flex flex-col w-full justify-center items-center bg-white py-2 lg:py-[62px]"
         >
           <div className="flex flex-col lg:flex-row-reverse lg:p-0 p-5 items-center justify-around w-full max-w-[1440px]">
             <div className={styles.textContent}>
@@ -345,16 +323,22 @@ const AboutPage: React.FC = () => {
                     : 'opacity-0 translate-y-10 scale-50'
                 }`}
                 sx={{
-                  fontSize: '40px',
+                  fontSize: {
+                    xs: '28px',
+                    lg: '40px'
+                  },
                   fontWeight: 'bold',
-                  lineHeight: '48px',
-                  fontFamily: 'Inter',
+                  lineHeight: {
+                    xs: '36px',
+                    lg: '48px'
+                  },
+                  fontFamily: 'Inter'
                 }}
               >
                 TẦM NHÌN
               </Typography>
               <p
-                className={` duration-700 text-center lg:text-left ease-in-out font-sans transform ${
+                className={` duration-700 text-base leading-[24px] text-center lg:text-left ease-in-out font-sans transform ${
                   inView2
                     ? 'opacity-100 scale-100 translate-y-0'
                     : 'opacity-0 translate-y-10 scale-50'
@@ -482,7 +466,7 @@ const AboutPage: React.FC = () => {
 
         <section
           ref={ref3}
-          className="flex flex-col justify-around items-center w-full py-[62px]"
+          className="flex flex-col justify-around items-center w-full py-2 lg:py-[62px]"
         >
           <div className="flex flex-col lg:flex-row p-5 lg:p-0 items-center justify-around w-full max-w-[1440px]">
             <div className={styles.textContent}>
@@ -493,16 +477,22 @@ const AboutPage: React.FC = () => {
                     : 'opacity-0 translate-y-10 scale-50'
                 }`}
                 sx={{
-                  fontSize: '40px',
+                  fontSize: {
+                    xs: '28px',
+                    lg: '40px'
+                  },
                   fontWeight: 'bold',
-                  lineHeight: '48px',
-                  fontFamily: 'Inter',
+                  lineHeight: {
+                    xs: '36px',
+                    lg: '48px'
+                  },
+                  fontFamily: 'Inter'
                 }}
               >
                 SỨ MỆNH
               </Typography>
               <p
-                className={` duration-700 text-center lg:text-left ease-in-out font-sans transform ${
+                className={` duration-700 text-base leading-[24px] text-center lg:text-left ease-in-out font-sans transform ${
                   inView3
                     ? 'opacity-100 scale-100 translate-y-0'
                     : 'opacity-0 translate-y-10 scale-50'
@@ -632,7 +622,7 @@ const AboutPage: React.FC = () => {
         </section>
         <section
           ref={ref4}
-          className="flex flex-col justify-center items-center w-full py-[62px]"
+          className="flex flex-col justify-center items-center w-full py-2 lg:py-[62px]"
         >
           <div className="flex flex-col items-center justify-center w-full max-w-[1440px] px-5 lg:px-[120px] gap-[40px]">
             <div className="flex flex-col text-center gap-10 w-[780px] max-[768px]:!w-full">
@@ -643,11 +633,16 @@ const AboutPage: React.FC = () => {
                     : 'opacity-0 translate-y-10 scale-50'
                 }`}
                 sx={{
-                  textTransform: 'uppercase',
-                  fontSize: '40px',
+                  fontSize: {
+                    xs: '28px',
+                    lg: '40px'
+                  },
                   fontWeight: 'bold',
-                  lineHeight: '48px',
-                  fontFamily: 'Inter',
+                  lineHeight: {
+                    xs: '36px',
+                    lg: '48px'
+                  },
+                  fontFamily: 'Inter'
                 }}
               >
                 Giá trị cốt lõi
@@ -675,10 +670,10 @@ const AboutPage: React.FC = () => {
               `}
               >
                 <div className="rounded-lg p-4 flex flex-col gap-2 w-full lg:w-[90%] text-center lg:text-left shadow-md absolute -bottom-0 z-50 bg-white min-h-[164px]">
-                  <p className="!text-xl font-semibold !text-black font-sans">
+                  <p className="!text-xl leading-[28px] font-semibold !text-black font-sans">
                     Đổi mới sáng tạo
                   </p>
-                  <p className="!text-sm text-clip font-sans">
+                  <p className="!text-sm leading-[24px] text-clip font-sans">
                     Hyracap luôn cập nhật những công nghệ tiên tiến hiện đại
                     nhất. Chúng tôi thúc đẩy sự sáng tạo và phát triển liên tục.
                   </p>
@@ -699,10 +694,10 @@ const AboutPage: React.FC = () => {
                 }`}
               >
                 <div className="rounded-lg p-4 flex flex-col gap-2 w-full lg:w-[90%] text-center lg:text-left shadow-md absolute -bottom-0 z-50 bg-white  min-h-[164px]">
-                  <p className="!text-xl font-semibold !text-black font-sans">
+                  <p className="!text-xl leading-[28px] font-semibold !text-black font-sans">
                     Bền vững
                   </p>
-                  <p className="!text-sm text-clip font-sans">
+                  <p className="!text-sm leading-[24px] text-clip font-sans">
                     Tạo nên mô hình đầu tư bền vững. Giúp mọi người có nguồn thu
                     nhập thụ động vững vàng tự do tài chính
                   </p>
@@ -723,10 +718,10 @@ const AboutPage: React.FC = () => {
                 }`}
               >
                 <div className="rounded-lg p-4 flex flex-col gap-2 w-full lg:w-[90%] text-center lg:text-left shadow-md absolute -bottom-0 z-50 bg-white  min-h-[164px]">
-                  <p className="!text-xl font-semibold !text-black font-sans">
+                  <p className="!text-xl leading-[28px] font-semibold !text-black font-sans">
                     Minh bạch an toàn
                   </p>
-                  <p className="!text-sm text-clip font-sans">
+                  <p className="!text-sm leading-[24px] text-clip font-sans">
                     Đảm bảo rằng tất cả các giao dịch và hoạt động trên nền tảng
                     là minh bạch, an toàn và có thể được kiểm tra
                   </p>
@@ -747,10 +742,10 @@ const AboutPage: React.FC = () => {
                 }`}
               >
                 <div className="rounded-lg p-4 flex flex-col gap-2 w-full lg:w-[90%] text-center lg:text-left shadow-md absolute -bottom-0 z-50 bg-white  min-h-[164px]">
-                  <p className="!text-xl font-semibold !text-black font-sans">
+                  <p className="!text-xl leading-[28px] font-semibold !text-black font-sans">
                     Hợp lực
                   </p>
-                  <p className="!text-sm text-clip font-sans">
+                  <p className="!text-sm leading-[24px] text-clip font-sans">
                     Khuyến khích sự hợp tác giữa các cá nhân và tổ chức. Mang
                     lại lợi ích và giá trị tốt đẹp cho cộng đồng
                   </p>
@@ -813,7 +808,7 @@ const AboutPage: React.FC = () => {
 
         <section
           ref={ref7}
-          className="flex flex-col justify-center items-center w-full py-[62px]"
+          className="flex flex-col justify-center items-center w-full py-5 lg:py-[62px]"
         >
           <div className="flex flex-col justify-center items-center w-full max-w-[1440px]">
             <div className="flex flex-col w-full max-w-[781px] justify-center items-center gap-[40px]">
@@ -824,13 +819,18 @@ const AboutPage: React.FC = () => {
                     : 'opacity-0 translate-y-10 scale-50'
                 }
               `}
-                sx={{
-                  textTransform: 'uppercase',
-                  fontSize: '40px',
-                  fontWeight: 'bold',
-                  lineHeight: '48px',
-                  fontFamily: 'Inter',
-                }}
+              sx={{
+                fontSize: {
+                  xs: '28px',
+                  lg: '40px'
+                },
+                fontWeight: 'bold',
+                lineHeight: {
+                  xs: '36px',
+                  lg: '48px'
+                },
+                fontFamily: 'Inter'
+              }}
               >
                 Đội ngũ sáng lập
               </Typography>
@@ -848,49 +848,9 @@ const AboutPage: React.FC = () => {
             </div>
             <div className="grow grid grid-cols-1 lg:grid-cols-4 gap-4 w-full mx-auto place-items-center items-center ">
               {leaders.slice(0, 4).map((leader, index) => (
-                <CustomWidthTooltip
-                  title={
-                    <div className="w-[300px] px-[13px] py-[16px] rounded-[4px]">
-                      <Typography
-                        sx={{
-                          fontSize: '20px',
-                          fontWeight: 600,
-                          lineHeight: '28px',
-                          width: '100%',
-                          textAlign: 'center',
-                          fontFamily: 'Inter',
-                        }}
-                      >
-                        {leader.name}
-                      </Typography>
-                      <Typography
-                        sx={{
-                          fontSize: '14px',
-                          lineHeight: '24px',
-                          marginBottom: '14px',
-                          width: '100%',
-                          textAlign: 'center',
-                          fontFamily: 'Inter',
-                        }}
-                      >
-                        {leader.title}
-                      </Typography>
-                      <Typography
-                        sx={{
-                          fontSize: '14px',
-                          lineHeight: '24px',
-                          width: '100%',
-                          textAlign: 'center',
-                          fontWeight: 400,
-                          padding: '0 16px',
-                          fontFamily: 'Inter',
-                        }}
-                      >
-                        {leader.description}
-                      </Typography>
-                    </div>
-                  }
+                <Link
                   key={index}
+                  href={`/about/leaderdetail`}
                   className="mt-5 px-[13px]"
                 >
                   <div
@@ -921,7 +881,8 @@ const AboutPage: React.FC = () => {
                       </div>
                     </div>
                   </div>
-                </CustomWidthTooltip>
+
+                </Link>
               ))}
             </div>
           </div>
