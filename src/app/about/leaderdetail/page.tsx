@@ -58,7 +58,7 @@ export default function LeaderDetail() {
             <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full bg-white lg:bg-[#000000]/20 backdrop-blur-[24px] h-auto lg:h-[112px] flex items-center justify-center gap-[24px]">
             <button 
                 onClick={() => router.back()}
-                className="flex items-center justify-center w-[48px]  lg:w-[120px] h-full bg-black lg:bg-transparent "
+                className="flex items-center justify-center w-[66px]  lg:w-[120px] h-[66px] lg:h-[112px]  bg-black lg:bg-transparent "
               >
                 <IoArrowBack className="w-10 h-10 text-white" />
               </button>
