@@ -176,7 +176,7 @@ const ProjectSlider: React.FC = () => {
             spaceBetween={isMobile ? 20 : 40}
             slidesPerView={slidesPerView}
             loopAdditionalSlides={Math.ceil(slidesPerView)}
-            centeredSlides={false}
+            centeredSlides={true}
             slidesOffsetBefore={slidesOffsetBefore}
             slidesOffsetAfter={slidesOffsetBefore}
             watchSlidesProgress={true}

@@ -8,7 +8,9 @@ import InfoSection from './info/page';
 import { Stack, Typography } from '@mui/material';
 import CustomTabPanel from '@/components/customTabPanel';
 import PitchingDeckSection from './pitchingdeck/page';
-
+import ContractSection from '@/app/guides/contract/page';
+import FinanceRoadSection from './finance_road/page';
+import BusinessPlanSection from './business plan/page';
 const DetailCategoryPage: React.FC = () => {
   const pathname = usePathname();
 
@@ -103,16 +105,16 @@ const DetailCategoryPage: React.FC = () => {
         <InfoSection />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        <InfoSection />
+        <PitchingDeckSection />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
-        <InfoSection />
+        <ContractSection />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={3}>
-        <InfoSection />
+        <FinanceRoadSection />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={4}>
-        <InfoSection />
+        <BusinessPlanSection />
       </CustomTabPanel>
     </Box>
   );
