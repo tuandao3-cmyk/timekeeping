@@ -127,7 +127,7 @@ const ProjectSlider: React.FC = () => {
   } else if (isXXLargeDesktop) {
     slidesPerView = 1.75;
   } else if (isUltraWide) {
-    slidesPerView = 2;
+    slidesPerView = 1.75;
   } else {
     slidesPerView = 1;
   }
@@ -157,25 +157,32 @@ const ProjectSlider: React.FC = () => {
   }, [swiper, slidesOffsetBefore, slidesPerView]);
 
   useEffect(() => {
-    if (progressBarRef.current) {
-      const percentage = ((activeIndex + 1) / projects.length) * 100;
-      progressBarRef.current.style.width = `${percentage}%`;
-    }
-  }, [activeIndex, projects.length]);
+  if (progressBarRef.current) {
+    const realIndex = swiper?.realIndex || 0;
+    const percentage = ((realIndex + 1) / projects.length) * 100;
+    progressBarRef.current.style.width = `${percentage}%`;
+  }
+}, [activeIndex, projects.length]);
 
   return (
-    <div className="flex w-full flex-col justify-center items-center overflow-x-hidden ">
-      <div className="w-full  overflow-hidden">
-        <div className="w-full px-[12px] md:px-0">
-          <h2 className="text-[28px] md:text-[38px] text-[#04141A] font-[700] leading-[36px]  mb-8 text-center font-sans">
+    <div className="flex w-full mx-auto max-w-[1440px] flex-col justify-center items-center overflow-x-hidden ">
+      <div className="w-full  relative">
+        <div className="w-full px-4 md:px-0">
+          <h2 className="text-[28px] md:text-[38px] text-[#04141A] font-[700] leading-[36px] md:leading-[57px] mb-8 text-center font-sans">
             DỰ ÁN ĐANG GỌI VỐN
           </h2>
           <Swiper
             modules={[Navigation, Pagination]}
             spaceBetween={isMobile ? 20 : 40}
             slidesPerView={slidesPerView}
+            loopAdditionalSlides={Math.ceil(slidesPerView)}
             centeredSlides={false}
             slidesOffsetBefore={slidesOffsetBefore}
+            slidesOffsetAfter={slidesOffsetBefore}
+            watchSlidesProgress={true}
+            normalizeSlideIndex={true}
+            roundLengths={true} 
+            
             navigation={
               isMdOrLarger
                 ? {
@@ -186,8 +193,12 @@ const ProjectSlider: React.FC = () => {
             }
             loop={true}
             onSwiper={setSwiper}
-            onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
-            className="mySwiper"
+            onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+            speed={800}
+            slideActiveClass="swiper-slide-active"
+            slidePrevClass="swiper-slide-prev"
+            slideNextClass="swiper-slide-next"
+            className="mySwiper !overflow-visible"
             effect="coverflow"
             coverflowEffect={{
               rotate: 0,
@@ -196,14 +207,18 @@ const ProjectSlider: React.FC = () => {
               modifier: 1,
               slideShadows: false,
             }}
+
           >
             {projects.map((project, index) => (
-              <SwiperSlide key={project.id} className="max-w-[778px]">
-                {({ isActive }) => (
-                  <a
-                    ref={ref}
-                    href="/detail-category"
-                    className={`bg-[#07212C] rounded-xl md:max-h-[386px] pb-[20px] md:pb-0 max-w-[778px] overflow-hidden transition-all duration-300 flex flex-col md:flex-row ${isActive ? 'scale-100' : 'scale-90'} `}
+              <SwiperSlide key={project.id} className="transition-all duration-300  max-w-[778px]">
+      {({ isActive, isNext, isPrev }) => (
+        <a
+          ref={ref}
+          href="/detail-category"
+          className={`bg-[#07212C] rounded-xl overflow-visible md:max-h-[386px] pb-[20px] md:pb-0 max-w-[778px] flex flex-col md:flex-row 
+          ${isActive ? 'scale-100 z-10' : 'scale-90 z-0'} 
+          ${isNext ? 'translate-x-[-5%]' : ''}
+          ${isPrev ? 'translate-x-[5%]' : ''}`}
                   >
                     <div
                       ref={ref}
@@ -317,8 +332,8 @@ const ProjectSlider: React.FC = () => {
           >
             <MdArrowForwardIos className="text-3xl text-gray-700 mr-1" />
           </div> */}
-          <div className="flex justify-center mt-6 w-full pb-6">
-            <div className="bg-gray-200 h-2 rounded-full w-[85vw] ">
+          <div className="flex justify-center items-center mt-6 w-full  pb-6">
+            <div className="bg-gray-200 h-2 rounded-full w-[1200px] ">
               <div
                 ref={progressBarRef}
                 className="bg-[#31814B] h-2 rounded-full transition-all duration-300 font-sans"
