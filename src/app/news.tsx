@@ -78,9 +78,9 @@ const News = () => {
               Xem thêm
             </button>
           </div>
-          <div className="flex flex-col md:flex-row md:gap-[126px] p-3 w-full">
+          <div className="flex flex-col md:flex-row md:gap-5 xl:gap-[126px] p-3 w-full items-center">
             <div
-              className={`${styles.mainNews} md:max-w-[486px] max-w-none  hidden md:flex`}
+              className={`${styles.mainNews} md:max-w-[486px] max-w-none  hidden md:flex `}
             >
               <a
                 href={newsData[0].videoLink}
@@ -89,7 +89,7 @@ const News = () => {
                 <img
                   src={newsData[0].image}
                   alt="Main News"
-                  className={`${styles.mainImage} duration-300 md:max-w-[486px]  max-h-[320px] md:max-h-none ease-in-out transform ${
+                  className={`${styles.mainImage} duration-300 h-[615px] md:max-h-[655px] lg:max-w-[486px]  lg:max-h-[320px]  ease-in-out transform ${
                     inView
                       ? 'opacity-100 translate-y-0'
                       : 'opacity-0 translate-y-10'
@@ -160,7 +160,7 @@ const News = () => {
                 </div>
               </div>
             </div>
-            <div className={`${styles.sideNews} `}>
+            <div className={`${styles.sideNews}`}>
               <div className="hidden md:flex flex-col">
                 {newsData.slice(1).map((news, index) => (
                   <div
@@ -177,13 +177,18 @@ const News = () => {
                       >
                         <div className={styles.sideBorder}>
                           <div className="flex flex-col gap-[16px]">
+                            <img
+                              src={news.image}
+                              alt={`News ${index}`}
+                              className={`${styles.newsImage} md:max-w-[250px] md:max-h-[130px] md:min-h-0 min-h-[320px] md:block lg:hidden`}
+                            />
                             <p
                               className={`${styles.newsTitle}   font-sans text-16px text-[#000000CC] text-opacity-80`}
                             >
                               {news.title}
                             </p>
 
-                            <span className="font-inter text-sm font-sans leading-6 text-gray-600">
+                            <span className="font-inter text-sm font-sans leading-6 text-gray-600 md:hidden lg:block">
                               {news.description}
                             </span>
                           </div>
@@ -194,7 +199,7 @@ const News = () => {
                         <img
                           src={news.image}
                           alt={`News ${index}`}
-                          className={`${styles.newsImage} md:max-w-[170px] md:max-h-[170px] md:min-h-0 min-h-[320px]`}
+                          className={`${styles.newsImage} md:max-w-[170px] md:max-h-[170px] md:min-h-0 min-h-[320px] md:hidden lg:block`}
                         />
                       </div>
                     </a>
@@ -265,11 +270,11 @@ const News = () => {
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
+                        fillRule="evenodd"
+                        clipRule="evenodd"
                         d="M5.40906 0.257395C5.00324 -0.117211 4.37058 -0.0919087 3.99597 0.31391L0.765201 3.81387C0.411604 4.19693 0.4116 4.78737 0.765194 5.17043L3.99597 8.67047C4.37057 9.07629 5.00323 9.1016 5.40905 8.727C5.81487 8.3524 5.84018 7.71974 5.46558 7.31392L3.78397 5.49215L13.5 5.49215C14.0523 5.49215 14.5 5.04444 14.5 4.49216C14.5 3.93987 14.0523 3.49215 13.5 3.49216L3.784 3.49215L5.46557 1.67048C5.84018 1.26466 5.81487 0.632001 5.40906 0.257395Z"
                         fill="black"
-                        fill-opacity="0.56"
+                        fillOpacity="0.56"
                       />
                     </svg>
                   </IconButton>
@@ -288,11 +293,11 @@ const News = () => {
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
+                        fillRule="evenodd"
+                        clipRule="evenodd"
                         d="M9.09094 0.257395C9.49676 -0.117211 10.1294 -0.0919087 10.504 0.31391L13.7348 3.81387C14.0884 4.19693 14.0884 4.78737 13.7348 5.17043L10.504 8.67047C10.1294 9.07629 9.49677 9.1016 9.09095 8.727C8.68513 8.3524 8.65982 7.71974 9.03442 7.31392L10.716 5.49215L0.999999 5.49215C0.447714 5.49215 -7.64154e-07 5.04444 -7.86799e-07 4.49216C-8.09444e-07 3.93987 0.447714 3.49215 0.999999 3.49216L10.716 3.49215L9.03443 1.67048C8.65982 1.26466 8.68513 0.632001 9.09094 0.257395Z"
                         fill="black"
-                        fill-opacity="0.56"
+                        fillOpacity="0.56"
                       />
                     </svg>
                   </IconButton>

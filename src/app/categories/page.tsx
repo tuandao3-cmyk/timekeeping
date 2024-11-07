@@ -503,72 +503,64 @@ const CategoryPage: React.FC = () => {
                   gap: 2,
                 }}
               >
-                {projects.map(
-                  (project, index) =>
-                    ((index < 3 && window.innerWidth <= 500) ||
-                      (index < 4 && window.innerWidth >= 500) ||
-                      (index < 6 && window.innerWidth >= 900)) && (
-                      <Link
-                        href={`/detail-category/${project.name}`}
-                        key={index}
-                      >
-                        <Box
-                          className={`${inView2 ? 'animate-fadeIn scale-100' : 'translate-y-20 opacity-0 scale-0'} py-4 transition
+                {projects.map((project, index) => (
+                  <Link href={`/detail-category/${project.name}`} key={index}>
+                    <Box
+                      className={`${inView2 ? 'animate-fadeIn scale-100' : 'translate-y-20 opacity-0 scale-0'} py-4 transition
                duration-300 ease-in-out delay-${index === 4 ? 300 : index * 100}
                 hover:scale-105 hover:transition-all hover:duration-300 hover:ease-in-out
                `}
-                        >
-                          <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-                            <img
-                              src={project.img}
-                              alt={project.name}
-                              className="w-full h-[250px] object-cover"
-                            />
-                            <div className="p-4">
-                              <h3 className="text-lg font-bold font-sans mt-2 uppercase">
-                                {project.name}
-                              </h3>
-                              <div className="mt-4">
-                                <div className="text-sm font-normal font-sans uppercase">
-                                  Mục tiêu huy động
-                                </div>
-                                <div className="text-xl font-sans font-semibold">
-                                  {project.amount}
-                                </div>
-                                <div className="h-2 bg-gray-300 rounded mt-2">
-                                  <div
-                                    className="bg-green-500 h-full rounded"
-                                    style={{
-                                      width: `${project.progress}%`,
-                                    }}
-                                  ></div>
-                                </div>
-                                <div className="flex justify-between my-2 text-sm text-gray-600">
-                                  <span className="text-[#48B96D] font-sans font-semibold">
-                                    {project.funded}
-                                  </span>
-                                  <div className="flex gap-1 font-sans">
-                                    <span>Hoàn thành</span>
-                                    <p className="text-[#48B96D] font-sans font-semibold">
-                                      {project.progress}%
-                                    </p>
-                                  </div>
-                                </div>
-                                <div className="flex gap-2">
-                                  <span className="text-gray-800 font-sans px-2 py-1 rounded-md font-bold bg-[#F6F6F6]">
-                                    {project.category}
-                                  </span>
-                                  <span className="text-gray-800 font-sans px-2 py-1 rounded-md font-bold bg-[#F6F6F6]">
-                                    {project.category}
-                                  </span>
-                                </div>
+                    >
+                      <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+                        <img
+                          src={project.img}
+                          alt={project.name}
+                          className="w-full h-[250px] object-cover"
+                        />
+                        <div className="p-4">
+                          <h3 className="text-lg font-bold font-sans mt-2 uppercase">
+                            {project.name}
+                          </h3>
+                          <div className="mt-4">
+                            <div className="text-sm font-normal font-sans uppercase">
+                              Mục tiêu huy động
+                            </div>
+                            <div className="text-xl font-sans font-semibold">
+                              {project.amount}
+                            </div>
+                            <div className="h-2 bg-gray-300 rounded mt-2">
+                              <div
+                                className="bg-green-500 h-full rounded"
+                                style={{
+                                  width: `${project.progress}%`,
+                                }}
+                              ></div>
+                            </div>
+                            <div className="flex justify-between my-2 text-sm text-gray-600">
+                              <span className="text-[#48B96D] font-sans font-semibold">
+                                {project.funded}
+                              </span>
+                              <div className="flex gap-1 font-sans">
+                                <span>Hoàn thành</span>
+                                <p className="text-[#48B96D] font-sans font-semibold">
+                                  {project.progress}%
+                                </p>
                               </div>
                             </div>
+                            <div className="flex gap-2">
+                              <span className="text-gray-800 font-sans px-2 py-1 rounded-md font-bold bg-[#F6F6F6]">
+                                {project.category}
+                              </span>
+                              <span className="text-gray-800 font-sans px-2 py-1 rounded-md font-bold bg-[#F6F6F6]">
+                                {project.category}
+                              </span>
+                            </div>
                           </div>
-                        </Box>
-                      </Link>
-                    )
-                )}
+                        </div>
+                      </div>
+                    </Box>
+                  </Link>
+                ))}
               </Box>
             </div>
           </div>
@@ -610,73 +602,65 @@ const CategoryPage: React.FC = () => {
                   gap: 2,
                 }}
               >
-                {projects2.map(
-                  (project, index) =>
-                    ((index < 3 && window.innerWidth <= 500) ||
-                      (index < 4 && window.innerWidth >= 500) ||
-                      (index < 6 && window.innerWidth >= 900)) && (
-                      <Link
-                        href={`/detail-category/${project.name}`}
-                        key={index}
-                      >
-                        <Box
-                          className={`${inView3 ? 'animate-fadeIn scale-100' : 'translate-y-20 opacity-0 scale-0'} py-4 transition
+                {projects2.map((project, index) => (
+                  <Link href={`/detail-category/${project.name}`} key={index}>
+                    <Box
+                      className={`${inView3 ? 'animate-fadeIn scale-100' : 'translate-y-20 opacity-0 scale-0'} py-4 transition
                duration-300 ease-in-out delay-${index === 4 ? 300 : index * 100}  hover:scale-105 hover:transition-all hover:duration-300 hover:ease-in-out`}
-                        >
-                          <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-                            <img
-                              src={project.img}
-                              alt={project.name}
-                              className="w-full h-[250px] object-cover"
-                            />
-                            <div className="p-4">
-                              {/* <span className="text-sm bg-blue-500 text-white py-1 px-3 rounded-full">
+                    >
+                      <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+                        <img
+                          src={project.img}
+                          alt={project.name}
+                          className="w-full h-[250px] object-cover"
+                        />
+                        <div className="p-4">
+                          {/* <span className="text-sm bg-blue-500 text-white py-1 px-3 rounded-full">
                             Series A
                           </span> */}
-                              <h3 className="text-lg font-bold font-sans mt-2 uppercase">
-                                {project.name}
-                              </h3>
-                              <div className="mt-4">
-                                <div className="text-sm font-normal font-sans uppercase">
-                                  Mục tiêu huy động
-                                </div>
-                                <div className="text-xl font-sans font-semibold">
-                                  {project.amount}
-                                </div>
-                                <div className="h-2 bg-gray-300 rounded mt-2">
-                                  <div
-                                    className="bg-green-500 h-full rounded"
-                                    style={{
-                                      width: `${project.progress}%`,
-                                    }}
-                                  ></div>
-                                </div>
-                                <div className="flex justify-between mt-2 text-sm text-gray-600">
-                                  <span className="text-[#48B96D] font-sans font-semibold">
-                                    {project.funded}
-                                  </span>
-                                  <div className="flex gap-1 font-sans">
-                                    <span>Hoàn thành</span>
-                                    <p className="text-[#48B96D] font-semibold">
-                                      {project.progress}%
-                                    </p>
-                                  </div>
-                                </div>
-                                <div className="flex gap-2">
-                                  <span className="text-gray-800 px-2 py-1 font-sans rounded-md font-bold bg-[#F6F6F6]">
-                                    {project.category}
-                                  </span>
-                                  <span className="text-gray-800 px-2 py-1 font-sans rounded-md font-bold bg-[#F6F6F6]">
-                                    {project.category}
-                                  </span>
-                                </div>
+                          <h3 className="text-lg font-bold font-sans mt-2 uppercase">
+                            {project.name}
+                          </h3>
+                          <div className="mt-4">
+                            <div className="text-sm font-normal font-sans uppercase">
+                              Mục tiêu huy động
+                            </div>
+                            <div className="text-xl font-sans font-semibold">
+                              {project.amount}
+                            </div>
+                            <div className="h-2 bg-gray-300 rounded mt-2">
+                              <div
+                                className="bg-green-500 h-full rounded"
+                                style={{
+                                  width: `${project.progress}%`,
+                                }}
+                              ></div>
+                            </div>
+                            <div className="flex justify-between mt-2 text-sm text-gray-600">
+                              <span className="text-[#48B96D] font-sans font-semibold">
+                                {project.funded}
+                              </span>
+                              <div className="flex gap-1 font-sans">
+                                <span>Hoàn thành</span>
+                                <p className="text-[#48B96D] font-semibold">
+                                  {project.progress}%
+                                </p>
                               </div>
                             </div>
+                            <div className="flex gap-2">
+                              <span className="text-gray-800 px-2 py-1 font-sans rounded-md font-bold bg-[#F6F6F6]">
+                                {project.category}
+                              </span>
+                              <span className="text-gray-800 px-2 py-1 font-sans rounded-md font-bold bg-[#F6F6F6]">
+                                {project.category}
+                              </span>
+                            </div>
                           </div>
-                        </Box>
-                      </Link>
-                    )
-                )}
+                        </div>
+                      </div>
+                    </Box>
+                  </Link>
+                ))}
               </Box>
             </div>
           </div>

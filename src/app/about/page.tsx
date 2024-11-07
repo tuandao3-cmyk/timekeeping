@@ -1,19 +1,15 @@
 'use client';
 
-import React from 'react';
 import styles from '@/app/about/about.module.css';
-import Link from 'next/link';
-import { useInView } from 'react-intersection-observer';
 import { Typography } from '@mui/material';
+import React from 'react';
+import { useInView } from 'react-intersection-observer';
 
-import Partner from '../partner';
-import ArticlesSection from '../ArticlesSection';
 import PressSection from '../PressSection';
 import News from '../news';
-import DiamondImage from '@/components/diamond_image';
-import Image from 'next/image';
-import MessageFromCreative from './components/messageFromCreative';
+import Partner from '../partner';
 import CustomWidthTooltip from './components/customToolTip';
+import MessageFromCreative from './components/messageFromCreative';
 
 const leaders = [
   {
@@ -156,7 +152,7 @@ const staffs = [
 
 const AboutPage: React.FC = () => {
   const { ref, inView, entry } = useInView({
-    threshold: 0.1,
+    threshold: 0,
     triggerOnce: true,
   });
   const {
@@ -164,7 +160,7 @@ const AboutPage: React.FC = () => {
     inView: inView2,
     entry: entry2,
   } = useInView({
-    threshold: 0.1,
+    threshold: 0,
     triggerOnce: true,
   });
   const {
@@ -172,7 +168,7 @@ const AboutPage: React.FC = () => {
     inView: inView3,
     entry: entry3,
   } = useInView({
-    threshold: 0.1,
+    threshold: 0,
     triggerOnce: true,
   });
   const {
@@ -180,7 +176,7 @@ const AboutPage: React.FC = () => {
     inView: inView4,
     entry: entry4,
   } = useInView({
-    threshold: 0.1,
+    threshold: 0,
     triggerOnce: true,
   });
   const {
@@ -188,7 +184,7 @@ const AboutPage: React.FC = () => {
     inView: inView5,
     entry: entry5,
   } = useInView({
-    threshold: 0.1,
+    threshold: 0,
     triggerOnce: true,
   });
   const {
@@ -196,7 +192,7 @@ const AboutPage: React.FC = () => {
     inView: inView6,
     entry: entry6,
   } = useInView({
-    threshold: 0.1,
+    threshold: 0,
     triggerOnce: true,
   });
   const {
@@ -204,7 +200,7 @@ const AboutPage: React.FC = () => {
     inView: inView7,
     entry: entry7,
   } = useInView({
-    threshold: 0.1,
+    threshold: 0,
     triggerOnce: true,
   });
   const {
@@ -212,7 +208,7 @@ const AboutPage: React.FC = () => {
     inView: inView8,
     entry: entry8,
   } = useInView({
-    threshold: 0.1,
+    threshold: 0,
     triggerOnce: true,
   });
   const {
@@ -236,7 +232,7 @@ const AboutPage: React.FC = () => {
         }}
       >
         <div className="flex flex-col items-center justify-center w-full max-w-[1440px]">
-          <div className="flex justify-between items-center w-full h-full mt-16 max-md:!flex-col md:pl-20 md:pr-12 px-[12px]">
+          <div className="flex justify-between items-center w-full h-full mt-16 max-lg:!flex-col md:pl-20 md:pr-12 px-[12px]">
             <div className="flex flex-col md:min-h-[620px] mb-[24px] md:mb-0 justify-start items-start lg:justify-start flex-1  gap-[24px] md:gap-10">
               <div className="flex flex-col md:gap-2">
                 <p

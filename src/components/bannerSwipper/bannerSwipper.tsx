@@ -1,17 +1,17 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 // Import Swiper React components
-import { Swiper, SwiperSlide, SwiperRef } from 'swiper/react';
-import { useInView } from 'react-intersection-observer';
 import Marquee from 'react-fast-marquee';
+import { useInView } from 'react-intersection-observer';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
-import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-import { Typography } from '@mui/material';
+import { Box, Button, Stack, Typography } from '@mui/material';
 import Image from 'next/image';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 function BannerSwipper() {
   const { ref, inView, entry } = useInView({
     threshold: 0.1,
@@ -89,10 +89,10 @@ function BannerSwipper() {
       spaceBetween={50}
       navigation={false}
       centeredSlides={true}
-      autoplay={{
-        delay: 5000,
-        disableOnInteraction: false,
-      }}
+      // autoplay={{
+      //   delay: 5000,
+      //   disableOnInteraction: false,
+      // }}
       touchMoveStopPropagation={false}
       modules={[Autoplay, Pagination, Navigation]}
       pagination={{
@@ -103,91 +103,234 @@ function BannerSwipper() {
       }}
       className="mySwiper"
     >
-      <SwiperSlide>
-        <section
+      <SwiperSlide className="bg-[rgb(7,33,44)] flex flex-col :flex-row min-h-[812px] h-auto justify-center items-center w-full">
+        <Box
           ref={ref}
-          className="bg-[rgb(7,33,44)] flex flex-col min-h-[812px] h-auto justify-center items-center w-full "
+          width="100%"
+          height={{
+            xs: 'auto',
+            md: '748px',
+          }}
+          display={'flex'}
+          flexDirection={'column'}
+          justifyContent={'center'}
+          alignItems={'center'}
+          padding={{
+            xs: '12px',
+            md: '0',
+          }}
         >
-          <div className=" text-white md:py-8 pb-[43px] md:pb-0 gap-[36px] md:gap-0 flex flex-row md:max-h-[748px] h-auto flex-wrap  max-w-[1440px]  px-[12px] md:px-0 w-full">
-            <div className="w-full   md:w-1/2 md:max-w-[50%]  md:pr-8">
-              <p
-                className={`duration-300 ease-in-out transform ${
-                  inView
-                    ? 'opacity-100 translate-y-0'
-                    : 'opacity-0 translate-y-10'
-                } font-sans   font-bold md:pt-[20%] pt-[40px] pb-[5%] text-[32px] md:leading-[56px] md:text-[40px] mb-2 sm:mb-4 uppercase`}
+          <Stack
+            flexDirection={{
+              xs: 'column',
+              md: 'row',
+            }}
+            justifyContent={'center'}
+            alignItems={'center'}
+            height={'100%'}
+            maxWidth={'1440px'}
+            gap={{
+              xs: '40px',
+              md: '90px',
+            }}
+          >
+            <Stack
+              flexDirection={'column'}
+              gap={{
+                xs: '40px',
+                md: '80px',
+              }}
+              maxWidth={'525px'}
+            >
+              <Stack
+                flexDirection={'column'}
+                gap={{
+                  xs: '24px',
+                  md: '32px',
+                }}
               >
-                Ủy thác niềm tin
-                <br /> gặt hái thịnh vượng
-              </p>
-              <p
-                className={`duration-300 ease-in-out delay-200 transform ${
-                  inView
-                    ? 'opacity-100 translate-y-0'
-                    : 'opacity-0 translate-y-10'
-                } text-base font-sans pb-[5%] text-[14px] md:max-w-[85%] mb-4 sm:mb-6 text-[#FFFFFF]/60`}
+                <Typography
+                  fontFamily={'Inter'}
+                  fontWeight={700}
+                  fontSize={{
+                    xs: '32px',
+                    md: '48px',
+                  }}
+                  lineHeight={{
+                    xs: '40px',
+                    md: '56px',
+                  }}
+                  letterSpacing={'-2%'}
+                  color="#fff"
+                  pt={{
+                    xs: '40px',
+                    md: '0',
+                  }}
+                  sx={{
+                    transition: 'all 0.5s',
+                    opacity: inView ? 1 : 0,
+                    transform: inView ? 'translateY(0)' : 'translateY(10px)',
+                  }}
+                  textTransform={'uppercase'}
+                >
+                  Ủy thác niềm tin
+                  <br /> gặt hái thịnh vượng
+                </Typography>
+                <Typography
+                  fontFamily={'Inter'}
+                  fontSize={{
+                    xs: '14px',
+                    md: '16px',
+                  }}
+                  lineHeight={{
+                    xs: '24px',
+                    md: '24px',
+                  }}
+                  color="#FFFFFF99"
+                  sx={{
+                    transition: 'all 0.5s',
+                    opacity: inView ? 1 : 0,
+                    transitionDelay: '0.3s',
+                    transform: inView ? 'translateY(0)' : 'translateY(10px)',
+                  }}
+                >
+                  Cung cấp cho các nhà đầu tư và doanh nghiệp những dự án tiềm
+                  năng, mở ra cơ hội hợp tác nhằm tối ưu hóa lợi nhuận và thúc
+                  đẩy sự phát triển tài chính.
+                </Typography>
+                <Button
+                  sx={{
+                    height: {
+                      xs: '40px',
+                      md: '48px',
+                    },
+                    width: 'fit-content',
+                    backgroundColor: '#48B96D',
+                    color: '#FFFFFF',
+                    px: {
+                      xs: '20px',
+                      md: '16px',
+                    },
+                    py: {
+                      xs: '10px',
+                      md: '14px',
+                    },
+                    borderRadius: '999px',
+                    fontFamily: 'Inter',
+                    fontWeight: 500,
+                    fontSize: {
+                      xs: '14px',
+                      md: '16px',
+                    },
+                    lineHeight: {
+                      xs: '20px',
+                    },
+                    letterSpacing: {
+                      xs: '-2%',
+                    },
+                    paragraph: '16px',
+                    textTransform: 'none',
+                    transition: 'all 0.5s',
+                    opacity: inView ? 1 : 0,
+                    transitionDelay: '0.5s',
+                    transform: inView ? 'translateY(0)' : 'translateY(10px)',
+                  }}
+                >
+                  Tham gia cùng chúng tôi
+                </Button>
+              </Stack>
+              <Stack
+                flexDirection="row"
+                flexWrap={'wrap'}
+                width={'100%'}
+                gap={{
+                  xs: '8px',
+                  md: '16px',
+                }}
+                px={{
+                  xs: '12px',
+                  md: '0',
+                }}
+                maxHeight="137px"
               >
-                Cung cấp cho các nhà đầu tư và doanh nghiệp những dự án tiềm
-                năng, mở ra cơ hội hợp tác nhằm tối ưu hóa lợi nhuận và thúc đẩy
-                sự phát triển tài chính.
-              </p>
-              <button
-                className={`bg-[#48B96D] text-[#ffffff] md:px-4 py-3 max-sm:px-4 rounded-full font-sans text-sm sm:text-base duration-300 ease-in-out delay-500 transform ${
-                  inView
-                    ? 'opacity-100 translate-y-0'
-                    : 'opacity-0 translate-y-10'
-                } `}
-              >
-                Tham gia cùng chúng tôi
-              </button>
-
-              <div className="flex flex-wrap max-sm:justify-between mt-8 space-y-0 sm:space-x-4 md:space-x-4 lg:space-x-4 ">
-                <div
-                  className={`w-[30%]  bg-[#FFFFFF]/10 rounded-lg  max-w-[163px] h-[137px] md:p-3 pl-5 flex flex-col p-[12px]  justify-start items-start duration-300 ease-in-out transform ${
-                    inView ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
-                  }`}
-                >
-                  <p className="text-[#48B96D] mb-4  text-xl leading-8 sm:text-2xl  font-semibold font-sans">
-                    $20M+
-                  </p>
-                  <p className="text-[#FFFFFF]/80  max-w-[100%] text-[12px] sm:text-sm font-sans">
-                    Tổng vốn đang huy động
-                  </p>
-                </div>
-                <div
-                  className={`w-[30%] bg-[#FFFFFF]/10 max-w-[163px] h-[137px] rounded-lg p-[12px]  md:p-3 pl-5 flex flex-col  justify-start items-start duration-300 delay-300 ease-in-out transform ${
-                    inView ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
-                  }`}
-                >
-                  <p className="text-[#48B96D] mb-4 text-xl leading-8 sm:text-2xl font-semibold font-sans">
-                    10M+
-                  </p>
-                  <p className="text-[#FFFFFF]/80   w-full text-xs sm:text-sm font-sans">
-                    Tổng vốn đang đầu tư
-                  </p>
-                </div>
-                <div
-                  className={`w-[30%]  max-w-[163px] h-[137px] bg-[#FFFFFF]/10 rounded-lg p-[12px]  md:p-3 pl-5 flex flex-col justify-start items-start duration-300 delay-500 ease-in-out transform ${
-                    inView ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
-                  }`}
-                >
-                  <p className="text-[#48B96D] mb-4 text-xl leading-8 sm:text-2xl font-semibold font-sans">
-                    771+
-                  </p>
-                  <p className="text-[#FFFFFF]/80 sm:max-w-[60%] max-w-[100%] text-xs sm:text-sm font-sans">
-                    Nhà đầu tư
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="w-full flex md:hidden relative justify-center items-center">
-              <div className="block md:hidden w-[351px] h-[289px] overflow-hidden rounded-[16px] ">
+                {[
+                  { value: '$20M+', label: 'Tổng vốn đang huy động' },
+                  { value: '10M+', label: 'Tổng vốn đang đầu tư' },
+                  { value: '771+', label: 'Nhà đầu tư' },
+                ].map((item, index) => (
+                  <Box
+                    key={index}
+                    maxHeight="137px"
+                    flexGrow={1}
+                    flexBasis="0"
+                    maxWidth={{
+                      xs: '87px',
+                      md: '163px',
+                    }}
+                    bgcolor="#FFFFFF14"
+                    borderRadius="10px"
+                    px={{
+                      xs: '12px',
+                      md: '18px',
+                    }}
+                    py={{
+                      xs: '12px',
+                      md: '19px',
+                    }}
+                    display="flex"
+                    flexDirection="column"
+                    gap="12px"
+                    sx={{
+                      transition: 'all 0.5s',
+                      opacity: inView ? 1 : 0,
+                      transitionDelay: `${index * 0.2}s`,
+                      transform: inView ? 'translateX(0)' : 'translateX(20px)',
+                    }}
+                  >
+                    <Typography
+                      fontFamily="Inter"
+                      color="#48B96D"
+                      fontSize={{
+                        xs: '16px',
+                        md: '24px',
+                      }}
+                      fontWeight={600}
+                      lineHeight={{
+                        xs: '24px',
+                        md: '32px',
+                      }}
+                    >
+                      {item.value}
+                    </Typography>
+                    <Typography
+                      fontFamily="Inter"
+                      color="#FFFFFFCC"
+                      fontWeight={400}
+                      fontSize={{
+                        xs: '12px',
+                        md: '14px',
+                      }}
+                    >
+                      {item.label}
+                    </Typography>
+                  </Box>
+                ))}
+              </Stack>
+            </Stack>
+            <div className="w-full flex lg:hidden relative justify-center items-center">
+              <div className="block lg:hidden w-[351px] h-[289px] overflow-hidden rounded-[16px] ">
                 <Image
                   src={'/img/invest.png'}
                   alt="image"
                   width={351}
                   height={289}
+                  style={{
+                    width: '100%',
+                    maxHeight: '289px',
+                    borderRadius: '10px',
+                    objectFit: 'cover',
+                    objectPosition: 'center',
+                  }}
                 />
               </div>
 
@@ -196,19 +339,27 @@ function BannerSwipper() {
                   autoFill
                   style={{
                     display: 'flex',
+                    gap: '4px',
                   }}
                 >
                   {items.map((item, index) => (
                     <div
                       key={index}
-                      className="w-auto ml-[4px] h-[72px] gap-[8px] bg-white p-[12px] rounded-[12px] flex"
+                      className="w-auto ml-[4px]  gap-[8px] bg-white p-[12px] rounded-[12px] flex"
                     >
                       <Image
                         src={item.image}
                         alt={item.title}
                         width={48}
                         height={48}
-                        className="rounded-[10px]"
+                        style={{
+                          width: '48px',
+                          height: '48px',
+                          borderRadius: '10px',
+                          objectFit: 'cover',
+                          objectPosition: 'center',
+                        }}
+                        className="rounded-[10px] w-[48px] h-[48px] "
                       />
                       <div className="flex flex-col ">
                         <p
@@ -230,116 +381,205 @@ function BannerSwipper() {
               </div>
             </div>
 
-            <div
-              ref={rightFrameRef}
-              className={`w-full md:w-1/2 hidden md:block    mt-8 md:mt-0 transition-all duration-300 ${
-                isRightFrameVisible ? 'opacity-100' : 'opacity-0'
-              }`}
+            <Box
+              pl={'90px'}
+              display={{
+                xs: 'none',
+                md: 'block',
+              }}
             >
-              <div className="relative w-full h-full  ">
-                <div className="absolute w-[80%] sm:w-[70%] max-h-[451px]  md:w-[60%] h-[65%] sm:h-[70%] md:h-[65%] top-[5%] sm:top-[8%] md:top-[10%] right-[10%] md:right-[5%] mr-[20%]">
-                  <img
-                    src="/img/invest.png"
-                    alt="Investment Dashboard"
-                    className={` w-full h-full rounded-[1.25rem] opacity-100 object-cover duration-300 max-h-[451px]  ease-in-out transform ${
-                      inView ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
-                    }`}
+              <Stack position={'relative'}>
+                <Image
+                  src={'/img/invest.png'}
+                  alt="image"
+                  width={381}
+                  height={451}
+                  // sx={{
+                  //   transition: 'all 0.5s',
+                  //   opacity: inView ? 1 : 0,
+                  //   transitionDelay: '0.4s',
+                  //   transform: inView ? 'translateX(0)' : 'translateX(20px)',
+                  // }}
+                  style={{
+                    borderRadius: '20px',
+                    transition: 'all 0.5s',
+                    opacity: inView ? 1 : 0,
+                    // transitionDelay: '0.4s',
+                    transform: inView ? 'translateX(0)' : 'translateX(20px)',
+                  }}
+                />
+
+                <Stack
+                  bgcolor={'#FFFFFF'}
+                  width={'fit-content'}
+                  borderRadius={'10px'}
+                  overflow={'hidden'}
+                  position={'absolute'}
+                  left={'-90px'}
+                  top={'32px'}
+                  sx={{
+                    transition: 'all 0.5s',
+                    opacity: inView ? 1 : 0,
+                    transitionDelay: '0.1s',
+                    transform: inView ? 'translateX(0)' : 'translateX(20px)',
+                  }}
+                >
+                  <Image
+                    src={'/img/hyperas1.png'}
+                    alt="Hyperas Chain"
+                    width={180}
+                    height={98}
                   />
+                  <Stack flexDirection={'column'} p={'8px'}>
+                    <Typography
+                      fontFamily={'Inter'}
+                      fontWeight={700}
+                      fontSize={'14px'}
+                      lineHeight={'24px'}
+                      color="#04141A"
+                    >
+                      HYPERAS CHAIN
+                    </Typography>
+                    <Typography
+                      fontFamily={'Inter'}
+                      fontWeight={500}
+                      fontSize={'14px'}
+                      lineHeight={'24px'}
+                      color="#31814B"
+                    >
+                      $1.500.000
+                    </Typography>
+                    <Typography
+                      fontFamily={'Inter'}
+                      textTransform={'uppercase'}
+                      fontWeight={400}
+                      fontSize={'12px'}
+                      lineHeight={'20px'}
+                      color="#0000008F"
+                    >
+                      TECHNOLOGY
+                    </Typography>
+                  </Stack>
+                </Stack>
 
-                  <div
-                    className={`absolute w-[58%] sm:w-[50%] top-[7%] sm:top-[5%] md:top-[7%] left-[-30%] sm:left-[-25%] md:left-[-25%] bg-white text-[#04141A] rounded-[1.25rem] shadow overflow-hidden flex flex-col duration-300 delay-300 ease-in-out transform ${
-                      inView
-                        ? 'opacity-100 translate-x-0'
-                        : 'opacity-0 translate-x-[-50%]'
-                    }`}
-                  >
-                    <div className="relative h-[100px] w-full overflow-hidden bg-[#0B3546]">
-                      <img
-                        src="/img/hyperas1.png"
-                        alt="Hyperas Chain"
-                        className="absolute w-full object-cover"
-                      />
-                    </div>
-                    <div className=" w-full p-2 flex flex-col justify-center">
-                      <p className="font-bold pl-1 text-xs leading-4 xl:leading-6 xl:text-base font-sans">
-                        HYPERAS CHAIN
-                      </p>
-                      <p className="text-[#31814B] font-inter pl-1 text-sm leading-6 sm:text-lg md:text-sm font-medium font-sans">
-                        $1,500,000
-                      </p>
-                      <p className="text-[12px] leading-5 pl-1 sm:text-xs md:text-[12px] text-[#000000]/60 mt-1 font-sans">
-                        TECHNOLOGY
-                      </p>
-                    </div>
-                  </div>
-
-                  <div
-                    className={` delay-700 ease-in-out transform ${
-                      inView
-                        ? 'opacity-100 translate-x-0'
-                        : 'opacity-0 translate-x-[-50%]'
-                    } absolute w-[67%] sm:w-[58%] md:w-[66%] bottom-[-15%] sm:bottom-[-18%] md:bottom-[-18%] right-[-5%] sm:right-[-4%] md:right-[-28%] bg-[#F3F7F4] rounded-[1.25rem] shadow overflow-hidden flex flex-col p-2 xl:p-3 `}
-                  >
-                    <div className="border-b-2 border-[#1C4A2B]/10 flex items-center pb-1">
-                      <div className="w-8 h-8 sm:w-9 sm:h-9 xl:w-12 xl:h-12 flex items-center justify-center mr-2 sm:mr-3">
-                        <img
-                          src="/img/icon/salala.png"
-                          alt="Salala AI"
-                          className="w-full h-full rounded-lg"
-                        />
-                      </div>
-                      <div>
-                        <p className="font-bold font-inter text-[#04141A] text-sm font-sans">
-                          SALALA AI
-                        </p>
-                        <p className="text-[#31814B] font-inter pl-1 text-sm leading-4 xl:leading-6 md:text-sm font-medium font-sans">
-                          $1,500,000
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="border-b-2 border-[#1C4A2B]/10 flex items-center my-1 pb-1 ">
-                      <div className=" w-8 h-8 sm:w-9 sm:h-9 md:w-12 md:h-12 rounded-lg flex items-center justify-center mr-2 sm:mr-3">
-                        <img
-                          src="/img/icon/rapital.png"
-                          alt="Rapital Bank"
-                          className="w-full h-full rounded-lg"
-                        />
-                      </div>
-                      <div>
-                        <p className="font-bold font-inter text-[#04141A] text-sm sm:text-sm font-sans">
-                          RAPITAL BANK
-                        </p>
-                        <p className="text-[#31814B] font-inter pl-1 text-sm leading-4 xl:leading-6 md:text-sm font-medium font-sans">
-                          $1,500,000
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center mt-1 pb-1">
-                      <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-12 md:h-12 rounded-lg flex items-center justify-center mr-2 sm:mr-3">
-                        <img
-                          src="/img/icon/egabid.png"
-                          alt="Egabid"
-                          className="w-full h-full rounded-lg"
-                        />
-                      </div>
-                      <div>
-                        <p className="font-bold font-inter text-[#04141A] text-sm sm:text-sm font-sans">
-                          EGABID
-                        </p>
-                        <p className="text-[#31814B] font-inter pl-1 text-sm leading-4 xl:leading-6 md:text-sm font-medium font-sans">
-                          $1,500,000
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* <div className="w-full max-w-[50%] h-[500px]"></div> */}
-          </div>
-        </section>
+                <Stack
+                  flexDirection={'column'}
+                  bgcolor={'#F3F7F4'}
+                  width={'254px'}
+                  p={'8px'}
+                  borderRadius={'20px'}
+                  gap={'4px'}
+                  position={'absolute'}
+                  bottom={'-74px'}
+                  right={'-127px'}
+                  sx={{
+                    transition: 'all 0.5s',
+                    opacity: inView ? 1 : 0,
+                    transitionDelay: '0.3s',
+                    transform: inView ? 'translateX(0)' : 'translateX(20px)',
+                  }}
+                >
+                  <Stack flexDirection={'row'} gap={'8px'}>
+                    <Image
+                      src={'/img/icon/salala.png'}
+                      alt="Salala AI"
+                      width={48}
+                      height={48}
+                      style={{
+                        borderRadius: '10px',
+                      }}
+                    />
+                    <Stack flexDirection={'column'}>
+                      <Typography
+                        fontFamily={'Inter'}
+                        fontWeight={700}
+                        fontSize={'14px'}
+                        lineHeight={'24px'}
+                        color="#04141A"
+                        textTransform={'uppercase'}
+                      >
+                        SALALA AI
+                      </Typography>
+                      <Typography
+                        fontFamily={'Inter'}
+                        fontWeight={500}
+                        fontSize={'14px'}
+                        lineHeight={'24px'}
+                        color="#31814B"
+                      >
+                        $1.500.000
+                      </Typography>
+                    </Stack>
+                  </Stack>
+                  <Stack flexDirection={'row'} gap={'8px'}>
+                    <Image
+                      src={'/img/icon/rapital.png'}
+                      alt="Salala AI"
+                      width={48}
+                      height={48}
+                      style={{
+                        borderRadius: '10px',
+                      }}
+                    />
+                    <Stack flexDirection={'column'}>
+                      <Typography
+                        fontFamily={'Inter'}
+                        fontWeight={700}
+                        fontSize={'14px'}
+                        lineHeight={'24px'}
+                        color="#04141A"
+                        textTransform={'uppercase'}
+                      >
+                        RAPITAL BANK
+                      </Typography>
+                      <Typography
+                        fontFamily={'Inter'}
+                        fontWeight={500}
+                        fontSize={'14px'}
+                        lineHeight={'24px'}
+                        color="#31814B"
+                      >
+                        $1.500.000
+                      </Typography>
+                    </Stack>
+                  </Stack>
+                  <Stack flexDirection={'row'} gap={'8px'}>
+                    <Image
+                      src={'/img/icon/egabid.png'}
+                      alt="Salala AI"
+                      width={48}
+                      height={48}
+                      style={{
+                        borderRadius: '10px',
+                      }}
+                    />
+                    <Stack flexDirection={'column'}>
+                      <Typography
+                        fontFamily={'Inter'}
+                        fontWeight={700}
+                        fontSize={'14px'}
+                        lineHeight={'24px'}
+                        color="#04141A"
+                        textTransform={'uppercase'}
+                      >
+                        EGABID
+                      </Typography>
+                      <Typography
+                        fontFamily={'Inter'}
+                        fontWeight={500}
+                        fontSize={'14px'}
+                        lineHeight={'24px'}
+                        color="#31814B"
+                      >
+                        $1.500.000
+                      </Typography>
+                    </Stack>
+                  </Stack>
+                </Stack>
+              </Stack>
+            </Box>
+          </Stack>
+        </Box>
       </SwiperSlide>
       <SwiperSlide>
         <section

@@ -130,7 +130,7 @@ const FeedbackSection: React.FC = () => {
           </Typography>
         </div>
         <div
-          className={`bg-[url('/img/circle-bg.png')] bg-no-repeat bg-center bg-contain md:w-[900px] min-h-[100px] gap-[16px] flex flex-col items-center justify-center pt-[16px]`}
+          className={`bg-[url('/img/circle-bg.png')] bg-no-repeat bg-center bg-contain w-full lg:w-[900px] min-h-[100px] gap-[16px] flex flex-col items-center justify-center pt-[16px]`}
         >
           {feedbacks.map((feedback, index) => {
             return (
@@ -141,7 +141,7 @@ const FeedbackSection: React.FC = () => {
                     ? 'justify-end items-end'
                     : 'justify-start items-start'
                 }
-                transition ease-in-out duration-1000 delay-${index * 100} ${inView ? 'opacity-1 translate-x-0' : 'opacity-0 md:translate-x-[-200px]'}
+                transition  ease-in-out duration-1000 delay-${index * 100} ${inView ? 'opacity-1 translate-x-0' : 'opacity-0 md:translate-x-[-200px]'}
                 `}
               >
                 <div

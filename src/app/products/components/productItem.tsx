@@ -1,4 +1,5 @@
 import ProgressBar from '@/components/progress';
+import { useRouter } from 'next/navigation';
 import { forwardRef } from 'react';
 
 interface ProductItemProps {
@@ -18,6 +19,8 @@ interface ProductItemProps {
 
 const ProductItem = forwardRef<HTMLDivElement, ProductItemProps>(
   (props: ProductItemProps, ref) => {
+    const router = useRouter();
+
     switch (props.type) {
       case 'short':
       case 'long':
@@ -62,6 +65,7 @@ const ProductItem = forwardRef<HTMLDivElement, ProductItemProps>(
       case 'flexible':
         return (
           <div
+            onClick={() => router.push(`/detail-category/${props.title}`)}
             ref={ref}
             className={` package-item w-full mt-5 3xl:max-w-[384px] bg-white  rounded-lg md:gap-6   flex justify-center items-left flex-col flex-grow gap-3 ${props.className} hover:shadow-lg p-5 hover:scale-105 transition ease-in-out duration-150 hover:cursor-pointer `}
           >

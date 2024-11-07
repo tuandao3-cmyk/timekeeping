@@ -43,7 +43,7 @@ const Footer: React.FC = () => {
                   : 'opacity-0 scale-90 translate-y-10'
               }`}
             >
-              CÔNG TY CỔ PHẦN HYRATEK
+              CÔNG TY CỔ PHẦN HYRACAP
             </h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
               <li
@@ -75,7 +75,7 @@ const Footer: React.FC = () => {
                   className=" hover:underline text-[14px] font-[400] flex gap-[8px] justify-start font-sans"
                 >
                   <SmsIcon className="w-4 h-4 mr-2" />
-                  info@hyratek.com
+                  info@hyracap.com
                 </a>
               </li>
               <li className={`mb-4 max-w-md `}>
