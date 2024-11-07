@@ -4,7 +4,7 @@ import Grid from '@mui/material/Grid';
 
 import { desc } from 'framer-motion/client';
 import Image from 'next/image';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { title } from 'process';
 import { useState } from 'react';
 import ListField from './components/listField';
@@ -13,11 +13,13 @@ import { GlobalIcon, ProfileTUser, LocationIcon } from '@/components/icons';
 import Link from 'next/link';
 import Growth from './components/growth';
 import Terminology from './components/terminology';
-import ProductItem from '@/app/detail-category/components/productItem';
+import ProductItem from '../components/productItem';
 import QandA from './components/Q&A';
 import UpdateInfo from './components/updateInformation';
 
 const InfoSection: React.FC = () => {
+  const router = useRouter();
+
   const data = [
     {
       title: '$1M',
@@ -132,7 +134,7 @@ const InfoSection: React.FC = () => {
             <img
               src="/img/egabid_pc.png"
               alt="Hyperas Chain"
-              className="md:h-[250px] md:w-[384px]"
+              className=" md:h-[250px] md:w-[384px]"
             />
           ),
           field: 'CÔNG NGHỆ',
@@ -187,10 +189,20 @@ const InfoSection: React.FC = () => {
           alignItems: 'center',
           width: '100%',
           maxWidth: '1440px',
-          px: '120px',
+          px: {
+            xs: '12px',
+            sm: '16px',
+            md: '120px',
+          },
         }}
       >
-        <Stack flexDirection={'row'} gap={'24px'}>
+        <Stack
+          flexDirection={{
+            xs: 'column-reverse',
+            md: 'row',
+          }}
+          gap={'24px'}
+        >
           <Stack
             flexDirection={'column'}
             flexGrow={1}
@@ -204,7 +216,13 @@ const InfoSection: React.FC = () => {
                   width={792}
                   height={400}
                 />
-                <Stack flexDirection={'row'} gap={'16px'}>
+                <Stack
+                  flexDirection={{
+                    xs: 'column',
+                    md: 'row',
+                  }}
+                  gap={'16px'}
+                >
                   {items.map((item, index) => (
                     <Stack
                       key={index}
@@ -240,7 +258,15 @@ const InfoSection: React.FC = () => {
               </Stack>
             </Box>
           </Stack>
-          <Stack flexDirection={'column'} maxWidth={'385px'} gap={'24px'}>
+          <Stack
+            flexDirection={'column'}
+            maxWidth={{
+              xs: '100%',
+              sm: '100%',
+              md: '385px',
+            }}
+            gap={'24px'}
+          >
             <Stack flexDirection={'column'} gap={'12px'}>
               <Typography
                 bgcolor={'#48B96D1F'}
@@ -331,7 +357,7 @@ const InfoSection: React.FC = () => {
         justifyContent={'center'}
         alignItems={'center'}
       >
-        <section className="w-full h-auto  bg-white py-[62px] flex flex-col justify-center items-center px-[120px] max-w-[1440px]">
+        <section className="w-full h-auto  bg-white py-[62px] flex flex-col justify-center items-center px-[12px] md:px-[120px] max-w-[1440px]">
           {products.map((product: (typeof products)[0], index) => (
             <div
               className="w-full h-auto bg-white px-1 flex flex-col justify-center items-left"
@@ -346,7 +372,10 @@ const InfoSection: React.FC = () => {
                 <Typography
                   fontFamily={'Inter'}
                   fontWeight={700}
-                  fontSize={'32px'}
+                  fontSize={{
+                    xs: '28px',
+                    sm: '32px',
+                  }}
                   lineHeight={'40px'}
                   letterSpacing={'-1%'}
                   color="#000000"
@@ -361,12 +390,17 @@ const InfoSection: React.FC = () => {
                     fontSize: '16px',
                     lineHeight: '24px',
                     textTransform: 'none',
+                    display: {
+                      xs: 'none',
+                      md: 'block',
+                    },
                   }}
+                  onClick={() => router.push('/categories')}
                 >
                   Xem thêm
                 </Button>
               </Stack>
-              <div className="flex gap-[24px] items-center  w-full overflow-y-auto justify-center py-5 overflow-x-hidden  ">
+              <div className="flex md:flex-row flex-col gap-[24px] items-center  w-full overflow-y-auto justify-center py-5 overflow-x-auto  ">
                 {product.package.map((packageItem: any, index) => (
                   <ProductItem
                     key={index}
@@ -383,6 +417,24 @@ const InfoSection: React.FC = () => {
                     field={packageItem.field}
                   />
                 ))}
+
+                <Button
+                  sx={{
+                    color: '#31814B',
+                    fontFamily: 'Inter',
+                    fontWeight: 400,
+                    fontSize: '16px',
+                    lineHeight: '24px',
+                    textTransform: 'none',
+                    display: {
+                      xs: 'block',
+                      md: 'none',
+                    },
+                  }}
+                  onClick={() => router.push('/categories')}
+                >
+                  Xem thêm
+                </Button>
               </div>
             </div>
           ))}

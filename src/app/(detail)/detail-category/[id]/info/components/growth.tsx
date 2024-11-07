@@ -28,13 +28,25 @@ function Growth() {
   ];
   return (
     <Stack
-      flexDirection={'row'}
+      flexDirection={{
+        xs: 'column',
+        sm: 'column',
+        md: 'row',
+      }}
       gap={'34px'}
       bgcolor={'#FFFFFF'}
       padding={'20px'}
       borderRadius={'16px'}
     >
-      <Stack flexDirection={'column'} maxWidth={'282px'} gap={'24px'}>
+      <Stack
+        flexDirection={'column'}
+        maxWidth={{
+          xs: '100%',
+          sm: '100%',
+          md: '282px',
+        }}
+        gap={'24px'}
+      >
         <Typography
           fontWeight={600}
           fontFamily={'Inter'}
@@ -68,7 +80,7 @@ function Growth() {
         </Typography>
         <Grid container spacing={2}>
           {projects.map((project, index) => (
-            <Grid item xs={6} key={index}>
+            <Grid item xs={12} sm={6} key={index}>
               <Stack flexDirection={'row'} gap={'12px'}>
                 <Image width={50} height={50} src={project.icon} alt="icon" />
                 <Stack

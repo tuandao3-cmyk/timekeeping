@@ -2,6 +2,7 @@ import styles from './PressSection.module.css';
 
 import { useInView } from 'react-intersection-observer';
 
+import Link from 'next/link';
 const pressLogos = [
   { name: 'Phụ nữ', src: '/img/icon/phunu.png', delay: 0, link: 'https://baophunuthudo.vn/' },
   { name: 'VTC News', src: '/img/icon/vtc.png', delay: 75, link: 'https://vtcnews.vn/' },
@@ -19,11 +20,10 @@ const PressSection = () => {
     triggerOnce: true,
   });
   return (
-    <section className={styles.pressSection}>
-      <div className="flex flex-col items-center justify-center max-w-[1440px] py-10 lg:py-[62px] ">
+    <section ref={ref} className={styles.pressSection}>
+      <div className="flex flex-col items-center justify-center max-w-[1440px] py-[62px] ">
         <h2
-          ref={ref}
-          className={`${styles.title} duration-300 max-w-[90%] lg:max-w-[54%] ease-in-out transform ${
+          className={`${styles.title} duration-300 text-[28px] md:text-[32px] max-w-[351px] md:max-w-none ease-in-out transform ${
             inView
               ? 'opacity-100 translate-y-0'
               : 'opacity-0 translate-y-10 font-sans'
@@ -32,8 +32,7 @@ const PressSection = () => {
           TRUYỀN THÔNG NÓI GÌ VỀ CHÚNG TÔI?
         </h2>
         <p
-          ref={ref}
-          className={`font-inter text-[#000000]/60 font-normal text-base font-sans leading-6 max-w-[90%] lg:max-w-[54%] mx-auto mb-4 text-center duration-300 delay-200 ease-in-out transform ${
+          className={`font-inter text-[#000000]/60 font-normal text-base font-sans leading-6 max-w-[351px] md:max-w-[767px] mx-auto mb-4 text-center duration-300 delay-200 ease-in-out transform ${
             inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
@@ -43,16 +42,17 @@ const PressSection = () => {
         </p>
         <div className={styles.logoContainer}>
           {pressLogos.map((logo, index) => (
-            <div
-              key={index}
-              onClick={() => window.open(logo.link, '_blank')}
-              ref={ref}
-              className={`${styles.logoWrapper} duration-300 ease-in-out delay-${logo.delay} transform ${
-                inView ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
-              }`}
-            >
-              <img src={logo.src} alt={logo.name} className={styles.logo} />
-            </div>
+            <Link
+            key={index}
+            href={logo.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`${styles.logoWrapper} duration-300 ease-in-out delay-${logo.delay} transform ${
+              inView ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
+            }`}
+          >
+            <img src={logo.src} alt={logo.name} className={styles.logo} />
+          </Link>
           ))}
         </div>
       </div>

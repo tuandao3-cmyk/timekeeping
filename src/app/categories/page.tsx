@@ -14,9 +14,7 @@ import {
 } from '@mui/material';
 import { useInView } from 'react-intersection-observer';
 
-
-
-const projects = [
+const PROJECTS = [
   {
     id: 1,
     img: '/img/egabid_pc.png',
@@ -25,6 +23,7 @@ const projects = [
     funded: '$1.500.00',
     progress: 75,
     category: 'CÔNG NGHỆ',
+    tag: ['seed'],
   },
   {
     id: 2,
@@ -34,6 +33,7 @@ const projects = [
     funded: '$1.500.00',
     progress: 75,
     category: 'CÔNG NGHỆ',
+    tag: ['seed', 'seriesA', 'seriesB'],
   },
   {
     id: 3,
@@ -43,6 +43,7 @@ const projects = [
     funded: '$1.500.00',
     progress: 75,
     category: 'CÔNG NGHỆ',
+    tag: ['seed', 'seriesA', 'seriesB'],
   },
   {
     id: 4,
@@ -52,6 +53,7 @@ const projects = [
     funded: '$1.500.00',
     progress: 75,
     category: 'CÔNG NGHỆ',
+    tag: ['seed', 'seriesA', 'seriesB'],
   },
   {
     id: 5,
@@ -61,6 +63,7 @@ const projects = [
     funded: '$1.500.00',
     progress: 75,
     category: 'CÔNG NGHỆ',
+    tag: ['seed', 'seriesA', 'seriesB'],
   },
   {
     id: 6,
@@ -70,9 +73,10 @@ const projects = [
     funded: '$1.500.00',
     progress: 75,
     category: 'CÔNG NGHỆ',
+    tag: ['seed', 'seriesA', 'seriesB'],
   },
 ];
-const projects2 = [
+const PROJECTS2 = [
   {
     id: 1,
     img: '/img/19.jpg',
@@ -81,6 +85,7 @@ const projects2 = [
     funded: '$2.000.000',
     progress: 100,
     category: 'CÔNG NGHỆ',
+    tag: ['seed', 'seriesA', 'seriesB'],
   },
   {
     id: 2,
@@ -90,6 +95,7 @@ const projects2 = [
     funded: '$2.000.000',
     progress: 100,
     category: 'CÔNG NGHỆ',
+    tag: ['seed', 'seriesA', 'seriesB'],
   },
   {
     id: 3,
@@ -99,6 +105,7 @@ const projects2 = [
     funded: '$2.000.000',
     progress: 100,
     category: 'CÔNG NGHỆ',
+    tag: ['seed', 'seriesA', 'seriesB'],
   },
   {
     id: 4,
@@ -108,6 +115,7 @@ const projects2 = [
     funded: '$2.000.000',
     progress: 100,
     category: 'CÔNG NGHỆ',
+    tag: ['seriesA'],
   },
   {
     id: 5,
@@ -117,6 +125,7 @@ const projects2 = [
     funded: '$2.000.000',
     progress: 100,
     category: 'CÔNG NGHỆ',
+    tag: ['seed'],
   },
   {
     id: 6,
@@ -126,26 +135,54 @@ const projects2 = [
     funded: '$2.000.000',
     progress: 100,
     category: 'CÔNG NGHỆ',
+    tag: ['seriesB'],
   },
 ];
 const CategoryPage: React.FC = () => {
-  const [age, setAge] = React.useState('10');
+  const [projects, setProjects] = useState(PROJECTS);
+  const [projects2, setProjects2] = useState(PROJECTS2);
   const [screenWidth, setScreenWidth] = useState(0);
 
-useEffect(() => {
+  const [searchValue, setSearchValue] = useState('');
+  const [selectedValue, setSelectedValue] = useState('all');
 
-  setScreenWidth(window.innerWidth);
-  
-  const handleResize = () => {
-    setScreenWidth(window.innerWidth);
+  const handleSearch = () => {
+    const filteredProjects = PROJECTS.filter((project) => {
+      if (selectedValue === 'all') {
+        return project.name.toLowerCase().includes(searchValue.toLowerCase());
+      }
+
+      return (
+        project.name.toLowerCase().includes(searchValue.toLowerCase()) &&
+        project.tag.includes(selectedValue)
+      );
+    });
+    const filteredProjects2 = PROJECTS2.filter((project) => {
+      if (selectedValue === 'all') {
+        return project.name.toLowerCase().includes(searchValue.toLowerCase());
+      }
+      return (
+        project.name.toLowerCase().includes(searchValue.toLowerCase()) &&
+        project.tag.includes(selectedValue)
+      );
+    });
+    setProjects(filteredProjects);
+    setProjects2(filteredProjects2);
   };
-  
-  window.addEventListener('resize', handleResize);
-  return () => window.removeEventListener('resize', handleResize);
-}, []);
+
+  useEffect(() => {
+    setScreenWidth(window.innerWidth);
+
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleChange = (event: any) => {
-    setAge(event.target.value);
+    setSelectedValue(event.target.value);
   };
 
   const { ref, inView, entry } = useInView({
@@ -227,12 +264,13 @@ useEffect(() => {
       </div>
 
       <div className="flex flex-col justify-center items-center w-full">
-        <div className="max-w-[1200px]">
+        <div className="max-w-[1200px] w-full">
           <div className="flex items-center px-4 flex-wrap justify-center gap-4  pt-[51px]">
             <input
               className=" h-[48px]   font-sans text-[16px] flex-grow  border-[1px]  border-[rgba(60, 60, 67, 0.1)],  rounded-lg pl-3 pr-10 text-lg bg-[#EFEFEF] focus:outline-none "
               type="text"
               placeholder="Nhập dự án cần tìm kiếm"
+              onChange={(e) => setSearchValue(e.target.value)}
             />
             <div className="  flex flex-row justify-end gap-4 font-sans flex-grow  items-center">
               {/* <p className="font-sans">Hiển thị </p> */}
@@ -252,7 +290,7 @@ useEffect(() => {
                 <Select
                   labelId="demo-select-small-label"
                   id="demo-select-small"
-                  value={age}
+                  value={selectedValue}
                   onChange={handleChange}
                   sx={{
                     height: '48px',
@@ -275,43 +313,43 @@ useEffect(() => {
                   }}
                 >
                   <MenuItem
-                    value={10}
+                    value={'all'}
                     sx={{ height: '48px', minHeight: '48px' }}
                   >
                     Tất cả
                   </MenuItem>
                   <MenuItem
-                    value={20}
+                    value={'seed'}
                     sx={{ height: '48px', minHeight: '48px' }}
                   >
                     Seed
                   </MenuItem>
                   <MenuItem
-                    value={30}
+                    value={'seriesA'}
                     sx={{ height: '48px', minHeight: '48px' }}
                   >
                     Series A
                   </MenuItem>
                   <MenuItem
-                    value={40}
+                    value={'seriesB'}
                     sx={{ height: '48px', minHeight: '48px' }}
                   >
                     Series B
                   </MenuItem>
                   <MenuItem
-                    value={50}
+                    value={'seriesC'}
                     sx={{ height: '48px', minHeight: '48px' }}
                   >
                     Series C
                   </MenuItem>
                   <MenuItem
-                    value={60}
+                    value={'PE'}
                     sx={{ height: '48px', minHeight: '48px' }}
                   >
                     PE
                   </MenuItem>
                   <MenuItem
-                    value={70}
+                    value={'IPO'}
                     sx={{ height: '48px', minHeight: '48px' }}
                   >
                     IPO
@@ -333,6 +371,7 @@ useEffect(() => {
                   backgroundColor: '#48B96D',
                 },
               }}
+              onClick={handleSearch}
             >
               Tìm kiếm
             </Button>
@@ -341,8 +380,15 @@ useEffect(() => {
           <h2 className="flex text-center py-4 px-4  font-bold text-[32px] font-sans mt-[48px]  text-[#04141A] uppercase">
             DỰ ÁN ĐÃ HOÀN THÀNH
           </h2>
-          <div ref={ref4} className="flex px-4  flex-col lg:flex-row ">
+          <div ref={ref4} className="flex px-4 w-full  flex-col lg:flex-row ">
             <div className="w-full bg-white" ref={ref1}>
+              {projects.length === 0 && (
+                <div className="flex justify-center items-center w-full h-[300px]">
+                  <p className="text-lg font-sans text-gray-500">
+                    Không có dự án nào
+                  </p>
+                </div>
+              )}
               <Box
                 sx={{
                   display: 'grid',
@@ -351,11 +397,12 @@ useEffect(() => {
                     sm: 'repeat(2, 1fr)',
                     md: 'repeat(3, 1fr)',
                   },
+                  width: '100%',
                   gap: 2,
                 }}
               >
-                {projects.map((project, index) => (index < 3 &&  window.innerWidth <= 500 || (index < 4  && window.innerWidth >= 500) || (index < 6 && window.innerWidth >= 900)) && (
-                  <Link href={`/detail-category/${project.id}`} key={index}>
+                {projects.map((project, index) => (
+                  <Link href={`/detail-category/${project.name}`} key={index}>
                     <Box
                       className={`${inView4 ? 'animate-fadeIn scale-100' : 'translate-y-20 opacity-0 scale-0'} py-4 transition
                duration-300 ease-in-out delay-${index === 4 ? 300 : index * 100}
@@ -418,7 +465,9 @@ useEffect(() => {
               </Box>
             </div>
           </div>
-          <div className="flex flex-row justify-center mb-8">
+          <div
+            className={`flex flex-row justify-center mb-8  ${projects.length < 6 && 'hidden'}`}
+          >
             <button className="uppercase flex items-center font-sans bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black">
               xem thêm
               <svg
@@ -436,6 +485,13 @@ useEffect(() => {
           </h2>
           <div className="flex px-4  flex-col lg:flex-row ">
             <div className="w-full bg-white" ref={ref2}>
+              {projects.length === 0 && (
+                <div className="flex justify-center items-center w-full h-[300px]">
+                  <p className="text-lg font-sans text-gray-500">
+                    Không có dự án nào
+                  </p>
+                </div>
+              )}
               <Box
                 sx={{
                   display: 'grid',
@@ -447,71 +503,78 @@ useEffect(() => {
                   gap: 2,
                 }}
               >
-                {projects.map((project, index) => (index < 3 &&  window.innerWidth <= 500 || (index < 4  && window.innerWidth >= 500) || (index < 6 && window.innerWidth >= 900))  &&(
-                  <Link href={`/detail-category/${project.id}`} key={index}>
-                    <Box
-                      className={`${inView2 ? 'animate-fadeIn scale-100' : 'translate-y-20 opacity-0 scale-0'} py-4 transition
+                {projects.map(
+                  (project, index) =>
+                    ((index < 3 && window.innerWidth <= 500) ||
+                      (index < 4 && window.innerWidth >= 500) ||
+                      (index < 6 && window.innerWidth >= 900)) && (
+                      <Link
+                        href={`/detail-category/${project.name}`}
+                        key={index}
+                      >
+                        <Box
+                          className={`${inView2 ? 'animate-fadeIn scale-100' : 'translate-y-20 opacity-0 scale-0'} py-4 transition
                duration-300 ease-in-out delay-${index === 4 ? 300 : index * 100}
                 hover:scale-105 hover:transition-all hover:duration-300 hover:ease-in-out
                `}
-                    >
-                      <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-                        <img
-                          src={project.img}
-                          alt={project.name}
-                          className="w-full h-[250px] object-cover"
-                        />
-                        <div className="p-4">
-                          {/* <span className="text-sm bg-blue-500 text-white py-1 px-3 rounded-full">
-                            Series A
-                          </span> */}
-                          <h3 className="text-lg font-bold font-sans mt-2 uppercase">
-                            {project.name}
-                          </h3>
-                          <div className="mt-4">
-                            <div className="text-sm font-normal font-sans uppercase">
-                              Mục tiêu huy động
-                            </div>
-                            <div className="text-xl font-sans font-semibold">
-                              {project.amount}
-                            </div>
-                            <div className="h-2 bg-gray-300 rounded mt-2">
-                              <div
-                                className="bg-green-500 h-full rounded"
-                                style={{
-                                  width: `${project.progress}%`,
-                                }}
-                              ></div>
-                            </div>
-                            <div className="flex justify-between my-2 text-sm text-gray-600">
-                              <span className="text-[#48B96D] font-sans font-semibold">
-                                {project.funded}
-                              </span>
-                              <div className="flex gap-1 font-sans">
-                                <span>Hoàn thành</span>
-                                <p className="text-[#48B96D] font-sans font-semibold">
-                                  {project.progress}%
-                                </p>
+                        >
+                          <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+                            <img
+                              src={project.img}
+                              alt={project.name}
+                              className="w-full h-[250px] object-cover"
+                            />
+                            <div className="p-4">
+                              <h3 className="text-lg font-bold font-sans mt-2 uppercase">
+                                {project.name}
+                              </h3>
+                              <div className="mt-4">
+                                <div className="text-sm font-normal font-sans uppercase">
+                                  Mục tiêu huy động
+                                </div>
+                                <div className="text-xl font-sans font-semibold">
+                                  {project.amount}
+                                </div>
+                                <div className="h-2 bg-gray-300 rounded mt-2">
+                                  <div
+                                    className="bg-green-500 h-full rounded"
+                                    style={{
+                                      width: `${project.progress}%`,
+                                    }}
+                                  ></div>
+                                </div>
+                                <div className="flex justify-between my-2 text-sm text-gray-600">
+                                  <span className="text-[#48B96D] font-sans font-semibold">
+                                    {project.funded}
+                                  </span>
+                                  <div className="flex gap-1 font-sans">
+                                    <span>Hoàn thành</span>
+                                    <p className="text-[#48B96D] font-sans font-semibold">
+                                      {project.progress}%
+                                    </p>
+                                  </div>
+                                </div>
+                                <div className="flex gap-2">
+                                  <span className="text-gray-800 font-sans px-2 py-1 rounded-md font-bold bg-[#F6F6F6]">
+                                    {project.category}
+                                  </span>
+                                  <span className="text-gray-800 font-sans px-2 py-1 rounded-md font-bold bg-[#F6F6F6]">
+                                    {project.category}
+                                  </span>
+                                </div>
                               </div>
                             </div>
-                            <div className="flex gap-2">
-                              <span className="text-gray-800 font-sans px-2 py-1 rounded-md font-bold bg-[#F6F6F6]">
-                                {project.category}
-                              </span>
-                              <span className="text-gray-800 font-sans px-2 py-1 rounded-md font-bold bg-[#F6F6F6]">
-                                {project.category}
-                              </span>
-                            </div>
                           </div>
-                        </div>
-                      </div>
-                    </Box>
-                  </Link>
-                ))}
+                        </Box>
+                      </Link>
+                    )
+                )}
               </Box>
             </div>
           </div>
-          <div className="flex flex-row justify-center mb-8">
+          <div
+            className={`flex flex-row justify-center mb-8 ${projects.length < 6 && 'hidden'}`}
+          >
             <button className="uppercase flex font-sans items-center bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black">
               xem thêm
               <svg
@@ -525,10 +588,17 @@ useEffect(() => {
             </button>
           </div>
           <h2 className="flex text-center px-4  py-4 font-bold text-[32px] font-sans text-[#04141A] uppercase">
-          DỰ ÁN ĐÃ ĐẦU TƯ ƯƠM TẠ0
+            DỰ ÁN ĐÃ ĐẦU TƯ ƯƠM TẠ0
           </h2>
           <div className="flex px-4   flex-col lg:flex-row ">
             <div className="w-full bg-white" ref={ref3}>
+              {projects2.length === 0 && (
+                <div className="flex justify-center items-center w-full h-[300px]">
+                  <p className="text-lg font-sans text-gray-500">
+                    Không có dự án nào
+                  </p>
+                </div>
+              )}
               <Box
                 sx={{
                   display: 'grid',
@@ -540,69 +610,79 @@ useEffect(() => {
                   gap: 2,
                 }}
               >
-                {projects2.map((project, index) => (index < 3 &&  window.innerWidth <= 500 || (index < 4  && window.innerWidth >= 500  ) || (index < 6 && window.innerWidth >= 900))  &&(
-                  <Link href={`/detail-category/${project.id}`} key={index}>
-                    <Box
-                      className={`${inView3 ? 'animate-fadeIn scale-100' : 'translate-y-20 opacity-0 scale-0'} py-4 transition
+                {projects2.map(
+                  (project, index) =>
+                    ((index < 3 && window.innerWidth <= 500) ||
+                      (index < 4 && window.innerWidth >= 500) ||
+                      (index < 6 && window.innerWidth >= 900)) && (
+                      <Link
+                        href={`/detail-category/${project.name}`}
+                        key={index}
+                      >
+                        <Box
+                          className={`${inView3 ? 'animate-fadeIn scale-100' : 'translate-y-20 opacity-0 scale-0'} py-4 transition
                duration-300 ease-in-out delay-${index === 4 ? 300 : index * 100}  hover:scale-105 hover:transition-all hover:duration-300 hover:ease-in-out`}
-                    >
-                      <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-                        <img
-                          src={project.img}
-                          alt={project.name}
-                          className="w-full h-[250px] object-cover"
-                        />
-                        <div className="p-4">
-                          {/* <span className="text-sm bg-blue-500 text-white py-1 px-3 rounded-full">
+                        >
+                          <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+                            <img
+                              src={project.img}
+                              alt={project.name}
+                              className="w-full h-[250px] object-cover"
+                            />
+                            <div className="p-4">
+                              {/* <span className="text-sm bg-blue-500 text-white py-1 px-3 rounded-full">
                             Series A
                           </span> */}
-                          <h3 className="text-lg font-bold font-sans mt-2 uppercase">
-                            {project.name}
-                          </h3>
-                          <div className="mt-4">
-                            <div className="text-sm font-normal font-sans uppercase">
-                              Mục tiêu huy động
-                            </div>
-                            <div className="text-xl font-sans font-semibold">
-                              {project.amount}
-                            </div>
-                            <div className="h-2 bg-gray-300 rounded mt-2">
-                              <div
-                                className="bg-green-500 h-full rounded"
-                                style={{
-                                  width: `${project.progress}%`,
-                                }}
-                              ></div>
-                            </div>
-                            <div className="flex justify-between mt-2 text-sm text-gray-600">
-                              <span className="text-[#48B96D] font-sans font-semibold">
-                                {project.funded}
-                              </span>
-                              <div className="flex gap-1 font-sans">
-                                <span>Hoàn thành</span>
-                                <p className="text-[#48B96D] font-semibold">
-                                  {project.progress}%
-                                </p>
+                              <h3 className="text-lg font-bold font-sans mt-2 uppercase">
+                                {project.name}
+                              </h3>
+                              <div className="mt-4">
+                                <div className="text-sm font-normal font-sans uppercase">
+                                  Mục tiêu huy động
+                                </div>
+                                <div className="text-xl font-sans font-semibold">
+                                  {project.amount}
+                                </div>
+                                <div className="h-2 bg-gray-300 rounded mt-2">
+                                  <div
+                                    className="bg-green-500 h-full rounded"
+                                    style={{
+                                      width: `${project.progress}%`,
+                                    }}
+                                  ></div>
+                                </div>
+                                <div className="flex justify-between mt-2 text-sm text-gray-600">
+                                  <span className="text-[#48B96D] font-sans font-semibold">
+                                    {project.funded}
+                                  </span>
+                                  <div className="flex gap-1 font-sans">
+                                    <span>Hoàn thành</span>
+                                    <p className="text-[#48B96D] font-semibold">
+                                      {project.progress}%
+                                    </p>
+                                  </div>
+                                </div>
+                                <div className="flex gap-2">
+                                  <span className="text-gray-800 px-2 py-1 font-sans rounded-md font-bold bg-[#F6F6F6]">
+                                    {project.category}
+                                  </span>
+                                  <span className="text-gray-800 px-2 py-1 font-sans rounded-md font-bold bg-[#F6F6F6]">
+                                    {project.category}
+                                  </span>
+                                </div>
                               </div>
                             </div>
-                            <div className="flex gap-2">
-                              <span className="text-gray-800 px-2 py-1 font-sans rounded-md font-bold bg-[#F6F6F6]">
-                                {project.category}
-                              </span>
-                              <span className="text-gray-800 px-2 py-1 font-sans rounded-md font-bold bg-[#F6F6F6]">
-                                {project.category}
-                              </span>
-                            </div>
                           </div>
-                        </div>
-                      </div>
-                    </Box>
-                  </Link>
-                ))}
+                        </Box>
+                      </Link>
+                    )
+                )}
               </Box>
             </div>
           </div>
-          <div className="flex flex-row justify-center mb-8">
+          <div
+            className={`flex flex-row justify-center mb-8 ${projects.length < 6 && 'hidden'}`}
+          >
             <button className="uppercase flex items-center font-sans bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black">
               xem thêm
               <svg

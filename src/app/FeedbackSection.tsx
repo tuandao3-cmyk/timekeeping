@@ -65,7 +65,7 @@ const FeedbackSection: React.FC = () => {
 
   return (
     <section
-      className="flex flex-col items-center justify-center py-[62px]"
+      className="flex flex-col items-center justify-center py-[62px] px-[12px]"
       ref={ref}
     >
       <div className="flex flex-col items-center justify-center w-full max-w-[1440px] gap-[24px]">
@@ -74,8 +74,17 @@ const FeedbackSection: React.FC = () => {
             sx={{
               color: '#04141A',
               fontWeight: 700,
-              fontSize: 40,
-              lineHeight: '48px',
+              fontFamily: 'Inter',
+              fontSize: {
+                xs: 28,
+
+                md: 40,
+              },
+              lineHeight: {
+                xs: '36px',
+                md: '48px',
+              },
+              letterSpacing: '-1%',
               textAlign: 'center',
               textTransform: 'uppercase',
             }}
@@ -92,9 +101,20 @@ const FeedbackSection: React.FC = () => {
           <Typography
             sx={{
               color: '#000000B2',
-              fontSize: 32,
+              fontSize: {
+                xs: 20,
+                md: 32,
+              },
               fontWeight: 400,
-              lineHeight: '40px',
+              lineHeight: {
+                xs: '28px',
+                md: '40px',
+              },
+              maxWidth: {
+                xs: '351px',
+                md: 'none',
+              },
+              letterSpacing: '-1%',
               textAlign: 'center',
               textTransform: 'uppercase',
             }}
@@ -110,7 +130,7 @@ const FeedbackSection: React.FC = () => {
           </Typography>
         </div>
         <div
-          className={`bg-[url('/img/circle-bg.png')] bg-no-repeat bg-center bg-contain w-[900px] min-h-[100px] gap-[16px] flex flex-col items-center justify-center pt-[16px]`}
+          className={`bg-[url('/img/circle-bg.png')] bg-no-repeat bg-center bg-contain md:w-[900px] min-h-[100px] gap-[16px] flex flex-col items-center justify-center pt-[16px]`}
         >
           {feedbacks.map((feedback, index) => {
             return (
@@ -121,7 +141,7 @@ const FeedbackSection: React.FC = () => {
                     ? 'justify-end items-end'
                     : 'justify-start items-start'
                 }
-                transition ease-in-out duration-1000 delay-${index * 100} ${inView ? 'opacity-1 translate-x-0' : 'opacity-0 translate-x-[-200px]'}
+                transition ease-in-out duration-1000 delay-${index * 100} ${inView ? 'opacity-1 translate-x-0' : 'opacity-0 md:translate-x-[-200px]'}
                 `}
               >
                 <div

@@ -8,25 +8,23 @@ function MessageFromCreative() {
     triggerOnce: true,
   });
   return (
-    <section className="flex w-full justify-center items-center lg:py-[75px] py-[30px] min-h-[700px] ">
-      <div className="block w-full max-w-[1440px]">
-        <div className="flex flex-col justify-center items-center w-full max-w-[1440px] h-full relative">
-          <div className="absolute z-10 lg:left-[20%] lg:bottom-[-150px] flex flex-col justify-end items-start pb-[40px] transform translate-all duration-200 bg-[url('/img/about/msc-bg-1.png')] min-h-[320px] h-auto lg:h-[486px] max-sm:w-full lg:max-w-[486px] hover:max-w-[1200px]  bg-[length:100%_100%] hover:w-auto  bg-top rounded-[24px] bg-no-repeat gap-[23px]  px-[56px]">
+    <section className="flex w-full justify-center items-center lg:py-[75px] py-[30px] min-h-[700px] px-[14px] ">
+      <div className="flex justify-center items-center w-full max-w-[1440px] min-h-[700px]">
+        <div className="flex flex-col justify-center items-center w-full max-w-[1440px] min-h-[528px] h-full relative ">
+          <div className="absolute z-10 lg:left-[20%] bottom-0   lg:top-[-100px] flex flex-col justify-end px-[14px]  items-start pb-[40px] transform translate-all duration-200 bg-[url('/img/about/msc-bg-1.png')] min-h-[320px] h-auto max-h-[528px] md:max-h-[300px] lg:max-h-[500px] max-sm:w-full lg:max-w-[486px] hover:max-w-[1200px]  bg-[length:100%_100%] hover:w-auto  bg-top rounded-[24px] bg-no-repeat gap-[23px] pt-[60px] md:pt-0  md:px-[56px]">
             <Typography
               sx={{
                 display: '-webkit-box',
                 overflow: 'hidden',
                 textOverflow: 'ellipsis',
                 WebkitLineClamp: {
-                  default: 4,
-                  xs: 4,
-                  sm: 6,
                   md: 6,
                   lg: 6,
                 },
                 WebkitBoxOrient: 'vertical',
                 fontSize: {
                   xs: '16px',
+                  md: '30px',
                   lg: '30px',
                 },
                 backgroundRepeat: 'no-repeat',
@@ -52,7 +50,7 @@ function MessageFromCreative() {
             </div>
           </div>
           <img
-            className="absolute max-lg:bottom-0  z-0 lg:left-[50%] lg:translate-x-[-20%] hover:z-20 hover:scale-105 transition ease-in-out duration-100"
+            className="absolute top-0   z-0 lg:left-[50%] lg:translate-x-[-20%] hover:z-20 hover:scale-105 transition ease-in-out duration-100"
             src={'/img/about/tran-thi-thu-huong.png'}
             alt="Trần Thị Thu Hương"
           />

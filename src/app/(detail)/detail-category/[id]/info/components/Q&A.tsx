@@ -76,13 +76,20 @@ function QandA() {
       flexDirection={'column'}
       maxWidth={'1440px'}
       width={'100%'}
-      px={'120px'}
+      px={{
+        xs: '12px',
+        sm: '16px',
+        md: '120px',
+      }}
       gap={'40px'}
       py={'62px'}
     >
       <Typography
         fontWeight={700}
-        fontSize={'32px'}
+        fontSize={{
+          xs: '24px',
+          md: '32px',
+        }}
         lineHeight={'40px'}
         letterSpacing={'-1%'}
         fontFamily={'Inter'}
@@ -91,8 +98,23 @@ function QandA() {
       >
         Những câu hỏi thường gặp
       </Typography>
-      <Stack flexDirection={'row'} gap={'40px'}>
-        <Stack flexDirection={'column'} width={'50%'}>
+      <Stack
+        flexDirection={{
+          xs: 'column',
+          md: 'row',
+        }}
+        gap={{
+          xs: '0',
+          md: '40px',
+        }}
+      >
+        <Stack
+          flexDirection={'column'}
+          width={{
+            xs: '100%',
+            md: '50%',
+          }}
+        >
           {questions.slice(0, 5).map((question, index) => (
             <Accordion
               key={index}
@@ -151,7 +173,13 @@ function QandA() {
             </Accordion>
           ))}
         </Stack>
-        <Stack flexDirection={'column'} width={'50%'}>
+        <Stack
+          flexDirection={'column'}
+          width={{
+            xs: '100%',
+            md: '50%',
+          }}
+        >
           {questions.slice(5, 10).map((question, index) => (
             <Accordion
               key={index}
