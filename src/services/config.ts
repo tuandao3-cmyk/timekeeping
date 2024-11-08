@@ -5,4 +5,5 @@ export const API_CONFIG = {
 
   project: '/api/project',
   report: '/api/report',
+  contact: '/api/contact',
 };

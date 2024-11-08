@@ -1,13 +1,14 @@
 // components/ContactForm.tsx
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { postContact } from '@/services/contact.service';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
-    fullName: '',
+    name: '',
     email: '',
     phone: '',
     role: '',
-    message: '',
+    question: '',
   });
 
   const handleChange = (
@@ -22,22 +23,19 @@ const ContactForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const response = await fetch('/api/contact', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
+    const response = await postContact({
+      ...formData,
+      role: parseInt(formData.role),
     });
 
-    if (response.ok) {
+    if (response.statusCode === 200) {
       alert('Đã gửi thành công');
       setFormData({
-        fullName: '',
+        name: '',
         email: '',
         phone: '',
         role: '',
-        message: '',
+        question: '',
       });
     } else {
       alert('Lỗi gửi,vui lòng thử lại sau');
@@ -56,8 +54,8 @@ const ContactForm = () => {
             <input
               className="shadow bg-black/[.03] text-base leading-6 appearance-none border-2 border-bg-black/[.06] rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               type="text"
-              name="fullName"
-              value={formData.fullName}
+              name="name"
+              value={formData.name}
               onChange={handleChange}
               placeholder="Họ và tên"
               required
@@ -83,8 +81,8 @@ const ContactForm = () => {
           <div className="pt-5">
             <textarea
               className="shadow bg-black/[.03] text-base leading-6 border-bg-black/[.06] appearance-none border-2 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline min-h-[107px]"
-              name="message"
-              value={formData.message}
+              name="question"
+              value={formData.question}
               onChange={handleChange}
               placeholder="Nội dung"
               required
@@ -97,9 +95,9 @@ const ContactForm = () => {
                 <input
                   type="radio"
                   name="role"
-                  value="Startup"
+                  value={0}
                   className="mr-2"
-                  checked={formData.role === 'Startup'}
+                  checked={formData.role === '0'}
                   onChange={handleChange}
                 />
                 Startup
@@ -109,9 +107,9 @@ const ContactForm = () => {
                 <input
                   type="radio"
                   name="role"
-                  value="Investor"
+                  value={1}
                   className="mr-2"
-                  checked={formData.role === 'Investor'}
+                  checked={formData.role === '1'}
                   onChange={handleChange}
                 />
                 Nhà đầu tư
@@ -121,9 +119,9 @@ const ContactForm = () => {
                 <input
                   type="radio"
                   name="role"
-                  value="Expert"
+                  value={2}
                   className="mr-2"
-                  checked={formData.role === 'Expert'}
+                  checked={formData.role === '2'}
                   onChange={handleChange}
                 />
                 Chuyên gia

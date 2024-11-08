@@ -215,6 +215,7 @@ const InfoSection = (props: InfoSectionProps) => {
                   style={{
                     borderRadius: '16px',
                     maxWidth: '792px',
+                    maxHeight: '400px',
                   }}
                 />
                 <Stack
@@ -398,7 +399,7 @@ const InfoSection = (props: InfoSectionProps) => {
                     >
                       {dataP?.data?.project_information[
                         item.title
-                      ].toLocaleString() || ''}
+                      ].toLocaleString() || '0'}
                     </Typography>
                     <Typography
                       fontFamily={'Inter'}
@@ -436,9 +437,6 @@ const InfoSection = (props: InfoSectionProps) => {
         <section className="w-full h-auto  bg-white py-[62px] flex flex-col justify-center items-center px-[12px] md:px-[120px] max-w-[1440px]">
           {products.map((product: (typeof products)[0], index) => (
             <div
-              onClick={() =>
-                router.push(`/detail-category/${product.package[index].title}`)
-              }
               className="w-full h-auto bg-white px-1 flex flex-col justify-center items-left"
               key={index}
             >
@@ -506,7 +504,7 @@ const InfoSection = (props: InfoSectionProps) => {
                       sm: 'none',
                     },
                   }}
-                  onClick={() => router.push('/categories')}
+                  onClick={() => (window.location.href = `/categories`)}
                 >
                   Xem thêm
                 </Button>
