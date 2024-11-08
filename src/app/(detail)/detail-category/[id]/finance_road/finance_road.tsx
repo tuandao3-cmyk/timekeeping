@@ -4,9 +4,15 @@ import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { FaDownload, FaEye } from 'react-icons/fa';
 
-const ContractSampleSection: React.FC = () => {
+interface FinanceRoadSectionProps {
+  data: any;
+}
+
+const FinanceRoadSection = (props: FinanceRoadSectionProps) => {
   const pathname = usePathname();
   const [openPdf, setOpenPdf] = useState(false);
+
+
 
   const handleDownload = () => {
     const link = document.createElement('a');
@@ -25,11 +31,11 @@ const ContractSampleSection: React.FC = () => {
             <div className="bg-[#CCCCCC] w-1 h-auto rounded-full"></div>
             <div className="flex justify-between  w-full">
               <div>
-                <p className="text-[30px] ">Mẫu hợp đồng</p>
+                <p className="text-[30px] ">Lộ trình tài chính</p>
                 <span className="text-[25px] text-[#9f9f9f]"> 02/03/2024</span>
               </div>
               <div className="flex">
-                <button
+              <button
                   onClick={() => setOpenPdf(true)}
                   className="bg-transparent border-2 border-[#28a745] rounded-full cursor-pointer ml-[10px] w-[50px] h-[50px] flex justify-center items-center transition-all duration-300 ease-in-out hover:bg-[#28a745] group"
                 >
@@ -49,10 +55,10 @@ const ContractSampleSection: React.FC = () => {
       <PdfView
         openPdf={openPdf}
         setOpenPdf={setOpenPdf}
-        pdfPath={'/pdfs/report.pdf'}
+        pdfPath={props.data.financial_roadmap}
       />
     </section>
   );
 };
 
-export default ContractSampleSection;
+export default FinanceRoadSection;

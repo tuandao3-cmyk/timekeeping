@@ -5,11 +5,11 @@ import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import React, { useState } from 'react';
-import BusinessPlanSection from './business plan/page';
-import ContractSampleSection from './contract_sample/page';
-import FinanceRoadSection from './finance_road/page';
+import BusinessPlanSection from './business plan/business_plan';
+import ContractSampleSection from './contract_sample/contractSample';
+import FinanceRoadSection from './finance_road/finance_road';
 import InfoSection from './info/infoSection';
-import PitchingDeckSection from './pitchingdeck/page';
+import PitchingDeckSection from './pitchingdeck/pitchingDeck';
 
 interface DetailCategoryPageProps {
   data: any;
@@ -109,18 +109,17 @@ const DetailCategoryPage = (props: DetailCategoryPageProps) => {
         <InfoSection dataP={data} />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        <PitchingDeckSection />
-        <PitchingDeckSection />
+        <PitchingDeckSection data={data} />
+        {/* <PitchingDeckSection /> */}
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
-        <ContractSampleSection />
+        <ContractSampleSection data={data} />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={3}>
-        <FinanceRoadSection />
+        <FinanceRoadSection data={data} />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={4}>
-        <BusinessPlanSection />
-        <BusinessPlanSection />
+        <BusinessPlanSection data={data} />
       </CustomTabPanel>
     </Box>
   );

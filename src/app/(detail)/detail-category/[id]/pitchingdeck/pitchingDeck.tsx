@@ -4,13 +4,22 @@ import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { FaDownload, FaEye } from 'react-icons/fa';
 
-const BusinessPlanSection: React.FC = () => {
+interface PitchingDeckSectionProps {
+  data: any;
+}
+
+const PitchingDeckSection = (props: PitchingDeckSectionProps) => {
   const pathname = usePathname();
   const [openPdf, setOpenPdf] = useState(false);
 
+  // const handlePreview = (file: string) => {
+  //   const googleDocsViewerUrl = `https://docs.google.com/viewer?url=${encodeURIComponent(props.data.pitching_deck)}&embedded=true`;
+  //   window.open(googleDocsViewerUrl, '_blank');
+  // };
+
   const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = '/pdfs/report.pdf';
+    link.href = props.data.pitching_deck;
     link.setAttribute('download', 'report.pdf');
     document.body.appendChild(link);
     link.click();
@@ -25,7 +34,7 @@ const BusinessPlanSection: React.FC = () => {
             <div className="bg-[#CCCCCC] w-1 h-auto rounded-full"></div>
             <div className="flex justify-between  w-full">
               <div>
-                <p className="text-[30px] ">Kế hoạch kinh doanh</p>
+                <p className="text-[30px] ">Pitching Deck</p>
                 <span className="text-[25px] text-[#9f9f9f]"> 02/03/2024</span>
               </div>
               <div className="flex">
@@ -49,10 +58,10 @@ const BusinessPlanSection: React.FC = () => {
       <PdfView
         openPdf={openPdf}
         setOpenPdf={setOpenPdf}
-        pdfPath={'/pdfs/report.pdf'}
+        pdfPath={props.data.pitching_deck}
       />
     </section>
   );
 };
 
-export default BusinessPlanSection;
+export default PitchingDeckSection;
