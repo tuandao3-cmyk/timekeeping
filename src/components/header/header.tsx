@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,10 +29,10 @@ const Header = () => {
   const menuItems = [
     { href: '/', text: 'Trang chủ' },
     { href: '/about', text: 'Giới thiệu' },
-    { 
-      href: '/categories', 
+    {
+      href: '/categories',
       text: 'Danh mục',
-      activeLinks: ['/categories', '/detail-category']
+      activeLinks: ['/categories', '/detail-category'],
     },
     { href: '/products', text: 'Sản phẩm' },
     { href: '/guides', text: 'Hướng dẫn' },
@@ -40,7 +40,9 @@ const Header = () => {
     { href: '/reports', text: 'Báo cáo' },
     { href: '/contact', text: 'Liên hệ' },
   ];
-
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [pathname]);
   return (
     <header
       className={`fixed w-full z-50 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
@@ -108,7 +110,7 @@ const Header = () => {
                   <Link
                     href={item.href}
                     className={`block py-2 pr-4 pl-3 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:p-0 transition duration-300 ${
-                      pathname === item.href || 
+                      pathname === item.href ||
                       (item.activeLinks && item.activeLinks.includes(pathname))
                         ? 'text-[#48B96D] lg:text-[#48B96D]'
                         : 'text-[#000000]/90 lg:hover:text-[#48B96D]'

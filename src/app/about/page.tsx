@@ -8,6 +8,7 @@ import { useInView } from 'react-intersection-observer';
 import PressSection from '../PressSection';
 import News from '../news';
 import Partner from '../partner';
+import ModalDown from '../products/ModalDownload';
 import CustomWidthTooltip from './components/customToolTip';
 import MessageFromCreative from './components/messageFromCreative';
 
@@ -225,7 +226,7 @@ const AboutPage: React.FC = () => {
     phone: '',
     question: '',
   });
-
+  const [modal, setModal] = useState<boolean>(false);
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -278,6 +279,7 @@ const AboutPage: React.FC = () => {
           backgroundRepeat: 'no-repeat',
         }}
       >
+        <ModalDown modal={modal} setModal={setModal} />
         <div className="flex flex-col items-center justify-center w-full max-w-[1440px]">
           <div className="flex justify-between items-center w-full h-full mt-16 max-lg:!flex-col md:pl-20 md:pr-12 px-[12px]">
             <div className="flex flex-col md:min-h-[620px] mb-[24px] md:mb-0 justify-start items-start lg:justify-start flex-1  gap-[24px] md:gap-10">
@@ -329,6 +331,7 @@ const AboutPage: React.FC = () => {
               <div className="flex w-[100%] justify-center lg:justify-start items-center lg:items-start  max-w-[500px]">
                 <button
                   ref={ref}
+                  onClick={() => setModal(true)}
                   className={` bg-[#48B96D] text-white font-sans text-[16px] leading-[20px]  px-[16px] py-[14px] rounded-[999px] text-center  hover:bg-[#379256] transition-all  duration-300 delay-200 ease-in-out transform ${
                     inView
                       ? 'opacity-100 translate-y-0'

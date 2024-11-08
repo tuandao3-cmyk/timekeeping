@@ -9,6 +9,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
+import ModalDown from '@/app/products/ModalDownload';
 import { Box, Button, Stack, Typography } from '@mui/material';
 import Image from 'next/image';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
@@ -29,6 +30,7 @@ function BannerSwipper() {
   const [isRightFrameVisible, setIsRightFrameVisible] = useState(false);
   const progressCircle = useRef<any>(null);
   const progressContent = useRef<any>(null);
+  const [modal, setModal] = useState<boolean>(false);
   const onAutoplayTimeLeft = (s: any, time: any, progress: any) => {
     if (!progressCircle.current || !progressContent.current) return;
     progressCircle.current.style.setProperty('--progress', 1 - progress);
@@ -103,6 +105,7 @@ function BannerSwipper() {
       }}
       className="mySwiper"
     >
+      <ModalDown modal={modal} setModal={setModal} />
       <SwiperSlide className="bg-[rgb(7,33,44)] flex flex-col :flex-row min-h-[812px] h-auto justify-center items-center w-full">
         <Box
           ref={ref}
@@ -199,6 +202,7 @@ function BannerSwipper() {
                   đẩy sự phát triển tài chính.
                 </Typography>
                 <Button
+                  onClick={() => setModal(true)}
                   sx={{
                     height: {
                       xs: '40px',
