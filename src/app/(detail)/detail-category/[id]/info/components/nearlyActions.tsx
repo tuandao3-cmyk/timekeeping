@@ -43,6 +43,8 @@ function NearlyActions(props: NearlyActionsProps) {
           <Stack flexDirection={'row'} key={index} gap={'12px'}>
             <Box>
               <Image
+                onClick={() => router.push('/news/newsdetail')}
+                className="cursor-pointer"
                 src={`${action.img}/${index + 1}.png`}
                 alt={action.img}
                 width={80}
@@ -65,6 +67,8 @@ function NearlyActions(props: NearlyActionsProps) {
                 lineHeight={'24px'}
                 fontFamily={'Inter'}
                 color="#000000B2"
+                onClick={() => router.push('/news/newsdetail')}
+                className="cursor-pointer"
                 sx={{
                   display: '-webkit-box',
                   WebkitLineClamp: 2,

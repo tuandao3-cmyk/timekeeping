@@ -166,7 +166,8 @@ function SolutionList() {
           giải pháp đầu tư vượt trội
         </Typography>
       </div>
-      <div className="flex flex-col md:flex-row gap-[24px] md:px-[120px] px-[12px] justify-center items-center">
+
+      <div className="flex flex-col md:flex-row gap-[24px] XL:px-[120px] px-[12px] justify-center items-center">
         {DATA.map((item, index) => (
           <div
             className={`flex rounded-[24px] max-w-[384px] bg-[#F3F7F4] transition duration-300 gap-[24px]  flex-col hover:bg-[#48B96DCC] hover:bg-opacity-80 justify-start items-start group p-[40px] ease-in-out delay-${index * 100} transform ${

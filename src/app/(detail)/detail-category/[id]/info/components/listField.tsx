@@ -6,6 +6,8 @@ interface ListFieldProps {
 
 function ListField(props: ListFieldProps) {
   const { list } = props;
+  console.log(list);
+
   return (
     <Stack
       flexDirection={'column'}
@@ -39,7 +41,7 @@ function ListField(props: ListFieldProps) {
             color="rgb(76,76,76)"
             fontFamily={'Inter'}
           >
-            {item.value}
+            {item?.value || ''}
           </Typography>
         </Stack>
       ))}
