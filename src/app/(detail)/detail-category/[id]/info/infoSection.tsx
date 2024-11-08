@@ -464,7 +464,7 @@ const InfoSection = (props: InfoSectionProps) => {
                   fontFamily={'Inter'}
                   fontWeight={700}
                   fontSize={{
-                    xs: '28px',
+                    xs: '24px',
                     sm: '32px',
                   }}
                   lineHeight={'40px'}

@@ -110,6 +110,7 @@ const ProjectSlider: React.FC = () => {
     queryFn: () => getProjects(page),
   });
 
+  
   useEffect(() => {
     if (isSuccess) {
       console.log(data.data);
@@ -150,17 +151,7 @@ const ProjectSlider: React.FC = () => {
     slidesPerView = 1;
   }
 
-  const handlePrev = () => {
-    if (swiper) {
-      swiper.slidePrev();
-    }
-  };
 
-  const handleNext = () => {
-    if (swiper) {
-      swiper.slideNext();
-    }
-  };
 
   useEffect(() => {
     console.log('activeIndex', activeIndex);
@@ -177,7 +168,7 @@ const ProjectSlider: React.FC = () => {
   useEffect(() => {
     if (progressBarRef.current) {
       const realIndex = swiper?.realIndex || 0;
-      const percentage = ((realIndex + 1) / projects.length) * 100;
+      const percentage = ((realIndex + 1) / projectData.length) * 100;
       progressBarRef.current.style.width = `${percentage}%`;
     }
   }, [activeIndex, projects.length]);
@@ -354,18 +345,7 @@ const ProjectSlider: React.FC = () => {
           </Swiper>
           <div className="swiper-button-prev !hidden"></div>
           <div className="swiper-button-next !hidden"></div>
-          {/* <div
-            onClick={handlePrev}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 w-12 h-12 bg-[#F3F7F4] rounded-full flex items-center justify-center cursor-pointer hover:bg-[#E0E7E2] transition-colors duration-300 shadow-md"
-          >
-            <MdArrowBackIos className="text-3xl text-gray-700 ml-1" />
-          </div>
-          <div
-            onClick={handleNext}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 w-12 h-12 bg-[#F3F7F4] rounded-full flex items-center justify-center cursor-pointer hover:bg-[#E0E7E2] transition-colors duration-300 shadow-md"
-          >
-            <MdArrowForwardIos className="text-3xl text-gray-700 mr-1" />
-          </div> */}
+
           <div className="flex justify-center items-center mt-6 w-full  pb-6">
             <div className="bg-gray-200 h-2 rounded-full w-[1200px] ">
               <div

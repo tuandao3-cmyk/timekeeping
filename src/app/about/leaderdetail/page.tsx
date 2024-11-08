@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { use, useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { leaders } from '../about';
 import { IoArrowBack } from 'react-icons/io5';
@@ -9,6 +9,13 @@ export default function LeaderDetail() {
   const leader = leaders[activeLeader];
   const router = useRouter();
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }, [activeLeader]);
+
   return (
     <div className="flex flex-col  min-h-[600px]">
       <main className="flex justify-center flex-1 w-full">
@@ -16,7 +23,7 @@ export default function LeaderDetail() {
           <img
             src="/img/about/bg_about_us1.png"
             alt="bg"
-            className="absolute pointer-events-none inset-0 w-full max-w-[1440px] h-full object-cover"
+            className="absolute pointer-events-none inset-0 w-full max-w-[1440px] h-full object-cover opacity-50"
           />
 
           <div className=" absolute pointer-events-none inset-0 flex whitespace-nowrap overflow-hidden pt-[120px] lg:pt-[80px] bg-[rgba(72,185,109,0.05)] w-full h-full justify-center lg:justify-start text-center lg:text-left lg:p-16">

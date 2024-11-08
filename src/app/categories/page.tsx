@@ -235,8 +235,8 @@ const CategoryPage: React.FC = () => {
             <Typography
               sx={{
                 fontWeight: 700,
-                fontSize: '48px',
-                lineHeight: '56px',
+                fontSize: { xs: '32px', md: '48px' },
+                lineHeight: { xs: '40px', md: '56px' },
                 textAlign: 'center',
                 fontFamily: 'Inter',
               }}
@@ -438,7 +438,7 @@ const CategoryPage: React.FC = () => {
                             </div>
                             <div className="h-2 bg-gray-300 rounded mt-2">
                               <div
-                                className="bg-green-500 h-full rounded"
+                                className="bg-green-500 h-full rounded max-w-full"
                                 style={{
                                   width: `${(project?.mobilized_fund / project?.capital_raising_target) * 100}%`,
                                 }}
@@ -452,9 +452,11 @@ const CategoryPage: React.FC = () => {
                                 <span>Hoàn thành</span>
                                 <p className="text-[#48B96D] font-semibold">
                                   $
-                                  {(project?.mobilized_fund /
-                                    project?.capital_raising_target) *
-                                    100}
+                                  {(
+                                    (project?.mobilized_fund /
+                                      project?.capital_raising_target) *
+                                    100
+                                  ).toLocaleString()}
                                   %
                                 </p>
                               </div>
@@ -557,7 +559,7 @@ const CategoryPage: React.FC = () => {
                             </div>
                             <div className="h-2 bg-gray-300 rounded mt-2">
                               <div
-                                className="bg-green-500 h-full rounded"
+                                className="bg-green-500 h-full rounded max-w-full"
                                 style={{
                                   width: `${(project?.mobilized_fund / project?.capital_raising_target) * 100}%`,
                                 }}
@@ -571,9 +573,11 @@ const CategoryPage: React.FC = () => {
                                 <span>Hoàn thành</span>
                                 <p className="text-[#48B96D] font-semibold">
                                   $
-                                  {(project?.mobilized_fund /
-                                    project?.capital_raising_target) *
-                                    100}
+                                  {(
+                                    (project?.mobilized_fund /
+                                      project?.capital_raising_target) *
+                                    100
+                                  ).toLocaleString()}
                                   %
                                 </p>
                               </div>
@@ -676,7 +680,7 @@ const CategoryPage: React.FC = () => {
                             </div>
                             <div className="h-2 bg-gray-300 rounded mt-2">
                               <div
-                                className="bg-green-500 h-full rounded"
+                                className="bg-green-500 h-full rounded max-w-full"
                                 style={{
                                   width: `${(project?.mobilized_fund / project?.capital_raising_target) * 100}%`,
                                 }}
@@ -690,9 +694,11 @@ const CategoryPage: React.FC = () => {
                                 <span>Hoàn thành</span>
                                 <p className="text-[#48B96D] font-semibold">
                                   $
-                                  {(project?.mobilized_fund /
-                                    project?.capital_raising_target) *
-                                    100}
+                                  {(
+                                    (project?.mobilized_fund /
+                                      project?.capital_raising_target) *
+                                    100
+                                  ).toLocaleString()}
                                   %
                                 </p>
                               </div>
