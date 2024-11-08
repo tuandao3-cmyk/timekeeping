@@ -2,7 +2,7 @@
 
 import styles from '@/app/about/about.module.css';
 import { Typography } from '@mui/material';
-import React from 'react';
+import React, { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 import PressSection from '../PressSection';
@@ -219,6 +219,53 @@ const AboutPage: React.FC = () => {
     threshold: 0.1,
     triggerOnce: true,
   });
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    question: '',
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (
+      formData.fullName == '' ||
+      formData.email ||
+      formData.phone ||
+      formData.question
+    ) {
+      alert('Hãy điền đầy đủ thông tin');
+      return;
+    }
+    const response = await fetch('/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      alert('Đã gửi thành công');
+      setFormData({
+        fullName: '',
+        email: '',
+        phone: '',
+        question: '',
+      });
+    } else {
+      alert('Lỗi gửi,vui lòng thử lại sau');
+    }
+  };
   return (
     <>
       {/* <div className="max-h-max"> */}
@@ -1050,11 +1097,15 @@ const AboutPage: React.FC = () => {
                           ? 'opacity-100 scale-100 translate-y-0'
                           : 'opacity-0 translate-y-10 scale-50'
                       }`}
+                      name="fullName"
                       type="text"
                       placeholder="Tên"
+                      value={formData.fullName}
+                      onChange={handleChange}
                       required
                     />
                     <input
+                      name="email"
                       className={` duration-700 font-sans  delay-100  ease-in-out transform ${
                         inView9
                           ? 'opacity-100 scale-100 translate-y-0'
@@ -1062,9 +1113,12 @@ const AboutPage: React.FC = () => {
                       }`}
                       type="email"
                       placeholder="Email"
+                      value={formData.email}
+                      onChange={handleChange}
                       required
                     />
                     <input
+                      name="phone"
                       className={` duration-700 delay-200  font-sans  ease-in-out transform ${
                         inView9
                           ? 'opacity-100 scale-100 translate-y-0'
@@ -1072,8 +1126,11 @@ const AboutPage: React.FC = () => {
                       }`}
                       type="tel"
                       placeholder="Số điện thoại"
+                      value={formData.phone}
+                      onChange={handleChange}
                     />
                     <textarea
+                      name="question"
                       className={` duration-700  delay-300 font-sans ease-in-out transform ${
                         inView9
                           ? 'opacity-100 scale-100 translate-y-0'
@@ -1081,6 +1138,8 @@ const AboutPage: React.FC = () => {
                       }`}
                       placeholder="Câu hỏi của bạn"
                       required
+                      value={formData.question}
+                      onChange={handleChange}
                     ></textarea>
                     <div
                       className={`${styles.recaptcha} duration-700  delay-300  ease-in-out transform ${
@@ -1106,9 +1165,10 @@ const AboutPage: React.FC = () => {
                           : 'opacity-0 translate-y-10 scale-50'
                       }`}
                       type="submit"
+                      onClick={handleSubmit}
                     >
                       <span className="text-lg font-medium font-sans ">
-                        Send
+                        Sen
                       </span>
                       <img src="/img/icon/sendBlack.svg" />
                     </button>

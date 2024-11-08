@@ -143,7 +143,7 @@ const NewsPage: React.FC = () => {
 
       <section
         ref={ref2}
-        className="w-full font-inter flex flex-col justify-center items-center"
+        className="w-full font-inter flex flex-col justify-center items-center md:p-5 xl:p-0"
       >
         <div className="flex flex-col max-w-[1201px] gap-[20px] md:gap-[40px] py-[62px]">
           <h1
@@ -276,7 +276,7 @@ const NewsPage: React.FC = () => {
       } */}
 
       {/* upcomming */}
-      <section className="w-full bg-cover bg-center flex justify-center flex-col items-center gap-3 bg-[#F3F7F4] mt-20 md:mt-0">
+      <section className="w-full bg-cover bg-center flex justify-center flex-col items-center gap-3 bg-[#F3F7F4] mt-20 md:mt-0 md:p-5 xl:p-0">
         <div className="max-w-[1201px] md:py-[62px] py-[50px] flex flex-col md:gap-[40px] gap-[10px] ">
           <h1 className="w-full text-left text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800  pl-5 md:pl-0 ">
             Sự kiện sắp tới
@@ -325,7 +325,7 @@ const NewsPage: React.FC = () => {
       </section>
 
       {/*  */}
-      <section className="w-full  bg-cover bg-center flex justify-center flex-col items-center gap-8">
+      <section className="w-full  bg-cover bg-center flex justify-center flex-col items-center gap-8 md:p-5 xl:p-0">
         <div className="max-w-[1200px] ">
           <h1 className="w-full max-lg:px-8 text-left text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 pt-8 hidden md:block ">
             Sự kiện nổi bật
@@ -458,7 +458,7 @@ const NewsPage: React.FC = () => {
                   </button>
                 </div>
               </div>
-              <div className="flex index-2 justify-center items-center  bg-[#07212C] w-full md:w-[450px] md:mx-[25%] lg:mx-0 lg:w-full h-full max-lg:max-h-[300px] lg:max-h-[390px] rounded-lg my-8  p-5 mt-14">
+              <div className="flex index-2 justify-center items-center  bg-[#07212C] w-full md:w-[450px] md:mx-[19%] lg:mx-0 lg:w-full h-full max-lg:max-h-[300px] lg:max-h-[390px] rounded-lg my-8  p-5 mt-14">
                 <div className="index-3 relative flex flex-row text-white  font-bold text-[11px] bg-[#48B96D] w-full h-full md:text-[15px] rounded-lg">
                   <div className=" flex  flex-col h-full text-[20px] md:text-2xl lg:text-3xl  justify-between gap-4 py-5 px-28 pl-5 md:py-10 md:px-8  ">
                     <p className="max-w-[250px] ">

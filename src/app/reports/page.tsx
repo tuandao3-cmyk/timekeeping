@@ -1,16 +1,44 @@
 'use client';
-import React from 'react';
 import styles from '@/app/reports/report.module.css';
+import React from 'react';
 
-import { FaDownload, FaEye } from 'react-icons/fa';
-import { Typography } from '@mui/material';
 import PdfView from '@/components/pdfView';
+import { Typography } from '@mui/material';
+import { FaDownload, FaEye } from 'react-icons/fa';
 
 // report
 const ReportPage: React.FC = () => {
   const [activeTab, setActiveTab] = React.useState(0);
   const [openPdf, setOpenPdf] = React.useState(false);
-
+  const data1 = [
+    {
+      title: 'Báo cáo tài chính quý I năm 2024',
+      date: '02/03/2024',
+    },
+    {
+      title: 'Báo cáo tài chính quý II năm 2024',
+      date: '02/06/2024',
+    },
+    {
+      title: 'Báo cáo tài chính quý III năm 2024',
+      date: '02/09/2024',
+    },
+    {
+      title: 'Báo cáo tài chính quý IV năm 2024',
+      date: '02/12/2024',
+    },
+  ];
+  const data2 = [
+    {
+      title: 'Báo cáo tài chính 2023',
+      date: '02/12/2023',
+    },
+    {
+      title: 'Báo cáo tài chính 2024',
+      date: '02/10/2024',
+    },
+  ];
+  const data = activeTab == 0 ? data1 : data2;
   const handleDownload = () => {
     const link = document.createElement('a');
     link.href = '/pdfs/report.pdf';
@@ -70,24 +98,7 @@ const ReportPage: React.FC = () => {
               </button>
             </div>
             <div>
-              {[
-                {
-                  title: 'Báo cáo tài chính quý I năm 2024',
-                  date: '02/03/2024',
-                },
-                {
-                  title: 'Báo cáo tài chính quý II năm 2024',
-                  date: '02/06/2024',
-                },
-                {
-                  title: 'Báo cáo tài chính quý III năm 2024',
-                  date: '02/09/2024',
-                },
-                {
-                  title: 'Báo cáo tài chính quý IV năm 2024',
-                  date: '02/12/2024',
-                },
-              ].map((report, index) => (
+              {data.map((report, index) => (
                 <div className="flex gap-5 py-5" key={index}>
                   <div className="bg-[#CCCCCC] w-1 h-auto rounded-full"></div>
                   <div key={index} className="flex justify-between w-full">
@@ -139,9 +150,11 @@ const ReportPage: React.FC = () => {
                 <div className="flex gap-5 py-5" key={index}>
                   <div className="bg-[#CCCCCC] w-1 h-auto rounded-full"></div>
                   <div key={index} className="flex justify-between w-full">
-                    <div >
+                    <div>
                       <h3 className="text-lg mb-[5px]">{report.title}</h3>
-                      <span className="text-gray-600 text-sm">{report.date}</span>
+                      <span className="text-gray-600 text-sm">
+                        {report.date}
+                      </span>
                     </div>
                     <div className={styles.reportActions}>
                       <button

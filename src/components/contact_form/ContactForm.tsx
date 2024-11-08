@@ -31,7 +31,7 @@ const ContactForm = () => {
     });
 
     if (response.ok) {
-      alert('Form submitted successfully!');
+      alert('Đã gửi thành công');
       setFormData({
         fullName: '',
         email: '',
@@ -40,7 +40,7 @@ const ContactForm = () => {
         message: '',
       });
     } else {
-      alert('Error submitting the form.');
+      alert('Lỗi gửi,vui lòng thử lại sau');
     }
   };
 
