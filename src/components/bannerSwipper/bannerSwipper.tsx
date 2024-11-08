@@ -11,7 +11,7 @@ import 'swiper/css/pagination';
 
 import { Box, Button, Stack, Typography } from '@mui/material';
 import Image from 'next/image';
-import { PROJECTS } from '@/app/categories/page';
+
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { useRouter } from 'next/navigation';
 function BannerSwipper() {

@@ -120,7 +120,10 @@ const ProductItem = forwardRef<HTMLDivElement, ProductItemProps>(
             </div>
             <div className="w-min">
               {props?.field?.map((item, index) => (
-                <p className="text-[13px] text-nowrap p-[3px] rounded-[3px] bg-[#0000000F] text-[#000000B2] uppercase font-[700]">
+                <p
+                  key={index}
+                  className="text-[13px] text-nowrap p-[3px] rounded-[3px] bg-[#0000000F] text-[#000000B2] uppercase font-[700]"
+                >
                   {item?.name || ''}
                 </p>
               ))}

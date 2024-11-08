@@ -270,7 +270,8 @@ const ProjectSlider: React.FC = () => {
                             {project.name}
                           </h3>
                           <p className="text-gray-300 leading-6 text-sm mb-4 font-sans line-clamp-2 text-ellipsis overflow-x-hidden">
-                            {project.description}
+                            {project?.data?.project_information?.description ||
+                              ''}
                           </p>
                         </div>
                         <div>
@@ -331,14 +332,16 @@ const ProjectSlider: React.FC = () => {
                             </div>
                           </div>
                           <div className="flex gap-2 ml-3 pt-[16px] md:pt-0">
-                            {/* {project.tags.map((tag, index) => (
-                              <span
-                                key={index}
-                                className="bg-gray-700 text-white text-xs px-2 py-1 rounded font-sans"
-                              >
-                                {tag}
-                              </span>
-                            ))} */}
+                            {project?.industries.map(
+                              (item: any, index: number) => (
+                                <span
+                                  key={index}
+                                  className="bg-gray-700 text-white text-xs px-2 py-1 rounded font-sans"
+                                >
+                                  {item.name}
+                                </span>
+                              )
+                            )}
                           </div>
                         </div>
                       </div>

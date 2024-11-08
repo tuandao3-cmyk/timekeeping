@@ -23,7 +23,6 @@ const Footer: React.FC = () => {
       className={`bg-[#04141A] dark:bg-[#04141A] duration-700 ease-in-out transform `}
     >
       <div className="mx-auto w-full max-w-screen-xl py-[62px] pl-3 pr-3">
-
         <div className="grid grid-cols-1 gap-8 px-4   md:grid-cols-5">
           <div className="md:col-span-2 md:max-w-[258px]">
             <h2
@@ -107,12 +106,19 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li className="mb-4">
-                <a href="about" className="hover:underline font-sans text-[14px]">
+                <a
+                  href="about"
+                  className="hover:underline font-sans text-[14px]"
+                >
                   Công nghệ của chúng tôi
                 </a>
               </li>
               <li className="mb-4">
-                <a href="https://www.facebook.com/hyraholdings/" className="hover:underline font-sans text-[14px]">
+                <a
+                  href="https://www.facebook.com/hyraholdings/"
+                  target="blank"
+                  className="hover:underline font-sans text-[14px]"
+                >
                   Bộ phương tiện truyền thông
                 </a>
               </li>
@@ -131,17 +137,29 @@ const Footer: React.FC = () => {
             </h2>
             <ul className="text-gray-500 dark:text-gray-400 ">
               <li className="mb-4">
-                <a href="https://www.hyperaschain.com/vi" className="hover:underline font-sans text-[14px]">
+                <a
+                  href="https://www.hyperaschain.com/vi"
+                  target="blank"
+                  className="hover:underline font-sans text-[14px]"
+                >
                   Hyperas
                 </a>
               </li>
               <li className="mb-4">
-                <a href="https://salala.ai/vi" className="hover:underline font-sans text-[14px]">
+                <a
+                  target="blank"
+                  href="https://salala.ai/vi"
+                  className="hover:underline font-sans text-[14px]"
+                >
                   Salala AI
                 </a>
               </li>
               <li className="mb-4">
-                <a href="https://egabid.com/vi" className="hover:underline font-sans text-[14px]">
+                <a
+                  target="blank"
+                  href="https://egabid.com/vi"
+                  className="hover:underline font-sans text-[14px]"
+                >
                   Egabid
                 </a>
               </li>
@@ -160,22 +178,36 @@ const Footer: React.FC = () => {
             </h2>
             <ul className="text-gray-500 dark:text-gray-400 ">
               <li className="mb-4">
-                <a href="/news" className="hover:underline font-sans text-[14px]">
+                <a
+                  href="/news"
+                  className="hover:underline font-sans text-[14px]"
+                >
                   Tin tức
                 </a>
               </li>
               <li className="mb-4">
-                <a href="https://hr1tech.com/en/company/cong-ty-co-phan-hyra-holdings-37455.html" className="hover:underline font-sans text-[14px]">
+                <a
+                  target="blank"
+                  href="https://hr1tech.com/en/company/cong-ty-co-phan-hyra-holdings-37455.html"
+                  className="hover:underline font-sans text-[14px]"
+                >
                   Tuyển dụng
                 </a>
               </li>
               <li className="mb-4">
-                <a href="/contact" className="hover:underline font-sans text-[14px]">
+                <a
+                
+                  href="/contact"
+                  className="hover:underline font-sans text-[14px]"
+                >
                   Liên hệ chúng tôi
                 </a>
               </li>
               <li className="mb-4">
-                <a href="/about/leaderdetail" className="hover:underline font-sans text-[14px]">
+                <a
+                  href="/about/leaderdetail"
+                  className="hover:underline font-sans text-[14px]"
+                >
                   Quan hệ cổ đông
                 </a>
               </li>

@@ -98,6 +98,11 @@ const NewsPage: React.FC = () => {
     threshold: 0.1,
     // triggerOnce: true,
   });
+
+  const handleOpenPage = (link: string) => {
+    router.push(link);
+  };
+
   return (
     <>
       <div className="flex flex-col justify-center items-center  ">
@@ -110,7 +115,7 @@ const NewsPage: React.FC = () => {
             <div className=" z-10 my-auto  h-full p-8 lg:p-12 ">
               <div className=" lg:pl-[60px] lg:mt-8 text-center md:text-left text-white flex flex-col justify-between items-left gap-4">
                 <Link
-                  href={'/news/newsdetail'}
+                  href={`/news/${newsData[0]?.id}` || '#'}
                   className="md:text-[15px] text-[#579DFF] text-xs font-semibold "
                 >
                   TIN TÀI CHÍNH
@@ -124,24 +129,22 @@ const NewsPage: React.FC = () => {
                 }
                 `}
                 >
-                  Hyratek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng
-                  dự án "Phục dựng ảnh liệt sĩ" của Hà Nội
+                  {newsData[0]?.title}
                 </h1>
                 <p
-                  className={`mt-4 text-sm leading-6 line-clamp-6 max-lg:hidden opacity-70 duration-700 ease-in-out transform ${
+                  className={`mt-4 text-sm line-clamp-5 leading-6 line-clamp-6 max-lg:hidden opacity-70 duration-700 ease-in-out transform ${
                     inView
                       ? 'opacity-100 translate-y-0'
                       : 'opacity-0 translate-y-10'
                   }`}
                 >
-                  Hyratek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng
-                  dự án "Phục dựng ảnh liệt sĩ" của Hà Nội Hyratek và Qualcomm
-                  hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh
-                  liệt sĩ" của Hà Nội Hyratek và Qualcomm hợp tác chiến lược về
-                  AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội
+                  {newsData[0]?.description}
                 </p>
                 <div>
-                  <button className="max-sm:hidden text-[#FFFFFF]/90 bg-[#48B96D] border-[#c2c2c2] font-medium border-[1px]  rounded-full px-3 py-2 inline-flex">
+                  <button
+                    onClick={() => handleNavigate(newsData[0]?.id)}
+                    className="max-sm:hidden text-[#FFFFFF]/90 bg-[#48B96D] border-[#c2c2c2] font-medium border-[1px]  rounded-full px-3 py-2 inline-flex"
+                  >
                     Đọc thêm
                   </button>
                 </div>

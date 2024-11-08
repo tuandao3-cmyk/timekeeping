@@ -12,6 +12,10 @@ const DownloadSection = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   const isMediumScreen = useMediaQuery(theme.breakpoints.between('sm', 'md'));
 
+  const handleOpenPage = (link: string) => {
+    window.open(link, '_blank');
+  };
+
   const imageSrc = isSmallScreen
     ? '/img/screencapture_mb.png'
     : isMediumScreen
@@ -51,6 +55,11 @@ const DownloadSection = () => {
             </p>
             <div className="flex flex-col justify-center sm:flex-row gap-6 mb-8">
               <button
+                onClick={() =>
+                  handleOpenPage(
+                    'https://play.google.com/store/apps/details?id=com.hyra.cap'
+                  )
+                }
                 ref={ref}
                 className={`bg-[#48B96D] text-white px-6 h-[64px] py-3 w-[200px] font-sans rounded-xl flex items-center justify-center gap-[10px] duration-300 delay-500 ease-in-out transform ${
                   inView
@@ -73,6 +82,11 @@ const DownloadSection = () => {
                 Google Play
               </button>
               <button
+                onClick={() =>
+                  handleOpenPage(
+                    'https://apps.apple.com/vn/app/hyra-cap/id1581440739'
+                  )
+                }
                 ref={ref}
                 className={`bg-[#48B96D] text-white h-[64px] px-6 py-3 font-sans w-[200px] rounded-xl flex items-center justify-center gap-[10px] duration-300 delay-500 ease-in-out transform ${
                   inView

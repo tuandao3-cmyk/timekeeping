@@ -123,7 +123,7 @@ const News = () => {
                 <div className="flex flex-col items-start justify-start">
                   <a
                     href={`news/${newsData1[0]?.id}` || ''}
-                    className={`${styles.newsTitle} font-sans w-full  duration-300 delay-200 text-[16px] md:text-[24px] text-[#000000]/80  ease-in-out transform ${
+                    className={`${styles.newsTitle} line-clamp-3 font-sans w-full  duration-300 delay-200 text-[16px] md:text-[24px] text-[#000000]/80  ease-in-out transform ${
                       inView
                         ? 'opacity-100 translate-y-0'
                         : 'opacity-0 translate-y-10'

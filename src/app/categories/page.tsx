@@ -18,7 +18,7 @@ import { useQuery } from '@tanstack/react-query';
 import { Page } from '@/type/page.type';
 import { getProjects } from '@/services/project.service';
 
-export const PROJECTS = [
+const PROJECTS = [
   {
     id: 1,
     img: '/img/egabid_pc.png',
@@ -462,7 +462,10 @@ const CategoryPage: React.FC = () => {
                             <div className="flex gap-2">
                               {project?.industries.map(
                                 (industry: any, index: number) => (
-                                  <span className="text-gray-800 px-2 py-1 font-sans rounded-md font-bold bg-[#F6F6F6]">
+                                  <span
+                                    key={index}
+                                    className="text-gray-800 px-2 py-1 font-sans rounded-md font-bold bg-[#F6F6F6]"
+                                  >
                                     {industry.name}
                                   </span>
                                 )
@@ -481,7 +484,7 @@ const CategoryPage: React.FC = () => {
             className={`flex flex-row justify-center mb-8  ${projects.length < 6 && 'hidden'}`}
           >
             <button
-              onClick={() => handleSearch(SECTIONS.COMPLETED)}
+              onClick={() => handleSearch()}
               className="uppercase flex items-center font-sans bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black"
             >
               xem thêm
@@ -578,7 +581,10 @@ const CategoryPage: React.FC = () => {
                             <div className="flex gap-2">
                               {project?.industries.map(
                                 (industry: any, index: number) => (
-                                  <span className="text-gray-800 px-2 py-1 font-sans rounded-md font-bold bg-[#F6F6F6]">
+                                  <span
+                                    key={index}
+                                    className="text-gray-800 px-2 py-1 font-sans rounded-md font-bold bg-[#F6F6F6]"
+                                  >
                                     {industry.name}
                                   </span>
                                 )
@@ -597,7 +603,7 @@ const CategoryPage: React.FC = () => {
             className={`flex flex-row justify-center mb-8 ${projects.length < 6 && 'hidden'}`}
           >
             <button
-              onClick={() => handleSearch(SECTIONS.FUNDING)}
+              onClick={() => handleSearch()}
               className="uppercase flex font-sans items-center bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black"
             >
               xem thêm
@@ -694,7 +700,10 @@ const CategoryPage: React.FC = () => {
                             <div className="flex gap-2">
                               {project?.industries.map(
                                 (industry: any, index: number) => (
-                                  <span className="text-gray-800 px-2 py-1 font-sans rounded-md font-bold bg-[#F6F6F6]">
+                                  <span
+                                    key={index}
+                                    className="text-gray-800 px-2 py-1 font-sans rounded-md font-bold bg-[#F6F6F6]"
+                                  >
                                     {industry.name}
                                   </span>
                                 )
@@ -713,7 +722,7 @@ const CategoryPage: React.FC = () => {
             className={`flex flex-row justify-center mb-8 ${projects.length < 6 && 'hidden'}`}
           >
             <button
-              onClick={() => handleSearch(SECTIONS.INVESTED)}
+              onClick={() => handleSearch()}
               className="uppercase flex items-center font-sans bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black"
             >
               xem thêm

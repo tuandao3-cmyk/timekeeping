@@ -164,7 +164,7 @@ const ProjectSection = () => {
                       <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#FFFFFF] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                       <div className="absolute inset-x-0 bottom-4 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-4">
                         <a
-                          href="/detail-category"
+                          href={`/detail-category/${project?.id}`}
                           className="bg-[#4CAF50] w-full font-sans text-white text-sm font-medium  py-2 rounded-full cursor-pointer text-center justify-center flex items-center"
                         >
                           Xem chi tiết

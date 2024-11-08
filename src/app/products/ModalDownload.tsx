@@ -10,6 +10,7 @@ function ModalDown(props: Prop) {
   return (
     <div>
       <Modal
+        
         open={modal}
         onClose={() => setModal(false)}
         aria-labelledby="simple-modal-title"
