@@ -277,23 +277,25 @@ const InfoSection = (props: InfoSectionProps) => {
             gap={'24px'}
           >
             <Stack flexDirection={'column'} gap={'12px'}>
-              {dataP?.industries?.map((item: any, index: number) => (
-                <Typography
-                  key={index}
-                  bgcolor={'#48B96D1F'}
-                  color={'#31814B'}
-                  px={'16px'}
-                  fontWeight={700}
-                  fontSize={'12px'}
-                  lineHeight={'16px'}
-                  fontFamily={'Inter'}
-                  py={'8px'}
-                  borderRadius={'4px'}
-                  width={'fit-content'}
-                >
-                  {item?.name || ''}
-                </Typography>
-              ))}
+              <Stack flexDirection={'row'} gap={'4px'}>
+                {dataP?.industries?.map((item: any, index: number) => (
+                  <Typography
+                    key={index}
+                    bgcolor={'#48B96D1F'}
+                    color={'#31814B'}
+                    px={'16px'}
+                    fontWeight={700}
+                    fontSize={'12px'}
+                    lineHeight={'16px'}
+                    fontFamily={'Inter'}
+                    py={'8px'}
+                    borderRadius={'4px'}
+                    width={'fit-content'}
+                  >
+                    {item?.name || ''}
+                  </Typography>
+                ))}
+              </Stack>
               <Typography
                 fontWeight={700}
                 fontSize={'32px'}
