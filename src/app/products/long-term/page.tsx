@@ -80,7 +80,7 @@ const LongTermSection: React.FC = () => {
   });
   return (
     <>
-      <div className=" flex justify-center items-center w-full mt-10 md:mt-0 lg:mt-0 sm:mt-0 absolute top-1/2 px-4 sm:px-8 md:px-2 lg:px-32 ">
+      <div className=" flex justify-center items-center max-w-[1440px] w-full mt-10 md:mt-0 lg:mt-0 sm:mt-0 absolute top-1/2 px-4 sm:px-8 md:px-2 lg:px-32 ">
         <ModalDown modal={modal} setModal={setModal} />
         <div
           ref={ref2}
@@ -135,7 +135,7 @@ const LongTermSection: React.FC = () => {
                     <p className="text-center font-normal text-base text-[#000000A3] text-opacity-64 ">
                       Kỳ hạn {index == 0 ? 3 : index == 1 ? 6 : 12} tháng
                     </p>
-                    <div className="flex flex-col gap-4 lg:gap-8 py-4 xl:py-10 px-2 xl:px-20">
+                    <div className="flex flex-col gap-4 lg:gap-8 py-4 xl:py-10 px-2 2xl:px-20">
                       {benefits.map((benefit, index) => (
                         <div className="flex gap-3" key={index}>
                           <img

@@ -79,7 +79,7 @@ const ShortTermSection: React.FC = () => {
   });
   return (
     <>
-      <div className=" flex justify-center items-center w-full mt-10 md:mt-0 lg:mt-0 sm:mt-0 absolute top-1/2 px-4 sm:px-8 md:px-2 lg:px-32 ">
+      <div className=" flex justify-center max-w-[1440px] items-center w-full mt-10 md:mt-0 lg:mt-0 sm:mt-0 absolute top-1/2 px-4 sm:px-8 md:px-2 lg:px-32 ">
         <ModalDown modal={modal} setModal={setModal} />
         <div
           ref={ref2}

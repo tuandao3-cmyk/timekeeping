@@ -110,7 +110,6 @@ const ProjectSlider: React.FC = () => {
     queryFn: () => getProjects(page),
   });
 
-  
   useEffect(() => {
     if (isSuccess) {
       console.log(data.data);
@@ -151,8 +150,6 @@ const ProjectSlider: React.FC = () => {
     slidesPerView = 1;
   }
 
-
-
   useEffect(() => {
     console.log('activeIndex', activeIndex);
   }, [activeIndex]);
@@ -184,37 +181,37 @@ const ProjectSlider: React.FC = () => {
             modules={[Navigation, Pagination]}
             spaceBetween={isMobile ? 20 : 40}
             slidesPerView={slidesPerView}
-            loopAdditionalSlides={Math.ceil(slidesPerView)}
+            // loopAdditionalSlides={Math.ceil(slidesPerView)}
             centeredSlides={true}
-            slidesOffsetBefore={slidesOffsetBefore}
-            slidesOffsetAfter={slidesOffsetBefore}
+            // slidesOffsetBefore={slidesOffsetBefore}
+            // slidesOffsetAfter={slidesOffsetBefore}
             watchSlidesProgress={true}
             normalizeSlideIndex={true}
             roundLengths={true}
-            navigation={
-              isMdOrLarger
-                ? {
-                    prevEl: '.swiper-button-prev',
-                    nextEl: '.swiper-button-next',
-                  }
-                : false
-            }
-            loop={true}
+            // navigation={
+            //   isMdOrLarger
+            //     ? {
+            //         prevEl: '.swiper-button-prev',
+            //         nextEl: '.swiper-button-next',
+            //       }
+            //     : false
+            // }
+            // loop={true}
             onSwiper={setSwiper}
             onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
-            speed={800}
+            // speed={800}
             slideActiveClass="swiper-slide-active"
             slidePrevClass="swiper-slide-prev"
             slideNextClass="swiper-slide-next"
             className="mySwiper !overflow-visible"
             effect="coverflow"
-            coverflowEffect={{
-              rotate: 0,
-              stretch: 0,
-              depth: 100,
-              modifier: 1,
-              slideShadows: false,
-            }}
+            // coverflowEffect={{
+            //   rotate: 0,
+            //   stretch: 0,
+            //   depth: 100,
+            //   modifier: 1,
+            //   slideShadows: false,
+            // }}
           >
             {isLoading ? (
               <div>Loading...</div>
@@ -222,16 +219,15 @@ const ProjectSlider: React.FC = () => {
               projectData.map((project: any, index: number) => (
                 <SwiperSlide
                   key={project?.id}
-                  className="transition-all duration-300  max-w-[778px]"
+                  className="transition-all duration-300  "
                 >
                   {({ isActive, isNext, isPrev }) => (
                     <a
                       ref={ref}
                       href={`/detail-category/${project?.id}`}
-                      className={`bg-[#07212C] rounded-xl overflow-visible md:max-h-[386px] pb-[20px] gap-[24px] max-w-[778px] flex flex-col p-[12px] md:p-[32px] md:flex-row 
+                      className={`bg-[#07212C] rounded-xl overflow-visible transition duration-100 md:max-h-[386px] pb-[20px] gap-[24px] max-w-[778px] flex flex-col p-[12px] md:p-[32px] md:flex-row 
             ${isActive ? 'scale-100 z-10' : 'scale-90 z-0'} 
-            ${isNext ? 'translate-x-[-5%]' : ''}
-            ${isPrev ? 'translate-x-[5%]' : ''}`}
+            `}
                     >
                       <div
                         ref={ref}
@@ -241,7 +237,7 @@ const ProjectSlider: React.FC = () => {
                           <img
                             src={project?.images[0]}
                             alt={project.name}
-                            className="object-cover max-w-[360px] max-h-[224px] md:max-h-none rounded-lg md:w-[360px] md:h-[332px]"
+                            className="object-cover  max-h-[224px] w-full md:max-h-none rounded-lg md:w-[360px] md:h-[332px]"
                           />
                           <a
                             href="/detail-category"

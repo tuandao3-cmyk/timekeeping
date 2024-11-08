@@ -61,10 +61,6 @@ const DownloadSection = () => {
                   )
                 }
                 ref={ref}
-                // onClick={() =>
-                //   (window.location.href =
-                //     'https://play.google.com/store/apps/details?id=com.hyracap')
-                // }
                 className={`bg-[#48B96D] text-white px-6 h-[64px] py-3 sm:w-[50%]  w-full font-sans rounded-xl flex items-center justify-center gap-[10px] duration-300 delay-500 ease-in-out transform ${
                   inView
                     ? 'opacity-100 translate-y-0'
@@ -92,9 +88,6 @@ const DownloadSection = () => {
                   )
                 }
                 ref={ref}
-                // onClick={() =>
-                //   (window.location.href = 'https://apps.apple.com/app/hyracap')
-                // }
                 className={`bg-[#48B96D] text-white h-[64px] px-6 py-3 font-sans sm:w-[50%] rounded-xl flex items-center justify-center gap-[10px] duration-300 delay-500 ease-in-out transform ${
                   inView
                     ? 'opacity-100 translate-y-0'
