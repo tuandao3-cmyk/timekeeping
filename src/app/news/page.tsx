@@ -270,6 +270,7 @@ const NewsPage: React.FC = () => {
               <div
                 className={`${index == 1 ? 'mt-32' : 'mt-8'} mx-5 flex flex-row items-center gap-3 p-1 border`}
                 style={{ borderRadius: 10 }}
+                onClick={() => handleNavigate(news.id)}
               >
                 <img
                   src={news?.link_img || ''}
