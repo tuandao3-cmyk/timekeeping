@@ -180,7 +180,9 @@ const ReportPage: React.FC = () => {
           <div className="max-w-[1200px] w-full">
             <div className="flex text-center items-center gap-2 py-9">
               <div className="bg-[#1D4454] w-2 h-2 rounded-full"></div>
-              <h2 className="font-bold text-4xl">BÁO CÁO TÀI CHÍNH</h2>
+              <p className="font-bold text-[28px] md:text-4xl">
+                BÁO CÁO TÀI CHÍNH
+              </p>
             </div>
             {/* <div className={styles.reportTabs}>
               <button
@@ -235,7 +237,7 @@ const ReportPage: React.FC = () => {
           <div className="max-w-[1200px] w-full">
             <div className="flex text-center items-center gap-2 py-9">
               <div className="bg-[#1D4454] w-2 h-2 rounded-full"></div>
-              <h2 className="font-bold text-4xl">BÁO CÁO DỰ ÁN</h2>
+              <p className="font-bold text-[28px] md:text-4xl">BÁO CÁO DỰ ÁN</p>
             </div>
             <div>
               {isLoadingProject ? (
@@ -276,7 +278,9 @@ const ReportPage: React.FC = () => {
           <div className="max-w-[1200px] w-full">
             <div className="flex text-center items-center gap-2 py-9">
               <div className="bg-[#1D4454] w-2 h-2 rounded-full"></div>
-              <h2 className="font-bold text-4xl">BÁO CÁO XÃ HỘI</h2>
+              <p className="font-bold text-[28px] md:text-4xl">
+                BÁO CÁO XÃ HỘI
+              </p>
             </div>
             <div>
               {isLoadingSociety ? (
@@ -317,7 +321,7 @@ const ReportPage: React.FC = () => {
           <div className="max-w-[1200px] w-full">
             <div className="flex text-center items-center gap-2 py-9">
               <div className="bg-[#1D4454] w-2 h-2 rounded-full"></div>
-              <h2 className="font-bold text-4xl">BÁO CÁO KHÁC</h2>
+              <p className="font-bold text-[28px] md:text-4xl">BÁO CÁO KHÁC</p>
             </div>
             <div>
               {isLoadingOther ? (
