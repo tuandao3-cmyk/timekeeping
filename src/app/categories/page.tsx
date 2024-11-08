@@ -18,7 +18,7 @@ import { useQuery } from '@tanstack/react-query';
 import { Page } from '@/type/page.type';
 import { getProjects } from '@/services/project.service';
 
-export const PROJECTS = [
+const PROJECTS = [
   {
     id: 1,
     img: '/img/egabid_pc.png',
@@ -233,13 +233,13 @@ const CategoryPage: React.FC = () => {
         <div className="  pb-[107px] justify-center">
           <div className="flex flex-col items-center justify-end text-center max-w-[1440px] text-[#0B3546] gap-[22px]">
             <Typography
-          sx={{
-            fontWeight: 700,
-            fontSize: { xs: '32px', md: '48px' },
-            lineHeight: { xs: '40px', md: '56px' },
-            textAlign: 'center',
-            fontFamily: 'Inter',
-          }}
+              sx={{
+                fontWeight: 700,
+                fontSize: { xs: '32px', md: '48px' },
+                lineHeight: { xs: '40px', md: '56px' },
+                textAlign: 'center',
+                fontFamily: 'Inter',
+              }}
               className={`${inView ? 'animate-fadeIn' : 'translate-y-20 opacity-0'} transition
                duration-300 ease-in-out`}
             >
@@ -438,7 +438,7 @@ const CategoryPage: React.FC = () => {
                             </div>
                             <div className="h-2 bg-gray-300 rounded mt-2">
                               <div
-                                className="bg-green-500 h-full rounded"
+                                className="bg-green-500 h-full rounded max-w-full"
                                 style={{
                                   width: `${(project?.mobilized_fund / project?.capital_raising_target) * 100}%`,
                                 }}
@@ -452,9 +452,11 @@ const CategoryPage: React.FC = () => {
                                 <span>Hoàn thành</span>
                                 <p className="text-[#48B96D] font-semibold">
                                   $
-                                  {(project?.mobilized_fund /
-                                    project?.capital_raising_target) *
-                                    100}
+                                  {(
+                                    (project?.mobilized_fund /
+                                      project?.capital_raising_target) *
+                                    100
+                                  ).toLocaleString()}
                                   %
                                 </p>
                               </div>
@@ -462,7 +464,10 @@ const CategoryPage: React.FC = () => {
                             <div className="flex gap-2">
                               {project?.industries.map(
                                 (industry: any, index: number) => (
-                                  <span className="text-gray-800 px-2 py-1 font-sans rounded-md font-bold bg-[#F6F6F6]">
+                                  <span
+                                    key={index}
+                                    className="text-gray-800 px-2 py-1 font-sans rounded-md font-bold bg-[#F6F6F6]"
+                                  >
                                     {industry.name}
                                   </span>
                                 )
@@ -554,7 +559,7 @@ const CategoryPage: React.FC = () => {
                             </div>
                             <div className="h-2 bg-gray-300 rounded mt-2">
                               <div
-                                className="bg-green-500 h-full rounded"
+                                className="bg-green-500 h-full rounded max-w-full"
                                 style={{
                                   width: `${(project?.mobilized_fund / project?.capital_raising_target) * 100}%`,
                                 }}
@@ -568,9 +573,11 @@ const CategoryPage: React.FC = () => {
                                 <span>Hoàn thành</span>
                                 <p className="text-[#48B96D] font-semibold">
                                   $
-                                  {(project?.mobilized_fund /
-                                    project?.capital_raising_target) *
-                                    100}
+                                  {(
+                                    (project?.mobilized_fund /
+                                      project?.capital_raising_target) *
+                                    100
+                                  ).toLocaleString()}
                                   %
                                 </p>
                               </div>
@@ -578,7 +585,10 @@ const CategoryPage: React.FC = () => {
                             <div className="flex gap-2">
                               {project?.industries.map(
                                 (industry: any, index: number) => (
-                                  <span className="text-gray-800 px-2 py-1 font-sans rounded-md font-bold bg-[#F6F6F6]">
+                                  <span
+                                    key={index}
+                                    className="text-gray-800 px-2 py-1 font-sans rounded-md font-bold bg-[#F6F6F6]"
+                                  >
                                     {industry.name}
                                   </span>
                                 )
@@ -670,7 +680,7 @@ const CategoryPage: React.FC = () => {
                             </div>
                             <div className="h-2 bg-gray-300 rounded mt-2">
                               <div
-                                className="bg-green-500 h-full rounded"
+                                className="bg-green-500 h-full rounded max-w-full"
                                 style={{
                                   width: `${(project?.mobilized_fund / project?.capital_raising_target) * 100}%`,
                                 }}
@@ -684,9 +694,11 @@ const CategoryPage: React.FC = () => {
                                 <span>Hoàn thành</span>
                                 <p className="text-[#48B96D] font-semibold">
                                   $
-                                  {(project?.mobilized_fund /
-                                    project?.capital_raising_target) *
-                                    100}
+                                  {(
+                                    (project?.mobilized_fund /
+                                      project?.capital_raising_target) *
+                                    100
+                                  ).toLocaleString()}
                                   %
                                 </p>
                               </div>
@@ -694,7 +706,10 @@ const CategoryPage: React.FC = () => {
                             <div className="flex gap-2">
                               {project?.industries.map(
                                 (industry: any, index: number) => (
-                                  <span className="text-gray-800 px-2 py-1 font-sans rounded-md font-bold bg-[#F6F6F6]">
+                                  <span
+                                    key={index}
+                                    className="text-gray-800 px-2 py-1 font-sans rounded-md font-bold bg-[#F6F6F6]"
+                                  >
                                     {industry.name}
                                   </span>
                                 )

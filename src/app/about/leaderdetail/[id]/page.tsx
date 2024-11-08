@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
-import { leaders } from '../../page';
+import { leaders } from '../../about';
 import { IoArrowBack } from "react-icons/io5";
 
 export default function LeaderDetail() {

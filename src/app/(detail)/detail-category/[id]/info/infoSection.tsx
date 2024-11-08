@@ -22,7 +22,7 @@ import { getProjects } from '@/services/project.service';
 import { Page } from '@/type/page.type';
 
 interface InfoSectionProps {
-  dataProject: any;
+  dataP?: any;
 }
 
 const InfoSection = (props: InfoSectionProps) => {
@@ -31,7 +31,7 @@ const InfoSection = (props: InfoSectionProps) => {
     ...Page,
     take: 3,
   });
-  const { dataProject } = props;
+  const { dataP }: any = props;
   const [products, setProducts] = useState<any[]>([
     {
       title: 'Có thể bạn quan tâm',
@@ -97,38 +97,38 @@ const InfoSection = (props: InfoSectionProps) => {
     },
   ];
 
-  const field = [
+  const field: any[] = [
     {
       title: 'Lĩnh vực đầu tư',
-      value: dataProject?.industries[0].name || '',
+      value: dataP?.industries[0].name || '',
     },
     {
       title: 'Ngày thành lập',
-      value: formatDateTimeVn(dataProject?.created_at) || '',
+      value: formatDateTimeVn(dataP?.created_at) || '',
     },
     {
       title: 'Trụ sở chính',
-      value: dataProject?.data?.company_information?.head_office || '',
+      value: dataP?.data?.company_information?.head_office || '',
     },
     {
       title: 'Tình trạng hoạt động',
-      value: dataProject?.data?.company_information?.operating_status || '',
+      value: dataP?.data?.company_information?.operating_status || '',
     },
     {
       title: 'Người sáng lập',
-      value: dataProject?.data?.company_information?.founder || '',
+      value: dataP?.data?.company_information?.founder || '',
     },
     {
       title: 'Tên công ty ',
-      value: dataProject?.data?.company_information?.company_name || '',
+      value: dataP?.data?.company_information?.company_name || '',
     },
     {
       title: 'Email ',
-      value: dataProject?.data?.company_information?.email || '',
+      value: dataP?.data?.company_information?.email || '',
     },
     {
       title: 'Số điện thoại',
-      value: dataProject?.data?.company_information?.phone || '',
+      value: dataP?.data?.company_information?.phone || '',
     },
   ];
 
@@ -156,7 +156,7 @@ const InfoSection = (props: InfoSectionProps) => {
   const items = [
     {
       icon: <LocationIcon />,
-      text: dataProject?.data?.address || '',
+      text: dataP?.data?.address || '',
     },
     {
       icon: <ProfileTUser />,
@@ -164,7 +164,7 @@ const InfoSection = (props: InfoSectionProps) => {
     },
     {
       icon: <GlobalIcon />,
-      text: dataProject?.data?.website || '',
+      text: dataP?.data?.website || '',
     },
   ];
 
@@ -287,7 +287,7 @@ const InfoSection = (props: InfoSectionProps) => {
             <Box width={'100%'}>
               <Stack flexDirection={'column'} gap={'16px'} maxWidth={'792px'}>
                 <Image
-                  src={dataProject?.images[0] || ''}
+                  src={dataP?.images[0] || ''}
                   alt="product_category"
                   width={792}
                   height={400}
@@ -335,8 +335,8 @@ const InfoSection = (props: InfoSectionProps) => {
                   ))}
                 </Stack>
                 {/* Tăng trưởng */}
-                <Growth data={dataProject} />
-                <Terminology data={dataProject} />
+                <Growth data={dataP} />
+                <Terminology data={dataP} />
               </Stack>
             </Box>
           </Stack>
@@ -351,7 +351,7 @@ const InfoSection = (props: InfoSectionProps) => {
             gap={'24px'}
           >
             <Stack flexDirection={'column'} gap={'12px'}>
-              {dataProject?.industries?.map((item: any, index: number) => (
+              {dataP?.industries?.map((item: any, index: number) => (
                 <Typography
                   key={index}
                   bgcolor={'#48B96D1F'}
@@ -376,7 +376,7 @@ const InfoSection = (props: InfoSectionProps) => {
                 letterSpacing={'-1%'}
                 color="#363636"
               >
-                {dataProject?.name || ''}
+                {dataP?.name || ''}
               </Typography>
             </Stack>
             <Typography
@@ -389,7 +389,7 @@ const InfoSection = (props: InfoSectionProps) => {
               {/* Salala là một nền tảng điện toán biên cho phép người dùng tận dụng
               phần cứng của các thiết bị biên (edge devices) để huấn luyện mô
               hình trí tuệ nhân tạo (AI). */}
-              {dataProject?.data?.project_information?.description || ''}
+              {dataP?.data?.project_information?.description || ''}
             </Typography>
 
             <Grid container spacing={'8px'}>
@@ -416,7 +416,7 @@ const InfoSection = (props: InfoSectionProps) => {
                       lineHeight={'24px'}
                       color="#31814B"
                     >
-                      {dataProject?.data?.project_information[item.title] || ''}
+                      {dataP?.data?.project_information[item.title] || ''}
                     </Typography>
                     <Typography
                       fontFamily={'Inter'}
@@ -464,7 +464,7 @@ const InfoSection = (props: InfoSectionProps) => {
                   fontFamily={'Inter'}
                   fontWeight={700}
                   fontSize={{
-                    xs: '28px',
+                    xs: '24px',
                     sm: '32px',
                   }}
                   lineHeight={'40px'}

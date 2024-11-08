@@ -16,7 +16,68 @@ import Login from './login/page';
 import LogoutSection from './logout/page';
 import DownloadSection from '../download';
 import { Typography } from '@mui/material';
-import { PROJECTS } from '../categories/page';
+const PROJECTS = [
+  {
+    id: 1,
+    img: '/img/egabid_pc.png',
+    name: 'EGABID',
+    amount: '$2.000.000',
+    funded: '$1.500.00',
+    progress: 75,
+    category: 'CÔNG NGHỆ',
+    tag: ['seed'],
+  },
+  {
+    id: 2,
+    img: '/img/Salala.png',
+    name: 'SALALA AI',
+    amount: '$2.000.000',
+    funded: '$1.500.00',
+    progress: 75,
+    category: 'CÔNG NGHỆ',
+    tag: ['seed', 'seriesA', 'seriesB'],
+  },
+  {
+    id: 3,
+    img: '/img/hyperas_chain.png',
+    name: 'Hyperas Chain',
+    amount: '$2.000.000',
+    funded: '$1.500.00',
+    progress: 75,
+    category: 'CÔNG NGHỆ',
+    tag: ['seed', 'seriesA', 'seriesB'],
+  },
+  {
+    id: 4,
+    img: '/img/egabid_pc.png',
+    name: 'EGABID',
+    amount: '$2.000.000',
+    funded: '$1.500.00',
+    progress: 75,
+    category: 'CÔNG NGHỆ',
+    tag: ['seed', 'seriesA', 'seriesB'],
+  },
+  {
+    id: 5,
+    img: '/img/Salala.png',
+    name: 'SALALA AI',
+    amount: '$2.000.000',
+    funded: '$1.500.00',
+    progress: 75,
+    category: 'CÔNG NGHỆ',
+    tag: ['seed', 'seriesA', 'seriesB'],
+  },
+  {
+    id: 6,
+    img: '/img/hyperas_chain.png',
+    name: 'Hyperas Chain',
+    amount: '$2.000.000',
+    funded: '$1.500.00',
+    progress: 75,
+    category: 'CÔNG NGHỆ',
+    tag: ['seed', 'seriesA', 'seriesB'],
+  },
+];
 
 const GuidePage: React.FC = () => {
   const pathname = usePathname();

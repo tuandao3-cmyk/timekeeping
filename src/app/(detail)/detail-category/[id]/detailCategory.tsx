@@ -5,27 +5,13 @@ import React, { useState } from 'react';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
-import InfoSection from './info/page';
+import InfoSection from './info/infoSection';
 import { Stack, Typography } from '@mui/material';
 import CustomTabPanel from '@/components/customTabPanel';
-import { getDetailProject } from '@/services/project.service';
 import PitchingDeckSection from './pitchingdeck/page';
-import FinanceRoadSection from './finance_road/page';
-import ContractSection from '@/app/guides/contract/page';
+import ContractSampleSection from './contract_sample/page';
 import BusinessPlanSection from './business plan/page';
-
-// export async function getServerSideProps(context:any) {
-//   const queryClient = new QueryClient();
-//   const page = context.query.id || 1;
-
-//   await queryClient.prefetchQuery(['projects', page], () => getDetailProject(page));
-
-//   return {
-//     props: {
-//       dehydratedState: dehydrate(queryClient),
-//     },
-//   };
-// }
+import FinanceRoadSection from './finance_road/page';
 
 interface DetailCategoryPageProps {
   data: any;
@@ -34,7 +20,7 @@ interface DetailCategoryPageProps {
 const DetailCategoryPage = (props: DetailCategoryPageProps) => {
   const [value, setValue] = React.useState(0);
   const [project, setProject] = useState<any>(null);
-  const { data } = props;
+  const { data }: any = props;
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -122,18 +108,20 @@ const DetailCategoryPage = (props: DetailCategoryPageProps) => {
         </Stack>
       </Box>
       <CustomTabPanel value={value} index={0}>
-        <InfoSection dataProject={data} />
+        <InfoSection dataP={data} />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
         <PitchingDeckSection />
+        <PitchingDeckSection />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
-        <ContractSection />
+        <ContractSampleSection />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={3}>
-        <FinanceRoadSection />    
+        <FinanceRoadSection />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={4}>
+        <BusinessPlanSection />
         <BusinessPlanSection />
       </CustomTabPanel>
     </Box>

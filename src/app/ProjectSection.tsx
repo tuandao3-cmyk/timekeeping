@@ -91,22 +91,22 @@ const ProjectSection = () => {
                   >
                     <div
                       key={index}
-                      className={`${styles.projectCard} group relative duration-300 ease-in-out delay-${index * 100} transform ${
+                      className={`${styles.projectCard} group  duration-300 ease-in-out delay-${index * 100} transform ${
                         inView ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
                       } max-w-[384px]
                     
                     `}
                     >
-                      <img
-                        src={project?.images[0] || '/img/egabid_pc.png'}
-                        alt={project?.name || 'HyraCap'}
-                        className={` h-[250px] w-[351px]`}
-                      />
-                      {/* <div className={`${styles.badge} font-sans`}>{project.badge}</div> */}
+                      <div className="flex flex-col justify-center items-center w-full">
+                        <img
+                          src={project?.images[0] || '/img/egabid_pc.png'}
+                          alt={project?.name || 'HyraCap'}
+                          className={` h-[250px] w-[351px] rounded-[10px]`}
+                        />
+                      </div>
 
                       <div className="text-left !text-left">
                         {' '}
-                        {/* Sử dụng !important */}
                         <h3 className="md:text-[clamp(1.2rem,2vw,2.4rem)] text-[24px] font-bold my-2 w-full pl-4 font-sans uppercase">
                           {project?.name || ''}
                         </h3>
@@ -114,13 +114,15 @@ const ProjectSection = () => {
                           MỤC TIÊU HUY ĐỘNG
                         </span>
                         <div className="font-inter font-semibold text-xl leading-7 pl-4 pb-2 font-sans">
-                          ${project?.capital_raising_target || 0}
+                          $
+                          {project?.capital_raising_target.toLocaleString() ||
+                            0}
                         </div>
                       </div>
                       <div className={styles.projectInfo}>
                         <div className={styles.progress}>
                           <div
-                            className="bg-[#4caf50] h-full rounded"
+                            className="bg-[#4caf50] h-full rounded max-w-full"
                             style={{
                               width:
                                 (project.mobilized_fund /
@@ -131,7 +133,9 @@ const ProjectSection = () => {
                         </div>
                         <div className={styles.fundingInfo}>
                           <div>
-                            <span>${project?.mobilized_fund || 0}</span>
+                            <span>
+                              ${project?.mobilized_fund.toLocaleString() || 0}
+                            </span>
                             <span className="text-[#000000]/70 pl-0 font-sans">
                               {' '}
                               Đã huy động
@@ -139,7 +143,12 @@ const ProjectSection = () => {
                           </div>
                           <div>
                             <span>
-                            {((project.mobilized_fund / project.capital_raising_target) * 100).toFixed(1)}%
+                              {(
+                                (project.mobilized_fund /
+                                  project.capital_raising_target) *
+                                100
+                              ).toLocaleString()}
+                              %
                             </span>
                             <span className="text-[#000000]/70 pl-0 font-sans">
                               {' '}
@@ -161,7 +170,7 @@ const ProjectSection = () => {
                       <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#FFFFFF] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                       <div className="absolute inset-x-0 bottom-4 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-4">
                         <a
-                          href="/detail-category"
+                          href={`/detail-category/${project?.id}`}
                           className="bg-[#4CAF50] w-full font-sans text-white text-sm font-medium  py-2 rounded-full cursor-pointer text-center justify-center flex items-center"
                         >
                           Xem chi tiết

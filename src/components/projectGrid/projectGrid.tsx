@@ -228,20 +228,20 @@ const ProjectSlider: React.FC = () => {
                     <a
                       ref={ref}
                       href={`/detail-category/${project?.id}`}
-                      className={`bg-[#07212C] rounded-xl overflow-visible md:max-h-[386px] pb-[20px] md:pb-0 max-w-[778px] flex flex-col md:flex-row 
+                      className={`bg-[#07212C] rounded-xl overflow-visible md:max-h-[386px] pb-[20px] gap-[24px] max-w-[778px] flex flex-col p-[12px] md:p-[32px] md:flex-row 
             ${isActive ? 'scale-100 z-10' : 'scale-90 z-0'} 
             ${isNext ? 'translate-x-[-5%]' : ''}
             ${isPrev ? 'translate-x-[5%]' : ''}`}
                     >
                       <div
                         ref={ref}
-                        className={`md:w-1/2 w-full relative p-8 duration-700 ease-in-out transform `}
+                        className={`md:w-1/2 w-full flex flex-col justify-center items-center  duration-700 ease-in-out transform `}
                       >
-                        <div className="w-full h-full rounded-lg overflow-hidden">
+                        <div className="w-full h-full flex flex-col justify-center items-center rounded-lg overflow-hidden">
                           <img
                             src={project?.images[0]}
                             alt={project.name}
-                            className="w-full h-full object-cover"
+                            className="object-cover max-w-[360px] max-h-[224px] md:max-h-none rounded-lg md:w-[360px] md:h-[332px]"
                           />
                           <a
                             href="/detail-category"
@@ -251,9 +251,9 @@ const ProjectSlider: React.FC = () => {
                           </a>
                         </div>
                       </div>
-                      <div className="md:w-1/2 w-full px-8 md:py-8  flex flex-col justify-between">
-                        <div>
-                          <span className="top-4 left-4 bg-[#FFFFFF]/20 text-[#0298F4] px-2 py-1 text-xs rounded flex items-center inline-flex">
+                      <div className="md:w-1/2 w-full flex flex-col gap-[28px]">
+                        <div className="flex flex-col gap-[8px]">
+                          <span className="top-4 left-4 bg-[#FFFFFF]/20 text-[#0298F4] px-2 py-1 text-xs rounded inline-flex w-fit items-center ">
                             <FaFlag className="w-4 h-4 mr-1 font-sans" />
                             {project.series}
                           </span>
@@ -261,71 +261,80 @@ const ProjectSlider: React.FC = () => {
                             {project.name}
                           </h3>
                           <p className="text-gray-300 leading-6 text-sm mb-4 font-sans line-clamp-2 text-ellipsis overflow-x-hidden">
-                            {project.description}
+                            {project?.data?.project_information?.description ||
+                              ''}
                           </p>
                         </div>
-                        <div>
-                          <div
-                            className={` rounded-lg p-5 max-sm:m-1 m-3 mb-7
+
+                        <div
+                          className={` rounded-lg max-sm:m-1 
                               ${index === activeIndex ? 'bg-[#F3F7F4]' : 'bg-transparent'}
-                              transition-all duration-300
+                              transition-all duration-300 p-[12px]
                             
                               `}
+                        >
+                          <p
+                            className={`text-sm font-sans ${index === activeIndex ? 'text-[#000000]/64' : 'text-white'} mb-1`}
                           >
-                            <p
-                              className={`text-sm font-sans ${index === activeIndex ? 'text-[#000000]/64' : 'text-white'} mb-1`}
-                            >
-                              MỤC TIÊU HUY ĐỘNG
-                            </p>
-                            <p
-                              className={`text-xl leading-6 font-semibold font-sans  ${index === activeIndex ? 'text-[#04141A]' : 'text-[#FFFFFF]'}`}
-                            >
-                              ${project.capital_raising_target.toLocaleString()}
-                            </p>
-                            <div className="flex justify-between text-xs mt-2 gap-[4px]">
-                              <div className="flex flex-row items-center gap-1 3xl:gap-0 3xl:flex-col flex-wrap ">
-                                <span className="font-bold font-inter text-green-500 text-sm font-sans text-nowrap">
-                                  ${project.mobilized_fund.toLocaleString()}
-                                </span>
+                            MỤC TIÊU HUY ĐỘNG
+                          </p>
+                          <p
+                            className={`text-xl leading-6 font-semibold font-sans  ${index === activeIndex ? 'text-[#04141A]' : 'text-[#FFFFFF]'}`}
+                          >
+                            ${project.capital_raising_target.toLocaleString()}
+                          </p>
+                          <div className="flex justify-between text-xs mt-2 gap-[4px]">
+                            <div className="flex flex-row items-center gap-1 3xl:gap-0 3xl:flex-col flex-wrap ">
+                              <span className="font-bold font-inter text-green-500 text-sm font-sans text-nowrap">
+                                ${project.mobilized_fund.toLocaleString()}
+                              </span>
 
-                                <span
-                                  className={`text-nowrap ${index === activeIndex ? 'text-[#000000]/60' : 'text-[#FFFFFF]'} pl-0 font-sans`}
-                                >
-                                  {' '}
-                                  Đã huy động
-                                </span>
-                              </div>
-                              <div className=" flex flex-row items-center gap-1 3xl:gap-0 3xl:flex-col flex-wrap">
-                                <span className="font-bold font-inter text-green-500 text-sm font-sans text-nowrap">
-                                {((project.mobilized_fund / project.capital_raising_target) * 100).toFixed(1)}%
-                                </span>
-                                <span
-                                  className={`text-nowrap ${index === activeIndex ? 'text-[#000000]/60' : 'text-[#FFFFFF]'} pl-0 font-sans`}
-                                >
-                                  {' '}
-                                  Hoàn thành
-                                </span>
-                              </div>
+                              <span
+                                className={`text-nowrap ${index === activeIndex ? 'text-[#000000]/60' : 'text-[#FFFFFF]'} pl-0 font-sans`}
+                              >
+                                {' '}
+                                Đã huy động
+                              </span>
                             </div>
-                            <div className="w-full bg-gray-200 rounded-full h-1.5 mt-2">
-                              <div
-                                className="bg-green-500 h-1.5 rounded-full font-sans"
-                                style={{
-                                  width: `${((project?.mobilized_fund / project?.capital_raising_target) * 100)}%`,
-                                }}
-                              ></div>
+                            <div className=" flex flex-row items-center gap-1 3xl:gap-0 3xl:flex-col flex-wrap">
+                              <span className="font-bold font-inter text-green-500 text-sm font-sans text-nowrap">
+                                {(project?.mobilized_fund /
+                                  project?.capital_raising_target) *
+                                  100}
+                                %
+                              </span>
+                              <span
+                                className={`text-nowrap ${index === activeIndex ? 'text-[#000000]/60' : 'text-[#FFFFFF]'} pl-0 font-sans`}
+                              >
+                                {' '}
+                                Hoàn thành
+                              </span>
                             </div>
                           </div>
-                          <div className="flex gap-2 ml-3 pt-[16px] md:pt-0">
-                            {/* {project.tags.map((tag, index) => (
+                          <div className="w-full bg-gray-200 rounded-full h-1.5 ">
+                            <div
+                              className="bg-green-500 h-1.5 rounded-full font-sans max-w-full "
+                              style={{
+                                width: `${
+                                  (project?.mobilized_fund /
+                                    project?.capital_raising_target) *
+                                  100
+                                }%`,
+                              }}
+                            ></div>
+                          </div>
+                        </div>
+                        <div className="flex gap-2  pt-[16px] ">
+                          {project?.industries.map(
+                            (item: any, index: number) => (
                               <span
                                 key={index}
                                 className="bg-gray-700 text-white text-xs px-2 py-1 rounded font-sans"
                               >
-                                {tag}
+                                {item.name}
                               </span>
-                            ))} */}
-                          </div>
+                            )
+                          )}
                         </div>
                       </div>
                     </a>

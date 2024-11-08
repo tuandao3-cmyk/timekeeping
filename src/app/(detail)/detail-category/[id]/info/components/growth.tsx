@@ -1,4 +1,4 @@
-import { Stack, Typography } from '@mui/material';
+import { Box, Stack, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import Image from 'next/image';
 
@@ -59,44 +59,49 @@ function Growth(props: GrowthProps) {
         >
           Thông số
         </Typography>
-        <Grid container spacing={2}>
+        <Stack direction="row" flexWrap="wrap" gap={2}>
           {data?.data?.metrics.map((project: any, index: any) => (
-            <Grid item xs={12} sm={6} key={index}>
-              <Stack flexDirection={'row'} gap={'12px'}>
+            <Box
+              key={index}
+              width={{ xs: '100%', sm: '48%', md: '48%' }}
+              mb={2}
+            >
+              <Stack direction="row" gap="12px">
                 <Image
                   width={50}
                   height={50}
-                  // src={project?.icon || '/img/icon/brand.png'}
                   src={'/img/icon/brand.png'}
                   alt="icon"
+                  style={{
+                    width: '50px',
+                    height: '50px',
+                    objectFit: 'cover',
+                  }}
                 />
-                <Stack
-                  flexDirection={'column'}
-                  justifyContent={'space-between'}
-                >
+                <Stack flexDirection="column" justifyContent="space-between">
                   <Typography
-                    fontFamily={'Inter'}
+                    fontFamily="Inter"
                     fontWeight={600}
-                    fontSize={'16px'}
-                    lineHeight={'24px'}
+                    fontSize="16px"
+                    lineHeight="24px"
                     color="#31814B"
                   >
                     {project.value}
                   </Typography>
                   <Typography
-                    fontFamily={'Inter'}
+                    fontFamily="Inter"
                     fontWeight={400}
-                    fontSize={'13px'}
-                    lineHeight={'22px'}
+                    fontSize="13px"
+                    lineHeight="22px"
                     color="#0000008F"
                   >
                     {project.name}
                   </Typography>
                 </Stack>
               </Stack>
-            </Grid>
+            </Box>
           ))}
-        </Grid>
+        </Stack>
       </Stack>
     </Stack>
   );

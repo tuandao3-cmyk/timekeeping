@@ -98,6 +98,11 @@ const NewsPage: React.FC = () => {
     threshold: 0.1,
     // triggerOnce: true,
   });
+
+  const handleOpenPage = (link: string) => {
+    router.push(link);
+  };
+
   return (
     <>
       <div className="flex flex-col justify-center items-center  ">
@@ -110,7 +115,7 @@ const NewsPage: React.FC = () => {
             <div className=" z-10 my-auto  h-full p-8 lg:p-12 ">
               <div className=" lg:pl-[60px] lg:mt-8 text-center md:text-left text-white flex flex-col justify-between items-left gap-4">
                 <Link
-                  href={'/news/newsdetail'}
+                  href={`/news/${newsData[0]?.id}` || '#'}
                   className="md:text-[15px] text-[#579DFF] text-xs font-semibold "
                 >
                   TIN TÀI CHÍNH
@@ -124,24 +129,22 @@ const NewsPage: React.FC = () => {
                 }
                 `}
                 >
-                  Hyratek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng
-                  dự án "Phục dựng ảnh liệt sĩ" của Hà Nội
+                  {newsData[0]?.title}
                 </h1>
                 <p
-                  className={`mt-4 text-sm leading-6 line-clamp-6 max-lg:hidden opacity-70 duration-700 ease-in-out transform ${
+                  className={`mt-4 text-sm line-clamp-5 leading-6 line-clamp-6 max-lg:hidden opacity-70 duration-700 ease-in-out transform ${
                     inView
                       ? 'opacity-100 translate-y-0'
                       : 'opacity-0 translate-y-10'
                   }`}
                 >
-                  Hyratek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng
-                  dự án "Phục dựng ảnh liệt sĩ" của Hà Nội Hyratek và Qualcomm
-                  hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh
-                  liệt sĩ" của Hà Nội Hyratek và Qualcomm hợp tác chiến lược về
-                  AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội
+                  {newsData[0]?.description}
                 </p>
                 <div>
-                  <button className="max-sm:hidden text-[#FFFFFF]/90 bg-[#48B96D] border-[#c2c2c2] font-medium border-[1px]  rounded-full px-3 py-2 inline-flex">
+                  <button
+                    onClick={() => handleNavigate(newsData[0]?.id)}
+                    className="max-sm:hidden text-[#FFFFFF]/90 bg-[#48B96D] border-[#c2c2c2] font-medium border-[1px]  rounded-full px-3 py-2 inline-flex"
+                  >
                     Đọc thêm
                   </button>
                 </div>
@@ -173,7 +176,7 @@ const NewsPage: React.FC = () => {
 
       <section
         ref={ref2}
-        className="w-full font-inter flex flex-col justify-center items-center"
+        className="w-full font-inter flex flex-col justify-center items-center md:p-5 xl:p-0"
       >
         <div className="flex flex-col max-w-[1201px] gap-[20px] md:gap-[40px] py-[62px]">
           <h1
@@ -313,7 +316,7 @@ const NewsPage: React.FC = () => {
       } */}
 
       {/* upcomming */}
-      <section className="w-full bg-cover bg-center flex justify-center flex-col items-center gap-3 bg-[#F3F7F4] mt-20 md:mt-0">
+      <section className="w-full bg-cover bg-center flex justify-center flex-col items-center gap-3 bg-[#F3F7F4] mt-20 md:mt-0 md:p-5 xl:p-0">
         <div className="max-w-[1201px] md:py-[62px] py-[50px] flex flex-col md:gap-[40px] gap-[10px] ">
           <h1 className="w-full text-left text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800  pl-5 md:pl-0 ">
             Sự kiện sắp tới
@@ -362,7 +365,7 @@ const NewsPage: React.FC = () => {
       </section>
 
       {/*  */}
-      <section className="w-full  bg-cover bg-center flex justify-center flex-col items-center gap-8">
+      <section className="w-full  bg-cover bg-center flex justify-center flex-col items-center gap-8 md:p-5 xl:p-0">
         <div className="max-w-[1200px] ">
           <h1 className="w-full max-lg:px-8 text-left text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 pt-8 hidden md:block ">
             Sự kiện nổi bật
@@ -505,7 +508,7 @@ const NewsPage: React.FC = () => {
                   </button>
                 </div>
               </div>
-              <div className="flex index-2 justify-center items-center  bg-[#07212C] w-full md:w-[450px] md:mx-[25%] lg:mx-0 lg:w-full h-full max-lg:max-h-[300px] lg:max-h-[390px] rounded-lg my-8  p-5 mt-14">
+              <div className="flex index-2 justify-center items-center  bg-[#07212C] w-full md:w-[450px] md:mx-[19%] lg:mx-0 lg:w-full h-full max-lg:max-h-[300px] lg:max-h-[390px] rounded-lg my-8  p-5 mt-14">
                 <div className="index-3 relative flex flex-row text-white  font-bold text-[11px] bg-[#48B96D] w-full h-full md:text-[15px] rounded-lg">
                   <div className=" flex  flex-col h-full text-[20px] md:text-2xl lg:text-3xl  justify-between gap-4 py-5 px-28 pl-5 md:py-10 md:px-8  ">
                     <p className="max-w-[250px] ">
