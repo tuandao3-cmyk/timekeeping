@@ -98,7 +98,7 @@ const ProductItem = forwardRef<HTMLDivElement, ProductItemProps>(
               </p>
               <p className="text-[15px]">
                 <span className="font-bold text-[#48B96D]">
-                  ${props.sponsorship}%
+                  ${props.sponsorship.toFixed()}%
                 </span>{' '}
                 Hoàn thành
               </p>

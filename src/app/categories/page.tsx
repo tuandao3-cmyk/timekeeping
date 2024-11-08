@@ -18,135 +18,24 @@ import { useQuery } from '@tanstack/react-query';
 import { Page } from '@/type/page.type';
 import { getProjects } from '@/services/project.service';
 
-const PROJECTS = [
-  {
-    id: 1,
-    img: '/img/egabid_pc.png',
-    name: 'EGABID',
-    amount: '$2.000.000',
-    funded: '$1.500.00',
-    progress: 75,
-    category: 'CÔNG NGHỆ',
-    tag: ['seed'],
-  },
-  {
-    id: 2,
-    img: '/img/Salala.png',
-    name: 'SALALA AI',
-    amount: '$2.000.000',
-    funded: '$1.500.00',
-    progress: 75,
-    category: 'CÔNG NGHỆ',
-    tag: ['seed', 'seriesA', 'seriesB'],
-  },
-  {
-    id: 3,
-    img: '/img/hyperas_chain.png',
-    name: 'Hyperas Chain',
-    amount: '$2.000.000',
-    funded: '$1.500.00',
-    progress: 75,
-    category: 'CÔNG NGHỆ',
-    tag: ['seed', 'seriesA', 'seriesB'],
-  },
-  {
-    id: 4,
-    img: '/img/egabid_pc.png',
-    name: 'EGABID',
-    amount: '$2.000.000',
-    funded: '$1.500.00',
-    progress: 75,
-    category: 'CÔNG NGHỆ',
-    tag: ['seed', 'seriesA', 'seriesB'],
-  },
-  {
-    id: 5,
-    img: '/img/Salala.png',
-    name: 'SALALA AI',
-    amount: '$2.000.000',
-    funded: '$1.500.00',
-    progress: 75,
-    category: 'CÔNG NGHỆ',
-    tag: ['seed', 'seriesA', 'seriesB'],
-  },
-  {
-    id: 6,
-    img: '/img/hyperas_chain.png',
-    name: 'Hyperas Chain',
-    amount: '$2.000.000',
-    funded: '$1.500.00',
-    progress: 75,
-    category: 'CÔNG NGHỆ',
-    tag: ['seed', 'seriesA', 'seriesB'],
-  },
-];
-const PROJECTS2 = [
-  {
-    id: 1,
-    img: '/img/19.jpg',
-    name: 'EGABID',
-    amount: '$2.000.000',
-    funded: '$2.000.000',
-    progress: 100,
-    category: 'CÔNG NGHỆ',
-    tag: ['seed', 'seriesA', 'seriesB'],
-  },
-  {
-    id: 2,
-    img: '/img/18.jpg',
-    name: 'SALALA AI',
-    amount: '$2.000.000',
-    funded: '$2.000.000',
-    progress: 100,
-    category: 'CÔNG NGHỆ',
-    tag: ['seed', 'seriesA', 'seriesB'],
-  },
-  {
-    id: 3,
-    img: '/img/16.jpg',
-    name: 'Hyperas Chain',
-    amount: '$2.000.000',
-    funded: '$2.000.000',
-    progress: 100,
-    category: 'CÔNG NGHỆ',
-    tag: ['seed', 'seriesA', 'seriesB'],
-  },
-  {
-    id: 4,
-    img: '/img/19.jpg',
-    name: 'EGABID',
-    amount: '$2.000.000',
-    funded: '$2.000.000',
-    progress: 100,
-    category: 'CÔNG NGHỆ',
-    tag: ['seriesA'],
-  },
-  {
-    id: 5,
-    img: '/img/18.jpg',
-    name: 'SALALA AI',
-    amount: '$2.000.000',
-    funded: '$2.000.000',
-    progress: 100,
-    category: 'CÔNG NGHỆ',
-    tag: ['seed'],
-  },
-  {
-    id: 6,
-    img: '/img/16.jpg',
-    name: 'Hyperas Chain',
-    amount: '$2.000.000',
-    funded: '$2.000.000',
-    progress: 100,
-    category: 'CÔNG NGHỆ',
-    tag: ['seriesB'],
-  },
-];
 const CategoryPage: React.FC = () => {
-  const [projects, setProjects] = useState([]);
-  const [projects2, setProjects2] = useState([]);
-  const [screenWidth, setScreenWidth] = useState(0);
-  const [page, setPage] = useState<typeof Page>(Page);
+  const [projects, setProjects] = useState<any>([]);
+  const [projects1, setProjects1] = useState<any>([]);
+  const [projects2, setProjects2] = useState<any>([]);
+
+  const [page, setPage] = useState<typeof Page>({
+    ...Page,
+    status__eq: 0,
+  });
+  const [page2, setPage2] = useState<typeof Page>({
+    ...Page,
+    status__eq: 1,
+  });
+  const [page3, setPage3] = useState<typeof Page>({
+    ...Page,
+    status__eq: 2,
+  });
+
   const [searchValue, setSearchValue] = useState('');
   const [selectedValue, setSelectedValue] = useState('all');
 
@@ -155,32 +44,52 @@ const CategoryPage: React.FC = () => {
     queryFn: () => getProjects(page),
   });
 
+  const {
+    data: data2,
+    isLoading: isLoading2,
+    isError: isError2,
+    isSuccess: isSuccess2,
+  } = useQuery({
+    queryKey: ['projects', page2],
+    queryFn: () => getProjects(page2),
+  });
+
+  const {
+    data: data3,
+    isLoading: isLoading3,
+    isError: isError3,
+    isSuccess: isSuccess3,
+  } = useQuery({
+    queryKey: ['projects', page3],
+    queryFn: () => getProjects(page3),
+  });
+
   useEffect(() => {
     if (isSuccess) {
-      setProjects(data.data);
-      setProjects2(data.data);
+      console.log(data);
+
+      setProjects(data);
     }
   }, [data]);
 
-  const handleSearch = () => {
-    setPage({ ...page, name__ilike: searchValue });
-    refetch();
-  };
-
-  // useEffect(() => {
-  //   setPage({ ...page, name__ilike: searchValue });
-  // }, [searchValue]);
+  useEffect(() => {
+    if (isSuccess2) {
+      setProjects1(data2);
+    }
+  }, [data2]);
 
   useEffect(() => {
-    setScreenWidth(window.innerWidth);
+    if (isSuccess3) {
+      setProjects2(data3);
+    }
+  }, [data3]);
 
-    const handleResize = () => {
-      setScreenWidth(window.innerWidth);
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  const handleSearch = () => {
+    setPage({ ...page, name__ilike: searchValue });
+    setPage2({ ...page2, name__ilike: searchValue });
+    setPage3({ ...page3, name__ilike: searchValue });
+    refetch();
+  };
 
   const handleChange = (event: any) => {
     setSelectedValue(event.target.value);
@@ -383,7 +292,7 @@ const CategoryPage: React.FC = () => {
           </h2>
           <div ref={ref4} className="flex px-4 w-full  flex-col lg:flex-row ">
             <div className="w-full bg-white" ref={ref1}>
-              {projects.length === 0 && (
+              {projects.length === 0 && isLoading && (
                 <div className="flex justify-center items-center w-full h-[300px]">
                   <p className="text-lg font-sans text-gray-500">
                     Không có dự án nào
@@ -402,7 +311,7 @@ const CategoryPage: React.FC = () => {
                   gap: 2,
                 }}
               >
-                {projects.map((project: any, index: number) => (
+                {projects?.data?.map((project: any, index: number) => (
                   <Link href={`/detail-category/${project.id}`} key={index}>
                     <Box
                       className={`${inView4 ? 'animate-fadeIn scale-100' : 'translate-y-20 opacity-0 scale-0'} py-4 transition
@@ -486,7 +395,9 @@ const CategoryPage: React.FC = () => {
             className={`flex flex-row justify-center mb-8  ${projects.length < 6 && 'hidden'}`}
           >
             <button
-              onClick={() => handleSearch()}
+              onClick={() => {
+                setPage((prev) => ({ ...prev, page: prev.page + 1 }));
+              }}
               className="uppercase flex items-center font-sans bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black"
             >
               xem thêm
@@ -505,7 +416,7 @@ const CategoryPage: React.FC = () => {
           </h2>
           <div className="flex px-4  flex-col lg:flex-row ">
             <div className="w-full bg-white" ref={ref2}>
-              {projects.length === 0 && (
+              {projects1.length === 0 && isLoading2 && (
                 <div className="flex justify-center items-center w-full h-[300px]">
                   <p className="text-lg font-sans text-gray-500">
                     Không có dự án nào
@@ -523,7 +434,7 @@ const CategoryPage: React.FC = () => {
                   gap: 2,
                 }}
               >
-                {projects.map((project: any, index: number) => (
+                {projects1?.data?.map((project: any, index: number) => (
                   <Link href={`/detail-category/${project.id}`} key={index}>
                     <Box
                       className={`${inView4 ? 'animate-fadeIn scale-100' : 'translate-y-20 opacity-0 scale-0'} py-4 transition
@@ -626,7 +537,7 @@ const CategoryPage: React.FC = () => {
           </h2>
           <div className="flex px-4   flex-col lg:flex-row ">
             <div className="w-full bg-white" ref={ref3}>
-              {projects2.length === 0 && (
+              {projects2.length === 0 && isLoading3 && (
                 <div className="flex justify-center items-center w-full h-[300px]">
                   <p className="text-lg font-sans text-gray-500">
                     Không có dự án nào
@@ -644,7 +555,7 @@ const CategoryPage: React.FC = () => {
                   gap: 2,
                 }}
               >
-                {projects2.map((project: any, index: any) => (
+                {projects2?.data?.map((project: any, index: any) => (
                   <Link href={`/detail-category/${project.id}`} key={index}>
                     <Box
                       className={`${inView4 ? 'animate-fadeIn scale-100' : 'translate-y-20 opacity-0 scale-0'} py-4 transition

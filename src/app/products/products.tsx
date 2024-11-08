@@ -180,8 +180,8 @@ const Product = (props: ProductProps) => {
                     startDate={packageItem.start_date}
                     profit={packageItem.capital_raising_target}
                     sponsorship={
-                      packageItem.mobilized_fund /
-                      packageItem.capital_raising_target
+                      (packageItem.mobilized_fund /
+                        packageItem.capital_raising_target) * 100
                     }
                     invested={packageItem.mobilized_fund}
                     field={packageItem.industries}
