@@ -79,6 +79,16 @@ const PROJECTS = [
   },
 ];
 
+const data = [
+  { id: 'signin', text: 'Đăng ký' },
+  { id: 'login', text: 'Đăng nhập' },
+  { id: 'auth', text: 'Xác thực eKYC' },
+  { id: 'contract', text: 'Ký hợp đồng' },
+  { id: 'product', text: 'Thực hiện đầu tư' },
+  { id: 'transaction', text: 'Giao dịch' },
+  { id: 'forgot', text: 'Quên mật khẩu' },
+];
+
 const GuidePage: React.FC = () => {
   const pathname = usePathname();
   const [activeSection, setActiveSection] = useState<string>('signin');
@@ -86,7 +96,7 @@ const GuidePage: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const handleMenuItemClick = (section: string) => {
     setActiveSection(section);
-    setIsMenuOpen(false); 
+    setIsMenuOpen(false);
   };
   const renderContent = () => {
     switch (activeSection) {
@@ -307,38 +317,42 @@ const GuidePage: React.FC = () => {
           </nav>
         </aside>
         <div className="lg:hidden p-5 w-full ">
-          <div className="relative ">
+          <div className="relative w-full ">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="w-[150px] text-[#8A8A8A] border rounded-lg border-[#E0E0E0] py-3 px-4 rounded-lg font-bold flex items-center gap-2"
+              className=" text-[#8A8A8A] border rounded-lg border-[#E0E0E0] py-3 px-4  justify-between  font-bold flex items-center w-full gap-2"
             >
-              Hướng dẫn
+              {(!!activeSection &&
+                data.find((item) => item.id === activeSection)?.text) ||
+                'Hướng dẫn'}
               <svg
                 className={`w-4 h-4 transition-transform duration-200 ${isMenuOpen ? 'rotate-180' : ''}`}
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
               </svg>
             </button>
             {isMenuOpen && (
               <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-lg shadow-lg z-50">
                 <ul className="gap-[20px] pl-3 text-base">
-                  {[
-                    { id: 'signin', text: 'Đăng ký' },
-                    { id: 'login', text: 'Đăng nhập' },
-                    { id: 'auth', text: 'Xác thực eKYC' },
-                    { id: 'contract', text: 'Ký hợp đồng' },
-                    { id: 'product', text: 'Thực hiện đầu tư' },
-                    { id: 'transaction', text: 'Giao dịch' },
-                    { id: 'forgot', text: 'Quên mật khẩu' }
-                  ].map((item) => (
-                    <li key={item.id} className="flex rounded-[10px] text-left p-2">
+                  {data?.map((item) => (
+                    <li
+                      key={item.id}
+                      className="flex rounded-[10px] text-left p-2"
+                    >
                       <button
                         onClick={() => handleMenuItemClick(item.id)}
                         className={`w-full text-left no-underline font-sans font-bold hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
-                          activeSection === item.id ? 'text-[#28a745]' : 'text-[#8A8A8A]'
+                          activeSection === item.id
+                            ? 'text-[#28a745]'
+                            : 'text-[#8A8A8A]'
                         }`}
                       >
                         {item.text}
