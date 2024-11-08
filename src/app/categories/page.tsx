@@ -19,9 +19,9 @@ import { Page } from '@/type/page.type';
 import { getProjects } from '@/services/project.service';
 
 const CategoryPage: React.FC = () => {
-  const [projects, setProjects] = useState<any>([]);
-  const [projects1, setProjects1] = useState<any>([]);
-  const [projects2, setProjects2] = useState<any>([]);
+  const [projects, setProjects] = useState<any>({});
+  const [projects1, setProjects1] = useState<any>({});
+  const [projects2, setProjects2] = useState<any>({});
 
   const [page, setPage] = useState<typeof Page>({
     ...Page,
@@ -66,21 +66,45 @@ const CategoryPage: React.FC = () => {
 
   useEffect(() => {
     if (isSuccess) {
-      console.log('projects', projects);
-
-      setProjects(data);
+      setProjects((prev: any) => {
+        if (prev.data) {
+          return {
+            ...data,
+            data: [...prev?.data, ...data.data],
+          };
+        }
+        return data;
+      });
     }
   }, [data]);
 
   useEffect(() => {
     if (isSuccess2) {
-      setProjects1(data2);
+      // setProjects1(data2);
+      setProjects1((prev: any) => {
+        if (prev.data) {
+          return {
+            ...data2,
+            data: [...prev?.data, ...data2.data],
+          };
+        }
+        return data2;
+      });
     }
   }, [data2]);
 
   useEffect(() => {
     if (isSuccess3) {
-      setProjects2(data3);
+      // setProjects2(data3);
+      setProjects2((prev: any) => {
+        if (prev.data) {
+          return {
+            ...data3,
+            data: [...prev?.data, ...data3.data],
+          };
+        }
+        return data3;
+      });
     }
   }, [data3]);
 
