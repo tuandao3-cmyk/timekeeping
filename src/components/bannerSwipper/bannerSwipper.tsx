@@ -95,7 +95,6 @@ function BannerSwipper() {
   ];
   return (
     <Swiper
-      spaceBetween={50}
       navigation={false}
       centeredSlides={true}
       // autoplay={{
@@ -112,7 +111,7 @@ function BannerSwipper() {
       }}
       className="mySwiper"
     >
-      <ModalDown modal={modal} setModal={setModal} />
+      {/* <ModalDown modal={modal} setModal={setModal} /> */}
       <SwiperSlide className="bg-[rgb(7,33,44)] flex flex-col :flex-row min-h-[812px] h-auto justify-center items-center w-full">
         <Box
           ref={ref}
@@ -125,10 +124,10 @@ function BannerSwipper() {
           flexDirection={'column'}
           justifyContent={'center'}
           alignItems={'center'}
-          padding={{
-            xs: '12px',
-            md: '0',
-          }}
+          // padding={{
+          //   xs: '12px',
+          //   md: '0',
+          // }}
         >
           <Stack
             flexDirection={{
@@ -157,6 +156,10 @@ function BannerSwipper() {
                 gap={{
                   xs: '24px',
                   md: '32px',
+                }}
+                px={{
+                  xs: '12px',
+                  md: '0',
                 }}
               >
                 <Typography
@@ -330,11 +333,11 @@ function BannerSwipper() {
               </Stack>
             </Stack>
             <div className="w-full flex lg:hidden relative justify-center items-center">
-              <div className="block lg:hidden w-[351px] h-[289px] overflow-hidden rounded-[16px] ">
+              <div className="block lg:hidden w-full  px-[12px] h-[289px] overflow-hidden rounded-[16px] ">
                 <Image
                   src={'/img/invest.png'}
                   alt="image"
-                  width={351}
+                  width={388}
                   height={289}
                   style={{
                     width: '100%',
@@ -608,11 +611,10 @@ function BannerSwipper() {
           className="bg-[#07212C] flex  min-h-[812px]  justify-center items-center w-full "
         >
           <div
-            className="bg-white h-[100%] bg-cover min-h-[812px]  w-full flex flex-col justify-center items-center "
+            className="bg-white h-[100%] bg-cover min-h-[812px] px-[12px]  w-full flex flex-col justify-center items-center "
             style={{
               backgroundImage: "url('/img/bghomepage2.png')",
               backgroundSize: '100% 100%',
-
               backgroundPosition: 'top',
               backgroundRepeat: 'no-repeat',
             }}
