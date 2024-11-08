@@ -1,8 +1,10 @@
 // components/ContactForm.tsx
 import { useEffect, useState } from 'react';
 import { postContact } from '@/services/contact.service';
+import ModalSucses from '@/app/ModalSucses';
 
 const ContactForm = () => {
+  const [open, setOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -29,7 +31,7 @@ const ContactForm = () => {
     });
 
     if (response.statusCode === 200) {
-      alert('Đã gửi thành công');
+      setOpen(true);
       setFormData({
         name: '',
         email: '',
@@ -140,6 +142,7 @@ const ContactForm = () => {
           </div>
         </form>
       </div>
+      <ModalSucses modal={open} setModal={setOpen} />
     </div>
   );
 };
