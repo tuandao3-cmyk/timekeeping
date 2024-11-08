@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import ProgressBar from '../progress';
+import Image from 'next/image';
 
 interface ProjectItemProps {
   id?: string;
@@ -32,7 +33,9 @@ function ProjectItem(props: ProjectItemProps) {
         className={` group  duration-300 ease-in-out flex flex-col gap-[12px] transform max-w-[384px] w-full`}
       >
         <div className="flex flex-col justify-center items-center w-full">
-          <img
+          <Image
+            width={384}
+            height={250}
             src={images[0] || '/img/egabid_pc.png'}
             alt={name || 'HyraCap'}
             className={` w-full max-h-[250px] max-w-[384px] rounded-[10px]`}

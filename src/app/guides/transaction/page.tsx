@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 
 const TransactionSection: React.FC = () => {
   const pathname = usePathname();
@@ -44,7 +45,9 @@ const TransactionSection: React.FC = () => {
 
          
           <div className="flex justify-center my-5 flex-wrap gap-10 mb-3.5 lg:pl-5">
-            <img 
+            <Image
+              width={284}
+              height={583} 
               src="/img/trans1.png" 
               alt="Màn hình đăng nhập HyraCap"
               className="lg:w-[30%] w-[100%] max-w-[300px] "
@@ -60,7 +63,7 @@ const TransactionSection: React.FC = () => {
           </ul>
           {/* Phần hình ảnh cuối */}
           <div className="flex justify-center items-center mt-5 flex-wrap gap-5 lg:pl-[3vw]">
-            <img
+            <Image
               src="/img/trans2.png"
               alt="Màn hình nhập OTP"
               width={300}

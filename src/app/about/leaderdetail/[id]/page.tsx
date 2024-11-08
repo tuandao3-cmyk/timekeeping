@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { leaders } from '../../about';
 import { IoArrowBack } from 'react-icons/io5';
+import Image from 'next/image';
 
 export default function LeaderDetail() {
   const router = useRouter();
@@ -33,7 +34,9 @@ export default function LeaderDetail() {
     <div className="flex flex-col  min-h-[600px]">
       <main className="flex justify-center flex-1 w-full">
         <div className="w-full max-w-[1440px] pt-16 lg:pt-0 relative">
-          <img
+          <Image
+            width={1440}
+            height={748}
             src="/img/about/bg_about_us1.png"
             alt="bg"
             className="absolute pointer-events-none inset-0 w-full max-w-[1440px] h-full object-cover"
@@ -60,7 +63,9 @@ export default function LeaderDetail() {
               </div>
 
               <div className="flex-1 flex items-center justify-center">
-                <img
+                <Image
+                  width={678}
+                  height={796}
                   src={leader.image}
                   alt={leader.name}
                   className="w-[255px] h-[294px] lg:w-[592px] lg:h-[689px] object-cover px-2"
@@ -86,7 +91,9 @@ export default function LeaderDetail() {
                   )}
 
                   <div className="relative z-10 flex flex-col justify-start items-center">
-                    <img
+                    <Image
+                      width={64}
+                      height={64}
                       src={nav.image}
                       alt={nav.name}
                       className={`w-[48px] h-[48px] lg:w-[64px] lg:h-[64px] rounded-full  object-cover ${idx === activeLeader ? 'bg-[#48B96D]' : 'bg-white'}`}

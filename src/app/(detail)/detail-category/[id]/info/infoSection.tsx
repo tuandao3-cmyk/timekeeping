@@ -491,30 +491,6 @@ const InfoSection = (props: InfoSectionProps) => {
                     key={index}
                     name={packageItem.name}
                   />
-                  // <ProductItem
-                  //   key={index}
-                  //   descriptions={packageItem.descriptions}
-                  //   image={
-                  //     <img
-                  //       src={packageItem.images[0] || '/img/egabid_pc.png'}
-                  //       alt="Hyperas Chain"
-                  //       className=" md:h-[250px] md:w-[384px] rounded-[12px] object-cover"
-                  //     />
-                  //   }
-                  //   interest_rate={packageItem.interest_rate}
-                  //   term={packageItem.term}
-                  //   title={packageItem.name}
-                  //   type={product.type}
-                  //   startDate={packageItem.start_date}
-                  //   profit={packageItem.capital_raising_target}
-                  //   sponsorship={
-                  //     packageItem.mobilized_fund /
-                  //     packageItem.capital_raising_target
-                  //   }
-                  //   invested={packageItem.mobilized_fund}
-                  //   field={packageItem.industries}
-                  //   id={packageItem.id}
-                  // />
                 ))}
 
                 <Button

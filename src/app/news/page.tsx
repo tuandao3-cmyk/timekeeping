@@ -13,6 +13,7 @@ import { useRouter } from 'next/navigation';
 import { FaApple, FaGooglePlay } from 'react-icons/fa';
 import { ProjectCard } from './components/card';
 import NewsItem from './components/newsItem';
+import Image from 'next/image';
 
 const dataNews = [
   {
@@ -233,7 +234,9 @@ const NewsPage: React.FC = () => {
                 style={{ borderRadius: 10 }}
                 onClick={() => handleNavigate(news.id)}
               >
-                <img
+                <Image
+                  width={115}
+                  height={70}
                   src={news?.link_img || ''}
                   alt=""
                   className={` object-cover object-center rounded-lg 
@@ -285,7 +288,9 @@ const NewsPage: React.FC = () => {
           </h1>
 
           <div className="flex flex-col justify-center items-center gap-4 pl-5 pr-5 md:pr-0 md:pl-0">
-            <img
+            <Image
+              height={274}
+              width={1200}
               onClick={() =>
                 router.push('https://www.facebook.com/hyraholdings/')
               }
@@ -308,7 +313,9 @@ const NewsPage: React.FC = () => {
               {newsData.slice(1, 4).map((news: any, index: number) => (
                 <a href={`/news/${news.id}`} className="p-4" key={index}>
                   <div className="grid md:grid-cols-3  border-[1px] hover:scale-105 hover:border-none transition ease-in-out duration-150 hover:cursor-pointer">
-                    <img
+                    <Image
+                      width={320}
+                      height={188}
                       src={news.link_img}
                       alt=""
                       className="w-[320px] h-[188px]  object-cover rounded-lg md:col-span-1"
@@ -350,7 +357,9 @@ const NewsPage: React.FC = () => {
               <div className=" flex  flex-col gap-4 mt-5 md:mt-0 md:px-36 lg:px-0">
                 <div className="flex justify-between items-center">
                   <div className="flex items-center gap-5">
-                    <img
+                    <Image
+                      width={40}
+                      height={40}
                       onClick={() =>
                         router.push('https://www.youtube.com/@hyracap')
                       }
@@ -386,7 +395,9 @@ const NewsPage: React.FC = () => {
                 </div>
                 <div className="flex justify-between items-center ">
                   <div className="flex items-center gap-5">
-                    <img
+                    <Image
+                      width={40}
+                      height={40}
                       onClick={() =>
                         router.push('https://www.facebook.com/hyracap')
                       }
@@ -422,7 +433,9 @@ const NewsPage: React.FC = () => {
                 </div>
                 <div className="flex justify-between items-center">
                   <div className="flex items-center gap-5">
-                    <img
+                    <Image
+                      width={40}
+                      height={40}
                       onClick={() => router.push('https://x.com/hyracap')}
                       src="/img/x_logo.jpg"
                       alt="X"
@@ -479,7 +492,9 @@ const NewsPage: React.FC = () => {
                     </div>
                   </div>
                   <div>
-                    <img
+                    <Image
+                      width={216}
+                      height={228}
                       src="/img/product/app_log.png"
                       alt="screenshot"
                       className="max-w-[216px] max-h-[228px] absolute -right-10 -bottom-4"
