@@ -414,6 +414,7 @@ const NewsPage: React.FC = () => {
                 <div className="flex justify-between items-center">
                   <div className="flex items-center gap-5">
                     <img
+                      onClick={() => router.push('https://www.youtube.com/@hyracap')}
                       src="/img/youtube_logo.jpg"
                       alt="Youtube"
                       className=" w-[40px] h-[40px]  rounded-lg  "
@@ -422,7 +423,9 @@ const NewsPage: React.FC = () => {
                       50,987 Subscriber
                     </p>
                   </div>
-                  <button className="flex bg-gray-100 items-center justify-center w-10 rounded-md h-10 rounded-xs md:border border-gray-300 hover:border-gray-400 transition-colors ">
+                  <button 
+                  onClick={() => router.push('https://www.youtube.com/@hyracap')}
+                  className="flex bg-gray-100 items-center justify-center w-10 rounded-md h-10 rounded-xs md:border border-gray-300 hover:border-gray-400 transition-colors ">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -442,6 +445,7 @@ const NewsPage: React.FC = () => {
                 <div className="flex justify-between items-center ">
                   <div className="flex items-center gap-5">
                     <img
+                      onClick={() => router.push('https://www.facebook.com/hyracap')}
                       src="/img/facebook_logo.png"
                       alt="Facebook"
                       className=" w-[40px] h-[40px]  rounded-lg  "
@@ -450,7 +454,9 @@ const NewsPage: React.FC = () => {
                       50,987 Follow
                     </p>
                   </div>
-                  <button className="flex bg-gray-100 items-center justify-center w-10 h-10 rounded-md rounded-xs md:border border-gray-300 hover:border-gray-400 transition-colors">
+                  <button 
+                  onClick={() => router.push('https://www.facebook.com/hyracap')}
+                  className="flex bg-gray-100 items-center justify-center w-10 h-10 rounded-md rounded-xs md:border border-gray-300 hover:border-gray-400 transition-colors">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -470,6 +476,7 @@ const NewsPage: React.FC = () => {
                 <div className="flex justify-between items-center">
                   <div className="flex items-center gap-5">
                     <img
+                      onClick={() => router.push('https://x.com/hyracap')}
                       src="/img/x_logo.jpg"
                       alt="X"
                       className=" w-[40px] h-[40px]   "
@@ -478,7 +485,9 @@ const NewsPage: React.FC = () => {
                       50,987 Follower
                     </p>
                   </div>
-                  <button className="flex bg-gray-100 items-center justify-center w-10 h-10 rounded-md rounded-xs md:border border-gray-300 hover:border-gray-400 transition-colors">
+                  <button
+                  onClick={() => router.push('https://x.com/hyracap')}
+                   className="flex bg-gray-100 items-center justify-center w-10 h-10 rounded-md rounded-xs md:border border-gray-300 hover:border-gray-400 transition-colors">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
