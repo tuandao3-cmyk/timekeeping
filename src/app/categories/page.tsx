@@ -65,48 +65,44 @@ const CategoryPage: React.FC = () => {
   });
 
   useEffect(() => {
-    if (isSuccess) {
+    if (isSuccess && data) {
       setProjects((prev: any) => {
-        if (prev.data) {
+        if (prev && prev.data) {
           return {
             ...data,
-            data: [...prev?.data, ...data.data],
+            data: [...prev.data, ...data.data],
           };
         }
         return data;
       });
     }
-  }, [data]);
-
+  }, [isSuccess, data]); 
   useEffect(() => {
-    if (isSuccess2) {
-      // setProjects1(data2);
+    if (isSuccess2 && data2) {
       setProjects1((prev: any) => {
-        if (prev.data) {
+        if (prev && prev.data) {
           return {
             ...data2,
-            data: [...prev?.data, ...data2.data],
+            data: [...prev.data, ...data2.data],
           };
         }
         return data2;
       });
     }
-  }, [data2]);
-
+  }, [isSuccess2, data2]); 
   useEffect(() => {
-    if (isSuccess3) {
-      // setProjects2(data3);
+    if (isSuccess3 && data3) {
       setProjects2((prev: any) => {
-        if (prev.data) {
+        if (prev && prev.data) {
           return {
             ...data3,
-            data: [...prev?.data, ...data3.data],
+            data: [...prev.data, ...data3.data],
           };
         }
         return data3;
       });
     }
-  }, [data3]);
+  }, [isSuccess3, data3]); 
 
   const handleSearch = () => {
     setPage({ ...page, name__ilike: searchValue });
@@ -208,7 +204,7 @@ const CategoryPage: React.FC = () => {
             />
             <div className="  flex flex-row justify-end gap-4 font-sans flex-grow  items-center">
               {/* <p className="font-sans">Hiển thị </p> */}
-              <FormControl
+              {/* <FormControl
                 sx={{
                   minWidth: 100,
                   height: '48px',
@@ -289,7 +285,7 @@ const CategoryPage: React.FC = () => {
                     IPO
                   </MenuItem>
                 </Select>
-              </FormControl>
+              </FormControl> */}
             </div>
             <Button
               sx={{
