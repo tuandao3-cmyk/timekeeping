@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -40,7 +40,9 @@ const Header = () => {
     { href: '/reports', text: 'Báo cáo' },
     { href: '/contact', text: 'Liên hệ' },
   ];
-
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [pathname]);
   return (
     <header
       className={`fixed w-full z-50 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}

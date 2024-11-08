@@ -1,4 +1,5 @@
 import { Box, Button, Modal } from '@mui/material';
+import Image from 'next/image';
 import { FaApple, FaGooglePlay } from 'react-icons/fa';
 interface Prop {
   modal: boolean;
@@ -31,7 +32,7 @@ function ModalDown(props: Prop) {
           }}
         >
           <p
-            className={`xl:text-3xl text-[14px] font-bold mb-4 font-sans duration-300 ease-in-out transform uppercase text-center`}
+            className={`xl:text-3xl text-[14px] font-bold mb-4 font-sans duration-300 ease-in-out transform uppercase text-center mt-5`}
             style={{
               fontWeight: 700,
             }}
@@ -44,7 +45,16 @@ function ModalDown(props: Prop) {
           <div
             className={`bg-[#000000]/5 sm:bg-white  rounded-lg flex md:max-w-[100%] items-center justify-center duration-300 delay-700 ease-in-out transform`}
           >
-            <div className="w-24 h-24 bg-[#000000]/5 mr-4"></div>
+            <div className="w-24 h-24 bg-[#000000]/5 mr-4 flex items-center justify-center">
+              <Image
+                src={'/img/qr.png'}
+                alt="App Screenshot"
+                width={708}
+                height={812}
+                className={` w-[80px] h-[80px] 
+                 `}
+              />
+            </div>
             <div>
               <p className="text-normal leading-6 text-[#000000]/60 mb-1 font-sans">
                 Scan to Download
@@ -91,13 +101,24 @@ function ModalDown(props: Prop) {
             </div>
           </div>
 
-          <div className="w-full flex justify-center">
+          <div className=" w-full  flex justify-end absolute top-2 left-0">
             <Button
+              className="absolute top-0 right-0 bg-black text-white hover:bg-white hover:text-black hover:cursor-default"
               onClick={() => setModal(false)}
-              variant="contained"
-              color="error"
+              color="inherit"
             >
-              Đóng
+              <svg
+                className="w-6 h-6"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  clipRule="evenodd"
+                ></path>
+              </svg>
             </Button>
           </div>
         </Box>

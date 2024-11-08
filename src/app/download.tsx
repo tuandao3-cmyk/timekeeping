@@ -23,12 +23,12 @@ const DownloadSection = () => {
       : '/img/downloadimg.png';
   return (
     <div className="bg-[#F3F7F4] overflow-hidden flex flex-col justify-center items-center">
-      <div className="max-w-[1440px] w-full px-[16px] ">
-        <div className="container mx-auto  flex flex-col-reverse md:flex-row items-center">
-          <div className="md:w-1/2 mb-8 md:mb-0 lg:text-left text-center">
+      <div className="max-w-[1440px] px-[16px] md:px-0">
+        <div className="container mx-auto  flex flex-col-reverse xl:flex-row items-center ">
+          <div className="  xl:w-1/2 mb-8 md:mb-0 justify-center sm:ml-5 lg:ml-0 md:pb-10 xl:pb-0 ">
             <p
               ref={ref}
-              className={`md:text-3xl text-[28px] font-bold mb-4 font-sans duration-300 ease-in-out transform uppercase ${
+              className={`md:text-3xl text-[34px] text-center  md:text-left font-bold mb-4 font-sans duration-300 ease-in-out transform uppercase ${
                 inView
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-10'
@@ -53,7 +53,7 @@ const DownloadSection = () => {
               Tải ứng dụng HyraCap để trải nghiệm những tính năng đầu tư sinh
               lời hiệu quả.
             </p>
-            <div className="flex flex-col justify-center sm:flex-row gap-6 mb-8">
+            <div className="w-[100%] md:w-[80%] flex flex-col  beetween sm:flex-row gap-6 mb-8 md:ml-5 lg:ml-0">
               <button
                 onClick={() =>
                   handleOpenPage(
@@ -61,7 +61,11 @@ const DownloadSection = () => {
                   )
                 }
                 ref={ref}
-                className={`bg-[#48B96D] text-white px-6 h-[64px] py-3 w-[200px] font-sans rounded-xl flex items-center justify-center gap-[10px] duration-300 delay-500 ease-in-out transform ${
+                // onClick={() =>
+                //   (window.location.href =
+                //     'https://play.google.com/store/apps/details?id=com.hyracap')
+                // }
+                className={`bg-[#48B96D] text-white px-6 h-[64px] py-3 sm:w-[50%]  w-full font-sans rounded-xl flex items-center justify-center gap-[10px] duration-300 delay-500 ease-in-out transform ${
                   inView
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-20'
@@ -88,7 +92,10 @@ const DownloadSection = () => {
                   )
                 }
                 ref={ref}
-                className={`bg-[#48B96D] text-white h-[64px] px-6 py-3 font-sans w-[200px] rounded-xl flex items-center justify-center gap-[10px] duration-300 delay-500 ease-in-out transform ${
+                // onClick={() =>
+                //   (window.location.href = 'https://apps.apple.com/app/hyracap')
+                // }
+                className={`bg-[#48B96D] text-white h-[64px] px-6 py-3 font-sans sm:w-[50%] rounded-xl flex items-center justify-center gap-[10px] duration-300 delay-500 ease-in-out transform ${
                   inView
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-20'
@@ -119,11 +126,21 @@ const DownloadSection = () => {
             </div>
             <div
               ref={ref}
-              className={`bg-[#000000]/5 p-4 rounded-lg flex md:max-w-[80%] items-center duration-300 delay-700 ease-in-out transform ${
+              className={`bg-[#000000]/5 p-4 rounded-lg flex md:max-w-[80%] md:ml-5 lg:ml-0 items-center duration-300 delay-700 ease-in-out transform ${
                 inView ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
               }`}
             >
-              <div className="w-24 h-24 bg-[#FBFFFE] mr-4"></div>
+              <div className="w-24 h-24 bg-[#FBFFFE] mr-4 flex items-center justify-center">
+                <Image
+                  ref={ref}
+                  src={'/img/qr.png'}
+                  alt="App Screenshot"
+                  width={708}
+                  height={812}
+                  className={` w-[80px] h-[80px] 
+                 `}
+                />
+              </div>
               <div>
                 <p className="text-normal leading-6 text-[#000000]/60 mb-1 font-sans">
                   Scan to Download
