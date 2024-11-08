@@ -1,12 +1,12 @@
+import { getNews } from '@/services/news.service';
+import { Page } from '@/type/page.type';
+import { formatDateTimeVn } from '@/util/util';
 import { Button, IconButton, Stack, Typography } from '@mui/material';
-import { useRouter } from 'next/navigation';
 import { useQuery } from '@tanstack/react-query';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import styles from './news.module.css';
-import { getNews } from '@/services/news.service';
-import { formatDateTimeVn } from '@/util/util';
-import { Page } from '@/type/page.type';
 
 const newsData = [
   {
@@ -102,7 +102,7 @@ const News = () => {
               Xem thêm
             </a>
           </div>
-          <div className="flex flex-col md:flex-row md:gap-5 xl:gap-[126px] p-3 w-full items-center">
+          <div className="flex flex-col md:flex-row md:gap-5 xl:gap-[126px] p-3 w-full ">
             {isLoading ? (
               <div> Loading...</div>
             ) : (
@@ -200,7 +200,7 @@ const News = () => {
                   newsData1.slice(1).map((news: any, index: number) => (
                     <div
                       key={index}
-                      className={`${styles.newsItem} flex flex-col md:flex-row duration-300 delay-${index * 100} pb-[20px] pt-[20px] max-w-[650px] ease-in-out transform ${
+                      className={`${styles.newsItem}  flex flex-col md:flex-row duration-300 delay-${index * 100} pb-[20px] pt-[20px] max-w-[650px] ease-in-out transform ${
                         inView
                           ? 'opacity-100 translate-y-0'
                           : 'opacity-0 translate-y-10'

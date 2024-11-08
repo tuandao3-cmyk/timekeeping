@@ -81,9 +81,13 @@ const PROJECTS = [
 
 const GuidePage: React.FC = () => {
   const pathname = usePathname();
-  const [activeSection, setActiveSection] = useState<string>('default');
+  const [activeSection, setActiveSection] = useState<string>('signin');
   const [isNavOpen, setIsNavOpen] = useState(false);
-
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const handleMenuItemClick = (section: string) => {
+    setActiveSection(section);
+    setIsMenuOpen(false); 
+  };
   const renderContent = () => {
     switch (activeSection) {
       case 'auth':
@@ -287,7 +291,7 @@ const GuidePage: React.FC = () => {
                   Quên mật khẩu
                 </button>
               </li>
-              <li className="mb-2.5">
+              {/* <li className="mb-2.5">
                 <button
                   onClick={() => setActiveSection('logout')}
                   className={`no-underline  font-sans font-bold flex flex-col hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
@@ -298,111 +302,53 @@ const GuidePage: React.FC = () => {
                 >
                   Đăng xuất
                 </button>
-              </li>
+              </li> */}
             </ul>
           </nav>
         </aside>
-        <div className="flex items-center  justify-center lg:hidden w-full p-5 border-b border-[#E0E0E0]">
-          <nav>
-            <ul className=" grid grid-cols-2 md:grid-cols-4 grid-rows-4 md:grid-rows-2 gap-[20px] text-xl 3xl:text-2xl   ">
-              <li className="flex border-[2px] border-[#E0E0E0] rounded-[10px] justify-center text-center p-2">
-                <button
-                  onClick={() => setActiveSection('signin')}
-                  className={`no-underline font-sans font-bold  hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
-                    activeSection === 'signin'
-                      ? 'text-[#28a745]'
-                      : 'text-[#8A8A8A]'
-                  }`}
-                >
-                  Đăng ký
-                </button>
-              </li>
-              <li className="flex border-[2px] border-[#E0E0E0] rounded-[10px] justify-center text-center p-2">
-                <button
-                  onClick={() => setActiveSection('login')}
-                  className={`no-underline  font-sans font-bold  hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
-                    activeSection === 'login'
-                      ? 'text-[#28a745]'
-                      : 'text-[#8A8A8A]'
-                  }`}
-                >
-                  Đăng nhập
-                </button>
-              </li>
-              <li className="flex border-[2px] border-[#E0E0E0] rounded-[10px] justify-center text-center p-2">
-                <button
-                  onClick={() => setActiveSection('auth')}
-                  className={`no-underline  font-sans font-bold hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
-                    activeSection === 'auth'
-                      ? 'text-[#28a745]'
-                      : 'text-[#8A8A8A]'
-                  }`}
-                >
-                  Xác thực eKYC
-                </button>
-              </li>
-              <li className="flex border-[2px] border-[#E0E0E0] rounded-[10px] justify-center text-center p-2">
-                <button
-                  onClick={() => setActiveSection('contract')}
-                  className={`no-underline  font-sans font-bold hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
-                    activeSection === 'contract'
-                      ? 'text-[#28a745]'
-                      : 'text-[#8A8A8A]'
-                  }`}
-                >
-                  Ký hợp đồng
-                </button>
-              </li>
-              <li className="flex border-[2px] border-[#E0E0E0] rounded-[10px] justify-center text-center p-2">
-                <button
-                  onClick={() => setActiveSection('product')}
-                  className={`no-underline  font-sans font-bold hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
-                    activeSection === 'product'
-                      ? 'text-[#28a745]'
-                      : 'text-[#8A8A8A]'
-                  }`}
-                >
-                  Thực hiện đầu tư
-                </button>
-              </li>
-              <li className="flex border-[2px] border-[#E0E0E0] rounded-[10px] justify-center text-center p-2">
-                <button
-                  onClick={() => setActiveSection('transaction')}
-                  className={`no-underline  font-sans font-bold hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
-                    activeSection === 'transaction'
-                      ? 'text-[#28a745]'
-                      : 'text-[#8A8A8A]'
-                  }`}
-                >
-                  Giao dịch
-                </button>
-              </li>
-              <li className="flex border-[2px] border-[#E0E0E0] rounded-[10px] justify-center text-center p-2">
-                <button
-                  onClick={() => setActiveSection('forgot')}
-                  className={`no-underline  font-sans font-bold hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
-                    activeSection === 'forgot'
-                      ? 'text-[#28a745]'
-                      : 'text-[#8A8A8A]'
-                  }`}
-                >
-                  Quên mật khẩu
-                </button>
-              </li>
-              <li className="flex border-[2px] border-[#E0E0E0] rounded-[10px] justify-center text-center p-2">
-                <button
-                  onClick={() => setActiveSection('logout')}
-                  className={`no-underline  font-sans font-bold hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
-                    activeSection === 'logout'
-                      ? 'text-[#28a745]'
-                      : 'text-[#8A8A8A]'
-                  }`}
-                >
-                  Đăng xuất
-                </button>
-              </li>
-            </ul>
-          </nav>
+        <div className="lg:hidden p-5 w-full ">
+          <div className="relative ">
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="w-[150px] text-[#8A8A8A] border rounded-lg border-[#E0E0E0] py-3 px-4 rounded-lg font-bold flex items-center gap-2"
+            >
+              Hướng dẫn
+              <svg
+                className={`w-4 h-4 transition-transform duration-200 ${isMenuOpen ? 'rotate-180' : ''}`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            {isMenuOpen && (
+              <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-lg shadow-lg z-50">
+                <ul className="gap-[20px] pl-3 text-base">
+                  {[
+                    { id: 'signin', text: 'Đăng ký' },
+                    { id: 'login', text: 'Đăng nhập' },
+                    { id: 'auth', text: 'Xác thực eKYC' },
+                    { id: 'contract', text: 'Ký hợp đồng' },
+                    { id: 'product', text: 'Thực hiện đầu tư' },
+                    { id: 'transaction', text: 'Giao dịch' },
+                    { id: 'forgot', text: 'Quên mật khẩu' }
+                  ].map((item) => (
+                    <li key={item.id} className="flex rounded-[10px] text-left p-2">
+                      <button
+                        onClick={() => handleMenuItemClick(item.id)}
+                        className={`w-full text-left no-underline font-sans font-bold hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
+                          activeSection === item.id ? 'text-[#28a745]' : 'text-[#8A8A8A]'
+                        }`}
+                      >
+                        {item.text}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
         </div>
         {renderContent()}
       </div>

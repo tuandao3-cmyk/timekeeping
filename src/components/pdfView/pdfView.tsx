@@ -12,6 +12,8 @@ function PdfView(props: PdfViewProps) {
   const handleClose = () => {
     props.setOpenPdf(false);
   };
+
+  const isPdf = props.pdfPath.endsWith('.pdf');
   return (
     <>
       <Drawer
@@ -38,12 +40,15 @@ function PdfView(props: PdfViewProps) {
           </IconButton>
         </div>
 
-        <embed
-          src={props.pdfPath}
-          type="application/pdf"
-          width="100%"
-          height="100%"
-        />
+        {isPdf ? (
+          <iframe src={props.pdfPath} width="100%" height="100%" />
+        ) : (
+          <img
+            src={props.pdfPath}
+            alt="File Preview"
+            style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+          />
+        )}
       </Drawer>
     </>
   );

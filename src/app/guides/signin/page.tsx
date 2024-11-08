@@ -9,7 +9,7 @@ const SigninSection: React.FC = () => {
     <>
 
 
-<main className=" pt-[50px] px-8 pb-[30px]  lg:px-[70px] text-black text-left font-sans">
+<main className=" lg:pt-[50px] pt-0 px-8 pb-[30px]  lg:px-[70px] text-black text-left font-sans">
   
           <p className=" text-3xl font-bold text-[#000000]  text-left">Video hướng dẫn</p>
           
@@ -52,9 +52,9 @@ const SigninSection: React.FC = () => {
             </li>
           </ul>
 
-          <div className="flex justify-start my-5 flex-wrap gap-10 pl-5 mb-4">
-            <img className="w-[30%] max-w-[300px] " src="/img/dky1.png" alt="Màn hình đăng ký HyraCap 1" />
-            <img className="w-[30%] max-w-[300px] " src="/img/dky2.png" alt="Màn hình đăng ký HyraCap 2" />
+          <div className="flex justify-start my-5 flex-wrap gap-10 lg:pl-5 mb-4">
+            <img className="lg:w-[30%] w-[100%] max-w-[300px] " src="/img/dky1.png" alt="Màn hình đăng ký HyraCap 1" />
+            <img className="lg:w-[30%] w-[100%] max-w-[300px] " src="/img/dky2.png" alt="Màn hình đăng ký HyraCap 2" />
           </div>
 
           <ul className=" text-xl 3xl:text-2xl leading-7 text-[#000000] pl-4 ">
@@ -71,10 +71,10 @@ const SigninSection: React.FC = () => {
             </li>
           </ul>
 
-          <div className="flex justify-start mt-5 flex-wrap gap-5  pl-5">
-            <img className="w-[30%] max-w-[300px] " src="/img/otp1.png" alt="Màn hình nhập OTP" />
-            <img className="w-[30%] max-w-[300px] " src="/img/popup.png" alt="Màn hình popup giới thiệu" />
-            <img className="w-[30%] max-w-[300px] " src="/img/dashboard.png" alt="Màn hình tổng quan" />
+          <div className="flex justify-start mt-5 flex-wrap gap-5  lg:pl-5">
+            <img className="lg:w-[30%] w-[100%] max-w-[300px] " src="/img/otp1.png" alt="Màn hình nhập OTP" />
+            <img className="lg:w-[30%] w-[100%] max-w-[300px] " src="/img/popup.png" alt="Màn hình popup giới thiệu" />
+            <img className="lg:w-[30%] w-[100%] max-w-[300px] " src="/img/dashboard.png" alt="Màn hình tổng quan" />
           </div>
 
           <p className="mt-5 font-normal text-left text-xl 3xl:text-2xl">
