@@ -367,8 +367,8 @@ const NewsPage: React.FC = () => {
           <h1 className="w-full max-lg:px-8 text-left text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 pt-8 hidden md:block ">
             Sự kiện nổi bật
           </h1>
-          <div className="w-full  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
-            <div className="w-full col-span-2 gap-3 hidden md:block">
+          <div className="w-full  grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4 m ">
+            <div className="w-full  col-span-2 gap-3 hidden md:block">
               {newsData.slice(1, 4).map((news: any, index: number) => (
                 <a href={`/news/${news.id}`} className="p-4" key={index}>
                   <div className="grid md:grid-cols-3  border-[1px] hover:scale-105 hover:border-none transition ease-in-out duration-150 hover:cursor-pointer">
@@ -410,7 +410,7 @@ const NewsPage: React.FC = () => {
               <h2 className="w-full md:text-center  md:text-[30px] text-[30px] font-bold text-gray-800 mt-8 md:mt-0">
                 Theo dõi chúng tôi
               </h2>
-              <div className="flex flex-col gap-4 mt-5 md:mt-0">
+              <div className=" flex  flex-col gap-4 mt-5 md:mt-0 md:px-36 lg:px-0">
                 <div className="flex justify-between items-center">
                   <div className="flex items-center gap-5">
                     <img
@@ -496,7 +496,7 @@ const NewsPage: React.FC = () => {
                   </button>
                 </div>
               </div>
-              <div className=" flex index-2 justify-center items-center  bg-[#07212C] w-full h-full max-lg:max-h-[300px] lg:max-h-[390px] rounded-lg my-8  p-5 mt-14">
+              <div className="flex index-2 justify-center items-center  bg-[#07212C] w-full md:w-[450px] md:mx-[25%] lg:mx-0 lg:w-full h-full max-lg:max-h-[300px] lg:max-h-[390px] rounded-lg my-8  p-5 mt-14">
                 <div className="index-3 relative flex flex-row text-white  font-bold text-[11px] bg-[#48B96D] w-full h-full md:text-[15px] rounded-lg">
                   <div className=" flex  flex-col h-full text-[20px] md:text-2xl lg:text-3xl  justify-between gap-4 py-5 px-28 pl-5 md:py-10 md:px-8  ">
                     <p className="max-w-[250px] ">

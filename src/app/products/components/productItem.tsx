@@ -27,7 +27,7 @@ const ProductItem = forwardRef<HTMLDivElement, ProductItemProps>(
         return (
           <div
             ref={ref}
-            className={`package-item md:w-[384px] bg-white shadow-md p-4 rounded-lg md:gap-6  border-t-8 border-[#00922F] flex justify-center items-center flex-col flex-grow ${props.className}`}
+            className={`w-full package-item 2xl:w-[384px] bg-white shadow-md p-4 rounded-lg md:gap-6  border-t-8 border-[#00922F] flex justify-center items-center flex-col flex-grow ${props.className}`}
           >
             <div className="w-full h-20 rounded-full flex justify-center items-center border-2 border-[#00922F] ">
               {props.image}
@@ -67,7 +67,7 @@ const ProductItem = forwardRef<HTMLDivElement, ProductItemProps>(
           <div
             onClick={() => router.push(`/detail-category/${props.title}`)}
             ref={ref}
-            className={`package-item w-full mt-5 md:max-w-[384px] bg-white  rounded-lg md:gap-6   flex justify-center items-left flex-col flex-grow gap-3 ${props.className} hover:shadow-lg p-5 hover:scale-105 transition ease-in-out duration-150 hover:cursor-pointer `}
+            className={` package-item w-full mt-5 3xl:max-w-[384px] bg-white  rounded-lg md:gap-6   flex justify-center items-left flex-col flex-grow gap-3 ${props.className} hover:shadow-lg p-5 hover:scale-105 transition ease-in-out duration-150 hover:cursor-pointer `}
           >
             {props.image}
 

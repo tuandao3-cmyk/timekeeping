@@ -1,9 +1,11 @@
+import { Button, IconButton, Stack, Typography } from '@mui/material';
 import { useRouter } from 'next/navigation';
+import { useQuery } from '@tanstack/react-query';
+import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import styles from './news.module.css';
-import React from 'react';
-
-import { Button, IconButton, Stack, Typography } from '@mui/material';
+import { getNews } from '@/services/news.service';
+import { Page } from '@/type/page.type';
 
 const newsData = [
   {
@@ -47,7 +49,20 @@ const newsData = [
 const News = () => {
   const router = useRouter();
   const [page, setPage] = React.useState(1);
+  const [newsData1, setNewsData1] = React.useState([]);
   const itemsPerPage = 2;
+  const { data, isLoading, isSuccess } = useQuery({
+    queryKey: ['news'],
+    queryFn: () => getNews(Page),
+  });
+
+  React.useEffect(() => {
+    if (isSuccess) {
+      console.log(data);
+
+      setNewsData1(data);
+    }
+  }, [data, isSuccess]);
   const { ref, inView, entry } = useInView({
     threshold: 0.1,
     triggerOnce: true,
@@ -75,22 +90,25 @@ const News = () => {
             >
               TIN MỚI NHẤT VỀ HYRACAP
             </p>
-            <a href='/news' className=" max-h-[48px]  hidden font-sans text--gray-950 font-medium   px-4 border border-gray-300 rounded-full hover:bg-green-500 hover:text-white transition duration-300 md:flex items-center">
+            <a
+              href="/news"
+              className=" max-h-[48px]  hidden font-sans text--gray-950 font-medium   px-4 border border-gray-300 rounded-full hover:bg-green-500 hover:text-white transition duration-300 md:flex items-center"
+            >
               Xem thêm
             </a>
           </div>
-          <div className="flex flex-col md:flex-row md:gap-[126px] p-3 w-full">
+          <div className="flex flex-col md:flex-row md:gap-5 xl:gap-[126px] p-3 w-full items-center">
             <div
-              className={`${styles.mainNews} md:max-w-[486px] max-w-none  hidden md:flex`}
+              className={`${styles.mainNews} md:max-w-[486px] max-w-none  hidden md:flex `}
             >
               <a
-                href={newsData[0].videoLink}
+                href={newsData[0]?.videoLink || ''}
                 className={`${styles.mainNewsLink} ${styles.newsLink} flex justify-start items-start md:max-w-[486px] max-w-none mb-[40px]`}
               >
                 <img
                   src={newsData[0].image}
                   alt="Main News"
-                  className={`${styles.mainImage} duration-300 md:max-w-[486px]  max-h-[320px] md:max-h-none ease-in-out transform ${
+                  className={`${styles.mainImage} duration-300 h-[615px] md:max-h-[655px] lg:max-w-[486px]  lg:max-h-[320px]  ease-in-out transform ${
                     inView
                       ? 'opacity-100 translate-y-0'
                       : 'opacity-0 translate-y-10'
@@ -161,7 +179,7 @@ const News = () => {
                 </div>
               </div>
             </div>
-            <div className={`${styles.sideNews} `}>
+            <div className={`${styles.sideNews}`}>
               <div className="hidden md:flex flex-col">
                 {newsData.slice(1).map((news, index) => (
                   <div
@@ -178,13 +196,18 @@ const News = () => {
                       >
                         <div className={styles.sideBorder}>
                           <div className="flex flex-col gap-[16px]">
+                            <img
+                              src={news.image}
+                              alt={`News ${index}`}
+                              className={`${styles.newsImage} md:max-w-[250px] md:max-h-[130px] md:min-h-0 min-h-[320px] md:block lg:hidden`}
+                            />
                             <p
                               className={`${styles.newsTitle}   font-sans text-16px text-[#000000CC] text-opacity-80`}
                             >
                               {news.title}
                             </p>
 
-                            <span className="font-inter text-sm font-sans leading-6 text-gray-600">
+                            <span className="font-inter text-sm font-sans leading-6 text-gray-600 md:hidden lg:block">
                               {news.description}
                             </span>
                           </div>
@@ -195,7 +218,7 @@ const News = () => {
                         <img
                           src={news.image}
                           alt={`News ${index}`}
-                          className={`${styles.newsImage} md:max-w-[170px] md:max-h-[170px] md:min-h-0 min-h-[320px]`}
+                          className={`${styles.newsImage} md:max-w-[170px] md:max-h-[170px] md:min-h-0 min-h-[320px] md:hidden lg:block`}
                         />
                       </div>
                     </a>

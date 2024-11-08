@@ -5,9 +5,9 @@ import { useInView } from 'react-intersection-observer';
 import Partner from '@/app/partner';
 import PressSection from '@/app/PressSection';
 import ProjectSection from '@/app/ProjectSection';
+import BannerSwipper from '@/components/bannerSwipper';
 import SolutionList from '@/components/solutionList/solutionList';
 import styles from './page.module.css';
-import BannerSwipper from '@/components/bannerSwipper';
 
 import Download from './download';
 import FeedbackSection from './FeedbackSection';

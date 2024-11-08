@@ -46,9 +46,9 @@ const ContactForm = () => {
 
   return (
     // <form onSubmit={handleSubmit}>
-    <div className="flex-1 contain-center min-h-480">
+    <div className=" flex-1 contain-center min-h-480 ">
       <div className="h-full">
-        <form className="flex-1 p-8 border rounded-lg shadow-lg h-full bg-[#ECECEC80]">
+        <form className=" flex-1 p-8 border rounded-lg shadow-lg h-full bg-[#ECECEC80]">
           <h2 className="font-medium text-[32px] leading-[40px]">
             Để lại thông tin và lời nhắn
           </h2>
@@ -131,7 +131,10 @@ const ContactForm = () => {
             />
           </div>
           <div className="flex justify-end">
-            <button className="flex items-end px-4 py-2 mt-3 bg-green-500 text-white rounded-lg">
+            <button
+              onClick={handleSubmit}
+              className="flex items-end px-4 py-2 mt-3 bg-green-500 text-white rounded-lg"
+            >
               Gửi
               <img
                 src="/img/icon/send.svg"

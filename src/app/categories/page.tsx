@@ -480,9 +480,10 @@ const CategoryPage: React.FC = () => {
           <div
             className={`flex flex-row justify-center mb-8  ${projects.length < 6 && 'hidden'}`}
           >
-              <button
-                onClick={() => handleSearch(SECTIONS.COMPLETED)}
-              className="uppercase flex items-center font-sans bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black">
+            <button
+              onClick={() => handleSearch(SECTIONS.COMPLETED)}
+              className="uppercase flex items-center font-sans bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black"
+            >
               xem thêm
               <svg
                 className="w-4 h-4 transition-transform duration-300 ease-linear"
@@ -597,7 +598,8 @@ const CategoryPage: React.FC = () => {
           >
             <button
               onClick={() => handleSearch(SECTIONS.FUNDING)}
-             className="uppercase flex font-sans items-center bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black">
+              className="uppercase flex font-sans items-center bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black"
+            >
               xem thêm
               <svg
                 className="w-4 h-4 transition-transform duration-300 ease-linear"
@@ -710,9 +712,10 @@ const CategoryPage: React.FC = () => {
           <div
             className={`flex flex-row justify-center mb-8 ${projects.length < 6 && 'hidden'}`}
           >
-            <button 
-            onClick={() => handleSearch(SECTIONS.INVESTED)}
-            className="uppercase flex items-center font-sans bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black">
+            <button
+              onClick={() => handleSearch(SECTIONS.INVESTED)}
+              className="uppercase flex items-center font-sans bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black"
+            >
               xem thêm
               <svg
                 className="w-4 h-4 transition-transform duration-300 ease-linear"

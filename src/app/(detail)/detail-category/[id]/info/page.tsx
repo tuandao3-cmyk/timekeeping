@@ -36,82 +36,7 @@ const InfoSection = (props: InfoSectionProps) => {
     {
       title: 'Có thể bạn quan tâm',
       type: 'flexible',
-      package: [
-        {
-          id: 8,
-          created_at: '2024-11-07T09:41:35.058Z',
-          updated_at: '2024-11-07T09:41:35.058Z',
-          name: 'Project Alpha',
-          images: ['image1.jpg', 'image2.jpg'],
-          status: 1,
-          capital_raising_target: 5000000,
-          mobilized_fund: 2500000,
-          industry_ids: [1, 2],
-          industries: [
-            {
-              id: 2,
-              name: 'Giáo dục',
-            },
-          ],
-        },
-        {
-          id: 7,
-          created_at: '2024-11-07T08:59:06.655Z',
-          updated_at: '2024-11-07T08:59:06.655Z',
-          name: 'TechFusion',
-          images: [
-            'https://hyracap.s3.amazonaws.com/project/image-20241002163543-1_1730969918767.jpeg',
-            'https://hyracap.s3.amazonaws.com/project/image-20241022103131-1_1730969918767.jpeg',
-          ],
-          status: 1,
-          capital_raising_target: 3000000,
-          mobilized_fund: 1500000,
-          industry_ids: [4],
-          industries: [
-            {
-              id: 4,
-              name: 'Blockchain',
-            },
-          ],
-        },
-        {
-          id: 6,
-          created_at: '2024-11-07T08:56:51.226Z',
-          updated_at: '2024-11-07T08:56:51.226Z',
-          name: 'EdgeVision',
-          images: [
-            'https://hyracap.s3.amazonaws.com/project/image-20240926133158-1_1730969336289.jpeg',
-            'https://hyracap.s3.amazonaws.com/project/image-20240930150658-1_1730969369152.jpeg',
-          ],
-          status: 1,
-          capital_raising_target: 2500000,
-          mobilized_fund: 2500000,
-          industry_ids: [2],
-          industries: [
-            {
-              id: 2,
-              name: 'Giáo dục',
-            },
-          ],
-        },
-        {
-          id: 5,
-          created_at: '2024-11-06T08:40:40.181Z',
-          updated_at: '2024-11-06T08:40:40.181Z',
-          name: 'Project Alpha',
-          images: [],
-          status: 1,
-          capital_raising_target: 5000000,
-          mobilized_fund: 2500000,
-          industry_ids: [1, 2],
-          industries: [
-            {
-              id: 2,
-              name: 'Giáo dục',
-            },
-          ],
-        },
-      ],
+      package: [],
     },
   ]);
 
@@ -127,7 +52,7 @@ const InfoSection = (props: InfoSectionProps) => {
   useEffect(() => {
     if (listProject) {
       setProducts((prev) => {
-        const updatedProducts = [...prev]; // Tạo một bản sao của `prev`
+        const updatedProducts = [...prev];
 
         if (updatedProducts[0]) {
           updatedProducts[0] = {
@@ -522,19 +447,19 @@ const InfoSection = (props: InfoSectionProps) => {
         <section className="w-full h-auto  bg-white py-[62px] flex flex-col justify-center items-center px-[12px] md:px-[120px] max-w-[1440px]">
           {products.map((product: (typeof products)[0], index) => (
             <div
-              onClick={() => router.push(`/detail-category/${product.package[index].title}`)}
+              onClick={() =>
+                router.push(`/detail-category/${product.package[index].title}`)
+              }
               className="w-full h-auto bg-white px-1 flex flex-col justify-center items-left"
               key={index}
             >
               <Stack
-                
                 flexDirection={'row'}
                 justifyContent={'space-between'}
                 alignItems={'center'}
                 px={'20px'}
               >
                 <Typography
-                  
                   className="cursor-pointer"
                   fontFamily={'Inter'}
                   fontWeight={700}
@@ -561,7 +486,7 @@ const InfoSection = (props: InfoSectionProps) => {
                       md: 'block',
                     },
                   }}
-                  onClick={() => router.push('/categories')}
+                  onClick={() => (window.location.href = `/categories`)}
                 >
                   Xem thêm
                 </Button>
@@ -569,7 +494,6 @@ const InfoSection = (props: InfoSectionProps) => {
               <div className="flex md:flex-row flex-col gap-[24px] items-center  w-full  justify-center py-5  scrollbar-none ">
                 {product?.package?.map((packageItem: any, index: number) => (
                   <ProductItem
-                    
                     key={index}
                     descriptions={packageItem.descriptions}
                     image={

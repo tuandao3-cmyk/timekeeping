@@ -1,19 +1,21 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 // Import Swiper React components
-import { Swiper, SwiperSlide, SwiperRef } from 'swiper/react';
-import { useInView } from 'react-intersection-observer';
 import Marquee from 'react-fast-marquee';
+import { useInView } from 'react-intersection-observer';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
-import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { Box, Button, Stack, Typography } from '@mui/material';
 import Image from 'next/image';
 import { PROJECTS } from '@/app/categories/page';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import { useRouter } from 'next/navigation';
 function BannerSwipper() {
+  const router = useRouter();
   const { ref, inView, entry } = useInView({
     threshold: 0.1,
     triggerOnce: true,
@@ -34,6 +36,10 @@ function BannerSwipper() {
     if (!progressCircle.current || !progressContent.current) return;
     progressCircle.current.style.setProperty('--progress', 1 - progress);
     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
+  };
+
+  const handleNavigate = () => {
+    router.push(`/products`);
   };
 
   useEffect(() => {
@@ -104,7 +110,7 @@ function BannerSwipper() {
       }}
       className="mySwiper"
     >
-      <SwiperSlide className="bg-[rgb(7,33,44)] flex flex-col md:flex-row min-h-[812px] h-auto justify-center items-center w-full">
+      <SwiperSlide className="bg-[rgb(7,33,44)] flex flex-col :flex-row min-h-[812px] h-auto justify-center items-center w-full">
         <Box
           ref={ref}
           width="100%"
@@ -236,6 +242,7 @@ function BannerSwipper() {
                     transitionDelay: '0.5s',
                     transform: inView ? 'translateY(0)' : 'translateY(10px)',
                   }}
+                  onClick={handleNavigate}
                 >
                   Tham gia cùng chúng tôi
                 </Button>
@@ -318,8 +325,8 @@ function BannerSwipper() {
                 ))}
               </Stack>
             </Stack>
-            <div className="w-full flex md:hidden relative justify-center items-center">
-              <div className="block md:hidden w-[351px] h-[289px] overflow-hidden rounded-[16px] ">
+            <div className="w-full flex lg:hidden relative justify-center items-center">
+              <div className="block lg:hidden w-[351px] h-[289px] overflow-hidden rounded-[16px] ">
                 <Image
                   src={'/img/invest.png'}
                   alt="image"

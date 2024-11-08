@@ -33,7 +33,7 @@ const ProductPage: React.FC = () => {
             <img
               src="/img/egabid_pc.png"
               alt="Hyperas Chain"
-              className="md:h-[250px] md:w-[384px]"
+              className="md:h-[250px] md:w-[384px] xl:w-[450px]"
             />
           ),
           field: 'CÔNG NGHỆ',
@@ -190,7 +190,7 @@ const ProductPage: React.FC = () => {
       </div>
 
       {/* Các gói đầu tư */}
-      <section className="w-full h-auto mt-[1420px] md:mt-[450px] bg-white py-6 flex flex-col justify-center items-center md:px-[120px] ">
+      <section className="w-full h-auto mt-[1420px] sm:mt-[250px] md:mt-[250px] lg:mt-[350px] lg bg-white py-2 xl:py-6 flex flex-col justify-center items-center xl:px-[120px] ">
         {products.map((product: (typeof products)[0], index) => (
           <div
             className="  w-full h-auto  px-1 flex flex-col justify-center items-left "
@@ -201,7 +201,7 @@ const ProductPage: React.FC = () => {
             >
               {product.title}
             </h2>
-            <div className="flex  flex-col sm:flex-row gap-4 sm:gap-6 md:gap-8 lg:gap-10 items-center w-full overflow-y-auto justify-center md:py-8  sm:px-6 md:px-8">
+            <div className="flex  flex-col sm:flex-row gap-2 sm:gap-4 md:gap-4 lg:gap-10 items-center w-full overflow-y-auto justify-center xl:py-8  md:px-6 xl:px-8">
               {product.package.map((packageItem: any, index) => (
                 <ProductItem
                   key={index}

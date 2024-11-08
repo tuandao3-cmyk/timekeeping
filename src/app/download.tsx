@@ -1,6 +1,6 @@
+import { useMediaQuery, useTheme } from '@mui/material';
 import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
-import { useMediaQuery, useTheme } from '@mui/material';
 
 const DownloadSection = () => {
   const { ref, inView, entry } = useInView({
@@ -105,19 +105,11 @@ const DownloadSection = () => {
             </div>
             <div
               ref={ref}
-              className={` md:bg-[#000000]/5 p-4 rounded-lg flex md:max-w-[80%] items-center justify-center  duration-300 delay-700 ease-in-out transform ${
+              className={`bg-[#000000]/5 p-4 rounded-lg flex md:max-w-[80%] items-center duration-300 delay-700 ease-in-out transform ${
                 inView ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
               }`}
             >
-              <div className="w-24 h-24 bg-[#FBFFFE] mr-4 flex items-center justify-center">
-                <Image
-                  ref={ref}
-                  src="/img/qr.png"
-                  alt="App Screenshot"
-                  width={80}
-                  height={24}
-                />
-              </div>
+              <div className="w-24 h-24 bg-[#FBFFFE] mr-4"></div>
               <div>
                 <p className="text-normal leading-6 text-[#000000]/60 mb-1 font-sans">
                   Scan to Download

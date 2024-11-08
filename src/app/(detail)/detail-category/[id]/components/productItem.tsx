@@ -25,7 +25,7 @@ const ProductItem = forwardRef<HTMLDivElement, ProductItemProps>(
   (props: ProductItemProps, ref) => {
     const router = useRouter();
     const handleNavigate = (id: string) => {
-      router.push(`/detail-category/${id}`);
+      window.location.href = `/detail-category/${id}`;
     };
     switch (props.type) {
       case 'short':

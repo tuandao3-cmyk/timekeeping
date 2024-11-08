@@ -2,14 +2,16 @@
 
 import React, { useState } from 'react';
 import styles from '@/app/about/about.module.css';
-import Link from 'next/link';
-import { useInView } from 'react-intersection-observer';
 import { Typography } from '@mui/material';
-import Partner from '../partner';
+
+import { useInView } from 'react-intersection-observer';
+
 import PressSection from '../PressSection';
 import News from '../news';
+import Partner from '../partner';
+import CustomWidthTooltip from './components/customToolTip';
 import MessageFromCreative from './components/messageFromCreative';
-
+import Link from 'next/link';
 
 export const leaders = [
   {
@@ -151,7 +153,6 @@ const staffs = [
       'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.',
     ],
   },
-
 ];
 
 const AboutPage: React.FC = () => {
@@ -237,7 +238,7 @@ const AboutPage: React.FC = () => {
         }}
       >
         <div className="flex flex-col items-center justify-center w-full max-w-[1440px]">
-          <div className="flex justify-between items-center w-full h-full mt-16 max-md:!flex-col md:pl-20 md:pr-12 px-[12px]">
+          <div className="flex justify-between items-center w-full h-full mt-16 max-lg:!flex-col md:pl-20 md:pr-12 px-[12px]">
             <div className="flex flex-col md:min-h-[620px] mb-[24px] md:mb-0 justify-start items-start lg:justify-start flex-1  gap-[24px] md:gap-10">
               <div className="flex flex-col md:gap-2">
                 <p
@@ -295,7 +296,6 @@ const AboutPage: React.FC = () => {
                 >
                   Tham gia cùng chúng tôi
                 </a>
-
               </div>
             </div>
             <div className=" flex flex-col gap-[32px] justify-end items-end">
@@ -303,9 +303,7 @@ const AboutPage: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="w-full flex flex-col items-center justify-center max-w-[1440px]">
-
-        </div>
+        <div className="w-full flex flex-col items-center justify-center max-w-[1440px]"></div>
       </div>
 
       <Partner />
@@ -325,14 +323,14 @@ const AboutPage: React.FC = () => {
                 sx={{
                   fontSize: {
                     xs: '28px',
-                    lg: '40px'
+                    lg: '40px',
                   },
                   fontWeight: 'bold',
                   lineHeight: {
                     xs: '36px',
-                    lg: '48px'
+                    lg: '48px',
                   },
-                  fontFamily: 'Inter'
+                  fontFamily: 'Inter',
                 }}
               >
                 TẦM NHÌN
@@ -479,14 +477,14 @@ const AboutPage: React.FC = () => {
                 sx={{
                   fontSize: {
                     xs: '28px',
-                    lg: '40px'
+                    lg: '40px',
                   },
                   fontWeight: 'bold',
                   lineHeight: {
                     xs: '36px',
-                    lg: '48px'
+                    lg: '48px',
                   },
-                  fontFamily: 'Inter'
+                  fontFamily: 'Inter',
                 }}
               >
                 SỨ MỆNH
@@ -635,14 +633,14 @@ const AboutPage: React.FC = () => {
                 sx={{
                   fontSize: {
                     xs: '28px',
-                    lg: '40px'
+                    lg: '40px',
                   },
                   fontWeight: 'bold',
                   lineHeight: {
                     xs: '36px',
-                    lg: '48px'
+                    lg: '48px',
                   },
-                  fontFamily: 'Inter'
+                  fontFamily: 'Inter',
                 }}
               >
                 Giá trị cốt lõi
@@ -819,18 +817,18 @@ const AboutPage: React.FC = () => {
                     : 'opacity-0 translate-y-10 scale-50'
                 }
               `}
-              sx={{
-                fontSize: {
-                  xs: '28px',
-                  lg: '40px'
-                },
-                fontWeight: 'bold',
-                lineHeight: {
-                  xs: '36px',
-                  lg: '48px'
-                },
-                fontFamily: 'Inter'
-              }}
+                sx={{
+                  fontSize: {
+                    xs: '28px',
+                    lg: '40px',
+                  },
+                  fontWeight: 'bold',
+                  lineHeight: {
+                    xs: '36px',
+                    lg: '48px',
+                  },
+                  fontFamily: 'Inter',
+                }}
               >
                 Đội ngũ sáng lập
               </Typography>
@@ -881,7 +879,6 @@ const AboutPage: React.FC = () => {
                       </div>
                     </div>
                   </div>
-
                 </Link>
               ))}
             </div>
