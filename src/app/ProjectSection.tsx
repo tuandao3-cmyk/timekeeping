@@ -91,7 +91,7 @@ const ProjectSection = () => {
                   >
                     <div
                       key={index}
-                      className={`${styles.projectCard} group relative duration-300 ease-in-out delay-${index * 100} transform ${
+                      className={`${styles.projectCard} group  duration-300 ease-in-out delay-${index * 100} transform ${
                         inView ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
                       } max-w-[384px]
                     
@@ -100,13 +100,11 @@ const ProjectSection = () => {
                       <img
                         src={project?.images[0] || '/img/egabid_pc.png'}
                         alt={project?.name || 'HyraCap'}
-                        className={` h-[250px] w-[351px]`}
+                        className={` h-[250px] w-[351px] rounded-[10px]`}
                       />
-                      {/* <div className={`${styles.badge} font-sans`}>{project.badge}</div> */}
 
                       <div className="text-left !text-left">
                         {' '}
-                        {/* Sử dụng !important */}
                         <h3 className="md:text-[clamp(1.2rem,2vw,2.4rem)] text-[24px] font-bold my-2 w-full pl-4 font-sans uppercase">
                           {project?.name || ''}
                         </h3>
@@ -114,13 +112,15 @@ const ProjectSection = () => {
                           MỤC TIÊU HUY ĐỘNG
                         </span>
                         <div className="font-inter font-semibold text-xl leading-7 pl-4 pb-2 font-sans">
-                          {project?.capital_raising_target || 0}
+                          $
+                          {project?.capital_raising_target.toLocaleString() ||
+                            0}
                         </div>
                       </div>
                       <div className={styles.projectInfo}>
                         <div className={styles.progress}>
                           <div
-                            className="bg-[#4caf50] h-full rounded"
+                            className="bg-[#4caf50] h-full rounded max-w-full"
                             style={{
                               width:
                                 (project.mobilized_fund /
@@ -131,7 +131,9 @@ const ProjectSection = () => {
                         </div>
                         <div className={styles.fundingInfo}>
                           <div>
-                            <span>{project?.mobilized_fund || 0}</span>
+                            <span>
+                              ${project?.mobilized_fund.toLocaleString() || 0}
+                            </span>
                             <span className="text-[#000000]/70 pl-0 font-sans">
                               {' '}
                               Đã huy động
@@ -139,9 +141,11 @@ const ProjectSection = () => {
                           </div>
                           <div>
                             <span>
-                              {(project.mobilized_fund /
-                                project.capital_raising_target) *
-                                100}
+                              {(
+                                (project.mobilized_fund /
+                                  project.capital_raising_target) *
+                                100
+                              ).toLocaleString()}
                               %
                             </span>
                             <span className="text-[#000000]/70 pl-0 font-sans">
