@@ -121,9 +121,9 @@ const Product = (props: ProductProps) => {
         <div className="w-full flex justify-center items-center max-w-[1440px]">
           {products.map((product: (typeof products)[0], index) => (
             <div
-              onClick={() =>
-                router.push(`/detail-category/${product.package[index].title}`)
-              }
+              // onClick={() =>
+              //   router.push(`/detail-category/${product.package[index].title}`)
+              // }
               className="w-full h-auto bg-white px-1 flex flex-col justify-center items-left"
               key={index}
             >
