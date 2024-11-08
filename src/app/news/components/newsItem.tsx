@@ -1,5 +1,6 @@
 import { formatDateTimeVn } from '@/util/util';
 import { Calendar } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
@@ -27,7 +28,9 @@ function NewsItem(props: NewsItemProps) {
       }`}
       onClick={() => router.push(`/news/${id}`)}
     >
-      <img
+      <Image
+        width={320}
+        height={245}
         src={
           link_img ||
           'https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg'

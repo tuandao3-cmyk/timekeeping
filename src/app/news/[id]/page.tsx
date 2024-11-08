@@ -115,7 +115,7 @@ const NewsDetail: React.FC = ({ params, searchParams }: any) => {
           </div>
 
           <div className="relative flex flex-row gap-4 py-4 items-center">
-            <img
+            <Image
               src="/img/logohyracap.png"
               alt="logo"
               className="flex-start"
@@ -291,7 +291,9 @@ const NewsDetail: React.FC = ({ params, searchParams }: any) => {
                   key={index}
                   className={`rounded-lg p-2 overflow-hidden shadow-sm hover:scale-105 transition ease-in-out duration-100 hover:shadow-lg ${'bg-[#F3F7F4] md:max-h-[517px]'}`}
                 >
-                  <img
+                  <Image
+                    width={384}
+                    height={234}
                     src={
                       news?.link_img ||
                       'https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg'

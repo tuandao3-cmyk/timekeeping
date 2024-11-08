@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { FiSearch } from 'react-icons/fi';
 import DownloadSection from '../downloadSection';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 
 const ProductSection: React.FC = () => {
   const pathname = usePathname();
@@ -47,7 +48,9 @@ const ProductSection: React.FC = () => {
 
          
           <div className="flex justify-center my-5 flex-wrap gap-10 mb-3.5 lg:pl-5">
-            <img 
+            <Image
+              width={284}
+              height={583} 
               src="/img/product1.png" 
               alt="Màn hình đăng nhập HyraCap"
               className="lg:w-[30%] w-[100%] max-w-[300px] "
@@ -66,7 +69,7 @@ const ProductSection: React.FC = () => {
           </ul>
           {/* Phần hình ảnh cuối */}
           <div className="flex justify-center mt-5 flex-wrap gap-5 lg:pl-[3vw]">
-            <img
+            <Image
               src="/img/product2.png"
               alt="Màn hình nhập OTP"
               width={300}
@@ -82,7 +85,7 @@ const ProductSection: React.FC = () => {
           </ul>
           {/* Phần hình ảnh cuối */}
           <div className="flex justify-center mt-5 flex-wrap gap-5 lg:pl-[3vw]">
-            <img
+            <Image
               src="/img/product3.png"
               alt="Màn hình nhập OTP"
               width={300}
@@ -99,7 +102,7 @@ const ProductSection: React.FC = () => {
           </ul>
           {/* Phần hình ảnh cuối */}
           <div className="flex justify-center mt-5 flex-wrap gap-5 lg:pl-[3vw]">
-            <img
+            <Image
               src="/img/product4.png"
               alt="Màn hình nhập OTP"
               width={300}

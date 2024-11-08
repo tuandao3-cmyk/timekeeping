@@ -12,9 +12,11 @@ import PressSection from '../PressSection';
 import News from '../news';
 import Partner from '../partner';
 import MessageFromCreative from './components/messageFromCreative';
+import Image from 'next/image';
 
 export const leaders = [
-  { id: 1,
+  {
+    id: 1,
     name: 'Trần Nam Chung',
     title: 'Chief Strategy Officer - Founder',
     fullTitle: 'Chief Strategy Officer - Founder',
@@ -26,7 +28,8 @@ export const leaders = [
       'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.',
     ],
   },
-  { id: 2,
+  {
+    id: 2,
     name: 'Tuấn Nguyễn',
     title: 'CEO - Co-Founder',
     fullTitle: 'Chief Executive Officer - Co-Founder',
@@ -38,7 +41,8 @@ export const leaders = [
       'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.',
     ],
   },
-  { id: 3,
+  {
+    id: 3,
     name: 'Hoàng Thành Đạt',
     title: 'CTO - Co-Founder',
     fullTitle: 'Chief Technology Officer - Co-Founder',
@@ -50,7 +54,8 @@ export const leaders = [
       'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.',
     ],
   },
-  { id: 4,
+  {
+    id: 4,
     name: 'Tuấn Đặng',
     title: 'CFO - Co-Founder',
     fullTitle: 'Chief Financial Officer - Co-Founder',
@@ -346,7 +351,12 @@ const AboutPage: React.FC = () => {
               </div>
             </div>
             <div className=" flex flex-col gap-[32px] justify-end items-end">
-              <img src="/img/about/about_img_1.png" alt="Vision illustration" />
+              <Image
+                width={588}
+                height={698}
+                src="/img/about/about_img_1.png"
+                alt="Vision illustration"
+              />
             </div>
           </div>
         </div>
@@ -404,10 +414,12 @@ const AboutPage: React.FC = () => {
                         : 'opacity-0 translate-y-10 scale-50'
                     }`}
                   >
-                    <img
+                    <Image
+                      width={56}
+                      height={56}
                       alt="icon"
                       className="w-14 h-14"
-                      src="/img/icon/seen.svg"
+                      src="/img/icon/seen.jpg"
                     />
                     <div className="gap-1">
                       <Typography
@@ -436,10 +448,12 @@ const AboutPage: React.FC = () => {
                         : 'opacity-0 translate-y-10 scale-50'
                     }`}
                   >
-                    <img
+                    <Image
+                      width={56}
+                      height={56}
                       alt="icon"
                       className="w-14 h-14"
-                      src="/img/icon/finance.svg"
+                      src="/img/icon/finance.jpg"
                     />
                     <div className="gap-1">
                       <Typography
@@ -468,10 +482,12 @@ const AboutPage: React.FC = () => {
                         : 'opacity-0 translate-y-10 scale-50'
                     }`}
                   >
-                    <img
+                    <Image
+                      width={56}
+                      height={56}
                       alt="icon"
                       className="w-14 h-14"
-                      src="/img/icon/search.svg"
+                      src="/img/icon/search.jpg"
                     />
                     <div className="gap-1">
                       <Typography
@@ -504,7 +520,12 @@ const AboutPage: React.FC = () => {
                   : 'opacity-0 translate-y-10 scale-50'
               }`}
             >
-              <img src="/img/about/about1.png" alt="Vision illustration" />
+              <Image
+                width={486}
+                height={605}
+                src="/img/about/about1.png"
+                alt="Vision illustration"
+              />
             </div>
           </div>
         </section>
@@ -558,10 +579,12 @@ const AboutPage: React.FC = () => {
                         : 'opacity-0 translate-y-10 scale-50'
                     }`}
                   >
-                    <img
+                    <Image
+                      width={56}
+                      height={56}
                       alt="icon"
                       className="w-14 h-14"
-                      src="/img/icon/justice.svg"
+                      src="/img/icon/justice.png"
                     />
                     <div className="gap-1">
                       <Typography
@@ -593,10 +616,12 @@ const AboutPage: React.FC = () => {
                         : 'opacity-0 translate-y-10 scale-50'
                     }`}
                   >
-                    <img
+                    <Image
+                      width={56}
+                      height={56}
                       alt="icon"
                       className="w-14 h-14"
-                      src="/img/icon/develop.svg"
+                      src="/img/icon/develop.png"
                     />
                     <div className="gap-1">
                       <Typography
@@ -628,10 +653,12 @@ const AboutPage: React.FC = () => {
                         : 'opacity-0 translate-y-10 scale-50'
                     }`}
                   >
-                    <img
+                    <Image
+                      width={56}
+                      height={56}
                       alt="icon"
                       className="w-14 h-14"
-                      src="/img/icon/renew.svg"
+                      src="/img/icon/renew.png"
                     />
                     <div className="gap-1">
                       <Typography
@@ -661,7 +688,12 @@ const AboutPage: React.FC = () => {
                   : 'opacity-0 translate-y-10 scale-50'
               } `}
             >
-              <img src="/img/about/sm.svg" alt="Mission illustration" />
+              <Image
+                width={486}
+                height={494}
+                src="/img/about/sm.jpg"
+                alt="Mission illustration"
+              />
             </div>
           </div>
         </section>
@@ -724,9 +756,11 @@ const AboutPage: React.FC = () => {
                   </p>
                 </div>
                 <div className={styles.valueIcon}>
-                  <img
+                  <Image
+                    width={288}
+                    height={192}
                     style={{ objectFit: 'cover' }}
-                    src="/img/about/value1.svg"
+                    src="/img/about/value1.jpg"
                     alt="Đổi mới sáng tạo"
                   />
                 </div>
@@ -748,9 +782,11 @@ const AboutPage: React.FC = () => {
                   </p>
                 </div>
                 <div className={styles.valueIcon}>
-                  <img
+                  <Image
+                    width={288}
+                    height={192}
                     style={{ objectFit: 'cover' }}
-                    src="/img/about/value2.svg"
+                    src="/img/about/value2.jpg"
                     alt="Bền vững"
                   />
                 </div>
@@ -772,9 +808,11 @@ const AboutPage: React.FC = () => {
                   </p>
                 </div>
                 <div className={styles.valueIcon}>
-                  <img
+                  <Image
+                    width={288}
+                    height={192}
                     style={{ objectFit: 'cover' }}
-                    src="/img/about/value3.svg"
+                    src="/img/about/value3.jpg"
                     alt="Minh bạch an toàn"
                   />
                 </div>
@@ -796,9 +834,11 @@ const AboutPage: React.FC = () => {
                   </p>
                 </div>
                 <div className={styles.valueIcon}>
-                  <img
+                  <Image
+                    width={288}
+                    height={192}
                     style={{ objectFit: 'cover' }}
-                    src="/img/about/value1.svg"
+                    src="/img/about/value4.jpg"
                     alt="Hợp lực"
                   />
                 </div>
@@ -909,7 +949,9 @@ const AboutPage: React.FC = () => {
                   `}
                   >
                     <div className="px-6 pt-6 bg-transparent">
-                      <img
+                      <Image
+                        width={288}
+                        height={274}
                         src={leader.image}
                         alt={leader.name}
                         className={styles.leaderImage}
@@ -966,7 +1008,9 @@ const AboutPage: React.FC = () => {
                   className="flex-shrink-0 snap-center snap-always min-w-[280px] flex flex-col items-center bg-[#F3F7F4]"
                 >
                   <div className="pt-6 w-full h-[280px]">
-                    <img
+                    <Image
+                      width={288}
+                      height={203}
                       src={leader.image}
                       alt={leader.name}
                       className="w-full h-full object-cover"
@@ -995,7 +1039,9 @@ const AboutPage: React.FC = () => {
                   }`}
                 >
                   <div className="pt-6">
-                    <img
+                    <Image
+                      width={288}
+                      height={203}
                       src={leader.image}
                       alt={leader.name}
                       className="w-full h-full object-contain hover:scale-125 trasform ease-in-out duration-300"
@@ -1029,7 +1075,12 @@ const AboutPage: React.FC = () => {
                   : 'opacity-0 translate-y-10 scale-50'
               } hover:scale-110`}
             >
-              <img src="/img/about/contact.svg" />
+              <Image
+                width={572}
+                height={625}
+                src="/img/about/contact.jpg"
+                alt="contact"
+              />
             </div>
 
             <div className="flex-1 p-[1px] rounded-t-[40px] bg-gradient-to-b from-[#00000016] to-[#00000000] max-md:!w-full">
@@ -1111,7 +1162,12 @@ const AboutPage: React.FC = () => {
                       onClick={handleSubmit}
                     >
                       <span className="text-lg font-medium font-sans">Gửi</span>
-                      <img src="/img/icon/sendBlack.svg" alt="send icon" />
+                      <Image
+                        width={24}
+                        height={24}
+                        src="/img/icon/sendBlack.svg"
+                        alt="send icon"
+                      />
                     </button>
                   </form>
                 </div>

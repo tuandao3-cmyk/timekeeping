@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation';
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import styles from './news.module.css';
+import Image from 'next/image';
 
 const newsData = [
   {
@@ -112,7 +113,9 @@ const News = () => {
                     href={`news/${newsData1[0]?.id}` || ''}
                     className={`${styles.mainNewsLink} ${styles.newsLink} flex justify-start items-start md:max-w-[486px] max-w-none `}
                   >
-                    <img
+                    <Image
+                      width={615}
+                      height={320}
                       src={newsData1[0]?.link_img[0] || ''}
                       alt="Main News"
                       className={`${styles.mainImage} duration-300 h-[615px] md:max-h-[655px] lg:max-w-[486px]  lg:max-h-[320px]  ease-in-out transform ${
@@ -217,7 +220,9 @@ const News = () => {
                         >
                           <div className={styles.sideBorder}>
                             <div className="flex flex-col gap-[16px]">
-                              <img
+                              <Image
+                                width={250}
+                                height={130}
                                 src={news?.link_img[0] || ''}
                                 alt={`News ${index}`}
                                 className={`${styles.newsImage} md:max-w-[250px] md:max-h-[130px] md:min-h-0 min-h-[320px] md:block lg:hidden`}
@@ -241,7 +246,9 @@ const News = () => {
                               {formatDateTimeVn(news.updated_at)}
                             </span>
                           </div>
-                          <img
+                          <Image
+                            width={170}
+                            height={170}
                             src={news?.link_img[0] || ''}
                             alt={`News ${index}`}
                             className={`${styles.newsImage} md:max-w-[170px] md:max-h-[170px] md:min-h-0 min-h-[320px] md:hidden lg:block`}
@@ -291,7 +298,9 @@ const News = () => {
                               {formatDateTimeVn(news.updated_at)}
                             </span>
                           </div>
-                          <img
+                          <Image
+                            width={170}
+                            height={170}
                             src={news?.link_img[0] || ''}
                             alt={`News ${index}`}
                             className={`${styles.newsImage} md:max-w-[170px] md:max-h-[170px] md:min-h-0 min-h-[320px]`}

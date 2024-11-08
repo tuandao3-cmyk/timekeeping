@@ -1,6 +1,7 @@
 import { IconButton } from '@mui/material';
 import Drawer from '@mui/material/Drawer';
 import CloseIcon from '@mui/icons-material/Close';
+import Image from 'next/image';
 
 interface PdfViewProps {
   pdfPath: string;
@@ -43,7 +44,9 @@ function PdfView(props: PdfViewProps) {
         {isPdf ? (
           <iframe src={props.pdfPath} width="100%" height="100%" />
         ) : (
-          <img
+          <Image
+            width={1000}
+            height={1000}
             src={props.pdfPath}
             alt="File Preview"
             style={{ width: '100%', height: '100%', objectFit: 'contain' }}

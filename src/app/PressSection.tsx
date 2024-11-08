@@ -3,6 +3,7 @@ import styles from './PressSection.module.css';
 import { useInView } from 'react-intersection-observer';
 
 import Link from 'next/link';
+import Image from 'next/image';
 const pressLogos = [
   {
     name: 'Phụ nữ',
@@ -91,7 +92,13 @@ const PressSection = () => {
                 inView ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
               }`}
             >
-              <img src={logo.src} alt={logo.name} className={styles.logo} />
+              <Image
+                width={257}
+                height={82}
+                src={logo.src}
+                alt={logo.name}
+                className={styles.logo}
+              />
             </Link>
           ))}
         </div>

@@ -15,6 +15,7 @@ import { MdArrowBackIos, MdArrowForwardIos } from 'react-icons/md';
 import { useMediaQuery, useTheme } from '@mui/material';
 import { getProjects } from '@/services/project.service';
 import { Page } from '@/type/page.type';
+import Image from 'next/image';
 
 const projects = [
   {
@@ -234,7 +235,9 @@ const ProjectSlider: React.FC = () => {
                         className={`md:w-1/2 w-full flex flex-col justify-center items-center  duration-700 ease-in-out transform `}
                       >
                         <div className="w-full h-full flex flex-col justify-center items-center rounded-lg overflow-hidden">
-                          <img
+                          <Image
+                            width={360}
+                            height={322}
                             src={project?.images[0]}
                             alt={project.name}
                             className="object-cover  max-h-[224px] w-full md:max-h-none rounded-lg md:w-[360px] md:h-[332px]"

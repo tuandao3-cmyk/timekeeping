@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -70,7 +71,9 @@ const Header = () => {
       <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 border-b-2 shadow-md">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-[1440px]">
           <Link href="/" className="flex items-center">
-            <img
+            <Image
+              width={118}
+              height={40}
               src="/img/logohyracap.png"
               className="mr-3 h-6 sm:h-9"
               alt="HyraCap Logo"
