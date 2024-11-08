@@ -46,15 +46,17 @@ const ContactForm = () => {
 
   return (
     // <form onSubmit={handleSubmit}>
-    <div className=" flex-1 contain-center min-h-480 ">
-      <div className="h-full">
-        <form className=" flex-1 p-8 border rounded-lg shadow-lg h-full bg-[#ECECEC80]">
-          <h2 className="font-medium text-[32px] leading-[40px]">
-            Để lại thông tin và lời nhắn
+    <div className="  max-h-[645px] min-h-480 max-w-[572px]">
+      
+      <div className="h-full rounded-3xl "
+      >
+        <form className=" p-8 border-4 border-white rounded-3xl h-full max-w-[600px] bg-gradient-to-b from-black/[0.08] to-transparent to-[70.23%]">
+          <h2 className="font-semibold text-[18px] leading-[26px]">
+            Chúng tôi luôn đón nhận mọi ý kiến từ bạn
           </h2>
           <div className="flex flex-col gap-5 pt-5">
             <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow bg-black/[.03] text-base leading-6 appearance-none border-2 border-bg-black/[.06] rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               type="text"
               name="fullName"
               value={formData.fullName}
@@ -63,7 +65,7 @@ const ContactForm = () => {
               required
             />
             <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow bg-black/[.03] text-base leading-6 appearance-none border-2 border-bg-black/[.06] rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               type="email"
               name="email"
               value={formData.email}
@@ -72,7 +74,7 @@ const ContactForm = () => {
               required
             />
             <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow bg-black/[.03] text-base leading-6 appearance-none border-2 border-bg-black/[.06] rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               type="text"
               name="phone"
               value={formData.phone}
@@ -81,9 +83,19 @@ const ContactForm = () => {
             />
           </div>
           <div className="pt-5">
+            <textarea
+              className="shadow bg-black/[.03] text-base leading-6 border-bg-black/[.06] appearance-none border-2 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline min-h-[107px]"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="Nội dung"
+              required
+            />
+          </div>
+          <div className="pt-5">
             <label>Vai trò bạn muốn tham gia?</label>
-            <div className="flex justify-between w-full py-6">
-              <label className="flex items-center w-full">
+            <div className="flex lg:flex-row flex-col items-start justify-start gap-4 w-full py-6">
+              <label className="flex items-center ">
                 <input
                   type="radio"
                   name="role"
@@ -95,7 +107,7 @@ const ContactForm = () => {
                 Startup
               </label>
 
-              <label className="flex items-center w-full">
+              <label className="flex items-center ">
                 <input
                   type="radio"
                   name="role"
@@ -107,7 +119,7 @@ const ContactForm = () => {
                 Nhà đầu tư
               </label>
 
-              <label className="flex items-center w-full">
+              <label className="flex items-center ">
                 <input
                   type="radio"
                   name="role"
@@ -120,25 +132,16 @@ const ContactForm = () => {
               </label>
             </div>
           </div>
-          <div>
-            <textarea
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline min-h-[200px]"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              placeholder="Nội dung"
-              required
-            />
-          </div>
-          <div className="flex justify-end">
+
+          <div className="flex justify-start">
             <button
               onClick={handleSubmit}
-              className="flex items-end px-4 py-2 mt-3 bg-green-500 text-white rounded-lg"
+              className="flex items-center px-4 py-2 mt-3 bg-green-500 text-white rounded-full"
             >
               Gửi
               <img
                 src="/img/icon/send.svg"
-                alt="/img/icon/send.svg"
+                alt="send"
                 className="pl-2"
               />
             </button>

@@ -114,7 +114,7 @@ const ProjectSection = () => {
                           MỤC TIÊU HUY ĐỘNG
                         </span>
                         <div className="font-inter font-semibold text-xl leading-7 pl-4 pb-2 font-sans">
-                          {project?.capital_raising_target || 0}
+                          ${project?.capital_raising_target || 0}
                         </div>
                       </div>
                       <div className={styles.projectInfo}>
@@ -131,7 +131,7 @@ const ProjectSection = () => {
                         </div>
                         <div className={styles.fundingInfo}>
                           <div>
-                            <span>{project?.mobilized_fund || 0}</span>
+                            <span>${project?.mobilized_fund || 0}</span>
                             <span className="text-[#000000]/70 pl-0 font-sans">
                               {' '}
                               Đã huy động
@@ -139,10 +139,7 @@ const ProjectSection = () => {
                           </div>
                           <div>
                             <span>
-                              {(project.mobilized_fund /
-                                project.capital_raising_target) *
-                                100}
-                              %
+                            {((project.mobilized_fund / project.capital_raising_target) * 100).toFixed(1)}%
                             </span>
                             <span className="text-[#000000]/70 pl-0 font-sans">
                               {' '}

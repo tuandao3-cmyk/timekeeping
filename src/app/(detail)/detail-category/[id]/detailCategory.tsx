@@ -9,6 +9,10 @@ import InfoSection from './info/page';
 import { Stack, Typography } from '@mui/material';
 import CustomTabPanel from '@/components/customTabPanel';
 import { getDetailProject } from '@/services/project.service';
+import PitchingDeckSection from './pitchingdeck/page';
+import FinanceRoadSection from './finance_road/page';
+import ContractSection from '@/app/guides/contract/page';
+import BusinessPlanSection from './business plan/page';
 
 // export async function getServerSideProps(context:any) {
 //   const queryClient = new QueryClient();
@@ -121,16 +125,16 @@ const DetailCategoryPage = (props: DetailCategoryPageProps) => {
         <InfoSection dataProject={data} />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        <InfoSection dataProject={data} />
+        <PitchingDeckSection />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
-        <InfoSection dataProject={data} />
+        <ContractSection />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={3}>
-        <InfoSection dataProject={data} />
+        <FinanceRoadSection />    
       </CustomTabPanel>
       <CustomTabPanel value={value} index={4}>
-        <InfoSection dataProject={data} />
+        <BusinessPlanSection />
       </CustomTabPanel>
     </Box>
   );

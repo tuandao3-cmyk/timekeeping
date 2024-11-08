@@ -233,13 +233,13 @@ const CategoryPage: React.FC = () => {
         <div className="  pb-[107px] justify-center">
           <div className="flex flex-col items-center justify-end text-center max-w-[1440px] text-[#0B3546] gap-[22px]">
             <Typography
-              sx={{
-                fontWeight: 700,
-                fontSize: '48px',
-                lineHeight: '56px',
-                textAlign: 'center',
-                fontFamily: 'Inter',
-              }}
+          sx={{
+            fontWeight: 700,
+            fontSize: { xs: '32px', md: '48px' },
+            lineHeight: { xs: '40px', md: '56px' },
+            textAlign: 'center',
+            fontFamily: 'Inter',
+          }}
               className={`${inView ? 'animate-fadeIn' : 'translate-y-20 opacity-0'} transition
                duration-300 ease-in-out`}
             >
@@ -481,7 +481,7 @@ const CategoryPage: React.FC = () => {
             className={`flex flex-row justify-center mb-8  ${projects.length < 6 && 'hidden'}`}
           >
             <button
-              onClick={() => handleSearch(SECTIONS.COMPLETED)}
+              onClick={() => handleSearch()}
               className="uppercase flex items-center font-sans bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black"
             >
               xem thêm
@@ -597,7 +597,7 @@ const CategoryPage: React.FC = () => {
             className={`flex flex-row justify-center mb-8 ${projects.length < 6 && 'hidden'}`}
           >
             <button
-              onClick={() => handleSearch(SECTIONS.FUNDING)}
+              onClick={() => handleSearch()}
               className="uppercase flex font-sans items-center bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black"
             >
               xem thêm
@@ -713,7 +713,7 @@ const CategoryPage: React.FC = () => {
             className={`flex flex-row justify-center mb-8 ${projects.length < 6 && 'hidden'}`}
           >
             <button
-              onClick={() => handleSearch(SECTIONS.INVESTED)}
+              onClick={() => handleSearch()}
               className="uppercase flex items-center font-sans bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black"
             >
               xem thêm
