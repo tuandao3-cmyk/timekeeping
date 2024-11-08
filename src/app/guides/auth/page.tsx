@@ -60,12 +60,12 @@ const AuthSection: React.FC = () => {
             <img 
               src="/img/cccd1.png" 
               alt="Màn hình chụp ảnh CCCD"
-              className="w-[30%] max-w-[300px] "
+              className="lg:w-[30%] w-[100%] max-w-[300px] "
             />
             <img 
               src="/img/cccd2.png" 
               alt="Màn hình chụp ảnh CCCD"
-              className="w-[30%] max-w-[300px] "
+              className="lg:w-[30%] w-[100%] max-w-[300px] "
             />
           </div>
           <ul className=" text-xl 3xl:text-2xl leading-7 text-[#000000] pl-4 ">
@@ -84,14 +84,14 @@ const AuthSection: React.FC = () => {
               alt="Màn hình chụp mặt trước"
               width={300}
               height={600}
-              className="w-[30%] max-w-[300px] mb-3.5"
+              className="lg:w-[30%] w-[100%] max-w-[300px] mb-3.5"
             />
             <img
               src="/img/mattruoc.png"
               alt="Màn hình chụp mặt sau"
               width={300}
               height={600}
-              className="w-[30%] max-w-[300px] mb-3.5"
+              className="lg:w-[30%] w-[100%] max-w-[300px] mb-3.5"
             />
           </div>
           <ul className=" text-xl 3xl:text-2xl leading-7 text-[#000000] pl-4 py-8 ">
@@ -108,7 +108,7 @@ const AuthSection: React.FC = () => {
               alt="Màn hình ekyc"
               width={300}
               height={600}
-              className="w-[30%] max-w-[300px] mb-3.5"
+              className="lg:w-[30%] w-[100%] max-w-[300px] mb-3.5"
             />
 
           </div>
@@ -124,7 +124,7 @@ const AuthSection: React.FC = () => {
               alt="Màn hình ekyc"
               width={300}
               height={600}
-              className="w-[30%] max-w-[300px] mb-3.5"
+              className="lg:w-[30%] w-[100%] max-w-[300px] mb-3.5"
             />
           </div>
           <ul className=" text-xl 3xl:text-2xl leading-7 text-[#000000] pl-4 ">
@@ -139,7 +139,7 @@ const AuthSection: React.FC = () => {
               alt="Màn hình ekyc"
               width={1200}
               height={600}
-              className="w-[100%] max-w-[1200px] mb-3.5"
+              className="lg:w-[100%] w-[100%] max-w-[1200px] mb-3.5"
             />
           </div>
           <ul className=" text-xl 3xl:text-2xl leading-7 text-[#000000] pl-4 ">
@@ -154,7 +154,7 @@ const AuthSection: React.FC = () => {
               alt="Màn hình ekyc"
               width={300}
               height={600}
-              className="w-[30%] max-w-[300px] mb-3.5"
+              className="lg:w-[30%] w-[100%] max-w-[300px] mb-3.5"
             />
           </div>
           

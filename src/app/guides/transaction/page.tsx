@@ -47,7 +47,7 @@ const TransactionSection: React.FC = () => {
             <img 
               src="/img/trans1.png" 
               alt="Màn hình đăng nhập HyraCap"
-              className="w-[30%] max-w-[300px] "
+              className="lg:w-[30%] w-[100%] max-w-[300px] "
             />
           </div>
           <ul className=" text-xl 3xl:text-2xl leading-7 text-[#000000] pl-4 ">
@@ -65,7 +65,7 @@ const TransactionSection: React.FC = () => {
               alt="Màn hình nhập OTP"
               width={300}
               height={600}
-              className="w-[30%] max-w-[300px] mb-3.5"
+              className="lg:w-[30%] w-[100%] max-w-[300px] mb-3.5"
             />
 
           </div>

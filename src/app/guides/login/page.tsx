@@ -54,7 +54,7 @@ const Login: React.FC = () => {
             <img 
               src="/img/dnhap.png" 
               alt="Màn hình đăng nhập HyraCap"
-              className="w-[30%] max-w-[300px] "
+              className="lg:w-[30%] w-[100%] max-w-[300px] "
             />
           </div>
           <ul className=" text-xl 3xl:text-2xl leading-7 text-[#000000] pl-4 ">
@@ -75,21 +75,21 @@ const Login: React.FC = () => {
               alt="Màn hình nhập OTP"
               width={300}
               height={600}
-              className="w-[30%] max-w-[300px] mb-3.5"
+              className="lg:w-[30%] w-[100%] max-w-[300px] mb-3.5"
             />
             <img
               src="/img/popup.png"
               alt="Màn hình popup giới thiệu"
               width={300}
               height={600}
-              className="w-[30%] max-w-[300px] mb-3.5"
+              className="lg:w-[30%] w-[100%] max-w-[300px] mb-3.5"
             />
             <img
               src="/img/dashboard.png"
               alt="Màn hình tổng quan"
               width={300}
               height={600}
-              className="w-[30%] max-w-[300px] mb-3.5"
+              className="lg:w-[30%] w-[100%] max-w-[300px] mb-3.5"
             />
           </div>
 
