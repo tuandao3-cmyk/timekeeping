@@ -13,8 +13,8 @@ import ModalDown from '@/app/products/ModalDownload';
 import { Box, Button, Stack, Typography } from '@mui/material';
 import Image from 'next/image';
 
-import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { useRouter } from 'next/navigation';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 function BannerSwipper() {
   const router = useRouter();
   const { ref, inView, entry } = useInView({
@@ -373,9 +373,7 @@ function BannerSwipper() {
                         }}
                         className="rounded-[10px] w-[48px] h-[48px] "
                       />
-                      <div
-                      
-                      className="flex flex-col ">
+                      <div className="flex flex-col justify-center ">
                         <p
                           className="font-sans text-[#04141A] text-[14px] leading-[24px]"
                           style={{ fontWeight: 700 }}
@@ -387,6 +385,12 @@ function BannerSwipper() {
                           style={{ fontWeight: 500 }}
                         >
                           {item.price}
+                          <p
+                            className="font-sans text-[#434444] text-[14px] leading-[24px] "
+                            style={{ fontWeight: 500 }}
+                          >
+                            Vốn huy động
+                          </p>
                         </p>
                       </div>
                     </div>
@@ -431,7 +435,9 @@ function BannerSwipper() {
                   position={'absolute'}
                   left={'-90px'}
                   top={'32px'}
-                  onClick={() => router.push(`/detail-category/${items[0].title}`)}
+                  onClick={() =>
+                    router.push(`/detail-category/${items[0].title}`)
+                  }
                   sx={{
                     transition: 'all 0.5s',
                     opacity: inView ? 1 : 0,

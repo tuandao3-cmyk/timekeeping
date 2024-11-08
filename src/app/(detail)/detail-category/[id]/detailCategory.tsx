@@ -1,17 +1,15 @@
 'use client';
-import { usePathname } from 'next/navigation';
-import { QueryClient, useQuery } from '@tanstack/react-query';
-import React, { useState } from 'react';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Box from '@mui/material/Box';
-import InfoSection from './info/infoSection';
-import { Stack, Typography } from '@mui/material';
 import CustomTabPanel from '@/components/customTabPanel';
-import PitchingDeckSection from './pitchingdeck/page';
-import ContractSampleSection from './contract_sample/page';
+import { Stack } from '@mui/material';
+import Box from '@mui/material/Box';
+import Tab from '@mui/material/Tab';
+import Tabs from '@mui/material/Tabs';
+import React, { useState } from 'react';
 import BusinessPlanSection from './business plan/page';
+import ContractSampleSection from './contract_sample/page';
 import FinanceRoadSection from './finance_road/page';
+import InfoSection from './info/infoSection';
+import PitchingDeckSection from './pitchingdeck/page';
 
 interface DetailCategoryPageProps {
   data: any;

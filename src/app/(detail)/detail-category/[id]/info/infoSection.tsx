@@ -2,24 +2,22 @@
 import { Box, Button, Stack, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid';
 
-import { useQuery } from '@tanstack/react-query';
-import { desc } from 'framer-motion/client';
-import Image from 'next/image';
-import { usePathname, useRouter } from 'next/navigation';
-import { title } from 'process';
-import { useEffect, useState } from 'react';
-import ListField from './components/listField';
-import NearlyActions from './components/nearlyActions';
-import { GlobalIcon, ProfileTUser, LocationIcon } from '@/components/icons';
-import Link from 'next/link';
-import Growth from './components/growth';
-import Terminology from './components/terminology';
-import ProductItem from '../components/productItem';
-import QandA from './components/Q&A';
-import UpdateInfo from './components/updateInformation';
-import { formatDateTimeVn } from '@/util/util';
+import { GlobalIcon, LocationIcon, ProfileTUser } from '@/components/icons';
 import { getProjects } from '@/services/project.service';
 import { Page } from '@/type/page.type';
+import { formatDateTimeVn } from '@/util/util';
+import { useQuery } from '@tanstack/react-query';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import ProductItem from '../components/productItem';
+import Growth from './components/growth';
+import ListField from './components/listField';
+import NearlyActions from './components/nearlyActions';
+import QandA from './components/Q&A';
+import Terminology from './components/terminology';
+import UpdateInfo from './components/updateInformation';
 
 interface InfoSectionProps {
   dataP?: any;
@@ -287,6 +285,7 @@ const InfoSection = (props: InfoSectionProps) => {
             <Box width={'100%'}>
               <Stack flexDirection={'column'} gap={'16px'} maxWidth={'792px'}>
                 <Image
+                  className="hidden lg:block"
                   src={dataP?.images[0] || ''}
                   alt="product_category"
                   width={792}
@@ -379,6 +378,20 @@ const InfoSection = (props: InfoSectionProps) => {
                 {dataP?.name || ''}
               </Typography>
             </Stack>
+
+            <Image
+              className="block lg:hidden"
+              src={dataP?.images[0] || ''}
+              alt="product_category"
+              width={792}
+              height={400}
+              layout="responsive"
+              objectFit="cover"
+              style={{
+                borderRadius: '16px',
+                maxWidth: '792px',
+              }}
+            />
             <Typography
               fontFamily={'Inter'}
               fontWeight={400}

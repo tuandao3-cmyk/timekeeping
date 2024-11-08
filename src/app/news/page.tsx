@@ -1,17 +1,17 @@
 'use client';
 
+import { useQuery } from '@tanstack/react-query';
 import { Calendar } from 'lucide-react';
 import Link from 'next/link';
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
-import { useQuery } from '@tanstack/react-query';
 
-import { FaApple, FaGooglePlay } from 'react-icons/fa';
-import { ProjectCard } from './components/card';
 import { getNews } from '@/services/news.service';
 import { Page } from '@/type/page.type';
 import { formatDateTimeVn } from '@/util/util';
 import { useRouter } from 'next/navigation';
+import { FaApple, FaGooglePlay } from 'react-icons/fa';
+import { ProjectCard } from './components/card';
 
 const dataNews = [
   {
@@ -211,7 +211,7 @@ const NewsPage: React.FC = () => {
                         ? 'p-4 lg:row-span-2 lg:col-span-1 bg-[#07212C] md:row-span-1 col-span-1 '
                         : 'bg-white '
                     }`}
-                    onClick={() => handleNavigate(news.id)}
+                    onClick={() => router.push(`/news/${news.id}`)}
                   >
                     <img
                       src={
@@ -272,7 +272,7 @@ const NewsPage: React.FC = () => {
               <div className=""></div>
             ) : (
               <div
-                className={`${index == 1 ? 'mt-32' : 'mt-8'} mx-5 flex flex-row items-center gap-3 p-1 border`}
+                className={`${index == 1 ? 'mt-32' : 'mt-4'} mx-5 flex flex-row items-center gap-3 px-1 py-2 border`}
                 style={{ borderRadius: 10 }}
                 onClick={() => handleNavigate(news.id)}
               >
@@ -432,9 +432,12 @@ const NewsPage: React.FC = () => {
                       50,987 Subscriber
                     </p>
                   </div>
-                  <button 
-                  onClick={() => router.push('https://www.youtube.com/@hyracap')}
-                  className="flex bg-gray-100 items-center justify-center w-10 rounded-md h-10 rounded-xs md:border border-gray-300 hover:border-gray-400 transition-colors ">
+                  <button
+                    onClick={() =>
+                      (window.location.href = 'https://youtube.com')
+                    }
+                    className="flex bg-gray-100 items-center justify-center w-10 rounded-md h-10 rounded-xs md:border border-gray-300 hover:border-gray-400 transition-colors "
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -495,8 +498,9 @@ const NewsPage: React.FC = () => {
                     </p>
                   </div>
                   <button
-                  onClick={() => router.push('https://x.com/hyracap')}
-                   className="flex bg-gray-100 items-center justify-center w-10 h-10 rounded-md rounded-xs md:border border-gray-300 hover:border-gray-400 transition-colors">
+                    onClick={() => (window.location.href = 'https://x.com')}
+                    className="flex bg-gray-100 items-center justify-center w-10 h-10 rounded-md rounded-xs md:border border-gray-300 hover:border-gray-400 transition-colors"
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
