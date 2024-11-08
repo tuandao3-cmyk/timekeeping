@@ -2,11 +2,12 @@
 import { Box, Button, Stack, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid';
 
+import { useQuery } from '@tanstack/react-query';
 import { desc } from 'framer-motion/client';
 import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { title } from 'process';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ListField from './components/listField';
 import NearlyActions from './components/nearlyActions';
 import { GlobalIcon, ProfileTUser, LocationIcon } from '@/components/icons';
@@ -16,69 +17,118 @@ import Terminology from './components/terminology';
 import ProductItem from '../components/productItem';
 import QandA from './components/Q&A';
 import UpdateInfo from './components/updateInformation';
+import { formatDateTimeVn } from '@/util/util';
+import { getProjects } from '@/services/project.service';
+import { Page } from '@/type/page.type';
 
-const InfoSection: React.FC = () => {
+interface InfoSectionProps {
+  dataP?: any;
+}
+
+const InfoSection = (props: InfoSectionProps) => {
   const router = useRouter();
+  const [page, setPage] = useState<typeof Page>({
+    ...Page,
+    take: 3,
+  });
+  const { dataP }: any = props;
+  const [products, setProducts] = useState<any[]>([
+    {
+      title: 'Có thể bạn quan tâm',
+      type: 'flexible',
+      package: [],
+    },
+  ]);
+
+  const {
+    data: listProject,
+    isError,
+    isLoading,
+  } = useQuery({
+    queryKey: ['projects', page],
+    queryFn: () => getProjects(page),
+  });
+
+  useEffect(() => {
+    if (listProject) {
+      setProducts((prev) => {
+        const updatedProducts = [...prev];
+
+        if (updatedProducts[0]) {
+          updatedProducts[0] = {
+            ...updatedProducts[0],
+            package: [...listProject.data],
+          };
+        } else {
+          updatedProducts[0] = {
+            package: [...listProject.data],
+          };
+        }
+
+        return updatedProducts;
+      });
+    }
+  }, [listProject]);
 
   const data = [
     {
-      title: '$1M',
+      title: 'valuation',
       desc: 'Vốn huy động',
     },
     {
-      title: '$850,000',
+      title: 'funding_amount',
       desc: 'Vốn đầu tư',
     },
     {
-      title: '20',
+      title: 'total_slots',
       desc: 'Tổng Slot',
     },
     {
-      title: '$50,000',
+      title: 'price_per_slot',
       desc: 'Giá trị/slot',
     },
     {
-      title: '$17',
+      title: 'investors',
       desc: 'Nhà đầu tư',
     },
     {
-      title: 'Series C',
+      title: 'funding_round',
       desc: 'Vòng đầu tư',
     },
   ];
 
-  const field = [
+  const field: any[] = [
     {
       title: 'Lĩnh vực đầu tư',
-      value: 'Công nghệ',
+      value: dataP?.industries[0].name || '',
     },
     {
       title: 'Ngày thành lập',
-      value: '20/02/2020',
+      value: formatDateTimeVn(dataP?.created_at) || '',
     },
     {
       title: 'Trụ sở chính',
-      value: 'Singapore',
+      value: dataP?.data?.company_information?.head_office || '',
     },
     {
       title: 'Tình trạng hoạt động',
-      value: 'Đang hoạt động',
+      value: dataP?.data?.company_information?.operating_status || '',
     },
     {
       title: 'Người sáng lập',
-      value: 'Trần Nam Chung',
+      value: dataP?.data?.company_information?.founder || '',
     },
     {
       title: 'Tên công ty ',
-      value: 'Công ty cổ phần Hyratek',
+      value: dataP?.data?.company_information?.company_name || '',
     },
     {
       title: 'Email ',
-      value: 'info@hyratek.com',
+      value: dataP?.data?.company_information?.email || '',
     },
     {
       title: 'Số điện thoại',
-      value: '(+84) 58 8668 777',
+      value: dataP?.data?.company_information?.phone || '',
     },
   ];
 
@@ -106,7 +156,7 @@ const InfoSection: React.FC = () => {
   const items = [
     {
       icon: <LocationIcon />,
-      text: '10 Anson Road # 11- 20 International Plaza Singapore',
+      text: dataP?.data?.address || '',
     },
     {
       icon: <ProfileTUser />,
@@ -114,66 +164,92 @@ const InfoSection: React.FC = () => {
     },
     {
       icon: <GlobalIcon />,
-      text: 'https://salala.io',
+      text: dataP?.data?.website || '',
     },
   ];
 
-  const products = [
-    {
-      title: 'Có thể bạn quan tâm',
-      type: 'flexible',
-      package: [
-        {
-          title: 'Egabid',
-          start_date: '20/10/2024',
-          descriptions: 'Hyperas tận dụng sức mạnh từ hàng tỷ thiết bị... ',
-          invested: 2500000,
-          profit: 2000000,
-          sponsorship: 21762,
-          image: (
-            <img
-              src="/img/egabid_pc.png"
-              alt="Hyperas Chain"
-              className=" md:h-[250px] md:w-[384px]"
-            />
-          ),
-          field: 'CÔNG NGHỆ',
-        },
-        {
-          title: 'Salala AI',
-          start_date: '09/09/2024',
-          descriptions: 'Hyperas tận dụng sức mạnh từ hàng tỷ thiết bị... ',
-          invested: 3000000,
-          profit: 3000000,
-          sponsorship: 21762,
-          image: (
-            <img
-              src="/img/salala2.png"
-              alt="Salala AI"
-              className="md:h-[250px] md:w-[384px]"
-            />
-          ),
-          field: 'CÔNG NGHỆ',
-        },
-        {
-          title: 'HYPERAS CHAIN',
-          start_date: '08/09/2024',
-          descriptions: 'Hyperas tận dụng sức mạnh từ hàng tỷ thiết bị... ',
-          invested: 2500000,
-          profit: 1000000,
-          sponsorship: 21762,
-          image: (
-            <img
-              src="/img/hyperas_chain1.png"
-              alt="Rapital Bank"
-              className="md:h-[250px] md:w-[384px]"
-            />
-          ),
-          field: 'CÔNG NGHỆ',
-        },
-      ],
-    },
-  ];
+  // const products = [
+  //   {
+  //     title: 'Có thể bạn quan tâm',
+  //     type: 'flexible',
+  //     package: [
+  //       {
+  //         id: 8,
+  //         created_at: '2024-11-07T09:41:35.058Z',
+  //         updated_at: '2024-11-07T09:41:35.058Z',
+  //         name: 'Project Alpha',
+  //         images: ['image1.jpg', 'image2.jpg'],
+  //         status: 1,
+  //         capital_raising_target: 5000000,
+  //         mobilized_fund: 2500000,
+  //         industry_ids: [1, 2],
+  //         industries: [
+  //           {
+  //             id: 2,
+  //             name: 'Giáo dục',
+  //           },
+  //         ],
+  //       },
+  //       {
+  //         id: 7,
+  //         created_at: '2024-11-07T08:59:06.655Z',
+  //         updated_at: '2024-11-07T08:59:06.655Z',
+  //         name: 'TechFusion',
+  //         images: [
+  //           'https://hyracap.s3.amazonaws.com/project/image-20241002163543-1_1730969918767.jpeg',
+  //           'https://hyracap.s3.amazonaws.com/project/image-20241022103131-1_1730969918767.jpeg',
+  //         ],
+  //         status: 1,
+  //         capital_raising_target: 3000000,
+  //         mobilized_fund: 1500000,
+  //         industry_ids: [4],
+  //         industries: [
+  //           {
+  //             id: 4,
+  //             name: 'Blockchain',
+  //           },
+  //         ],
+  //       },
+  //       {
+  //         id: 6,
+  //         created_at: '2024-11-07T08:56:51.226Z',
+  //         updated_at: '2024-11-07T08:56:51.226Z',
+  //         name: 'EdgeVision',
+  //         images: [
+  //           'https://hyracap.s3.amazonaws.com/project/image-20240926133158-1_1730969336289.jpeg',
+  //           'https://hyracap.s3.amazonaws.com/project/image-20240930150658-1_1730969369152.jpeg',
+  //         ],
+  //         status: 1,
+  //         capital_raising_target: 2500000,
+  //         mobilized_fund: 2500000,
+  //         industry_ids: [2],
+  //         industries: [
+  //           {
+  //             id: 2,
+  //             name: 'Giáo dục',
+  //           },
+  //         ],
+  //       },
+  //       {
+  //         id: 5,
+  //         created_at: '2024-11-06T08:40:40.181Z',
+  //         updated_at: '2024-11-06T08:40:40.181Z',
+  //         name: 'Project Alpha',
+  //         images: [],
+  //         status: 1,
+  //         capital_raising_target: 5000000,
+  //         mobilized_fund: 2500000,
+  //         industry_ids: [1, 2],
+  //         industries: [
+  //           {
+  //             id: 2,
+  //             name: 'Giáo dục',
+  //           },
+  //         ],
+  //       },
+  //     ],
+  //   },
+  // ];
   return (
     <Stack
       flexDirection={'column'}
@@ -209,12 +285,18 @@ const InfoSection: React.FC = () => {
             justifyContent={'flex-start'}
           >
             <Box width={'100%'}>
-              <Stack flexDirection={'column'} gap={'16px'}>
+              <Stack flexDirection={'column'} gap={'16px'} maxWidth={'792px'}>
                 <Image
-                  src="/img/product_category/prod_cate_image.png"
+                  src={dataP?.images[0] || ''}
                   alt="product_category"
                   width={792}
                   height={400}
+                  layout="responsive"
+                  objectFit="cover"
+                  style={{
+                    borderRadius: '16px',
+                    maxWidth: '792px',
+                  }}
                 />
                 <Stack
                   flexDirection={{
@@ -253,8 +335,8 @@ const InfoSection: React.FC = () => {
                   ))}
                 </Stack>
                 {/* Tăng trưởng */}
-                <Growth />
-                <Terminology />
+                <Growth data={dataP} />
+                <Terminology data={dataP} />
               </Stack>
             </Box>
           </Stack>
@@ -265,23 +347,27 @@ const InfoSection: React.FC = () => {
               sm: '100%',
               md: '385px',
             }}
+            width={'100%'}
             gap={'24px'}
           >
             <Stack flexDirection={'column'} gap={'12px'}>
-              <Typography
-                bgcolor={'#48B96D1F'}
-                color={'#31814B'}
-                px={'16px'}
-                fontWeight={700}
-                fontSize={'12px'}
-                lineHeight={'16px'}
-                fontFamily={'Inter'}
-                py={'8px'}
-                borderRadius={'4px'}
-                width={'fit-content'}
-              >
-                CÔNG NGHỆ
-              </Typography>
+              {dataP?.industries?.map((item: any, index: number) => (
+                <Typography
+                  key={index}
+                  bgcolor={'#48B96D1F'}
+                  color={'#31814B'}
+                  px={'16px'}
+                  fontWeight={700}
+                  fontSize={'12px'}
+                  lineHeight={'16px'}
+                  fontFamily={'Inter'}
+                  py={'8px'}
+                  borderRadius={'4px'}
+                  width={'fit-content'}
+                >
+                  {item?.name || ''}
+                </Typography>
+              ))}
               <Typography
                 fontWeight={700}
                 fontSize={'32px'}
@@ -290,7 +376,7 @@ const InfoSection: React.FC = () => {
                 letterSpacing={'-1%'}
                 color="#363636"
               >
-                Dự án Salala AI
+                {dataP?.name || ''}
               </Typography>
             </Stack>
             <Typography
@@ -300,9 +386,10 @@ const InfoSection: React.FC = () => {
               lineHeight={'24px'}
               color="#000000A3"
             >
-              Salala là một nền tảng điện toán biên cho phép người dùng tận dụng
+              {/* Salala là một nền tảng điện toán biên cho phép người dùng tận dụng
               phần cứng của các thiết bị biên (edge devices) để huấn luyện mô
-              hình trí tuệ nhân tạo (AI).
+              hình trí tuệ nhân tạo (AI). */}
+              {dataP?.data?.project_information?.description || ''}
             </Typography>
 
             <Grid container spacing={'8px'}>
@@ -329,7 +416,7 @@ const InfoSection: React.FC = () => {
                       lineHeight={'24px'}
                       color="#31814B"
                     >
-                      {item.title}
+                      {dataP?.data?.project_information[item.title] || ''}
                     </Typography>
                     <Typography
                       fontFamily={'Inter'}
@@ -360,6 +447,9 @@ const InfoSection: React.FC = () => {
         <section className="w-full h-auto  bg-white py-[62px] flex flex-col justify-center items-center px-[12px] md:px-[120px] max-w-[1440px]">
           {products.map((product: (typeof products)[0], index) => (
             <div
+              onClick={() =>
+                router.push(`/detail-category/${product.package[index].title}`)
+              }
               className="w-full h-auto bg-white px-1 flex flex-col justify-center items-left"
               key={index}
             >
@@ -370,10 +460,11 @@ const InfoSection: React.FC = () => {
                 px={'20px'}
               >
                 <Typography
+                  className="cursor-pointer"
                   fontFamily={'Inter'}
                   fontWeight={700}
                   fontSize={{
-                    xs: '28px',
+                    xs: '24px',
                     sm: '32px',
                   }}
                   lineHeight={'40px'}
@@ -395,26 +486,36 @@ const InfoSection: React.FC = () => {
                       md: 'block',
                     },
                   }}
-                  onClick={() => router.push('/categories')}
+                  onClick={() => (window.location.href = `/categories`)}
                 >
                   Xem thêm
                 </Button>
               </Stack>
-              <div className="flex md:flex-row flex-col gap-[24px] items-center  w-full overflow-y-auto justify-center py-5 overflow-x-auto  ">
-                {product.package.map((packageItem: any, index) => (
+              <div className="flex md:flex-row flex-col gap-[24px] items-center  w-full  justify-center py-5  scrollbar-none ">
+                {product?.package?.map((packageItem: any, index: number) => (
                   <ProductItem
                     key={index}
                     descriptions={packageItem.descriptions}
-                    image={packageItem.image}
+                    image={
+                      <img
+                        src={packageItem.images[0] || '/img/egabid_pc.png'}
+                        alt="Hyperas Chain"
+                        className=" md:h-[250px] md:w-[384px] rounded-[12px] object-cover"
+                      />
+                    }
                     interest_rate={packageItem.interest_rate}
                     term={packageItem.term}
-                    title={packageItem.title}
+                    title={packageItem.name}
                     type={product.type}
                     startDate={packageItem.start_date}
-                    profit={packageItem.profit}
-                    sponsorship={packageItem.sponsorship}
-                    invested={packageItem.invested}
-                    field={packageItem.field}
+                    profit={packageItem.capital_raising_target}
+                    sponsorship={
+                      packageItem.mobilized_fund /
+                      packageItem.capital_raising_target
+                    }
+                    invested={packageItem.mobilized_fund}
+                    field={packageItem.industries}
+                    id={packageItem.id}
                   />
                 ))}
 

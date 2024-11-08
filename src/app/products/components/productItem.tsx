@@ -13,8 +13,9 @@ interface ProductItemProps {
   profit: number;
   sponsorship: number;
   invested: number;
-  field: string;
+  field: any[];
   className?: string;
+  id?: string;
 }
 
 const ProductItem = forwardRef<HTMLDivElement, ProductItemProps>(
@@ -99,9 +100,11 @@ const ProductItem = forwardRef<HTMLDivElement, ProductItemProps>(
               </p>
             </div>
             <div className="w-min">
-              <p className="text-[13px] text-nowrap p-[3px] rounded-[3px] bg-[#0000000F] text-[#000000B2] uppercase font-[700]">
-                {props.field}
-              </p>
+              {props?.field.map((item: any, index: number) => (
+                <p key={index} className="text-[13px] text-nowrap p-[3px] rounded-[3px] bg-[#0000000F] text-[#000000B2] uppercase font-[700]">
+                  {item?.name || ''}
+                </p>
+              ))}
             </div>
           </div>
         );

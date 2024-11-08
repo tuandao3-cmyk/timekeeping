@@ -6,6 +6,9 @@ import './globals.css';
 import './Partner.module.css';
 import ThemeRegistry from './theme-registry';
 import '@fontsource/inter';
+import { HydrationBoundary } from '@tanstack/react-query';
+
+import ClientOnlyQueryClientProvider from './ClientOnlyQueryClientProvider';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -39,10 +42,14 @@ export default function RootLayout({
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <ThemeRegistry>
-          <Header />
-          <div className="py-7" />
-          {children}
-          <Footer />
+          <ClientOnlyQueryClientProvider>
+            <HydrationBoundary>
+              <Header />
+              <div className="py-7" />
+              {children}
+              <Footer />
+            </HydrationBoundary>
+          </ClientOnlyQueryClientProvider>
         </ThemeRegistry>
       </body>
     </html>

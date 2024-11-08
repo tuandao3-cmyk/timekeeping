@@ -23,16 +23,6 @@ const Footer: React.FC = () => {
       className={`bg-[#04141A] dark:bg-[#04141A] duration-700 ease-in-out transform `}
     >
       <div className="mx-auto w-full max-w-screen-xl py-[62px] pl-3 pr-3">
-        {/* <div>
-          <img
-            ref={ref}
-            src="/img/logohyracap.png"
-            alt="footer logo"
-            className={`w-full max-w-48 md:max-w-48 lg:max-w-45 transition-opacity duration-700 ease-in-out transform ${
-              inView ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
-            }`}
-          />
-        </div> */}
         <div className="grid grid-cols-1 gap-8 px-4   md:grid-cols-5">
           <div className="md:col-span-2 md:max-w-[258px]">
             <h2
@@ -55,7 +45,7 @@ const Footer: React.FC = () => {
                 ref={ref}
               >
                 <a
-                  href="#"
+                  href="/contact"
                   className=" hover:underline text-[14px] font-[400] font-sans"
                 >
                   Địa chỉ: Lô CX01, khu đô thị Văn Khê, phường La Khê, quận Hà
@@ -71,7 +61,7 @@ const Footer: React.FC = () => {
                 }`}
               >
                 <a
-                  href="#"
+                  href="/contact"
                   className=" hover:underline text-[14px] font-[400] flex gap-[8px] justify-start font-sans"
                 >
                   <SmsIcon className="w-4 h-4 mr-2" />
@@ -81,7 +71,7 @@ const Footer: React.FC = () => {
               <li className={`mb-4 max-w-md `}>
                 <a
                   ref={ref}
-                  href="#"
+                  href="/contact"
                   className={` font-sans hover:underline text-[14px] font-[400] flex gap-[8px] justify-start duration-2500 ease-in-out transform ${
                     inView
                       ? 'opacity-100 scale-100 translate-y-0'
@@ -116,12 +106,19 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline font-sans text-[14px]">
+                <a
+                  href="about"
+                  className="hover:underline font-sans text-[14px]"
+                >
                   Công nghệ của chúng tôi
                 </a>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline font-sans text-[14px]">
+                <a
+                  href="https://www.facebook.com/hyraholdings/"
+                  target="blank"
+                  className="hover:underline font-sans text-[14px]"
+                >
                   Bộ phương tiện truyền thông
                 </a>
               </li>
@@ -140,17 +137,29 @@ const Footer: React.FC = () => {
             </h2>
             <ul className="text-gray-500 dark:text-gray-400 ">
               <li className="mb-4">
-                <a href="#" className="hover:underline font-sans text-[14px]">
+                <a
+                  href="https://www.hyperaschain.com/vi"
+                  target="blank"
+                  className="hover:underline font-sans text-[14px]"
+                >
                   Hyperas
                 </a>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline font-sans text-[14px]">
+                <a
+                  target="blank"
+                  href="https://salala.ai/vi"
+                  className="hover:underline font-sans text-[14px]"
+                >
                   Salala AI
                 </a>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline font-sans text-[14px]">
+                <a
+                  target="blank"
+                  href="https://egabid.com/vi"
+                  className="hover:underline font-sans text-[14px]"
+                >
                   Egabid
                 </a>
               </li>
@@ -169,22 +178,36 @@ const Footer: React.FC = () => {
             </h2>
             <ul className="text-gray-500 dark:text-gray-400 ">
               <li className="mb-4">
-                <a href="#" className="hover:underline font-sans text-[14px]">
+                <a
+                  href="/news"
+                  className="hover:underline font-sans text-[14px]"
+                >
                   Tin tức
                 </a>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline font-sans text-[14px]">
+                <a
+                  target="blank"
+                  href="https://hr1tech.com/en/company/cong-ty-co-phan-hyra-holdings-37455.html"
+                  className="hover:underline font-sans text-[14px]"
+                >
                   Tuyển dụng
                 </a>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline font-sans text-[14px]">
+                <a
+                
+                  href="/contact"
+                  className="hover:underline font-sans text-[14px]"
+                >
                   Liên hệ chúng tôi
                 </a>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline font-sans text-[14px]">
+                <a
+                  href="/about/leaderdetail"
+                  className="hover:underline font-sans text-[14px]"
+                >
                   Quan hệ cổ đông
                 </a>
               </li>
@@ -204,7 +227,7 @@ const Footer: React.FC = () => {
           </span>
           <div className="flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse">
             <a
-              href="#"
+              href="https://www.facebook.com/hyraholdings/"
               className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
             >
               <FacebookIcon />
@@ -212,21 +235,21 @@ const Footer: React.FC = () => {
             </a>
 
             <a
-              href="#"
+              href="https://x.com/hyraholdings"
               className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
             >
               <XIcon />
               <span className="sr-only">X page</span>
             </a>
             <a
-              href="#"
+              href="https://www.youtube.com"
               className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
             >
               <YouTubeIcon />
               <span className="sr-only">Youtube page</span>
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/company/hyraholdings/"
               className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
             >
               <LinkedInIcon />

@@ -12,8 +12,11 @@ import 'swiper/css/pagination';
 import ModalDown from '@/app/products/ModalDownload';
 import { Box, Button, Stack, Typography } from '@mui/material';
 import Image from 'next/image';
+
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import { useRouter } from 'next/navigation';
 function BannerSwipper() {
+  const router = useRouter();
   const { ref, inView, entry } = useInView({
     threshold: 0.1,
     triggerOnce: true,
@@ -35,6 +38,10 @@ function BannerSwipper() {
     if (!progressCircle.current || !progressContent.current) return;
     progressCircle.current.style.setProperty('--progress', 1 - progress);
     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
+  };
+
+  const handleNavigate = () => {
+    router.push(`/products`);
   };
 
   useEffect(() => {
@@ -239,6 +246,7 @@ function BannerSwipper() {
                     transitionDelay: '0.5s',
                     transform: inView ? 'translateY(0)' : 'translateY(10px)',
                   }}
+                  // onClick={handleNavigate}
                 >
                   Tham gia cùng chúng tôi
                 </Button>
@@ -365,7 +373,9 @@ function BannerSwipper() {
                         }}
                         className="rounded-[10px] w-[48px] h-[48px] "
                       />
-                      <div className="flex flex-col ">
+                      <div
+                      
+                      className="flex flex-col ">
                         <p
                           className="font-sans text-[#04141A] text-[14px] leading-[24px]"
                           style={{ fontWeight: 700 }}
@@ -421,6 +431,7 @@ function BannerSwipper() {
                   position={'absolute'}
                   left={'-90px'}
                   top={'32px'}
+                  onClick={() => router.push(`/detail-category/${items[0].title}`)}
                   sx={{
                     transition: 'all 0.5s',
                     opacity: inView ? 1 : 0,
@@ -627,8 +638,8 @@ function BannerSwipper() {
                   </div>
 
                   <div className="flex w-[100%] justify-start items-start gap-[24px]  md:max-w-[500px]">
-                    <button
-                      // ref={ref}
+                    <a
+                      href="/categories"
                       className={` bg-[#48B96D] text-white font-sans text-[16px] leading-[20px] flex-grow   px-[16px] py-[14px] rounded-[999px] text-center  hover:bg-[#379256] transition-all  duration-300 delay-200 ease-in-out transform ${
                         inView1
                           ? 'opacity-100 translate-y-0'
@@ -636,9 +647,9 @@ function BannerSwipper() {
                       }`}
                     >
                       Khám phá cơ hội
-                    </button>
-                    <button
-                      // ref={ref}
+                    </a>
+                    <a
+                      href="/contact"
                       className={` bg-transparent border-[#FFFFFF29] border-[1px] flex-grow text-white font-sans text-[16px] leading-[20px]  px-[16px] py-[14px] rounded-[999px] text-center  hover:bg-[#379256] transition-all  duration-300 delay-200 ease-in-out transform ${
                         inView1
                           ? 'opacity-100 translate-y-0'
@@ -646,7 +657,7 @@ function BannerSwipper() {
                       }`}
                     >
                       Liên hệ ngay
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>

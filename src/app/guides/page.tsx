@@ -16,6 +16,68 @@ import Login from './login/page';
 import LogoutSection from './logout/page';
 import DownloadSection from '../download';
 import { Typography } from '@mui/material';
+const PROJECTS = [
+  {
+    id: 1,
+    img: '/img/egabid_pc.png',
+    name: 'EGABID',
+    amount: '$2.000.000',
+    funded: '$1.500.00',
+    progress: 75,
+    category: 'CÔNG NGHỆ',
+    tag: ['seed'],
+  },
+  {
+    id: 2,
+    img: '/img/Salala.png',
+    name: 'SALALA AI',
+    amount: '$2.000.000',
+    funded: '$1.500.00',
+    progress: 75,
+    category: 'CÔNG NGHỆ',
+    tag: ['seed', 'seriesA', 'seriesB'],
+  },
+  {
+    id: 3,
+    img: '/img/hyperas_chain.png',
+    name: 'Hyperas Chain',
+    amount: '$2.000.000',
+    funded: '$1.500.00',
+    progress: 75,
+    category: 'CÔNG NGHỆ',
+    tag: ['seed', 'seriesA', 'seriesB'],
+  },
+  {
+    id: 4,
+    img: '/img/egabid_pc.png',
+    name: 'EGABID',
+    amount: '$2.000.000',
+    funded: '$1.500.00',
+    progress: 75,
+    category: 'CÔNG NGHỆ',
+    tag: ['seed', 'seriesA', 'seriesB'],
+  },
+  {
+    id: 5,
+    img: '/img/Salala.png',
+    name: 'SALALA AI',
+    amount: '$2.000.000',
+    funded: '$1.500.00',
+    progress: 75,
+    category: 'CÔNG NGHỆ',
+    tag: ['seed', 'seriesA', 'seriesB'],
+  },
+  {
+    id: 6,
+    img: '/img/hyperas_chain.png',
+    name: 'Hyperas Chain',
+    amount: '$2.000.000',
+    funded: '$1.500.00',
+    progress: 75,
+    category: 'CÔNG NGHỆ',
+    tag: ['seed', 'seriesA', 'seriesB'],
+  },
+];
 
 const GuidePage: React.FC = () => {
   const pathname = usePathname();
@@ -44,23 +106,60 @@ const GuidePage: React.FC = () => {
         return <SigninSection />;
     }
   };
-
+  const [searchValue, setSearchValue] = useState('');
+  const handleSearch = () => {
+    const searchTerm = searchValue.toLowerCase();
+    if (searchTerm) {
+      if (searchTerm.includes('đăng ký') || searchTerm.includes('register')) {
+        setActiveSection('signin');
+      } else if (
+        searchTerm.includes('đăng nhập') ||
+        searchTerm.includes('login')
+      ) {
+        setActiveSection('login');
+      } else if (
+        searchTerm.includes('ekyc') ||
+        searchTerm.includes('xác thực') ||
+        searchTerm.includes('auth')
+      ) {
+        setActiveSection('auth');
+      } else if (
+        searchTerm.includes('hợp đồng') ||
+        searchTerm.includes('contract')
+      ) {
+        setActiveSection('contract');
+      } else if (
+        searchTerm.includes('đầu tư') ||
+        searchTerm.includes('invest')
+      ) {
+        setActiveSection('product');
+      } else if (
+        searchTerm.includes('giao dịch') ||
+        searchTerm.includes('transaction')
+      ) {
+        setActiveSection('transaction');
+      } else if (
+        searchTerm.includes('quên mật khẩu') ||
+        searchTerm.includes('forgot')
+      ) {
+        setActiveSection('forgot');
+      } else if (
+        searchTerm.includes('đăng xuất') ||
+        searchTerm.includes('logout')
+      ) {
+        setActiveSection('logout');
+      }
+    }
+  };
   return (
     <>
       <div className=" w-full h-[520px]  bg-[#07212C] bg-[url('/img/guides/guide_bg.png')] bg-no-repeat bg-cover bg-center">
-        <div className="  flex flex-col w-full h-full items-end md:items-center md:pb-[107px]   gap-10 justify-end  md:justify-center">
-          <div className="flex flex-col min-h-[812px] pb-[125px] md:pb-0 md:min-h-0 items-end md:items-center justify-end text-center max-w-[1440px] text-[#0B3546] gap-[22px]">
+        <div className="  flex flex-col w-full h-full items-center pb-[107px]  gap-10 justify-center">
+          <div className="flex flex-col items-center justify-end text-center max-w-[1440px] text-[#0B3546] gap-[22px]">
             <Typography
               sx={{
                 fontWeight: 700,
-                fontSize: {
-                  xs: '32px',
-                  sm: '32px',
-                  md: '48px',
-                  lg: '48px',
-                  xl: '48px',
-                  '2xl': '54px',
-                },
+                fontSize: '48px',
                 lineHeight: '56px',
                 textAlign: 'center',
                 padding: '0 20px',
@@ -80,17 +179,22 @@ const GuidePage: React.FC = () => {
               Hướng dẫn chi tiết để đầu tư hiệu quả vào HyraCap và khám phá các
               cơ hội sinh lợi hấp dẫn.
             </Typography>
-            <div className="px-[20px] h-[56px] w-full max-w-[800px]">
-              <div className=" h-[56px] bg-white gap-[24px] w-full max-w-[800px]  p-2 flex  rounded-[20px]  ">
-                <input
-                  type="text"
-                  placeholder="Nhập thông tin bạn cần tìm"
-                  className="w-full  bg-[#FFFFFF] border-none px-[20px] text-[#686868] font-400 text-[16px] leading-[24px] outline-none"
-                />
-                <button className="bg-[#48B96D] transition ease-in-out duration-300 hover:bg-[#297241] px-[16px] py-[10px] rounded-[16px] text-[#fff] text-[15px] font-500 leading-[20px] min-w-[140px]">
-                  Tìm kiếm
-                </button>
-              </div>
+          </div>
+          <div className="px-[20px] h-[56px] w-full max-w-[800px]">
+            <div className=" h-[56px] bg-white gap-[24px] w-full max-w-[800px]  p-2 flex  rounded-[20px]  ">
+              <input
+                type="text"
+                value={searchValue}
+                onChange={(e) => setSearchValue(e.target.value)}
+                placeholder="Nhập thông tin bạn cần tìm"
+                className="w-full  bg-[#FFFFFF] border-none px-[20px] text-[#686868] font-400 text-[16px] leading-[24px] outline-none"
+              />
+              <button
+                onClick={handleSearch}
+                className="bg-[#48B96D] transition ease-in-out duration-300 hover:bg-[#297241] px-[16px] py-[10px] rounded-[16px] text-[#fff] text-[15px] font-500 leading-[20px] min-w-[140px]"
+              >
+                Tìm kiếm
+              </button>
             </div>
           </div>
         </div>
@@ -200,8 +304,8 @@ const GuidePage: React.FC = () => {
         </aside>
         <div className="flex items-center  justify-center lg:hidden w-full p-5 border-b border-[#E0E0E0]">
           <nav>
-            <ul className=" grid grid-cols-4 grid-rows-2 gap-[40px] text-xl 3xl:text-2xl text-center  ">
-              <li className="">
+            <ul className=" grid grid-cols-2 md:grid-cols-4 grid-rows-4 md:grid-rows-2 gap-[20px] text-xl 3xl:text-2xl   ">
+              <li className="flex border-[2px] border-[#E0E0E0] rounded-[10px] justify-center text-center p-2">
                 <button
                   onClick={() => setActiveSection('signin')}
                   className={`no-underline font-sans font-bold  hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
@@ -213,7 +317,7 @@ const GuidePage: React.FC = () => {
                   Đăng ký
                 </button>
               </li>
-              <li className="">
+              <li className="flex border-[2px] border-[#E0E0E0] rounded-[10px] justify-center text-center p-2">
                 <button
                   onClick={() => setActiveSection('login')}
                   className={`no-underline  font-sans font-bold  hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
@@ -225,7 +329,7 @@ const GuidePage: React.FC = () => {
                   Đăng nhập
                 </button>
               </li>
-              <li className="">
+              <li className="flex border-[2px] border-[#E0E0E0] rounded-[10px] justify-center text-center p-2">
                 <button
                   onClick={() => setActiveSection('auth')}
                   className={`no-underline  font-sans font-bold hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
@@ -237,7 +341,7 @@ const GuidePage: React.FC = () => {
                   Xác thực eKYC
                 </button>
               </li>
-              <li className="">
+              <li className="flex border-[2px] border-[#E0E0E0] rounded-[10px] justify-center text-center p-2">
                 <button
                   onClick={() => setActiveSection('contract')}
                   className={`no-underline  font-sans font-bold hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
@@ -249,7 +353,7 @@ const GuidePage: React.FC = () => {
                   Ký hợp đồng
                 </button>
               </li>
-              <li className="">
+              <li className="flex border-[2px] border-[#E0E0E0] rounded-[10px] justify-center text-center p-2">
                 <button
                   onClick={() => setActiveSection('product')}
                   className={`no-underline  font-sans font-bold hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
@@ -261,7 +365,7 @@ const GuidePage: React.FC = () => {
                   Thực hiện đầu tư
                 </button>
               </li>
-              <li className="">
+              <li className="flex border-[2px] border-[#E0E0E0] rounded-[10px] justify-center text-center p-2">
                 <button
                   onClick={() => setActiveSection('transaction')}
                   className={`no-underline  font-sans font-bold hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
@@ -273,7 +377,7 @@ const GuidePage: React.FC = () => {
                   Giao dịch
                 </button>
               </li>
-              <li className="">
+              <li className="flex border-[2px] border-[#E0E0E0] rounded-[10px] justify-center text-center p-2">
                 <button
                   onClick={() => setActiveSection('forgot')}
                   className={`no-underline  font-sans font-bold hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
@@ -285,7 +389,7 @@ const GuidePage: React.FC = () => {
                   Quên mật khẩu
                 </button>
               </li>
-              <li className="">
+              <li className="flex border-[2px] border-[#E0E0E0] rounded-[10px] justify-center text-center p-2">
                 <button
                   onClick={() => setActiveSection('logout')}
                   className={`no-underline  font-sans font-bold hover:text-[#28a745] cursor-pointer bg-transparent border-none ${

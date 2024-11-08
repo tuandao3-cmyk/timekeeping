@@ -12,6 +12,10 @@ const DownloadSection = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   const isMediumScreen = useMediaQuery(theme.breakpoints.between('sm', 'md'));
 
+  const handleOpenPage = (link: string) => {
+    window.open(link, '_blank');
+  };
+
   const imageSrc = isSmallScreen
     ? '/img/screencapture_mb.png'
     : isMediumScreen
@@ -51,11 +55,16 @@ const DownloadSection = () => {
             </p>
             <div className="w-[100%] md:w-[80%] flex flex-col  beetween sm:flex-row gap-6 mb-8 md:ml-5 lg:ml-0">
               <button
-                ref={ref}
                 onClick={() =>
-                  (window.location.href =
-                    'https://play.google.com/store/apps/details?id=com.hyracap')
+                  handleOpenPage(
+                    'https://play.google.com/store/apps/details?id=com.hyra.cap'
+                  )
                 }
+                ref={ref}
+                // onClick={() =>
+                //   (window.location.href =
+                //     'https://play.google.com/store/apps/details?id=com.hyracap')
+                // }
                 className={`bg-[#48B96D] text-white px-6 h-[64px] py-3 sm:w-[50%]  w-full font-sans rounded-xl flex items-center justify-center gap-[10px] duration-300 delay-500 ease-in-out transform ${
                   inView
                     ? 'opacity-100 translate-y-0'
@@ -77,10 +86,15 @@ const DownloadSection = () => {
                 Google Play
               </button>
               <button
-                ref={ref}
                 onClick={() =>
-                  (window.location.href = 'https://apps.apple.com/app/hyracap')
+                  handleOpenPage(
+                    'https://apps.apple.com/vn/app/hyra-cap/id1581440739'
+                  )
                 }
+                ref={ref}
+                // onClick={() =>
+                //   (window.location.href = 'https://apps.apple.com/app/hyracap')
+                // }
                 className={`bg-[#48B96D] text-white h-[64px] px-6 py-3 font-sans sm:w-[50%] rounded-xl flex items-center justify-center gap-[10px] duration-300 delay-500 ease-in-out transform ${
                   inView
                     ? 'opacity-100 translate-y-0'
@@ -137,14 +151,14 @@ const DownloadSection = () => {
               </div>
             </div>
           </div>
-          <div className="  max-h-[660px] flex items-center justify-center overflow-hidden ">
+          <div className="md:w-full max-h-[660px] flex items-center justify-center overflow-hidden ">
             <Image
               ref={ref}
               src={imageSrc}
               alt="App Screenshot"
               width={708}
               height={812}
-              className={`md:h-[812px] md:w-[708px] w-[327px] h-[419px] duration-300 delay-200 ease-in-out transform ${
+              className={`lg:h-[812px] lg:w-[708px] md:h-[640px] md:w-[550px] w-[327px] h-[419px] duration-300 delay-200 ease-in-out transform ${
                 inView ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
               } `}
             />
