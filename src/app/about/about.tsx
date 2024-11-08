@@ -13,6 +13,7 @@ import News from '../news';
 import Partner from '../partner';
 import MessageFromCreative from './components/messageFromCreative';
 import Image from 'next/image';
+import { postContact } from '@/services/contact.service';
 
 export const leaders = [
   {
@@ -256,16 +257,9 @@ const AboutPage: React.FC = () => {
       alert('Hãy điền đầy đủ thông tin');
       return;
     }
-    const response = await fetch('/contact', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    });
-    if (response.ok) {
+    const response = await postContact(formData);
+    if (response.statusCode == 200) {
       setModal(true);
-      alert('Đã gửi thành công');
       setFormData({
         fullName: '',
         email: '',

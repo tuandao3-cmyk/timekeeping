@@ -108,13 +108,15 @@ const ProjectSlider: React.FC = () => {
 
   const { data, isLoading, isSuccess, isError } = useQuery({
     queryKey: ['project'],
-    queryFn: () => getProjects(page),
+    queryFn: () =>
+      getProjects({
+        ...page,
+        status__eq: 1,
+      }),
   });
 
   useEffect(() => {
     if (isSuccess) {
-      console.log(data.data);
-
       setProjectData(data.data);
     }
   }, [data]);
@@ -254,7 +256,8 @@ const ProjectSlider: React.FC = () => {
                         <div className="flex flex-col gap-[8px]">
                           <span className="top-4 left-4 bg-[#FFFFFF]/20 text-[#0298F4] px-2 py-1 text-xs rounded inline-flex w-fit items-center ">
                             <FaFlag className="w-4 h-4 mr-1 font-sans" />
-                            {project.series}
+                            {project?.data?.project_information
+                              ?.funding_round || ''}
                           </span>
                           <h3 className="text-2xl font-semibold leading-8 text-white mb-2 font-sans">
                             {project.name}
