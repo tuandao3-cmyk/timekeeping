@@ -24,7 +24,7 @@ const DownloadSection = () => {
           <div className="  xl:w-1/2 mb-8 md:mb-0 justify-center sm:ml-5 lg:ml-0 md:pb-10 xl:pb-0 ">
             <p
               ref={ref}
-              className={`md:text-3xl text-[38px] text-center  md:text-left font-bold mb-4 font-sans duration-300 ease-in-out transform uppercase ${
+              className={`md:text-3xl text-[34px] text-center  md:text-left font-bold mb-4 font-sans duration-300 ease-in-out transform uppercase ${
                 inView
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-10'
