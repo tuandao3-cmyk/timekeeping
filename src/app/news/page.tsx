@@ -68,7 +68,11 @@ const NewsPage: React.FC = () => {
   const [newsData, setNewsData] = React.useState<any[]>(dataNews);
   const { data, isLoading, error } = useQuery({
     queryKey: ['news'],
-    queryFn: () => getNews(page),
+    queryFn: () =>
+      getNews({
+        ...page,
+        take: 5,
+      }),
   });
 
   const handleNavigate = (id: any) => {
