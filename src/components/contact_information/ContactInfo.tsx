@@ -1,12 +1,12 @@
 // components/ContactInfo.tsx
 const ContactInfo = () => {
   return (
-    <div className="flex flex-col gap-6 flex-1 p-8 border rounded-lg shadow-lg h-full">
-      <h2 className="font-noto font-medium text-[32px] leading-[40px]">
+    <div className="flex flex-col gap-10 flex-1 max-h-[645px] max-w-[580px] h-full">
+      <h2 className="font-sans  font-bold text-base leading-6 lg:text-[32px] lg:leading-[40px]">
         Thông tin liên hệ
       </h2>
-      <div className="flex flex-col gap-4">
-        <p className="flex items-center font-noto text-base leading-6 tracking-tight">
+      <div className="flex flex-col gap-6">
+        <p className="flex gap-2 items-center font-sans text-sm lg:text-base leading-6 tracking-tight">
           <svg
             width="24"
             height="24"
@@ -32,7 +32,7 @@ const ContactInfo = () => {
           </svg>
           090 206 2323
         </p>
-        <p className="flex items-center font-noto text-base leading-6 tracking-tight">
+        <p className="flex gap-2 items-center font-sans text-sm lg:text-base leading-6 tracking-tight">
           <svg
             width="24"
             height="24"
@@ -65,7 +65,7 @@ const ContactInfo = () => {
           </svg>
           info@hyracapital.com
         </p>
-        <p className="flex items-center font-noto text-base leading-6 tracking-tight">
+        <p className="flex gap-2 items-center font-sans text-sm lg:text-base leading-6 tracking-tight">
           <svg
             width="24"
             height="24"
@@ -119,7 +119,7 @@ const ContactInfo = () => {
           </svg>
           www.hyracapital.com
         </p>
-        <p className="flex items-center font-noto text-base leading-6 tracking-tight">
+        <p className="flex gap-2 items-center font-sans text-sm lg:text-base leading-6 tracking-tight">
           <svg
             width="24"
             height="24"
@@ -197,14 +197,15 @@ const ContactInfo = () => {
         </p>
       </div>
       <div className="mt-4">
-        <iframe
-          src="https://www.google.com/maps/embed?..."
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1862.0771967191684!2d105.75986322433472!3d20.972855299999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31345379f8a34501%3A0xe17b6aeea70cd394!2sHyra%20Holdings!5e0!3m2!1svi!2s!4v1707987654321!5m2!1svi!2s"
           width="100%"
-          height="300"
+          height="333"
           style={{ border: 0 }}
-          allowFullScreen={true}
+          allowFullScreen
           loading="lazy"
-        ></iframe>
+          referrerPolicy="no-referrer-when-downgrade"
+        />
       </div>
     </div>
   );

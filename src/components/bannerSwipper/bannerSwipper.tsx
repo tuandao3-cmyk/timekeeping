@@ -373,7 +373,9 @@ function BannerSwipper() {
                         }}
                         className="rounded-[10px] w-[48px] h-[48px] "
                       />
-                      <div className="flex flex-col ">
+                      <div
+                      
+                      className="flex flex-col ">
                         <p
                           className="font-sans text-[#04141A] text-[14px] leading-[24px]"
                           style={{ fontWeight: 700 }}
@@ -429,6 +431,7 @@ function BannerSwipper() {
                   position={'absolute'}
                   left={'-90px'}
                   top={'32px'}
+                  onClick={() => router.push(`/detail-category/${items[0].title}`)}
                   sx={{
                     transition: 'all 0.5s',
                     opacity: inView ? 1 : 0,

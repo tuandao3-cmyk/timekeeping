@@ -54,7 +54,11 @@ const News = () => {
   const itemsPerPage = 2;
   const { data, isLoading, isSuccess } = useQuery({
     queryKey: ['news'],
-    queryFn: () => getNews(Page),
+    queryFn: () =>
+      getNews({
+        ...Page,
+        take: 4,
+      }),
   });
 
   React.useEffect(() => {

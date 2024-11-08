@@ -112,6 +112,7 @@ const DetailCategoryPage = (props: DetailCategoryPageProps) => {
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
         <PitchingDeckSection />
+        <PitchingDeckSection />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
         <ContractSampleSection />
@@ -120,6 +121,7 @@ const DetailCategoryPage = (props: DetailCategoryPageProps) => {
         <FinanceRoadSection />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={4}>
+        <BusinessPlanSection />
         <BusinessPlanSection />
       </CustomTabPanel>
     </Box>

@@ -97,11 +97,13 @@ const ProjectSection = () => {
                     
                     `}
                     >
-                      <img
-                        src={project?.images[0] || '/img/egabid_pc.png'}
-                        alt={project?.name || 'HyraCap'}
-                        className={` h-[250px] w-[351px] rounded-[10px]`}
-                      />
+                      <div className="flex flex-col justify-center items-center w-full">
+                        <img
+                          src={project?.images[0] || '/img/egabid_pc.png'}
+                          alt={project?.name || 'HyraCap'}
+                          className={` h-[250px] w-[351px] rounded-[10px]`}
+                        />
+                      </div>
 
                       <div className="text-left !text-left">
                         {' '}
