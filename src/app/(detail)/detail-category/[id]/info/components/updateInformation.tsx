@@ -2,7 +2,7 @@ import ModalSucses from '@/app/ModalSucses';
 import { Box, Button, Input, Stack, Typography } from '@mui/material';
 import Image from 'next/image';
 import { useState } from 'react';
-
+import { postContact } from '@/services/contact.service';
 function UpdateInfo() {
   const [isFocused, setIsFocused] = useState(false);
   const [formData, setFormData] = useState({
@@ -23,16 +23,10 @@ function UpdateInfo() {
       alert('Hãy điền email cửa bạn');
       return;
     }
-    const response = await fetch('/contact', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    });
-    if (response.ok) {
+    const response = await postContact(formData);
+
+    if (response.statusCode === 200) {
       setModal(true);
-      alert('Đã gửi thành công');
       setFormData({
         email: '',
       });
