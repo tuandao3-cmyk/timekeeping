@@ -38,7 +38,7 @@ const ProjectSection = () => {
       {' '}
       <ProjectGrid />
       <section
-        className={`${styles.showcaseSection} px-[12px] flex flex-col justify-center items-center bg-[#FFFFFF]`}
+        className={`${styles.showcaseSection} px-[12px] flex flex-col justify-center py-[40px] md:py-[62px] items-center bg-[#FFFFFF]`}
       >
         <div
           ref={ref}

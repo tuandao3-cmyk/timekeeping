@@ -63,8 +63,6 @@ const News = () => {
 
   React.useEffect(() => {
     if (isSuccess) {
-      console.log(data.data);
-
       setNewsData1(data.data);
     }
   }, [data, isSuccess]);
@@ -83,7 +81,7 @@ const News = () => {
     setPage((prev) => prev - 1);
   };
   return (
-    <div ref={ref} className={`${styles.newsSection} py-[24px] bg-[#F3F7F4]`}>
+    <div ref={ref} className={`${styles.newsSection} py-[24px]  bg-[#F3F7F4]`}>
       <div className="flex flex-col justify-center items-center w-full h-full">
         <div className="max-w-[1440px] h-full">
           <div className=" flex justify-between ">
@@ -256,12 +254,12 @@ const News = () => {
               </div>
 
               <div className="md:hidden flex flex-col ">
-                {newsData
+                {newsData1
                   .slice(
                     (page - 1) * itemsPerPage,
                     (page - 1) * itemsPerPage + itemsPerPage
                   )
-                  .map((news, index) => (
+                  .map((news: any, index: number) => (
                     <div
                       key={index}
                       className={`${styles.newsItem} flex flex-col md:flex-row duration-300 delay-${index * 100} pb-[20px] pt-[20px] max-w-[650px] ease-in-out transform ${
@@ -270,7 +268,10 @@ const News = () => {
                           : 'opacity-0 translate-y-10'
                       }`}
                     >
-                      <a href={news.videoLink} className={`${styles.newsLink}`}>
+                      <a
+                        href={`/news/${news.id}`}
+                        className={`${styles.newsLink}`}
+                      >
                         <div
                           className={`${styles.newsContent} flex flex-col-reverse md:flex-row`}
                         >
@@ -287,11 +288,11 @@ const News = () => {
                               </span>
                             </div>
                             <span className="text-gray-600 text-sm font-sans leading-6 ">
-                              {news.date}
+                              {formatDateTimeVn(news.updated_at)}
                             </span>
                           </div>
                           <img
-                            src={news.image}
+                            src={news?.link_img[0] || ''}
                             alt={`News ${index}`}
                             className={`${styles.newsImage} md:max-w-[170px] md:max-h-[170px] md:min-h-0 min-h-[320px]`}
                           />
