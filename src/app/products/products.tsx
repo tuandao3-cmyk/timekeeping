@@ -1,16 +1,14 @@
 'use client';
 
-import React from 'react';
-
 import { useInView } from 'react-intersection-observer';
 
-import { useEffect, useState } from 'react';
+import { Button, Stack, Typography } from '@mui/material';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 import DownloadSection from '../download';
 import ProductItem from './components/productItem';
 import LongTermSection from './long-term/page';
 import ShortTermSection from './short-term/page';
-import { Button, Stack, Typography } from '@mui/material';
-import { useRouter } from 'next/navigation';
 
 interface ProductProps {
   projectData: any;
@@ -220,7 +218,7 @@ const Product = (props: ProductProps) => {
               px={'20px'}
             >
               <Typography
-                className="cursor-pointer"
+                className="cursor-pointer "
                 fontFamily={'Inter'}
                 fontWeight={700}
                 fontSize={{
@@ -234,6 +232,7 @@ const Product = (props: ProductProps) => {
                 {product.title}
               </Typography>
               <Button
+                className="block md:hidden xl:block"
                 sx={{
                   color: '#31814B',
                   fontFamily: 'Inter',
@@ -299,11 +298,17 @@ const Product = (props: ProductProps) => {
             </div>
           </div>
         ))}
-        <button className="border-[#0000003D] border-[1px] rounded-[999px] py-[8px] px-[12px] font-[500] text-[16px] text-black text-opacity-90 hover:bg-[#48B96D] hover:text-white transform ease-in-out duration-100 hover:border-transparent sm:hidden">
+        <button
+          onClick={() => (window.location.href = `/categories`)}
+          className="border-[#0000003D] border-[1px] rounded-[999px] py-[8px] px-[12px] font-[500] text-[16px] text-black text-opacity-90 hover:bg-[#48B96D] hover:text-white transform ease-in-out duration-100 hover:border-transparent sm:hidden"
+        >
           Tìm hiểu thêm các dự án &gt;
         </button>
 
-        <button className="hidden sm:inline border-[#0000003D] border-[1px] rounded-[999px] py-[14px] px-[16px] font-[500] text-[16px] text-black text-opacity-90 hover:bg-[#48B96D] hover:text-white transform ease-in-out duration-100 hover:border-transparent">
+        <button
+          onClick={() => (window.location.href = `/categories`)}
+          className="hidden sm:inline border-[#0000003D] border-[1px] rounded-[999px] py-[14px] px-[16px] font-[500] text-[16px] text-black text-opacity-90 hover:bg-[#48B96D] hover:text-white transform ease-in-out duration-100 hover:border-transparent"
+        >
           Tìm hiểu thêm các dự án &gt;
         </button>
       </section>

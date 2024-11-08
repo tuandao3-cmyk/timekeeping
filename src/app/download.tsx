@@ -24,8 +24,8 @@ const DownloadSection = () => {
   return (
     <div className="bg-[#F3F7F4] overflow-hidden flex flex-col justify-center items-center">
       <div className="max-w-[1440px] px-[16px] md:px-0">
-        <div className="container mx-auto  flex flex-col-reverse xl:flex-row items-center ">
-          <div className="  xl:w-1/2 mb-8 md:mb-0 justify-center sm:ml-5 lg:ml-0 md:pb-10 xl:pb-0 ">
+        <div className="container mx-auto  flex flex-col-reverse xl:flex-row items-center justify-center   ">
+          <div className="  w-[100%]  mb-8 md:mb-0 justify-center sm:ml-10 lg:ml-0 md:pb-10 xl:pb-0 ">
             <p
               ref={ref}
               className={`md:text-3xl text-[34px] text-center  md:text-left font-bold mb-4 font-sans duration-300 ease-in-out transform uppercase ${
@@ -53,7 +53,7 @@ const DownloadSection = () => {
               Tải ứng dụng HyraCap để trải nghiệm những tính năng đầu tư sinh
               lời hiệu quả.
             </p>
-            <div className="w-[100%] md:w-[80%] flex flex-col  beetween sm:flex-row gap-6 mb-8 md:ml-5 lg:ml-0">
+            <div className=" w-[100%] md:w-[100%] flex flex-col  beetween sm:flex-row gap-6 mb-8 md:ml-5 lg:ml-0">
               <button
                 onClick={() =>
                   handleOpenPage(
@@ -126,7 +126,7 @@ const DownloadSection = () => {
             </div>
             <div
               ref={ref}
-              className={`bg-[#000000]/5 p-4 rounded-lg flex md:max-w-[80%] md:ml-5 lg:ml-0 items-center duration-300 delay-700 ease-in-out transform ${
+              className={`bg-[#000000]/5 p-4 rounded-lg flex md:max-w-[100%] md:ml-5 lg:ml-0 items-center duration-300 delay-700 ease-in-out transform ${
                 inView ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
               }`}
             >
@@ -151,7 +151,7 @@ const DownloadSection = () => {
               </div>
             </div>
           </div>
-          <div className="md:w-full max-h-[660px] flex items-center justify-center overflow-hidden ">
+          <div className="  md:w-[90%] max-h-[660px] flex items-center justify-center lg:ml-20 overflow-hidden ">
             <Image
               ref={ref}
               src={imageSrc}

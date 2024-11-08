@@ -1,17 +1,17 @@
 'use client';
 
+import { useQuery } from '@tanstack/react-query';
 import { Calendar } from 'lucide-react';
 import Link from 'next/link';
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
-import { useQuery } from '@tanstack/react-query';
 
-import { FaApple, FaGooglePlay } from 'react-icons/fa';
-import { ProjectCard } from './components/card';
 import { getNews } from '@/services/news.service';
 import { Page } from '@/type/page.type';
 import { formatDateTimeVn } from '@/util/util';
 import { useRouter } from 'next/navigation';
+import { FaApple, FaGooglePlay } from 'react-icons/fa';
+import { ProjectCard } from './components/card';
 
 const dataNews = [
   {
@@ -207,7 +207,7 @@ const NewsPage: React.FC = () => {
                         ? 'p-4 lg:row-span-2 lg:col-span-1 bg-[#07212C] md:row-span-1 col-span-1 '
                         : 'bg-white '
                     }`}
-                    onClick={() => handleNavigate(news.id)}
+                    onClick={() => router.push(`/news/${news.id}`)}
                   >
                     <img
                       src={
@@ -268,7 +268,7 @@ const NewsPage: React.FC = () => {
               <div className=""></div>
             ) : (
               <div
-                className={`${index == 1 ? 'mt-32' : 'mt-8'} mx-5 flex flex-row items-center gap-3 p-1 border`}
+                className={`${index == 1 ? 'mt-32' : 'mt-4'} mx-5 flex flex-row items-center gap-3 px-1 py-2 border`}
                 style={{ borderRadius: 10 }}
               >
                 <img

@@ -1,17 +1,17 @@
 'use client';
 
-import React, { useState } from 'react';
 import styles from '@/app/about/about.module.css';
 import { Typography } from '@mui/material';
+import React, { useState } from 'react';
 
 import { useInView } from 'react-intersection-observer';
 
+import Link from 'next/link';
+import ModalSucses from '../ModalSucses';
 import PressSection from '../PressSection';
 import News from '../news';
 import Partner from '../partner';
-import CustomWidthTooltip from './components/customToolTip';
 import MessageFromCreative from './components/messageFromCreative';
-import Link from 'next/link';
 
 export const leaders = [
   {
@@ -225,6 +225,52 @@ const AboutPage: React.FC = () => {
     threshold: 0.1,
     triggerOnce: true,
   });
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    question: '',
+  });
+  const [modal, setModal] = useState(false);
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (
+      formData.fullName == '' ||
+      formData.email == '' ||
+      formData.phone == '' ||
+      formData.question == ''
+    ) {
+      alert('Hãy điền đầy đủ thông tin');
+      return;
+    }
+    const response = await fetch('/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+    if (response.ok) {
+      setModal(true);
+      alert('Đã gửi thành công');
+      setFormData({
+        fullName: '',
+        email: '',
+        phone: '',
+        question: '',
+      });
+    } else {
+      alert('Lỗi gửi,vui lòng thử lại sau');
+    }
+  };
   return (
     <>
       {/* <div className="max-h-max"> */}
@@ -237,6 +283,7 @@ const AboutPage: React.FC = () => {
           backgroundRepeat: 'no-repeat',
         }}
       >
+        <ModalSucses modal={modal} setModal={setModal} />
         <div className="flex flex-col items-center justify-center w-full max-w-[1440px]">
           <div className="flex justify-between items-center w-full h-full mt-16 max-lg:!flex-col md:pl-20 md:pr-12 px-[12px]">
             <div className="flex flex-col md:min-h-[620px] mb-[24px] md:mb-0 justify-start items-start lg:justify-start flex-1  gap-[24px] md:gap-10">
@@ -988,16 +1035,14 @@ const AboutPage: React.FC = () => {
             <div className="flex-1 p-[1px] rounded-t-[40px] bg-gradient-to-b from-[#00000016] to-[#00000000] max-md:!w-full">
               <div className={styles.contactForm}>
                 <div
-                  className={`p-8 rounded-t-[32px] bg-gradient-to-b from-[#00000014] to-[#00000000] duration-300   ease-in-out transform
-                  ${
+                  className={`p-8 rounded-t-[32px] bg-gradient-to-b from-[#00000014] to-[#00000000] duration-300 ease-in-out transform ${
                     inView9
                       ? 'opacity-100 scale-100 translate-y-0'
                       : 'opacity-0 translate-y-10 scale-50'
-                  }
-                `}
+                  }`}
                 >
                   <h3
-                    className={` duration-700  font-sans  ease-in-out transform ${
+                    className={`duration-700 font-sans ease-in-out transform ${
                       inView9
                         ? 'opacity-100 scale-100 translate-y-0'
                         : 'opacity-0 translate-y-10 scale-50'
@@ -1007,72 +1052,66 @@ const AboutPage: React.FC = () => {
                   </h3>
                   <form>
                     <input
-                      className={` duration-700 font-sans   ease-in-out transform ${
+                      className={`duration-700  font-sans ease-in-out transform ${
                         inView9
                           ? 'opacity-100 scale-100 translate-y-0'
                           : 'opacity-0 translate-y-10 scale-50'
                       }`}
+                      name="fullName"
                       type="text"
                       placeholder="Tên"
+                      value={formData.fullName}
+                      onChange={handleChange}
                       required
+                      style={{ color: 'black' }}
                     />
                     <input
-                      className={` duration-700 font-sans  delay-100  ease-in-out transform ${
+                      name="email"
+                      className={`duration-700 font-sans delay-100 ease-in-out transform ${
                         inView9
                           ? 'opacity-100 scale-100 translate-y-0'
                           : 'opacity-0 translate-y-10 scale-50'
                       }`}
                       type="email"
                       placeholder="Email"
+                      value={formData.email}
+                      onChange={handleChange}
                       required
+                      style={{ color: 'black' }}
                     />
                     <input
-                      className={` duration-700 delay-200  font-sans  ease-in-out transform ${
+                      name="phone"
+                      className={`duration-700 delay-200 font-sans ease-in-out transform ${
                         inView9
                           ? 'opacity-100 scale-100 translate-y-0'
                           : 'opacity-0 translate-y-10 scale-50'
                       }`}
                       type="tel"
                       placeholder="Số điện thoại"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      style={{ color: 'black' }}
                     />
                     <textarea
-                      className={` duration-700  delay-300 font-sans ease-in-out transform ${
+                      name="question"
+                      className={`duration-700 delay-300 font-sans ease-in-out transform ${
                         inView9
                           ? 'opacity-100 scale-100 translate-y-0'
                           : 'opacity-0 translate-y-10 scale-50'
                       }`}
                       placeholder="Câu hỏi của bạn"
                       required
+                      value={formData.question}
+                      onChange={handleChange}
+                      style={{ color: 'black' }}
                     ></textarea>
-                    <div
-                      className={`${styles.recaptcha} duration-700  delay-300  ease-in-out transform ${
-                        inView9
-                          ? 'opacity-100 scale-100 translate-y-0'
-                          : 'opacity-0 translate-y-10 scale-50'
-                      }`}
-                    >
-                      <input
-                        type="checkbox"
-                        id="notRobot"
-                        className="w-5 h-5 font-sans"
-                      />
-                      <label htmlFor="notRobot " className="font-sans">
-                        Tôi không phải là robot
-                      </label>
-                      <img src="/img/icon/cacha.svg" />
-                    </div>
                     <button
-                      className={`duration-700   delay-500  ease-in-out transform ${
-                        inView9
-                          ? 'opacity-100 scale-100 translate-y-0'
-                          : 'opacity-0 translate-y-10 scale-50'
-                      }`}
+                      className={`${styles.recaptcha} duration-700 delay-300 ease-in-out transform`}
                       type="submit"
+                      onClick={handleSubmit}
                     >
-                      <span className="text-lg font-medium font-sans ">
-                        Send
-                      </span>
-                      <img src="/img/icon/sendBlack.svg" />
+                      <span className="text-lg font-medium font-sans">Gửi</span>
+                      <img src="/img/icon/sendBlack.svg" alt="send icon" />
                     </button>
                   </form>
                 </div>

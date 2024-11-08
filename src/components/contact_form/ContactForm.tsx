@@ -46,10 +46,8 @@ const ContactForm = () => {
 
   return (
     // <form onSubmit={handleSubmit}>
-    <div className="  max-h-[645px] min-h-480 max-w-[572px]">
-      
-      <div className="h-full rounded-3xl "
-      >
+    <div className=" -black max-h-[645px] min-h-480 max-w-[572px] xl:w-full">
+      <div className="h-full rounded-3xl ">
         <form className=" p-8 border-4 border-white rounded-3xl h-full max-w-[600px] bg-gradient-to-b from-black/[0.08] to-transparent to-[70.23%]">
           <h2 className="font-semibold text-[18px] leading-[26px]">
             Chúng tôi luôn đón nhận mọi ý kiến từ bạn
@@ -139,11 +137,7 @@ const ContactForm = () => {
               className="flex items-center px-4 py-2 mt-3 bg-green-500 text-white rounded-full"
             >
               Gửi
-              <img
-                src="/img/icon/send.svg"
-                alt="send"
-                className="pl-2"
-              />
+              <img src="/img/icon/send.svg" alt="send" className="pl-2" />
             </button>
           </div>
         </form>
