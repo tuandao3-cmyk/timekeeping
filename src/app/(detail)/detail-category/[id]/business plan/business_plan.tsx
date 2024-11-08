@@ -4,13 +4,17 @@ import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { FaDownload, FaEye } from 'react-icons/fa';
 
-const FinanceRoadSection: React.FC = () => {
+interface BusinessPlanSectionProps {
+  data: any;
+}
+
+const BusinessPlanSection = (props: BusinessPlanSectionProps) => {
   const pathname = usePathname();
   const [openPdf, setOpenPdf] = useState(false);
 
   const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = '/pdfs/report.pdf';
+    link.href = props.data.business_plan;
     link.setAttribute('download', 'report.pdf');
     document.body.appendChild(link);
     link.click();
@@ -25,11 +29,11 @@ const FinanceRoadSection: React.FC = () => {
             <div className="bg-[#CCCCCC] w-1 h-auto rounded-full"></div>
             <div className="flex justify-between  w-full">
               <div>
-                <p className="text-[30px] ">Lộ trình tài chính</p>
+                <p className="text-[30px] ">Kế hoạch kinh doanh</p>
                 <span className="text-[25px] text-[#9f9f9f]"> 02/03/2024</span>
               </div>
               <div className="flex">
-              <button
+                <button
                   onClick={() => setOpenPdf(true)}
                   className="bg-transparent border-2 border-[#28a745] rounded-full cursor-pointer ml-[10px] w-[50px] h-[50px] flex justify-center items-center transition-all duration-300 ease-in-out hover:bg-[#28a745] group"
                 >
@@ -49,10 +53,10 @@ const FinanceRoadSection: React.FC = () => {
       <PdfView
         openPdf={openPdf}
         setOpenPdf={setOpenPdf}
-        pdfPath={'/pdfs/report.pdf'}
+        pdfPath={props.data.business_plan}
       />
     </section>
   );
 };
 
-export default FinanceRoadSection;
+export default BusinessPlanSection;

@@ -4,13 +4,17 @@ import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { FaDownload, FaEye } from 'react-icons/fa';
 
-const PitchingDeckSection: React.FC = () => {
+interface ContractSampleSectionProps {
+  data: any;
+}
+
+const ContractSampleSection = (props: ContractSampleSectionProps) => {
   const pathname = usePathname();
   const [openPdf, setOpenPdf] = useState(false);
 
   const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = '/pdfs/report.pdf';
+    link.href = props.data.contract_template;
     link.setAttribute('download', 'report.pdf');
     document.body.appendChild(link);
     link.click();
@@ -25,7 +29,7 @@ const PitchingDeckSection: React.FC = () => {
             <div className="bg-[#CCCCCC] w-1 h-auto rounded-full"></div>
             <div className="flex justify-between  w-full">
               <div>
-                <p className="text-[30px] ">Pitching Deck</p>
+                <p className="text-[30px] ">Mẫu hợp đồng</p>
                 <span className="text-[25px] text-[#9f9f9f]"> 02/03/2024</span>
               </div>
               <div className="flex">
@@ -49,10 +53,10 @@ const PitchingDeckSection: React.FC = () => {
       <PdfView
         openPdf={openPdf}
         setOpenPdf={setOpenPdf}
-        pdfPath={'/pdfs/report.pdf'}
+        pdfPath={props.data.contract_template}
       />
     </section>
   );
 };
 
-export default PitchingDeckSection;
+export default ContractSampleSection;
