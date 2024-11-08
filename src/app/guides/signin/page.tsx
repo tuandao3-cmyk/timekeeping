@@ -52,7 +52,7 @@ const SigninSection: React.FC = () => {
             </li>
           </ul>
 
-          <div className="flex justify-start my-5 flex-wrap gap-10 pl-5 mb-4">
+          <div className="flex justify-start my-5 flex-wrap gap-10 lg:pl-5 mb-4">
             <img className="lg:w-[30%] w-[100%] max-w-[300px] " src="/img/dky1.png" alt="Màn hình đăng ký HyraCap 1" />
             <img className="lg:w-[30%] w-[100%] max-w-[300px] " src="/img/dky2.png" alt="Màn hình đăng ký HyraCap 2" />
           </div>
@@ -71,7 +71,7 @@ const SigninSection: React.FC = () => {
             </li>
           </ul>
 
-          <div className="flex justify-start mt-5 flex-wrap gap-5  pl-5">
+          <div className="flex justify-start mt-5 flex-wrap gap-5  lg:pl-5">
             <img className="lg:w-[30%] w-[100%] max-w-[300px] " src="/img/otp1.png" alt="Màn hình nhập OTP" />
             <img className="lg:w-[30%] w-[100%] max-w-[300px] " src="/img/popup.png" alt="Màn hình popup giới thiệu" />
             <img className="lg:w-[30%] w-[100%] max-w-[300px] " src="/img/dashboard.png" alt="Màn hình tổng quan" />

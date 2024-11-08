@@ -42,7 +42,7 @@ const ForgotSection: React.FC = () => {
           </ul>
 
          
-          <div className="flex justify-center my-5 flex-wrap gap-10 mb-3.5 pl-5">
+          <div className="flex justify-center my-5 flex-wrap gap-10 mb-3.5 lg:pl-5">
             <img 
               src="/img/forgot1.png" 
               alt="Màn hình đăng nhập HyraCap"
@@ -59,7 +59,7 @@ const ForgotSection: React.FC = () => {
             </li>
           </ul>
 
-          <div className="flex justify-center mt-5 flex-wrap gap-5 pl-[3vw]">
+          <div className="flex justify-center mt-5 flex-wrap gap-5 lg:pl-[3vw]">
             <img
               src="/img/forgot2.png"
               alt="Màn hình nhập OTP"
@@ -77,7 +77,7 @@ const ForgotSection: React.FC = () => {
 
           </ul>
 
-          <div className="flex justify-center mt-5 flex-wrap gap-5 pl-[3vw]">
+          <div className="flex justify-center mt-5 flex-wrap gap-5 lg:pl-[3vw]">
             <img
               src="/img/forgot2.png"
               alt="Màn hình nhập OTP"

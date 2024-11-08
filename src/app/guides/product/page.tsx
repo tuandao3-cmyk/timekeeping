@@ -46,7 +46,7 @@ const ProductSection: React.FC = () => {
           </ul>
 
          
-          <div className="flex justify-center my-5 flex-wrap gap-10 mb-3.5 pl-5">
+          <div className="flex justify-center my-5 flex-wrap gap-10 mb-3.5 lg:pl-5">
             <img 
               src="/img/product1.png" 
               alt="Màn hình đăng nhập HyraCap"
@@ -65,7 +65,7 @@ const ProductSection: React.FC = () => {
             <li className='pl-2'>Hệ thống sẽ tự động tính lãi suất  từng quý dựa trên số tiền đầu tư và kỳ hạn bạn chọn</li>
           </ul>
           {/* Phần hình ảnh cuối */}
-          <div className="flex justify-center mt-5 flex-wrap gap-5 pl-[3vw]">
+          <div className="flex justify-center mt-5 flex-wrap gap-5 lg:pl-[3vw]">
             <img
               src="/img/product2.png"
               alt="Màn hình nhập OTP"
@@ -81,7 +81,7 @@ const ProductSection: React.FC = () => {
             <li className='pl-2'>Kiểm tra thông đầu tư và bấm Xác nhận</li>
           </ul>
           {/* Phần hình ảnh cuối */}
-          <div className="flex justify-center mt-5 flex-wrap gap-5 pl-[3vw]">
+          <div className="flex justify-center mt-5 flex-wrap gap-5 lg:pl-[3vw]">
             <img
               src="/img/product3.png"
               alt="Màn hình nhập OTP"
@@ -98,7 +98,7 @@ const ProductSection: React.FC = () => {
             <li className='pl-2'>Bạn có thể theo dõi quá trình đầu tư của mình tại tính năng <strong>Giao dịch</strong>.</li>
           </ul>
           {/* Phần hình ảnh cuối */}
-          <div className="flex justify-center mt-5 flex-wrap gap-5 pl-[3vw]">
+          <div className="flex justify-center mt-5 flex-wrap gap-5 lg:pl-[3vw]">
             <img
               src="/img/product4.png"
               alt="Màn hình nhập OTP"

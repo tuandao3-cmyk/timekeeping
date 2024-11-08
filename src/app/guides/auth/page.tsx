@@ -56,7 +56,7 @@ const AuthSection: React.FC = () => {
           </ul>
 
          
-          <div className="flex justify-center my-5 flex-wrap gap-10 mb-3.5 pl-5">
+          <div className="flex justify-center my-5 flex-wrap gap-10 mb-3.5 lg:pl-5">
             <img 
               src="/img/cccd1.png" 
               alt="Màn hình chụp ảnh CCCD"
@@ -77,7 +77,7 @@ const AuthSection: React.FC = () => {
             </li>
           </ul>
           {/* Phần hình ảnh cuối */}
-          <div className="flex justify-center mt-5 flex-wrap gap-5 pl-[3vw]">
+          <div className="flex justify-center mt-5 flex-wrap gap-5 lg:pl-[3vw]">
 
             <img
               src="/img/mattruoc.png"
@@ -101,7 +101,7 @@ const AuthSection: React.FC = () => {
 
           </ul>
           {/* Phần hình ảnh cuối */}
-          <div className="flex justify-center mt-5 flex-wrap gap-5 pl-[3vw]">
+          <div className="flex justify-center mt-5 flex-wrap gap-5 lg:pl-[3vw]">
 
             <img
               src="/img/ekyctt.png"
@@ -118,7 +118,7 @@ const AuthSection: React.FC = () => {
             </li>
           </ul>
           {/* Phần hình ảnh cuối */}
-          <div className="flex justify-center mt-5 flex-wrap gap-5 pl-[3vw]">
+          <div className="flex justify-center mt-5 flex-wrap gap-5 lg:pl-[3vw]">
             <img
               src="/img/ekyctt1.png"
               alt="Màn hình ekyc"
@@ -133,7 +133,7 @@ const AuthSection: React.FC = () => {
             </li>
           </ul>
           {/* Phần hình ảnh cuối */}
-          <div className="flex justify-center mt-5 flex-wrap gap-5 pl-[3vw]">
+          <div className="flex justify-center mt-5 flex-wrap gap-5 lg:pl-[3vw]">
             <img
               src="/img/ekyctt2.png"
               alt="Màn hình ekyc"
@@ -148,7 +148,7 @@ const AuthSection: React.FC = () => {
             </li>
           </ul>
           {/* Phần hình ảnh cuối */}
-          <div className="flex justify-center mt-5 flex-wrap gap-5 pl-[3vw]">
+          <div className="flex justify-center mt-5 flex-wrap gap-5 lg:pl-[3vw]">
             <img
               src="/img/ekycend.png"
               alt="Màn hình ekyc"
