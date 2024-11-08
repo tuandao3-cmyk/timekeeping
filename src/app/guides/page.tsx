@@ -20,7 +20,7 @@ import { PROJECTS } from '../categories/page';
 
 const GuidePage: React.FC = () => {
   const pathname = usePathname();
-  const [activeSection, setActiveSection] = useState<string>('default');
+  const [activeSection, setActiveSection] = useState<string>('signin');
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   const renderContent = () => {

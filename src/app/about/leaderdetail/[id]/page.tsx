@@ -1,13 +1,23 @@
 'use client';
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { leaders } from '../page';
+import { useParams, useRouter } from 'next/navigation';
+import { leaders } from '../../page';
 import { IoArrowBack } from "react-icons/io5";
 
 export default function LeaderDetail() {
-  const [activeLeader, setActiveLeader] = useState(0); // Mặc định hiển thị leader đầu tiên
-  const leader = leaders[activeLeader];
   const router = useRouter();
+  const params = useParams();
+  const currentLeaderId = Number(params.id);
+  const currentLeaderIndex = leaders.findIndex(leader => leader.id === currentLeaderId);
+  const [activeLeader, setActiveLeader] = useState(currentLeaderIndex !== -1 ? currentLeaderIndex : 0);
+  
+  const leader = leaders[activeLeader];
+
+  const handleLeaderChange = (idx: number) => {
+    setActiveLeader(idx);
+    router.push(`/about/leaderdetail/${leaders[idx].id}`);
+  };
+
 
   return (
     <div className="flex flex-col  min-h-[600px]">
