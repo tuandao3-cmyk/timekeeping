@@ -12,7 +12,7 @@ const LogoutSection: React.FC = () => {
     <>
 
 
-        <main className=" pt-[50px] px-8 pb-[30px]  lg:px-[70px] text-black text-left font-sans ">
+        <main className=" lg:pt-[50px] pt-0 px-8 pb-[30px]  lg:px-[70px] text-black text-left font-sans ">
             <p className=" text-3xl font-bold text-[#000000]  text-left">Video hướng dẫn</p>
           
             <div className="flex justify-center  my-[50px]  ">
