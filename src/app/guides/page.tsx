@@ -51,19 +51,41 @@ const GuidePage: React.FC = () => {
     if (searchTerm) {
       if (searchTerm.includes('đăng ký') || searchTerm.includes('register')) {
         setActiveSection('signin');
-      } else if (searchTerm.includes('đăng nhập') || searchTerm.includes('login')) {
+      } else if (
+        searchTerm.includes('đăng nhập') ||
+        searchTerm.includes('login')
+      ) {
         setActiveSection('login');
-      } else if (searchTerm.includes('ekyc') || searchTerm.includes('xác thực') || searchTerm.includes('auth')) {
+      } else if (
+        searchTerm.includes('ekyc') ||
+        searchTerm.includes('xác thực') ||
+        searchTerm.includes('auth')
+      ) {
         setActiveSection('auth');
-      } else if (searchTerm.includes('hợp đồng') || searchTerm.includes('contract')) {
+      } else if (
+        searchTerm.includes('hợp đồng') ||
+        searchTerm.includes('contract')
+      ) {
         setActiveSection('contract');
-      } else if (searchTerm.includes('đầu tư') || searchTerm.includes('invest')) {
+      } else if (
+        searchTerm.includes('đầu tư') ||
+        searchTerm.includes('invest')
+      ) {
         setActiveSection('product');
-      } else if (searchTerm.includes('giao dịch') || searchTerm.includes('transaction')) {
+      } else if (
+        searchTerm.includes('giao dịch') ||
+        searchTerm.includes('transaction')
+      ) {
         setActiveSection('transaction');
-      } else if (searchTerm.includes('quên mật khẩu') || searchTerm.includes('forgot')) {
+      } else if (
+        searchTerm.includes('quên mật khẩu') ||
+        searchTerm.includes('forgot')
+      ) {
         setActiveSection('forgot');
-      } else if (searchTerm.includes('đăng xuất') || searchTerm.includes('logout')) {
+      } else if (
+        searchTerm.includes('đăng xuất') ||
+        searchTerm.includes('logout')
+      ) {
         setActiveSection('logout');
       }
     }
@@ -71,19 +93,12 @@ const GuidePage: React.FC = () => {
   return (
     <>
       <div className=" w-full h-[520px]  bg-[#07212C] bg-[url('/img/guides/guide_bg.png')] bg-no-repeat bg-cover bg-center">
-        <div className="  flex flex-col w-full h-full items-end md:items-center md:pb-[107px]   gap-10 justify-end  md:justify-center">
-          <div className="flex flex-col min-h-[812px] pb-[125px] md:pb-0 md:min-h-0 items-end md:items-center justify-end text-center max-w-[1440px] text-[#0B3546] gap-[22px]">
+        <div className="  flex flex-col w-full h-full items-center pb-[107px]  gap-10 justify-center">
+          <div className="flex flex-col items-center justify-end text-center max-w-[1440px] text-[#0B3546] gap-[22px]">
             <Typography
               sx={{
                 fontWeight: 700,
-                fontSize: {
-                  xs: '32px',
-                  sm: '32px',
-                  md: '48px',
-                  lg: '48px',
-                  xl: '48px',
-                  '2xl': '54px',
-                },
+                fontSize: '48px',
                 lineHeight: '56px',
                 textAlign: 'center',
                 padding: '0 20px',
@@ -103,22 +118,24 @@ const GuidePage: React.FC = () => {
               Hướng dẫn chi tiết để đầu tư hiệu quả vào HyraCap và khám phá các
               cơ hội sinh lợi hấp dẫn.
             </Typography>
-            <div className="px-[20px] h-[56px] w-full max-w-[800px]">
-              <div className=" h-[56px] bg-white gap-[24px] w-full max-w-[800px]  p-2 flex  rounded-[20px]  ">
-            <input
-              type="text"
-              value={searchValue}
-              onChange={(e) => setSearchValue(e.target.value)}
-              placeholder="Nhập thông tin bạn cần tìm"
-              className="w-full  bg-[#FFFFFF] border-none px-[20px] text-[#686868] font-400 text-[16px] leading-[24px] outline-none"
-            />
-            <button 
-            onClick={handleSearch}
-            className="bg-[#48B96D] transition ease-in-out duration-300 hover:bg-[#297241] px-[16px] py-[10px] rounded-[16px] text-[#fff] text-[15px] font-500 leading-[20px] min-w-[140px]">
-              Tìm kiếm
-            </button>
           </div>
-              </div>
+          <div className="px-[20px] h-[56px] w-full max-w-[800px]">
+            <div className=" h-[56px] bg-white gap-[24px] w-full max-w-[800px]  p-2 flex  rounded-[20px]  ">
+              <input
+                type="text"
+                value={searchValue}
+                onChange={(e) => setSearchValue(e.target.value)}
+                placeholder="Nhập thông tin bạn cần tìm"
+                className="w-full  bg-[#FFFFFF] border-none px-[20px] text-[#686868] font-400 text-[16px] leading-[24px] outline-none"
+              />
+              <button
+                onClick={handleSearch}
+                className="bg-[#48B96D] transition ease-in-out duration-300 hover:bg-[#297241] px-[16px] py-[10px] rounded-[16px] text-[#fff] text-[15px] font-500 leading-[20px] min-w-[140px]"
+              >
+                Tìm kiếm
+              </button>
+            </div>
+          </div>
         </div>
       </div>
       <div className="flex flex-col lg:flex-row max-w-[1440px] mx-auto  ">
