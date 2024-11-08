@@ -1,4 +1,5 @@
 // components/ContactForm.tsx
+import ModalSucses from '@/app/ModalSucses';
 import { useState } from 'react';
 
 const ContactForm = () => {
@@ -9,7 +10,7 @@ const ContactForm = () => {
     role: '',
     message: '',
   });
-
+  const [modal, setModal] = useState(false);
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -31,6 +32,7 @@ const ContactForm = () => {
     });
 
     if (response.ok) {
+      setModal(true);
       alert('Đã gửi thành công');
       setFormData({
         fullName: '',
@@ -47,6 +49,7 @@ const ContactForm = () => {
   return (
     // <form onSubmit={handleSubmit}>
     <div className=" -black max-h-[645px] min-h-480 max-w-[572px] xl:w-full">
+      <ModalSucses modal={modal} setModal={setModal} />
       <div className="h-full rounded-3xl ">
         <form className=" p-8 border-4 border-white rounded-3xl h-full max-w-[600px] bg-gradient-to-b from-black/[0.08] to-transparent to-[70.23%]">
           <h2 className="font-semibold text-[18px] leading-[26px]">
