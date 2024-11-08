@@ -66,7 +66,9 @@ const ProductItem = forwardRef<HTMLDivElement, ProductItemProps>(
       case 'flexible':
         return (
           <div
-            onClick={() => router.push(`/detail-category/${props.title}`)}
+            onClick={() =>
+              (window.location.href = `/detail-category/${props.id}`)
+            }
             ref={ref}
             className={` package-item w-full mt-5 3xl:max-w-[384px]  bg-white  rounded-lg md:gap-6   flex justify-center items-left flex-col flex-grow gap-3 ${props.className} hover:shadow-lg p-5 hover:scale-105 transition ease-in-out duration-150 hover:cursor-pointer `}
           >
