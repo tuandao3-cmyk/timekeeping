@@ -237,7 +237,7 @@ const NewsPage: React.FC = () => {
                 <Image
                   width={115}
                   height={70}
-                  src={news?.link_img || ''}
+                  src={news?.link_img[0] || ''}
                   alt=""
                   className={` object-cover object-center rounded-lg 
                         h-[70px] w-[115px]
@@ -316,7 +316,10 @@ const NewsPage: React.FC = () => {
                     <Image
                       width={320}
                       height={188}
-                      src={news.link_img}
+                      src={
+                        news?.link_img[0] ||
+                        'https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg'
+                      }
                       alt=""
                       className="w-[320px] h-[188px]  object-cover rounded-lg md:col-span-1"
                     />

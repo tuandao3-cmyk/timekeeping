@@ -111,7 +111,7 @@ function BannerSwipper() {
       }}
       className="mySwiper"
     >
-      {/* <ModalDown modal={modal} setModal={setModal} /> */}
+      <ModalDown modal={modal} setModal={setModal} />
       <SwiperSlide className="bg-[rgb(7,33,44)] flex flex-col :flex-row min-h-[812px] h-auto justify-center items-center w-full">
         <Box
           ref={ref}

@@ -288,14 +288,17 @@ const NewsDetail: React.FC = ({ params, searchParams }: any) => {
             {dataList.map((news: any, index: number) => (
               <>
                 <div
+                  onClick={() => {
+                    window.location.href = `/news/${news.id}`;
+                  }}
                   key={index}
-                  className={`rounded-lg p-2 overflow-hidden shadow-sm hover:scale-105 transition ease-in-out duration-100 hover:shadow-lg ${'bg-[#F3F7F4] md:max-h-[517px]'}`}
+                  className={`rounded-lg p-2 cursor-pointer overflow-hidden shadow-sm hover:scale-105 transition ease-in-out duration-100 hover:shadow-lg ${'bg-[#F3F7F4] md:max-h-[517px]'}`}
                 >
                   <Image
                     width={384}
                     height={234}
                     src={
-                      news?.link_img ||
+                      news?.link_img[0] ||
                       'https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg'
                     }
                     alt=""

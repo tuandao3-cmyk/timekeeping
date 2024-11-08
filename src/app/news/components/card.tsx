@@ -21,7 +21,7 @@ export const ProjectCard: React.FC<{
         width={320}
         height={188}
         src={
-          project?.link_img ||
+          project?.link_img[0] ||
           'https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg'
         }
         alt={project.title}
