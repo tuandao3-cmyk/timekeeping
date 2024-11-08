@@ -2,6 +2,10 @@ import { IconButton } from '@mui/material';
 import Drawer from '@mui/material/Drawer';
 import CloseIcon from '@mui/icons-material/Close';
 import Image from 'next/image';
+import { Worker, Viewer } from '@react-pdf-viewer/core';
+import '@react-pdf-viewer/core/lib/styles/index.css';
+import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
+import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 
 interface PdfViewProps {
   pdfPath: string;
@@ -10,9 +14,12 @@ interface PdfViewProps {
 }
 
 function PdfView(props: PdfViewProps) {
+  const defaultLayoutPluginInstance = defaultLayoutPlugin();
   const handleClose = () => {
     props.setOpenPdf(false);
   };
+
+  console.log('pdfPath', props.pdfPath);
 
   const isPdf = props.pdfPath.endsWith('.pdf');
   return (
@@ -41,17 +48,14 @@ function PdfView(props: PdfViewProps) {
           </IconButton>
         </div>
 
-        {isPdf ? (
-          <iframe src={props.pdfPath} width="100%" height="100%" />
-        ) : (
-          <Image
-            width={1000}
-            height={1000}
-            src={props.pdfPath}
-            alt="File Preview"
-            style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+        <Worker
+          workerUrl={`https://unpkg.com/pdfjs-dist@3.10.111/build/pdf.worker.min.js`}
+        >
+          <Viewer
+            fileUrl={props.pdfPath}
+            plugins={[defaultLayoutPluginInstance]}
           />
-        )}
+        </Worker>
       </Drawer>
     </>
   );
