@@ -324,6 +324,7 @@ const NewsPage: React.FC = () => {
 
           <div className="flex flex-col justify-center items-center gap-4 pl-5 pr-5 md:pr-0 md:pl-0">
             <img
+            onClick={() => router.push('https://www.facebook.com/hyraholdings/')}
               className="h-[274px] md:h-auto max-w-[100%] md:w-[100%]"
               src="/img/news/upcoming.png"
               alt="image description"
