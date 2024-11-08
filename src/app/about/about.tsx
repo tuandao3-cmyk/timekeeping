@@ -14,7 +14,7 @@ import MessageFromCreative from './components/messageFromCreative';
 import Link from 'next/link';
 
 export const leaders = [
-  {
+  { id: 1,
     name: 'Trần Nam Chung',
     title: 'Chief Strategy Officer - Founder',
     fullTitle: 'Chief Strategy Officer - Founder',
@@ -26,7 +26,7 @@ export const leaders = [
       'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.',
     ],
   },
-  {
+  { id: 2,
     name: 'Tuấn Nguyễn',
     title: 'CEO - Co-Founder',
     fullTitle: 'Chief Executive Officer - Co-Founder',
@@ -38,7 +38,7 @@ export const leaders = [
       'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.',
     ],
   },
-  {
+  { id: 3,
     name: 'Hoàng Thành Đạt',
     title: 'CTO - Co-Founder',
     fullTitle: 'Chief Technology Officer - Co-Founder',
@@ -50,7 +50,7 @@ export const leaders = [
       'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.',
     ],
   },
-  {
+  { id: 4,
     name: 'Tuấn Đặng',
     title: 'CFO - Co-Founder',
     fullTitle: 'Chief Financial Officer - Co-Founder',
@@ -848,7 +848,7 @@ const AboutPage: React.FC = () => {
               {leaders.slice(0, 4).map((leader, index) => (
                 <Link
                   key={index}
-                  href={`/about/leaderdetail`}
+                  href={`/about/leaderdetail/${leader.id}`}
                   className="mt-5 px-[13px]"
                 >
                   <div

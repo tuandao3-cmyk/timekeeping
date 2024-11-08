@@ -13,7 +13,7 @@ const AuthSection: React.FC = () => {
 
 
 
-        <main className=" pt-[50px] px-8 pb-[30px]  lg:px-[70px] text-black text-left font-sans ">
+        <main className=" lg:pt-[50px] pt-0 px-8 pb-[30px]  lg:px-[70px] text-black text-left font-sans ">
           
             <p className=" text-3xl font-bold text-[#000000]  text-left">Video hướng dẫn</p>
           
@@ -56,16 +56,16 @@ const AuthSection: React.FC = () => {
           </ul>
 
          
-          <div className="flex justify-center my-5 flex-wrap gap-10 mb-3.5 pl-5">
+          <div className="flex justify-center my-5 flex-wrap gap-10 mb-3.5 lg:pl-5">
             <img 
               src="/img/cccd1.png" 
               alt="Màn hình chụp ảnh CCCD"
-              className="w-[30%] max-w-[300px] "
+              className="lg:w-[30%] w-[100%] max-w-[300px] "
             />
             <img 
               src="/img/cccd2.png" 
               alt="Màn hình chụp ảnh CCCD"
-              className="w-[30%] max-w-[300px] "
+              className="lg:w-[30%] w-[100%] max-w-[300px] "
             />
           </div>
           <ul className=" text-xl 3xl:text-2xl leading-7 text-[#000000] pl-4 ">
@@ -77,21 +77,21 @@ const AuthSection: React.FC = () => {
             </li>
           </ul>
           {/* Phần hình ảnh cuối */}
-          <div className="flex justify-center mt-5 flex-wrap gap-5 pl-[3vw]">
+          <div className="flex justify-center mt-5 flex-wrap gap-5 lg:pl-[3vw]">
 
             <img
               src="/img/mattruoc.png"
               alt="Màn hình chụp mặt trước"
               width={300}
               height={600}
-              className="w-[30%] max-w-[300px] mb-3.5"
+              className="lg:w-[30%] w-[100%] max-w-[300px] mb-3.5"
             />
             <img
               src="/img/mattruoc.png"
               alt="Màn hình chụp mặt sau"
               width={300}
               height={600}
-              className="w-[30%] max-w-[300px] mb-3.5"
+              className="lg:w-[30%] w-[100%] max-w-[300px] mb-3.5"
             />
           </div>
           <ul className=" text-xl 3xl:text-2xl leading-7 text-[#000000] pl-4 py-8 ">
@@ -101,14 +101,14 @@ const AuthSection: React.FC = () => {
 
           </ul>
           {/* Phần hình ảnh cuối */}
-          <div className="flex justify-center mt-5 flex-wrap gap-5 pl-[3vw]">
+          <div className="flex justify-center mt-5 flex-wrap gap-5 lg:pl-[3vw]">
 
             <img
               src="/img/ekyctt.png"
               alt="Màn hình ekyc"
               width={300}
               height={600}
-              className="w-[30%] max-w-[300px] mb-3.5"
+              className="lg:w-[30%] w-[100%] max-w-[300px] mb-3.5"
             />
 
           </div>
@@ -118,13 +118,13 @@ const AuthSection: React.FC = () => {
             </li>
           </ul>
           {/* Phần hình ảnh cuối */}
-          <div className="flex justify-center mt-5 flex-wrap gap-5 pl-[3vw]">
+          <div className="flex justify-center mt-5 flex-wrap gap-5 lg:pl-[3vw]">
             <img
               src="/img/ekyctt1.png"
               alt="Màn hình ekyc"
               width={300}
               height={600}
-              className="w-[30%] max-w-[300px] mb-3.5"
+              className="lg:w-[30%] w-[100%] max-w-[300px] mb-3.5"
             />
           </div>
           <ul className=" text-xl 3xl:text-2xl leading-7 text-[#000000] pl-4 ">
@@ -133,13 +133,13 @@ const AuthSection: React.FC = () => {
             </li>
           </ul>
           {/* Phần hình ảnh cuối */}
-          <div className="flex justify-center mt-5 flex-wrap gap-5 pl-[3vw]">
+          <div className="flex justify-center mt-5 flex-wrap gap-5 lg:pl-[3vw]">
             <img
               src="/img/ekyctt2.png"
               alt="Màn hình ekyc"
               width={1200}
               height={600}
-              className="w-[100%] max-w-[1200px] mb-3.5"
+              className="lg:w-[100%] w-[100%] max-w-[1200px] mb-3.5"
             />
           </div>
           <ul className=" text-xl 3xl:text-2xl leading-7 text-[#000000] pl-4 ">
@@ -148,13 +148,13 @@ const AuthSection: React.FC = () => {
             </li>
           </ul>
           {/* Phần hình ảnh cuối */}
-          <div className="flex justify-center mt-5 flex-wrap gap-5 pl-[3vw]">
+          <div className="flex justify-center mt-5 flex-wrap gap-5 lg:pl-[3vw]">
             <img
               src="/img/ekycend.png"
               alt="Màn hình ekyc"
               width={300}
               height={600}
-              className="w-[30%] max-w-[300px] mb-3.5"
+              className="lg:w-[30%] w-[100%] max-w-[300px] mb-3.5"
             />
           </div>
           

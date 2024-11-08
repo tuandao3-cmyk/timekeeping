@@ -41,12 +41,7 @@ function PdfView(props: PdfViewProps) {
         </div>
 
         {isPdf ? (
-          <iframe
-            src={props.pdfPath}
-            width="100%"
-            height="100%"
-            Content-Disposition="inline"
-          />
+          <iframe src={props.pdfPath} width="100%" height="100%" />
         ) : (
           <img
             src={props.pdfPath}

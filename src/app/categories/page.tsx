@@ -66,7 +66,7 @@ const CategoryPage: React.FC = () => {
 
   useEffect(() => {
     if (isSuccess) {
-      console.log(data);
+      console.log('projects', projects);
 
       setProjects(data);
     }
