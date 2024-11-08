@@ -135,8 +135,10 @@ const ReportPage: React.FC = () => {
   const data = activeTab == 0 ? data1 : data2;
 
   const handlePreview = (file: string) => {
-    const googleDocsViewerUrl = `https://docs.google.com/viewer?url=${encodeURIComponent(file)}&embedded=true`;
-    window.open(googleDocsViewerUrl, '_blank');
+    setFile(file);
+    setOpenPdf(true);
+    // const googleDocsViewerUrl = `https://docs.google.com/viewer?url=${encodeURIComponent(file)}&embedded=true`;
+    // window.open(googleDocsViewerUrl, '_blank');
   };
   const handleDownload = (href: string) => {
     const link = document.createElement('a');
