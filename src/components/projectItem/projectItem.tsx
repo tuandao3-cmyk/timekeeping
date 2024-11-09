@@ -103,7 +103,7 @@ function ProjectItem(props: ProjectItemProps) {
               </div>
             </div>
           </div>
-          <div className="flex flex-wrap gap-[1.54px]">
+          <div className="flex flex-wrap gap-[1.54px] h-[24px]">
             {industries?.map((industry, index) => (
               <span
                 key={index}

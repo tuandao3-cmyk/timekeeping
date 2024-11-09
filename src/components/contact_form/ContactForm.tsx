@@ -33,7 +33,7 @@ const ContactForm = () => {
       role: parseInt(formData.role),
     });
 
-    if (response.ok) {
+    if (response.statusCode === 200) {
       setModal(true);
       alert('Đã gửi thành công');
       setFormData({
@@ -45,7 +45,6 @@ const ContactForm = () => {
       });
     } else {
       setModal2(true);
-      alert('Lỗi gửi,vui lòng thử lại sau');
     }
   };
 
@@ -145,11 +144,11 @@ const ContactForm = () => {
             >
               Gửi
               <Image
+                width={24}
+                height={24}
                 src="/img/icon/send.svg"
                 alt="send"
                 className="pl-2"
-                width={24}
-                height={24}
               />
             </button>
           </div>
