@@ -1,8 +1,7 @@
+import CloseIcon from '@mui/icons-material/Close';
 import { IconButton } from '@mui/material';
 import Drawer from '@mui/material/Drawer';
-import CloseIcon from '@mui/icons-material/Close';
-import Image from 'next/image';
-import { Worker, Viewer } from '@react-pdf-viewer/core';
+import { Viewer, Worker } from '@react-pdf-viewer/core';
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
@@ -21,7 +20,7 @@ function PdfView(props: PdfViewProps) {
 
   console.log('pdfPath', props.pdfPath);
 
-  const isPdf = props.pdfPath.endsWith('.pdf');
+  // const isPdf = props.pdfPath.endsWith('.pdf');
   return (
     <>
       <Drawer
