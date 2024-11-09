@@ -150,7 +150,7 @@ function BannerSwipper() {
                 xs: '40px',
                 md: '80px',
               }}
-              maxWidth={'525px'}
+              maxWidth={'625px'}
             >
               <Stack
                 flexDirection={'column'}
@@ -268,7 +268,8 @@ function BannerSwipper() {
                 {[
                   { value: '$20M+', label: 'Tổng vốn đang huy động' },
                   { value: '10M+', label: 'Tổng vốn đang đầu tư' },
-                  { value: '771+', label: 'Nhà đầu tư' },
+                  { value: '2M+', label: 'Thiết bị đang sử dụng' },
+                  { value: '770+', label: 'Nhà đầu tư' },
                 ].map((item, index) => (
                   <Box
                     key={index}
