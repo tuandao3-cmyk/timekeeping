@@ -255,10 +255,6 @@ function BannerSwipper() {
                 flexDirection="row"
                 flexWrap={'wrap'}
                 width={'100%'}
-                marginTop={{
-                  xs: 0,
-                  md: -4,
-                }}
                 gap={{
                   xs: '8px',
                   md: '16px',
@@ -273,87 +269,6 @@ function BannerSwipper() {
                   { value: '$20M+', label: 'Tổng vốn đang huy động' },
                   { value: '10M+', label: 'Tổng vốn đang đầu tư' },
                   { value: '771+', label: 'Nhà đầu tư' },
-                ].map((item, index) => (
-                  <Box
-                    key={index}
-                    maxHeight="137px"
-                    flexGrow={1}
-                    flexBasis="0"
-                    maxWidth={{
-                      xs: '87px',
-                      md: '163px',
-                    }}
-                    bgcolor="#FFFFFF14"
-                    borderRadius="10px"
-                    px={{
-                      xs: '12px',
-                      md: '18px',
-                    }}
-                    py={{
-                      xs: '12px',
-                      md: '19px',
-                    }}
-                    display="flex"
-                    flexDirection="column"
-                    gap="12px"
-                    sx={{
-                      transition: 'all 0.5s',
-                      opacity: inView ? 1 : 0,
-                      transitionDelay: `${index * 0.2}s`,
-                      transform: inView ? 'translateX(0)' : 'translateX(20px)',
-                    }}
-                  >
-                    <Typography
-                      fontFamily="Inter"
-                      color="#48B96D"
-                      fontSize={{
-                        xs: '16px',
-                        md: '24px',
-                      }}
-                      fontWeight={600}
-                      lineHeight={{
-                        xs: '24px',
-                        md: '32px',
-                      }}
-                    >
-                      {item.value}
-                    </Typography>
-                    <Typography
-                      fontFamily="Inter"
-                      color="#FFFFFFCC"
-                      fontWeight={400}
-                      fontSize={{
-                        xs: '12px',
-                        md: '14px',
-                      }}
-                    >
-                      {item.label}
-                    </Typography>
-                  </Box>
-                ))}
-              </Stack>
-              <Stack
-                flexDirection="row"
-                flexWrap={'wrap'}
-                width={'100%'}
-                marginTop={{
-                  xs: -4,
-                  md: -8,
-                }}
-                gap={{
-                  xs: '8px',
-                  md: '16px',
-                }}
-                px={{
-                  xs: '12px',
-                  md: '0',
-                }}
-                maxHeight="137px"
-              >
-                {[
-                  { value: '15+', label: 'Dự án đang triển khai' },
-                  { value: '100+', label: 'Công ty trong danh mục đầu tư' },
-                  { value: '20+', label: 'Đối tác chiến lược' },
                 ].map((item, index) => (
                   <Box
                     key={index}
@@ -622,13 +537,13 @@ function BannerSwipper() {
                         color="#31814B"
                         flexDirection={'row'}
                       >
+                        $1.500.000{' '}
                         <span
-                          className="font-sans text-[#434444] text-[14px] leading-[24px]"
+                          className="font-sans text-[#434444] text-[12px] leading-[24px]"
                           style={{ fontWeight: 500 }}
                         >
-                          Vốn huy động :
-                        </span>{' '}
-                        $1.500.000
+                          Vốn huy động
+                        </span>
                       </Typography>
                     </Stack>
                   </Stack>
@@ -661,13 +576,13 @@ function BannerSwipper() {
                         color="#31814B"
                         flexDirection={'row'}
                       >
+                        $1.500.000{' '}
                         <span
-                          className="font-sans text-[#434444] text-[14px] leading-[24px]"
+                          className="font-sans text-[#434444] text-[12px] leading-[24px]"
                           style={{ fontWeight: 500 }}
                         >
-                          Vốn huy động :
+                          Vốn huy động
                         </span>{' '}
-                        $1.500.000
                       </Typography>
                     </Stack>
                   </Stack>
@@ -700,13 +615,13 @@ function BannerSwipper() {
                         color="#31814B"
                         flexDirection={'row'}
                       >
+                        $1.500.000{' '}
                         <span
-                          className="font-sans text-[#434444] text-[14px] leading-[24px]"
+                          className="font-sans text-[#434444] text-[12px] leading-[24px]"
                           style={{ fontWeight: 500 }}
                         >
-                          Vốn huy động :
+                          Vốn huy động
                         </span>{' '}
-                        $1.500.000
                       </Typography>
                     </Stack>
                   </Stack>
