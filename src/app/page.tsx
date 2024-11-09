@@ -11,6 +11,7 @@ import FeedbackSection from './FeedbackSection';
 import News from './news';
 import { Page } from '@/type/page.type';
 import { getProjects } from '@/services/project.service';
+import { getNews } from '@/services/news.service';
 
 const Home: React.FC = async () => {
   const page = {
@@ -25,6 +26,10 @@ const Home: React.FC = async () => {
 
   const res = await getProjects(page);
   const resRasing = await getProjects(pageRasing);
+  const newsData = await getNews({
+    ...Page,
+    take: 4,
+  });
 
   return (
     <div className={styles.container}>
@@ -37,7 +42,13 @@ const Home: React.FC = async () => {
         dataRasing={resRasing}
         pageRasing={pageRasing}
       />
-      <News />
+      <News
+        newsData={newsData}
+        newsPage={{
+          ...Page,
+          take: 4,
+        }}
+      />
       <FeedbackSection />
       <Download />
       <PressSection />

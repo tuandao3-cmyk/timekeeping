@@ -16,6 +16,7 @@ const Header = () => {
 
   const handleScroll = () => {
     if (window.scrollY > 100 && window.scrollY > lastScrollY) {
+      setIsMenuOpen(false);
       setIsVisible(false);
     } else {
       setIsVisible(true);
@@ -48,7 +49,6 @@ const Header = () => {
   ];
   useEffect(() => {
     setIsMenuOpen(false);
-    console.log('pathname', pathname);
   }, [pathname]);
   const isActive = (item: any) => {
     if (

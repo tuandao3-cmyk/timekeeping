@@ -11,71 +11,38 @@ import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import styles from './news.module.css';
 
-const newsData = [
-  {
-    title:
-      'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
-    date: '30/08/2024',
-    image: '/img/20.png',
-    videoLink: '/news/newsdetail',
-    description:
-      'Hôm 30/8, Hyratek, công ty công nghệ tiên phong trong lĩnh vực cơ sở hạ tầng điện toán biên  cho trí tuệ nhân tạo (AI)...',
-  },
-  {
-    title:
-      'Egabid áp dụng công nghệ blockchain đảm bảo tính minh bạch và an toàn cho mỗi lượt đấu giá',
-    date: '10 tháng 10, 2024',
-    image: '/img/item1-1.png',
-    videoLink: '/news/newsdetail',
-    description:
-      'Egabid là sàn thương mại điện tử đấu giá ngược trong hệ sinh thái Hyperas, cung cấp một nền tảng đấu giá ngược độc đáo',
-  },
-  {
-    title:
-      'Giải pháp hạ tầng điện toán biên chi phí thấp giúp xử lý dữ liệu lớn',
-    date: '10 tháng 10, 2024',
-    image: '/img/item1-2.png',
-    videoLink: '/news/newsdetail',
-    description:
-      'Salala là một nền tảng kinh tế chia sẻ dựa trên điện toán biên, cho phép người dùng chia sẻ tài nguyên để cùng nhau ...',
-  },
-  {
-    title:
-      'Hyperas thúc đẩy một hệ sinh thái AI toàn diện với sự đổi mới, hợp tác và phát triển bền vững.',
-    date: '10 tháng 10, 2024',
-    image: '/img/item1-3.png',
-    videoLink: '/news/newsdetail',
-    description:
-      'Hyperas hướng tới việc trở thành một nền tảng hàng đầu trong việc cung cấp giải pháp cho các vấn đề về hạ tầng tính toán ...',
-  },
-];
+interface NewsProps {
+  newsData: any;
+  newsPage: typeof Page;
+}
 
-const News = () => {
+const News = (props: NewsProps) => {
+  const { newsData, newsPage } = props;
   const router = useRouter();
   const [page, setPage] = React.useState(1);
-  const [newsData1, setNewsData1] = React.useState<any>([]);
+  const [newsData1, setNewsData1] = React.useState<any>(newsData?.data || []);
   const itemsPerPage = 2;
-  const { data, isLoading, isSuccess } = useQuery({
-    queryKey: ['news'],
-    queryFn: () =>
-      getNews({
-        ...Page,
-        take: 4,
-      }),
-  });
+  // const { data, isLoading, isSuccess } = useQuery({
+  //   queryKey: ['news'],
+  //   queryFn: () =>
+  //     getNews({
+  //       ...Page,
+  //       take: 4,
+  //     }),
+  // });
 
-  React.useEffect(() => {
-    if (isSuccess) {
-      setNewsData1(data.data);
-    }
-  }, [data, isSuccess]);
+  // React.useEffect(() => {
+  //   if (isSuccess) {
+  //     setNewsData1(data.data);
+  //   }
+  // }, [data, isSuccess]);
   const { ref, inView, entry } = useInView({
     threshold: 0.1,
     triggerOnce: true,
   });
 
   const handleNextPage = () => {
-    if (page * itemsPerPage >= newsData.length) return;
+    if (page * itemsPerPage >= newsData1.length) return;
     setPage((prev) => prev + 1);
   };
 
@@ -104,7 +71,7 @@ const News = () => {
             </a>
           </div>
           <div className="flex flex-col md:flex-row md:gap-5 xl:gap-[126px] p-3 w-full h-full ">
-            {isLoading ? (
+            {newsData1?.length == 0 ? (
               <div> Loading...</div>
             ) : (
               <div
@@ -202,7 +169,7 @@ const News = () => {
             )}
             <div className={`${styles.sideNews}`}>
               <div className="hidden md:flex flex-col">
-                {isLoading ? (
+                {newsData1?.length == 0 ? (
                   <div> Loading..</div>
                 ) : (
                   newsData1.slice(1).map((news: any, index: number) => (

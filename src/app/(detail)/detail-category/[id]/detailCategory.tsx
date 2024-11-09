@@ -105,6 +105,7 @@ const DetailCategoryPage = (props: DetailCategoryPageProps) => {
           </Box>
         </Stack>
       </Box>
+
       <CustomTabPanel value={value} index={0}>
         <InfoSection dataP={data} />
       </CustomTabPanel>
