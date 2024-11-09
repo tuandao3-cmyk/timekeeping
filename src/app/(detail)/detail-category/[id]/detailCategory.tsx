@@ -105,11 +105,12 @@ const DetailCategoryPage = (props: DetailCategoryPageProps) => {
           </Box>
         </Stack>
       </Box>
+      <button onClick={() => console.log(data)}>click</button>
       <CustomTabPanel value={value} index={0}>
         <InfoSection dataP={data} />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        <PitchingDeckSection data={data} />
+        {data.pitching_deck ? <PitchingDeckSection data={data} /> : <div></div>}
         {/* <PitchingDeckSection /> */}
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
