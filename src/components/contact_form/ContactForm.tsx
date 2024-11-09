@@ -2,6 +2,7 @@
 import ModalEror from '@/app/ModalEror';
 import ModalSucses from '@/app/ModalSucses';
 import { postContact } from '@/services/contact.service';
+import Image from 'next/image';
 import { useState } from 'react';
 
 const ContactForm = () => {
@@ -143,7 +144,13 @@ const ContactForm = () => {
               className="flex items-center px-4 py-2 mt-3 bg-green-500 text-white rounded-full"
             >
               Gửi
-              <img src="/img/icon/send.svg" alt="send" className="pl-2" />
+              <Image
+                width={24}
+                height={24}
+                src="/img/icon/send.svg"
+                alt="send"
+                className="pl-2"
+              />
             </button>
           </div>
         </form>

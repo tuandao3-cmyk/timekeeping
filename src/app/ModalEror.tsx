@@ -54,64 +54,8 @@ function ModalEror(props: Prop) {
               Đã xảy ra lỗi. Vui lòng thử lại sau!
             </p>
           </div>
-          {/* <div
-            className={`bg-[#000000]/5 sm:bg-white  rounded-lg flex md:max-w-[100%] items-center justify-center duration-300 delay-700 ease-in-out transform`}
-          >
-            <div className="w-24 h-24 bg-[#000000]/5 mr-4 flex items-center justify-center">
-              <Image
-                src={'/img/qr.png'}
-                alt="App Screenshot"
-                width={708}
-                height={812}
-                className={` w-[80px] h-[80px] 
-                 `}
-              />
-            </div>
-            <div>
-              <p className="text-normal leading-6 text-[#000000]/60 mb-1 font-sans">
-                Scan to Download
-              </p>
-              <p className="font-semibold text-2xl leading-8 font-inter text-[#04141A] font-sans">
-                IOS & Android
-              </p>
-            </div>
-          </div> */}
-          <div className="w-full bg-white flex items-center justify-center  ">
-            {/* <div className="flex index-2 justify-center items-center  bg-[#07212C] w-[100%] sm:w-[400px] rounded-lg  p-5  ">
-              <div className="index-3 relative flex flex-row text-white  font-bold text-[11px] bg-[#48B96D] w-full h-full  rounded-lg ">
-                <div className=" flex  flex-col h-full text-[20px] md:text-2xl lg:text-3xl  justify-between gap-4 py-5 px-28 pl-5  ">
-                  <p className="max-w-[250px]  w-[200px] md:w-[auto] ">
-                    Trải nghiệm ngay nền tảng đầu tư HyraCap
-                  </p>
 
-                  <div className="flex text-xs font-medium flex-col max-w-[130px] md:max-w-[140px] pb-10 gap-2">
-                    <a
-                      href="https://play.google.com/store/apps/details?id=com.hyracap"
-                      className="flex items-center  gap-2 bg-white text-[#34A853] p-2 rounded-full hover:bg-gray-100 transition-colors"
-                    >
-                      <FaGooglePlay className="md:text-xl text-[14px]" />
-                      <span>GOOGLE PLAY</span>
-                    </a>
-
-                    <a
-                      href="https://apps.apple.com/app/hyracap"
-                      className="flex items-center gap-2 bg-white text-[#34A853] p-2 rounded-full hover:bg-gray-100 transition-colors "
-                    >
-                      <FaApple className="md:text-xl text-[14px]" />
-                      <span>APP STORE</span>
-                    </a>
-                  </div>
-                </div>
-                <div>
-                  <img
-                    src="/img/product/app_log.png"
-                    alt="screenshot"
-                    className="max-w-[216px] max-h-[198px] md:max-w-[216px] md:max-h-[228px] absolute -right-10 -bottom-4 "
-                  />
-                </div>
-              </div>
-            </div> */}
-          </div>
+          <div className="w-full bg-white flex items-center justify-center  "></div>
 
           <div className=" w-full  flex justify-end absolute top-2 left-0">
             <Button
