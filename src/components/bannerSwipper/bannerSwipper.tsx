@@ -149,7 +149,11 @@ function BannerSwipper() {
                 xs: '40px',
                 md: '80px',
               }}
-              maxWidth={'625px'}
+              maxWidth={{
+                xs: '100%',
+                md: '525px',
+                lg: '625px',
+              }}
             >
               <Stack
                 flexDirection={'column'}
@@ -408,7 +412,8 @@ function BannerSwipper() {
               pl={'90px'}
               display={{
                 xs: 'none',
-                md: 'block',
+                md: 'none',
+                lg: 'block',
               }}
             >
               <Stack position={'relative'}>
