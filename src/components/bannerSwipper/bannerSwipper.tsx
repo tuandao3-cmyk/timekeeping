@@ -255,6 +255,10 @@ function BannerSwipper() {
                 flexDirection="row"
                 flexWrap={'wrap'}
                 width={'100%'}
+                marginTop={{
+                  xs: 0,
+                  md: -4,
+                }}
                 gap={{
                   xs: '8px',
                   md: '16px',
@@ -328,8 +332,89 @@ function BannerSwipper() {
                   </Box>
                 ))}
               </Stack>
+              <Stack
+                flexDirection="row"
+                flexWrap={'wrap'}
+                width={'100%'}
+                marginTop={{
+                  xs: -4,
+                  md: -8,
+                }}
+                gap={{
+                  xs: '8px',
+                  md: '16px',
+                }}
+                px={{
+                  xs: '12px',
+                  md: '0',
+                }}
+                maxHeight="137px"
+              >
+                {[
+                  { value: '15+', label: 'Dự án đang triển khai' },
+                  { value: '100+', label: 'Công ty trong danh mục đầu tư' },
+                  { value: '20+', label: 'Đối tác chiến lược' },
+                ].map((item, index) => (
+                  <Box
+                    key={index}
+                    maxHeight="137px"
+                    flexGrow={1}
+                    flexBasis="0"
+                    maxWidth={{
+                      xs: '87px',
+                      md: '163px',
+                    }}
+                    bgcolor="#FFFFFF14"
+                    borderRadius="10px"
+                    px={{
+                      xs: '12px',
+                      md: '18px',
+                    }}
+                    py={{
+                      xs: '12px',
+                      md: '19px',
+                    }}
+                    display="flex"
+                    flexDirection="column"
+                    gap="12px"
+                    sx={{
+                      transition: 'all 0.5s',
+                      opacity: inView ? 1 : 0,
+                      transitionDelay: `${index * 0.2}s`,
+                      transform: inView ? 'translateX(0)' : 'translateX(20px)',
+                    }}
+                  >
+                    <Typography
+                      fontFamily="Inter"
+                      color="#48B96D"
+                      fontSize={{
+                        xs: '16px',
+                        md: '24px',
+                      }}
+                      fontWeight={600}
+                      lineHeight={{
+                        xs: '24px',
+                        md: '32px',
+                      }}
+                    >
+                      {item.value}
+                    </Typography>
+                    <Typography
+                      fontFamily="Inter"
+                      color="#FFFFFFCC"
+                      fontWeight={400}
+                      fontSize={{
+                        xs: '12px',
+                        md: '14px',
+                      }}
+                    >
+                      {item.label}
+                    </Typography>
+                  </Box>
+                ))}
+              </Stack>
             </Stack>
-            <div className="w-full flex lg:hidden relative justify-center items-center">
+            <div className="w-full flex lg:hidden relative justify-center items-center ">
               <div className="block lg:hidden w-[351px] h-[289px] overflow-hidden rounded-[16px] ">
                 <Image
                   src={'/img/invest.png'}
@@ -467,7 +552,15 @@ function BannerSwipper() {
                       fontSize={'14px'}
                       lineHeight={'24px'}
                       color="#31814B"
+                      flexDirection={'row'}
+                      alignItems={'center'}
                     >
+                      <p
+                        className="font-sans text-[#434444] text-[14px] leading-[24px] "
+                        style={{ fontWeight: 500 }}
+                      >
+                        Vốn huy động
+                      </p>
                       $1.500.000
                     </Typography>
                     <Typography
@@ -527,7 +620,14 @@ function BannerSwipper() {
                         fontSize={'14px'}
                         lineHeight={'24px'}
                         color="#31814B"
+                        flexDirection={'row'}
                       >
+                        <span
+                          className="font-sans text-[#434444] text-[14px] leading-[24px]"
+                          style={{ fontWeight: 500 }}
+                        >
+                          Vốn huy động :
+                        </span>{' '}
                         $1.500.000
                       </Typography>
                     </Stack>
@@ -559,7 +659,14 @@ function BannerSwipper() {
                         fontSize={'14px'}
                         lineHeight={'24px'}
                         color="#31814B"
+                        flexDirection={'row'}
                       >
+                        <span
+                          className="font-sans text-[#434444] text-[14px] leading-[24px]"
+                          style={{ fontWeight: 500 }}
+                        >
+                          Vốn huy động :
+                        </span>{' '}
                         $1.500.000
                       </Typography>
                     </Stack>
@@ -591,7 +698,14 @@ function BannerSwipper() {
                         fontSize={'14px'}
                         lineHeight={'24px'}
                         color="#31814B"
+                        flexDirection={'row'}
                       >
+                        <span
+                          className="font-sans text-[#434444] text-[14px] leading-[24px]"
+                          style={{ fontWeight: 500 }}
+                        >
+                          Vốn huy động :
+                        </span>{' '}
                         $1.500.000
                       </Typography>
                     </Stack>

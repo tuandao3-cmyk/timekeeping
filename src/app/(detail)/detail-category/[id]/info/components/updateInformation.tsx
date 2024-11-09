@@ -1,3 +1,4 @@
+import ModalEror from '@/app/ModalEror';
 import ModalSucses from '@/app/ModalSucses';
 import { Box, Button, Input, Stack, Typography } from '@mui/material';
 import Image from 'next/image';
@@ -9,6 +10,7 @@ function UpdateInfo() {
     email: '',
   });
   const [modal, setModal] = useState(false);
+  const [modal2, setModal2] = useState(false);
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -37,6 +39,7 @@ function UpdateInfo() {
         email: '',
       });
     } else {
+      setModal2(true);
       alert('Lỗi gửi,vui lòng thử lại sau');
     }
   };
@@ -57,6 +60,7 @@ function UpdateInfo() {
       }}
     >
       <ModalSucses modal={modal} setModal={setModal} />
+      <ModalEror modal={modal2} setModal={setModal2} />
       <Box
         sx={{
           backgroundImage: 'url(/img/product_category/updateInfoBg.png)',
