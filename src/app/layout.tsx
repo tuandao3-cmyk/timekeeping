@@ -3,7 +3,6 @@ import localFont from 'next/font/local';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import './globals.css';
-import './Partner.module.css';
 import ThemeRegistry from './theme-registry';
 import '@fontsource/inter';
 import { HydrationBoundary } from '@tanstack/react-query';
@@ -36,9 +35,24 @@ export default function RootLayout({
       <head>
         <meta
           name="viewport"
-          content="width=device-width, initial-scale=1.0"
+          content="width=device-width, initial-scale=1.0, user-scalable=no"
         ></meta>
+
         <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="preload"
+          href="/fonts/GeistVF.woff"
+          as="font"
+          type="font/woff"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/GeistMonoVF.woff"
+          as="font"
+          type="font/woff"
+          crossOrigin="anonymous"
+        />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <ThemeRegistry>

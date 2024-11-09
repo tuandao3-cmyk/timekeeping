@@ -14,6 +14,7 @@ import { useQuery } from '@tanstack/react-query';
 import { getNewsDetail, getNews } from '@/services/news.service';
 import { useEffect, useState } from 'react';
 import { Page } from '@/type/page.type';
+import { formatDateTimeVn } from '@/util/util';
 
 const NewsDetail: React.FC = ({ params, searchParams }: any) => {
   const [dataNews, setDataNews] = useState<any>({});
@@ -30,7 +31,11 @@ const NewsDetail: React.FC = ({ params, searchParams }: any) => {
     isSuccess: isSuccess1,
   } = useQuery({
     queryKey: ['news'],
-    queryFn: () => getNews(Page),
+    queryFn: () =>
+      getNews({
+        ...Page,
+        take: 3,
+      }),
   });
 
   useEffect(() => {
@@ -110,7 +115,7 @@ const NewsDetail: React.FC = ({ params, searchParams }: any) => {
           </div>
 
           <div className="relative flex flex-row gap-4 py-4 items-center">
-            <img
+            <Image
               src="/img/logohyracap.png"
               alt="logo"
               className="flex-start"
@@ -283,12 +288,17 @@ const NewsDetail: React.FC = ({ params, searchParams }: any) => {
             {dataList.map((news: any, index: number) => (
               <>
                 <div
+                  onClick={() => {
+                    window.location.href = `/news/${news.id}`;
+                  }}
                   key={index}
-                  className={`rounded-lg p-2 overflow-hidden shadow-sm hover:scale-105 transition ease-in-out duration-100 hover:shadow-lg ${'bg-[#F3F7F4] md:max-h-[517px]'}`}
+                  className={`rounded-lg p-2 cursor-pointer overflow-hidden shadow-sm hover:scale-105 transition ease-in-out duration-100 hover:shadow-lg ${'bg-[#F3F7F4] md:max-h-[517px]'}`}
                 >
-                  <img
+                  <Image
+                    width={384}
+                    height={234}
                     src={
-                      news?.link_img ||
+                      news?.link_img[0] ||
                       'https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg'
                     }
                     alt=""
@@ -313,11 +323,12 @@ const NewsDetail: React.FC = ({ params, searchParams }: any) => {
                       <p
                         className={`flex flex-row items-center gap-2 ${'text-gray-600'}`}
                       >
-                        <Calendar size={16} /> {news.date}
+                        <Calendar size={16} />{' '}
+                        {formatDateTimeVn(news.updated_at)}
                       </p>
                       <a
                         href={`${news.id}` || '#'}
-                        className={`md:px-6 md:py-3 px-3 py-2 ${'text-[#000000]/90 border-[#000000]/90 mx-4'} font-medium border-[1px] mb-2 rounded-full`}
+                        className={`md:px-6 md:py-3  px-3 py-2 ${'text-[#000000]/90 border-[#000000]/90 mx-4'} font-medium border-[1px] mb-2 rounded-full`}
                       >
                         Đọc thêm
                       </a>

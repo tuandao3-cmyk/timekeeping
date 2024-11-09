@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -8,6 +9,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+
   const pathname = usePathname();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -36,13 +38,32 @@ const Header = () => {
     },
     { href: '/products', text: 'Sản phẩm' },
     { href: '/guides', text: 'Hướng dẫn' },
-    { href: '/news', text: 'Tin tức' },
+    {
+      href: '/news',
+      text: 'Tin tức',
+      activeLinks: ['/news'],
+    },
     { href: '/reports', text: 'Báo cáo' },
     { href: '/contact', text: 'Liên hệ' },
   ];
   useEffect(() => {
     setIsMenuOpen(false);
+    console.log('pathname', pathname);
   }, [pathname]);
+  const isActive = (item: any) => {
+    if (
+      item.activeLinks &&
+      item.activeLinks.some((link: any) => new RegExp(link).test(pathname))
+    ) {
+      return true;
+    }
+    const regex = /^\/news\/[^/]+/;
+    if (regex.test(pathname) && item.href === '/news') {
+      return true;
+    }
+
+    return false;
+  };
   return (
     <header
       className={`fixed w-full z-50 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
@@ -50,7 +71,9 @@ const Header = () => {
       <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 border-b-2 shadow-md">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-[1440px]">
           <Link href="/" className="flex items-center">
-            <img
+            <Image
+              width={118}
+              height={40}
               src="/img/logohyracap.png"
               className="mr-3 h-6 sm:h-9"
               alt="HyraCap Logo"
@@ -107,7 +130,7 @@ const Header = () => {
                     onClick={toggleMenu}
                     className={`block py-2 pr-4 pl-3 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:p-0 transition duration-300 ${
                       pathname === item.href ||
-                      (item.activeLinks && item.activeLinks.includes(pathname))
+                      (item.activeLinks && isActive(item))
                         ? 'text-[#48B96D] lg:text-[#48B96D]'
                         : 'text-[#000000]/90 lg:hover:text-[#48B96D]'
                     }`}

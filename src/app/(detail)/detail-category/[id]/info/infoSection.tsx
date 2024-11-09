@@ -18,6 +18,7 @@ import NearlyActions from './components/nearlyActions';
 import QandA from './components/Q&A';
 import Terminology from './components/terminology';
 import UpdateInfo from './components/updateInformation';
+import ProjectItem from '@/components/projectItem/projectItem';
 
 interface InfoSectionProps {
   dataP?: any;
@@ -166,88 +167,6 @@ const InfoSection = (props: InfoSectionProps) => {
     },
   ];
 
-  // const products = [
-  //   {
-  //     title: 'Có thể bạn quan tâm',
-  //     type: 'flexible',
-  //     package: [
-  //       {
-  //         id: 8,
-  //         created_at: '2024-11-07T09:41:35.058Z',
-  //         updated_at: '2024-11-07T09:41:35.058Z',
-  //         name: 'Project Alpha',
-  //         images: ['image1.jpg', 'image2.jpg'],
-  //         status: 1,
-  //         capital_raising_target: 5000000,
-  //         mobilized_fund: 2500000,
-  //         industry_ids: [1, 2],
-  //         industries: [
-  //           {
-  //             id: 2,
-  //             name: 'Giáo dục',
-  //           },
-  //         ],
-  //       },
-  //       {
-  //         id: 7,
-  //         created_at: '2024-11-07T08:59:06.655Z',
-  //         updated_at: '2024-11-07T08:59:06.655Z',
-  //         name: 'TechFusion',
-  //         images: [
-  //           'https://hyracap.s3.amazonaws.com/project/image-20241002163543-1_1730969918767.jpeg',
-  //           'https://hyracap.s3.amazonaws.com/project/image-20241022103131-1_1730969918767.jpeg',
-  //         ],
-  //         status: 1,
-  //         capital_raising_target: 3000000,
-  //         mobilized_fund: 1500000,
-  //         industry_ids: [4],
-  //         industries: [
-  //           {
-  //             id: 4,
-  //             name: 'Blockchain',
-  //           },
-  //         ],
-  //       },
-  //       {
-  //         id: 6,
-  //         created_at: '2024-11-07T08:56:51.226Z',
-  //         updated_at: '2024-11-07T08:56:51.226Z',
-  //         name: 'EdgeVision',
-  //         images: [
-  //           'https://hyracap.s3.amazonaws.com/project/image-20240926133158-1_1730969336289.jpeg',
-  //           'https://hyracap.s3.amazonaws.com/project/image-20240930150658-1_1730969369152.jpeg',
-  //         ],
-  //         status: 1,
-  //         capital_raising_target: 2500000,
-  //         mobilized_fund: 2500000,
-  //         industry_ids: [2],
-  //         industries: [
-  //           {
-  //             id: 2,
-  //             name: 'Giáo dục',
-  //           },
-  //         ],
-  //       },
-  //       {
-  //         id: 5,
-  //         created_at: '2024-11-06T08:40:40.181Z',
-  //         updated_at: '2024-11-06T08:40:40.181Z',
-  //         name: 'Project Alpha',
-  //         images: [],
-  //         status: 1,
-  //         capital_raising_target: 5000000,
-  //         mobilized_fund: 2500000,
-  //         industry_ids: [1, 2],
-  //         industries: [
-  //           {
-  //             id: 2,
-  //             name: 'Giáo dục',
-  //           },
-  //         ],
-  //       },
-  //     ],
-  //   },
-  // ];
   return (
     <Stack
       flexDirection={'column'}
@@ -266,7 +185,8 @@ const InfoSection = (props: InfoSectionProps) => {
           px: {
             xs: '12px',
             sm: '16px',
-            md: '120px',
+            md: '60px',
+            lg: '120px',
           },
         }}
       >
@@ -295,14 +215,20 @@ const InfoSection = (props: InfoSectionProps) => {
                   style={{
                     borderRadius: '16px',
                     maxWidth: '792px',
+                    maxHeight: '400px',
                   }}
                 />
                 <Stack
                   flexDirection={{
                     xs: 'column',
-                    md: 'row',
+                    md: 'column',
+                    lg: 'row',
                   }}
                   gap={'16px'}
+                  display={{
+                    xs: 'none',
+                    md: 'flex',
+                  }}
                 >
                   {items.map((item, index) => (
                     <Stack
@@ -323,6 +249,7 @@ const InfoSection = (props: InfoSectionProps) => {
                         fontSize={'12px'}
                         lineHeight={'18px'}
                         color="#000000A3"
+                        noWrap={index === 1 ? true : false}
                       >
                         {index === 2 ? (
                           <Link href={item.text}>{item.text}</Link>
@@ -350,23 +277,25 @@ const InfoSection = (props: InfoSectionProps) => {
             gap={'24px'}
           >
             <Stack flexDirection={'column'} gap={'12px'}>
-              {dataP?.industries?.map((item: any, index: number) => (
-                <Typography
-                  key={index}
-                  bgcolor={'#48B96D1F'}
-                  color={'#31814B'}
-                  px={'16px'}
-                  fontWeight={700}
-                  fontSize={'12px'}
-                  lineHeight={'16px'}
-                  fontFamily={'Inter'}
-                  py={'8px'}
-                  borderRadius={'4px'}
-                  width={'fit-content'}
-                >
-                  {item?.name || ''}
-                </Typography>
-              ))}
+              <Stack flexDirection={'row'} gap={'4px'}>
+                {dataP?.industries?.map((item: any, index: number) => (
+                  <Typography
+                    key={index}
+                    bgcolor={'#48B96D1F'}
+                    color={'#31814B'}
+                    px={'16px'}
+                    fontWeight={700}
+                    fontSize={'12px'}
+                    lineHeight={'16px'}
+                    fontFamily={'Inter'}
+                    py={'8px'}
+                    borderRadius={'4px'}
+                    width={'fit-content'}
+                  >
+                    {item?.name || ''}
+                  </Typography>
+                ))}
+              </Stack>
               <Typography
                 fontWeight={700}
                 fontSize={'32px'}
@@ -392,6 +321,48 @@ const InfoSection = (props: InfoSectionProps) => {
                 maxWidth: '792px',
               }}
             />
+            <Stack
+              flexDirection={{
+                xs: 'column',
+                md: 'column',
+                lg: 'row',
+              }}
+              gap={'16px'}
+              display={{
+                xs: 'flex',
+                md: 'none',
+              }}
+            >
+              {items.map((item, index) => (
+                <Stack
+                  key={index}
+                  flexDirection={'row'}
+                  gap={'8px'}
+                  justifyItems={'center'}
+                  alignItems={'center'}
+                  bgcolor={'#0000000F'}
+                  borderRadius={'8px'}
+                  px={'8px'}
+                  py={'8px'}
+                >
+                  {item.icon}
+                  <Typography
+                    fontFamily={'Inter'}
+                    fontWeight={400}
+                    fontSize={'12px'}
+                    lineHeight={'18px'}
+                    color="#000000A3"
+                    noWrap={index === 1 ? true : false}
+                  >
+                    {index === 2 ? (
+                      <Link href={item.text}>{item.text}</Link>
+                    ) : (
+                      item.text
+                    )}
+                  </Typography>
+                </Stack>
+              ))}
+            </Stack>
             <Typography
               fontFamily={'Inter'}
               fontWeight={400}
@@ -399,9 +370,6 @@ const InfoSection = (props: InfoSectionProps) => {
               lineHeight={'24px'}
               color="#000000A3"
             >
-              {/* Salala là một nền tảng điện toán biên cho phép người dùng tận dụng
-              phần cứng của các thiết bị biên (edge devices) để huấn luyện mô
-              hình trí tuệ nhân tạo (AI). */}
               {dataP?.data?.project_information?.description || ''}
             </Typography>
 
@@ -428,8 +396,12 @@ const InfoSection = (props: InfoSectionProps) => {
                       fontSize={'16px'}
                       lineHeight={'24px'}
                       color="#31814B"
+                      textOverflow={'ellipsis'}
+                      overflow={'hidden'}
                     >
-                      {dataP?.data?.project_information[item.title] || ''}
+                      {dataP?.data?.project_information[
+                        item.title
+                      ].toLocaleString() || '0'}
                     </Typography>
                     <Typography
                       fontFamily={'Inter'}
@@ -445,7 +417,14 @@ const InfoSection = (props: InfoSectionProps) => {
               ))}
             </Grid>
             <ListField list={field} />
-            <NearlyActions actions={actions} />
+            <Box
+              display={{
+                xs: 'none',
+                md: 'block',
+              }}
+            >
+              <NearlyActions actions={actions} />
+            </Box>
           </Stack>
         </Stack>
       </Box>
@@ -460,9 +439,6 @@ const InfoSection = (props: InfoSectionProps) => {
         <section className="w-full h-auto  bg-white py-[62px] flex flex-col justify-center items-center px-[12px] md:px-[120px] max-w-[1440px]">
           {products.map((product: (typeof products)[0], index) => (
             <div
-              onClick={() =>
-                router.push(`/detail-category/${product.package[index].title}`)
-              }
               className="w-full h-auto bg-white px-1 flex flex-col justify-center items-left"
               key={index}
             >
@@ -496,7 +472,7 @@ const InfoSection = (props: InfoSectionProps) => {
                     textTransform: 'none',
                     display: {
                       xs: 'none',
-                      md: 'block',
+                      sm: 'block',
                     },
                   }}
                   onClick={() => (window.location.href = `/categories`)}
@@ -506,29 +482,14 @@ const InfoSection = (props: InfoSectionProps) => {
               </Stack>
               <div className="flex md:flex-row flex-col gap-[24px] items-center  w-full  justify-center py-5  scrollbar-none ">
                 {product?.package?.map((packageItem: any, index: number) => (
-                  <ProductItem
-                    key={index}
-                    descriptions={packageItem.descriptions}
-                    image={
-                      <img
-                        src={packageItem.images[0] || '/img/egabid_pc.png'}
-                        alt="Hyperas Chain"
-                        className=" md:h-[250px] md:w-[384px] rounded-[12px] object-cover"
-                      />
-                    }
-                    interest_rate={packageItem.interest_rate}
-                    term={packageItem.term}
-                    title={packageItem.name}
-                    type={product.type}
-                    startDate={packageItem.start_date}
-                    profit={packageItem.capital_raising_target}
-                    sponsorship={
-                      packageItem.mobilized_fund /
-                      packageItem.capital_raising_target
-                    }
-                    invested={packageItem.mobilized_fund}
-                    field={packageItem.industries}
+                  <ProjectItem
+                    capital_raising_target={packageItem.capital_raising_target}
                     id={packageItem.id}
+                    images={packageItem.images}
+                    mobilized_fund={packageItem.mobilized_fund}
+                    industries={packageItem.industries}
+                    key={index}
+                    name={packageItem.name}
                   />
                 ))}
 
@@ -542,10 +503,10 @@ const InfoSection = (props: InfoSectionProps) => {
                     textTransform: 'none',
                     display: {
                       xs: 'block',
-                      md: 'none',
+                      sm: 'none',
                     },
                   }}
-                  onClick={() => router.push('/categories')}
+                  onClick={() => (window.location.href = `/categories`)}
                 >
                   Xem thêm
                 </Button>

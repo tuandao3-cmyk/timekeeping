@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '@/app/productdetail/productdetail.module.css';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const ProductDetail: React.FC = () => {
   return (
@@ -40,7 +41,13 @@ const ProductDetail: React.FC = () => {
       </header>
       <div className={styles.container}>
         <div className={styles.header}>
-          <img src="path/to/logo.png" alt="Logo" className={styles.logo} />
+          <Image
+            width={150}
+            height={30}
+            src="path/to/logo.png"
+            alt="Logo"
+            className={styles.logo}
+          />
           <h1 className={styles.title}>Dự án Salala AI</h1>
         </div>
         <div className={styles.info}>

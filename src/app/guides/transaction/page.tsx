@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 
 const TransactionSection: React.FC = () => {
   const pathname = usePathname();
@@ -9,7 +10,7 @@ const TransactionSection: React.FC = () => {
     <>
 
 
-        <main className=" pt-[50px] px-8 pb-[30px]  lg:px-[70px] text-black text-left font-sans ">
+        <main className=" lg:pt-[50px] pt-0 px-8 pb-[30px]  lg:px-[70px] text-black text-left font-sans ">
             <p className=" text-3xl font-bold text-[#000000]  text-left">Video hướng dẫn</p>
           
             <div className="flex justify-center  my-[50px]  ">
@@ -43,11 +44,13 @@ const TransactionSection: React.FC = () => {
           </ul>
 
          
-          <div className="flex justify-center my-5 flex-wrap gap-10 mb-3.5 pl-5">
-            <img 
+          <div className="flex justify-center my-5 flex-wrap gap-10 mb-3.5 lg:pl-5">
+            <Image
+              width={284}
+              height={583} 
               src="/img/trans1.png" 
               alt="Màn hình đăng nhập HyraCap"
-              className="w-[30%] max-w-[300px] "
+              className="lg:w-[30%] w-[100%] max-w-[300px] "
             />
           </div>
           <ul className=" text-xl 3xl:text-2xl leading-7 text-[#000000] pl-4 ">
@@ -59,13 +62,13 @@ const TransactionSection: React.FC = () => {
             </li>
           </ul>
           {/* Phần hình ảnh cuối */}
-          <div className="flex justify-center items-center mt-5 flex-wrap gap-5 pl-[3vw]">
-            <img
+          <div className="flex justify-center items-center mt-5 flex-wrap gap-5 lg:pl-[3vw]">
+            <Image
               src="/img/trans2.png"
               alt="Màn hình nhập OTP"
               width={300}
               height={600}
-              className="w-[30%] max-w-[300px] mb-3.5"
+              className="lg:w-[30%] w-[100%] max-w-[300px] mb-3.5"
             />
 
           </div>

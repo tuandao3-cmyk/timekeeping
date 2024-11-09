@@ -14,173 +14,108 @@ import {
 } from '@mui/material';
 import { useInView } from 'react-intersection-observer';
 import router from 'next/router';
-import { useQuery } from '@tanstack/react-query';
+import { keepPreviousData, useQuery } from '@tanstack/react-query';
 import { Page } from '@/type/page.type';
 import { getProjects } from '@/services/project.service';
+import ProjectItem from '@/components/projectItem/projectItem';
 
-const PROJECTS = [
-  {
-    id: 1,
-    img: '/img/egabid_pc.png',
-    name: 'EGABID',
-    amount: '$2.000.000',
-    funded: '$1.500.00',
-    progress: 75,
-    category: 'CÔNG NGHỆ',
-    tag: ['seed'],
-  },
-  {
-    id: 2,
-    img: '/img/Salala.png',
-    name: 'SALALA AI',
-    amount: '$2.000.000',
-    funded: '$1.500.00',
-    progress: 75,
-    category: 'CÔNG NGHỆ',
-    tag: ['seed', 'seriesA', 'seriesB'],
-  },
-  {
-    id: 3,
-    img: '/img/hyperas_chain.png',
-    name: 'Hyperas Chain',
-    amount: '$2.000.000',
-    funded: '$1.500.00',
-    progress: 75,
-    category: 'CÔNG NGHỆ',
-    tag: ['seed', 'seriesA', 'seriesB'],
-  },
-  {
-    id: 4,
-    img: '/img/egabid_pc.png',
-    name: 'EGABID',
-    amount: '$2.000.000',
-    funded: '$1.500.00',
-    progress: 75,
-    category: 'CÔNG NGHỆ',
-    tag: ['seed', 'seriesA', 'seriesB'],
-  },
-  {
-    id: 5,
-    img: '/img/Salala.png',
-    name: 'SALALA AI',
-    amount: '$2.000.000',
-    funded: '$1.500.00',
-    progress: 75,
-    category: 'CÔNG NGHỆ',
-    tag: ['seed', 'seriesA', 'seriesB'],
-  },
-  {
-    id: 6,
-    img: '/img/hyperas_chain.png',
-    name: 'Hyperas Chain',
-    amount: '$2.000.000',
-    funded: '$1.500.00',
-    progress: 75,
-    category: 'CÔNG NGHỆ',
-    tag: ['seed', 'seriesA', 'seriesB'],
-  },
-];
-const PROJECTS2 = [
-  {
-    id: 1,
-    img: '/img/19.jpg',
-    name: 'EGABID',
-    amount: '$2.000.000',
-    funded: '$2.000.000',
-    progress: 100,
-    category: 'CÔNG NGHỆ',
-    tag: ['seed', 'seriesA', 'seriesB'],
-  },
-  {
-    id: 2,
-    img: '/img/18.jpg',
-    name: 'SALALA AI',
-    amount: '$2.000.000',
-    funded: '$2.000.000',
-    progress: 100,
-    category: 'CÔNG NGHỆ',
-    tag: ['seed', 'seriesA', 'seriesB'],
-  },
-  {
-    id: 3,
-    img: '/img/16.jpg',
-    name: 'Hyperas Chain',
-    amount: '$2.000.000',
-    funded: '$2.000.000',
-    progress: 100,
-    category: 'CÔNG NGHỆ',
-    tag: ['seed', 'seriesA', 'seriesB'],
-  },
-  {
-    id: 4,
-    img: '/img/19.jpg',
-    name: 'EGABID',
-    amount: '$2.000.000',
-    funded: '$2.000.000',
-    progress: 100,
-    category: 'CÔNG NGHỆ',
-    tag: ['seriesA'],
-  },
-  {
-    id: 5,
-    img: '/img/18.jpg',
-    name: 'SALALA AI',
-    amount: '$2.000.000',
-    funded: '$2.000.000',
-    progress: 100,
-    category: 'CÔNG NGHỆ',
-    tag: ['seed'],
-  },
-  {
-    id: 6,
-    img: '/img/16.jpg',
-    name: 'Hyperas Chain',
-    amount: '$2.000.000',
-    funded: '$2.000.000',
-    progress: 100,
-    category: 'CÔNG NGHỆ',
-    tag: ['seriesB'],
-  },
-];
 const CategoryPage: React.FC = () => {
-  const [projects, setProjects] = useState([]);
-  const [projects2, setProjects2] = useState([]);
-  const [screenWidth, setScreenWidth] = useState(0);
-  const [page, setPage] = useState<typeof Page>(Page);
+  const [projects1, setProjects1] = useState<any>(null);
+  const [projects2, setProjects2] = useState<any>(null);
+  const [projects3, setProjects3] = useState<any>(null);
+  const [page, setPage] = useState<typeof Page>({
+    ...Page,
+    status__eq: 0,
+  });
+  const [page2, setPage2] = useState<typeof Page>({
+    ...Page,
+    status__eq: 1,
+  });
+  const [page3, setPage3] = useState<typeof Page>({
+    ...Page,
+    status__eq: 2,
+  });
+
   const [searchValue, setSearchValue] = useState('');
   const [selectedValue, setSelectedValue] = useState('all');
 
   const { data, isLoading, isError, isSuccess, refetch } = useQuery({
     queryKey: ['projects', page],
-    queryFn: () => getProjects(page),
+    queryFn: async () => {
+      const res = await getProjects(page);
+      if (!!projects1 && projects1.data.length > 0 && page.page > 1) {
+        setProjects1({
+          ...res,
+          data: [...projects1.data, ...res.data],
+        });
+      } else {
+        setProjects1(res);
+      }
+      return res;
+    },
   });
 
-  useEffect(() => {
-    if (isSuccess) {
-      setProjects(data.data);
-      setProjects2(data.data);
-    }
-  }, [data]);
+  const {
+    data: data2,
+    isLoading: isLoading2,
+    isError: isError2,
+    isSuccess: isSuccess2,
+  } = useQuery({
+    queryKey: ['projects', page2],
+    queryFn: async () => {
+      const res = await getProjects(page2);
+      if (!!projects2 && projects2.data.length > 0 && page2.page > 1) {
+        setProjects2({
+          ...res,
+          data: [...projects2.data, ...res.data],
+        });
+      } else {
+        setProjects2(res);
+      }
+      return res;
+    },
+  });
 
-  const handleSearch = () => {
-    setPage({ ...page, name__ilike: searchValue });
-    refetch();
+  const {
+    data: data3,
+    isLoading: isLoading3,
+    isError: isError3,
+    isSuccess: isSuccess3,
+  } = useQuery({
+    queryKey: ['projects', page3],
+    queryFn: async () => {
+      const res = await getProjects(page3);
+      if (!!projects3 && projects3.data.length > 0 && page3.page > 1) {
+        setProjects3({
+          ...res,
+          data: [...projects3.data, ...res.data],
+        });
+      } else {
+        setProjects3(res);
+      }
+      return res;
+    },
+  });
+
+  const handleSetPage = (
+    newPageData: Partial<typeof Page>,
+    type: 0 | 1 | 2
+  ) => {
+    if (type === 0) {
+      setPage({ ...page, ...newPageData });
+    } else if (type === 1) {
+      setPage2({ ...page2, ...newPageData });
+    } else {
+      setPage3({ ...page3, ...newPageData });
+    }
   };
 
-  // useEffect(() => {
-  //   setPage({ ...page, name__ilike: searchValue });
-  // }, [searchValue]);
-
-  useEffect(() => {
-    setScreenWidth(window.innerWidth);
-
-    const handleResize = () => {
-      setScreenWidth(window.innerWidth);
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  const handleSearch = () => {
+    setPage({ ...page, name__ilike: searchValue, page: 1 });
+    setPage2({ ...page2, name__ilike: searchValue, page: 1 });
+    setPage3({ ...page3, name__ilike: searchValue, page: 1 });
+    refetch();
+  };
 
   const handleChange = (event: any) => {
     setSelectedValue(event.target.value);
@@ -264,7 +199,7 @@ const CategoryPage: React.FC = () => {
         </div>
       </div>
 
-      <div className="flex flex-col justify-center items-center w-full">
+      <div className="flex flex-col justify-center items-center w-full pb-10">
         <div className="max-w-[1200px] w-full">
           <div className="flex items-center px-4 flex-wrap justify-center gap-4  pt-[51px]">
             <input
@@ -383,7 +318,7 @@ const CategoryPage: React.FC = () => {
           </h2>
           <div ref={ref4} className="flex px-4 w-full  flex-col lg:flex-row ">
             <div className="w-full bg-white" ref={ref1}>
-              {projects.length === 0 && (
+              {!projects1 && projects1?.data?.length == 0 && (
                 <div className="flex justify-center items-center w-full h-[300px]">
                   <p className="text-lg font-sans text-gray-500">
                     Không có dự án nào
@@ -402,91 +337,27 @@ const CategoryPage: React.FC = () => {
                   gap: 2,
                 }}
               >
-                {projects.map((project: any, index: number) => (
-                  <Link href={`/detail-category/${project.id}`} key={index}>
-                    <Box
-                      className={`${inView4 ? 'animate-fadeIn scale-100' : 'translate-y-20 opacity-0 scale-0'} py-4 transition
-               duration-300 ease-in-out delay-${index === 4 ? 300 : index * 100}
-                 hover:scale-105 hover:transition-all hover:duration-300 hover:ease-in-out
-               `}
-                    >
-                      <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-                        <img
-                          src={
-                            project.images[0] ||
-                            'https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg'
-                          }
-                          alt={project.name}
-                          className="w-full h-[250px] object-cover"
-                        />
-                        <div className="p-4">
-                          {/* <span className="text-sm bg-blue-500 text-white py-1 px-3 rounded-full">
-                            Series A
-                          </span> */}
-                          <h3 className="text-lg font-bold mt-2 font-sans uppercase">
-                            {project.name}
-                          </h3>
-                          <div className="mt-4">
-                            <div className="text-sm font-normal font-sans uppercase">
-                              Mục tiêu huy động
-                            </div>
-                            <div className="text-xl font-sans font-semibold">
-                              {new Intl.NumberFormat('en-US', {
-                                style: 'currency',
-                                currency: 'USD',
-                              }).format(project?.capital_raising_target)}
-                            </div>
-                            <div className="h-2 bg-gray-300 rounded mt-2">
-                              <div
-                                className="bg-green-500 h-full rounded max-w-full"
-                                style={{
-                                  width: `${(project?.mobilized_fund / project?.capital_raising_target) * 100}%`,
-                                }}
-                              ></div>
-                            </div>
-                            <div className="flex justify-between my-2 text-sm text-gray-600">
-                              <span className="text-[#48B96D] font-semibold font-sans">
-                                {project.funded}
-                              </span>
-                              <div className="flex gap-1 font-sans">
-                                <span>Hoàn thành</span>
-                                <p className="text-[#48B96D] font-semibold">
-                                  $
-                                  {(
-                                    (project?.mobilized_fund /
-                                      project?.capital_raising_target) *
-                                    100
-                                  ).toLocaleString()}
-                                  %
-                                </p>
-                              </div>
-                            </div>
-                            <div className="flex gap-2">
-                              {project?.industries.map(
-                                (industry: any, index: number) => (
-                                  <span
-                                    key={index}
-                                    className="text-gray-800 px-2 py-1 font-sans rounded-md font-bold bg-[#F6F6F6]"
-                                  >
-                                    {industry.name}
-                                  </span>
-                                )
-                              )}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </Box>
-                  </Link>
+                {projects1?.data?.map((project: any, index: number) => (
+                  <ProjectItem
+                    capital_raising_target={project.capital_raising_target}
+                    images={project.images}
+                    mobilized_fund={project.mobilized_fund}
+                    id={project.id}
+                    industries={project.industries}
+                    key={index}
+                    name={project.name}
+                  />
                 ))}
               </Box>
             </div>
           </div>
           <div
-            className={`flex flex-row justify-center mb-8  ${projects.length < 6 && 'hidden'}`}
+            className={`flex flex-row justify-center mb-8 ${!data?.meta?.hasNextPage && 'hidden'} `}
           >
             <button
-              onClick={() => handleSearch()}
+              onClick={() => {
+                handleSetPage({ page: data?.meta?.page + 1 }, 0);
+              }}
               className="uppercase flex items-center font-sans bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black"
             >
               xem thêm
@@ -500,12 +371,12 @@ const CategoryPage: React.FC = () => {
               </svg>
             </button>
           </div>
-          <h2 className="flex text-center px-4 py-4 font-bold text-[32px] font-sans text-[#04141A] uppercase">
+          <h2 className="flex text-center px-4 py-4 md:mt-20 font-bold text-[32px] font-sans text-[#04141A] uppercase">
             dự án đang gọi vốn
           </h2>
           <div className="flex px-4  flex-col lg:flex-row ">
             <div className="w-full bg-white" ref={ref2}>
-              {projects.length === 0 && (
+              {!projects2 && projects2?.data?.length == 0 && (
                 <div className="flex justify-center items-center w-full h-[300px]">
                   <p className="text-lg font-sans text-gray-500">
                     Không có dự án nào
@@ -523,91 +394,25 @@ const CategoryPage: React.FC = () => {
                   gap: 2,
                 }}
               >
-                {projects.map((project: any, index: number) => (
-                  <Link href={`/detail-category/${project.id}`} key={index}>
-                    <Box
-                      className={`${inView4 ? 'animate-fadeIn scale-100' : 'translate-y-20 opacity-0 scale-0'} py-4 transition
-             duration-300 ease-in-out delay-${index === 4 ? 300 : index * 100}
-               hover:scale-105 hover:transition-all hover:duration-300 hover:ease-in-out
-             `}
-                    >
-                      <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-                        <img
-                          src={
-                            project?.images[0] ||
-                            'https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg'
-                          }
-                          alt={project.name}
-                          className="w-full h-[250px] object-cover"
-                        />
-                        <div className="p-4">
-                          {/* <span className="text-sm bg-blue-500 text-white py-1 px-3 rounded-full">
-                          Series A
-                        </span> */}
-                          <h3 className="text-lg font-bold mt-2 font-sans uppercase">
-                            {project.name}
-                          </h3>
-                          <div className="mt-4">
-                            <div className="text-sm font-normal font-sans uppercase">
-                              Mục tiêu huy động
-                            </div>
-                            <div className="text-xl font-sans font-semibold">
-                              {new Intl.NumberFormat('en-US', {
-                                style: 'currency',
-                                currency: 'USD',
-                              }).format(project?.capital_raising_target)}
-                            </div>
-                            <div className="h-2 bg-gray-300 rounded mt-2">
-                              <div
-                                className="bg-green-500 h-full rounded max-w-full"
-                                style={{
-                                  width: `${(project?.mobilized_fund / project?.capital_raising_target) * 100}%`,
-                                }}
-                              ></div>
-                            </div>
-                            <div className="flex justify-between my-2 text-sm text-gray-600">
-                              <span className="text-[#48B96D] font-semibold font-sans">
-                                {project.funded}
-                              </span>
-                              <div className="flex gap-1 font-sans">
-                                <span>Hoàn thành</span>
-                                <p className="text-[#48B96D] font-semibold">
-                                  $
-                                  {(
-                                    (project?.mobilized_fund /
-                                      project?.capital_raising_target) *
-                                    100
-                                  ).toLocaleString()}
-                                  %
-                                </p>
-                              </div>
-                            </div>
-                            <div className="flex gap-2">
-                              {project?.industries.map(
-                                (industry: any, index: number) => (
-                                  <span
-                                    key={index}
-                                    className="text-gray-800 px-2 py-1 font-sans rounded-md font-bold bg-[#F6F6F6]"
-                                  >
-                                    {industry.name}
-                                  </span>
-                                )
-                              )}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </Box>
-                  </Link>
+                {data2?.data?.map((project: any, index: number) => (
+                  <ProjectItem
+                    capital_raising_target={project.capital_raising_target}
+                    images={project.images}
+                    mobilized_fund={project.mobilized_fund}
+                    id={project.id}
+                    industries={project.industries}
+                    key={index}
+                    name={project.name}
+                  />
                 ))}
               </Box>
             </div>
           </div>
           <div
-            className={`flex flex-row justify-center mb-8 ${projects.length < 6 && 'hidden'}`}
+            className={`flex flex-row justify-center mb-8  ${!data2?.meta?.hasNextPage && 'hidden'}`}
           >
             <button
-              onClick={() => handleSearch()}
+              onClick={() => handleSetPage({ page: data2?.meta?.page + 1 }, 1)}
               className="uppercase flex font-sans items-center bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black"
             >
               xem thêm
@@ -621,12 +426,12 @@ const CategoryPage: React.FC = () => {
               </svg>
             </button>
           </div>
-          <h2 className="flex text-center px-4  py-4 font-bold text-[32px] font-sans text-[#04141A] uppercase">
+          <h2 className="flex text-center px-4 md:mt-20  py-4 font-bold text-[32px] font-sans text-[#04141A] uppercase">
             DỰ ÁN ĐÃ ĐẦU TƯ ƯƠM TẠO
           </h2>
           <div className="flex px-4   flex-col lg:flex-row ">
             <div className="w-full bg-white" ref={ref3}>
-              {projects2.length === 0 && (
+              {!projects3 && projects3?.data?.length === 0 && (
                 <div className="flex justify-center items-center w-full h-[300px]">
                   <p className="text-lg font-sans text-gray-500">
                     Không có dự án nào
@@ -644,91 +449,25 @@ const CategoryPage: React.FC = () => {
                   gap: 2,
                 }}
               >
-                {projects2.map((project: any, index: any) => (
-                  <Link href={`/detail-category/${project.id}`} key={index}>
-                    <Box
-                      className={`${inView4 ? 'animate-fadeIn scale-100' : 'translate-y-20 opacity-0 scale-0'} py-4 transition
-            duration-300 ease-in-out delay-${index === 4 ? 300 : index * 100}
-              hover:scale-105 hover:transition-all hover:duration-300 hover:ease-in-out
-            `}
-                    >
-                      <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-                        <img
-                          src={
-                            project?.images[0] ||
-                            'https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg'
-                          }
-                          alt={project.name}
-                          className="w-full h-[250px] object-cover"
-                        />
-                        <div className="p-4">
-                          {/* <span className="text-sm bg-blue-500 text-white py-1 px-3 rounded-full">
-                         Series A
-                       </span> */}
-                          <h3 className="text-lg font-bold mt-2 font-sans uppercase">
-                            {project.name}
-                          </h3>
-                          <div className="mt-4">
-                            <div className="text-sm font-normal font-sans uppercase">
-                              Mục tiêu huy động
-                            </div>
-                            <div className="text-xl font-sans font-semibold">
-                              {new Intl.NumberFormat('en-US', {
-                                style: 'currency',
-                                currency: 'USD',
-                              }).format(project?.capital_raising_target)}
-                            </div>
-                            <div className="h-2 bg-gray-300 rounded mt-2">
-                              <div
-                                className="bg-green-500 h-full rounded max-w-full"
-                                style={{
-                                  width: `${(project?.mobilized_fund / project?.capital_raising_target) * 100}%`,
-                                }}
-                              ></div>
-                            </div>
-                            <div className="flex justify-between my-2 text-sm text-gray-600">
-                              <span className="text-[#48B96D] font-semibold font-sans">
-                                {project.funded}
-                              </span>
-                              <div className="flex gap-1 font-sans">
-                                <span>Hoàn thành</span>
-                                <p className="text-[#48B96D] font-semibold">
-                                  $
-                                  {(
-                                    (project?.mobilized_fund /
-                                      project?.capital_raising_target) *
-                                    100
-                                  ).toLocaleString()}
-                                  %
-                                </p>
-                              </div>
-                            </div>
-                            <div className="flex gap-2">
-                              {project?.industries.map(
-                                (industry: any, index: number) => (
-                                  <span
-                                    key={index}
-                                    className="text-gray-800 px-2 py-1 font-sans rounded-md font-bold bg-[#F6F6F6]"
-                                  >
-                                    {industry.name}
-                                  </span>
-                                )
-                              )}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </Box>
-                  </Link>
+                {data3?.data?.map((project: any, index: any) => (
+                  <ProjectItem
+                    capital_raising_target={project.capital_raising_target}
+                    images={project.images}
+                    mobilized_fund={project.mobilized_fund}
+                    id={project.id}
+                    industries={project.industries}
+                    key={index}
+                    name={project.name}
+                  />
                 ))}
               </Box>
             </div>
           </div>
           <div
-            className={`flex flex-row justify-center mb-8 ${projects.length < 6 && 'hidden'}`}
+            className={`flex flex-row justify-center mb-8 ${!data3?.meta?.hasNextPage && 'hidden'} `}
           >
             <button
-              onClick={() => handleSearch()}
+              onClick={() => handleSetPage({ page: data3?.meta?.page + 1 }, 2)}
               className="uppercase flex items-center font-sans bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black"
             >
               xem thêm

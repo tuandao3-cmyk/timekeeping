@@ -66,11 +66,15 @@ const ProductItem = forwardRef<HTMLDivElement, ProductItemProps>(
       case 'flexible':
         return (
           <div
-            onClick={() => router.push(`/detail-category/${props.title}`)}
+            onClick={() =>
+              (window.location.href = `/detail-category/${props.id}`)
+            }
             ref={ref}
-            className={` package-item w-full mt-5 3xl:max-w-[384px] bg-white  rounded-lg md:gap-6   flex justify-center items-left flex-col flex-grow gap-3 ${props.className} hover:shadow-lg p-5 hover:scale-105 transition ease-in-out duration-150 hover:cursor-pointer `}
+            className={` package-item w-full mt-5 3xl:max-w-[384px]  bg-white  rounded-lg md:gap-6   flex justify-center items-left flex-col flex-grow gap-3 ${props.className} hover:shadow-lg p-5 hover:scale-105 transition ease-in-out duration-150 hover:cursor-pointer `}
           >
-            {props.image}
+            <div className="w-full flex justify-center items-center">
+              {props.image}
+            </div>
 
             <h2 className="text-lg md:text-[30px] font-bold uppercase">
               {props.title}
@@ -94,7 +98,7 @@ const ProductItem = forwardRef<HTMLDivElement, ProductItemProps>(
               </p>
               <p className="text-[15px]">
                 <span className="font-bold text-[#48B96D]">
-                  ${props.sponsorship}%
+                  ${props.sponsorship.toFixed()}%
                 </span>{' '}
                 Hoàn thành
               </p>

@@ -12,6 +12,8 @@ import { formatDateTimeVn } from '@/util/util';
 import { useRouter } from 'next/navigation';
 import { FaApple, FaGooglePlay } from 'react-icons/fa';
 import { ProjectCard } from './components/card';
+import NewsItem from './components/newsItem';
+import Image from 'next/image';
 
 const dataNews = [
   {
@@ -68,7 +70,11 @@ const NewsPage: React.FC = () => {
   const [newsData, setNewsData] = React.useState<any[]>(dataNews);
   const { data, isLoading, error } = useQuery({
     queryKey: ['news'],
-    queryFn: () => getNews(page),
+    queryFn: () =>
+      getNews({
+        ...page,
+        take: 5,
+      }),
   });
 
   const handleNavigate = (id: any) => {
@@ -200,60 +206,16 @@ const NewsPage: React.FC = () => {
                     }`}
                   />
                 ) : (
-                  <div
+                  <NewsItem
+                    id={news.id}
                     key={index}
-                    className={` rounded-lg overflow-hidden shadow-lg hidden md:block p-5 hover:scale-105 transition ease-in-out duration-150 hover:cursor-pointer  ${
-                      index === 1
-                        ? 'p-4 lg:row-span-2 lg:col-span-1 bg-[#07212C] md:row-span-1 col-span-1 '
-                        : 'bg-white '
-                    }`}
-                    onClick={() => router.push(`/news/${news.id}`)}
-                  >
-                    <img
-                      src={
-                        news.link_img ||
-                        'https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg'
-                      }
-                      alt=""
-                      className={`w-full object-cover object-center rounded-lg ${
-                        index === 1 ? 'md:h-[245px] ' : 'md:h-[234px]'
-                      }`}
-                    />
-                    <div className="mt-3 flex flex-col justify-between ">
-                      <div>
-                        <Link
-                          href={`news/${news.id}` || '#'}
-                          className="md:text-[15px]  text-[#579DFF]  text-sm font-semibold"
-                        >
-                          {news?.blog_category?.name || 'TIN TÀI CHÍNH'}
-                        </Link>
-                        <h1
-                          className={` font-bold mt-3 line-clamp-2 text-lg ${index === 1 ? 'text-white ' : 'text-[#151515] capitalize  '}`}
-                        >
-                          {news.title}
-                        </h1>
-                        <p
-                          className={`text-sm mt-3 ${index === 1 ? 'text-[#CBCBCD]' : 'text-gray-600'}`}
-                        >
-                          {news.description}
-                        </p>
-                      </div>
-                      <div className="flex justify-between items-center text-sm mt-8">
-                        <p
-                          className={`flex flex-row items-center gap-2 ${index === 1 ? 'text-[#CBCBCD]' : 'text-gray-600'}`}
-                        >
-                          <Calendar size={16} />{' '}
-                          {formatDateTimeVn(news.updated_at)}
-                        </p>
-                        <a
-                          href={`news/${news.id}` || '#'}
-                          className={`md:px-6 hover:bg-[#48B96D] hover:text-white md:py-3 px-3 py-2 ${index === 1 ? 'text-[#FFFFFF]/90 border-[#2f454e]' : 'text-[#000000]/90 border-[#c2c2c2] mx-4'} font-medium border-[1px] mb-2 rounded-full `}
-                        >
-                          Đọc thêm
-                        </a>
-                      </div>
-                    </div>
-                  </div>
+                    index={index}
+                    blog_category={news.blog_category}
+                    description={news.description}
+                    link_img={news.link_img}
+                    title={news.title}
+                    updated_at={news.updated_at}
+                  />
                 )}
               </>
             ))}
@@ -270,9 +232,12 @@ const NewsPage: React.FC = () => {
               <div
                 className={`${index == 1 ? 'mt-32' : 'mt-4'} mx-5 flex flex-row items-center gap-3 px-1 py-2 border`}
                 style={{ borderRadius: 10 }}
+                onClick={() => handleNavigate(news.id)}
               >
-                <img
-                  src={news?.link_img || ''}
+                <Image
+                  width={115}
+                  height={70}
+                  src={news?.link_img[0] || ''}
                   alt=""
                   className={` object-cover object-center rounded-lg 
                         h-[70px] w-[115px]
@@ -323,43 +288,16 @@ const NewsPage: React.FC = () => {
           </h1>
 
           <div className="flex flex-col justify-center items-center gap-4 pl-5 pr-5 md:pr-0 md:pl-0">
-            <img
+            <Image
+              height={274}
+              width={1200}
+              onClick={() =>
+                router.push('https://www.facebook.com/hyraholdings/')
+              }
               className="h-[274px] md:h-auto max-w-[100%] md:w-[100%]"
               src="/img/news/upcoming.png"
               alt="image description"
             />
-            {/* <div className="container mx-auto  overflow-x-auto">
-              <div className="flex gap-6 flex-nowrap">
-                {newsData.map((news: any, index: number) => (
-                  <div
-                    key={index}
-                    className="bg-white rounded-lg shadow-lg overflow-hidden min-w-[250px] "
-                  >
-                    <img
-                      src={news.imageUrl}
-                      alt=""
-                      className="w-full object-cover object-center bg-center max-h-[200px] h-auto"
-                    />
-                    <div className="p-4 ">
-                      <h1 className="md:text-[18px] text-[12px] font-bold text-gray-800">
-                        {news.title}
-                      </h1>
-                      <div className="flex justify-between items-center">
-                        <Link
-                          href={news.link || '#'}
-                          className="md:text-sm text-[#03A638] text-sm font-semibold"
-                        >
-                          CÔNG NGHỆ
-                        </Link>
-                        <p className="text-sm text-gray-600 text-center">
-                          {news.date}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div> */}
           </div>
         </div>
       </section>
@@ -375,8 +313,13 @@ const NewsPage: React.FC = () => {
               {newsData.slice(1, 4).map((news: any, index: number) => (
                 <a href={`/news/${news.id}`} className="p-4" key={index}>
                   <div className="grid md:grid-cols-3  border-[1px] hover:scale-105 hover:border-none transition ease-in-out duration-150 hover:cursor-pointer">
-                    <img
-                      src={news.link_img}
+                    <Image
+                      width={320}
+                      height={188}
+                      src={
+                        news?.link_img[0] ||
+                        'https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg'
+                      }
                       alt=""
                       className="w-[320px] h-[188px]  object-cover rounded-lg md:col-span-1"
                     />
@@ -391,11 +334,12 @@ const NewsPage: React.FC = () => {
                         {news.title}
                       </h1>
                       <p className="text-sm line-clamp-1 text-gray-600">
-                        {news.text}
+                        {news.description}
                       </p>
                       <div className="flex justify-between items-center text-sm">
                         <p className="flex flex-row items-center gap-2 text-gray-600 text-center">
-                          <Calendar size={16} /> {news.date}
+                          <Calendar size={16} />{' '}
+                          {formatDateTimeVn(news.updated_at)}
                         </p>
                         <button
                           onClick={() => handleNavigate(news.id)}
@@ -416,7 +360,12 @@ const NewsPage: React.FC = () => {
               <div className=" flex  flex-col gap-4 mt-5 md:mt-0 md:px-36 lg:px-0">
                 <div className="flex justify-between items-center">
                   <div className="flex items-center gap-5">
-                    <img
+                    <Image
+                      width={40}
+                      height={40}
+                      onClick={() =>
+                        router.push('https://www.youtube.com/@hyracap')
+                      }
                       src="/img/youtube_logo.jpg"
                       alt="Youtube"
                       className=" w-[40px] h-[40px]  rounded-lg  "
@@ -449,7 +398,12 @@ const NewsPage: React.FC = () => {
                 </div>
                 <div className="flex justify-between items-center ">
                   <div className="flex items-center gap-5">
-                    <img
+                    <Image
+                      width={40}
+                      height={40}
+                      onClick={() =>
+                        router.push('https://www.facebook.com/hyracap')
+                      }
                       src="/img/facebook_logo.png"
                       alt="Facebook"
                       className=" w-[40px] h-[40px]  rounded-lg  "
@@ -459,7 +413,9 @@ const NewsPage: React.FC = () => {
                     </p>
                   </div>
                   <button
-                    onClick={() => (window.location.href = 'https://fb.com')}
+                    onClick={() =>
+                      router.push('https://www.facebook.com/hyracap')
+                    }
                     className="flex bg-gray-100 items-center justify-center w-10 h-10 rounded-md rounded-xs md:border border-gray-300 hover:border-gray-400 transition-colors"
                   >
                     <svg
@@ -480,7 +436,10 @@ const NewsPage: React.FC = () => {
                 </div>
                 <div className="flex justify-between items-center">
                   <div className="flex items-center gap-5">
-                    <img
+                    <Image
+                      width={40}
+                      height={40}
+                      onClick={() => router.push('https://x.com/hyracap')}
                       src="/img/x_logo.jpg"
                       alt="X"
                       className=" w-[40px] h-[40px]   "
@@ -536,7 +495,9 @@ const NewsPage: React.FC = () => {
                     </div>
                   </div>
                   <div>
-                    <img
+                    <Image
+                      width={216}
+                      height={228}
                       src="/img/product/app_log.png"
                       alt="screenshot"
                       className="max-w-[216px] max-h-[228px] absolute -right-10 -bottom-4"

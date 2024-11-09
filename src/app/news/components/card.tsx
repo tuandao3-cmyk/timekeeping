@@ -4,6 +4,7 @@ import React from 'react';
 
 import { formatDateTimeVn } from '@/util/util';
 import { Typography } from '@mui/material';
+import Image from 'next/image';
 
 export const ProjectCard: React.FC<{
   project: any;
@@ -16,9 +17,11 @@ export const ProjectCard: React.FC<{
       href={`/news/${project.id}`}
       className={`${className} relative w-full h-auto `}
     >
-      <img
+      <Image
+        width={320}
+        height={188}
         src={
-          project?.link_img ||
+          project?.link_img[0] ||
           'https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg'
         }
         alt={project.title}
