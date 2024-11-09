@@ -1,3 +1,5 @@
+'use client';
+
 import { getNews } from '@/services/news.service';
 import { Page } from '@/type/page.type';
 import { formatDateTimeVn } from '@/util/util';
@@ -237,14 +239,14 @@ const News = () => {
                               <span className="font-inter text-sm font-sans leading-6 text-gray-600 md:hidden lg:block line-clamp-2">
                                 <div
                                   dangerouslySetInnerHTML={{
-                                    __html: news.content,
+                                    __html: news?.description || '',
                                   }}
                                   className="line-clamp-2"
                                 ></div>
                               </span>
                             </div>
                             <span className="text-gray-600 text-sm font-sans leading-6 ">
-                              {formatDateTimeVn(news.updated_at)}
+                              {formatDateTimeVn(news?.updated_at || '')}
                             </span>
                           </div>
                           <Image
@@ -277,7 +279,7 @@ const News = () => {
                       }`}
                     >
                       <a
-                        href={`/news/${news.id}`}
+                        href={`/news/${news?.id || ''}`}
                         className={`${styles.newsLink}`}
                       >
                         <div
@@ -288,11 +290,11 @@ const News = () => {
                               <p
                                 className={`${styles.newsTitle}   font-sans text-16px text-[#000000CC] text-opacity-80`}
                               >
-                                {news.title}
+                                {news?.title || ''}
                               </p>
 
                               <span className="font-inter text-sm font-sans leading-6 text-gray-600">
-                                {news.description}
+                                {news?.description || ''}
                               </span>
                             </div>
                             <span className="text-gray-600 text-sm font-sans leading-6 ">

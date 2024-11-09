@@ -90,13 +90,19 @@ const projects = [
   },
 ];
 
-const ProjectSlider: React.FC = () => {
+interface ProjectSlideProps {
+  dataRasing: any;
+  pageRasing: any;
+}
+
+const ProjectSlider = (props: ProjectSlideProps) => {
+  const { dataRasing, pageRasing } = props;
   const { ref, inView, entry } = useInView({
     threshold: 0.1,
   });
   const [swiper, setSwiper] = useState<SwiperType | null>(null);
-  const [page, setPage] = useState<typeof Page>(Page);
-  const [projectData, setProjectData] = useState<any>([]);
+  const [page, setPage] = useState<typeof Page>(pageRasing);
+  const [projectData, setProjectData] = useState<any>(dataRasing?.data || []);
   const [activeIndex, setActiveIndex] = useState(0);
   const progressBarRef = useRef<HTMLDivElement>(null);
   const windowSize = useWindowSize();
@@ -104,20 +110,20 @@ const ProjectSlider: React.FC = () => {
   const theme = useTheme();
   const isMdOrLarger = useMediaQuery(theme.breakpoints.up('md'));
 
-  const { data, isLoading, isSuccess, isError } = useQuery({
-    queryKey: ['project'],
-    queryFn: () =>
-      getProjects({
-        ...page,
-        status__eq: 1,
-      }),
-  });
+  // const { data, isLoading, isSuccess, isError } = useQuery({
+  //   queryKey: ['project'],
+  //   queryFn: () =>
+  //     getProjects({
+  //       ...page,
+  //       status__eq: 1,
+  //     }),
+  // });
 
-  useEffect(() => {
-    if (isSuccess) {
-      setProjectData(data.data);
-    }
-  }, [data]);
+  // useEffect(() => {
+  //   if (isSuccess) {
+  //     setProjectData(data.data);
+  //   }
+  // }, [data]);
 
   const isMobile = windowSize.width < 640;
   const isTablet = windowSize.width >= 640 && windowSize.width < 768;
@@ -212,7 +218,7 @@ const ProjectSlider: React.FC = () => {
             //   slideShadows: false,
             // }}
           >
-            {isLoading ? (
+            {projectData?.length == 0 ? (
               <div>Loading...</div>
             ) : (
               projectData.map((project: any, index: number) => (

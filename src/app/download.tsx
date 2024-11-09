@@ -1,3 +1,5 @@
+'use client';
+
 import { useMediaQuery, useTheme } from '@mui/material';
 import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
