@@ -7,6 +7,7 @@ import React, { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 import Link from 'next/link';
+import ModalEror from '../ModalEror';
 import ModalSucses from '../ModalSucses';
 import PressSection from '../PressSection';
 import News from '../news';
@@ -238,6 +239,7 @@ const AboutPage: React.FC = () => {
     question: '',
   });
   const [modal, setModal] = useState(false);
+  const [modal2, setModal2] = useState(false);
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -267,6 +269,7 @@ const AboutPage: React.FC = () => {
         question: '',
       });
     } else {
+      setModal2(true);
       alert('Lỗi gửi,vui lòng thử lại sau');
     }
   };
@@ -283,6 +286,7 @@ const AboutPage: React.FC = () => {
         }}
       >
         <ModalSucses modal={modal} setModal={setModal} />
+        <ModalEror modal={modal2} setModal={setModal2} />
         <div className="flex flex-col items-center justify-center w-full max-w-[1440px]">
           <div className="flex justify-between items-center w-full h-full mt-16 max-lg:!flex-col md:pl-20 md:pr-12 px-[12px]">
             <div className="flex flex-col md:min-h-[620px] mb-[24px] md:mb-0 justify-start items-start lg:justify-start flex-1  gap-[24px] md:gap-10">

@@ -1,7 +1,9 @@
 // components/ContactForm.tsx
-import { useEffect, useState } from 'react';
-import { postContact } from '@/services/contact.service';
+import ModalEror from '@/app/ModalEror';
 import ModalSucses from '@/app/ModalSucses';
+import { postContact } from '@/services/contact.service';
+import Image from 'next/image';
+import { useState } from 'react';
 
 const ContactForm = () => {
   const [open, setOpen] = useState(false);
@@ -12,7 +14,8 @@ const ContactForm = () => {
     role: '',
     question: '',
   });
-
+  const [modal, setModal] = useState(false);
+  const [modal2, setModal2] = useState(false);
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -30,8 +33,9 @@ const ContactForm = () => {
       role: parseInt(formData.role),
     });
 
-    if (response.statusCode === 200) {
-      setOpen(true);
+    if (response.ok) {
+      setModal(true);
+      alert('Đã gửi thành công');
       setFormData({
         name: '',
         email: '',
@@ -40,6 +44,7 @@ const ContactForm = () => {
         question: '',
       });
     } else {
+      setModal2(true);
       alert('Lỗi gửi,vui lòng thử lại sau');
     }
   };
@@ -47,6 +52,8 @@ const ContactForm = () => {
   return (
     // <form onSubmit={handleSubmit}>
     <div className=" -black max-h-[645px] min-h-480 max-w-[572px] xl:w-full">
+      <ModalSucses modal={modal} setModal={setModal} />
+      <ModalEror modal={modal2} setModal={setModal2} />
       <div className="h-full rounded-3xl ">
         <form className=" p-8 border-4 border-white rounded-3xl h-full max-w-[600px] bg-gradient-to-b from-black/[0.08] to-transparent to-[70.23%]">
           <h2 className="font-semibold text-[18px] leading-[26px]">
@@ -137,7 +144,13 @@ const ContactForm = () => {
               className="flex items-center px-4 py-2 mt-3 bg-green-500 text-white rounded-full"
             >
               Gửi
-              <img src="/img/icon/send.svg" alt="send" className="pl-2" />
+              <Image
+                width={24}
+                height={24}
+                src="/img/icon/send.svg"
+                alt="send"
+                className="pl-2"
+              />
             </button>
           </div>
         </form>

@@ -72,10 +72,10 @@ const Header = () => {
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-[1440px]">
           <Link href="/" className="flex items-center">
             <Image
-              width={118}
+              width={98}
               height={40}
               src="/img/logohyracap.png"
-              className="mr-3 h-6 sm:h-9"
+              className="mr-3 h-6 sm:h-9 md:w-[118px]"
               alt="HyraCap Logo"
             />
           </Link>

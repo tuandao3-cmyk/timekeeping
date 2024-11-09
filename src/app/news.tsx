@@ -3,11 +3,11 @@ import { Page } from '@/type/page.type';
 import { formatDateTimeVn } from '@/util/util';
 import { Button, IconButton, Stack, Typography } from '@mui/material';
 import { useQuery } from '@tanstack/react-query';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import styles from './news.module.css';
-import Image from 'next/image';
 
 const newsData = [
   {
@@ -90,7 +90,7 @@ const News = () => {
               style={{
                 fontWeight: 700,
               }}
-              className=" font-bold pb-6 text-[28px] text-center md:text-left  md:text-[36px] leading-[28px] md:leading-[48px] font-sans"
+              className=" font-bold pb-6 ml-3 text-[25px] text-center md:text-left  md:text-[36px] leading-[28px] md:leading-[48px] font-sans"
             >
               TIN MỚI NHẤT VỀ HYRACAP
             </p>
