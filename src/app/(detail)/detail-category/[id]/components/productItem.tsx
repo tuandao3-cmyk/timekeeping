@@ -1,9 +1,7 @@
-import { TimeLeft } from '@/components/icons';
 import ProgressBar from '@/components/progress';
 import { Stack, Typography } from '@mui/material';
-import { forwardRef } from 'react';
-import { useInView } from 'react-intersection-observer';
 import { useRouter } from 'next/navigation';
+import { forwardRef } from 'react';
 
 interface ProductItemProps {
   title: string;
@@ -99,7 +97,7 @@ const ProductItem = forwardRef<HTMLDivElement, ProductItemProps>(
 
             <div>
               <p className="uppercase font-[400] text-[14px] text-[#000] text-opacity-70">
-                mục tiêu huy động
+                mục tiêu huy
               </p>
               <p className="text-[20px] font-bold text-[#04141A] ">
                 ${props.profit.toLocaleString('en-US')}
