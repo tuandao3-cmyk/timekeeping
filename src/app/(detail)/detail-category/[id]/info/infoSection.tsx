@@ -99,7 +99,7 @@ const InfoSection = (props: InfoSectionProps) => {
   const field: any[] = [
     {
       title: 'Lĩnh vực đầu tư',
-      value: dataP?.industries[0].name || '',
+      value: dataP?.industries[0]?.name || '',
     },
     {
       title: 'Ngày thành lập',
