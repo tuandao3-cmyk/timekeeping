@@ -106,19 +106,19 @@ const News = () => {
               <div> Loading...</div>
             ) : (
               <div
-                className={`${styles.mainNews} md:max-w-[486px] max-w-none  hidden md:flex w-full h-full flex-col justify-between `}
+                className={`${styles.mainNews} md:max-w-[486px] max-w-none gap-[24px] flex-grow hidden md:flex w-full  flex-col justify-between h-auto`}
               >
                 <div className="flex flex-col gap-[40px]">
                   <a
                     href={`news/${newsData1[0]?.id}` || ''}
-                    className={`${styles.mainNewsLink} ${styles.newsLink} flex justify-start items-start md:max-w-[486px] max-w-none `}
+                    className={`${styles.mainNewsLink} ${styles.newsLink} flex justify-start items-start md:max-w-[486px] max-w-none`}
                   >
                     <Image
-                      width={615}
-                      height={320}
+                      width={486}
+                      height={426}
                       src={newsData1[0]?.link_img[0] || ''}
                       alt="Main News"
-                      className={`${styles.mainImage} duration-300 h-[615px] md:max-h-[655px] lg:max-w-[486px]  lg:max-h-[320px]  ease-in-out transform ${
+                      className={`${styles.mainImage} duration-300 h-[615px] md:max-h-[655px] lg:max-w-[486px] lg:max-h-[426px] ease-in-out transform ${
                         inView
                           ? 'opacity-100 translate-y-0'
                           : 'opacity-0 translate-y-10'
@@ -130,7 +130,7 @@ const News = () => {
                     <div className="flex flex-col items-start justify-start">
                       <a
                         href={`news/${newsData1[0]?.id}` || ''}
-                        className={`${styles.newsTitle} line-clamp-3 font-sans w-full  duration-300 delay-200 text-[16px] md:text-[24px] text-[#000000]/80  ease-in-out transform ${
+                        className={`${styles.newsTitle} line-clamp-3 font-sans w-full duration-300 delay-200 text-[16px] md:text-[24px] text-[#000000]/80 ease-in-out transform ${
                           inView
                             ? 'opacity-100 translate-y-0'
                             : 'opacity-0 translate-y-10'
@@ -139,10 +139,10 @@ const News = () => {
                         {newsData1[0]?.title || ''}
                       </a>
                     </div>
-                    <div className="flex flex-col items-start  justify-start">
+                    <div className="flex flex-col items-start justify-start">
                       <a
                         href={`news/${newsData1[0]?.id}` || ''}
-                        className={`font-inter text-sm w-full font-sans leading-6 text-gray-600 duration-300 delay-500  ease-in-out transform ${
+                        className={`font-inter text-sm w-full font-sans leading-6 text-gray-600 duration-300 delay-500 ease-in-out transform ${
                           inView
                             ? 'opacity-100 translate-y-0'
                             : 'opacity-0 translate-y-10'
@@ -159,7 +159,7 @@ const News = () => {
                         >
                           <div
                             dangerouslySetInnerHTML={{
-                              __html: newsData1[0]?.content,
+                              __html: newsData1[0]?.content || '',
                             }}
                           ></div>
                         </Typography>
@@ -167,10 +167,11 @@ const News = () => {
                     </div>
                   </div>
                 </div>
-                <div className="w-full flex justify-end items-end ">
-                  <div className="w-[100%] md:flex  hidden justify-end items-end ">
+                {/* Button container adjusted with mt-auto */}
+                <div className="w-full flex justify-end items-end h-full mt-auto">
+                  <div className="w-[100%] md:flex hidden justify-end items-end">
                     <button
-                      className={` text-[#000000]/90 font-sans font-medium py-2 px-4 border border-gray-300 rounded-full hover:bg-green-500 hover:text-white transition duration-300 flex items-center   ease-in-out transform ${
+                      className={`text-[#000000]/90 font-sans font-medium py-2 px-4 border border-gray-300 rounded-full hover:bg-green-500 hover:text-white transition duration-300 flex items-center ease-in-out transform ${
                         inView
                           ? 'opacity-100 translate-y-0'
                           : 'opacity-0 translate-y-10'
@@ -295,7 +296,7 @@ const News = () => {
                               </span>
                             </div>
                             <span className="text-gray-600 text-sm font-sans leading-6 ">
-                              {formatDateTimeVn(news.updated_at)}
+                              {formatDateTimeVn(news?.updated_at || '')}
                             </span>
                           </div>
                           <Image

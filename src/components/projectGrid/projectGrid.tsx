@@ -152,10 +152,6 @@ const ProjectSlider: React.FC = () => {
   }
 
   useEffect(() => {
-    console.log('activeIndex', activeIndex);
-  }, [activeIndex]);
-
-  useEffect(() => {
     if (swiper) {
       swiper.params.slidesOffsetBefore = slidesOffsetBefore;
       swiper.params.slidesPerView = slidesPerView;
@@ -288,7 +284,8 @@ const ProjectSlider: React.FC = () => {
                           <div className="flex justify-between text-xs mt-2 gap-[4px]">
                             <div className="flex flex-row items-center gap-1 3xl:gap-0 3xl:flex-col flex-wrap ">
                               <span className="font-bold font-inter text-green-500 text-sm font-sans text-nowrap">
-                                ${project.mobilized_fund.toLocaleString()}
+                                $
+                                {project?.mobilized_fund?.toLocaleString() || 0}
                               </span>
 
                               <span
@@ -300,9 +297,11 @@ const ProjectSlider: React.FC = () => {
                             </div>
                             <div className=" flex flex-row items-center gap-1 3xl:gap-0 3xl:flex-col flex-wrap">
                               <span className="font-bold font-inter text-green-500 text-sm font-sans text-nowrap">
-                                {(project?.mobilized_fund /
-                                  project?.capital_raising_target) *
-                                  100}
+                                {(
+                                  (project?.mobilized_fund /
+                                    project?.capital_raising_target) *
+                                  100
+                                ).toFixed(0) || 0}
                                 %
                               </span>
                               <span
