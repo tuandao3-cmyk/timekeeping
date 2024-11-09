@@ -282,7 +282,7 @@ const NewsPage: React.FC = () => {
 
       {/* upcomming */}
       <section className="w-full bg-cover bg-center flex justify-center flex-col items-center gap-3 bg-[#F3F7F4] mt-20 md:mt-0 md:p-5 xl:p-0">
-        <div className="max-w-[1201px] md:py-[62px] py-[50px] flex flex-col md:gap-[40px] gap-[10px] ">
+        <div className="max-w-[1201px] md:py-[62px] py-[50px] flex flex-col md:gap-[40px] gap-[10px] w-[100%] ">
           <h1 className="w-full text-left text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800  pl-5 md:pl-0 ">
             Sự kiện sắp tới
           </h1>
