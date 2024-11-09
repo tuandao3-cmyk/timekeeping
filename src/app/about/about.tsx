@@ -15,6 +15,7 @@ import Partner from '../partner';
 import MessageFromCreative from './components/messageFromCreative';
 import Image from 'next/image';
 import { postContact } from '@/services/contact.service';
+import { Page } from '@/type/page.type';
 
 export const leaders = [
   {
@@ -162,7 +163,13 @@ const staffs = [
   },
 ];
 
-const AboutPage: React.FC = () => {
+interface AboutPageProps {
+  newsData: any;
+  newsPage: typeof Page;
+}
+
+const AboutPage = (props: AboutPageProps) => {
+  const { newsData, newsPage } = props;
   const [hoveredLeader, setHoveredLeader] = useState<number | null>(null);
   const { ref, inView, entry } = useInView({
     threshold: 0,
@@ -885,7 +892,7 @@ const AboutPage: React.FC = () => {
             </div>
           </div>
         </section>
-        <News />
+        <News newsData={newsData} newsPage={newsPage} />
         <PressSection />
 
         <section
