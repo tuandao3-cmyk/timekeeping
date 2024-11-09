@@ -1,21 +1,19 @@
 'use client';
+import { getProjects } from '@/services/project.service';
+import { Page } from '@/type/page.type';
+import { useMediaQuery, useTheme } from '@mui/material';
+import { useQuery } from '@tanstack/react-query';
+import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
+import { FaFlag } from 'react-icons/fa';
 import { useInView } from 'react-intersection-observer';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { useQuery } from '@tanstack/react-query';
 import 'swiper/css/pagination';
-import { FaChevronLeft, FaFlag } from 'react-icons/fa';
+import { Navigation, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import useWindowSize from './useWindowSize';
-import { FaChevronRight } from 'react-icons/fa6';
-import { MdArrowBackIos, MdArrowForwardIos } from 'react-icons/md';
-import { useMediaQuery, useTheme } from '@mui/material';
-import { getProjects } from '@/services/project.service';
-import { Page } from '@/type/page.type';
-import Image from 'next/image';
 
 const projects = [
   {
@@ -177,10 +175,11 @@ const ProjectSlider: React.FC = () => {
     <div className="flex w-full mx-auto max-w-[1440px] flex-col justify-center items-center overflow-x-hidden ">
       <div className="w-full  relative">
         <div className="w-full px-4 md:px-0">
-          <h2 className="text-[28px] md:text-[38px] text-[#04141A] font-[700] leading-[36px] md:leading-[57px] mb-8 text-center font-sans">
+          <h2 className=" text-[28px] md:text-[38px] text-[#04141A] font-[700] leading-[36px] md:leading-[57px] mb-8 text-center font-sans">
             DỰ ÁN ĐANG GỌI VỐN
           </h2>
           <Swiper
+            loop={true}
             modules={[Navigation, Pagination]}
             spaceBetween={isMobile ? 20 : 40}
             slidesPerView={slidesPerView}
@@ -200,13 +199,14 @@ const ProjectSlider: React.FC = () => {
             //     : false
             // }
             // loop={true}
+
             onSwiper={setSwiper}
             onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
             // speed={800}
             slideActiveClass="swiper-slide-active"
             slidePrevClass="swiper-slide-prev"
             slideNextClass="swiper-slide-next"
-            className="mySwiper !overflow-visible"
+            className="mySwiper !overflow-visible "
             effect="coverflow"
             // coverflowEffect={{
             //   rotate: 0,
@@ -222,7 +222,7 @@ const ProjectSlider: React.FC = () => {
               projectData.map((project: any, index: number) => (
                 <SwiperSlide
                   key={project?.id}
-                  className="transition-all duration-300  "
+                  className="transition-all duration-300 "
                 >
                   {({ isActive, isNext, isPrev }) => (
                     <a

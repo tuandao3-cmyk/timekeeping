@@ -166,7 +166,7 @@ function BannerSwipper() {
                   fontFamily={'Inter'}
                   fontWeight={700}
                   fontSize={{
-                    xs: '32px',
+                    xs: '26px',
                     md: '48px',
                   }}
                   lineHeight={{
@@ -280,7 +280,7 @@ function BannerSwipper() {
                     flexGrow={1}
                     flexBasis="0"
                     maxWidth={{
-                      xs: '87px',
+                      xs: '15.5%',
                       md: '163px',
                     }}
                     bgcolor="#FFFFFF14"
@@ -371,7 +371,7 @@ function BannerSwipper() {
                         height={48}
                         style={{
                           width: '48px',
-                          height: '48px',
+                          height: '67px',
                           borderRadius: '10px',
                           objectFit: 'cover',
                           objectPosition: 'center',
