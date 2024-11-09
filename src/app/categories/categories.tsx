@@ -19,7 +19,16 @@ import { Page } from '@/type/page.type';
 import { getProjects } from '@/services/project.service';
 import ProjectItem from '@/components/projectItem/projectItem';
 
-const CategoryPage: React.FC = () => {
+interface CategoryPageProps {
+  projects1: any;
+  projects2: any;
+  projects3: any;
+  page1: typeof Page;
+  page2: typeof Page;
+  page3: typeof Page;
+}
+
+const CategoryPage = () => {
   const [projects1, setProjects1] = useState<any>(null);
   const [projects2, setProjects2] = useState<any>(null);
   const [projects3, setProjects3] = useState<any>(null);

@@ -19,6 +19,8 @@ async function Page() {
   };
 
   const projects1 = await getProjects(page1);
+  const projects2 = await getProjects(page2);
+  const projects3 = await getProjects(page3);
   return <CategoryPage />;
 }
 
