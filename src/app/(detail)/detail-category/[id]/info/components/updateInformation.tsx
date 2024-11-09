@@ -34,7 +34,6 @@ function UpdateInfo() {
       });
     } else {
       setModal2(true);
-      alert('Lỗi gửi,vui lòng thử lại sau');
     }
   };
   return (
