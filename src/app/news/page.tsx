@@ -9,11 +9,11 @@ import { useInView } from 'react-intersection-observer';
 import { getNews } from '@/services/news.service';
 import { Page } from '@/type/page.type';
 import { formatDateTimeVn } from '@/util/util';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { FaApple, FaGooglePlay } from 'react-icons/fa';
 import { ProjectCard } from './components/card';
 import NewsItem from './components/newsItem';
-import Image from 'next/image';
 
 const dataNews = [
   {
@@ -294,7 +294,7 @@ const NewsPage: React.FC = () => {
               onClick={() =>
                 router.push('https://www.facebook.com/hyraholdings/')
               }
-              className="h-[274px] md:h-auto max-w-[100%] md:w-[100%]"
+              className="h-[274px] sm:h-auto max-w-[100%] sm:w-[100%]"
               src="/img/news/upcoming.png"
               alt="image description"
             />
