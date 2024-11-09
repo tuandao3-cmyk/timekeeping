@@ -1,3 +1,5 @@
+'use client';
+
 import styles from './PressSection.module.css';
 
 import { useInView } from 'react-intersection-observer';

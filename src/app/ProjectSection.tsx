@@ -10,23 +10,29 @@ import { Page } from '@/type/page.type';
 import { use, useEffect, useState } from 'react';
 import ProjectItem from '@/components/projectItem/projectItem';
 
-const ProjectSection = () => {
-  const [page, setPage] = useState<typeof Page>({
-    ...Page,
-    status__eq: 2,
-  });
-  const [projects, setProjects] = useState<any[]>([]);
+interface ProjectSectionProps {
+  dataProject: any;
+  dataRasing: any;
+  pageRasing: typeof Page;
+  pageInit: typeof Page;
+}
 
-  const { data, isLoading, isError, isSuccess } = useQuery({
-    queryKey: ['projects', page],
-    queryFn: () => getProjects(page),
-  });
+const ProjectSection = (props: ProjectSectionProps) => {
+  const { dataProject, pageInit, dataRasing, pageRasing } = props;
 
-  useEffect(() => {
-    if (isSuccess) {
-      setProjects(data.data);
-    }
-  }, [data]);
+  const [page, setPage] = useState<typeof Page>(pageInit);
+  const [projects, setProjects] = useState<any[]>(dataProject?.data || []);
+
+  // const { data, isLoading, isError, isSuccess } = useQuery({
+  //   queryKey: ['projects', page],
+  //   queryFn: () => getProjects(page),
+  // });
+
+  // useEffect(() => {
+  //   if (isSuccess) {
+  //     setProjects(data.data);
+  //   }
+  // }, [data]);
 
   const { ref } = useInView({
     threshold: 0.1,
@@ -35,8 +41,7 @@ const ProjectSection = () => {
 
   return (
     <>
-      {' '}
-      <ProjectGrid />
+      <ProjectGrid dataRasing={dataRasing} pageRasing={pageRasing} />
       <section
         className={`${styles.showcaseSection} px-[12px] flex flex-col justify-center py-[40px] md:py-[62px] items-center bg-[#FFFFFF]`}
       >
@@ -49,7 +54,7 @@ const ProjectSection = () => {
           </h2>
           <div className="w-full flex justify-center items-center max-w-[1440px]">
             <div className="4xl:max-w-[2100px] justify-center items-center    3xl:max-w-[1600px] 2xl:max-w-[1400px] 4xl:gap-16 3xl:gap-8 flex flex-col md:flex-row flex-wrap gap-4 mb-8 max-w-[1440px] w-full">
-              {isLoading ? (
+              {projects?.length == 0 ? (
                 <div>Loading...</div>
               ) : (
                 projects

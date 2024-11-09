@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useRef, useState } from 'react';
 // Import Swiper React components
 import Marquee from 'react-fast-marquee';
