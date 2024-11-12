@@ -283,10 +283,23 @@ const ProjectSlider = (props: ProjectSlideProps) => {
                             MỤC TIÊU HUY ĐỘNG
                           </p>
                           <p
-                            className={`text-xl leading-6 font-semibold font-sans  ${index === activeIndex ? 'text-[#04141A]' : 'text-[#FFFFFF]'}`}
+                            className={`text-xl leading-6 pb-2 font-semibold font-sans  ${index === activeIndex ? 'text-[#04141A]' : 'text-[#FFFFFF]'}`}
                           >
                             ${project.capital_raising_target.toLocaleString()}
                           </p>
+
+                          <div className="w-full bg-gray-200 rounded-full h-1.5 ">
+                            <div
+                              className="bg-green-500 h-1.5 rounded-full font-sans max-w-full "
+                              style={{
+                                width: `${
+                                  (project?.mobilized_fund /
+                                    project?.capital_raising_target) *
+                                  100
+                                }%`,
+                              }}
+                            ></div>
+                          </div>
                           <div className="flex justify-between text-xs mt-2 gap-[4px]">
                             <div className="flex flex-row items-center gap-1 3xl:gap-0 3xl:flex-col flex-wrap ">
                               <span className="font-bold font-inter text-green-500 text-sm font-sans text-nowrap">
@@ -317,18 +330,6 @@ const ProjectSlider = (props: ProjectSlideProps) => {
                                 Hoàn thành
                               </span>
                             </div>
-                          </div>
-                          <div className="w-full bg-gray-200 rounded-full h-1.5 ">
-                            <div
-                              className="bg-green-500 h-1.5 rounded-full font-sans max-w-full "
-                              style={{
-                                width: `${
-                                  (project?.mobilized_fund /
-                                    project?.capital_raising_target) *
-                                  100
-                                }%`,
-                              }}
-                            ></div>
                           </div>
                         </div>
                         <div className="flex gap-2  pt-[16px] ">

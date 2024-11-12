@@ -657,9 +657,9 @@ function BannerSwipper() {
               backgroundRepeat: 'no-repeat',
             }}
           >
-            <div className="flex flex-col items-center justify-center w-full max-w-[1440px] md:px-[120px]">
+            <div className="flex flex-col items-center justify-center w-full max-w-[1440px] ">
               <div className="flex justify-between items-center w-full h-full mt-16 max-md:!flex-col ">
-                <div className="flex flex-col min-h-[620px] justify-start md:justify-center flex-1 w-[100%] px-[12px] md:p-0  gap-10">
+                <div className="flex flex-col min-h-[620px] justify-start md:justify-center px-[60px] md:px-[120px] w-[100%]  gap-10">
                   <div className="flex flex-col gap-2">
                     <p
                       // ref={ref}
