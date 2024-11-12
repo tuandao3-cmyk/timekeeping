@@ -1,16 +1,14 @@
 'use client';
 
-import React from 'react';
-
 import { useInView } from 'react-intersection-observer';
 
-import { useEffect, useState } from 'react';
-import DownloadSection from '../download';
-import ProductItem from './components/productItem';
-import LongTermSection from './long-term/page';
-import ShortTermSection from './short-term/page';
 import { Button, Stack, Typography } from '@mui/material';
 import { useRouter } from 'next/navigation';
+import { useState } from 'react';
+import DownloadSection from '../download';
+import ProjectItem from '@/components/projectItem/projectItem';
+import LongTermSection from './long-term/page';
+import ShortTermSection from './short-term/page';
 
 interface ProductProps {
   projectData: any;
@@ -29,103 +27,12 @@ const Product = (props: ProductProps) => {
     },
   ]);
 
-  console.log('project data in products', props.projectData);
-
-  //   const products = [
-  //     {
-  //       title: 'Đầu tư linh hoạt',
-  //       type: 'flexible',
-  //       package: [
-  //         {
-  //           title: 'Egabid',
-  //           start_date: '20/10/2024',
-  //           descriptions: 'Hyperas tận dụng sức mạnh từ hàng tỷ thiết bị... ',
-  //           invested: 2500000,
-  //           profit: 2000000,
-  //           sponsorship: 75,
-  //           image: (
-  //             <img
-  //               src="/img/egabid_pc.png"
-  //               alt="Hyperas Chain"
-  //               className="md:h-[250px] md:w-[384px] xl:w-[450px]"
-  //             />
-  //           ),
-  //           field: 'CÔNG NGHỆ',
-  //         },
-  //         {
-  //           title: 'Salala AI',
-  //           start_date: '09/09/2024',
-  //           descriptions: 'Hyperas tận dụng sức mạnh từ hàng tỷ thiết bị... ',
-  //           invested: 3000000,
-  //           profit: 3000000,
-  //           sponsorship: 98,
-  //           image: (
-  //             <img
-  //               src="/img/salala2.png"
-  //               alt="Salala AI"
-  //               className="md:h-[250px] md:w-[384px]"
-  //             />
-  //           ),
-  //           field: 'CÔNG NGHỆ',
-  //         },
-  //         {
-  //           title: 'HYPERAS CHAIN',
-  //           start_date: '08/09/2024',
-  //           descriptions: 'Hyperas tận dụng sức mạnh từ hàng tỷ thiết bị... ',
-  //           invested: 2500000,
-  //           profit: 1000000,
-  //           sponsorship: 80,
-  //           image: (
-  //             <img
-  //               src="/img/hyperas_chain1.png"
-  //               alt="Rapital Bank"
-  //               className="md:h-[250px] md:w-[384px]"
-  //             />
-  //           ),
-  //           field: 'CÔNG NGHỆ',
-  //         },
-  //       ],
-  //     },
-  //   ];
-
   const [timeLeft, setTimeLeft] = useState({
     days: 2,
     hours: 3,
     minutes: 4,
     seconds: 5,
   });
-
-  //   useEffect(() => {
-  //     const timer = setInterval(() => {
-  //       setTimeLeft((prevTime) => {
-  //         if (prevTime.seconds > 0) {
-  //           return { ...prevTime, seconds: prevTime.seconds - 1 };
-  //         } else if (prevTime.minutes > 0) {
-  //           return { ...prevTime, minutes: prevTime.minutes - 1, seconds: 59 };
-  //         } else if (prevTime.hours > 0) {
-  //           return {
-  //             ...prevTime,
-  //             hours: prevTime.hours - 1,
-  //             minutes: 59,
-  //             seconds: 59,
-  //           };
-  //         } else if (prevTime.days > 0) {
-  //           return {
-  //             ...prevTime,
-  //             days: prevTime.days - 1,
-  //             hours: 23,
-  //             minutes: 59,
-  //             seconds: 59,
-  //           };
-  //         } else {
-  //           clearInterval(timer);
-  //           return prevTime;
-  //         }
-  //       });
-  //     }, 1000);
-
-  //     return () => clearInterval(timer);
-  //   }, []);
 
   const {
     ref: ref2,
@@ -153,157 +60,135 @@ const Product = (props: ProductProps) => {
     <>
       <div
         style={{ backgroundImage: 'url("/img/productbg.png")' }}
-        className="min-h-[620px] w-full flex flex-col justify-start items-end relative font-sans bg-cover bg-center "
+        className="min-h-[620px] w-full flex flex-col justify-start items-center relative font-sans bg-cover bg-center "
       >
-        <div className="flex flex-col gap-6 w-full mt-16 md:gap-4 lg:gap-8 ">
-          <p
-            ref={ref2}
-            className={`text-[35px] sm:text-[40px] lg:text-[40px] text-center text-white font-bold uppercase duration-700 ease-in-out transform ${
-              inView2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-            }`}
-          >
-            Sản phẩm đầu tư tại HyraCap
-          </p>
-          <p
-            ref={ref2}
-            className={`text-[16px]  xs:text-[16px] sm:text-[18px] md:text-[20px] lg:text-[24px] px-1 text-center text-[#ffffff]/70 duration-700 ease-in-out transform ${
-              inView2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-            }`}
-          >
-            Chúng tôi cung cấp các gói sản phẩm đầu tư phù hợp với từng nhu cầu
-            của khách hàng.
-          </p>
-
-          <div className="flex w-full justify-center items-start gap-[24px]">
-            <button
+        <div className="flex justify-center items-center w-full max-w-[1440px]">
+          <div className="flex flex-col gap-6 w-full mt-16 md:gap-4 lg:gap-8 ">
+            <p
               ref={ref2}
-              onClick={() => setActiveSection('short-term')}
-              className={`hover:bg-[#48B96D] text-white text-[16px] px-[20px] py-[14px] rounded-[999px] text-center transition-all duration-300 delay-200 ease-in-out transform ${
+              className={`text-[35px] sm:text-[40px] lg:text-[40px] text-center text-white font-bold uppercase duration-700 ease-in-out transform ${
                 inView2
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-10'
-              } ${activeSection === 'short-term' ? 'bg-[#48B96D]' : 'bg-[#ffffff]/10'}`}
+              }`}
             >
-              Đầu tư ngắn hạn
-            </button>
-
-            <button
+              Sản phẩm đầu tư tại HyraCap
+            </p>
+            <p
               ref={ref2}
-              onClick={() => setActiveSection('long-term')}
-              className={`hover:bg-[#48B96D] text-white text-[16px] px-[20px] py-[14px] rounded-[999px] text-center transition-all duration-300 delay-500 ease-in-out transform ${
+              className={`text-[16px]  xs:text-[16px] sm:text-[18px] md:text-[20px] lg:text-[24px] px-1 text-center text-[#ffffff]/70 duration-700 ease-in-out transform ${
                 inView2
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-10'
-              } ${activeSection === 'long-term' ? 'bg-[#48B96D]' : 'bg-[#ffffff]/10'}`}
+              }`}
             >
-              Đầu tư dài hạn
-            </button>
+              Chúng tôi cung cấp các gói sản phẩm đầu tư phù hợp với từng nhu
+              cầu của khách hàng.
+            </p>
+
+            <div className="flex w-full justify-center items-start gap-[24px]">
+              <button
+                ref={ref2}
+                onClick={() => setActiveSection('short-term')}
+                className={`hover:bg-[#48B96D] text-white text-[16px] px-[20px] py-[14px] rounded-[999px] text-center transition-all duration-300 delay-200 ease-in-out transform ${
+                  inView2
+                    ? 'opacity-100 translate-y-0'
+                    : 'opacity-0 translate-y-10'
+                } ${activeSection === 'short-term' ? 'bg-[#48B96D]' : 'bg-[#ffffff]/10'}`}
+              >
+                Đầu tư ngắn hạn
+              </button>
+
+              <button
+                ref={ref2}
+                onClick={() => setActiveSection('long-term')}
+                className={`hover:bg-[#48B96D] text-white text-[16px] px-[20px] py-[14px] rounded-[999px] text-center transition-all duration-300 delay-500 ease-in-out transform ${
+                  inView2
+                    ? 'opacity-100 translate-y-0'
+                    : 'opacity-0 translate-y-10'
+                } ${activeSection === 'long-term' ? 'bg-[#48B96D]' : 'bg-[#ffffff]/10'}`}
+              >
+                Đầu tư dài hạn
+              </button>
+            </div>
           </div>
+          {renderContent()}
         </div>
-        {renderContent()}
       </div>
 
       {/* Các gói đầu tư */}
-      <section className="w-full h-auto mt-[1420px] sm:mt-[250px] md:mt-[250px] lg:mt-[350px] lg bg-white py-2 xl:py-6 flex flex-col justify-center items-center xl:px-[120px] ">
-        {products.map((product: (typeof products)[0], index) => (
-          <div
-            onClick={() =>
-              router.push(`/detail-category/${product.package[index].title}`)
-            }
-            className="w-full h-auto bg-white px-1 flex flex-col justify-center items-left"
-            key={index}
-          >
-            <Stack
-              flexDirection={'row'}
-              justifyContent={'space-between'}
-              alignItems={'center'}
-              px={'20px'}
+      <section className="w-full h-auto mt-[1420px] sm:mt-[250px] md:mt-[250px] md:px-[120px] lg:mt-[350px] lg bg-white py-2 xl:py-6 flex flex-col justify-center items-center xl:px-[120px] ">
+        <div className="w-full flex justify-center items-center max-w-[1440px]">
+          {products.map((product: (typeof products)[0], index) => (
+            <div
+              // onClick={() =>
+              //   router.push(`/detail-category/${product.package[index].title}`)
+              // }
+              className="w-full h-auto bg-white px-1 flex flex-col justify-center items-left"
+              key={index}
             >
-              <Typography
-                className="cursor-pointer"
-                fontFamily={'Inter'}
-                fontWeight={700}
-                fontSize={{
-                  xs: '28px',
-                  sm: '32px',
-                }}
-                lineHeight={'40px'}
-                letterSpacing={'-1%'}
-                color="#000000"
+              <Stack
+                flexDirection={'row'}
+                justifyContent={'space-between'}
+                alignItems={'center'}
+                px={'20px'}
               >
-                {product.title}
-              </Typography>
-              <Button
-                sx={{
-                  color: '#31814B',
-                  fontFamily: 'Inter',
-                  fontWeight: 400,
-                  fontSize: '16px',
-                  lineHeight: '24px',
-                  textTransform: 'none',
-                  display: {
-                    xs: 'none',
-                    md: 'block',
-                  },
-                }}
-                onClick={() => (window.location.href = `/categories`)}
-              >
-                Xem thêm
-              </Button>
-            </Stack>
-            <div className="flex md:flex-row flex-col gap-[24px] items-center  w-full  justify-center py-5  scrollbar-none ">
-              {product?.package?.map((packageItem: any, index: number) => (
-                <ProductItem
-                  key={index}
-                  descriptions={packageItem.descriptions}
-                  image={
-                    <img
-                      src={packageItem.images[0] || '/img/egabid_pc.png'}
-                      alt="Hyperas Chain"
-                      className=" md:h-[250px] md:w-[384px] rounded-[12px] object-cover"
-                    />
-                  }
-                  interest_rate={packageItem.interest_rate}
-                  term={packageItem.term}
-                  title={packageItem.name}
-                  type={product.type}
-                  startDate={packageItem.start_date}
-                  profit={packageItem.capital_raising_target}
-                  sponsorship={
-                    packageItem.mobilized_fund /
-                    packageItem.capital_raising_target
-                  }
-                  invested={packageItem.mobilized_fund}
-                  field={packageItem.industries}
-                  id={packageItem.id}
-                />
-              ))}
-
-              <Button
-                sx={{
-                  color: '#31814B',
-                  fontFamily: 'Inter',
-                  fontWeight: 400,
-                  fontSize: '16px',
-                  lineHeight: '24px',
-                  textTransform: 'none',
-                  display: {
-                    xs: 'block',
-                    md: 'none',
-                  },
-                }}
-                onClick={() => router.push('/categories')}
-              >
-                Xem thêm
-              </Button>
+                <Typography
+                  className="cursor-pointer"
+                  fontFamily={'Inter'}
+                  fontWeight={700}
+                  fontSize={{
+                    xs: '28px',
+                    sm: '32px',
+                  }}
+                  lineHeight={'40px'}
+                  letterSpacing={'-1%'}
+                  color="#000000"
+                >
+                  {product.title}
+                </Typography>
+                <Button
+                  sx={{
+                    color: '#31814B',
+                    fontFamily: 'Inter',
+                    fontWeight: 400,
+                    fontSize: '16px',
+                    lineHeight: '24px',
+                    textTransform: 'none',
+                    display: {
+                      xs: 'none',
+                      md: 'block',
+                    },
+                  }}
+                  onClick={() => (window.location.href = `/categories`)}
+                >
+                  Xem thêm
+                </Button>
+              </Stack>
+              <div className="flex md:flex-row flex-col gap-[24px] items-center  w-full  justify-center py-5  scrollbar-none ">
+                {product?.package?.map((packageItem: any, index: number) => (
+                  <ProjectItem
+                    key={index}
+                    capital_raising_target={packageItem.capital_raising_target}
+                    images={packageItem.images}
+                    mobilized_fund={packageItem.mobilized_fund}
+                    id={packageItem.id}
+                    industries={packageItem.industries}
+                    name={packageItem.name}
+                  />
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
         <button className="border-[#0000003D] border-[1px] rounded-[999px] py-[8px] px-[12px] font-[500] text-[16px] text-black text-opacity-90 hover:bg-[#48B96D] hover:text-white transform ease-in-out duration-100 hover:border-transparent sm:hidden">
           Tìm hiểu thêm các dự án &gt;
         </button>
 
-        <button className="hidden sm:inline border-[#0000003D] border-[1px] rounded-[999px] py-[14px] px-[16px] font-[500] text-[16px] text-black text-opacity-90 hover:bg-[#48B96D] hover:text-white transform ease-in-out duration-100 hover:border-transparent">
+        <button
+          onClick={() => (window.location.href = `/categories`)}
+          className="hidden sm:inline border-[#0000003D] border-[1px] rounded-[999px] py-[14px] px-[16px] font-[500] text-[16px] text-black text-opacity-90 hover:bg-[#48B96D] hover:text-white transform ease-in-out duration-100 hover:border-transparent"
+        >
           Tìm hiểu thêm các dự án &gt;
         </button>
       </section>

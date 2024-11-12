@@ -4,4 +4,6 @@ export const API_CONFIG = {
   new_increase_view: '/api/blog/increase-view',
 
   project: '/api/project',
+  report: '/api/report',
+  contact: '/api/contact',
 };

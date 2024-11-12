@@ -14,7 +14,8 @@ function Growth(props: GrowthProps) {
       flexDirection={{
         xs: 'column',
         sm: 'column',
-        md: 'row',
+        md: 'column',
+        lg: 'row',
       }}
       gap={'34px'}
       bgcolor={'#FFFFFF'}
@@ -26,7 +27,8 @@ function Growth(props: GrowthProps) {
         maxWidth={{
           xs: '100%',
           sm: '100%',
-          md: '282px',
+          md: '100%',
+          lg: '282px',
         }}
         gap={'24px'}
       >
@@ -63,7 +65,11 @@ function Growth(props: GrowthProps) {
           {data?.data?.metrics.map((project: any, index: any) => (
             <Box
               key={index}
-              width={{ xs: '100%', sm: '48%', md: '48%' }}
+              width={{
+                xs: '100%',
+                md: '48%',
+                lg: '48%',
+              }}
               mb={2}
             >
               <Stack direction="row" gap="12px">
@@ -78,7 +84,11 @@ function Growth(props: GrowthProps) {
                     objectFit: 'cover',
                   }}
                 />
-                <Stack flexDirection="column" justifyContent="space-between">
+                <Stack
+                  flexDirection="column"
+                  justifyContent="space-between"
+                  width={'100%'}
+                >
                   <Typography
                     fontFamily="Inter"
                     fontWeight={600}

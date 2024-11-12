@@ -1,47 +1,148 @@
 'use client';
 import styles from '@/app/reports/report.module.css';
 import React from 'react';
+import { useQuery, useQueryClient } from '@tanstack/react-query';
 
 import PdfView from '@/components/pdfView';
 import { Typography } from '@mui/material';
 import { FaDownload, FaEye } from 'react-icons/fa';
 
-// report
+import { getReports } from '@/services/reports.service';
+import { Page } from '@/type/page.type';
+import { formatDateTimeVn } from '@/util/util';
+
 const ReportPage: React.FC = () => {
   const [activeTab, setActiveTab] = React.useState(0);
+  const [page, setPage] = React.useState<typeof Page>(Page);
+  const [data1, setData1] = React.useState<any>([]);
+  const [data2, setData2] = React.useState<any>([]);
+  const [data3, setData3] = React.useState<any>([]);
+  const [data4, setData4] = React.useState<any>([]);
   const [openPdf, setOpenPdf] = React.useState(false);
-  const data1 = [
-    {
-      title: 'Báo cáo tài chính quý I năm 2024',
-      date: '02/03/2024',
-    },
-    {
-      title: 'Báo cáo tài chính quý II năm 2024',
-      date: '02/06/2024',
-    },
-    {
-      title: 'Báo cáo tài chính quý III năm 2024',
-      date: '02/09/2024',
-    },
-    {
-      title: 'Báo cáo tài chính quý IV năm 2024',
-      date: '02/12/2024',
-    },
-  ];
-  const data2 = [
-    {
-      title: 'Báo cáo tài chính 2023',
-      date: '02/12/2023',
-    },
-    {
-      title: 'Báo cáo tài chính 2024',
-      date: '02/10/2024',
-    },
-  ];
+  const [file, setFile] = React.useState<string>('');
+  const queryClient = useQueryClient();
+
+  React.useEffect(() => {
+    queryClient.prefetchQuery({
+      queryKey: ['reportsFinance', page],
+      queryFn: () =>
+        getReports({
+          ...page,
+          type__eq: 0,
+        }),
+    });
+    queryClient.prefetchQuery({
+      queryKey: ['reportsProject', page],
+      queryFn: () =>
+        getReports({
+          ...page,
+          type__eq: 1,
+        }),
+    });
+    queryClient.prefetchQuery({
+      queryKey: ['reportsSociety', page],
+      queryFn: () =>
+        getReports({
+          ...page,
+          type__eq: 2,
+        }),
+    });
+    queryClient.prefetchQuery({
+      queryKey: ['reportsOther', page],
+      queryFn: () =>
+        getReports({
+          ...page,
+          type__eq: 3,
+        }),
+    });
+  }, [queryClient]);
+
+  const {
+    data: reportsFinance,
+    isLoading: isLoadingFinance,
+    isError: isErrorFinance,
+  } = useQuery({
+    queryKey: ['reportsFinance', page],
+    queryFn: () =>
+      getReports({
+        ...page,
+        type__eq: 0,
+      }),
+  });
+  const {
+    data: reportsProject,
+    isLoading: isLoadingProject,
+    isError: isErrorProject,
+  } = useQuery({
+    queryKey: ['reportsProject', page],
+    queryFn: () =>
+      getReports({
+        ...page,
+        type__eq: 1,
+      }),
+  });
+  const {
+    data: reportsSociety,
+    isLoading: isLoadingSociety,
+    isError: isErrorSociety,
+  } = useQuery({
+    queryKey: ['reportsSociaty', page],
+    queryFn: () =>
+      getReports({
+        ...page,
+        type__eq: 2,
+      }),
+  });
+  const {
+    data: reportsOther,
+    isLoading: isLoadingOther,
+    isError: isErrorOther,
+  } = useQuery({
+    queryKey: ['reportsOther', page],
+    queryFn: () =>
+      getReports({
+        ...page,
+        type__eq: 3,
+      }),
+  });
+
+  React.useEffect(() => {
+    if (reportsFinance && !isLoadingFinance && !isErrorFinance) {
+      setData1(reportsFinance.data);
+    }
+  }, [reportsFinance]);
+
+  React.useEffect(() => {
+    if (reportsProject && !isLoadingProject && !isErrorProject) {
+      console.log(reportsProject.data);
+
+      setData2(reportsProject.data);
+    }
+  }, [reportsProject]);
+
+  React.useEffect(() => {
+    if (reportsSociety && !isLoadingSociety && !isErrorSociety) {
+      setData3(reportsSociety.data);
+    }
+  }, [reportsSociety]);
+
+  React.useEffect(() => {
+    if (reportsOther && !isLoadingOther && !isErrorOther) {
+      setData4(reportsOther.data);
+    }
+  }, [reportsOther]);
+
   const data = activeTab == 0 ? data1 : data2;
-  const handleDownload = () => {
+
+  const handlePreview = (file: string) => {
+    setFile(file);
+    setOpenPdf(true);
+    // const googleDocsViewerUrl = `https://docs.google.com/viewer?url=${encodeURIComponent(file)}&embedded=true`;
+    // window.open(googleDocsViewerUrl, '_blank');
+  };
+  const handleDownload = (href: string) => {
     const link = document.createElement('a');
-    link.href = '/pdfs/report.pdf';
+    link.href = href;
     link.setAttribute('download', 'report.pdf');
     document.body.appendChild(link);
     link.click();
@@ -81,9 +182,11 @@ const ReportPage: React.FC = () => {
           <div className="max-w-[1200px] w-full">
             <div className="flex text-center items-center gap-2 py-9">
               <div className="bg-[#1D4454] w-2 h-2 rounded-full"></div>
-              <h2 className="font-bold text-4xl">BÁO CÁO TÀI CHÍNH</h2>
+              <p className="font-bold text-[28px] md:text-4xl">
+                BÁO CÁO TÀI CHÍNH
+              </p>
             </div>
-            <div className={styles.reportTabs}>
+            {/* <div className={styles.reportTabs}>
               <button
                 className={`${styles.tabButton} ${activeTab === 0 && styles.active}`}
                 onClick={() => setActiveTab(0)}
@@ -96,33 +199,39 @@ const ReportPage: React.FC = () => {
               >
                 Hàng Năm
               </button>
-            </div>
+            </div> */}
             <div>
-              {data.map((report, index) => (
-                <div className="flex gap-5 py-5" key={index}>
-                  <div className="bg-[#CCCCCC] w-1 h-auto rounded-full"></div>
-                  <div key={index} className="flex justify-between w-full">
-                    <div className={styles.reportInfo}>
-                      <h3>{report.title}</h3>
-                      <span className={styles.reportDate}>{report.date}</span>
-                    </div>
-                    <div className={styles.reportActions}>
-                      <button
-                        className={styles.viewButton}
-                        onClick={() => setOpenPdf(true)}
-                      >
-                        <FaEye />
-                      </button>
-                      <button
-                        className={styles.downloadButton}
-                        onClick={handleDownload}
-                      >
-                        <FaDownload />
-                      </button>
+              {isLoadingFinance ? (
+                <div>Loading...</div>
+              ) : (
+                data1.map((report: any, index: number) => (
+                  <div className="flex gap-5 py-5" key={index}>
+                    <div className="bg-[#CCCCCC] w-1 h-auto rounded-full"></div>
+                    <div key={index} className="flex justify-between w-full">
+                      <div className={styles.reportInfo}>
+                        <h3>{report.name}</h3>
+                        <span className={styles.reportDate}>
+                          {formatDateTimeVn(report.updated_at)}
+                        </span>
+                      </div>
+                      <div className={styles.reportActions}>
+                        <button
+                          className={styles.viewButton}
+                          onClick={() => handlePreview(report.file)}
+                        >
+                          <FaEye />
+                        </button>
+                        <button
+                          className={styles.downloadButton}
+                          onClick={() => handleDownload(report.file)}
+                        >
+                          <FaDownload />
+                        </button>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))
+              )}
             </div>
           </div>
         </section>
@@ -130,49 +239,40 @@ const ReportPage: React.FC = () => {
           <div className="max-w-[1200px] w-full">
             <div className="flex text-center items-center gap-2 py-9">
               <div className="bg-[#1D4454] w-2 h-2 rounded-full"></div>
-              <h2 className="font-bold text-4xl">BÁO CÁO DỰ ÁN</h2>
+              <p className="font-bold text-[28px] md:text-4xl">BÁO CÁO DỰ ÁN</p>
             </div>
             <div>
-              {[
-                {
-                  title: 'Báo cáo tiến độ dự án',
-                  date: '02/03/2024',
-                },
-                {
-                  title: 'Báo cáo tiến độ dự án',
-                  date: '02/06/2024',
-                },
-                {
-                  title: 'Báo cáo tiến độ dự án',
-                  date: '02/09/2024',
-                },
-              ].map((report, index) => (
-                <div className="flex gap-5 py-5" key={index}>
-                  <div className="bg-[#CCCCCC] w-1 h-auto rounded-full"></div>
-                  <div key={index} className="flex justify-between w-full">
-                    <div>
-                      <h3 className="text-lg mb-[5px]">{report.title}</h3>
-                      <span className="text-gray-600 text-sm">
-                        {report.date}
-                      </span>
-                    </div>
-                    <div className={styles.reportActions}>
-                      <button
-                        className={styles.viewButton}
-                        onClick={() => setOpenPdf(true)}
-                      >
-                        <FaEye />
-                      </button>
-                      <button
-                        className={styles.downloadButton}
-                        onClick={handleDownload}
-                      >
-                        <FaDownload />
-                      </button>
+              {isLoadingProject ? (
+                <div>Loading...</div>
+              ) : (
+                data2.map((report: any, index: number) => (
+                  <div className="flex gap-5 py-5" key={index}>
+                    <div className="bg-[#CCCCCC] w-1 h-auto rounded-full"></div>
+                    <div key={index} className="flex justify-between w-full">
+                      <div className={styles.reportInfo}>
+                        <h3>{report.name}</h3>
+                        <span className={styles.reportDate}>
+                          {formatDateTimeVn(report.updated_at)}
+                        </span>
+                      </div>
+                      <div className={styles.reportActions}>
+                        <button
+                          className={styles.viewButton}
+                          onClick={() => handlePreview(report.file)}
+                        >
+                          <FaEye />
+                        </button>
+                        <button
+                          className={styles.downloadButton}
+                          onClick={() => handleDownload(report.file)}
+                        >
+                          <FaDownload />
+                        </button>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))
+              )}
             </div>
           </div>
         </section>
@@ -180,43 +280,42 @@ const ReportPage: React.FC = () => {
           <div className="max-w-[1200px] w-full">
             <div className="flex text-center items-center gap-2 py-9">
               <div className="bg-[#1D4454] w-2 h-2 rounded-full"></div>
-              <h2 className="font-bold text-4xl">BÁO CÁO XÃ HỘI</h2>
+              <p className="font-bold text-[28px] md:text-4xl">
+                BÁO CÁO XÃ HỘI
+              </p>
             </div>
             <div>
-              {[
-                {
-                  title: 'Trách nhiệm xã hội',
-                  date: '02/03/2024',
-                },
-                {
-                  title: 'Phát triển bền vững',
-                  date: '02/06/2024',
-                },
-              ].map((report, index) => (
-                <div className="flex gap-5 py-5" key={index}>
-                  <div className="bg-[#CCCCCC] w-1 h-auto rounded-full"></div>
-                  <div key={index} className="flex justify-between w-full">
-                    <div className={styles.reportInfo}>
-                      <h3>{report.title}</h3>
-                      <span className={styles.reportDate}>{report.date}</span>
-                    </div>
-                    <div className={styles.reportActions}>
-                      <button
-                        className={styles.viewButton}
-                        onClick={() => setOpenPdf(true)}
-                      >
-                        <FaEye />
-                      </button>
-                      <button
-                        className={styles.downloadButton}
-                        onClick={handleDownload}
-                      >
-                        <FaDownload />
-                      </button>
+              {isLoadingSociety ? (
+                <div>Loading...</div>
+              ) : (
+                data3.map((report: any, index: number) => (
+                  <div className="flex gap-5 py-5" key={index}>
+                    <div className="bg-[#CCCCCC] w-1 h-auto rounded-full"></div>
+                    <div key={index} className="flex justify-between w-full">
+                      <div className={styles.reportInfo}>
+                        <h3>{report.name}</h3>
+                        <span className={styles.reportDate}>
+                          {formatDateTimeVn(report.updated_at)}
+                        </span>
+                      </div>
+                      <div className={styles.reportActions}>
+                        <button
+                          className={styles.viewButton}
+                          onClick={() => handlePreview(report.file)}
+                        >
+                          <FaEye />
+                        </button>
+                        <button
+                          className={styles.downloadButton}
+                          onClick={() => handleDownload(report.file)}
+                        >
+                          <FaDownload />
+                        </button>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))
+              )}
             </div>
           </div>
         </section>
@@ -224,43 +323,40 @@ const ReportPage: React.FC = () => {
           <div className="max-w-[1200px] w-full">
             <div className="flex text-center items-center gap-2 py-9">
               <div className="bg-[#1D4454] w-2 h-2 rounded-full"></div>
-              <h2 className="font-bold text-4xl">BÁO CÁO KHÁC</h2>
+              <p className="font-bold text-[28px] md:text-4xl">BÁO CÁO KHÁC</p>
             </div>
             <div>
-              {[
-                {
-                  title: 'Phân tích thị trường',
-                  date: '02/03/2024',
-                },
-                {
-                  title: 'Nghiên cứu và phát triển',
-                  date: '02/06/2024',
-                },
-              ].map((report, index) => (
-                <div className="flex gap-5 py-5" key={index}>
-                  <div className="bg-[#CCCCCC] w-1 h-auto rounded-full"></div>
-                  <div key={index} className="flex justify-between w-full">
-                    <div className={styles.reportInfo}>
-                      <h3>{report.title}</h3>
-                      <span className={styles.reportDate}>{report.date}</span>
-                    </div>
-                    <div className={styles.reportActions}>
-                      <button
-                        className={styles.viewButton}
-                        onClick={() => setOpenPdf(true)}
-                      >
-                        <FaEye />
-                      </button>
-                      <button
-                        className={styles.downloadButton}
-                        onClick={handleDownload}
-                      >
-                        <FaDownload />
-                      </button>
+              {isLoadingOther ? (
+                <div>Loading...</div>
+              ) : (
+                data4.map((report: any, index: number) => (
+                  <div className="flex gap-5 py-5" key={index}>
+                    <div className="bg-[#CCCCCC] w-1 h-auto rounded-full"></div>
+                    <div key={index} className="flex justify-between w-full">
+                      <div className={styles.reportInfo}>
+                        <h3>{report.name}</h3>
+                        <span className={styles.reportDate}>
+                          {formatDateTimeVn(report.updated_at)}
+                        </span>
+                      </div>
+                      <div className={styles.reportActions}>
+                        <button
+                          className={styles.viewButton}
+                          onClick={() => handlePreview(report.file)}
+                        >
+                          <FaEye />
+                        </button>
+                        <button
+                          className={styles.downloadButton}
+                          onClick={() => handleDownload(report.file)}
+                        >
+                          <FaDownload />
+                        </button>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))
+              )}
             </div>
           </div>
         </section>
@@ -269,11 +365,7 @@ const ReportPage: React.FC = () => {
       </div> */}
 
       {/* pdf View */}
-      <PdfView
-        openPdf={openPdf}
-        setOpenPdf={setOpenPdf}
-        pdfPath={'/pdfs/report.pdf'}
-      />
+      <PdfView openPdf={openPdf} setOpenPdf={setOpenPdf} pdfPath={file} />
     </>
   );
 };

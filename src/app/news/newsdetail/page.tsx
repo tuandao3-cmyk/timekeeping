@@ -71,7 +71,7 @@ const NewsDetail: React.FC = () => {
           </h1>
 
           <div className="relative flex flex-row gap-4 py-4 items-center">
-            <img
+            <Image
               src="/img/logohyracap.png"
               alt="logo"
               className="flex-start"
@@ -241,7 +241,9 @@ const NewsDetail: React.FC = () => {
                   key={index}
                   className={`rounded-lg p-2 overflow-hidden shadow-sm hover:scale-105 transition ease-in-out duration-100 hover:shadow-lg ${'bg-[#F3F7F4] md:max-h-[517px]'}`}
                 >
-                  <img
+                  <Image
+                    width={384}
+                    height={234}
                     src={news.imageUrl}
                     alt=""
                     className={`w-full object-cover object-center rounded-lg ${'md:h-[234px]'}`}

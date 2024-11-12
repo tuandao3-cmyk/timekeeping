@@ -1,76 +1,48 @@
+'use client';
+
+import { getNews } from '@/services/news.service';
+import { Page } from '@/type/page.type';
+import { formatDateTimeVn } from '@/util/util';
 import { Button, IconButton, Stack, Typography } from '@mui/material';
-import { useRouter } from 'next/navigation';
 import { useQuery } from '@tanstack/react-query';
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import styles from './news.module.css';
-import { getNews } from '@/services/news.service';
-import { formatDateTimeVn } from '@/util/util';
-import { Page } from '@/type/page.type';
 
-const newsData = [
-  {
-    title:
-      'HyraTek và Qualcomm hợp tác chiến lược về AI, đồng hành cùng dự án "Phục dựng ảnh liệt sĩ" của Hà Nội.',
-    date: '30/08/2024',
-    image: '/img/20.png',
-    videoLink: '/news/newsdetail',
-    description:
-      'Hôm 30/8, Hyratek, công ty công nghệ tiên phong trong lĩnh vực cơ sở hạ tầng điện toán biên  cho trí tuệ nhân tạo (AI)...',
-  },
-  {
-    title:
-      'Egabid áp dụng công nghệ blockchain đảm bảo tính minh bạch và an toàn cho mỗi lượt đấu giá',
-    date: '10 tháng 10, 2024',
-    image: '/img/item1-1.png',
-    videoLink: '/news/newsdetail',
-    description:
-      'Egabid là sàn thương mại điện tử đấu giá ngược trong hệ sinh thái Hyperas, cung cấp một nền tảng đấu giá ngược độc đáo',
-  },
-  {
-    title:
-      'Giải pháp hạ tầng điện toán biên chi phí thấp giúp xử lý dữ liệu lớn',
-    date: '10 tháng 10, 2024',
-    image: '/img/item1-2.png',
-    videoLink: '/news/newsdetail',
-    description:
-      'Salala là một nền tảng kinh tế chia sẻ dựa trên điện toán biên, cho phép người dùng chia sẻ tài nguyên để cùng nhau ...',
-  },
-  {
-    title:
-      'Hyperas thúc đẩy một hệ sinh thái AI toàn diện với sự đổi mới, hợp tác và phát triển bền vững.',
-    date: '10 tháng 10, 2024',
-    image: '/img/item1-3.png',
-    videoLink: '/news/newsdetail',
-    description:
-      'Hyperas hướng tới việc trở thành một nền tảng hàng đầu trong việc cung cấp giải pháp cho các vấn đề về hạ tầng tính toán ...',
-  },
-];
+interface NewsProps {
+  newsData: any;
+  newsPage: typeof Page;
+}
 
-const News = () => {
+const News = (props: NewsProps) => {
+  const { newsData, newsPage } = props;
   const router = useRouter();
   const [page, setPage] = React.useState(1);
-  const [newsData1, setNewsData1] = React.useState<any>([]);
+  const [newsData1, setNewsData1] = React.useState<any>(newsData?.data || []);
   const itemsPerPage = 2;
-  const { data, isLoading, isSuccess } = useQuery({
-    queryKey: ['news'],
-    queryFn: () => getNews(Page),
-  });
+  // const { data, isLoading, isSuccess } = useQuery({
+  //   queryKey: ['news'],
+  //   queryFn: () =>
+  //     getNews({
+  //       ...Page,
+  //       take: 4,
+  //     }),
+  // });
 
-  React.useEffect(() => {
-    if (isSuccess) {
-      console.log(data.data);
-
-      setNewsData1(data.data);
-    }
-  }, [data, isSuccess]);
+  // React.useEffect(() => {
+  //   if (isSuccess) {
+  //     setNewsData1(data.data);
+  //   }
+  // }, [data, isSuccess]);
   const { ref, inView, entry } = useInView({
     threshold: 0.1,
     triggerOnce: true,
   });
 
   const handleNextPage = () => {
-    if (page * itemsPerPage >= newsData.length) return;
+    if (page * itemsPerPage >= newsData1.length) return;
     setPage((prev) => prev + 1);
   };
 
@@ -79,15 +51,15 @@ const News = () => {
     setPage((prev) => prev - 1);
   };
   return (
-    <div ref={ref} className={`${styles.newsSection} py-[24px] bg-[#F3F7F4]`}>
-      <div className="flex flex-col justify-center items-center w-full">
-        <div className="max-w-[1440px]">
+    <div ref={ref} className={`${styles.newsSection} py-[24px]  bg-[#F3F7F4]`}>
+      <div className="flex flex-col justify-center items-center w-full h-full">
+        <div className="max-w-[1440px] h-full">
           <div className=" flex justify-between ">
             <p
               style={{
                 fontWeight: 700,
               }}
-              className=" font-bold pb-6 text-[28px] text-center md:text-left  md:text-[36px] leading-[28px] md:leading-[48px] font-sans"
+              className=" font-bold pb-6 ml-3 text-[25px] text-center md:text-left  md:text-[36px] leading-[28px] md:leading-[48px] font-sans"
             >
               TIN MỚI NHẤT VỀ HYRACAP
             </p>
@@ -98,70 +70,77 @@ const News = () => {
               Xem thêm
             </a>
           </div>
-          <div className="flex flex-col md:flex-row md:gap-5 xl:gap-[126px] p-3 w-full items-center">
-            {isLoading ? (
+          <div className="flex flex-col md:flex-row md:gap-5 xl:gap-[126px] p-3 w-full h-full ">
+            {newsData1?.length == 0 ? (
               <div> Loading...</div>
             ) : (
               <div
-                className={`${styles.mainNews} md:max-w-[486px] max-w-none  hidden md:flex `}
+                className={`${styles.mainNews} md:max-w-[486px] max-w-none gap-[24px] flex-grow hidden md:flex w-full  flex-col justify-between h-auto`}
               >
-                <a
-                  href={`news/${newsData1[0]?.id}` || ''}
-                  className={`${styles.mainNewsLink} ${styles.newsLink} flex justify-start items-start md:max-w-[486px] max-w-none mb-[40px]`}
-                >
-                  <img
-                    src={newsData1[0]?.link_img[0] || ''}
-                    alt="Main News"
-                    className={`${styles.mainImage} duration-300 h-[615px] md:max-h-[655px] lg:max-w-[486px]  lg:max-h-[320px]  ease-in-out transform ${
-                      inView
-                        ? 'opacity-100 translate-y-0'
-                        : 'opacity-0 translate-y-10'
-                    }`}
-                  />
-                </a>
+                <div className="flex flex-col gap-[40px]">
+                  <a
+                    href={`news/${newsData1[0]?.id}` || ''}
+                    className={`${styles.mainNewsLink} ${styles.newsLink} flex justify-start items-start md:max-w-[486px] max-w-none`}
+                  >
+                    <Image
+                      width={486}
+                      height={426}
+                      src={newsData1[0]?.link_img[0] || ''}
+                      alt="Main News"
+                      className={`${styles.mainImage} duration-300 h-[615px] md:max-h-[655px] lg:max-w-[486px] lg:max-h-[426px] ease-in-out transform ${
+                        inView
+                          ? 'opacity-100 translate-y-0'
+                          : 'opacity-0 translate-y-10'
+                      }`}
+                    />
+                  </a>
 
-                <div className="flex flex-col items-start justify-start">
-                  <a
-                    href={`news/${newsData1[0]?.id}` || ''}
-                    className={`${styles.newsTitle} line-clamp-3 font-sans w-full  duration-300 delay-200 text-[16px] md:text-[24px] text-[#000000]/80  ease-in-out transform ${
-                      inView
-                        ? 'opacity-100 translate-y-0'
-                        : 'opacity-0 translate-y-10'
-                    }`}
-                  >
-                    {newsData1[0]?.title || ''}
-                  </a>
+                  <div className="flex flex-col gap-[16px]">
+                    <div className="flex flex-col items-start justify-start">
+                      <a
+                        href={`news/${newsData1[0]?.id}` || ''}
+                        className={`${styles.newsTitle} line-clamp-3 font-sans w-full duration-300 delay-200 text-[16px] md:text-[24px] text-[#000000]/80 ease-in-out transform ${
+                          inView
+                            ? 'opacity-100 translate-y-0'
+                            : 'opacity-0 translate-y-10'
+                        }`}
+                      >
+                        {newsData1[0]?.title || ''}
+                      </a>
+                    </div>
+                    <div className="flex flex-col items-start justify-start">
+                      <a
+                        href={`news/${newsData1[0]?.id}` || ''}
+                        className={`font-inter text-sm w-full font-sans leading-6 text-gray-600 duration-300 delay-500 ease-in-out transform ${
+                          inView
+                            ? 'opacity-100 translate-y-0'
+                            : 'opacity-0 translate-y-10'
+                        }`}
+                      >
+                        <Typography
+                          sx={{
+                            display: '-webkit-box',
+                            WebkitLineClamp: 2,
+                            WebkitBoxOrient: 'vertical',
+                            overflow: 'hidden',
+                            textOverflow: 'ellipsis',
+                          }}
+                        >
+                          <div
+                            dangerouslySetInnerHTML={{
+                              __html: newsData1[0]?.content || '',
+                            }}
+                          ></div>
+                        </Typography>
+                      </a>
+                    </div>
+                  </div>
                 </div>
-                <div className="flex flex-col items-start  justify-start">
-                  <a
-                    href={`news/${newsData1[0]?.id}` || ''}
-                    className={`font-inter text-sm w-full font-sans leading-6 text-gray-600 duration-300 delay-500  ease-in-out transform ${
-                      inView
-                        ? 'opacity-100 translate-y-0'
-                        : 'opacity-0 translate-y-10'
-                    }`}
-                  >
-                    <Typography
-                      sx={{
-                        display: '-webkit-box',
-                        WebkitLineClamp: 2,
-                        WebkitBoxOrient: 'vertical',
-                        overflow: 'hidden',
-                        textOverflow: 'ellipsis',
-                      }}
-                    >
-                      <div
-                        dangerouslySetInnerHTML={{
-                          __html: newsData1[0]?.content,
-                        }}
-                      ></div>
-                    </Typography>
-                  </a>
-                </div>
-                <div className="w-full flex justify-end items-end ">
-                  <div className="w-[100%] md:flex  hidden justify-end items-end ">
+                {/* Button container adjusted with mt-auto */}
+                <div className="w-full flex justify-end items-end h-full mt-auto">
+                  <div className="w-[100%] md:flex hidden justify-end items-end">
                     <button
-                      className={` text-[#000000]/90 font-sans font-medium py-2 px-4 border border-gray-300 rounded-full hover:bg-green-500 hover:text-white transition duration-300 flex items-center   ease-in-out transform ${
+                      className={`text-[#000000]/90 font-sans font-medium py-2 px-4 border border-gray-300 rounded-full hover:bg-green-500 hover:text-white transition duration-300 flex items-center ease-in-out transform ${
                         inView
                           ? 'opacity-100 translate-y-0'
                           : 'opacity-0 translate-y-10'
@@ -190,13 +169,13 @@ const News = () => {
             )}
             <div className={`${styles.sideNews}`}>
               <div className="hidden md:flex flex-col">
-                {isLoading ? (
+                {newsData1?.length == 0 ? (
                   <div> Loading..</div>
                 ) : (
                   newsData1.slice(1).map((news: any, index: number) => (
                     <div
                       key={index}
-                      className={`${styles.newsItem} flex flex-col md:flex-row duration-300 delay-${index * 100} pb-[20px] pt-[20px] max-w-[650px] ease-in-out transform ${
+                      className={`${styles.newsItem}  flex flex-col md:flex-row duration-300 delay-${index * 100} pb-[20px] pt-[20px] max-w-[650px] ease-in-out transform ${
                         inView
                           ? 'opacity-100 translate-y-0'
                           : 'opacity-0 translate-y-10'
@@ -211,7 +190,9 @@ const News = () => {
                         >
                           <div className={styles.sideBorder}>
                             <div className="flex flex-col gap-[16px]">
-                              <img
+                              <Image
+                                width={250}
+                                height={130}
                                 src={news?.link_img[0] || ''}
                                 alt={`News ${index}`}
                                 className={`${styles.newsImage} md:max-w-[250px] md:max-h-[130px] md:min-h-0 min-h-[320px] md:block lg:hidden`}
@@ -225,17 +206,19 @@ const News = () => {
                               <span className="font-inter text-sm font-sans leading-6 text-gray-600 md:hidden lg:block line-clamp-2">
                                 <div
                                   dangerouslySetInnerHTML={{
-                                    __html: news.content,
+                                    __html: news?.description || '',
                                   }}
                                   className="line-clamp-2"
                                 ></div>
                               </span>
                             </div>
                             <span className="text-gray-600 text-sm font-sans leading-6 ">
-                              {formatDateTimeVn(news.updated_at)}
+                              {formatDateTimeVn(news?.updated_at || '')}
                             </span>
                           </div>
-                          <img
+                          <Image
+                            width={170}
+                            height={170}
                             src={news?.link_img[0] || ''}
                             alt={`News ${index}`}
                             className={`${styles.newsImage} md:max-w-[170px] md:max-h-[170px] md:min-h-0 min-h-[320px] md:hidden lg:block`}
@@ -248,12 +231,12 @@ const News = () => {
               </div>
 
               <div className="md:hidden flex flex-col ">
-                {newsData
+                {newsData1
                   .slice(
                     (page - 1) * itemsPerPage,
                     (page - 1) * itemsPerPage + itemsPerPage
                   )
-                  .map((news, index) => (
+                  .map((news: any, index: number) => (
                     <div
                       key={index}
                       className={`${styles.newsItem} flex flex-col md:flex-row duration-300 delay-${index * 100} pb-[20px] pt-[20px] max-w-[650px] ease-in-out transform ${
@@ -262,7 +245,10 @@ const News = () => {
                           : 'opacity-0 translate-y-10'
                       }`}
                     >
-                      <a href={news.videoLink} className={`${styles.newsLink}`}>
+                      <a
+                        href={`/news/${news?.id || ''}`}
+                        className={`${styles.newsLink}`}
+                      >
                         <div
                           className={`${styles.newsContent} flex flex-col-reverse md:flex-row`}
                         >
@@ -271,19 +257,21 @@ const News = () => {
                               <p
                                 className={`${styles.newsTitle}   font-sans text-16px text-[#000000CC] text-opacity-80`}
                               >
-                                {news.title}
+                                {news?.title || ''}
                               </p>
 
                               <span className="font-inter text-sm font-sans leading-6 text-gray-600">
-                                {news.description}
+                                {news?.description || ''}
                               </span>
                             </div>
                             <span className="text-gray-600 text-sm font-sans leading-6 ">
-                              {news.date}
+                              {formatDateTimeVn(news?.updated_at || '')}
                             </span>
                           </div>
-                          <img
-                            src={news.image}
+                          <Image
+                            width={170}
+                            height={170}
+                            src={news?.link_img[0] || ''}
                             alt={`News ${index}`}
                             className={`${styles.newsImage} md:max-w-[170px] md:max-h-[170px] md:min-h-0 min-h-[320px]`}
                           />

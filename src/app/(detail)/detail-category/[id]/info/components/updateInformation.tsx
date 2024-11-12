@@ -1,9 +1,41 @@
+import ModalEror from '@/app/ModalEror';
+import ModalSucses from '@/app/ModalSucses';
 import { Box, Button, Input, Stack, Typography } from '@mui/material';
 import Image from 'next/image';
 import { useState } from 'react';
-
+import { postContact } from '@/services/contact.service';
 function UpdateInfo() {
   const [isFocused, setIsFocused] = useState(false);
+  const [formData, setFormData] = useState({
+    email: '',
+  });
+  const [modal, setModal] = useState(false);
+  const [modal2, setModal2] = useState(false);
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (formData.email == '') {
+      alert('Hãy điền email cửa bạn');
+      return;
+    }
+    const response = await postContact(formData);
+
+    if (response.statusCode === 200) {
+      setModal(true);
+      setFormData({
+        email: '',
+      });
+    } else {
+      setModal2(true);
+    }
+  };
   return (
     <Stack
       flexDirection={'column'}
@@ -20,6 +52,8 @@ function UpdateInfo() {
         md: '62px',
       }}
     >
+      <ModalSucses modal={modal} setModal={setModal} />
+      <ModalEror modal={modal2} setModal={setModal2} />
       <Box
         sx={{
           backgroundImage: 'url(/img/product_category/updateInfoBg.png)',
@@ -68,12 +102,15 @@ function UpdateInfo() {
             width={'100%'}
           >
             <Input
+              name="email"
               placeholder="Nhập địa chỉ email"
               disableUnderline
               onFocus={() => setIsFocused(true)}
               onBlur={() => setIsFocused(false)}
               onMouseMove={() => setIsFocused(true)}
               onMouseLeave={() => setIsFocused(false)}
+              value={formData.email}
+              onChange={handleChange}
               sx={{
                 color: '#000000A3',
                 fontFamily: 'Inter',
@@ -85,6 +122,7 @@ function UpdateInfo() {
               }}
             />
             <Button
+              onClick={handleSubmit}
               sx={{
                 backgroundColor: '#48B96D',
                 borderRadius: '6px',
@@ -99,7 +137,7 @@ function UpdateInfo() {
                 },
               }}
             >
-              Send
+              Gửi
             </Button>
           </Stack>
           <Typography

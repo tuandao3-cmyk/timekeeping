@@ -1,20 +1,19 @@
 'use client';
+import { getProjects } from '@/services/project.service';
+import { Page } from '@/type/page.type';
+import { useMediaQuery, useTheme } from '@mui/material';
+import { useQuery } from '@tanstack/react-query';
+import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
+import { FaFlag } from 'react-icons/fa';
 import { useInView } from 'react-intersection-observer';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { useQuery } from '@tanstack/react-query';
 import 'swiper/css/pagination';
-import { FaChevronLeft, FaFlag } from 'react-icons/fa';
+import { Navigation, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import useWindowSize from './useWindowSize';
-import { FaChevronRight } from 'react-icons/fa6';
-import { MdArrowBackIos, MdArrowForwardIos } from 'react-icons/md';
-import { useMediaQuery, useTheme } from '@mui/material';
-import { getProjects } from '@/services/project.service';
-import { Page } from '@/type/page.type';
 
 const projects = [
   {
@@ -91,13 +90,19 @@ const projects = [
   },
 ];
 
-const ProjectSlider: React.FC = () => {
+interface ProjectSlideProps {
+  dataRasing: any;
+  pageRasing: any;
+}
+
+const ProjectSlider = (props: ProjectSlideProps) => {
+  const { dataRasing, pageRasing } = props;
   const { ref, inView, entry } = useInView({
     threshold: 0.1,
   });
   const [swiper, setSwiper] = useState<SwiperType | null>(null);
-  const [page, setPage] = useState<typeof Page>(Page);
-  const [projectData, setProjectData] = useState<any>([]);
+  const [page, setPage] = useState<typeof Page>(pageRasing);
+  const [projectData, setProjectData] = useState<any>(dataRasing?.data || []);
   const [activeIndex, setActiveIndex] = useState(0);
   const progressBarRef = useRef<HTMLDivElement>(null);
   const windowSize = useWindowSize();
@@ -105,19 +110,20 @@ const ProjectSlider: React.FC = () => {
   const theme = useTheme();
   const isMdOrLarger = useMediaQuery(theme.breakpoints.up('md'));
 
-  const { data, isLoading, isSuccess, isError } = useQuery({
-    queryKey: ['project'],
-    queryFn: () => getProjects(page),
-  });
+  // const { data, isLoading, isSuccess, isError } = useQuery({
+  //   queryKey: ['project'],
+  //   queryFn: () =>
+  //     getProjects({
+  //       ...page,
+  //       status__eq: 1,
+  //     }),
+  // });
 
-  
-  useEffect(() => {
-    if (isSuccess) {
-      console.log(data.data);
-
-      setProjectData(data.data);
-    }
-  }, [data]);
+  // useEffect(() => {
+  //   if (isSuccess) {
+  //     setProjectData(data.data);
+  //   }
+  // }, [data]);
 
   const isMobile = windowSize.width < 640;
   const isTablet = windowSize.width >= 640 && windowSize.width < 768;
@@ -151,12 +157,6 @@ const ProjectSlider: React.FC = () => {
     slidesPerView = 1;
   }
 
-
-
-  useEffect(() => {
-    console.log('activeIndex', activeIndex);
-  }, [activeIndex]);
-
   useEffect(() => {
     if (swiper) {
       swiper.params.slidesOffsetBefore = slidesOffsetBefore;
@@ -177,71 +177,74 @@ const ProjectSlider: React.FC = () => {
     <div className="flex w-full mx-auto max-w-[1440px] flex-col justify-center items-center overflow-x-hidden ">
       <div className="w-full  relative">
         <div className="w-full px-4 md:px-0">
-          <h2 className="text-[28px] md:text-[38px] text-[#04141A] font-[700] leading-[36px] md:leading-[57px] mb-8 text-center font-sans">
+          <h2 className=" text-[28px] md:text-[38px] text-[#04141A] font-[700] leading-[36px] md:leading-[57px] mb-8 text-center font-sans">
             DỰ ÁN ĐANG GỌI VỐN
           </h2>
           <Swiper
+            loop={true}
             modules={[Navigation, Pagination]}
             spaceBetween={isMobile ? 20 : 40}
             slidesPerView={slidesPerView}
-            loopAdditionalSlides={Math.ceil(slidesPerView)}
+            // loopAdditionalSlides={Math.ceil(slidesPerView)}
             centeredSlides={true}
-            slidesOffsetBefore={slidesOffsetBefore}
-            slidesOffsetAfter={slidesOffsetBefore}
+            // slidesOffsetBefore={slidesOffsetBefore}
+            // slidesOffsetAfter={slidesOffsetBefore}
             watchSlidesProgress={true}
             normalizeSlideIndex={true}
             roundLengths={true}
-            navigation={
-              isMdOrLarger
-                ? {
-                    prevEl: '.swiper-button-prev',
-                    nextEl: '.swiper-button-next',
-                  }
-                : false
-            }
-            loop={true}
+            // navigation={
+            //   isMdOrLarger
+            //     ? {
+            //         prevEl: '.swiper-button-prev',
+            //         nextEl: '.swiper-button-next',
+            //       }
+            //     : false
+            // }
+            // loop={true}
+
             onSwiper={setSwiper}
             onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
-            speed={800}
+            // speed={800}
             slideActiveClass="swiper-slide-active"
             slidePrevClass="swiper-slide-prev"
             slideNextClass="swiper-slide-next"
-            className="mySwiper !overflow-visible"
+            className="mySwiper !overflow-visible "
             effect="coverflow"
-            coverflowEffect={{
-              rotate: 0,
-              stretch: 0,
-              depth: 100,
-              modifier: 1,
-              slideShadows: false,
-            }}
+            // coverflowEffect={{
+            //   rotate: 0,
+            //   stretch: 0,
+            //   depth: 100,
+            //   modifier: 1,
+            //   slideShadows: false,
+            // }}
           >
-            {isLoading ? (
+            {projectData?.length == 0 ? (
               <div>Loading...</div>
             ) : (
               projectData.map((project: any, index: number) => (
                 <SwiperSlide
                   key={project?.id}
-                  className="transition-all duration-300  max-w-[778px]"
+                  className="transition-all duration-300 "
                 >
                   {({ isActive, isNext, isPrev }) => (
                     <a
                       ref={ref}
                       href={`/detail-category/${project?.id}`}
-                      className={`bg-[#07212C] rounded-xl overflow-visible md:max-h-[386px] pb-[20px] gap-[24px] max-w-[778px] flex flex-col p-[12px] md:p-[32px] md:flex-row 
+                      className={`bg-[#07212C] rounded-xl overflow-visible transition duration-100 md:max-h-[386px] pb-[20px] gap-[24px] max-w-[778px] flex flex-col p-[12px] md:p-[32px] md:flex-row 
             ${isActive ? 'scale-100 z-10' : 'scale-90 z-0'} 
-            ${isNext ? 'translate-x-[-5%]' : ''}
-            ${isPrev ? 'translate-x-[5%]' : ''}`}
+            `}
                     >
                       <div
                         ref={ref}
                         className={`md:w-1/2 w-full flex flex-col justify-center items-center  duration-700 ease-in-out transform `}
                       >
                         <div className="w-full h-full flex flex-col justify-center items-center rounded-lg overflow-hidden">
-                          <img
+                          <Image
+                            width={360}
+                            height={322}
                             src={project?.images[0]}
                             alt={project.name}
-                            className="object-cover max-w-[360px] max-h-[224px] md:max-h-none rounded-lg md:w-[360px] md:h-[332px]"
+                            className="object-cover  max-h-[224px] w-full md:max-h-none rounded-lg md:w-[360px] md:h-[332px]"
                           />
                           <a
                             href="/detail-category"
@@ -255,7 +258,8 @@ const ProjectSlider: React.FC = () => {
                         <div className="flex flex-col gap-[8px]">
                           <span className="top-4 left-4 bg-[#FFFFFF]/20 text-[#0298F4] px-2 py-1 text-xs rounded inline-flex w-fit items-center ">
                             <FaFlag className="w-4 h-4 mr-1 font-sans" />
-                            {project.series}
+                            {project?.data?.project_information
+                              ?.funding_round || ''}
                           </span>
                           <h3 className="text-2xl font-semibold leading-8 text-white mb-2 font-sans">
                             {project.name}
@@ -286,7 +290,8 @@ const ProjectSlider: React.FC = () => {
                           <div className="flex justify-between text-xs mt-2 gap-[4px]">
                             <div className="flex flex-row items-center gap-1 3xl:gap-0 3xl:flex-col flex-wrap ">
                               <span className="font-bold font-inter text-green-500 text-sm font-sans text-nowrap">
-                                ${project.mobilized_fund.toLocaleString()}
+                                $
+                                {project?.mobilized_fund?.toLocaleString() || 0}
                               </span>
 
                               <span
@@ -298,9 +303,11 @@ const ProjectSlider: React.FC = () => {
                             </div>
                             <div className=" flex flex-row items-center gap-1 3xl:gap-0 3xl:flex-col flex-wrap">
                               <span className="font-bold font-inter text-green-500 text-sm font-sans text-nowrap">
-                                {(project?.mobilized_fund /
-                                  project?.capital_raising_target) *
-                                  100}
+                                {(
+                                  (project?.mobilized_fund /
+                                    project?.capital_raising_target) *
+                                  100
+                                ).toFixed(0) || 0}
                                 %
                               </span>
                               <span

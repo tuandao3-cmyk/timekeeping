@@ -1,17 +1,15 @@
 'use client';
-import { usePathname } from 'next/navigation';
-import { QueryClient, useQuery } from '@tanstack/react-query';
-import React, { useState } from 'react';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Box from '@mui/material/Box';
-import InfoSection from './info/infoSection';
-import { Stack, Typography } from '@mui/material';
 import CustomTabPanel from '@/components/customTabPanel';
-import PitchingDeckSection from './pitchingdeck/page';
-import ContractSampleSection from './contract_sample/page';
-import BusinessPlanSection from './business plan/page';
-import FinanceRoadSection from './finance_road/page';
+import { Stack } from '@mui/material';
+import Box from '@mui/material/Box';
+import Tab from '@mui/material/Tab';
+import Tabs from '@mui/material/Tabs';
+import React, { useState } from 'react';
+import BusinessPlanSection from './business plan/business_plan';
+import ContractSampleSection from './contract_sample/contractSample';
+import FinanceRoadSection from './finance_road/finance_road';
+import InfoSection from './info/infoSection';
+import PitchingDeckSection from './pitchingdeck/pitchingDeck';
 
 interface DetailCategoryPageProps {
   data: any;
@@ -107,22 +105,22 @@ const DetailCategoryPage = (props: DetailCategoryPageProps) => {
           </Box>
         </Stack>
       </Box>
+
       <CustomTabPanel value={value} index={0}>
         <InfoSection dataP={data} />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        <PitchingDeckSection />
-        <PitchingDeckSection />
+        <PitchingDeckSection data={data} />
+        {/* <PitchingDeckSection /> */}
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
-        <ContractSampleSection />
+        <ContractSampleSection data={data} />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={3}>
-        <FinanceRoadSection />
+        <FinanceRoadSection data={data} />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={4}>
-        <BusinessPlanSection />
-        <BusinessPlanSection />
+        <BusinessPlanSection data={data} />
       </CustomTabPanel>
     </Box>
   );

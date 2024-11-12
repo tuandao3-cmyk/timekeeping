@@ -1,15 +1,21 @@
 // components/ContactForm.tsx
+import ModalEror from '@/app/ModalEror';
+import ModalSucses from '@/app/ModalSucses';
+import { postContact } from '@/services/contact.service';
+import Image from 'next/image';
 import { useState } from 'react';
 
 const ContactForm = () => {
+  const [open, setOpen] = useState(false);
   const [formData, setFormData] = useState({
-    fullName: '',
+    name: '',
     email: '',
     phone: '',
     role: '',
-    message: '',
+    question: '',
   });
-
+  const [modal, setModal] = useState(false);
+  const [modal2, setModal2] = useState(false);
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -22,34 +28,32 @@ const ContactForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const response = await fetch('/api/contact', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
+    const response = await postContact({
+      ...formData,
+      role: parseInt(formData.role),
     });
 
-    if (response.ok) {
+    if (response.statusCode === 200) {
+      setModal(true);
       alert('Đã gửi thành công');
       setFormData({
-        fullName: '',
+        name: '',
         email: '',
         phone: '',
         role: '',
-        message: '',
+        question: '',
       });
     } else {
-      alert('Lỗi gửi,vui lòng thử lại sau');
+      setModal2(true);
     }
   };
 
   return (
     // <form onSubmit={handleSubmit}>
-    <div className="  max-h-[645px] min-h-480 max-w-[572px]">
-      
-      <div className="h-full rounded-3xl "
-      >
+    <div className=" -black max-h-[645px] min-h-480 max-w-[572px] xl:w-full">
+      <ModalSucses modal={modal} setModal={setModal} />
+      <ModalEror modal={modal2} setModal={setModal2} />
+      <div className="h-full rounded-3xl ">
         <form className=" p-8 border-4 border-white rounded-3xl h-full max-w-[600px] bg-gradient-to-b from-black/[0.08] to-transparent to-[70.23%]">
           <h2 className="font-semibold text-[18px] leading-[26px]">
             Chúng tôi luôn đón nhận mọi ý kiến từ bạn
@@ -58,8 +62,8 @@ const ContactForm = () => {
             <input
               className="shadow bg-black/[.03] text-base leading-6 appearance-none border-2 border-bg-black/[.06] rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               type="text"
-              name="fullName"
-              value={formData.fullName}
+              name="name"
+              value={formData.name}
               onChange={handleChange}
               placeholder="Họ và tên"
               required
@@ -85,8 +89,8 @@ const ContactForm = () => {
           <div className="pt-5">
             <textarea
               className="shadow bg-black/[.03] text-base leading-6 border-bg-black/[.06] appearance-none border-2 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline min-h-[107px]"
-              name="message"
-              value={formData.message}
+              name="question"
+              value={formData.question}
               onChange={handleChange}
               placeholder="Nội dung"
               required
@@ -99,9 +103,9 @@ const ContactForm = () => {
                 <input
                   type="radio"
                   name="role"
-                  value="Startup"
+                  value={0}
                   className="mr-2"
-                  checked={formData.role === 'Startup'}
+                  checked={formData.role === '0'}
                   onChange={handleChange}
                 />
                 Startup
@@ -111,9 +115,9 @@ const ContactForm = () => {
                 <input
                   type="radio"
                   name="role"
-                  value="Investor"
+                  value={1}
                   className="mr-2"
-                  checked={formData.role === 'Investor'}
+                  checked={formData.role === '1'}
                   onChange={handleChange}
                 />
                 Nhà đầu tư
@@ -123,9 +127,9 @@ const ContactForm = () => {
                 <input
                   type="radio"
                   name="role"
-                  value="Expert"
+                  value={2}
                   className="mr-2"
-                  checked={formData.role === 'Expert'}
+                  checked={formData.role === '2'}
                   onChange={handleChange}
                 />
                 Chuyên gia
@@ -139,7 +143,9 @@ const ContactForm = () => {
               className="flex items-center px-4 py-2 mt-3 bg-green-500 text-white rounded-full"
             >
               Gửi
-              <img
+              <Image
+                width={24}
+                height={24}
                 src="/img/icon/send.svg"
                 alt="send"
                 className="pl-2"
@@ -148,6 +154,7 @@ const ContactForm = () => {
           </div>
         </form>
       </div>
+      <ModalSucses modal={open} setModal={setOpen} />
     </div>
   );
 };
