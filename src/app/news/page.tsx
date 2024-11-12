@@ -186,7 +186,7 @@ const NewsPage: React.FC = () => {
       >
         <div className="flex flex-col max-w-[1201px] gap-[20px] md:gap-[40px] py-[62px]">
           <h1
-            className={`pl-5 md:pl-0 text-3xl md:text-3xl lg:text-4xl font-bold text-gray-800  duration-700 ease-in-out transform ${
+            className={`pl-5 md:pl-0 text-2xl md:text-3xl leading-9 lg:text-[40px] lg:leading-[48px] font-bold text-gray-800  duration-700 ease-in-out transform ${
               inView2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
           >
@@ -283,7 +283,7 @@ const NewsPage: React.FC = () => {
       {/* upcomming */}
       <section className="w-full bg-cover bg-center flex justify-center flex-col items-center gap-3 bg-[#F3F7F4] mt-20 md:mt-0 md:p-5 xl:p-0">
         <div className="max-w-[1201px] md:py-[62px] py-[50px] flex flex-col md:gap-[40px] gap-[10px] w-[100%] ">
-          <h1 className="w-full text-left text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800  pl-5 md:pl-0 ">
+          <h1 className="w-full text-left text-2xl md:text-3xl leading-9 lg:text-[40px] lg:leading-[48px] font-bold text-gray-800  pl-5 md:pl-0 ">
             Sự kiện sắp tới
           </h1>
 
@@ -305,7 +305,7 @@ const NewsPage: React.FC = () => {
       {/*  */}
       <section className="w-full  bg-cover bg-center flex justify-center flex-col items-center gap-8 md:p-5 xl:p-0">
         <div className="max-w-[1200px] ">
-          <h1 className="w-full max-lg:px-8 text-left text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 pt-8 hidden md:block ">
+          <h1 className="w-full max-lg:px-8 text-left text-2xl md:text-3xl leading-9 lg:text-[40px] lg:leading-[48px] font-bold text-gray-800 pt-8 hidden md:block ">
             Sự kiện nổi bật
           </h1>
           <div className="w-full  grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4 m ">

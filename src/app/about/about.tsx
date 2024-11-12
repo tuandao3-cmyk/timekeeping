@@ -703,7 +703,7 @@ const AboutPage = (props: AboutPageProps) => {
         </section>
         <section
           ref={ref4}
-          className="flex flex-col justify-center items-center w-full py-2 lg:py-[62px]"
+          className="flex flex-col bg-white justify-center items-center w-full py-2 lg:py-[62px]"
         >
           <div className="flex flex-col items-center justify-center w-full max-w-[1440px] px-5 lg:px-[120px] gap-[40px]">
             <div className="flex flex-col text-center gap-10 w-[780px] max-[768px]:!w-full">
@@ -902,7 +902,7 @@ const AboutPage = (props: AboutPageProps) => {
           <div className="flex flex-col justify-center items-center w-full max-w-[1440px]">
             <div className="flex flex-col w-full max-w-[781px] justify-center items-center gap-[40px]">
               <Typography
-                className={`duration-700  ease-in-out transform ${
+                className={`duration-700 uppercase ease-in-out transform ${
                   inView7
                     ? 'opacity-100 scale-100 translate-y-0'
                     : 'opacity-0 translate-y-10 scale-50'

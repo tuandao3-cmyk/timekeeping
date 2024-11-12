@@ -302,7 +302,7 @@ const ProjectSlider = (props: ProjectSlideProps) => {
                           </div>
                           <div className="flex justify-between text-xs mt-2 gap-[4px]">
                             <div className="flex flex-row items-center gap-1 3xl:gap-0 3xl:flex-col flex-wrap ">
-                              <span className="font-bold font-inter text-green-500 text-sm font-sans text-nowrap">
+                              <span className="font-bold font-inter text-[#48B96D] text-sm font-sans text-nowrap">
                                 $
                                 {project?.mobilized_fund?.toLocaleString() || 0}
                               </span>
@@ -315,7 +315,7 @@ const ProjectSlider = (props: ProjectSlideProps) => {
                               </span>
                             </div>
                             <div className=" flex flex-row items-center gap-1 3xl:gap-0 3xl:flex-col flex-wrap">
-                              <span className="font-bold font-inter text-green-500 text-sm font-sans text-nowrap">
+                              <span className="font-bold font-inter text-[#48B96D] text-sm font-sans text-nowrap">
                                 {(
                                   (project?.mobilized_fund /
                                     project?.capital_raising_target) *
