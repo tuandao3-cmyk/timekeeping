@@ -5,7 +5,7 @@ import { Calendar } from 'lucide-react';
 import Link from 'next/link';
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
-
+import { Typography } from '@mui/material';
 import { getNews } from '@/services/news.service';
 import { Page } from '@/type/page.type';
 import { formatDateTimeVn } from '@/util/util';
@@ -111,7 +111,7 @@ const NewsPage: React.FC = () => {
 
   return (
     <>
-      <div className="flex flex-col justify-center items-center  ">
+      {/* <div className="flex flex-col justify-center items-center  ">
         <div
           ref={ref}
           className="flex max-md:items-center max-md:justify-center m-auto max-w-[1440px] h-[300px] md:h-[479px] bg-cover  "
@@ -178,8 +178,42 @@ const NewsPage: React.FC = () => {
             </div>
           </div>
         </div>
+      </div> */}
+<div 
+  className="flex flex-col items-center justify-center w-full min-h-[772px] lg:min-h-[585px]" 
+  style={{
+    backgroundColor: '#07212C',
+    backgroundImage: "url('/img/news/newsbg.png')",
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'left top',
+    backgroundSize: '130% 130%',
+  }}
+>
+        <div className="  pb-[107px]">
+          <div className="flex flex-col items-center justify-end text-center max-w-[570px] text-[#0B3546]/80 gap-[22px]">
+            <Typography
+              sx={{
+                fontWeight: 700,
+                fontSize: '48px',
+                lineHeight: '56px',
+                textAlign: 'center',
+              }}
+            >
+              Tin tức
+            </Typography>
+            <Typography
+              sx={{
+                fontWeight: 400,
+                fontSize: '18px',
+                lineHeight: '24px',
+                textAlign: 'center',
+              }}
+            >
+              Cung cấp những tin tức và góc nhìn mới nhất giúp bạn tiếp cận cơ hội đầu tư dễ dàng và hiệu quả.
+            </Typography>
+          </div>
+        </div>
       </div>
-
       <section
         ref={ref2}
         className="w-full font-inter flex flex-col justify-center items-center md:p-5 xl:p-0"

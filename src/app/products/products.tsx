@@ -21,7 +21,7 @@ const Product = (props: ProductProps) => {
   const router = useRouter();
   const [products, setProducts] = useState<any[]>([
     {
-      title: 'Có thể bạn quan tâm',
+      title: 'ĐẦU TƯ LINH HOẠT',
       type: 'flexible',
       package: [...props.projectData],
     },
