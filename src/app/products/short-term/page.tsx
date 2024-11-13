@@ -98,11 +98,23 @@ const ShortTermSection: React.FC = () => {
                   style={{ borderColor: '#04141A' }}
                 >
                   <div className="flex flex-col justify-between items-center pt-4 h-[205px]">
-                    <p className="text-2xl font-medium uppercase text-[packageData.color]">
+                    <p className={`text-2xl font-medium uppercase ${
+                      index === 0 
+                        ? 'text-[#0B3546] filter drop-shadow-[0_1px_1px_#005566]'
+                        : index === 1
+                          ? 'text-[#F68225] filter drop-shadow-[0_1px_1px_#8C4900]'
+                          : index === 2
+                            ? 'text-[#31814B] filter drop-shadow-[0_1px_1px_#016F26]' 
+                            : 'text-[#31814B] filter drop-shadow-[0_1px_1px_#016F26]' 
+                    }`}>
                       {packageData?.name}
                     </p>
-                    <p className="text-lg sm:text-xl lg:text-2xl font-medium uppercase text-[#0B3546]">
-                      {index == 1 ? 'Best value' : ''}
+                    <p
+                      className={`text-xs lg:text-sm font-medium  px-2 py-1 rounded-full normal-case text-[#0048FF] ${
+                        index == 1 ? 'bg-[#3E91FF]/10' : 'bg-transparent'
+                      }`}
+                    >
+                      {index == 1 ? 'Best Value' : ''}
                     </p>
                     <div
                       className="pb-[4px] w-full flex justify-center items-center"
@@ -246,10 +258,10 @@ const ShortTermSection: React.FC = () => {
                   style={{ borderColor: '#48B96D21' }}
                 >
                   <div className="  flex flex-col justify-between items-center pt-4  h-[205px]">
-                    <p className="text-2xl font-medium uppercase text-[#F68225]">
+                    <p className="text-2xl filter drop-shadow-[0_1px_1px_#005566] font-medium uppercase text-[#F68225]">
                       Gói NÂNG CAO
                     </p>
-                    <p className="text-lg sm:text-xl lg:text-2xl font-medium uppercase text-[#0B3546]">
+                    <p className="text-xs lg:text-sm font-medium bg-[#3E91FF]/10 px-2 py-1 rounded-full normal-case text-[#0048FF]">
                       Best value
                     </p>
                     <div

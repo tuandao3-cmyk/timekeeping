@@ -121,9 +121,6 @@ const Product = (props: ProductProps) => {
         <div className="w-full flex justify-center items-center max-w-[1440px]">
           {products.map((product: (typeof products)[0], index) => (
             <div
-              // onClick={() =>
-              //   router.push(`/detail-category/${product.package[index].title}`)
-              // }
               className="w-full h-auto bg-white px-1 flex flex-col justify-center items-left"
               key={index}
             >
@@ -160,7 +157,7 @@ const Product = (props: ProductProps) => {
                       md: 'block',
                     },
                   }}
-                  onClick={() => (window.location.href = `/categories`)}
+                  onClick={() => router.push(`/categories`)}
                 >
                   Xem thêm
                 </Button>
@@ -186,7 +183,7 @@ const Product = (props: ProductProps) => {
         </button>
 
         <button
-          onClick={() => (window.location.href = `/categories`)}
+          onClick={() => router.push(`/categories`)}
           className="hidden sm:inline border-[#0000003D] border-[1px] rounded-[999px] py-[14px] px-[16px] font-[500] text-[16px] text-black text-opacity-90 hover:bg-[#48B96D] hover:text-white transform ease-in-out duration-100 hover:border-transparent"
         >
           Tìm hiểu thêm các dự án &gt;
