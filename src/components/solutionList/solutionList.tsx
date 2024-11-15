@@ -175,7 +175,7 @@ function SolutionList() {
             }`}
             key={index}
           >
-            <div className="rounded-full bg-white h-20 w-20 flex items-center justify-center overflow-hidden">
+            <div className="rounded-full bg-transparent group-hover:bg-white h-20 w-20 flex items-center justify-center overflow-hidden">
               {item.image}
             </div>
             <Typography

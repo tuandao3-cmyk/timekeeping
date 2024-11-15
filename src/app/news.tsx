@@ -53,7 +53,7 @@ const News = (props: NewsProps) => {
   return (
     <div ref={ref} className={`${styles.newsSection} py-[24px]  bg-[#F3F7F4]`}>
       <div className="flex flex-col justify-center items-center w-full h-full">
-        <div className="max-w-[1440px] h-full">
+        <div className="max-w-[1440px]">
           <div className=" flex justify-between ">
             <p
               style={{

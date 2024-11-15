@@ -167,7 +167,7 @@ const GuidePage: React.FC = () => {
   };
   return (
     <>
-      <div className=" w-full h-[520px]  bg-[#07212C] bg-[url('/img/guides/guide_bg.png')] bg-no-repeat bg-cover bg-center">
+      <div className=" w-full h-[585px]  bg-[#07212C] bg-[url('/img/guides/guide_bg.png')] bg-no-repeat bg-cover bg-center">
         <div className="  flex flex-col w-full h-full items-center pb-[107px]  gap-10 justify-center">
           <div className="flex flex-col items-center justify-end text-center max-w-[1440px] text-[#0B3546] gap-[22px]">
             <Typography
