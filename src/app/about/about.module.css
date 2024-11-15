@@ -454,11 +454,11 @@
   margin-top: 20vh;
 }
 
-.leaderImage {
+/* .leaderImage {
   width: 288px;
   height: 274px;
   object-fit: contain;
-}
+} */
 
 .leaderInfo {
   width: 100%;

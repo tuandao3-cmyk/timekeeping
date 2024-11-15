@@ -49,6 +49,7 @@ function ModalDown(props: Prop) {
                 <Image
                   src={'/img/qr.png'}
                   alt="App Screenshot"
+                  layout="responsive"
                   width={708}
                   height={812}
                   className={` w-[80px] h-[80px] 

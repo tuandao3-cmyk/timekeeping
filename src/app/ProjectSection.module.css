@@ -129,7 +129,7 @@
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  transition: all 0.3s ease;
+
 }
 
 .moreProjectsButton:hover {
@@ -140,16 +140,12 @@
 .moreProjectsButton svg {
   width: 16px;
   height: 16px;
-  transition: transform 0.3s ease;
+
 }
 
-.moreProjectsButton:hover svg {
-  transform: translateX(4px);
-}
 
-.moreProjectsButton:hover svg path {
-  fill: #ffffff;
-}
+
+
 
 .mainProject {
   flex: 1 1 calc(66.666% - 1rem);

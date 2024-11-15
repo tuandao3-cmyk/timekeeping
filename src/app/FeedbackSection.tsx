@@ -169,7 +169,8 @@ const FeedbackSection: React.FC = () => {
                       alt="user"
                       width={48}
                       height={48}
-                      className="rounded-full"
+                      className="rounded-full max-w-[48px] max-h-[48px]"
+                      layout="responsive"
                     />
                     <div>
                       <Typography

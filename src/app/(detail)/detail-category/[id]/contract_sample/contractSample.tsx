@@ -29,8 +29,8 @@ const ContractSampleSection = (props: ContractSampleSectionProps) => {
             <div className="bg-[#CCCCCC] w-1 h-auto rounded-full"></div>
             <div className="flex justify-between  w-full">
               <div>
-                <p className="text-[30px] ">Mẫu hợp đồng</p>
-                <span className="text-[25px] text-[#9f9f9f]"> 02/03/2024</span>
+                <p className="lg:text-[30px] text-[20px]">Mẫu hợp đồng</p>
+                <span className="lg:text-[25px] text-[15px] text-[#9f9f9f]"> 02/03/2024</span>
               </div>
               <div className="flex">
                 <button

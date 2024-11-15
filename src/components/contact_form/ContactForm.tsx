@@ -147,6 +147,7 @@ const ContactForm = () => {
                 width={24}
                 height={24}
                 src="/img/icon/send.svg"
+                layout="responsive"
                 alt="send"
                 className="pl-2"
               />

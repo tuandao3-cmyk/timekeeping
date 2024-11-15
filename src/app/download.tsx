@@ -30,7 +30,7 @@ const DownloadSection = () => {
           <div className="  w-[100%]  mb-8 md:mb-0 justify-center sm:ml-10 lg:ml-0 md:pb-10 xl:pb-0 ">
             <p
               ref={ref}
-              className={`md:text-3xl text-[34px] text-center  md:text-left font-bold mb-4 font-sans duration-300 ease-in-out transform uppercase ${
+              className={`md:text-3xl text-[34px] text-left  font-bold mb-4 font-sans duration-300 ease-in-out transform uppercase ${
                 inView
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-10'
@@ -132,6 +132,7 @@ const DownloadSection = () => {
                   alt="App Screenshot"
                   width={708}
                   height={812}
+                  layout="responsive"
                   className={` w-[80px] h-[80px] 
                  `}
                 />
@@ -151,6 +152,7 @@ const DownloadSection = () => {
               ref={ref}
               src={imageSrc}
               alt="App Screenshot"
+              layout="responsive"
               width={708}
               height={812}
               className={`lg:h-[812px] lg:w-[708px] md:h-[640px] md:w-[550px] w-[327px] h-[419px] duration-300 delay-200 ease-in-out transform ${

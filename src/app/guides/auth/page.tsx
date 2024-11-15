@@ -70,6 +70,7 @@ const AuthSection: React.FC = () => {
             src="/img/cccd1.png"
             alt="Màn hình chụp ảnh CCCD"
             className="lg:w-[30%] w-[100%] max-w-[300px] "
+            layout="responsive"
           />
           <Image
             width={231}
@@ -77,6 +78,7 @@ const AuthSection: React.FC = () => {
             src="/img/cccd2.png"
             alt="Màn hình chụp ảnh CCCD"
             className="lg:w-[30%] w-[100%] max-w-[300px] "
+            layout="responsive"
           />
         </div>
         <ul className=" text-xl 3xl:text-2xl leading-7 text-[#000000] pl-4 ">
@@ -91,6 +93,7 @@ const AuthSection: React.FC = () => {
             width={300}
             height={600}
             className="lg:w-[30%] w-[100%] max-w-[300px] mb-3.5"
+            layout="responsive"
           />
           <Image
             src="/img/mattruoc.png"
@@ -98,6 +101,7 @@ const AuthSection: React.FC = () => {
             width={300}
             height={600}
             className="lg:w-[30%] w-[100%] max-w-[300px] mb-3.5"
+            layout="responsive"
           />
         </div>
         <ul className=" text-xl 3xl:text-2xl leading-7 text-[#000000] pl-4 py-8 ">
@@ -114,6 +118,7 @@ const AuthSection: React.FC = () => {
             width={300}
             height={600}
             className="lg:w-[30%] w-[100%] max-w-[300px] mb-3.5"
+            layout="responsive"
           />
         </div>
         <ul className=" text-xl 3xl:text-2xl leading-7 text-[#000000] pl-4 ">
@@ -127,6 +132,7 @@ const AuthSection: React.FC = () => {
             width={300}
             height={600}
             className="lg:w-[30%] w-[100%] max-w-[300px] mb-3.5"
+            layout="responsive"
           />
         </div>
         <ul className=" text-xl 3xl:text-2xl leading-7 text-[#000000] pl-4 ">
@@ -140,6 +146,7 @@ const AuthSection: React.FC = () => {
             width={1200}
             height={600}
             className="lg:w-[100%] w-[100%] max-w-[1200px] mb-3.5"
+            layout="responsive"
           />
         </div>
         <ul className=" text-xl 3xl:text-2xl leading-7 text-[#000000] pl-4 ">
@@ -156,6 +163,7 @@ const AuthSection: React.FC = () => {
             width={300}
             height={600}
             className="lg:w-[30%] w-[100%] max-w-[300px] mb-3.5"
+            layout="responsive"
           />
         </div>
 

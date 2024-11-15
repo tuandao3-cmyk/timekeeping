@@ -5,7 +5,7 @@ import { Calendar } from 'lucide-react';
 import Link from 'next/link';
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
-
+import { Typography } from '@mui/material';
 import { getNews } from '@/services/news.service';
 import { Page } from '@/type/page.type';
 import { formatDateTimeVn } from '@/util/util';
@@ -111,7 +111,7 @@ const NewsPage: React.FC = () => {
 
   return (
     <>
-      <div className="flex flex-col justify-center items-center  ">
+      {/* <div className="flex flex-col justify-center items-center  ">
         <div
           ref={ref}
           className="flex max-md:items-center max-md:justify-center m-auto max-w-[1440px] h-[300px] md:h-[479px] bg-cover  "
@@ -178,15 +178,51 @@ const NewsPage: React.FC = () => {
             </div>
           </div>
         </div>
+      </div> */}
+      {/* <div
+        className="flex flex-col items-center justify-center bg-cover w-full min-h-[772px] lg:min-h-[585px]"
+        style={{
+          backgroundColor: '#07212C',
+          backgroundImage: "url('/img/news/newsbg.png')",
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'left top',
+          backgroundSize: '130% 130%',
+        }}
+      > */}
+      <div className="flex flex-col items-center justify-center font-sans w-full min-h-[772px] lg:h-[520px] bg-[#07212C] bg-[url('/img/news/newsbg.png')] bg-no-repeat bg-cover bg-left-top bg-opacity-50">
+        <div className="  pb-[107px]">
+          <div className="flex flex-col items-center justify-end text-center max-w-[570px] text-[#0B3546]/80 gap-[22px]">
+            <Typography
+              sx={{
+                fontWeight: 700,
+                fontSize: '48px',
+                lineHeight: '56px',
+                textAlign: 'center',
+              }}
+            >
+              Tin tức
+            </Typography>
+            <Typography
+              sx={{
+                fontWeight: 400,
+                fontSize: '18px',
+                lineHeight: '24px',
+                textAlign: 'center',
+              }}
+            >
+              Cung cấp những tin tức và góc nhìn mới nhất giúp bạn tiếp cận cơ
+              hội đầu tư dễ dàng và hiệu quả.
+            </Typography>
+          </div>
+        </div>
       </div>
-
       <section
         ref={ref2}
         className="w-full font-inter flex flex-col justify-center items-center md:p-5 xl:p-0"
       >
         <div className="flex flex-col max-w-[1201px] gap-[20px] md:gap-[40px] py-[62px]">
           <h1
-            className={`pl-5 md:pl-0 text-3xl md:text-3xl lg:text-4xl font-bold text-gray-800  duration-700 ease-in-out transform ${
+            className={`pl-5 md:pl-0 text-2xl md:text-3xl leading-9 lg:text-[40px] lg:leading-[48px] font-bold text-gray-800  duration-700 ease-in-out transform ${
               inView2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
           >
@@ -239,6 +275,7 @@ const NewsPage: React.FC = () => {
                   height={70}
                   src={news?.link_img[0] || ''}
                   alt=""
+                  layout="responsive"
                   className={` object-cover object-center rounded-lg 
                         h-[70px] w-[115px]
                     `}
@@ -283,7 +320,7 @@ const NewsPage: React.FC = () => {
       {/* upcomming */}
       <section className="w-full bg-cover bg-center flex justify-center flex-col items-center gap-3 bg-[#F3F7F4] mt-20 md:mt-0 md:p-5 xl:p-0">
         <div className="max-w-[1201px] md:py-[62px] py-[50px] flex flex-col md:gap-[40px] gap-[10px] w-[100%] ">
-          <h1 className="w-full text-left text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800  pl-5 md:pl-0 ">
+          <h1 className="w-full text-left text-2xl md:text-3xl leading-9 lg:text-[40px] lg:leading-[48px] font-bold text-gray-800  pl-5 md:pl-0 ">
             Sự kiện sắp tới
           </h1>
 
@@ -291,6 +328,7 @@ const NewsPage: React.FC = () => {
             <Image
               height={274}
               width={1200}
+              layout="responsive"
               onClick={() =>
                 router.push('https://www.facebook.com/hyraholdings/')
               }
@@ -305,7 +343,7 @@ const NewsPage: React.FC = () => {
       {/*  */}
       <section className="w-full  bg-cover bg-center flex justify-center flex-col items-center gap-8 md:p-5 xl:p-0">
         <div className="max-w-[1200px] ">
-          <h1 className="w-full max-lg:px-8 text-left text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 pt-8 hidden md:block ">
+          <h1 className="w-full max-lg:px-8 text-left text-2xl md:text-3xl leading-9 lg:text-[40px] lg:leading-[48px] font-bold text-gray-800 pt-8 hidden md:block ">
             Sự kiện nổi bật
           </h1>
           <div className="w-full  grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4 m ">
@@ -316,6 +354,7 @@ const NewsPage: React.FC = () => {
                     <Image
                       width={320}
                       height={188}
+                      layout="responsive"
                       src={
                         news?.link_img[0] ||
                         'https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg'
@@ -363,11 +402,13 @@ const NewsPage: React.FC = () => {
                     <Image
                       width={40}
                       height={40}
+                      layout="responsive"
                       onClick={() =>
                         router.push('https://www.youtube.com/@hyracap')
                       }
                       src="/img/youtube_logo.jpg"
                       alt="Youtube"
+                      style={{ cursor: 'pointer', maxWidth: 40, maxHeight: 40 }}
                       className=" w-[40px] h-[40px]  rounded-lg  "
                     />
                     <p className="text-gray-700 font-normal text-base">
@@ -401,10 +442,12 @@ const NewsPage: React.FC = () => {
                     <Image
                       width={40}
                       height={40}
+                      layout="responsive"
                       onClick={() =>
                         router.push('https://www.facebook.com/hyracap')
                       }
                       src="/img/facebook_logo.png"
+                      style={{ cursor: 'pointer', maxWidth: 40, maxHeight: 40 }}
                       alt="Facebook"
                       className=" w-[40px] h-[40px]  rounded-lg  "
                     />
@@ -439,8 +482,10 @@ const NewsPage: React.FC = () => {
                     <Image
                       width={40}
                       height={40}
+                      layout="responsive"
                       onClick={() => router.push('https://x.com/hyracap')}
                       src="/img/x_logo.jpg"
+                      style={{ cursor: 'pointer', maxWidth: 40, maxHeight: 40 }}
                       alt="X"
                       className=" w-[40px] h-[40px]   "
                     />
@@ -498,6 +543,7 @@ const NewsPage: React.FC = () => {
                     <Image
                       width={216}
                       height={228}
+                      layout="responsive"
                       src="/img/product/app_log.png"
                       alt="screenshot"
                       className="max-w-[216px] max-h-[228px] absolute -right-10 -bottom-4"

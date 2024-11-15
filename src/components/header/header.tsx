@@ -75,7 +75,8 @@ const Header = () => {
               width={98}
               height={40}
               src="/img/logohyracap.png"
-              className="mr-3 h-6 sm:h-9 md:w-[118px]"
+              layout="responsive"
+              className="mr-3 h-6 sm:h-9 md:w-[118px] max-w-[118px] "
               alt="HyraCap Logo"
             />
           </Link>

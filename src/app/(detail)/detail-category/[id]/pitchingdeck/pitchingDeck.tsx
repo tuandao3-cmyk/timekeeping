@@ -34,10 +34,10 @@ const PitchingDeckSection = (props: PitchingDeckSectionProps) => {
             <div className="bg-[#CCCCCC] w-1 h-auto rounded-full"></div>
             <div className="flex justify-between  w-full">
               <div>
-                <p className="text-[30px] ">Pitching Deck</p>
-                <span className="text-[25px] text-[#9f9f9f]"> 02/03/2024</span>
+                <p className="lg:text-[30px] text-[20px]">Pitching Deck</p>
+                <span className="lg:text-[25px] text-[15px] text-[#9f9f9f]"> 02/03/2024</span>
               </div>
-              <div className="flex">
+              <div className="flex ">
                 <button
                   onClick={() => setOpenPdf(true)}
                   className="bg-transparent border-2 border-[#28a745] rounded-full cursor-pointer ml-[10px] w-[50px] h-[50px] flex justify-center items-center transition-all duration-300 ease-in-out hover:bg-[#28a745] group"

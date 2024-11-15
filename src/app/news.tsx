@@ -53,7 +53,7 @@ const News = (props: NewsProps) => {
   return (
     <div ref={ref} className={`${styles.newsSection} py-[24px]  bg-[#F3F7F4]`}>
       <div className="flex flex-col justify-center items-center w-full h-full">
-        <div className="max-w-[1440px] h-full">
+        <div className="max-w-[1440px]">
           <div className=" flex justify-between ">
             <p
               style={{
@@ -86,8 +86,9 @@ const News = (props: NewsProps) => {
                       width={486}
                       height={426}
                       src={newsData1[0]?.link_img[0] || ''}
+                      layout="responsive"
                       alt="Main News"
-                      className={`${styles.mainImage} duration-300 h-[615px] md:max-h-[655px] lg:max-w-[486px] lg:max-h-[426px] ease-in-out transform ${
+                      className={`${styles.mainImage} duration-300 h-[615px] md:max-h-[655px] lg:max-w-[486px] lg:max-h-[426px] md:min-h-[426px] ease-in-out transform ${
                         inView
                           ? 'opacity-100 translate-y-0'
                           : 'opacity-0 translate-y-10'
@@ -194,6 +195,7 @@ const News = (props: NewsProps) => {
                                 width={250}
                                 height={130}
                                 src={news?.link_img[0] || ''}
+                                layout="responsive"
                                 alt={`News ${index}`}
                                 className={`${styles.newsImage} md:max-w-[250px] md:max-h-[130px] md:min-h-0 min-h-[320px] md:block lg:hidden`}
                               />
@@ -220,8 +222,9 @@ const News = (props: NewsProps) => {
                             width={170}
                             height={170}
                             src={news?.link_img[0] || ''}
+                            layout="responsive"
                             alt={`News ${index}`}
-                            className={`${styles.newsImage} md:max-w-[170px] md:max-h-[170px] md:min-h-0 min-h-[320px] md:hidden lg:block`}
+                            className={`${styles.newsImage} md:max-w-[170px] md:max-h-[170px] md:min-h-[170px] min-h-[320px] md:hidden lg:block`}
                           />
                         </div>
                       </a>
@@ -272,6 +275,7 @@ const News = (props: NewsProps) => {
                             width={170}
                             height={170}
                             src={news?.link_img[0] || ''}
+                            layout="responsive"
                             alt={`News ${index}`}
                             className={`${styles.newsImage} md:max-w-[170px] md:max-h-[170px] md:min-h-0 min-h-[320px]`}
                           />
