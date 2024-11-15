@@ -132,6 +132,7 @@ const DownloadSection = () => {
                   alt="App Screenshot"
                   width={708}
                   height={812}
+                  layout="responsive"
                   className={` w-[80px] h-[80px] 
                  `}
                 />
@@ -151,6 +152,7 @@ const DownloadSection = () => {
               ref={ref}
               src={imageSrc}
               alt="App Screenshot"
+              layout="responsive"
               width={708}
               height={812}
               className={`lg:h-[812px] lg:w-[708px] md:h-[640px] md:w-[550px] w-[327px] h-[419px] duration-300 delay-200 ease-in-out transform ${

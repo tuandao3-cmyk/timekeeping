@@ -117,6 +117,7 @@ const NewsDetail: React.FC = ({ params, searchParams }: any) => {
           <div className="relative flex flex-row gap-4 py-4 items-center">
             <Image
               src="/img/logohyracap.png"
+              layout="responsive"
               alt="logo"
               className="flex-start"
               width={100}
@@ -164,6 +165,7 @@ const NewsDetail: React.FC = ({ params, searchParams }: any) => {
               }
               loading="lazy"
               alt="Privacy policy"
+              layout="responsive"
               width={1200}
               height={600}
               className="w-full max-w-[1200px] max-h-[600px] object-cover rounded-lg shadow-lg"
@@ -297,6 +299,7 @@ const NewsDetail: React.FC = ({ params, searchParams }: any) => {
                   <Image
                     width={384}
                     height={234}
+                    layout="responsive"
                     src={
                       news?.link_img[0] ||
                       'https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg'

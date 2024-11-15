@@ -239,6 +239,7 @@ const NewsPage: React.FC = () => {
                   height={70}
                   src={news?.link_img[0] || ''}
                   alt=""
+                  layout="responsive"
                   className={` object-cover object-center rounded-lg 
                         h-[70px] w-[115px]
                     `}
@@ -291,6 +292,7 @@ const NewsPage: React.FC = () => {
             <Image
               height={274}
               width={1200}
+              layout="responsive"
               onClick={() =>
                 router.push('https://www.facebook.com/hyraholdings/')
               }
@@ -316,6 +318,7 @@ const NewsPage: React.FC = () => {
                     <Image
                       width={320}
                       height={188}
+                      layout="responsive"
                       src={
                         news?.link_img[0] ||
                         'https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg'
@@ -363,11 +366,13 @@ const NewsPage: React.FC = () => {
                     <Image
                       width={40}
                       height={40}
+                      layout="responsive"
                       onClick={() =>
                         router.push('https://www.youtube.com/@hyracap')
                       }
                       src="/img/youtube_logo.jpg"
                       alt="Youtube"
+                      style={{ cursor: 'pointer', maxWidth: 40, maxHeight: 40 }}
                       className=" w-[40px] h-[40px]  rounded-lg  "
                     />
                     <p className="text-gray-700 font-normal text-base">
@@ -401,10 +406,12 @@ const NewsPage: React.FC = () => {
                     <Image
                       width={40}
                       height={40}
+                      layout="responsive"
                       onClick={() =>
                         router.push('https://www.facebook.com/hyracap')
                       }
                       src="/img/facebook_logo.png"
+                      style={{ cursor: 'pointer', maxWidth: 40, maxHeight: 40 }}
                       alt="Facebook"
                       className=" w-[40px] h-[40px]  rounded-lg  "
                     />
@@ -439,8 +446,10 @@ const NewsPage: React.FC = () => {
                     <Image
                       width={40}
                       height={40}
+                      layout="responsive"
                       onClick={() => router.push('https://x.com/hyracap')}
                       src="/img/x_logo.jpg"
+                      style={{ cursor: 'pointer', maxWidth: 40, maxHeight: 40 }}
                       alt="X"
                       className=" w-[40px] h-[40px]   "
                     />
@@ -498,6 +507,7 @@ const NewsPage: React.FC = () => {
                     <Image
                       width={216}
                       height={228}
+                      layout="responsive"
                       src="/img/product/app_log.png"
                       alt="screenshot"
                       className="max-w-[216px] max-h-[228px] absolute -right-10 -bottom-4"

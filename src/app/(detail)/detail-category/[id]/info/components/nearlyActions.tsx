@@ -44,6 +44,7 @@ function NearlyActions(props: NearlyActionsProps) {
             <Box>
               <Image
                 onClick={() => router.push('/news/newsdetail')}
+                layout="responsive"
                 className="cursor-pointer"
                 src={`${action.img}/${index + 1}.png`}
                 alt={action.img}

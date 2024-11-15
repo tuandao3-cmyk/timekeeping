@@ -40,6 +40,7 @@ export default function LeaderDetail() {
             src="/img/about/bg_about_us1.png"
             alt="bg"
             className="absolute pointer-events-none inset-0 w-full max-w-[1440px] h-full object-cover"
+            layout="responsive"
           />
 
           <div className=" absolute pointer-events-none inset-0 flex whitespace-nowrap overflow-hidden pt-[120px] lg:pt-[80px] bg-[rgba(72,185,109,0.05)] w-full h-full justify-center lg:justify-start text-center lg:text-left lg:p-16">
@@ -64,11 +65,12 @@ export default function LeaderDetail() {
 
               <div className="flex-1 flex items-center justify-center">
                 <Image
-                  width={678}
-                  height={796}
+                  width={255}
+                  height={689}
                   src={leader.image}
                   alt={leader.name}
                   className="w-[255px] h-[294px] lg:w-[592px] lg:h-[689px] object-cover px-2"
+                  layout="responsive"
                 />
               </div>
             </div>
@@ -92,11 +94,12 @@ export default function LeaderDetail() {
 
                   <div className="relative z-10 flex flex-col justify-start items-center">
                     <Image
-                      width={64}
-                      height={64}
+                      width={48}
+                      height={48}
                       src={nav.image}
                       alt={nav.name}
-                      className={`w-[48px] h-[48px] lg:w-[64px] lg:h-[64px] rounded-full  object-cover ${idx === activeLeader ? 'bg-[#48B96D]' : 'bg-white'}`}
+                      layout="responsive"
+                      className={`max-w-[48px] max-h-[48px] lg:w-[64px] lg:h-[64px] rounded-full  object-cover ${idx === activeLeader ? 'bg-[#48B96D]' : 'bg-white'}`}
                     />
                     <div className="hidden lg:block w-full text-center">
                       <p className="text-sm font-semibold text-white">

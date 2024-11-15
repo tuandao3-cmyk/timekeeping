@@ -78,6 +78,7 @@ function UpdateInfo() {
       >
         <Image
           src={'/img/product_category/content.png'}
+          layout="responsive"
           width={455}
           height={323}
           alt="content"

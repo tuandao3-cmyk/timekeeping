@@ -53,6 +53,7 @@ const Login: React.FC = () => {
             height={583}
             src="/img/dnhap.png"
             alt="Màn hình đăng nhập HyraCap"
+            layout="responsive"
             className="lg:w-[30%] w-[100%] max-w-[300px] "
           />
         </div>
@@ -75,6 +76,7 @@ const Login: React.FC = () => {
           <Image
             src="/img/otp1.png"
             alt="Màn hình nhập OTP"
+            layout="responsive"
             width={300}
             height={600}
             className="lg:w-[30%] w-[100%] max-w-[300px] mb-3.5"
@@ -82,6 +84,7 @@ const Login: React.FC = () => {
           <Image
             src="/img/popup.png"
             alt="Màn hình popup giới thiệu"
+            layout="responsive"
             width={300}
             height={600}
             className="lg:w-[30%] w-[100%] max-w-[300px] mb-3.5"
@@ -89,6 +92,7 @@ const Login: React.FC = () => {
           <Image
             src="/img/dashboard.png"
             alt="Màn hình tổng quan"
+            layout="responsive"
             width={300}
             height={600}
             className="lg:w-[30%] w-[100%] max-w-[300px] mb-3.5"

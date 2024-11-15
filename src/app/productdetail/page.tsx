@@ -45,6 +45,7 @@ const ProductDetail: React.FC = () => {
             width={150}
             height={30}
             src="path/to/logo.png"
+            layout="responsive"
             alt="Logo"
             className={styles.logo}
           />
