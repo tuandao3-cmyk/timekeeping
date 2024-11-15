@@ -17,6 +17,7 @@ interface NewsItemProps {
 function NewsItem(props: NewsItemProps) {
   const { index, id, link_img, blog_category, updated_at, title, description } =
     props;
+
   const router = useRouter();
   return (
     <div

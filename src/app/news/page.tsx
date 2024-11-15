@@ -276,7 +276,7 @@ const NewsPage: React.FC = () => {
                   src={news?.link_img[0] || ''}
                   alt=""
                   layout="responsive"
-                  className={` object-cover object-center rounded-lg 
+                  className={` object-cover object-center max-w-[115px] rounded-lg 
                         h-[70px] w-[115px]
                     `}
                 />
@@ -354,31 +354,31 @@ const NewsPage: React.FC = () => {
                     <Image
                       width={320}
                       height={188}
-                      layout="responsive"
+                      style={{ cursor: 'pointer', height: '100% !important' }}
                       src={
                         news?.link_img[0] ||
                         'https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg'
                       }
                       alt=""
-                      className="w-[320px] h-[188px]  object-cover rounded-lg md:col-span-1"
+                      className="  w-[320px]  h-[100%]   object-cover rounded-lg md:col-span-1"
                     />
                     <div className="p-4 md:col-span-2 flex flex-col justify-between">
                       <Link
                         href={`news/${news.id}` || '#'}
                         className="md:text-sm text-[#579DFF] text-sm font-semibold"
                       >
-                        TIN TÀI CHÍNH
+                        {news?.blog_category?.name || 'TIN TÀI CHÍNH'}
                       </Link>
                       <h1 className="md:text-[18px] text-[12px] font-medium text-gray-800">
-                        {news.title}
+                        {news?.title || ''}
                       </h1>
                       <p className="text-sm line-clamp-1 text-gray-600">
-                        {news.description}
+                        {news?.description || ''}
                       </p>
                       <div className="flex justify-between items-center text-sm">
                         <p className="flex flex-row items-center gap-2 text-gray-600 text-center">
                           <Calendar size={16} />{' '}
-                          {formatDateTimeVn(news.updated_at)}
+                          {formatDateTimeVn(news?.updated_at || '')}
                         </p>
                         <button
                           onClick={() => handleNavigate(news.id)}

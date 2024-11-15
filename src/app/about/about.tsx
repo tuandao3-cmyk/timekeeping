@@ -969,7 +969,7 @@ const AboutPage = (props: AboutPageProps) => {
                       <Image
                         width={215}
                         height={249}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full max-w-[215px] max-h-[249px] object-cover"
                         src={leader.image}
                         alt={leader.name}
                         layout="responsive"

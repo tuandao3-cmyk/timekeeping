@@ -380,6 +380,8 @@ function BannerSwipper() {
                         style={{
                           width: '48px',
                           height: '67px',
+                          maxWidth: '48px',
+                          maxHeight: '48px',
                           borderRadius: '10px',
                           objectFit: 'cover',
                           objectPosition: 'center',

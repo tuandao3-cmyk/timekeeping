@@ -10,11 +10,9 @@ export const ProjectCard: React.FC<{
   project: any;
   className?: string;
 }> = ({ project, className }) => {
-  console.log(project.link_img);
-
   return (
     <Link
-      href={`/news/${project.id}`}
+      href={`/news/${project?.id || ''}`}
       className={`${className} relative w-full h-auto `}
     >
       <Image
@@ -25,7 +23,7 @@ export const ProjectCard: React.FC<{
           project?.link_img[0] ||
           'https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg'
         }
-        alt={project.title}
+        alt={project?.title || ''}
         className="w-full h-full object-cover rounded-lg "
       />
       <div className="absolute bottom-0 w-2/3 h-1/2 md:flex justify-between flex-col justify-end p-4 bg-[#FFFFFF]/80 bg-opacity-50 rounded-lg  hidden md:block">
@@ -46,7 +44,7 @@ export const ProjectCard: React.FC<{
             WebkitBoxOrient: 'vertical',
           }}
         >
-          {project.title}
+          {project?.title || ''}
         </Typography>
 
         <div className="flex justify-between gap-5">
@@ -62,7 +60,7 @@ export const ProjectCard: React.FC<{
             alignItems={'center'}
             gap={'8px'}
           >
-            <Calendar size={16} /> {formatDateTimeVn(project.updated_at)}
+            <Calendar size={16} /> {formatDateTimeVn(project?.updated_at || '')}
           </Typography>
         </div>
         <div>
@@ -76,14 +74,14 @@ export const ProjectCard: React.FC<{
       </div>
       <div className="w-full block md:hidden mt-5 flex-col ">
         <p className="text-base mt-5 font-bold text-[#579DFF] ">
-          Tin Tài Chính
+          {project?.blog_category?.name || ''}
         </p>
         <h2 className="mt-5  text-[24px]  font-bold text-[#151515] line-clamp-3">
-          {project.title}
+          {project?.title || ''}
         </h2>
         <div className="mt-5 flex justify-between gap-5">
           <p className="flex flex-row gap-2 text-sm text-[#656468]">
-            <Calendar size={16} /> {project.date}
+            <Calendar size={16} /> {formatDateTimeVn(project?.updated_at || '')}
           </p>
         </div>
       </div>
