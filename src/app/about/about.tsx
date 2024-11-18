@@ -33,10 +33,10 @@ export const leaders = [
   },
   {
     id: 2,
-    name: 'Tuấn Nguyễn',
+    name: '',
     title: 'CEO - Co-Founder',
     fullTitle: 'Chief Executive Officer - Co-Founder',
-    image: '/img/about/TN.png',
+    image: '/img/about/',
     description: [
       'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
       'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',

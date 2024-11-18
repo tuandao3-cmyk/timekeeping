@@ -43,7 +43,7 @@ const ContactPage: React.FC = () => {
               className={`${inView ? 'animate-fadeIn' : 'translate-y-20 opacity-0'} transition
            duration-300 delay-300 ease-in-out`}
             >
-              Báo cáo chuyên sâu về thị trường tài chính
+              Liên hệ với chúng tôi để được tư vấn và hỗ trợ
             </Typography>
           </div>
         </div>
