@@ -17,6 +17,7 @@ interface NewsItemProps {
 function NewsItem(props: NewsItemProps) {
   const { index, id, link_img, blog_category, updated_at, title, description } =
     props;
+
   const router = useRouter();
   return (
     <div
@@ -31,6 +32,7 @@ function NewsItem(props: NewsItemProps) {
       <Image
         width={320}
         height={245}
+        layout="responsive"
         src={
           link_img[0] ||
           'https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg'

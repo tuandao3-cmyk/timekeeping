@@ -35,6 +35,7 @@ function ProjectItem(props: ProjectItemProps) {
         <div className="flex flex-col justify-center items-center w-full">
           <Image
             width={384}
+            layout="responsive"
             height={250}
             src={images[0] || '/img/egabid_pc.png'}
             alt={name || 'HyraCap'}

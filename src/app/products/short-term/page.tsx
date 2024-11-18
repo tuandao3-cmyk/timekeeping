@@ -130,6 +130,12 @@ const ShortTermSection: React.FC = () => {
                       <Image
                         width={98}
                         height={103}
+                        layout="responsive"
+                        style={{
+                          background: 'transparent',
+                          maxWidth: '98px',
+                          maxHeight: '103px',
+                        }}
                         src={
                           index == 0
                             ? '/img/icon4.png'
@@ -154,8 +160,9 @@ const ShortTermSection: React.FC = () => {
                         <div className="flex gap-3" key={index}>
                           <Image
                             width={24}
+                            layout="responsive"
                             height={24}
-                            className="p-1 rounded-full bg-[#48B96D] w-[20px] h-[20px] sm:w-[24px] sm:h-[24px]"
+                            className="p-1 rounded-full bg-[#48B96D] w-[20px] h-[20px] sm:w-[24px] sm:h-[24px] max-w-[24px] max-h-[24px]"
                             src="/img/icon/check.svg"
                             alt=""
                           />
@@ -194,6 +201,7 @@ const ShortTermSection: React.FC = () => {
                       <Image
                         width={98}
                         height={103}
+                        layout="responsive"
                         src="/img/icon4.png"
                         alt=""
                       />
@@ -211,6 +219,7 @@ const ShortTermSection: React.FC = () => {
                         <Image
                           width={24}
                           height={24}
+                          layout="responsive"
                           className=" p-1 rounded-full bg-[#48B96D] w-[20px] h-[20px] sm:w-[24px] sm:h-[24px]"
                           src="/img/icon/check.svg"
                           alt=""
@@ -223,6 +232,7 @@ const ShortTermSection: React.FC = () => {
                         <Image
                           width={24}
                           height={24}
+                          layout="responsive"
                           className=" p-1 rounded-full bg-[#48B96D] w-[20px] h-[20px] sm:w-[24px] sm:h-[24px]"
                           src="/img/icon/check.svg"
                           alt=""
@@ -235,6 +245,7 @@ const ShortTermSection: React.FC = () => {
                         <Image
                           width={24}
                           height={24}
+                          layout="responsive"
                           className=" p-1 rounded-full bg-[#48B96D] w-[24px] h-[24px]"
                           src="/img/icon/check.svg"
                           alt=""
@@ -273,6 +284,7 @@ const ShortTermSection: React.FC = () => {
                     >
                       <Image
                         width={98}
+                        layout="responsive"
                         height={103}
                         src="/img/icon5.png"
                         alt=""
@@ -291,6 +303,7 @@ const ShortTermSection: React.FC = () => {
                         <Image
                           width={24}
                           height={24}
+                          layout="responsive"
                           className="p-1 rounded-full bg-[#48B96D] w-[20px] h-[20px] sm:w-[24px] sm:h-[24px]"
                           src="/img/icon/check.svg"
                           alt=""
@@ -303,6 +316,7 @@ const ShortTermSection: React.FC = () => {
                         <Image
                           width={24}
                           height={24}
+                          layout="responsive"
                           className=" p-1 rounded-full bg-[#48B96D] w-[20px] h-[20px] sm:w-[24px] sm:h-[24px]"
                           src="/img/icon/check.svg"
                           alt=""
@@ -315,6 +329,7 @@ const ShortTermSection: React.FC = () => {
                         <Image
                           width={24}
                           height={24}
+                          layout="responsive"
                           className=" p-1 rounded-full bg-[#48B96D] w-[24px] h-[24px]"
                           src="/img/icon/check.svg"
                           alt=""
@@ -351,6 +366,7 @@ const ShortTermSection: React.FC = () => {
                       <Image
                         width={98}
                         height={103}
+                        layout="responsive"
                         src="/img/icon6.png"
                         alt=""
                       />
@@ -368,7 +384,8 @@ const ShortTermSection: React.FC = () => {
                         <Image
                           width={24}
                           height={24}
-                          className=" p-1 rounded-full bg-[#48B96D] w-[20px] h-[20px] sm:w-[24px] sm:h-[24px]"
+                          layout="responsive"
+                          className=" p-1 rounded-full w-auto bg-[#48B96D] max-w-[24px] max-h-[24px]"
                           src="/img/icon/check.svg"
                           alt=""
                         />
@@ -380,7 +397,8 @@ const ShortTermSection: React.FC = () => {
                         <Image
                           width={24}
                           height={24}
-                          className=" p-1 rounded-full bg-[#48B96D] w-[20px] h-[20px] sm:w-[24px] sm:h-[24px]"
+                          layout="responsive"
+                          className=" p-1 rounded-full bg-[#48B96D] max-w-[24px] max-h-[24px]"
                           src="/img/icon/check.svg"
                           alt=""
                         />
@@ -392,7 +410,8 @@ const ShortTermSection: React.FC = () => {
                         <Image
                           width={24}
                           height={24}
-                          className=" p-1 rounded-full bg-[#48B96D] w-[24px] h-[24px]"
+                          layout="responsive"
+                          className=" p-1 rounded-full bg-[#48B96D] max-w-[24px] max-h-[24px]"
                           src="/img/icon/check.svg"
                           alt=""
                         />

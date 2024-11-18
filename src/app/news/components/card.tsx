@@ -10,21 +10,20 @@ export const ProjectCard: React.FC<{
   project: any;
   className?: string;
 }> = ({ project, className }) => {
-  console.log(project.link_img);
-
   return (
     <Link
-      href={`/news/${project.id}`}
+      href={`/news/${project?.id || ''}`}
       className={`${className} relative w-full h-auto `}
     >
       <Image
         width={320}
         height={188}
+        layout="responsive"
         src={
           project?.link_img[0] ||
           'https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg'
         }
-        alt={project.title}
+        alt={project?.title || ''}
         className="w-full h-full object-cover rounded-lg "
       />
       <div className="absolute bottom-0 w-2/3 h-1/2 md:flex justify-between flex-col justify-end p-4 bg-[#FFFFFF]/80 bg-opacity-50 rounded-lg  hidden md:block">
@@ -45,7 +44,7 @@ export const ProjectCard: React.FC<{
             WebkitBoxOrient: 'vertical',
           }}
         >
-          {project.title}
+          {project?.title || ''}
         </Typography>
 
         <div className="flex justify-between gap-5">
@@ -61,7 +60,7 @@ export const ProjectCard: React.FC<{
             alignItems={'center'}
             gap={'8px'}
           >
-            <Calendar size={16} /> {formatDateTimeVn(project.updated_at)}
+            <Calendar size={16} /> {formatDateTimeVn(project?.updated_at || '')}
           </Typography>
         </div>
         <div>

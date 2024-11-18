@@ -23,7 +23,7 @@ interface FooterSectionProps {
   title: string;
   data: LinkItem[];
   refProp: any;
-  inView: boolean; 
+  inView: boolean;
 }
 
 const ecosystemData: LinkItem[] = [
@@ -31,20 +31,20 @@ const ecosystemData: LinkItem[] = [
     id: 'hyperas',
     text: 'Hyperas',
     link: 'https://www.hyperaschain.com/vi',
-    isExternal: true
+    isExternal: true,
   },
   {
-    id: 'salala', 
+    id: 'salala',
     text: 'Salala AI',
     link: 'https://salala.ai/vi',
-    isExternal: true
+    isExternal: true,
   },
   {
     id: 'egabid',
     text: 'Egabid',
     link: 'https://egabid.com/vi',
-    isExternal: true
-  }
+    isExternal: true,
+  },
 ];
 
 const companyData: LinkItem[] = [
@@ -52,20 +52,20 @@ const companyData: LinkItem[] = [
     id: 'about',
     text: 'Về chúng tôi',
     link: '/about',
-    isExternal: false
+    isExternal: false,
   },
   {
     id: 'tech',
-    text: 'Công nghệ của chúng tôi', 
+    text: 'Công nghệ của chúng tôi',
     link: '/about',
-    isExternal: false
+    isExternal: false,
   },
   {
     id: 'media',
     text: 'Bộ phương tiện truyền thông',
     link: 'https://www.facebook.com/hyraholdings/',
-    isExternal: true
-  }
+    isExternal: true,
+  },
 ];
 
 const otherData: LinkItem[] = [
@@ -73,30 +73,34 @@ const otherData: LinkItem[] = [
     id: 'news',
     text: 'Tin tức',
     link: '/news',
-    isExternal: false
+    isExternal: false,
   },
   {
     id: 'recruitment',
     text: 'Tuyển dụng',
     link: 'https://hr1tech.com/en/company/cong-ty-co-phan-hyra-holdings-37455.html',
-    isExternal: true
+    isExternal: true,
   },
   {
     id: 'contact',
     text: 'Liên hệ chúng tôi',
     link: '/contact',
-    isExternal: false
+    isExternal: false,
   },
   {
     id: 'shareholder',
     text: 'Quan hệ cổ đông',
     link: '/about/leaderdetail',
-    isExternal: false
-  }
+    isExternal: false,
+  },
 ];
 
-
-const FooterSection: React.FC<FooterSectionProps> = ({ title, data, refProp, inView }) => {
+const FooterSection: React.FC<FooterSectionProps> = ({
+  title,
+  data,
+  refProp,
+  inView,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleItemClick = (item: LinkItem) => {
@@ -125,11 +129,18 @@ const FooterSection: React.FC<FooterSectionProps> = ({ title, data, refProp, inV
           stroke="currentColor"
           viewBox="0 0 24 24"
         >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M19 9l-7 7-7-7"
+          />
         </svg>
       </button>
 
-      <div className={`text-gray-500 dark:text-gray-400 ${isOpen ? 'block' : 'hidden'}`}>
+      <div
+        className={`text-[#FFFFFF]/70 ${isOpen ? 'block' : 'hidden'}`}
+      >
         <ul>
           {data.map((item) => (
             <li key={item.id} className="mb-4">
@@ -147,7 +158,6 @@ const FooterSection: React.FC<FooterSectionProps> = ({ title, data, refProp, inV
   );
 };
 
-
 const Footer = () => {
   const { ref, inView } = useInView({
     threshold: 0.1,
@@ -163,20 +173,30 @@ const Footer = () => {
             <h2 className="mb-6 font-sans text-[#FFFFFF] text-[16px] text-base font-semibold leading-6 uppercase">
               CÔNG TY CỔ PHẦN HYRACAP
             </h2>
-            <ul className="text-gray-500 dark:text-gray-400 font-medium">
+            <ul className="text-[#FFFFFF]/70 font-medium">
               <li className="mb-4 max-w-md">
-                <a href="/contact" className="hover:underline text-[14px] font-[400] font-sans">
-                  Địa chỉ: Lô CX01, khu đô thị Văn Khê, phường La Khê, quận Hà Đông, Hà Nội.
+                <a
+                  href="/contact"
+                  className="hover:underline text-[14px] font-[400] font-sans"
+                >
+                  Địa chỉ: Lô CX01, khu đô thị Văn Khê, phường La Khê, quận Hà
+                  Đông, Hà Nội.
                 </a>
               </li>
               <li className="mb-4 max-w-md">
-                <a href="/contact" className="hover:underline text-[14px] font-[400] flex gap-[8px] justify-start font-sans">
+                <a
+                  href="/contact"
+                  className="hover:underline text-[14px] font-[400] flex gap-[8px] justify-start font-sans"
+                >
                   <SmsIcon className="w-4 h-4 mr-2" />
                   info@hyracap.com
                 </a>
               </li>
               <li className="mb-4 max-w-md">
-                <a href="/contact" className="font-sans hover:underline text-[14px] font-[400] flex gap-[8px] justify-start">
+                <a
+                  href="/contact"
+                  className="font-sans hover:underline text-[14px] font-[400] flex gap-[8px] justify-start"
+                >
                   <CallIcon className="w-4 h-4 mr-2" />
                   (+84) 58 8668 777
                 </a>
@@ -186,9 +206,24 @@ const Footer = () => {
 
           {/* Mobile Menus */}
           <div className="md:hidden">
-            <FooterSection title="Công ty" data={companyData} refProp={ref} inView={inView} />
-            <FooterSection title="Hệ sinh thái" data={ecosystemData} refProp={ref} inView={inView} />
-            <FooterSection title="Khác" data={otherData} refProp={ref} inView={inView} />
+            <FooterSection
+              title="Công ty"
+              data={companyData}
+              refProp={ref}
+              inView={inView}
+            />
+            <FooterSection
+              title="Hệ sinh thái"
+              data={ecosystemData}
+              refProp={ref}
+              inView={inView}
+            />
+            <FooterSection
+              title="Khác"
+              data={otherData}
+              refProp={ref}
+              inView={inView}
+            />
           </div>
 
           {/* Desktop Menus */}
@@ -196,13 +231,14 @@ const Footer = () => {
             <h2 className="mb-6 font-sans text-sm md:text-base leading-4 md:leading-6 font-semibold text-[#ffffff] uppercase text-[16px]">
               CÔNG TY
             </h2>
-            <ul className="text-gray-500 dark:text-gray-400">
-              {companyData.map(item => (
+            <ul className="text-[#FFFFFF]/70">
+              {companyData.map((item) => (
                 <li key={item.id} className="mb-4">
-                  <a 
+                  <a
                     href={item.link}
-                    target={item.isExternal ? "_blank" : undefined}
+                    target={item.isExternal ? '_blank' : undefined}
                     className="hover:underline font-sans text-[14px]"
+                    rel="noreferrer"
                   >
                     {item.text}
                   </a>
@@ -215,13 +251,14 @@ const Footer = () => {
             <h2 className="mb-6 font-sans text-sm md:text-base leading-4 md:leading-6 font-semibold text-[#ffffff] uppercase text-[16px]">
               HỆ SINH THÁI
             </h2>
-            <ul className="text-gray-500 dark:text-gray-400">
-              {ecosystemData.map(item => (
+            <ul className="text-[#FFFFFF]/70">
+              {ecosystemData.map((item) => (
                 <li key={item.id} className="mb-4">
                   <a
                     href={item.link}
                     target="_blank"
                     className="hover:underline font-sans text-[14px]"
+                    rel="noreferrer"
                   >
                     {item.text}
                   </a>
@@ -234,13 +271,14 @@ const Footer = () => {
             <h2 className="mb-6 font-sans text-sm md:text-base leading-4 md:leading-6 font-semibold text-[#ffffff] uppercase text-[16px]">
               KHÁC
             </h2>
-            <ul className="text-gray-500 dark:text-gray-400">
-              {otherData.map(item => (
+            <ul className="text-[#FFFFFF]/70">
+              {otherData.map((item) => (
                 <li key={item.id} className="mb-4">
                   <a
                     href={item.link}
-                    target={item.isExternal ? "_blank" : undefined}
+                    target={item.isExternal ? '_blank' : undefined}
                     className="hover:underline font-sans text-[14px]"
+                    rel="noreferrer"
                   >
                     {item.text}
                   </a>
@@ -256,19 +294,31 @@ const Footer = () => {
             Hyratek là nhãn hiệu đã đăng ký. 2022 - 2027 Bảo lưu mọi quyền.
           </span>
           <div className="flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse">
-            <a href="https://www.facebook.com/hyraholdings/" className="text-gray-400 hover:text-gray-900 dark:hover:text-white">
+            <a
+              href="https://www.facebook.com/hyraholdings/"
+              className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
+            >
               <FacebookIcon />
               <span className="sr-only">Facebook page</span>
             </a>
-            <a href="https://x.com/hyraholdings" className="text-gray-400 hover:text-gray-900 dark:hover:text-white">
+            <a
+              href="https://x.com/hyraholdings"
+              className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
+            >
               <XIcon />
               <span className="sr-only">X page</span>
             </a>
-            <a href="https://www.youtube.com" className="text-gray-400 hover:text-gray-900 dark:hover:text-white">
+            <a
+              href="https://www.youtube.com"
+              className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
+            >
               <YouTubeIcon />
               <span className="sr-only">Youtube page</span>
             </a>
-            <a href="https://www.linkedin.com/company/hyraholdings/" className="text-gray-400 hover:text-gray-900 dark:hover:text-white">
+            <a
+              href="https://www.linkedin.com/company/hyraholdings/"
+              className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
+            >
               <LinkedInIcon />
               <span className="sr-only">LinkedIn page</span>
             </a>

@@ -73,6 +73,7 @@ const NewsDetail: React.FC = () => {
           <div className="relative flex flex-row gap-4 py-4 items-center">
             <Image
               src="/img/logohyracap.png"
+              layout="responsive"
               alt="logo"
               className="flex-start"
               width={100}
@@ -114,6 +115,7 @@ const NewsDetail: React.FC = () => {
           <div className="mb-8 flex justify-center items-center">
             <Image
               src="/img/news/chitiet.png"
+              layout="responsive"
               alt="Privacy policy"
               width={1200}
               height={600}
@@ -194,6 +196,7 @@ const NewsDetail: React.FC = () => {
           <div className="mb-8 flex justify-center items-center">
             <Image
               src="/img/news/chitiet1.png"
+              layout="responsive"
               alt="Privacy policy"
               width={1200}
               height={720}
@@ -243,6 +246,7 @@ const NewsDetail: React.FC = () => {
                 >
                   <Image
                     width={384}
+                    layout="responsive"
                     height={234}
                     src={news.imageUrl}
                     alt=""

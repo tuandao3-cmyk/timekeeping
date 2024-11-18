@@ -345,6 +345,7 @@ function BannerSwipper() {
                 <Image
                   src={'/img/invest.png'}
                   alt="image"
+                  layout="responsive"
                   width={388}
                   height={289}
                   style={{
@@ -373,11 +374,14 @@ function BannerSwipper() {
                       <Image
                         src={item.image}
                         alt={item.title}
+                        layout="responsive"
                         width={48}
                         height={48}
                         style={{
                           width: '48px',
                           height: '67px',
+                          maxWidth: '48px',
+                          maxHeight: '48px',
                           borderRadius: '10px',
                           objectFit: 'cover',
                           objectPosition: 'center',
@@ -421,6 +425,7 @@ function BannerSwipper() {
               <Stack position={'relative'}>
                 <Image
                   src={'/img/invest.png'}
+                  layout="responsive"
                   alt="image"
                   width={381}
                   height={451}
@@ -436,6 +441,8 @@ function BannerSwipper() {
                     opacity: inView ? 1 : 0,
                     // transitionDelay: '0.4s',
                     transform: inView ? 'translateX(0)' : 'translateX(20px)',
+                    maxWidth: '381px',
+                    maxHeight: '451px',
                   }}
                 />
 
@@ -460,6 +467,7 @@ function BannerSwipper() {
                   <Image
                     src={'/img/hyperas1.png'}
                     alt="Hyperas Chain"
+                    layout="responsive"
                     width={180}
                     height={98}
                   />
@@ -524,10 +532,13 @@ function BannerSwipper() {
                     <Image
                       src={'/img/icon/salala.png'}
                       alt="Salala AI"
+                      layout="responsive"
                       width={48}
                       height={48}
                       style={{
                         borderRadius: '10px',
+                        maxWidth: '48px',
+                        maxHeight: '48px',
                       }}
                     />
                     <Stack flexDirection={'column'}>
@@ -563,10 +574,13 @@ function BannerSwipper() {
                     <Image
                       src={'/img/icon/rapital.png'}
                       alt="Salala AI"
+                      layout="responsive"
                       width={48}
                       height={48}
                       style={{
                         borderRadius: '10px',
+                        maxWidth: '48px',
+                        maxHeight: '48px',
                       }}
                     />
                     <Stack flexDirection={'column'}>
@@ -602,10 +616,13 @@ function BannerSwipper() {
                     <Image
                       src={'/img/icon/egabid.png'}
                       alt="Salala AI"
+                      layout="responsive"
                       width={48}
                       height={48}
                       style={{
                         borderRadius: '10px',
+                        maxWidth: '48px',
+                        maxHeight: '48px',
                       }}
                     />
                     <Stack flexDirection={'column'}>

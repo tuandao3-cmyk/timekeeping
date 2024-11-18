@@ -172,7 +172,7 @@ const CategoryPage = () => {
     <>
       <div
         ref={ref}
-        className="flex flex-col items-center justify-center font-sans w-full min-h-[772px] lg:h-[520px] bg-[#07212C] bg-[url('/img/category/categories_bg.png')] bg-no-repeat bg-cover bg-center"
+        className="flex flex-col items-center justify-center font-sans w-full min-h-[772px] lg:min-h-[520px] bg-[#07212C] bg-[url('/img/category/categories_bg.png')] bg-no-repeat bg-cover bg-center"
       >
         <div className="  pb-[107px] justify-center">
           <div className="flex flex-col items-center justify-end text-center max-w-[1440px] text-[#0B3546] gap-[22px]">

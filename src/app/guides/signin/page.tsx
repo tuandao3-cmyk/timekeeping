@@ -58,6 +58,7 @@ const SigninSection: React.FC = () => {
             width={284}
             height={583}
             className="lg:w-[30%] w-[100%] max-w-[300px] "
+            layout="responsive"
             src="/img/dky1.png"
             alt="Màn hình đăng ký HyraCap 1"
           />
@@ -65,6 +66,7 @@ const SigninSection: React.FC = () => {
             width={284}
             height={583}
             className="lg:w-[30%] w-[100%] max-w-[300px] "
+            layout="responsive"
             src="/img/dky2.png"
             alt="Màn hình đăng ký HyraCap 2"
           />
@@ -90,6 +92,7 @@ const SigninSection: React.FC = () => {
             width={284}
             height={583}
             className="lg:w-[30%] w-[100%] max-w-[300px] "
+            layout="responsive"
             src="/img/otp1.png"
             alt="Màn hình nhập OTP"
           />
@@ -97,6 +100,7 @@ const SigninSection: React.FC = () => {
             width={284}
             height={583}
             className="lg:w-[30%] w-[100%] max-w-[300px] "
+            layout="responsive"
             src="/img/popup.png"
             alt="Màn hình popup giới thiệu"
           />
@@ -104,6 +108,7 @@ const SigninSection: React.FC = () => {
             width={284}
             height={583}
             className="lg:w-[30%] w-[100%] max-w-[300px] "
+            layout="responsive"
             src="/img/dashboard.png"
             alt="Màn hình tổng quan"
           />

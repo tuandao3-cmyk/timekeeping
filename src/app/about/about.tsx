@@ -283,7 +283,7 @@ const AboutPage = (props: AboutPageProps) => {
     <>
       {/* <div className="max-h-max"> */}
       <div
-        className="bg-white min-h-[812px]  w-full flex flex-col justify-center items-center "
+        className="bg-white min-h-[686px]  w-full flex flex-col justify-center items-center "
         style={{
           backgroundImage: "url('/img/about/bg_about_us.png')",
           backgroundSize: '170% 170%',
@@ -294,8 +294,8 @@ const AboutPage = (props: AboutPageProps) => {
         <ModalSucses modal={modal} setModal={setModal} />
         <ModalEror modal={modal2} setModal={setModal2} />
         <div className="flex flex-col items-center justify-center w-full max-w-[1440px]">
-          <div className="flex justify-between items-center w-full h-full mt-16 max-lg:!flex-col md:pl-20 md:pr-12 px-[12px]">
-            <div className="flex flex-col md:min-h-[620px] mb-[24px] md:mb-0 justify-start items-start lg:justify-start flex-1  gap-[24px] md:gap-10">
+          <div className="relative flex justify-between items-center w-full h-full mt-16 max-lg:!flex-col md:pl-20 md:pr-12 px-[12px]">
+            <div className="z-10 flex flex-col md:min-h-[620px] mb-[24px] md:mb-0 justify-start items-start lg:justify-start flex-1  gap-[24px] md:gap-10">
               <div className="flex flex-col md:gap-2">
                 <p
                   ref={ref}
@@ -354,12 +354,14 @@ const AboutPage = (props: AboutPageProps) => {
                 </a>
               </div>
             </div>
-            <div className=" flex flex-col gap-[32px] justify-end items-end">
+            <div className="z-0 flex flex-col gap-[32px] justify-end items-end">
               <Image
                 width={588}
                 height={698}
-                src="/img/about/about_img_1.png"
+                src="/img/about/up.png"
+                layout="responsive"
                 alt="Vision illustration"
+                className="md:absolute md:bottom-0 md:right-0 right-10 relative"
               />
             </div>
           </div>
@@ -422,8 +424,9 @@ const AboutPage = (props: AboutPageProps) => {
                       width={56}
                       height={56}
                       alt="icon"
-                      className="w-14 h-14"
+                      className="max-w-14 max-h-14"
                       src="/img/icon/seen.jpg"
+                      layout="responsive"
                     />
                     <div className="gap-1">
                       <Typography
@@ -456,8 +459,9 @@ const AboutPage = (props: AboutPageProps) => {
                       width={56}
                       height={56}
                       alt="icon"
-                      className="w-14 h-14"
+                      className="max-w-14 max-h-14"
                       src="/img/icon/finance.jpg"
+                      layout="responsive"
                     />
                     <div className="gap-1">
                       <Typography
@@ -490,8 +494,9 @@ const AboutPage = (props: AboutPageProps) => {
                       width={56}
                       height={56}
                       alt="icon"
-                      className="w-14 h-14"
+                      className="max-w-14 max-h-14"
                       src="/img/icon/search.jpg"
+                      layout="responsive"
                     />
                     <div className="gap-1">
                       <Typography
@@ -529,6 +534,7 @@ const AboutPage = (props: AboutPageProps) => {
                 height={605}
                 src="/img/about/about1.png"
                 alt="Vision illustration"
+                layout="responsive"
               />
             </div>
           </div>
@@ -587,8 +593,9 @@ const AboutPage = (props: AboutPageProps) => {
                       width={56}
                       height={56}
                       alt="icon"
-                      className="w-14 h-14"
+                      className="max-w-14 max-h-14"
                       src="/img/icon/justice.png"
+                      layout="responsive"
                     />
                     <div className="gap-1">
                       <Typography
@@ -624,8 +631,9 @@ const AboutPage = (props: AboutPageProps) => {
                       width={56}
                       height={56}
                       alt="icon"
-                      className="w-14 h-14"
+                      className="max-w-14 max-h-14"
                       src="/img/icon/develop.png"
+                      layout="responsive"
                     />
                     <div className="gap-1">
                       <Typography
@@ -661,8 +669,9 @@ const AboutPage = (props: AboutPageProps) => {
                       width={56}
                       height={56}
                       alt="icon"
-                      className="w-14 h-14"
+                      className="max-w-14 max-h-14"
                       src="/img/icon/renew.png"
+                      layout="responsive"
                     />
                     <div className="gap-1">
                       <Typography
@@ -697,6 +706,7 @@ const AboutPage = (props: AboutPageProps) => {
                 height={494}
                 src="/img/about/sm.jpg"
                 alt="Mission illustration"
+                layout="responsive"
               />
             </div>
           </div>
@@ -766,6 +776,7 @@ const AboutPage = (props: AboutPageProps) => {
                     style={{ objectFit: 'cover' }}
                     src="/img/about/value1.jpg"
                     alt="Đổi mới sáng tạo"
+                    layout="responsive"
                   />
                 </div>
               </div>
@@ -792,6 +803,7 @@ const AboutPage = (props: AboutPageProps) => {
                     style={{ objectFit: 'cover' }}
                     src="/img/about/value2.jpg"
                     alt="Bền vững"
+                    layout="responsive"
                   />
                 </div>
               </div>
@@ -818,6 +830,7 @@ const AboutPage = (props: AboutPageProps) => {
                     style={{ objectFit: 'cover' }}
                     src="/img/about/value3.jpg"
                     alt="Minh bạch an toàn"
+                    layout="responsive"
                   />
                 </div>
               </div>
@@ -844,6 +857,7 @@ const AboutPage = (props: AboutPageProps) => {
                     style={{ objectFit: 'cover' }}
                     src="/img/about/value4.jpg"
                     alt="Hợp lực"
+                    layout="responsive"
                   />
                 </div>
               </div>
@@ -940,7 +954,7 @@ const AboutPage = (props: AboutPageProps) => {
                 <Link
                   key={index}
                   href={`/about/leaderdetail/${leader.id}`}
-                  className="mt-5 px-[13px]"
+                  className="mt-5 px-[13px] "
                 >
                   <div
                     key={index}
@@ -952,13 +966,14 @@ const AboutPage = (props: AboutPageProps) => {
                   hover:scale-105
                   `}
                   >
-                    <div className="px-6 pt-6 bg-transparent">
+                    <div className="px-6 pt-6  bg-transparent">
                       <Image
-                        width={288}
-                        height={274}
+                        width={215}
+                        height={249}
+                        className="w-full h-full max-w-[215px] max-h-[249px] object-cover"
                         src={leader.image}
                         alt={leader.name}
-                        className={styles.leaderImage}
+                        layout="responsive"
                       />
                     </div>
                     <div className="w-full relative bg-[#48B96D] rounded-[4px]">
@@ -1018,6 +1033,7 @@ const AboutPage = (props: AboutPageProps) => {
                       src={leader.image}
                       alt={leader.name}
                       className="w-full h-full object-cover"
+                      layout="responsive"
                     />
                   </div>
                   <div className="w-full p-6 pb-8 text-center">
@@ -1049,6 +1065,7 @@ const AboutPage = (props: AboutPageProps) => {
                       src={leader.image}
                       alt={leader.name}
                       className="w-full h-full object-contain hover:scale-125 trasform ease-in-out duration-300"
+                      layout="responsive"
                     />
                   </div>
                   <div className="w-full flex justify-end bg-[#f3f7f4]">
@@ -1083,6 +1100,7 @@ const AboutPage = (props: AboutPageProps) => {
                 width={572}
                 height={625}
                 src="/img/about/contact.jpg"
+                layout="responsive"
                 alt="contact"
               />
             </div>
@@ -1170,6 +1188,7 @@ const AboutPage = (props: AboutPageProps) => {
                         width={24}
                         height={24}
                         src="/img/icon/sendBlack.svg"
+                        layout="responsive"
                         alt="send icon"
                       />
                     </button>

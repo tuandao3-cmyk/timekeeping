@@ -179,18 +179,21 @@ const NewsPage: React.FC = () => {
           </div>
         </div>
       </div> */}
-<div 
-  className="flex flex-col items-center justify-center w-full min-h-[772px] lg:min-h-[585px]" 
-  style={{
-    backgroundColor: '#07212C',
-    backgroundImage: "url('/img/news/newsbg.png')",
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'left top',
-    backgroundSize: '130% 130%',
-  }}
->
+      {/* <div
+        className="flex flex-col items-center justify-center bg-cover w-full min-h-[772px] lg:min-h-[585px]"
+        style={{
+          backgroundColor: '#07212C',
+          backgroundImage: "url('/img/news/newsbg.png')",
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'left top',
+          backgroundSize: '130% 130%',
+        }}
+      > */}
+      <div 
+        className="flex flex-col items-center justify-center font-sans w-full min-h-[772px] lg:min-h-[520px] bg-[#07212C] bg-[url('/img/news/newsbg.png')] bg-no-repeat bg-cover bg-[75%_50%] lg:bg-[length:150%_150%]"
+      >
         <div className="  pb-[107px]">
-          <div className="flex flex-col items-center justify-end text-center max-w-[570px] text-[#0B3546]/80 gap-[22px]">
+          <div className="flex flex-col items-center justify-end text-center max-w-[570px] text-white gap-[22px]">
             <Typography
               sx={{
                 fontWeight: 700,
@@ -207,9 +210,11 @@ const NewsPage: React.FC = () => {
                 fontSize: '18px',
                 lineHeight: '24px',
                 textAlign: 'center',
+                padding: '0 10px',
               }}
             >
-              Cung cấp những tin tức và góc nhìn mới nhất giúp bạn tiếp cận cơ hội đầu tư dễ dàng và hiệu quả.
+              Cung cấp những tin tức và góc nhìn mới nhất giúp bạn tiếp cận cơ
+              hội đầu tư dễ dàng và hiệu quả.
             </Typography>
           </div>
         </div>
@@ -273,7 +278,8 @@ const NewsPage: React.FC = () => {
                   height={70}
                   src={news?.link_img[0] || ''}
                   alt=""
-                  className={` object-cover object-center rounded-lg 
+                  layout="responsive"
+                  className={` object-cover object-center max-w-[115px] rounded-lg 
                         h-[70px] w-[115px]
                     `}
                 />
@@ -325,6 +331,7 @@ const NewsPage: React.FC = () => {
             <Image
               height={274}
               width={1200}
+              layout="responsive"
               onClick={() =>
                 router.push('https://www.facebook.com/hyraholdings/')
               }
@@ -350,30 +357,31 @@ const NewsPage: React.FC = () => {
                     <Image
                       width={320}
                       height={188}
+                      style={{ cursor: 'pointer', height: '100% !important' }}
                       src={
                         news?.link_img[0] ||
                         'https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg'
                       }
                       alt=""
-                      className="w-[320px] h-[188px]  object-cover rounded-lg md:col-span-1"
+                      className="  w-[320px]  h-[100%]   object-cover rounded-lg md:col-span-1"
                     />
                     <div className="p-4 md:col-span-2 flex flex-col justify-between">
                       <Link
                         href={`news/${news.id}` || '#'}
                         className="md:text-sm text-[#579DFF] text-sm font-semibold"
                       >
-                        TIN TÀI CHÍNH
+                        {news?.blog_category?.name || 'TIN TÀI CHÍNH'}
                       </Link>
                       <h1 className="md:text-[18px] text-[12px] font-medium text-gray-800">
-                        {news.title}
+                        {news?.title || ''}
                       </h1>
                       <p className="text-sm line-clamp-1 text-gray-600">
-                        {news.description}
+                        {news?.description || ''}
                       </p>
                       <div className="flex justify-between items-center text-sm">
                         <p className="flex flex-row items-center gap-2 text-gray-600 text-center">
                           <Calendar size={16} />{' '}
-                          {formatDateTimeVn(news.updated_at)}
+                          {formatDateTimeVn(news?.updated_at || '')}
                         </p>
                         <button
                           onClick={() => handleNavigate(news.id)}
@@ -397,11 +405,13 @@ const NewsPage: React.FC = () => {
                     <Image
                       width={40}
                       height={40}
+                      layout="responsive"
                       onClick={() =>
                         router.push('https://www.youtube.com/@hyracap')
                       }
                       src="/img/youtube_logo.jpg"
                       alt="Youtube"
+                      style={{ cursor: 'pointer', maxWidth: 40, maxHeight: 40 }}
                       className=" w-[40px] h-[40px]  rounded-lg  "
                     />
                     <p className="text-gray-700 font-normal text-base">
@@ -435,10 +445,12 @@ const NewsPage: React.FC = () => {
                     <Image
                       width={40}
                       height={40}
+                      layout="responsive"
                       onClick={() =>
                         router.push('https://www.facebook.com/hyracap')
                       }
                       src="/img/facebook_logo.png"
+                      style={{ cursor: 'pointer', maxWidth: 40, maxHeight: 40 }}
                       alt="Facebook"
                       className=" w-[40px] h-[40px]  rounded-lg  "
                     />
@@ -473,8 +485,10 @@ const NewsPage: React.FC = () => {
                     <Image
                       width={40}
                       height={40}
+                      layout="responsive"
                       onClick={() => router.push('https://x.com/hyracap')}
                       src="/img/x_logo.jpg"
+                      style={{ cursor: 'pointer', maxWidth: 40, maxHeight: 40 }}
                       alt="X"
                       className=" w-[40px] h-[40px]   "
                     />
@@ -532,6 +546,7 @@ const NewsPage: React.FC = () => {
                     <Image
                       width={216}
                       height={228}
+                      layout="responsive"
                       src="/img/product/app_log.png"
                       alt="screenshot"
                       className="max-w-[216px] max-h-[228px] absolute -right-10 -bottom-4"

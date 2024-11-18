@@ -77,10 +77,13 @@ function Growth(props: GrowthProps) {
                   width={50}
                   height={50}
                   src={'/img/icon/brand.png'}
+                  layout="responsive"
                   alt="icon"
                   style={{
                     width: '50px',
                     height: '50px',
+                    maxWidth: '50px',
+                    maxHeight: '50px',
                     objectFit: 'cover',
                   }}
                 />
