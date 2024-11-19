@@ -97,7 +97,7 @@
   height: 203px;
   width: 203px;
   border-radius: 10px;
-  margin-right: 15px;
+  /* margin-right: 15px; */
   object-fit: cover;
 }
 

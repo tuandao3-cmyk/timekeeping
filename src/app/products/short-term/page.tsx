@@ -155,7 +155,7 @@ const ShortTermSection: React.FC = () => {
                     <p className="text-center font-normal text-base text-[#000000A3] text-opacity-64 ">
                       Kỳ hạn {index == 0 ? 3 : index == 1 ? 6 : 12} tháng
                     </p>
-                    <div className="flex flex-col gap-4 lg:gap-8 py-4 xl:py-10 px-2 xl:px-10">
+                    <div className="flex flex-col gap-4 lg:gap-8 py-4 xl:py-10 px-2 xl:px-8">
                       {benefits.map((benefit, index) => (
                         <div className="flex gap-3" key={index}>
                           <Image

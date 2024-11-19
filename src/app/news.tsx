@@ -59,7 +59,7 @@ const News = (props: NewsProps) => {
               style={{
                 fontWeight: 700,
               }}
-              className=" font-bold pb-6 ml-3 text-[25px] text-center md:text-left  md:text-[36px] leading-[28px] md:leading-[48px] font-sans"
+              className=" font-bold pb-6 max-md:px-3 text-[25px] text-center md:text-left  md:text-[36px] leading-[28px] md:leading-[48px] font-sans"
             >
               TIN MỚI NHẤT VỀ HYRACAP
             </p>
@@ -70,7 +70,7 @@ const News = (props: NewsProps) => {
               Xem thêm
             </a>
           </div>
-          <div className="flex flex-col md:flex-row md:gap-5 xl:gap-[126px] p-3 w-full h-full ">
+          <div className="flex flex-col md:flex-row md:gap-5 xl:gap-[126px] max-md:p-3 w-full h-full ">
             {newsData1?.length == 0 ? (
               <div> Loading...</div>
             ) : (

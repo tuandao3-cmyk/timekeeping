@@ -123,7 +123,7 @@ const Header = () => {
             } justify-between items-center w-full lg:flex lg:w-auto lg:order-1 transition-all duration-300 ease-in-out lg:ml-auto`}
             id="mobile-menu-2"
           >
-            <ul className="flex flex-col text-sm text-[#000000]/90 leading-6 font-medium lg:flex-row lg:space-x-6 lg:mt-0">
+            <ul className="flex flex-col text-sm leading-6 font-medium lg:flex-row lg:space-x-6 lg:mt-0">
               {menuItems.map((item, index) => (
                 <li key={index}>
                   <Link

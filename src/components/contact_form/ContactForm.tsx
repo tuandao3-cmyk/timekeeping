@@ -143,14 +143,29 @@ const ContactForm = () => {
               className="flex items-center px-4 py-2 mt-3 bg-green-500 text-white rounded-full"
             >
               Gửi
-              <Image
-                width={24}
-                height={24}
-                src="/img/icon/send.svg"
-                layout="responsive"
-                alt="send"
-                className="pl-2"
-              />
+              <svg 
+                width="24" 
+                height="24" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+                className="rotate-45"
+              >
+                <path
+                  d="M22 2L11 13"
+                  stroke="white" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                />
+                <path 
+                  d="M22 2L15 22L11 13L2 9L22 2Z" 
+                  stroke="white" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                />
+              </svg>
             </button>
           </div>
         </form>
