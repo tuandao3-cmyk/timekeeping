@@ -31,17 +31,18 @@ export default function LeaderDetail() {
   }, [activeLeader]);
 
   return (
-    <div className="flex flex-col  min-h-[600px]">
-      <main className="flex justify-center flex-1 w-full">
+    <div className=" flex flex-col w-full h-full ">
+      <main className="flex justify-center flex-1 w-full h-full overflow-hidden">
         <div className="w-full max-w-[1440px] pt-16 lg:pt-0 relative">
           <Image
             width={1440}
             height={748}
             src="/img/about/bg_about_us1.png"
             alt="bg"
-            className="absolute pointer-events-none inset-0 w-full max-w-[1440px] h-full object-cover"
+            className="absolute pointer-events-none inset-0 w-full max-w-[1440px] h-full object-cover "
             layout="responsive"
           />
+
 
           <div className=" absolute pointer-events-none inset-0 flex whitespace-nowrap overflow-hidden pt-[120px] lg:pt-[80px] bg-[rgba(72,185,109,0.05)] w-full h-full justify-center lg:justify-start text-center lg:text-left lg:p-16">
             <h1 className="text-[#48B96D]/10 text-[52px] lg:text-[155px] font-bold ">
@@ -49,16 +50,18 @@ export default function LeaderDetail() {
             </h1>
           </div>
 
-          <div className="relative z-10 flex flex-col h-full">
+          <div className="relative z-10 flex flex-col w-ful h-full">
             <div className="flex flex-col-reverse lg:flex-row">
-              <div className="flex-1 p-4 lg:p-16 flex flex-col justify-center gap-6 items-center text-center lg:text-left lg:items-start">
-                <h2 className="text-[#48B96D] text-4xl lg:text-[64px] leading-[60px] lg:leading-[72px] font-bold mb-4">
+              <div className="flex-1  lg:p-16 flex flex-col justify-center gap-6 items-center text-center lg:text-left lg:items-start">
+                <div className="bg-white w-full lg:w-auto lg:p-4 lg:bg-transparent">
+                <h2 className="text-[#48B96D] text-4xl lg:text-[64px] leading-[60px] lg:leading-[72px] font-bold lg:mb-4">
                   {leader.name}
                 </h2>
-                <p className="text-gray-600 text-base leading-[24px] lg:text-[24px] lg:leading-[32px]  mb-6">
+                <p className="text-[#04141A] text-base leading-[24px] lg:text-[24px] lg:leading-[32px]  mb-6">
                   {leader.fullTitle}
                 </p>
-                <p className="text-gray-700 pb-16 lg:pb-0 max-w-2xl leading-relaxed">
+                </div>
+                <p className="text-gray-700 p-4 pb-16 lg:pb-0 max-w-2xl leading-relaxed">
                   {leader.description}
                 </p>
               </div>

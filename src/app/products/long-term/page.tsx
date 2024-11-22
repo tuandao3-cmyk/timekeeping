@@ -99,20 +99,24 @@ const LongTermSection: React.FC = () => {
                   style={{ borderColor: '#04141A' }}
                 >
                   <div className="flex flex-col justify-between items-center pt-4 h-[205px]">
-                  <p className={`text-2xl font-medium uppercase ${
-                      index === 0 
-                        ? 'text-[#0B3546] filter drop-shadow-[0_1px_1px_#005566]'
-                        : index === 1
-                          ? 'text-[#F68225] filter drop-shadow-[0_1px_1px_#8C4900]'
-                          : index === 2
-                            ? 'text-[#31814B] filter drop-shadow-[0_1px_1px_#016F26]' 
-                            : 'text-[#31814B] filter drop-shadow-[0_1px_1px_#016F26]' 
-                    }`}>
+                    <p
+                      className={`text-2xl font-medium uppercase ${
+                        index === 0
+                          ? 'text-[#0B3546] filter drop-shadow-[0_1px_1px_#005566]'
+                          : index === 1
+                            ? 'text-[#F68225] filter drop-shadow-[0_1px_1px_#8C4900]'
+                            : index === 2
+                              ? 'text-[#31814B] filter drop-shadow-[0_1px_1px_#016F26]'
+                              : 'text-[#31814B] filter drop-shadow-[0_1px_1px_#016F26]'
+                      }`}
+                    >
                       {packageData?.name}
                     </p>
-                    <p className={`text-xs lg:text-sm font-medium  px-2 py-1 rounded-full normal-case text-[#0048FF] ${
+                    <p
+                      className={`text-xs lg:text-sm font-medium  px-2 py-1 rounded-full normal-case text-[#0048FF] ${
                         index == 1 ? 'bg-[#3E91FF]/10' : 'bg-transparent'
-                      }`}>
+                      }`}
+                    >
                       {index == 1 ? 'Best Value' : ''}
                     </p>
                     <div
@@ -130,6 +134,7 @@ const LongTermSection: React.FC = () => {
                         width={98}
                         height={103}
                         layout="responsive"
+                        quality={100}
                         style={{
                           background: 'transparent',
                           maxWidth: '98px',
@@ -154,13 +159,14 @@ const LongTermSection: React.FC = () => {
                     <p className="text-center font-normal text-base text-[#000000A3] text-opacity-64 ">
                       Kỳ hạn {index == 0 ? 3 : index == 1 ? 6 : 12} tháng
                     </p>
-                    <div className="flex flex-col gap-4 lg:gap-8 py-4 xl:py-10 px-2 2xl:px-20">
+                    <div className="flex flex-col gap-4 lg:gap-8 py-4 xl:py-10 px-2 xl:px-8">
                       {benefits.map((benefit, index) => (
                         <div className="flex gap-3" key={index}>
                           <Image
                             width={24}
                             layout="responsive"
                             height={24}
+                            quality={100}
                             className="p-1 rounded-full bg-[#48B96D] w-[20px] h-[20px] sm:w-[24px] sm:h-[24px] max-w-[24px] max-h-[24px]"
                             src="/img/icon/check.svg"
                             alt=""
@@ -201,6 +207,7 @@ const LongTermSection: React.FC = () => {
                         width={98}
                         height={103}
                         layout="responsive"
+                        quality={100}
                         src="/img/icon4.png"
                         alt=""
                       />
@@ -219,6 +226,7 @@ const LongTermSection: React.FC = () => {
                           width={24}
                           layout="responsive"
                           height={24}
+                          quality={100}
                           className=" p-1 rounded-full bg-[#48B96D] w-[20px] h-[20px] sm:w-[24px] sm:h-[24px]"
                           src="/img/icon/check.svg"
                           alt=""
@@ -232,6 +240,7 @@ const LongTermSection: React.FC = () => {
                           width={24}
                           height={24}
                           layout="responsive"
+                          quality={100}
                           className=" p-1 rounded-full bg-[#48B96D] w-[20px] h-[20px] sm:w-[24px] sm:h-[24px]"
                           src="/img/icon/check.svg"
                           alt=""
@@ -245,6 +254,7 @@ const LongTermSection: React.FC = () => {
                           width={24}
                           height={24}
                           layout="responsive"
+                          quality={100}
                           className=" p-1 rounded-full bg-[#48B96D] w-[24px] h-[24px]"
                           src="/img/icon/check.svg"
                           alt=""
@@ -271,7 +281,9 @@ const LongTermSection: React.FC = () => {
                     <p className="text-2xl font-medium uppercase text-[#F68225]">
                       Gói NÂNG CAO
                     </p>
-                    <p className={`text-xs lg:text-sm font-medium  px-2 py-1 rounded-full normal-case text-[#0048FF] bg-[#3E91FF]/10`}>
+                    <p
+                      className={`text-xs lg:text-sm font-medium  px-2 py-1 rounded-full normal-case text-[#0048FF] bg-[#3E91FF]/10`}
+                    >
                       Best Value
                     </p>
                     <div
@@ -285,6 +297,7 @@ const LongTermSection: React.FC = () => {
                         width={98}
                         height={103}
                         layout="responsive"
+                        quality={100}
                         src="/img/icon5.png"
                         alt=""
                       />
@@ -303,6 +316,7 @@ const LongTermSection: React.FC = () => {
                           width={24}
                           height={24}
                           layout="responsive"
+                          quality={100}
                           className="p-1 rounded-full bg-[#48B96D] w-[20px] h-[20px] sm:w-[24px] sm:h-[24px]"
                           src="/img/icon/check.svg"
                           alt=""
@@ -316,6 +330,7 @@ const LongTermSection: React.FC = () => {
                           width={24}
                           height={24}
                           layout="responsive"
+                          quality={100}
                           className=" p-1 rounded-full bg-[#48B96D] w-[20px] h-[20px] sm:w-[24px] sm:h-[24px]"
                           src="/img/icon/check.svg"
                           alt=""
@@ -329,6 +344,7 @@ const LongTermSection: React.FC = () => {
                           width={24}
                           height={24}
                           layout="responsive"
+                          quality={100}
                           className=" p-1 rounded-full bg-[#48B96D] w-[24px] h-[24px]"
                           src="/img/icon/check.svg"
                           alt=""
@@ -366,6 +382,7 @@ const LongTermSection: React.FC = () => {
                         width={98}
                         height={103}
                         src="/img/icon6.png"
+                        quality={100}
                         layout="responsive"
                         alt=""
                       />
@@ -384,6 +401,7 @@ const LongTermSection: React.FC = () => {
                           width={24}
                           height={24}
                           layout="responsive"
+                          quality={100}
                           className=" p-1 rounded-full bg-[#48B96D] w-[20px] h-[20px] sm:w-[24px] sm:h-[24px]"
                           src="/img/icon/check.svg"
                           alt=""
@@ -397,6 +415,7 @@ const LongTermSection: React.FC = () => {
                           width={24}
                           height={24}
                           layout="responsive"
+                          quality={100}
                           className=" p-1 rounded-full bg-[#48B96D] w-[20px] h-[20px] sm:w-[24px] sm:h-[24px]"
                           src="/img/icon/check.svg"
                           alt=""
@@ -410,6 +429,7 @@ const LongTermSection: React.FC = () => {
                           width={24}
                           height={24}
                           layout="responsive"
+                          quality={100}
                           className=" p-1 rounded-full bg-[#48B96D] w-[24px] h-[24px]"
                           src="/img/icon/check.svg"
                           alt=""

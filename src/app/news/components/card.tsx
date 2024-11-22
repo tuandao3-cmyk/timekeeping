@@ -72,16 +72,16 @@ export const ProjectCard: React.FC<{
           </Link>
         </div>
       </div>
-      <div className="w-full block md:hidden mt-5 flex-col ">
-        <p className="text-base mt-5 font-bold text-[#579DFF] ">
-          {project?.blog_category?.name || ''}
+      <div className="w-full md:hidden gap-2 py-5 flex flex-col justify-between">
+        <p className="text-base  font-bold text-[#579DFF] ">
+          Tin Tài Chính
         </p>
-        <h2 className="mt-5  text-[24px]  font-bold text-[#151515] line-clamp-3">
-          {project?.title || ''}
+        <h2 className="  text-[24px]  font-bold text-[#151515] line-clamp-3">
+          {project.title}
         </h2>
-        <div className="mt-5 flex justify-between gap-5">
-          <p className="flex flex-row gap-2 text-sm text-[#656468]">
-            <Calendar size={16} /> {formatDateTimeVn(project?.updated_at || '')}
+        <div className=" flex justify-between ">
+          <p className="flex flex-row max-sm:mb-2 gap-2 text-sm text-[#656468]">
+            <Calendar size={16} /> {formatDateTimeVn(project.updated_at)}
           </p>
         </div>
       </div>

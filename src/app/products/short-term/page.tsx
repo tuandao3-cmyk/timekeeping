@@ -98,15 +98,17 @@ const ShortTermSection: React.FC = () => {
                   style={{ borderColor: '#04141A' }}
                 >
                   <div className="flex flex-col justify-between items-center pt-4 h-[205px]">
-                    <p className={`text-2xl font-medium uppercase ${
-                      index === 0 
-                        ? 'text-[#0B3546] filter drop-shadow-[0_1px_1px_#005566]'
-                        : index === 1
-                          ? 'text-[#F68225] filter drop-shadow-[0_1px_1px_#8C4900]'
-                          : index === 2
-                            ? 'text-[#31814B] filter drop-shadow-[0_1px_1px_#016F26]' 
-                            : 'text-[#31814B] filter drop-shadow-[0_1px_1px_#016F26]' 
-                    }`}>
+                    <p
+                      className={`text-2xl font-medium uppercase ${
+                        index === 0
+                          ? 'text-[#0B3546] filter drop-shadow-[0_1px_1px_#005566]'
+                          : index === 1
+                            ? 'text-[#F68225] filter drop-shadow-[0_1px_1px_#8C4900]'
+                            : index === 2
+                              ? 'text-[#31814B] filter drop-shadow-[0_1px_1px_#016F26]'
+                              : 'text-[#31814B] filter drop-shadow-[0_1px_1px_#016F26]'
+                      }`}
+                    >
                       {packageData?.name}
                     </p>
                     <p
@@ -130,6 +132,7 @@ const ShortTermSection: React.FC = () => {
                       <Image
                         width={98}
                         height={103}
+                        quality={100}
                         layout="responsive"
                         style={{
                           background: 'transparent',
@@ -155,12 +158,13 @@ const ShortTermSection: React.FC = () => {
                     <p className="text-center font-normal text-base text-[#000000A3] text-opacity-64 ">
                       Kỳ hạn {index == 0 ? 3 : index == 1 ? 6 : 12} tháng
                     </p>
-                    <div className="flex flex-col gap-4 lg:gap-8 py-4 xl:py-10 px-2 xl:px-10">
+                    <div className="flex flex-col gap-4 lg:gap-8 py-4 xl:py-10 px-2 xl:px-8">
                       {benefits.map((benefit, index) => (
                         <div className="flex gap-3" key={index}>
                           <Image
                             width={24}
                             layout="responsive"
+                            quality={100}
                             height={24}
                             className="p-1 rounded-full bg-[#48B96D] w-[20px] h-[20px] sm:w-[24px] sm:h-[24px] max-w-[24px] max-h-[24px]"
                             src="/img/icon/check.svg"
@@ -202,6 +206,7 @@ const ShortTermSection: React.FC = () => {
                         width={98}
                         height={103}
                         layout="responsive"
+                        quality={100}
                         src="/img/icon4.png"
                         alt=""
                       />
@@ -220,6 +225,7 @@ const ShortTermSection: React.FC = () => {
                           width={24}
                           height={24}
                           layout="responsive"
+                          quality={100}
                           className=" p-1 rounded-full bg-[#48B96D] w-[20px] h-[20px] sm:w-[24px] sm:h-[24px]"
                           src="/img/icon/check.svg"
                           alt=""
@@ -233,6 +239,7 @@ const ShortTermSection: React.FC = () => {
                           width={24}
                           height={24}
                           layout="responsive"
+                          quality={100}
                           className=" p-1 rounded-full bg-[#48B96D] w-[20px] h-[20px] sm:w-[24px] sm:h-[24px]"
                           src="/img/icon/check.svg"
                           alt=""
@@ -246,6 +253,7 @@ const ShortTermSection: React.FC = () => {
                           width={24}
                           height={24}
                           layout="responsive"
+                          quality={100}
                           className=" p-1 rounded-full bg-[#48B96D] w-[24px] h-[24px]"
                           src="/img/icon/check.svg"
                           alt=""
@@ -285,6 +293,7 @@ const ShortTermSection: React.FC = () => {
                       <Image
                         width={98}
                         layout="responsive"
+                        quality={100}
                         height={103}
                         src="/img/icon5.png"
                         alt=""
@@ -304,6 +313,7 @@ const ShortTermSection: React.FC = () => {
                           width={24}
                           height={24}
                           layout="responsive"
+                          quality={100}
                           className="p-1 rounded-full bg-[#48B96D] w-[20px] h-[20px] sm:w-[24px] sm:h-[24px]"
                           src="/img/icon/check.svg"
                           alt=""
@@ -329,6 +339,7 @@ const ShortTermSection: React.FC = () => {
                         <Image
                           width={24}
                           height={24}
+                          quality={100}
                           layout="responsive"
                           className=" p-1 rounded-full bg-[#48B96D] w-[24px] h-[24px]"
                           src="/img/icon/check.svg"
@@ -366,6 +377,7 @@ const ShortTermSection: React.FC = () => {
                       <Image
                         width={98}
                         height={103}
+                        quality={100}
                         layout="responsive"
                         src="/img/icon6.png"
                         alt=""
@@ -384,6 +396,7 @@ const ShortTermSection: React.FC = () => {
                         <Image
                           width={24}
                           height={24}
+                          quality={100}
                           layout="responsive"
                           className=" p-1 rounded-full w-auto bg-[#48B96D] max-w-[24px] max-h-[24px]"
                           src="/img/icon/check.svg"
@@ -410,6 +423,7 @@ const ShortTermSection: React.FC = () => {
                         <Image
                           width={24}
                           height={24}
+                          quality={100}
                           layout="responsive"
                           className=" p-1 rounded-full bg-[#48B96D] max-w-[24px] max-h-[24px]"
                           src="/img/icon/check.svg"

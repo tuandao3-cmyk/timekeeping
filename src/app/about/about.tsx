@@ -33,10 +33,10 @@ export const leaders = [
   },
   {
     id: 2,
-    name: 'Tuấn Nguyễn',
-    title: 'CEO - Co-Founder',
+    name: 'Trần Nam Chung',
+    title: 'Chief Strategy Officer - Founder',
     fullTitle: 'Chief Executive Officer - Co-Founder',
-    image: '/img/about/TN.png',
+    image: '/img/about/TNC.png',
     description: [
       'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
       'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
@@ -46,10 +46,10 @@ export const leaders = [
   },
   {
     id: 3,
-    name: 'Hoàng Thành Đạt',
-    title: 'CTO - Co-Founder',
+    name: 'Trần Nam Chung',
+    title: 'Chief Technology Officer - Co-Founder',
     fullTitle: 'Chief Technology Officer - Co-Founder',
-    image: '/img/about/HTD.png',
+    image: '/img/about/TNC.png',
     description: [
       'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
       'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
@@ -283,7 +283,7 @@ const AboutPage = (props: AboutPageProps) => {
     <>
       {/* <div className="max-h-max"> */}
       <div
-        className="bg-white min-h-[812px]  w-full flex flex-col justify-center items-center "
+        className="bg-white min-h-[686px]  w-full flex flex-col justify-center items-center "
         style={{
           backgroundImage: "url('/img/about/bg_about_us.png')",
           backgroundSize: '170% 170%',
@@ -294,8 +294,8 @@ const AboutPage = (props: AboutPageProps) => {
         <ModalSucses modal={modal} setModal={setModal} />
         <ModalEror modal={modal2} setModal={setModal2} />
         <div className="flex flex-col items-center justify-center w-full max-w-[1440px]">
-          <div className="flex justify-between items-center w-full h-full mt-16 max-lg:!flex-col md:pl-20 md:pr-12 px-[12px]">
-            <div className="flex flex-col md:min-h-[620px] mb-[24px] md:mb-0 justify-start items-start lg:justify-start flex-1  gap-[24px] md:gap-10">
+          <div className="relative flex justify-between items-center w-full h-full mt-16 max-lg:!flex-col md:pl-20 md:pr-12 px-[12px]">
+            <div className="z-10 flex flex-col md:min-h-[620px] mb-[24px] md:mb-0 justify-start items-start lg:justify-start flex-1  gap-[24px] md:gap-10">
               <div className="flex flex-col md:gap-2">
                 <p
                   ref={ref}
@@ -354,13 +354,14 @@ const AboutPage = (props: AboutPageProps) => {
                 </a>
               </div>
             </div>
-            <div className=" flex flex-col gap-[32px] justify-end items-end">
+            <div className="z-0 flex flex-col gap-[32px] justify-end items-end">
               <Image
                 width={588}
                 height={698}
-                src="/img/about/about_img_1.png"
+                src="/img/about/up.png"
                 layout="responsive"
                 alt="Vision illustration"
+                className="md:absolute md:bottom-0 md:right-0 right-10 relative"
               />
             </div>
           </div>
@@ -980,7 +981,7 @@ const AboutPage = (props: AboutPageProps) => {
                         {leader.name}
                       </div>
                       <div className="  rounded-[4px] pt-[31px] pb-[13px]">
-                        <p className="w-full text-center text-[#fff] font-[400] font-sans text-[14px] leading-[24px]">
+                        <p className="max-sm:w-[86vw] w-full text-center text-[#fff] px-3 font-[400] font-sans text-[14px] leading-[24px]">
                           {leader.title}
                         </p>
                       </div>

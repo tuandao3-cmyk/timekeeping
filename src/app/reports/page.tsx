@@ -151,7 +151,7 @@ const ReportPage: React.FC = () => {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center w-full min-h-[772px] lg:min-h-[585px] bg-[#07212C] bg-[url('/img/report/baocao_bg.jpg')] bg-no-repeat bg-cover bg-center">
+      <div className="flex flex-col items-center justify-center w-full min-h-[772px] lg:min-h-[520px] bg-[#07212C] bg-[url('/img/report/baocao_bg.png')] bg-no-repeat bg-cover bg-center">
         <div className="  pb-[107px]">
           <div className="flex flex-col items-center justify-end text-center max-w-[1440px] text-[#0B3546] gap-[22px]">
             <Typography

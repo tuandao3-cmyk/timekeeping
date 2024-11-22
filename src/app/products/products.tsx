@@ -121,46 +121,34 @@ const Product = (props: ProductProps) => {
         <div className="w-full flex justify-center items-center max-w-[1440px]">
           {products.map((product: (typeof products)[0], index) => (
             <div
-              className="w-full h-auto bg-white px-1 flex flex-col justify-center items-left"
+              className="w-full h-auto bg-white px-1 flex flex-col justify-center items-center"
               key={index}
             >
               <Stack
                 flexDirection={'row'}
                 justifyContent={'space-between'}
                 alignItems={'center'}
-                px={'20px'}
+                textAlign={'center'}
+                padding={'20px'}
               >
                 <Typography
                   className="cursor-pointer"
                   fontFamily={'Inter'}
                   fontWeight={700}
                   fontSize={{
-                    xs: '28px',
-                    sm: '32px',
+                    xs: '32px',
+                    lg: '40px',
                   }}
-                  lineHeight={'40px'}
+                  lineHeight={{
+                    xs: '40px',
+                    lg: '48px',
+                  }}
                   letterSpacing={'-1%'}
                   color="#000000"
                 >
                   {product.title}
                 </Typography>
-                <Button
-                  sx={{
-                    color: '#31814B',
-                    fontFamily: 'Inter',
-                    fontWeight: 400,
-                    fontSize: '16px',
-                    lineHeight: '24px',
-                    textTransform: 'none',
-                    display: {
-                      xs: 'none',
-                      md: 'block',
-                    },
-                  }}
-                  onClick={() => router.push(`/categories`)}
-                >
-                  Xem thêm
-                </Button>
+
               </Stack>
               <div className="flex md:flex-row flex-col gap-[24px] items-center  w-full  justify-center py-5  scrollbar-none ">
                 {product?.package?.map((packageItem: any, index: number) => (

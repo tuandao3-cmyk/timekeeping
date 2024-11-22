@@ -139,7 +139,7 @@ const FooterSection: React.FC<FooterSectionProps> = ({
       </button>
 
       <div
-        className={`text-gray-500 dark:text-gray-400 ${isOpen ? 'block' : 'hidden'}`}
+        className={`text-[#FFFFFF]/70 ${isOpen ? 'block' : 'hidden'}`}
       >
         <ul>
           {data.map((item) => (
@@ -173,7 +173,7 @@ const Footer = () => {
             <h2 className="mb-6 font-sans text-[#FFFFFF] text-[16px] text-base font-semibold leading-6 uppercase">
               CÔNG TY CỔ PHẦN HYRACAP
             </h2>
-            <ul className="text-gray-500 dark:text-gray-400 font-medium">
+            <ul className="text-[#FFFFFF]/70 font-medium">
               <li className="mb-4 max-w-md">
                 <a
                   href="/contact"
@@ -231,7 +231,7 @@ const Footer = () => {
             <h2 className="mb-6 font-sans text-sm md:text-base leading-4 md:leading-6 font-semibold text-[#ffffff] uppercase text-[16px]">
               CÔNG TY
             </h2>
-            <ul className="text-gray-500 dark:text-gray-400">
+            <ul className="text-[#FFFFFF]/70">
               {companyData.map((item) => (
                 <li key={item.id} className="mb-4">
                   <a
@@ -251,7 +251,7 @@ const Footer = () => {
             <h2 className="mb-6 font-sans text-sm md:text-base leading-4 md:leading-6 font-semibold text-[#ffffff] uppercase text-[16px]">
               HỆ SINH THÁI
             </h2>
-            <ul className="text-gray-500 dark:text-gray-400">
+            <ul className="text-[#FFFFFF]/70">
               {ecosystemData.map((item) => (
                 <li key={item.id} className="mb-4">
                   <a
@@ -271,7 +271,7 @@ const Footer = () => {
             <h2 className="mb-6 font-sans text-sm md:text-base leading-4 md:leading-6 font-semibold text-[#ffffff] uppercase text-[16px]">
               KHÁC
             </h2>
-            <ul className="text-gray-500 dark:text-gray-400">
+            <ul className="text-[#FFFFFF]/70">
               {otherData.map((item) => (
                 <li key={item.id} className="mb-4">
                   <a
