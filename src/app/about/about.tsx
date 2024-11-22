@@ -981,7 +981,7 @@ const AboutPage = (props: AboutPageProps) => {
                         {leader.name}
                       </div>
                       <div className="  rounded-[4px] pt-[31px] pb-[13px]">
-                        <p className="w-full text-center text-[#fff] font-[400] font-sans text-[14px] leading-[24px]">
+                        <p className="max-sm:w-[86vw] w-full text-center text-[#fff] px-3 font-[400] font-sans text-[14px] leading-[24px]">
                           {leader.title}
                         </p>
                       </div>
