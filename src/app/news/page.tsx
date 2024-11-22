@@ -84,9 +84,9 @@ const NewsPage: React.FC = () => {
   React.useEffect(() => {
     if (data) {
       let dataUpdate = data.data;
-      data.data.length < 4
-        ? (dataUpdate = data.data.concat(dataNews))
-        : (dataUpdate = data.data);
+      data?.data?.length < 4
+        ? (dataUpdate = data?.data?.concat(dataNews))
+        : (dataUpdate = data?.data);
       console.log('dataUpdate', dataUpdate);
 
       setNewsData(dataUpdate);
@@ -189,9 +189,7 @@ const NewsPage: React.FC = () => {
           backgroundSize: '130% 130%',
         }}
       > */}
-      <div 
-        className="flex flex-col items-center justify-center font-sans w-full min-h-[772px] lg:min-h-[520px] bg-[#07212C] bg-[url('/img/news/newsbg.png')] bg-no-repeat bg-cover bg-[75%_50%] lg:bg-[length:150%_150%]"
-      >
+      <div className="flex flex-col items-center justify-center font-sans w-full min-h-[772px] lg:min-h-[520px] bg-[#07212C] bg-[url('/img/news/newsbg.png')] bg-no-repeat bg-cover bg-[75%_50%] lg:bg-[length:150%_150%]">
         <div className="  pb-[107px]">
           <div className="flex flex-col items-center justify-end text-center max-w-[570px] text-white gap-[22px]">
             <Typography

@@ -30,7 +30,10 @@
     "quotes": ["off"], // Disable single/double quote rules
     // Quy tắc tùy chọn
 
-    "max-len": ["warn", { "code": 80 }], // Giới hạn chiều dài dòng tối đa là 80 ký tự
+    "max-len": [
+      "warn",
+      { "code": 80, "ignoreUrls": true, "ignoreComments": true }
+    ], // Giới hạn chiều dài dòng tối đa là 80 ký tự
     "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }], // Cảnh báo về biến không sử dụng, nhưng bỏ qua biến bắt đầu bằng "_"
 
     "react/jsx-filename-extension": [

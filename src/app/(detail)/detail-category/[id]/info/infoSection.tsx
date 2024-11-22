@@ -211,6 +211,7 @@ const InfoSection = (props: InfoSectionProps) => {
                   width={792}
                   height={400}
                   layout="responsive"
+                  quality={100}
                   objectFit="cover"
                   style={{
                     borderRadius: '16px',

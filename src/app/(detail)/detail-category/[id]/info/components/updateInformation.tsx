@@ -81,6 +81,10 @@ function UpdateInfo() {
           layout="responsive"
           width={455}
           height={323}
+          style={{
+            maxWidth: '455px',
+            maxHeight: '323px',
+          }}
           alt="content"
         />
         <Stack flexDirection={'column'} maxWidth={455} gap={'20px'}>

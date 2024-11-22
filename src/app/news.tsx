@@ -86,6 +86,7 @@ const News = (props: NewsProps) => {
                       width={486}
                       height={426}
                       src={newsData1[0]?.link_img[0] || ''}
+                      quality={100}
                       layout="responsive"
                       alt="Main News"
                       className={`${styles.mainImage} duration-300 h-[615px] md:max-h-[655px] lg:max-w-[486px] lg:max-h-[426px] md:min-h-[426px] ease-in-out transform ${
