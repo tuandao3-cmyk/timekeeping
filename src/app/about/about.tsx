@@ -34,7 +34,7 @@ export const leaders = [
   {
     id: 2,
     name: 'Trần Nam Chung',
-    title: 'CEO - Co-Founder',
+    title: 'Chief Strategy Officer - Founder',
     fullTitle: 'Chief Executive Officer - Co-Founder',
     image: '/img/about/TNC.png',
     description: [
@@ -46,10 +46,10 @@ export const leaders = [
   },
   {
     id: 3,
-    name: 'Hoàng Thành Đạt',
-    title: 'CTO - Co-Founder',
+    name: 'Trần Nam Chung',
+    title: 'Chief Technology Officer - Co-Founder',
     fullTitle: 'Chief Technology Officer - Co-Founder',
-    image: '/img/about/HTD.png',
+    image: '/img/about/TNC.png',
     description: [
       'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
       'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
