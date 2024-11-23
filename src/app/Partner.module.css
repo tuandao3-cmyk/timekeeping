@@ -146,11 +146,11 @@
   max-height: 65px;
   /* height: 40px; */
   /* height: 8vh; */
-  object-fit: contain;
+  object-fit: cover;
   margin: 0 20px;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .logoSection {
     gap: 1rem;
     flex-wrap: wrap;
@@ -159,9 +159,9 @@
   .partnerLogo {
     height: 30px;
   }
-}
+} */
 
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   .logoSection {
     gap: 0.5rem;
   }
@@ -169,7 +169,7 @@
   .partnerLogo {
     height: 25px;
   }
-}
+} */
 @keyframes slide {
   from {
     transform: translateX(0);
