@@ -86,7 +86,7 @@ const Product = (props: ProductProps) => {
               cầu của khách hàng.
             </p>
 
-            <div className="flex w-full justify-center items-start gap-[24px]">
+            <div className="flex w-full justify-center items-start gap-[12px] lg:gap-[24px]">
               <button
                 ref={ref2}
                 onClick={() => setActiveSection('short-term')}
@@ -121,7 +121,7 @@ const Product = (props: ProductProps) => {
         <div className="w-full flex justify-center items-center max-w-[1440px]">
           {products.map((product: (typeof products)[0], index) => (
             <div
-              className="w-full h-auto bg-white px-1 flex flex-col justify-center items-center"
+              className="w-full h-auto bg-white px-3 flex flex-col justify-center items-center"
               key={index}
             >
               <Stack
