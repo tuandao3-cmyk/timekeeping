@@ -24,3 +24,34 @@ body {
   animation: slideIn 1.5s ease forwards;
 }
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+.swiper-pagination {
+  position: absolute;
+  bottom: 55px !important;
+  display: flex;
+  gap: 2px;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .swiper-pagination {
+    bottom: 15px !important;
+  }
+}
+
+/* Style chung cho tất cả bullet */
+.swiper-pagination-bullet {
+  width: 20px !important; /* Chiều dài của thanh */
+  height: 4px !important; /* Chiều cao của thanh */
+  border-radius: 27px !important; /* Bỏ bo góc */
+  margin: 0 !important;
+  background: rgba(255, 255, 255, 0.2) !important; /* Màu xám nhạt cho thanh không active */
+  opacity: 1 !important;
+  transition: all 0.3s ease;
+}
+
+/* Style cho bullet đang active */
+.swiper-pagination-bullet-active.custom-bullet {
+  background: #48B96D !important; /* Màu xanh lá cho thanh active */
+  opacity: 1 !important;
+}
