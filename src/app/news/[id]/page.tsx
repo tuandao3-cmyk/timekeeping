@@ -117,7 +117,7 @@ const NewsDetail: React.FC = ({ params, searchParams }: any) => {
           <div className="relative flex flex-row gap-4 py-4 items-center">
             <Image
               src="/img/logohyracap.png"
-              layout="responsive"
+              // layout="responsive"
               alt="logo"
               className="flex-start"
               width={100}
