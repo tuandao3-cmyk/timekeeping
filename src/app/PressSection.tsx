@@ -75,7 +75,7 @@ const PressSection = () => {
           TRUYỀN THÔNG NÓI GÌ VỀ CHÚNG TÔI?
         </h2>
         <p
-          className={`font-inter text-[#000000]/60 font-normal text-base font-sans leading-6 max-w-[351px] md:max-w-[767px] mx-auto mb-4 text-center duration-300 delay-200 ease-in-out transform ${
+          className={`font-inter text-[#000000]/60 font-normal text-[14px] lg:text-base  font-sans leading-6 max-w-[351px] md:max-w-[767px] px-2 mx-auto mb-4 text-center duration-300 delay-200 ease-in-out transform ${
             inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
