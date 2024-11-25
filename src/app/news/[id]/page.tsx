@@ -165,7 +165,7 @@ const NewsDetail: React.FC = ({ params, searchParams }: any) => {
               }
               loading="lazy"
               alt="Privacy policy"
-              layout="responsive"
+              // layout="responsive"
               width={1200}
               height={600}
               className="w-full max-w-[1200px] max-h-[600px] object-cover rounded-lg shadow-lg"
@@ -294,12 +294,12 @@ const NewsDetail: React.FC = ({ params, searchParams }: any) => {
                     window.location.href = `/news/${news.id}`;
                   }}
                   key={index}
-                  className={`rounded-lg p-2 cursor-pointer overflow-hidden shadow-sm hover:scale-105 transition ease-in-out duration-100 hover:shadow-lg ${'bg-[#F3F7F4] md:max-h-[517px]'}`}
+                  className={` rounded-lg p-2 cursor-pointer overflow-hidden shadow-sm hover:scale-105 transition ease-in-out duration-100 hover:shadow-lg ${'bg-[#F3F7F4] md:max-h-[517px]'}`}
                 >
                   <Image
                     width={384}
                     height={234}
-                    layout="responsive"
+                    // layout="responsive"
                     src={
                       news?.link_img[0] ||
                       'https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg'

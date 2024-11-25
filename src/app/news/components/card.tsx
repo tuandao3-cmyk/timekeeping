@@ -18,7 +18,7 @@ export const ProjectCard: React.FC<{
       <Image
         width={320}
         height={188}
-        layout="responsive"
+        // layout="responsive"
         src={
           project?.link_img[0] ||
           'https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg'
