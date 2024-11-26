@@ -319,9 +319,9 @@ const NewsDetail: React.FC = ({ params, searchParams }: any) => {
                     >
                       {news.title}
                     </h1>
-                    <p className={`text-sm mt-3 ${'text-gray-600'}`}>
-                      {news.text}
-                    </p>
+                    <div className={`text-sm mt-3 ${'text-gray-600'}`}>
+                      <div dangerouslySetInnerHTML={{ __html: news.text }} className="items-center" />
+                    </div>
                     <div className="flex justify-between items-center text-sm mt-8">
                       <p
                         className={`flex flex-row items-center gap-2 ${'text-gray-600'}`}

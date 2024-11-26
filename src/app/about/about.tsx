@@ -44,11 +44,11 @@ export const leaders = [
       'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.',
     ],
   },
-  {
+  { 
     id: 3,
     name: 'Trần Nam Chung',
-    title: 'Chief Technology Officer - Co-Founder',
-    fullTitle: 'Chief Technology Officer - Co-Founder',
+    title: 'Chief Technology Officer - Founder',
+    fullTitle: 'Chief Technology Officer - Founder',
     image: '/img/about/TNC.png',
     description: [
       'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
@@ -951,11 +951,11 @@ const AboutPage = (props: AboutPageProps) => {
               </p>
             </div>
             <div className="grow grid grid-cols-1 lg:grid-cols-4 gap-4 w-full mx-auto place-items-center items-center ">
-              {leaders.slice(0, 4).map((leader, index) => (
+              {leaders.slice(2, 4).map((leader, index) => (
                 <Link
                   key={index}
                   href={`/about/leaderdetail/${leader.id}`}
-                  className="mt-5 px-[13px] "
+                  className="mt-5 px-[13px] lg:col-span-2" //sửa lại khi có thêm các nhà phát triển
                 >
                   <div
                     key={index}
