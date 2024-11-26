@@ -534,7 +534,8 @@ const AboutPage = (props: AboutPageProps) => {
                 height={605}
                 src="/img/about/about1.png"
                 alt="Vision illustration"
-                layout="responsive"
+                // layout="responsive"
+
               />
             </div>
           </div>
@@ -706,7 +707,7 @@ const AboutPage = (props: AboutPageProps) => {
                 height={494}
                 src="/img/about/sm.jpg"
                 alt="Mission illustration"
-                layout="responsive"
+                // layout="responsive"
               />
             </div>
           </div>

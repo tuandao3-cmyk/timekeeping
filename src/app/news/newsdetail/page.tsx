@@ -70,15 +70,16 @@ const NewsDetail: React.FC = () => {
             "Phục dựng ảnh liệt sĩ" của Hà Nội.
           </h1>
 
-          <div className="relative flex flex-row gap-4 py-4 items-center">
-            <Image
-              src="/img/logohyracap.png"
-              layout="responsive"
-              alt="logo"
-              className="flex-start"
-              width={100}
-              height={100}
-            />
+          <div className="relative  flex-row gap-4 py-4 items-center">
+            <div className="w-[100px] flex-shrink-0">
+              <Image
+                src="/img/logohyracap.png"
+                alt="logo"
+                width={100}
+                height={100}
+                className="object-contain" // Đảm bảo ảnh giữ tỷ lệ và không bị méo
+              />
+            </div>
             <div className="flex flex-row justify-center space-x-5 rtl:space-x-reverse">
               <a
                 href="#"

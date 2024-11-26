@@ -147,12 +147,12 @@ const DownloadSection = () => {
               </div>
             </div>
           </div>
-          <div className="  md:w-[90%] max-h-[660px] flex items-center justify-center lg:ml-20 overflow-hidden ">
+          <div className="  md:w-[90%] max-h-[660px] flex items-center object-contain justify-center lg:ml-20 overflow-hidden ">
             <Image
               ref={ref}
               src={imageSrc}
               alt="App Screenshot"
-              layout="responsive"
+              // layout="responsive"
               width={708}
               height={812}
               className={`lg:h-[812px] lg:w-[708px] md:h-[640px] md:w-[550px] w-[327px] h-[419px] duration-300 delay-200 ease-in-out transform ${

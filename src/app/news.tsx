@@ -56,9 +56,6 @@ const News = (props: NewsProps) => {
         <div className="max-w-[1440px]">
           <div className=" flex justify-between ">
             <p
-              style={{
-                fontWeight: 700,
-              }}
               className=" font-bold pb-6 max-md:px-3 text-[25px] text-center md:text-left  md:text-[36px] leading-[28px] md:leading-[48px] font-sans"
             >
               TIN MỚI NHẤT VỀ HYRACAP

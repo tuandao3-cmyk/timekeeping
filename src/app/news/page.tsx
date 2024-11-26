@@ -276,7 +276,7 @@ const NewsPage: React.FC = () => {
                   height={70}
                   src={news?.link_img[0] || ''}
                   alt=""
-                  layout="responsive"
+                  // layout="responsive"
                   className={` object-cover object-center max-w-[115px] rounded-lg 
                         h-[70px] w-[115px]
                     `}
