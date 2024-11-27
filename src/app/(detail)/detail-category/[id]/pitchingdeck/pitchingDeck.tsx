@@ -13,10 +13,7 @@ const PitchingDeckSection = (props: PitchingDeckSectionProps) => {
   const pathname = usePathname();
   const [openPdf, setOpenPdf] = useState(false);
 
-  // const handlePreview = (file: string) => {
-  //   const googleDocsViewerUrl = `https://docs.google.com/viewer?url=${encodeURIComponent(props.data.pitching_deck)}&embedded=true`;
-  //   window.open(googleDocsViewerUrl, '_blank');
-  // };
+
 
   const handleDownload = () => {
     const link = document.createElement('a');
@@ -28,19 +25,19 @@ const PitchingDeckSection = (props: PitchingDeckSectionProps) => {
   };
 
   return (
-    <section className="flex flex-col justify-center items-center w-full">
-      <div className="flex flex-col max-w-[1440px] md:px-[120px] w-full">
-        <div className="h-[80vh] bg-white w-full px-11 py-10">
-          <div className="flex gap-5 py-10 ">
-            <div className="bg-[#CCCCCC] w-1 h-auto rounded-full"></div>
+    <section className="flex flex-col  justify-center items-center w-full">
+      <div className="flex flex-col max-w-[1440px]  w-full">
+        <div className="h-full bg-white w-full ">
+          <div className="flex gap-5 bg-[#0000000F] rounded-lg p-2 ">
+            <div className="bg-[#28a745] w-1 h-auto rounded-full"></div>
             <div className="flex justify-between  w-full">
               <div>
-                <p className=" text-[18px] mb-[5px]">Pitching Deck</p>
+                <p className=" text-[18px] text-[#28a745] font-semibold mb-[5px]">Pitching Deck</p>
                 <span className="text-[14px] text-[#9f9f9f]">
                   {formatDateTimeVn(props.data.updated_at)}
                 </span>
               </div>
-              <div className="flex ">
+              <div className="flex items-center justify-center ">
                 <button
                   onClick={() => setOpenPdf(true)}
                   className="bg-transparent border-2 border-[#28a745] rounded-full cursor-pointer ml-[10px] w-[40px] h-[40px] flex justify-center items-center transition-all duration-300 ease-in-out hover:bg-[#28a745] group"

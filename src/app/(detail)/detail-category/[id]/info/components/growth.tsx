@@ -1,6 +1,10 @@
 import { Box, Stack, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import Image from 'next/image';
+import PitchingDeckSection from '../../pitchingdeck/pitchingDeck';
+import ContractSampleSection from '../../contract_sample/contractSample';
+import FinanceRoadSection from '../../finance_road/finance_road';
+import BusinessPlanSection from '../../business plan/business_plan';
 
 interface GrowthProps {
   data: any;
@@ -33,11 +37,11 @@ function Growth(props: GrowthProps) {
         gap={'24px'}
       >
         <Typography
-          fontWeight={600}
           fontFamily={'Inter'}
-          fontSize={'16px'}
-          lineHeight={'24px'}
-          color="#000000E5"
+          fontWeight={600}
+          fontSize={'20px'}
+          lineHeight={'28px'}
+          color="#000000"
         >
           Triển vọng tăng trưởng
         </Typography>
@@ -52,12 +56,12 @@ function Growth(props: GrowthProps) {
         </Typography>
       </Stack>
       <Stack flexDirection={'column'} gap={'25px'}>
-        <Typography
-          fontWeight={600}
+      <Typography
           fontFamily={'Inter'}
-          fontSize={'16px'}
-          lineHeight={'24px'}
-          color="#000000E5"
+          fontWeight={600}
+          fontSize={'20px'}
+          lineHeight={'28px'}
+          color="#000000"
         >
           Thông số
         </Typography>
@@ -71,6 +75,9 @@ function Growth(props: GrowthProps) {
                 lg: '48%',
               }}
               mb={2}
+              bgcolor={'#0000000F'}
+              padding={'3px'}
+              borderRadius={'8px'}
             >
               <Stack direction="row" gap="12px">
                 <Image
@@ -97,7 +104,7 @@ function Growth(props: GrowthProps) {
                     fontWeight={600}
                     fontSize="16px"
                     lineHeight="24px"
-                    color="#31814B"
+                    color="#28a745"
                   >
                     {project.value}
                   </Typography>
@@ -115,6 +122,12 @@ function Growth(props: GrowthProps) {
             </Box>
           ))}
         </Stack>
+        <div className = "grid grid-cols-1 grid-rows-4  gap-4">
+          <PitchingDeckSection data={data} />
+          <ContractSampleSection data={data} /> 
+          <FinanceRoadSection data={data} />
+          <BusinessPlanSection data={data} />
+        </div>
       </Stack>
     </Stack>
   );
