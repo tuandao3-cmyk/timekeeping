@@ -11,17 +11,18 @@ import type { Swiper as SwiperType } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import useWindowSize from './useWindowSize';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const projects = [
   {
     id: 1,
     name: 'HYPERAS CHAIN',
-    series: 'SERIES A',
-    description:
-      'Hyperas tận dụng sức mạnh từ hàng tỷ thiết bị biên xây dựng hạ tầng AI phi tập trung mạnh mẽ',
+    series: 'SERIES A', 
+    description: 'Hyperas tận dụng sức mạnh từ hàng tỷ thiết bị biên xây dựng hạ tầng AI phi tập trung mạnh mẽ',
     target: 2000000,
     raised: 1091591,
     percentage: 51,
@@ -97,7 +98,7 @@ interface ProjectSlideProps {
 
 const ProjectSlider = (props: ProjectSlideProps) => {
   const { dataRasing, pageRasing } = props;
-  const { ref, inView, entry } = useInView({
+  const { ref, inView } = useInView({
     threshold: 0.1,
   });
   const [swiper, setSwiper] = useState<SwiperType | null>(null);
@@ -107,23 +108,15 @@ const ProjectSlider = (props: ProjectSlideProps) => {
   const progressBarRef = useRef<HTMLDivElement>(null);
   const windowSize = useWindowSize();
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  }, []);
+
   const theme = useTheme();
   const isMdOrLarger = useMediaQuery(theme.breakpoints.up('md'));
-
-  // const { data, isLoading, isSuccess, isError } = useQuery({
-  //   queryKey: ['project'],
-  //   queryFn: () =>
-  //     getProjects({
-  //       ...page,
-  //       status__eq: 1,
-  //     }),
-  // });
-
-  // useEffect(() => {
-  //   if (isSuccess) {
-  //     setProjectData(data.data);
-  //   }
-  // }, [data]);
 
   const isMobile = windowSize.width < 640;
   const isTablet = windowSize.width >= 640 && windowSize.width < 768;
@@ -150,9 +143,9 @@ const ProjectSlider = (props: ProjectSlideProps) => {
   } else if (isXLargeDesktop) {
     slidesPerView = 1.5;
   } else if (isXXLargeDesktop) {
-    slidesPerView = 1.75;
+    slidesPerView = 1.66;
   } else if (isUltraWide) {
-    slidesPerView = 1.75;
+    slidesPerView = 1.66;
   } else {
     slidesPerView = 1;
   }
@@ -174,49 +167,39 @@ const ProjectSlider = (props: ProjectSlideProps) => {
   }, [activeIndex, projects.length]);
 
   return (
-    <div className="flex w-full mx-auto max-w-[1440px] flex-col justify-center items-center overflow-x-hidden ">
-      <div className="w-full  relative">
+    <div className="flex w-full mx-auto max-w-[1440px] flex-col justify-center items-center overflow-x-hidden">
+      <div className="w-full relative">
         <div className="w-full px-4 md:px-0">
-          <h2 className=" text-[28px] md:text-[38px] text-[#04141A] font-[700] leading-[36px] md:leading-[57px] mb-8 text-center font-sans">
+          <h2 className="text-[28px] md:text-[38px] text-[#04141A] font-[700] leading-[36px] md:leading-[57px] mb-8 text-center font-sans">
             DỰ ÁN ĐANG GỌI VỐN
           </h2>
           <Swiper
             loop={true}
-            modules={[Navigation, Pagination]}
+            modules={[Navigation, Pagination, Autoplay]}
             spaceBetween={isMobile ? 20 : 40}
             slidesPerView={slidesPerView}
-            // loopAdditionalSlides={Math.ceil(slidesPerView)}
             centeredSlides={true}
-            // slidesOffsetBefore={slidesOffsetBefore}
-            // slidesOffsetAfter={slidesOffsetBefore}
             watchSlidesProgress={true}
             normalizeSlideIndex={true}
             roundLengths={true}
-            // navigation={
-            //   isMdOrLarger
-            //     ? {
-            //         prevEl: '.swiper-button-prev',
-            //         nextEl: '.swiper-button-next',
-            //       }
-            //     : false
-            // }
-            // loop={true}
-
+            autoplay={{
+              delay: 2000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+              stopOnLastSlide: false,
+              waitForTransition: true,
+            }}
             onSwiper={setSwiper}
             onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
-            // speed={800}
             slideActiveClass="swiper-slide-active"
-            slidePrevClass="swiper-slide-prev"
+            slidePrevClass="swiper-slide-prev" 
             slideNextClass="swiper-slide-next"
-            className="mySwiper !overflow-visible "
-            effect="coverflow"
-            // coverflowEffect={{
-            //   rotate: 0,
-            //   stretch: 0,
-            //   depth: 100,
-            //   modifier: 1,
-            //   slideShadows: false,
-            // }}
+            className="mySwiper !overflow-visible"
+            effect="fade"
+            fadeEffect={{
+              crossFade: true,
+            }}
+            speed={1000}
           >
             {projectData?.length == 0 ? (
               <div>Loading...</div>
@@ -224,15 +207,16 @@ const ProjectSlider = (props: ProjectSlideProps) => {
               projectData.map((project: any, index: number) => (
                 <SwiperSlide
                   key={project?.id}
-                  className="transition-all duration-300 "
+                  className="transition-all duration-300"
                 >
                   {({ isActive, isNext, isPrev }) => (
                     <a
                       ref={ref}
                       href={`/detail-category/${project?.id}`}
-                      className={`bg-[#07212C] rounded-xl overflow-visible transition duration-100 md:max-h-[386px] pb-[20px] gap-[24px] max-w-[778px] flex flex-col p-[12px] md:p-[32px] md:flex-row 
-            ${isActive ? 'scale-100 z-10' : 'scale-90 z-0'} 
-            `}
+                      className={`bg-[#07212C] rounded-xl overflow-visible transition duration-100 md:max-h-[386px] pb-[20px] gap-[24px] max-w-[778px] flex flex-col p-[12px] md:p-[32px] md:flex-row`}
+                      data-aos="fade-right"
+                      data-aos-duration="1500"  // Thời gian chạy animation (ms)
+                      data-aos-easing="ease-in-out"
                     >
                       <div
                         ref={ref}
@@ -354,12 +338,12 @@ const ProjectSlider = (props: ProjectSlideProps) => {
           <div className="swiper-button-prev !hidden"></div>
           <div className="swiper-button-next !hidden"></div>
 
-          <div className="flex justify-center items-center mt-6 w-full  pb-6">
-            <div className="bg-gray-200 h-2 rounded-full w-[1200px] ">
+          <div className="flex justify-center items-center mt-6 w-full pb-6">
+            <div className="bg-gray-200 h-2 rounded-full w-[1200px]">
               <div
                 ref={progressBarRef}
                 className="bg-[#31814B] h-2 rounded-full transition-all duration-300 font-sans"
-                style={{ width: `${100 / projects.length}%` }} // Giá trị mặc định
+                style={{ width: `${100 / projects.length}%` }}
               ></div>
             </div>
           </div>
