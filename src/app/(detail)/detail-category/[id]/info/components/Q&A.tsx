@@ -9,61 +9,64 @@ import Button from '@mui/material/Button';
 
 const questions = [
   {
-    question: 'How does it work?',
+    question: 'Sản phẩm đầu tư HyraCap là gì? Lợi ích sản phẩm như thế nào ?',
     answer: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
               eget.`,
   },
   {
-    question: 'How does it work?',
+    question: 'Lợi nhuận khi đầu tư vào HyraCap được tính thế nào ?',
     answer: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
               eget.`,
   },
   {
-    question: 'How does it work?',
+    question: 'HyraCap có các gói đầu tư nào cho nhà đầu tư lựa chọn ?',
     answer: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
               eget.`,
   },
   {
-    question: 'How does it work?',
+    question: 'Những ai có thể tham gia đầu tư trên nền tảng HyraCap ?',
     answer: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
               eget.`,
   },
   {
-    question: 'How does it work?',
+    question:
+      'HyraCap có yêu cầu về số vốn tối thiểu để bắt đầu đầu tư không ?',
     answer: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
               eget.`,
   },
   {
-    question: 'How does it work?',
+    question: 'Tôi có thể rút tiền đầu tư HyraCap bất kỳ lúc nào không ?',
     answer: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
               eget.`,
   },
   {
-    question: 'How does it work?',
+    question: 'HyraCap có hỗ trợ tư vấn đầu tư cho người dùng không ?',
     answer: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
               eget.`,
   },
   {
-    question: 'How does it work?',
+    question:
+      'Phí giao dịch và quản lý tài sản trên HyraCap được tính như thế nào ?',
     answer: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
               eget.`,
   },
   {
-    question: 'How does it work?',
+    question:
+      'HyraCap bảo vệ thông tin cá nhân và tài sản của nhà đầu tư như thế nào ?',
     answer: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
               eget.`,
   },
   {
-    question: 'How does it work?',
+    question: 'Làm thế nào để nạp và rút tiền ?',
     answer: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
               eget.`,

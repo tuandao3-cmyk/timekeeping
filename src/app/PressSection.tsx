@@ -90,7 +90,7 @@ const PressSection = () => {
               href={logo.link}
               target="_blank"
               rel="noopener noreferrer"
-              className={`${styles.logoWrapper} duration-300 ease-in-out delay-${logo.delay} transform ${
+              className={`${styles.logoWrapper} lg:p-4 duration-300 ease-in-out delay-${logo.delay} transform ${
                 inView ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
               }`}
             >
@@ -100,7 +100,7 @@ const PressSection = () => {
                 src={logo.src}
                 alt={logo.name}
                 className={styles.logo}
-                layout="responsive"
+                // layout="responsive"
               />
             </Link>
           ))}

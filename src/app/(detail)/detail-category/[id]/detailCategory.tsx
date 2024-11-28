@@ -79,10 +79,7 @@ const DetailCategoryPage = (props: DetailCategoryPageProps) => {
             >
               {[
                 'Thông tin',
-                'Pitchingdeck',
-                'Hợp đồng mẫu',
-                'Lộ trình tài chính',
-                'Kế hoạch kinh doanh',
+
               ].map((label, index) => (
                 <Tab
                   key={label}
@@ -109,19 +106,7 @@ const DetailCategoryPage = (props: DetailCategoryPageProps) => {
       <CustomTabPanel value={value} index={0}>
         <InfoSection dataP={data} />
       </CustomTabPanel>
-      <CustomTabPanel value={value} index={1}>
-        <PitchingDeckSection data={data} />
-        {/* <PitchingDeckSection /> */}
-      </CustomTabPanel>
-      <CustomTabPanel value={value} index={2}>
-        <ContractSampleSection data={data} />
-      </CustomTabPanel>
-      <CustomTabPanel value={value} index={3}>
-        <FinanceRoadSection data={data} />
-      </CustomTabPanel>
-      <CustomTabPanel value={value} index={4}>
-        <BusinessPlanSection data={data} />
-      </CustomTabPanel>
+
     </Box>
   );
 };
