@@ -1,14 +1,14 @@
 'use client';
 import {
-  FacebookIcon,
+  FacebookGrayIcon,
   LinkedInIcon,
-  XIcon,
-  YouTubeIcon,
+  LinkedInIconGray,
+  XIconGray,
+  RivetIcon,
 } from '@/components/icons';
 import { Calendar } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useInView } from 'react-intersection-observer';
 import { useQuery } from '@tanstack/react-query';
 
 import { getNewsDetail, getNews } from '@/services/news.service';
@@ -20,17 +20,11 @@ import style from './newsDetail.module.css';
 const NewsDetail: React.FC = ({ params, searchParams }: any) => {
   const [dataNews, setDataNews] = useState<any>({});
   const [dataList, setDataList] = useState<any>([]);
-  const { data, error, isLoading, isError, isSuccess } = useQuery({
+  const { data, isSuccess } = useQuery({
     queryKey: ['news', params.id],
     queryFn: () => getNewsDetail(params.id),
   });
-  const {
-    data: data1,
-    error: error1,
-    isLoading: isLoading1,
-    isError: isError1,
-    isSuccess: isSuccess1,
-  } = useQuery({
+  const { data: data1, isSuccess: isSuccess1 } = useQuery({
     queryKey: ['news'],
     queryFn: () =>
       getNews({
@@ -41,33 +35,15 @@ const NewsDetail: React.FC = ({ params, searchParams }: any) => {
 
   useEffect(() => {
     if (isSuccess1) {
-      console.log(data1?.data);
-
       setDataList(data1?.data);
     }
   }, [data1]);
 
   useEffect(() => {
     if (isSuccess) {
-      console.log(data?.data);
-
       setDataNews(data?.data);
     }
   }, [data]);
-
-  const { ref, inView, entry } = useInView({
-    threshold: 0.1,
-    // triggerOnce: true,
-  });
-
-  const {
-    ref: ref2,
-    inView: inView2,
-    entry: entry2,
-  } = useInView({
-    threshold: 0.1,
-    // triggerOnce: true,
-  });
 
   return (
     <div className="w-full">
@@ -88,7 +64,7 @@ const NewsDetail: React.FC = ({ params, searchParams }: any) => {
             </h1>
           </div>
 
-          <div className="relative flex flex-row gap-4 py-4 items-center">
+          <div className="relative flex flex-row gap-4 py-4 items-center justify-between">
             <Image
               src="/img/logohyracap.png"
               // layout="responsive"
@@ -100,9 +76,9 @@ const NewsDetail: React.FC = ({ params, searchParams }: any) => {
             <div className="flex flex-row justify-center space-x-5 rtl:space-x-reverse">
               <a
                 href="#"
-                className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
+                className="text-gray-400 hover:text-gray-900 dark:hover:text-white color-gray"
               >
-                <FacebookIcon />
+                <FacebookGrayIcon />
                 <span className="sr-only">Facebook page</span>
               </a>
 
@@ -110,22 +86,22 @@ const NewsDetail: React.FC = ({ params, searchParams }: any) => {
                 href="#"
                 className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
               >
-                <XIcon />
+                <XIconGray />
                 <span className="sr-only">X page</span>
               </a>
               <a
                 href="#"
                 className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
               >
-                <YouTubeIcon />
-                <span className="sr-only">Youtube page</span>
+                <LinkedInIconGray />
+                <span className="sr-only">LinkedIn</span>
               </a>
               <a
                 href="#"
                 className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
               >
-                <LinkedInIcon />
-                <span className="sr-only">LinkedIn page</span>
+                <RivetIcon />
+                <span className="sr-only">Link</span>
               </a>
             </div>
           </div>
@@ -147,16 +123,50 @@ const NewsDetail: React.FC = ({ params, searchParams }: any) => {
           </div>
 
           <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
-              textAlign: 'left',
-            }}
             className={style.newsContent}
             dangerouslySetInnerHTML={{ __html: dataNews?.content }}
           ></div>
+        </div>
+        <div className="relative flex flex-row gap-4 py-4 items-center justify-between">
+          <Image
+            src="/img/logohyracap.png"
+            // layout="responsive"
+            alt="logo"
+            className="flex-start"
+            width={100}
+            height={100}
+          />
+          <div className="flex flex-row justify-center space-x-5 rtl:space-x-reverse">
+            <a
+              href="#"
+              className="text-gray-400 hover:text-gray-900 dark:hover:text-white color-gray"
+            >
+              <FacebookGrayIcon />
+              <span className="sr-only">Facebook page</span>
+            </a>
+
+            <a
+              href="#"
+              className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
+            >
+              <XIconGray />
+              <span className="sr-only">X page</span>
+            </a>
+            <a
+              href="#"
+              className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
+            >
+              <LinkedInIconGray />
+              <span className="sr-only">LinkedIn</span>
+            </a>
+            <a
+              href="#"
+              className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
+            >
+              <RivetIcon />
+              <span className="sr-only">Link</span>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -166,7 +176,7 @@ const NewsDetail: React.FC = ({ params, searchParams }: any) => {
             Bài viết liên quan
           </div>
           <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {dataList.map((news: any, index: number) => (
+            {dataList?.map((news: any, index: number) => (
               <>
                 <div
                   onClick={() => {

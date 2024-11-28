@@ -125,6 +125,11 @@ const CategoryPage = (props: CategoryPageProps) => {
 
   const handleChange = (event: any) => {
     setSelectedValue(event.target.value);
+    if (event.target.value === 'all') {
+      delete page.filterStr;
+      delete page2.filterStr;
+      delete page3.filterStr;
+    }
     setPage((prev) => ({
       ...prev,
       filterStr: event.target.value,
