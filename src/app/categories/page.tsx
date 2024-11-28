@@ -18,10 +18,21 @@ async function Page() {
     status__eq: 2,
   };
 
-  const projects1 = await getProjects(page1);
-  const projects2 = await getProjects(page2);
-  const projects3 = await getProjects(page3);
-  return <CategoryPage />;
+  const [projects1, projects2, projects3] = await Promise.all([
+    getProjects(page1),
+    getProjects(page2),
+    getProjects(page3),
+  ]);
+  return (
+    <CategoryPage
+      projects1={projects1}
+      projects2={projects2}
+      projects3={projects3}
+      page1={page1}
+      page2={page2}
+      page3={page3}
+    />
+  );
 }
 
 export default Page;

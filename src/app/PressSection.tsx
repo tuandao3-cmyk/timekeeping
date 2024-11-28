@@ -100,7 +100,7 @@ const PressSection = () => {
                 src={logo.src}
                 alt={logo.name}
                 className={styles.logo}
-                layout="responsive"
+                // layout="responsive"
               />
             </Link>
           ))}

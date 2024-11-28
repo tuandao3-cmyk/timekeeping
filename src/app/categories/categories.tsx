@@ -28,21 +28,18 @@ interface CategoryPageProps {
   page3: typeof Page;
 }
 
-const CategoryPage = () => {
-  const [projects1, setProjects1] = useState<any>(null);
-  const [projects2, setProjects2] = useState<any>(null);
-  const [projects3, setProjects3] = useState<any>(null);
+const CategoryPage = (props: CategoryPageProps) => {
+  const [projects1, setProjects1] = useState<any>(props.projects1);
+  const [projects2, setProjects2] = useState<any>(props.projects2);
+  const [projects3, setProjects3] = useState<any>(props.projects3);
   const [page, setPage] = useState<typeof Page>({
-    ...Page,
-    status__eq: 0,
+    ...props.page1,
   });
   const [page2, setPage2] = useState<typeof Page>({
-    ...Page,
-    status__eq: 1,
+    ...props.page2,
   });
   const [page3, setPage3] = useState<typeof Page>({
-    ...Page,
-    status__eq: 2,
+    ...props.page3,
   });
 
   const [searchValue, setSearchValue] = useState('');
@@ -128,6 +125,18 @@ const CategoryPage = () => {
 
   const handleChange = (event: any) => {
     setSelectedValue(event.target.value);
+    setPage((prev) => ({
+      ...prev,
+      filterStr: event.target.value,
+    }));
+    setPage2((prev) => ({
+      ...prev,
+      filterStr: event.target.value,
+    }));
+    setPage3((prev) => ({
+      ...prev,
+      filterStr: event.target.value,
+    }));
   };
 
   const { ref, inView, entry } = useInView({
@@ -270,19 +279,19 @@ const CategoryPage = () => {
                     Seed
                   </MenuItem>
                   <MenuItem
-                    value={'seriesA'}
+                    value={'Series A'}
                     sx={{ height: '48px', minHeight: '48px' }}
                   >
                     Series A
                   </MenuItem>
                   <MenuItem
-                    value={'seriesB'}
+                    value={'Series B'}
                     sx={{ height: '48px', minHeight: '48px' }}
                   >
                     Series B
                   </MenuItem>
                   <MenuItem
-                    value={'seriesC'}
+                    value={'Series C'}
                     sx={{ height: '48px', minHeight: '48px' }}
                   >
                     Series C
@@ -327,13 +336,14 @@ const CategoryPage = () => {
           </h2>
           <div ref={ref4} className="flex px-4 w-full  flex-col lg:flex-row ">
             <div className="w-full bg-white" ref={ref1}>
-              {!projects1 && projects1?.data?.length == 0 && (
-                <div className="flex justify-center items-center w-full h-[300px]">
-                  <p className="text-lg font-sans text-gray-500">
-                    Không có dự án nào
-                  </p>
-                </div>
-              )}
+              {!projects1 ||
+                (projects1?.data?.length === 0 && (
+                  <div className="flex justify-center items-center w-full h-[300px]">
+                    <p className="text-lg font-sans text-gray-500">
+                      Không có dự án nào
+                    </p>
+                  </div>
+                ))}
               <Box
                 sx={{
                   display: 'grid',
@@ -361,11 +371,11 @@ const CategoryPage = () => {
             </div>
           </div>
           <div
-            className={`flex flex-row justify-center mb-8 ${!data?.meta?.hasNextPage && 'hidden'} `}
+            className={`flex flex-row justify-center mb-8 ${!projects1?.meta?.hasNextPage && 'hidden'} `}
           >
             <button
               onClick={() => {
-                handleSetPage({ page: data?.meta?.page + 1 }, 0);
+                handleSetPage({ page: projects1?.meta?.page + 1 }, 0);
               }}
               className="uppercase flex items-center font-sans bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black"
             >
@@ -385,13 +395,14 @@ const CategoryPage = () => {
           </h2>
           <div className="flex px-4  flex-col lg:flex-row ">
             <div className="w-full bg-white" ref={ref2}>
-              {!projects2 && projects2?.data?.length == 0 && (
-                <div className="flex justify-center items-center w-full h-[300px]">
-                  <p className="text-lg font-sans text-gray-500">
-                    Không có dự án nào
-                  </p>
-                </div>
-              )}
+              {!projects2 ||
+                (projects2?.data?.length === 0 && (
+                  <div className="flex justify-center items-center w-full h-[300px]">
+                    <p className="text-lg font-sans text-gray-500">
+                      Không có dự án nào
+                    </p>
+                  </div>
+                ))}
               <Box
                 sx={{
                   display: 'grid',
@@ -418,10 +429,12 @@ const CategoryPage = () => {
             </div>
           </div>
           <div
-            className={`flex flex-row justify-center mb-8  ${!data2?.meta?.hasNextPage && 'hidden'}`}
+            className={`flex flex-row justify-center mb-8  ${!projects2?.meta?.hasNextPage && 'hidden'}`}
           >
             <button
-              onClick={() => handleSetPage({ page: data2?.meta?.page + 1 }, 1)}
+              onClick={() =>
+                handleSetPage({ page: projects2?.meta?.page + 1 }, 1)
+              }
               className="uppercase flex font-sans items-center bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black"
             >
               xem thêm
@@ -440,13 +453,14 @@ const CategoryPage = () => {
           </h2>
           <div className="flex px-4   flex-col lg:flex-row ">
             <div className="w-full bg-white" ref={ref3}>
-              {!projects3 && projects3?.data?.length === 0 && (
-                <div className="flex justify-center items-center w-full h-[300px]">
-                  <p className="text-lg font-sans text-gray-500">
-                    Không có dự án nào
-                  </p>
-                </div>
-              )}
+              {!projects3 ||
+                (projects3?.data?.length === 0 && (
+                  <div className="flex justify-center items-center w-full h-[300px]">
+                    <p className="text-lg font-sans text-gray-500">
+                      Không có dự án nào
+                    </p>
+                  </div>
+                ))}
               <Box
                 sx={{
                   display: 'grid',
@@ -473,10 +487,12 @@ const CategoryPage = () => {
             </div>
           </div>
           <div
-            className={`flex flex-row justify-center mb-8 ${!data3?.meta?.hasNextPage && 'hidden'} `}
+            className={`flex flex-row justify-center mb-8 ${!projects3?.meta?.hasNextPage && 'hidden'} `}
           >
             <button
-              onClick={() => handleSetPage({ page: data3?.meta?.page + 1 }, 2)}
+              onClick={() =>
+                handleSetPage({ page: projects3?.meta?.page + 1 }, 2)
+              }
               className="uppercase flex items-center font-sans bg-white border-2 border-black text-black px-5 py-2 font-bold text-base rounded-full cursor-pointer transition-all duration-300 ease-linear hover:bg-black/10 hover:text-black"
             >
               xem thêm
