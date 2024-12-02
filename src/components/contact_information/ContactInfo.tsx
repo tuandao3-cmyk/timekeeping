@@ -6,7 +6,7 @@ const ContactInfo = () => {
         Thông tin liên hệ
       </h2>
       <div className="flex flex-col gap-6">
-        <p className="flex gap-2 items-center font-sans text-sm lg:text-base leading-6 tracking-tight">
+        <p className="flex gap-2 items-center font-sans text-[16px] lg:text-base leading-6 tracking-tight">
           <svg
             width="24"
             height="24"

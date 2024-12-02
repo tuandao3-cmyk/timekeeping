@@ -15,6 +15,7 @@ import { getNewsDetail, getNews } from '@/services/news.service';
 import { useEffect, useState } from 'react';
 import { Page } from '@/type/page.type';
 import { formatDateTimeVn } from '@/util/util';
+import NewsActions from './component/actions';
 import style from './newsDetail.module.css';
 
 const NewsDetail: React.FC = ({ params, searchParams }: any) => {
@@ -64,7 +65,7 @@ const NewsDetail: React.FC = ({ params, searchParams }: any) => {
             </h1>
           </div>
 
-          <div className="relative flex flex-row gap-4 py-4 items-center justify-between">
+          {/* <div className="relative flex flex-row gap-4 py-4 items-center justify-between">
             <Image
               src="/img/logohyracap.png"
               // layout="responsive"
@@ -104,8 +105,9 @@ const NewsDetail: React.FC = ({ params, searchParams }: any) => {
                 <span className="sr-only">Link</span>
               </a>
             </div>
-          </div>
+          </div> */}
 
+          <NewsActions />
           <div className="mb-8 flex justify-center items-center">
             <Image
               src={
@@ -126,47 +128,7 @@ const NewsDetail: React.FC = ({ params, searchParams }: any) => {
             className={style.newsContent}
             dangerouslySetInnerHTML={{ __html: dataNews?.content }}
           ></div>
-        </div>
-        <div className="relative flex flex-row gap-4 py-4 items-center justify-between">
-          <Image
-            src="/img/logohyracap.png"
-            // layout="responsive"
-            alt="logo"
-            className="flex-start"
-            width={100}
-            height={100}
-          />
-          <div className="flex flex-row justify-center space-x-5 rtl:space-x-reverse">
-            <a
-              href="#"
-              className="text-gray-400 hover:text-gray-900 dark:hover:text-white color-gray"
-            >
-              <FacebookGrayIcon />
-              <span className="sr-only">Facebook page</span>
-            </a>
-
-            <a
-              href="#"
-              className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
-            >
-              <XIconGray />
-              <span className="sr-only">X page</span>
-            </a>
-            <a
-              href="#"
-              className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
-            >
-              <LinkedInIconGray />
-              <span className="sr-only">LinkedIn</span>
-            </a>
-            <a
-              href="#"
-              className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
-            >
-              <RivetIcon />
-              <span className="sr-only">Link</span>
-            </a>
-          </div>
+          <NewsActions />
         </div>
       </div>
 

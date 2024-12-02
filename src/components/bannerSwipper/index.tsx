@@ -1,1 +1,1 @@
-export {default} from './bannerSwipper';
+export { default } from './bannerSwipper';

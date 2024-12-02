@@ -30,7 +30,9 @@ const BusinessPlanSection = (props: BusinessPlanSectionProps) => {
             <div className="bg-[#28a745] w-1 h-auto rounded-full"></div>
             <div className="flex justify-between  w-full">
               <div>
-                <p className="text-[18px] text-[#28a745] font-semibold mb-[5px]">Kế hoạch kinh doanh</p>
+                <p className="text-[18px] text-[#28a745] font-semibold mb-[5px]">
+                  Kế hoạch kinh doanh
+                </p>
                 <span className="text-[14px] text-[#9f9f9f]">
                   {formatDateTimeVn(props.data.updated_at)}
                 </span>

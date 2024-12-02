@@ -148,7 +148,6 @@ const Product = (props: ProductProps) => {
                 >
                   {product.title}
                 </Typography>
-
               </Stack>
               <div className="flex md:flex-row flex-col gap-[24px] items-center  w-full  justify-center py-5  scrollbar-none ">
                 {product?.package?.map((packageItem: any, index: number) => (

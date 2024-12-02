@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from './Partner.module.css';
 import Marquee from 'react-fast-marquee';
 import Image from 'next/image';
 
@@ -76,7 +75,7 @@ const ProjectGrid: React.FC = () => {
           className={`h-16 object-contain w-auto max-w-[224px] lg:max-w-[300px] px-[20px] lg:px-[50px]`}
         />
       </Marquee>
-      <div className="md:hidden grid grid-cols-2 items-center justify-items-center grid-rows-5 gap-y-4 gap-x-0 bg-[#F3F7F4] py-[40px] px-[12px]  ">
+      <div className="md:hidden grid grid-cols-2 items-center justify-items-center grid-rows-5 gap-y-4  bg-[#F3F7F4] py-[40px] px-[12px] gap-x-2  ">
         <h2 className="m-0 col-span-2 lg:text-[48px]/[56px] text-[32px]/[40px] tracking-[-0.32px] lg:tracking-[-0.96px] px-16 uppercase text-[#04141A] font-bold aos-init aos-animate">
           Đối tác
         </h2>

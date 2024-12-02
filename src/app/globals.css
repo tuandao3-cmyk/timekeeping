@@ -45,13 +45,18 @@ body {
   height: 4px !important; /* Chiều cao của thanh */
   border-radius: 27px !important; /* Bỏ bo góc */
   margin: 0 !important;
-  background: rgba(255, 255, 255, 0.2) !important; /* Màu xám nhạt cho thanh không active */
+  background: rgba(
+    255,
+    255,
+    255,
+    0.2
+  ) !important; /* Màu xám nhạt cho thanh không active */
   opacity: 1 !important;
   transition: all 0.3s ease;
 }
 
 /* Style cho bullet đang active */
 .swiper-pagination-bullet-active.custom-bullet {
-  background: #48B96D !important; /* Màu xanh lá cho thanh active */
+  background: #48b96d !important; /* Màu xanh lá cho thanh active */
   opacity: 1 !important;
 }

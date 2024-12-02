@@ -129,7 +129,6 @@
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-
 }
 
 .moreProjectsButton:hover {
@@ -140,12 +139,7 @@
 .moreProjectsButton svg {
   width: 16px;
   height: 16px;
-
 }
-
-
-
-
 
 .mainProject {
   flex: 1 1 calc(66.666% - 1rem);
