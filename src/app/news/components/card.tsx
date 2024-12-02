@@ -19,6 +19,7 @@ export const ProjectCard: React.FC<{
         width={320}
         height={188}
         // layout="responsive"
+        quality={100}
         src={
           project?.link_img[0] ||
           'https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg'
@@ -73,9 +74,7 @@ export const ProjectCard: React.FC<{
         </div>
       </div>
       <div className="w-full md:hidden gap-2 py-5 flex flex-col justify-between">
-        <p className="text-base  font-bold text-[#579DFF] ">
-          Tin Tài Chính
-        </p>
+        <p className="text-base  font-bold text-[#579DFF] ">Tin Tài Chính</p>
         <h2 className="  text-[24px]  font-bold text-[#151515] line-clamp-3">
           {project.title}
         </h2>

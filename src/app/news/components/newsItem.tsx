@@ -32,7 +32,8 @@ function NewsItem(props: NewsItemProps) {
       <Image
         width={320}
         height={245}
-        layout="responsive"
+        // layout="responsive"
+        quality={100}
         src={
           link_img[0] ||
           'https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg'

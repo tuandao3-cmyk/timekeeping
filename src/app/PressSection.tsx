@@ -84,7 +84,7 @@ const PressSection = () => {
           giá trị bền vững cho nhà đầu tư.
         </p>
         <div className={styles.logoContainer}>
-          {pressLogos.map((logo, index) => (
+          {pressLogos?.map((logo, index) => (
             <Link
               key={index}
               href={logo.link}
@@ -99,8 +99,9 @@ const PressSection = () => {
                 height={82}
                 src={logo.src}
                 alt={logo.name}
-                className={styles.logo}
-                // layout="responsive"
+                className="md:max-w-[257px] md:max-h-[82px] max-w-[160px] max-h-[51px] object-contain"
+                quality={100}
+                layout="responsive"
               />
             </Link>
           ))}
