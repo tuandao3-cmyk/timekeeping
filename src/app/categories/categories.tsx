@@ -45,76 +45,47 @@ const CategoryPage = (props: CategoryPageProps) => {
   const [searchValue, setSearchValue] = useState('');
   const [selectedValue, setSelectedValue] = useState('all');
 
-  const { data, isLoading, isError, isSuccess, refetch } = useQuery({
-    queryKey: ['projects', page],
-    queryFn: async () => {
-      const res = await getProjects(page);
-      if (!!projects1 && projects1.data.length > 0 && page.page > 1) {
-        setProjects1({
-          ...res,
-          data: [...projects1.data, ...res.data],
-        });
-      } else {
-        setProjects1(res);
-      }
-      return res;
-    },
-  });
-
-  const {
-    data: data2,
-    isLoading: isLoading2,
-    isError: isError2,
-    isSuccess: isSuccess2,
-  } = useQuery({
-    queryKey: ['projects', page2],
-    queryFn: async () => {
-      const res = await getProjects(page2);
-      if (!!projects2 && projects2.data.length > 0 && page2.page > 1) {
-        setProjects2({
-          ...res,
-          data: [...projects2.data, ...res.data],
-        });
-      } else {
-        setProjects2(res);
-      }
-      return res;
-    },
-  });
-
-  const {
-    data: data3,
-    isLoading: isLoading3,
-    isError: isError3,
-    isSuccess: isSuccess3,
-  } = useQuery({
-    queryKey: ['projects', page3],
-    queryFn: async () => {
-      const res = await getProjects(page3);
-      if (!!projects3 && projects3.data.length > 0 && page3.page > 1) {
-        setProjects3({
-          ...res,
-          data: [...projects3.data, ...res.data],
-        });
-      } else {
-        setProjects3(res);
-      }
-      return res;
-    },
-  });
-
   const handleSetPage = (
     newPageData: Partial<typeof Page>,
     type: 0 | 1 | 2
   ) => {
     if (type === 0) {
       setPage({ ...page, ...newPageData });
+      handleGetMore(0);
     } else if (type === 1) {
       setPage2({ ...page2, ...newPageData });
+      handleGetMore(1);
     } else {
       setPage3({ ...page3, ...newPageData });
+      handleGetMore(2);
+    }
+
+    // refetch();
+  };
+
+  const handleGetMore = (type: 0 | 1 | 2) => {
+    if (type === 0) {
+      getProjects({ ...page, page: page.page + 1 }).then((res) => {
+        console.log(res);
+
+        setProjects1({ ...res, data: [...projects1.data, ...res.data] });
+      });
+    } else if (type === 1) {
+      getProjects({ ...page2, page: page2.page + 1 }).then((res) => {
+        setProjects2({ ...res, data: [...projects2.data, ...res.data] });
+      });
+    } else {
+      getProjects({ ...page3, page: page3.page + 1 }).then((res) => {
+        setProjects3({ ...res, data: [...projects3.data, ...res.data] });
+      });
     }
   };
+
+  useEffect(() => {
+    setPage({ ...page, name__ilike: searchValue, page: 1 });
+    setPage2({ ...page2, name__ilike: searchValue, page: 1 });
+    setPage3({ ...page3, name__ilike: searchValue, page: 1 });
+  }, [searchValue]);
 
   const handleSearch = () => {
     setPage({ ...page, name__ilike: searchValue, page: 1 });
@@ -123,12 +94,24 @@ const CategoryPage = (props: CategoryPageProps) => {
     refetch();
   };
 
+  const refetch = () => {
+    getProjects(page).then((res) => {
+      setProjects1(res);
+    });
+    getProjects(page2).then((res) => {
+      setProjects2(res);
+    });
+    getProjects(page3).then((res) => {
+      setProjects3(res);
+    });
+  };
   const handleChange = (event: any) => {
     setSelectedValue(event.target.value);
-    if (event.target.value === 'all') {
+    if (event.target.value == 'all') {
       delete page.filterStr;
       delete page2.filterStr;
       delete page3.filterStr;
+      return;
     }
     setPage((prev) => ({
       ...prev,
@@ -419,7 +402,7 @@ const CategoryPage = (props: CategoryPageProps) => {
                   gap: 2,
                 }}
               >
-                {data2?.data?.map((project: any, index: number) => (
+                {projects2?.data?.map((project: any, index: number) => (
                   <ProjectItem
                     capital_raising_target={project.capital_raising_target}
                     images={project.images}
@@ -477,7 +460,7 @@ const CategoryPage = (props: CategoryPageProps) => {
                   gap: 2,
                 }}
               >
-                {data3?.data?.map((project: any, index: any) => (
+                {projects3?.data?.map((project: any, index: any) => (
                   <ProjectItem
                     capital_raising_target={project.capital_raising_target}
                     images={project.images}

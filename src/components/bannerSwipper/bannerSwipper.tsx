@@ -369,17 +369,18 @@ function BannerSwipper() {
                   {items.map((item, index) => (
                     <div
                       key={index}
-                      className="w-auto ml-[4px]  gap-[8px] bg-white p-[12px] rounded-[12px] flex"
+                      className="w-auto ml-[4px]  gap-[8px] bg-white p-[12px] rounded-[12px] flex items-center"
                     >
                       <Image
                         src={item.image}
                         alt={item.title}
-                        layout="responsive"
+                        // layout="responsive"
+                        quality={100}
                         width={48}
                         height={48}
                         style={{
                           width: '48px',
-                          height: '67px',
+                          height: '48px',
                           maxWidth: '48px',
                           maxHeight: '48px',
                           borderRadius: '10px',
@@ -390,7 +391,7 @@ function BannerSwipper() {
                       />
                       <div className="flex flex-col justify-center ">
                         <p
-                          className="font-sans text-[#04141A] text-[14px] leading-[24px]"
+                          className="font-sans text-[#04141A] text-[14px] leading-[24px] line-clamp-1"
                           style={{ fontWeight: 700 }}
                         >
                           {item.title}
@@ -401,7 +402,7 @@ function BannerSwipper() {
                         >
                           {item.price}
                           <p
-                            className="font-sans text-[#434444] text-[14px] leading-[24px] "
+                            className="font-sans text-[#434444] text-[14px] leading-[24px] line-clamp-1 "
                             style={{ fontWeight: 500 }}
                           >
                             Vốn huy động

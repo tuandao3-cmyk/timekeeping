@@ -111,84 +111,6 @@ const NewsPage: React.FC = () => {
 
   return (
     <>
-      {/* <div className="flex flex-col justify-center items-center  ">
-        <div
-          ref={ref}
-          className="flex max-md:items-center max-md:justify-center m-auto max-w-[1440px] h-[300px] md:h-[479px] bg-cover  "
-          style={{ backgroundImage: 'url("/img/news/news_banner.png")' }}
-        >
-          <div className=" top-0 w-[40%] h-full bg-[#07212c] bg-opacity-100 hidden md:block ">
-            <div className=" z-10 my-auto  h-full p-8 lg:p-12 ">
-              <div className=" lg:pl-[60px] lg:mt-8 text-center md:text-left text-white flex flex-col justify-between items-left gap-4">
-                <Link
-                  href={`/news/${newsData[0]?.id}` || '#'}
-                  className="md:text-[15px] text-[#579DFF] text-xs font-semibold "
-                >
-                  TIN TÀI CHÍNH
-                </Link>
-                <h1
-                  className={`text-xl md:text-2xl  font-bold leading-tight lg:line-clamp-2 max-lg:line-clamp-10
-                duration-700 ease-in-out transform ${
-                  inView
-                    ? 'opacity-100 translate-y-0'
-                    : 'opacity-0 translate-y-10'
-                }
-                `}
-                >
-                  {newsData[0]?.title}
-                </h1>
-                <p
-                  className={`mt-4 text-sm line-clamp-5 leading-6 line-clamp-6 max-lg:hidden opacity-70 duration-700 ease-in-out transform ${
-                    inView
-                      ? 'opacity-100 translate-y-0'
-                      : 'opacity-0 translate-y-10'
-                  }`}
-                >
-                  {newsData[0]?.description}
-                </p>
-                <div>
-                  <button
-                    onClick={() => handleNavigate(newsData[0]?.id)}
-                    className="max-sm:hidden text-[#FFFFFF]/90 bg-[#48B96D] border-[#c2c2c2] font-medium border-[1px]  rounded-full px-3 py-2 inline-flex"
-                  >
-                    Đọc thêm
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className=" top-0 w-[100%]  md:hidden  ">
-            <div className=" z-10 my-auto  h-full  ">
-              <div className=" lg:mt-8    text-white flex flex-col p-5  gap-2">
-                <Link
-                  href={'/news/newsdetail'}
-                  className="md:text-[15px] text-[#579DFF] text-xs font-semibold mt-[200px] "
-                >
-                  TIN TÀI CHÍNH
-                </Link>
-                <h1
-                  className=" text-[24px] font-bold  "
-                  style={{ color: '#0B3546', fontWeight: 'bold' }}
-                >
-                  CÔNG NGHỆ TRAO QUYỀN QUYẾT ĐỊNH TƯƠNG LAI
-                </h1>
-
-                <div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
-      {/* <div
-        className="flex flex-col items-center justify-center bg-cover w-full min-h-[772px] lg:min-h-[585px]"
-        style={{
-          backgroundColor: '#07212C',
-          backgroundImage: "url('/img/news/newsbg.png')",
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'left top',
-          backgroundSize: '130% 130%',
-        }}
-      > */}
       <div className="flex flex-col items-center justify-center font-sans w-full min-h-[772px] lg:min-h-[520px] bg-[#07212C] bg-[url('/img/news/newsbg.png')] bg-no-repeat bg-cover bg-[75%_50%] lg:bg-[length:150%_150%]">
         <div className="  pb-[107px]">
           <div className="flex flex-col items-center justify-end text-center max-w-[570px] text-white gap-[22px]">
@@ -277,6 +199,7 @@ const NewsPage: React.FC = () => {
                   src={news?.link_img[0] || ''}
                   alt=""
                   // layout="responsive"
+                  quality={100}
                   className={` object-cover object-center max-w-[115px] rounded-lg 
                         h-[70px] w-[115px]
                     `}
@@ -330,6 +253,7 @@ const NewsPage: React.FC = () => {
               height={274}
               width={1200}
               layout="responsive"
+              quality={100}
               onClick={() =>
                 router.push('https://www.facebook.com/hyraholdings/')
               }
@@ -351,10 +275,11 @@ const NewsPage: React.FC = () => {
             <div className="w-full  col-span-2 gap-3 hidden md:block">
               {newsData.slice(1, 4).map((news: any, index: number) => (
                 <a href={`/news/${news.id}`} className="p-4" key={index}>
-                  <div className="grid md:grid-cols-3  border-[1px] hover:scale-105 hover:border-none transition ease-in-out duration-150 hover:cursor-pointer">
+                  <div className="grid md:grid-cols-3  border-[1px] hover:scale-105 hover:border-none rounded-lg transition ease-in-out duration-150 hover:cursor-pointer">
                     <Image
                       width={320}
                       height={188}
+                      quality={100}
                       style={{ cursor: 'pointer', height: '100% !important' }}
                       src={
                         news?.link_img[0] ||

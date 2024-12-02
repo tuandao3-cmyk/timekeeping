@@ -8,14 +8,17 @@ async function Page() {
   const page1: typeof Paging = {
     ...Paging,
     status__eq: 0,
+    take: 3,
   };
   const page2: typeof Paging = {
     ...Paging,
     status__eq: 1,
+    take: 3,
   };
   const page3: typeof Paging = {
     ...Paging,
     status__eq: 2,
+    take: 3,
   };
 
   const [projects1, projects2, projects3] = await Promise.all([
@@ -23,6 +26,7 @@ async function Page() {
     getProjects(page2),
     getProjects(page3),
   ]);
+
   return (
     <CategoryPage
       projects1={projects1}
