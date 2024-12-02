@@ -32,32 +32,6 @@ export const leaders = [
     ],
   },
   {
-    id: 2,
-    name: 'Trần Nam Chung',
-    title: 'Chief Strategy Officer - Founder',
-    fullTitle: 'Chief Executive Officer - Co-Founder',
-    image: '/img/about/TNC.png',
-    description: [
-      'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
-      'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
-      'Là một người đam mê công nghệ và theo đuổi chiến lược định hình giá trị tương lai bằng các giải pháp công nghệ tham gia mạnh mẽ vào cuộc chuyển đổi kinh tế số.',
-      'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.',
-    ],
-  },
-  { 
-    id: 3,
-    name: 'Trần Nam Chung',
-    title: 'Chief Technology Officer - Founder',
-    fullTitle: 'Chief Technology Officer - Founder',
-    image: '/img/about/TNC.png',
-    description: [
-      'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
-      'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
-      'Là một người đam mê công nghệ và theo đuổi chiến lược định hình giá trị tương lai bằng các giải pháp công nghệ tham gia mạnh mẽ vào cuộc chuyển đổi kinh tế số.',
-      'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.',
-    ],
-  },
-  {
     id: 4,
     name: 'Tuấn Đặng',
     title: 'CFO - Co-Founder',
@@ -535,7 +509,6 @@ const AboutPage = (props: AboutPageProps) => {
                 src="/img/about/about1.png"
                 alt="Vision illustration"
                 // layout="responsive"
-
               />
             </div>
           </div>
@@ -951,11 +924,11 @@ const AboutPage = (props: AboutPageProps) => {
               </p>
             </div>
             <div className="grow grid grid-cols-1 lg:grid-cols-4 gap-4 w-full mx-auto place-items-center items-center ">
-              {leaders.slice(2, 4).map((leader, index) => (
+              {leaders.map((leader, index) => (
                 <Link
                   key={index}
                   href={`/about/leaderdetail/${leader.id}`}
-                  className="mt-5 px-[13px] lg:col-span-2" //sửa lại khi có thêm các nhà phát triển
+                  className="mt-5 px-[13px] lg:col-span-2"
                 >
                   <div
                     key={index}

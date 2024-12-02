@@ -138,9 +138,7 @@ const FooterSection: React.FC<FooterSectionProps> = ({
         </svg>
       </button>
 
-      <div
-        className={`text-[#FFFFFF]/70 ${isOpen ? 'block' : 'hidden'}`}
-      >
+      <div className={`text-[#FFFFFF]/70 ${isOpen ? 'block' : 'hidden'}`}>
         <ul>
           {data.map((item) => (
             <li key={item.id} className="mb-4">

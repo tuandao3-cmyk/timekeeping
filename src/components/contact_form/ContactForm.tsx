@@ -97,7 +97,9 @@ const ContactForm = () => {
             />
           </div>
           <div className="pt-5">
-            <label>Vai trò bạn muốn tham gia?</label>
+            <label className="font-sans font-bold">
+              Vai trò bạn muốn tham gia?
+            </label>
             <div className="flex lg:flex-row flex-col items-start justify-start gap-4 w-full py-6">
               <label className="flex items-center ">
                 <input
@@ -140,29 +142,29 @@ const ContactForm = () => {
           <div className="flex justify-start">
             <button
               onClick={handleSubmit}
-              className="flex items-center px-4 py-2 mt-3 bg-green-500 text-white rounded-full"
+              className="flex items-center px-4 py-2 mt-3 bg-green-500 text-[18px] leading-[20px] flex gap-[8px] text-white rounded-full font-sans "
+              style={{ fontWeight: 500, letterSpacing: '-2%' }}
             >
-              Gửi
-              <svg 
-                width="24" 
-                height="24" 
-                viewBox="0 0 24 24" 
-                fill="none" 
+              <p>Gửi</p>
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="rotate-45"
               >
                 <path
-                  d="M22 2L11 13"
-                  stroke="white" 
-                  strokeWidth="2" 
-                  strokeLinecap="round" 
+                  d="M9.51026 4.22965L18.0703 8.50965C21.9103 10.4296 21.9103 13.5696 18.0703 15.4896L9.51026 19.7696C3.75026 22.6496 1.40026 20.2896 4.28026 14.5396L5.15026 12.8096C5.37026 12.3696 5.37026 11.6396 5.15026 11.1996L4.28026 9.45965C1.40026 3.70965 3.76026 1.34965 9.51026 4.22965Z"
+                  stroke="#F3F7F4"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
                   strokeLinejoin="round"
                 />
-                <path 
-                  d="M22 2L15 22L11 13L2 9L22 2Z" 
-                  stroke="white" 
-                  strokeWidth="2" 
-                  strokeLinecap="round" 
+                <path
+                  d="M5.44043 12H10.8404"
+                  stroke="#F3F7F4"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
                   strokeLinejoin="round"
                 />
               </svg>

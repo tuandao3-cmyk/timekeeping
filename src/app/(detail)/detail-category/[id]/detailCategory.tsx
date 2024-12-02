@@ -77,10 +77,7 @@ const DetailCategoryPage = (props: DetailCategoryPageProps) => {
               variant="scrollable"
               scrollButtons="auto"
             >
-              {[
-                'Thông tin',
-
-              ].map((label, index) => (
+              {['Thông tin'].map((label, index) => (
                 <Tab
                   key={label}
                   label={label}
@@ -106,7 +103,6 @@ const DetailCategoryPage = (props: DetailCategoryPageProps) => {
       <CustomTabPanel value={value} index={0}>
         <InfoSection dataP={data} />
       </CustomTabPanel>
-
     </Box>
   );
 };

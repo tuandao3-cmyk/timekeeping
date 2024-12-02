@@ -56,7 +56,7 @@ function Growth(props: GrowthProps) {
         </Typography>
       </Stack>
       <Stack flexDirection={'column'} gap={'25px'}>
-      <Typography
+        <Typography
           fontFamily={'Inter'}
           fontWeight={600}
           fontSize={'20px'}
@@ -122,9 +122,9 @@ function Growth(props: GrowthProps) {
             </Box>
           ))}
         </Stack>
-        <div className = "grid grid-cols-1 grid-rows-4  gap-4">
+        <div className="grid grid-cols-1 grid-rows-4  gap-4">
           <PitchingDeckSection data={data} />
-          <ContractSampleSection data={data} /> 
+          <ContractSampleSection data={data} />
           <FinanceRoadSection data={data} />
           <BusinessPlanSection data={data} />
         </div>

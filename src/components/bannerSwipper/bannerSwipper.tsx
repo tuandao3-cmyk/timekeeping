@@ -401,12 +401,6 @@ function BannerSwipper() {
                           style={{ fontWeight: 500 }}
                         >
                           {item.price}
-                          <p
-                            className="font-sans text-[#434444] text-[14px] leading-[24px] line-clamp-1 "
-                            style={{ fontWeight: 500 }}
-                          >
-                            Vốn huy động
-                          </p>
                         </p>
                       </div>
                     </div>
@@ -491,12 +485,6 @@ function BannerSwipper() {
                       flexDirection={'row'}
                       alignItems={'center'}
                     >
-                      <p
-                        className="font-sans text-[#434444] text-[14px] leading-[24px] "
-                        style={{ fontWeight: 500 }}
-                      >
-                        Vốn huy động
-                      </p>
                       $1.500.000
                     </Typography>
                     <Typography
@@ -562,12 +550,6 @@ function BannerSwipper() {
                         flexDirection={'row'}
                       >
                         $1.500.000{' '}
-                        <span
-                          className="font-sans text-[#434444] text-[12px] leading-[24px]"
-                          style={{ fontWeight: 500 }}
-                        >
-                          Vốn huy động
-                        </span>
                       </Typography>
                     </Stack>
                   </Stack>
@@ -604,12 +586,6 @@ function BannerSwipper() {
                         flexDirection={'row'}
                       >
                         $1.500.000{' '}
-                        <span
-                          className="font-sans text-[#434444] text-[12px] leading-[24px]"
-                          style={{ fontWeight: 500 }}
-                        >
-                          Vốn huy động
-                        </span>{' '}
                       </Typography>
                     </Stack>
                   </Stack>
@@ -646,12 +622,6 @@ function BannerSwipper() {
                         flexDirection={'row'}
                       >
                         $1.500.000{' '}
-                        <span
-                          className="font-sans text-[#434444] text-[12px] leading-[24px]"
-                          style={{ fontWeight: 500 }}
-                        >
-                          Vốn huy động
-                        </span>{' '}
                       </Typography>
                     </Stack>
                   </Stack>

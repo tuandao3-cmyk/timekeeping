@@ -21,8 +21,9 @@ const projects = [
   {
     id: 1,
     name: 'HYPERAS CHAIN',
-    series: 'SERIES A', 
-    description: 'Hyperas tận dụng sức mạnh từ hàng tỷ thiết bị biên xây dựng hạ tầng AI phi tập trung mạnh mẽ',
+    series: 'SERIES A',
+    description:
+      'Hyperas tận dụng sức mạnh từ hàng tỷ thiết bị biên xây dựng hạ tầng AI phi tập trung mạnh mẽ',
     target: 2000000,
     raised: 1091591,
     percentage: 51,
@@ -111,7 +112,7 @@ const ProjectSlider = (props: ProjectSlideProps) => {
   useEffect(() => {
     AOS.init({
       duration: 1000,
-      once: true
+      once: true,
     });
   }, []);
 
@@ -192,7 +193,7 @@ const ProjectSlider = (props: ProjectSlideProps) => {
             onSwiper={setSwiper}
             onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
             slideActiveClass="swiper-slide-active"
-            slidePrevClass="swiper-slide-prev" 
+            slidePrevClass="swiper-slide-prev"
             slideNextClass="swiper-slide-next"
             className="mySwiper !overflow-visible"
             effect="fade"
@@ -215,7 +216,7 @@ const ProjectSlider = (props: ProjectSlideProps) => {
                       href={`/detail-category/${project?.id}`}
                       className={`bg-[#07212C] rounded-xl overflow-visible transition duration-100 md:max-h-[386px] pb-[20px] gap-[24px] max-w-[778px] flex flex-col p-[12px] md:p-[32px] md:flex-row`}
                       data-aos="fade-right"
-                      data-aos-duration="1500"  // Thời gian chạy animation (ms)
+                      data-aos-duration="1500" // Thời gian chạy animation (ms)
                       data-aos-easing="ease-in-out"
                     >
                       <div
@@ -226,9 +227,10 @@ const ProjectSlider = (props: ProjectSlideProps) => {
                           <Image
                             width={360}
                             height={322}
+                            quality={100}
                             src={project?.images[0]}
                             alt={project.name}
-                            className="object-cover  max-h-[224px] w-full md:max-h-none rounded-lg md:w-[360px] md:h-[332px]"
+                            className="object-cover  max-h-[224px] w-full md:max-h-none rounded-lg md:w-[360px] md:h-[322px]"
                           />
                           <a
                             href="/detail-category"

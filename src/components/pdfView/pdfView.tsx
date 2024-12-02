@@ -18,8 +18,6 @@ function PdfView(props: PdfViewProps) {
     props.setOpenPdf(false);
   };
 
-  console.log('pdfPath', props.pdfPath);
-
   // const isPdf = props.pdfPath.endsWith('.pdf');
   return (
     <>
@@ -51,7 +49,10 @@ function PdfView(props: PdfViewProps) {
           workerUrl={`https://unpkg.com/pdfjs-dist@3.10.111/build/pdf.worker.min.js`}
         >
           <Viewer
-            fileUrl={props.pdfPath}
+            fileUrl={
+              props?.pdfPath ||
+              'https://hyracap.s3.us-east-1.amazonaws.com/blog/petalspetals.pdf'
+            }
             plugins={[defaultLayoutPluginInstance]}
           />
         </Worker>

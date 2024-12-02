@@ -48,7 +48,7 @@ const ForgotSection: React.FC = () => {
             src="/img/forgot1.png"
             alt="Màn hình đăng nhập HyraCap"
             className="lg:w-[30%] w-[100%] max-w-[300px] "
-             layout="responsive"
+            layout="responsive"
           />
         </div>
         <ul className=" text-xl 3xl:text-2xl leading-7 text-[#000000] pl-4 ">
@@ -67,7 +67,7 @@ const ForgotSection: React.FC = () => {
             width={300}
             height={600}
             className="lg:w-[30%] w-[100%] max-w-[300px] mb-3.5"
-             layout="responsive"
+            layout="responsive"
           />
         </div>
         <ul className=" text-xl 3xl:text-2xl leading-7 text-[#000000] pl-4 ">
@@ -84,7 +84,7 @@ const ForgotSection: React.FC = () => {
             width={300}
             height={600}
             className="lg:w-[30%] w-[100%] max-w-[300px] mb-3.5"
-             layout="responsive"
+            layout="responsive"
           />
         </div>
 
