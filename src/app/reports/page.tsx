@@ -204,7 +204,7 @@ const ReportPage: React.FC = () => {
               {isLoadingFinance ? (
                 <div>Loading...</div>
               ) : (
-                data1.map((report: any, index: number) => (
+                data1?.map((report: any, index: number) => (
                   <div className="flex gap-5 py-5" key={index}>
                     <div className="bg-[#CCCCCC] w-1 h-auto rounded-full"></div>
                     <div key={index} className="flex justify-between w-full">
@@ -245,7 +245,7 @@ const ReportPage: React.FC = () => {
               {isLoadingProject ? (
                 <div>Loading...</div>
               ) : (
-                data2.map((report: any, index: number) => (
+                data2?.map((report: any, index: number) => (
                   <div className="flex gap-5 py-5" key={index}>
                     <div className="bg-[#CCCCCC] w-1 h-auto rounded-full"></div>
                     <div key={index} className="flex justify-between w-full">
@@ -288,7 +288,7 @@ const ReportPage: React.FC = () => {
               {isLoadingSociety ? (
                 <div>Loading...</div>
               ) : (
-                data3.map((report: any, index: number) => (
+                data3?.map((report: any, index: number) => (
                   <div className="flex gap-5 py-5" key={index}>
                     <div className="bg-[#CCCCCC] w-1 h-auto rounded-full"></div>
                     <div key={index} className="flex justify-between w-full">
@@ -329,7 +329,7 @@ const ReportPage: React.FC = () => {
               {isLoadingOther ? (
                 <div>Loading...</div>
               ) : (
-                data4.map((report: any, index: number) => (
+                data4?.map((report: any, index: number) => (
                   <div className="flex gap-5 py-5" key={index}>
                     <div className="bg-[#CCCCCC] w-1 h-auto rounded-full"></div>
                     <div key={index} className="flex justify-between w-full">

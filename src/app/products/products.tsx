@@ -23,7 +23,7 @@ const Product = (props: ProductProps) => {
     {
       title: 'ĐẦU TƯ LINH HOẠT',
       type: 'flexible',
-      package: [...props.projectData],
+      package: [...(props?.projectData || [])],
     },
   ]);
 

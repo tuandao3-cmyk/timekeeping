@@ -165,7 +165,7 @@ const ProjectSlider = (props: ProjectSlideProps) => {
       const percentage = ((realIndex + 1) / projectData.length) * 100;
       progressBarRef.current.style.width = `${percentage}%`;
     }
-  }, [activeIndex, projects.length]);
+  }, [activeIndex, projectData.length]);
 
   return (
     <div className="flex w-full mx-auto max-w-[1440px] flex-col justify-center items-center overflow-x-hidden">
@@ -271,7 +271,7 @@ const ProjectSlider = (props: ProjectSlideProps) => {
                           <p
                             className={`text-xl leading-6 pb-2 font-semibold font-sans  ${index === activeIndex ? 'text-[#04141A]' : 'text-[#FFFFFF]'}`}
                           >
-                            ${project.capital_raising_target.toLocaleString()}
+                            ${project?.capital_raising_target?.toLocaleString()}
                           </p>
 
                           <div className="w-full bg-gray-200 rounded-full h-1.5 ">
@@ -318,7 +318,7 @@ const ProjectSlider = (props: ProjectSlideProps) => {
                             </div>
                           </div>
                         </div>
-                        <div className="flex gap-2  pt-[16px] ">
+                        <div className="flex gap-2  pt-[16px] h-[24px] ">
                           {project?.industries.map(
                             (item: any, index: number) => (
                               <span
@@ -345,7 +345,7 @@ const ProjectSlider = (props: ProjectSlideProps) => {
               <div
                 ref={progressBarRef}
                 className="bg-[#31814B] h-2 rounded-full transition-all duration-300 font-sans"
-                style={{ width: `${100 / projects.length}%` }}
+                style={{ width: `${100 / projectData.length}%` }}
               ></div>
             </div>
           </div>

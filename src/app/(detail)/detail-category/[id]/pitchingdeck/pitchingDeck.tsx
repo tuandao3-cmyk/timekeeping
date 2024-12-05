@@ -34,7 +34,7 @@ const PitchingDeckSection = (props: PitchingDeckSectionProps) => {
                   Pitching Deck
                 </p>
                 <span className="text-[14px] text-[#9f9f9f]">
-                  {formatDateTimeVn(props.data.updated_at)}
+                  {formatDateTimeVn(props?.data?.updated_at || "")}
                 </span>
               </div>
               <div className="flex items-center justify-center ">
@@ -58,7 +58,7 @@ const PitchingDeckSection = (props: PitchingDeckSectionProps) => {
       <PdfView
         openPdf={openPdf}
         setOpenPdf={setOpenPdf}
-        pdfPath={props.data.pitching_deck}
+        pdfPath={props?.data?.pitching_deck}
       />
     </section>
   );

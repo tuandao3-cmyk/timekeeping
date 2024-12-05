@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid';
 
 import { GlobalIcon, LocationIcon, ProfileTUser } from '@/components/icons';
 import { getProjects } from '@/services/project.service';
+import { getNews } from '@/services/news.service';
 import { Page } from '@/type/page.type';
 import { formatDateTimeVn } from '@/util/util';
 import { useQuery } from '@tanstack/react-query';
@@ -31,6 +32,7 @@ const InfoSection = (props: InfoSectionProps) => {
     take: 3,
   });
   const { dataP }: any = props;
+
   const [products, setProducts] = useState<any[]>([
     {
       title: 'Có thể bạn quan tâm',
@@ -38,6 +40,15 @@ const InfoSection = (props: InfoSectionProps) => {
       package: [],
     },
   ]);
+
+  const {
+    data: listActions,
+    isError: isErrorActions,
+    isLoading: isLoadingActions,
+  } = useQuery({
+    queryKey: ['actions', page],
+    queryFn: () => getNews({ ...page, project_id__eq: dataP?.id }),
+  });
 
   const {
     data: listProject,
@@ -56,11 +67,11 @@ const InfoSection = (props: InfoSectionProps) => {
         if (updatedProducts[0]) {
           updatedProducts[0] = {
             ...updatedProducts[0],
-            package: [...listProject.data],
+            package: [...(listProject?.data || [])],
           };
         } else {
           updatedProducts[0] = {
-            package: [...listProject.data],
+            package: [...(listProject?.data || [])],
           };
         }
 

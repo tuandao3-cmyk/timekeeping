@@ -34,7 +34,7 @@ const BusinessPlanSection = (props: BusinessPlanSectionProps) => {
                   Kế hoạch kinh doanh
                 </p>
                 <span className="text-[14px] text-[#9f9f9f]">
-                  {formatDateTimeVn(props.data.updated_at)}
+                  {formatDateTimeVn(props?.data?.updated_at || '')}
                 </span>
               </div>
               <div className="flex items-center justify-center ">
@@ -58,7 +58,7 @@ const BusinessPlanSection = (props: BusinessPlanSectionProps) => {
       <PdfView
         openPdf={openPdf}
         setOpenPdf={setOpenPdf}
-        pdfPath={props.data.business_plan}
+        pdfPath={props?.data?.business_plan}
       />
     </section>
   );

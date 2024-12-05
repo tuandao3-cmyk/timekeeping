@@ -87,7 +87,7 @@ const NewsPage: React.FC = () => {
       data?.data?.length < 4
         ? (dataUpdate = data?.data?.concat(dataNews))
         : (dataUpdate = data?.data);
-      console.log('dataUpdate', dataUpdate);
+      // console.log('dataUpdate', dataUpdate);
 
       setNewsData(dataUpdate);
     }
@@ -152,7 +152,7 @@ const NewsPage: React.FC = () => {
             Sự kiện nổi bật
           </h1>
           <div className="px-5 mt-0 md:px-0 container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:grid-rows-2 gap-4 ">
-            {newsData.map((news: any, index: number) => (
+            {newsData?.map((news: any, index: number) => (
               <>
                 {index === 0 ? (
                   <ProjectCard
@@ -183,7 +183,7 @@ const NewsPage: React.FC = () => {
       </section>
       {/* -------------------news----------------------- */}
       <div className=" block md:hidden ">
-        {newsData.map((news: any, index: number) => (
+        {newsData?.map((news: any, index: number) => (
           <>
             {index === 0 ? (
               <div className=""></div>
@@ -273,7 +273,7 @@ const NewsPage: React.FC = () => {
           </h1>
           <div className="w-full  grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4 m ">
             <div className="w-full  col-span-2 gap-3 hidden md:block">
-              {newsData.slice(1, 4).map((news: any, index: number) => (
+              {newsData?.slice(1, 4).map((news: any, index: number) => (
                 <a href={`/news/${news.id}`} className="p-4" key={index}>
                   <div className="grid md:grid-cols-3  border-[1px] hover:scale-105 hover:border-none rounded-lg transition ease-in-out duration-150 hover:cursor-pointer">
                     <Image
