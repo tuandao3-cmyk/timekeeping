@@ -32,6 +32,32 @@ export const leaders = [
     ],
   },
   {
+    id: 2,
+    name: 'Tuấn Nguyễn',
+    title: 'Chief Strategy Officer - Founder',
+    fullTitle: 'Chief Strategy Officer - Founder',
+    image: '/img/about/TN.png',
+    description: [
+      'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
+      'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
+      'Là một người đam mê công nghệ và theo đuổi chiến lược định hình giá trị tương lai bằng các giải pháp công nghệ tham gia mạnh mẽ vào cuộc chuyển đổi kinh tế số.',
+      'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.',
+    ],
+  },
+  {
+    id: 3,
+    name: 'Hoàng Thành Đạt',
+    title: 'Chief Strategy Officer - Founder',
+    fullTitle: 'Chief Strategy Officer - Founder',
+    image: '/img/about/HTD.png',
+    description: [
+      'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
+      'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
+      'Là một người đam mê công nghệ và theo đuổi chiến lược định hình giá trị tương lai bằng các giải pháp công nghệ tham gia mạnh mẽ vào cuộc chuyển đổi kinh tế số.',
+      'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.',
+    ],
+  },
+  {
     id: 4,
     name: 'Tuấn Đặng',
     title: 'CFO - Co-Founder',
@@ -923,7 +949,7 @@ const AboutPage = (props: AboutPageProps) => {
                 mình và chúng tôi sẽ nâng tầm bạn thực hiện điều đó. 
               </p>
             </div>
-            <div className="grow grid grid-cols-1 lg:grid-cols-4 gap-4 w-full mx-auto place-items-center items-center ">
+            <div className="flex flex-row gap-4 w-full mx-auto place-items-center items-center justify-center ">
               {leaders.map((leader, index) => (
                 <Link
                   key={index}

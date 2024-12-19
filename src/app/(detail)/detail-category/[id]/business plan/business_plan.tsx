@@ -23,8 +23,8 @@ const BusinessPlanSection = (props: BusinessPlanSectionProps) => {
   };
 
   return (
-    <section className="flex flex-col justify-center items-center w-full">
-      <div className="flex flex-col max-w-[1440px]  w-full">
+    <section className="flex flex-col justify-start items-center w-full min-h-[100vh]">
+      <div className="flex flex-col max-w-[1440px] px-[120px] w-full">
         <div className="h-full bg-white w-full ">
           <div className="flex gap-5 bg-[#0000000F] rounded-lg p-2 ">
             <div className="bg-[#28a745] w-1 h-auto rounded-full"></div>

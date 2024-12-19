@@ -77,9 +77,15 @@ const DetailCategoryPage = (props: DetailCategoryPageProps) => {
               variant="scrollable"
               scrollButtons="auto"
             >
-              {['Thông tin'].map((label, index) => (
+              {[
+                'Thông tin',
+                'Pitching Deck',
+                'Mẫu hợp đồng',
+                'Lộ trình tài chính',
+                'Kế hoạch kinh doanh',
+              ].map((label, index) => (
                 <Tab
-                  key={label}
+                  key={index}
                   label={label}
                   sx={{
                     textTransform: 'none',
@@ -102,6 +108,19 @@ const DetailCategoryPage = (props: DetailCategoryPageProps) => {
 
       <CustomTabPanel value={value} index={0}>
         <InfoSection dataP={data} />
+      </CustomTabPanel>
+      <CustomTabPanel value={value} index={1}>
+        <PitchingDeckSection data={data} />
+        {/* <PitchingDeckSection /> */}
+      </CustomTabPanel>
+      <CustomTabPanel value={value} index={2}>
+        <ContractSampleSection data={data} />
+      </CustomTabPanel>
+      <CustomTabPanel value={value} index={3}>
+        <FinanceRoadSection data={data} />
+      </CustomTabPanel>
+      <CustomTabPanel value={value} index={4}>
+        <BusinessPlanSection data={data} />
       </CustomTabPanel>
     </Box>
   );

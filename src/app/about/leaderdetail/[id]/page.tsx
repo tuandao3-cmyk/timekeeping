@@ -33,15 +33,15 @@ export default function LeaderDetail() {
 
   return (
     <div className=" flex flex-col w-full h-full ">
-      <main className="flex justify-center flex-1 w-full h-full overflow-hidden bg-[#48B96D0D] min-h-[90vh]">
-        <div className="w-full max-w-[1440px] pt-16 lg:pt-0 relative">
+      <main className="flex flex-col justify-end items-center flex-1 w-full h-full overflow-hidden bg-[#48B96D0D] min-h-[90vh]">
+        <div className="w-full max-w-[1440px]   pt-16 lg:pt-0 relative">
           <Image
             width={1440}
             height={748}
             src="/img/about/bg_about_us1.png"
             alt="bg"
             className="absolute pointer-events-none inset-0 w-full max-w-[1440px] h-full object-cover "
-            layout="responsive"
+            // layout="responsive"
           />
 
           <div className=" absolute pointer-events-none inset-0 flex whitespace-nowrap overflow-hidden pt-[120px] lg:pt-[80px] bg-[rgba(72,185,109,0.05)] w-full h-full justify-center lg:justify-start text-center lg:text-left lg:p-16">
@@ -74,60 +74,59 @@ export default function LeaderDetail() {
                   src={leader.image}
                   alt={leader.name}
                   className="w-[255px] h-[294px] lg:w-[592px] lg:h-[689px] object-cover px-2"
-                  layout="responsive"
+                  // layout="responsive"
                 />
               </div>
             </div>
+          </div>
+        </div>
+        <div className=" w-full bg-white lg:bg-[#000000]/20 backdrop-blur-[24px] h-auto lg:h-[112px] flex items-center justify-start gap-[24px]">
+          <button
+            onClick={() => router.push('/about')}
+            className="flex items-center justify-center w-[66px]  lg:w-[120px] h-[66px] lg:h-[112px]  bg-black lg:bg-transparent "
+          >
+            <IoArrowBack className="w-10 h-10 text-white" />
+          </button>
+          <div className="w-full flex justify-center">
+            <AnimatePresence>
+              {leaders.map((nav, idx) => (
+                <div
+                  key={idx}
+                  className="relative w-[64px] lg:w-[244px] h-[64px] lg:h-[112px] flex flex-col items-center justify-start cursor-pointer py-2"
+                  onClick={() => setActiveLeader(idx)}
+                >
+                  {idx === activeLeader && (
+                    <motion.div
+                      className="absolute inset-0 bg-[#48B96D] skew-x-12"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: 20 }} // Trượt ra bên phải
+                      transition={{ duration: 0.3 }} // Thời gian chuyển động
+                    />
+                  )}
 
-            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full bg-white lg:bg-[#000000]/20 backdrop-blur-[24px] h-auto lg:h-[112px] flex items-center justify-start gap-[24px]">
-              <button
-                onClick={() => router.push('/about')}
-                className="flex items-center justify-center w-[66px]  lg:w-[120px] h-[66px] lg:h-[112px]  bg-black lg:bg-transparent "
-              >
-                <IoArrowBack className="w-10 h-10 text-white" />
-              </button>
-              <div className="w-full flex justify-center">
-                <AnimatePresence>
-                  {leaders.map((nav, idx) => (
-                    <div
-                      key={idx}
-                      className="relative w-[64px] lg:w-[244px] h-[64px] lg:h-[112px] flex flex-col items-center justify-start cursor-pointer py-2"
-                      onClick={() => setActiveLeader(idx)}
-                    >
-                      {idx === activeLeader && (
-                        <motion.div
-                          className="absolute inset-0 bg-[#48B96D] skew-x-12"
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          exit={{ opacity: 0, x: 20 }} // Trượt ra bên phải
-                          transition={{ duration: 0.3 }} // Thời gian chuyển động
-                        />
-                      )}
-
-                      <div className="relative z-10 flex flex-col justify-start items-center">
-                        <Image
-                          width={48}
-                          height={48}
-                          quality={100}
-                          src={nav.image}
-                          alt={nav.name}
-                          layout="responsive"
-                          className={`max-w-[48px] max-h-[48px] lg:w-[64px] lg:h-[64px] rounded-full  object-cover ${idx === activeLeader ? 'bg-[#48B96D]' : 'bg-white'}`}
-                        />
-                        <div className="hidden lg:block w-full text-center">
-                          <p className="text-sm font-semibold text-white">
-                            {nav.name}
-                          </p>
-                          <p className="text-xs leading-[16px] text-white">
-                            {nav.fullTitle}
-                          </p>
-                        </div>
-                      </div>
+                  <div className="relative z-10 flex flex-col justify-start items-center">
+                    <Image
+                      width={48}
+                      height={48}
+                      quality={100}
+                      src={nav.image}
+                      alt={nav.name}
+                      layout="responsive"
+                      className={`max-w-[48px] max-h-[48px] lg:w-[64px] lg:h-[64px] rounded-full  object-cover ${idx === activeLeader ? 'bg-[#48B96D]' : 'bg-white'}`}
+                    />
+                    <div className="hidden lg:block w-full text-center">
+                      <p className="text-sm font-semibold text-white">
+                        {nav.name}
+                      </p>
+                      <p className="text-xs leading-[16px] text-white">
+                        {nav.fullTitle}
+                      </p>
                     </div>
-                  ))}
-                </AnimatePresence>
-              </div>
-            </div>
+                  </div>
+                </div>
+              ))}
+            </AnimatePresence>
           </div>
         </div>
       </main>

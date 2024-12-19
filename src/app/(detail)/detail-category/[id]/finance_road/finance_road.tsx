@@ -23,8 +23,8 @@ const FinanceRoadSection = (props: FinanceRoadSectionProps) => {
   };
 
   return (
-    <section className="flex flex-col justify-center items-center w-full">
-      <div className="flex flex-col max-w-[1440px]  w-full">
+    <section className="flex flex-col justify-start min-h-[100vh] items-center w-full">
+      <div className="flex flex-col max-w-[1440px] px-[120px]  w-full">
         <div className="h-full bg-white w-full ">
           <div className="flex gap-5 bg-[#0000000F] rounded-lg p-2 ">
             <div className="bg-[#28a745] w-1 h-auto rounded-full"></div>
@@ -34,7 +34,7 @@ const FinanceRoadSection = (props: FinanceRoadSectionProps) => {
                   Lộ trình tài chính
                 </p>
                 <span className="text-[14px] text-[#9f9f9f]">
-                  {formatDateTimeVn(props?.data?.updated_at || "")}
+                  {formatDateTimeVn(props?.data?.updated_at || '')}
                 </span>
               </div>
               <div className="flex items-center justify-center ">

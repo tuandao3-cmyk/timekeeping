@@ -53,7 +53,7 @@ function MessageFromCreative() {
             width={594}
             height={445}
             className="absolute top-0   z-0 lg:left-[50%] lg:translate-x-[-20%] hover:z-20 hover:scale-105 transition ease-in-out duration-100 max-w-[594px] max-h-[445px]"
-            src={'/img/about/tran-thi-thu-huong.jpg'}
+            src={'/img/about/tran-thi-thu-huong.png'}
             alt="Trần Thị Thu Hương"
             layout="responsive"
           />
