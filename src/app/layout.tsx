@@ -61,7 +61,7 @@ export default function RootLayout({
             <HydrationBoundary>
               <AOSProvider>
                 <Header />
-                <div className="py-7" />
+                <div className="pt-[70px]" />
                 {children}
                 <Footer />
               </AOSProvider>

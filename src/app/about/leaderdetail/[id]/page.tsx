@@ -45,7 +45,10 @@ export default function LeaderDetail() {
           />
 
           <div className=" absolute pointer-events-none inset-0 flex whitespace-nowrap overflow-hidden pt-[120px] lg:pt-[80px] bg-[rgba(72,185,109,0.05)] w-full h-full justify-center lg:justify-start text-center lg:text-left lg:p-16">
-            <h1 className="text-[#48B96D]/10 text-[52px] lg:text-[155px] font-bold ">
+            <h1
+              data-aos="zoom-out-right"
+              className="text-[#48B96D]/10 text-[52px] lg:text-[155px] font-bold "
+            >
               {leader.name}
             </h1>
           </div>
@@ -54,20 +57,32 @@ export default function LeaderDetail() {
             <div className="flex flex-col-reverse lg:flex-row">
               <div className="flex-1  lg:p-16 flex flex-col justify-center gap-6 items-center text-center lg:text-left lg:items-start">
                 <div className="bg-white w-full lg:w-auto lg:p-4 lg:bg-transparent">
-                  <h2 className="text-[#48B96D] text-4xl lg:text-[64px] leading-[60px] lg:leading-[72px] font-bold lg:mb-4">
+                  <h2
+                    data-aos="zoom-out-right"
+                    className="text-[#48B96D] text-4xl lg:text-[64px] leading-[60px] lg:leading-[72px] font-bold lg:mb-4"
+                  >
                     {leader.name}
                   </h2>
-                  <p className="text-[#04141A] text-base leading-[24px] lg:text-[24px] lg:leading-[32px]  mb-6">
+                  <p
+                    data-aos="zoom-out-right"
+                    className="text-[#04141A] text-base leading-[24px] lg:text-[24px] lg:leading-[32px]  mb-6"
+                  >
                     {leader.fullTitle}
                   </p>
                 </div>
-                <p className="text-gray-700 p-4 pb-16 lg:pb-0 max-w-2xl leading-relaxed">
+                <p
+                  data-aos="zoom-out-right"
+                  data-aos-delay="100"
+                  className="text-gray-700 p-4 pb-16 lg:pb-0 max-w-2xl leading-relaxed"
+                >
                   {leader.description}
                 </p>
               </div>
 
               <div className="flex-1 flex items-center justify-center">
                 <Image
+                  data-aos="zoom-out-left"
+                  data-aos-delay="100"
                   width={255}
                   height={689}
                   quality={100}
@@ -82,6 +97,7 @@ export default function LeaderDetail() {
         </div>
         <div className=" w-full bg-white lg:bg-[#000000]/20 backdrop-blur-[24px] h-auto lg:h-[112px] flex items-center justify-start gap-[24px]">
           <button
+            data-aos="fade-left"
             onClick={() => router.push('/about')}
             className="flex items-center justify-center w-[66px]  lg:w-[120px] h-[66px] lg:h-[112px]  bg-black lg:bg-transparent "
           >
@@ -91,6 +107,8 @@ export default function LeaderDetail() {
             <AnimatePresence>
               {leaders.map((nav, idx) => (
                 <div
+                  data-aos="fade-left"
+                  data-aos-delay={idx * 100}
                   key={idx}
                   className="relative w-[64px] lg:w-[244px] h-[64px] lg:h-[112px] flex flex-col items-center justify-start cursor-pointer py-2"
                   onClick={() => setActiveLeader(idx)}

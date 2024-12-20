@@ -37,6 +37,7 @@ function Growth(props: GrowthProps) {
         gap={'24px'}
       >
         <Typography
+          data-aos="zoom-in"
           fontFamily={'Inter'}
           fontWeight={600}
           fontSize={'20px'}
@@ -46,6 +47,8 @@ function Growth(props: GrowthProps) {
           Triển vọng tăng trưởng
         </Typography>
         <Typography
+          data-aos="zoom-in"
+          data-aos-delay="100"
           fontFamily={'Inter'}
           fontWeight={400}
           fontSize={'14px'}
@@ -57,6 +60,7 @@ function Growth(props: GrowthProps) {
       </Stack>
       <Stack flexDirection={'column'} gap={'25px'}>
         <Typography
+          data-aos="zoom-in"
           fontFamily={'Inter'}
           fontWeight={600}
           fontSize={'20px'}
@@ -68,6 +72,8 @@ function Growth(props: GrowthProps) {
         <Stack direction="row" flexWrap="wrap" gap={2}>
           {data?.data?.metrics.map((project: any, index: any) => (
             <Box
+              data-aos="zoom-in"
+              data-aos-delay={index * 100}
               key={index}
               width={{
                 xs: '100%',

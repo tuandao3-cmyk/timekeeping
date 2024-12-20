@@ -36,9 +36,7 @@ function ProjectItem(props: ProjectItemProps) {
     <Link
       ref={ref}
       href={`/detail-category/${id}`}
-      className={`flex flex-col justify-center basis-1 items-center flex-grow max-w-[384px] w-full max-h-[484px] rounded-[20px] hover:shadow-lg hover:scale-105  transition-all duration-300 ease-in-out ${
-        inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-      }`}
+      className={`flex flex-col justify-center basis-1 items-center flex-grow max-w-[384px] w-full max-h-[484px] rounded-[20px] hover:shadow-lg hover:scale-105  transition-all duration-300 ease-in-out `}
     >
       <div
         className={` group  duration-300 ease-in-out flex flex-col gap-[12px] transform max-w-[384px] w-full`}

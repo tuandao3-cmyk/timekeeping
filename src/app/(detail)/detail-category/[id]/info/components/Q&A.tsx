@@ -118,8 +118,10 @@ function QandA() {
             md: '50%',
           }}
         >
-          {questions.slice(0, 5).map((question, index) => (
+          {questions?.slice(0, 5).map((question, index) => (
             <Accordion
+              data-aos="zoom-in"
+              data-aos-delay={index * 100}
               key={index}
               sx={{
                 boxShadow: 'none',
@@ -185,6 +187,8 @@ function QandA() {
         >
           {questions.slice(5, 10).map((question, index) => (
             <Accordion
+              data-aos="zoom-in"
+              data-aos-delay={index * 100}
               key={index}
               sx={{
                 boxShadow: 'none',

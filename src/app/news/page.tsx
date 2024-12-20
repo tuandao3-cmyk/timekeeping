@@ -110,7 +110,7 @@ const NewsPage: React.FC = () => {
   };
 
   return (
-    <>
+    <div>
       <div className="flex flex-col items-center justify-center font-sans w-full min-h-[772px] lg:min-h-[520px] bg-[#07212C] bg-[url('/img/news/newsbg.png')] bg-no-repeat bg-cover bg-[75%_50%] lg:bg-[length:150%_150%]">
         <div className="  pb-[107px]">
           <div className="flex flex-col items-center justify-end text-center max-w-[570px] text-white gap-[22px]">
@@ -165,6 +165,12 @@ const NewsPage: React.FC = () => {
                     }`}
                   />
                 ) : (
+                  // <div
+                  //   className=""
+                  //   data-aos="fade-in"
+                  //   data-aos-delay={index * 50}
+                  //   key={index}
+                  // >
                   <NewsItem
                     id={news.id}
                     key={index}
@@ -175,6 +181,7 @@ const NewsPage: React.FC = () => {
                     title={news.title}
                     updated_at={news.updated_at}
                   />
+                  // </div>
                 )}
               </>
             ))}
@@ -274,8 +281,14 @@ const NewsPage: React.FC = () => {
           <div className="w-full  grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4 m ">
             <div className="w-full  col-span-2 gap-3 hidden md:block">
               {newsData?.slice(1, 4).map((news: any, index: number) => (
-                <a href={`/news/${news.id}`} className="p-4" key={index}>
-                  <div className="grid md:grid-cols-3  border-[1px] hover:scale-105 hover:border-none rounded-lg transition ease-in-out duration-150 hover:cursor-pointer">
+                <a
+                  href={`/news/${news.id}`}
+                  className="p-4"
+                  key={index}
+                  data-aos="zoom-in"
+                  data-aos-delay={index * 100}
+                >
+                  <div className="grid md:grid-cols-3  border-[1px]  hover:scale-105 hover:border-none rounded-lg transition ease-in-out duration-150 hover:cursor-pointer">
                     <Image
                       width={320}
                       height={188}
@@ -443,12 +456,14 @@ const NewsPage: React.FC = () => {
               <div className="flex index-2 justify-center items-center  bg-[#07212C] w-full md:w-[450px] md:mx-[19%] lg:mx-0 lg:w-full h-full max-lg:max-h-[300px] lg:max-h-[390px] rounded-lg my-8  p-5 mt-14">
                 <div className="index-3 relative flex flex-row text-white  font-bold text-[11px] bg-[#48B96D] w-full h-full md:text-[15px] rounded-lg">
                   <div className=" flex  flex-col h-full text-[20px] md:text-2xl lg:text-3xl  justify-between gap-4 py-5 px-28 pl-5 md:py-10 md:px-8  ">
-                    <p className="max-w-[250px] ">
+                    <p className="max-w-[250px] " data-aos="zoom-in">
                       Trải nghiệm ngay nền tảng đầu tư HyraCap
                     </p>
 
                     <div className="flex text-xs font-medium flex-col max-w-[130px] md:max-w-[140px] pb-10 gap-2">
                       <a
+                        data-aos="zoom-in"
+                        data-aos-delay="100"
                         href="https://play.google.com/store/apps/details?id=com.hyracap"
                         className="flex items-center  gap-2 bg-white text-[#34A853] p-2 rounded-full hover:bg-gray-100 transition-colors"
                       >
@@ -457,6 +472,8 @@ const NewsPage: React.FC = () => {
                       </a>
 
                       <a
+                        data-aos="zoom-in"
+                        data-aos-delay="200"
                         href="https://apps.apple.com/app/hyracap"
                         className="flex items-center gap-2 bg-white text-[#34A853] p-2 rounded-full hover:bg-gray-100 transition-colors "
                       >
@@ -467,6 +484,8 @@ const NewsPage: React.FC = () => {
                   </div>
                   <div>
                     <Image
+                      data-aos="zoom-in-left"
+                      data-aos-delay="200"
                       width={216}
                       height={228}
                       layout="responsive"
@@ -481,7 +500,7 @@ const NewsPage: React.FC = () => {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 export default NewsPage;

@@ -28,6 +28,8 @@ function Terminology(props: TerminologyProps) {
       bgcolor={'#FFFFFF'}
       p={'20px'}
       borderRadius={'16px'}
+      data-aos="zoom-in"
+      data-aos-delay="50"
     >
       {/* <Stack flexDirection={'row'} width={'100%'} py={'16px'}>
         <Typography

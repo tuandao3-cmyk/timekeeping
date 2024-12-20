@@ -94,6 +94,7 @@ function UpdateInfo() {
             fontSize={'16px'}
             lineHeight={'24px'}
             color="#000000CC"
+            data-aos="zoom-in"
           >
             Cập nhật thông tin mới nhất
           </Typography>
@@ -107,6 +108,7 @@ function UpdateInfo() {
             width={'100%'}
           >
             <Input
+              data-aos="zoom-in"
               name="email"
               placeholder="Nhập địa chỉ email"
               disableUnderline
@@ -127,6 +129,7 @@ function UpdateInfo() {
               }}
             />
             <Button
+              data-aos="zoom-in"
               onClick={handleSubmit}
               sx={{
                 backgroundColor: '#48B96D',
@@ -151,6 +154,7 @@ function UpdateInfo() {
             fontSize={'14px'}
             lineHeight={'24px'}
             color="#0000007A"
+            data-aos="zoom-in"
           >
             Bạn sẽ nhận được email cập nhật thường xuyên về tiến độ, thay đổi
             quan trọng, và cơ hội đầu tư mới của các dự án.

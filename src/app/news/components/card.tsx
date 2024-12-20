@@ -13,7 +13,7 @@ export const ProjectCard: React.FC<{
   return (
     <Link
       href={`/news/${project?.id || ''}`}
-      className={`${className} relative w-full h-auto `}
+      className={`${className} relative w-full h-auto  group hover:scale-105`}
     >
       <Image
         width={320}
@@ -27,7 +27,7 @@ export const ProjectCard: React.FC<{
         alt={project?.title || ''}
         className="w-full h-full object-cover rounded-lg "
       />
-      <div className="absolute bottom-0 w-2/3 h-1/2 md:flex justify-between flex-col justify-end p-4 bg-[#FFFFFF]/80 bg-opacity-50 rounded-lg  hidden md:block">
+      <div className="absolute bottom-0 w-2/3 h-1/2 group-hover:h-full md:flex justify-between transition-all duration-300 flex-col justify-end p-4 bg-[#FFFFFF]/80 bg-opacity-50 rounded-lg  hidden md:block">
         <p className="text-base max-sm:hidden font-bold text-[#579DFF]">
           {project?.blog_category?.name || ''}
         </p>
@@ -40,12 +40,12 @@ export const ProjectCard: React.FC<{
           display="-webkit-box"
           overflow="hidden"
           textOverflow="ellipsis"
-          sx={{
-            WebkitLineClamp: 2,
-            WebkitBoxOrient: 'vertical',
-          }}
+          className="line-clamp-2 group-hover:line-clamp-none"
         >
           {project?.title || ''}
+        </Typography>
+        <Typography className="text-lg text-[#3D3C3E] hidden group-hover:block transition-all overflow-hidden m-0 line-clamp-5">
+          {project?.description || ''}
         </Typography>
 
         <div className="flex justify-between gap-5">

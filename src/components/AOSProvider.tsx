@@ -14,7 +14,7 @@ export default function AOSProvider({
       duration: 800,
       once: false,
       mirror: true,
-      offset: 120,
+      // offset: 120,
       easing: 'ease-in-out',
     });
   }, []);

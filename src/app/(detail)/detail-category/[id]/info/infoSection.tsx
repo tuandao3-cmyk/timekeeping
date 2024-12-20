@@ -216,6 +216,7 @@ const InfoSection = (props: InfoSectionProps) => {
             <Box width={'100%'}>
               <Stack flexDirection={'column'} gap={'16px'} maxWidth={'792px'}>
                 <Image
+                  data-aos="zoom-in-right"
                   className="hidden lg:block"
                   src={dataP?.images[0] || ''}
                   alt="product_category"
@@ -244,6 +245,8 @@ const InfoSection = (props: InfoSectionProps) => {
                 >
                   {items.map((item, index) => (
                     <Stack
+                      data-aos="zoom-out"
+                      data-aos-delay={index * 50}
                       key={index}
                       flexDirection={'row'}
                       gap={'8px'}
@@ -292,6 +295,8 @@ const InfoSection = (props: InfoSectionProps) => {
               <Stack flexDirection={'row'} gap={'4px'}>
                 {dataP?.industries?.map((item: any, index: number) => (
                   <Typography
+                    data-aos="zoom-in"
+                    data-aos-delay={index * 100}
                     key={index}
                     bgcolor={'#48B96D1F'}
                     color={'#31814B'}
@@ -315,6 +320,8 @@ const InfoSection = (props: InfoSectionProps) => {
                 fontFamily={'Inter'}
                 letterSpacing={'-1%'}
                 color="#363636"
+                data-aos="zoom-in"
+                // data-aos-delay="50"
               >
                 {dataP?.name || ''}
               </Typography>
@@ -347,6 +354,8 @@ const InfoSection = (props: InfoSectionProps) => {
             >
               {items.map((item, index) => (
                 <Stack
+                  data-aos="zoom-in"
+                  data-aos-delay={index * 100}
                   key={index}
                   flexDirection={'row'}
                   gap={'8px'}
@@ -381,13 +390,20 @@ const InfoSection = (props: InfoSectionProps) => {
               fontSize={'16px'}
               lineHeight={'24px'}
               color="#000000A3"
+              data-aos="zoom-in"
             >
               {dataP?.data?.project_information?.description || ''}
             </Typography>
 
             <Grid container spacing={'8px'}>
               {data.map((item, index) => (
-                <Grid item xs={4} key={index}>
+                <Grid
+                  item
+                  xs={4}
+                  data-aos="zoom-in"
+                  data-aos-delay={index * 100}
+                  key={index}
+                >
                   <Stack
                     flexDirection={'column'}
                     gap={'8px'}
@@ -449,7 +465,7 @@ const InfoSection = (props: InfoSectionProps) => {
         alignItems={'center'}
       >
         <section className="w-full h-auto  bg-white py-[62px] flex flex-col justify-center items-center px-[12px] md:px-[120px] max-w-[1440px]">
-          {products.map((product: (typeof products)[0], index) => (
+          {products?.map((product: (typeof products)[0], index) => (
             <div
               className="w-full h-auto bg-white px-1 flex flex-col justify-center items-left"
               key={index}
@@ -494,15 +510,24 @@ const InfoSection = (props: InfoSectionProps) => {
               </Stack>
               <div className="flex md:flex-row flex-col gap-[24px] items-center  w-full  justify-center py-5  scrollbar-none ">
                 {product?.package?.map((packageItem: any, index: number) => (
-                  <ProjectItem
-                    capital_raising_target={packageItem.capital_raising_target}
-                    id={packageItem.id}
-                    images={packageItem.images}
-                    mobilized_fund={packageItem.mobilized_fund}
-                    industries={packageItem.industries}
+                  <div
+                    data-aos="zoom-in"
+                    data-aos-delay={index * 100}
                     key={index}
-                    name={packageItem.name}
-                  />
+                    className="flex-1"
+                  >
+                    <ProjectItem
+                      capital_raising_target={
+                        packageItem.capital_raising_target
+                      }
+                      id={packageItem.id}
+                      images={packageItem.images}
+                      mobilized_fund={packageItem.mobilized_fund}
+                      industries={packageItem.industries}
+                      key={index}
+                      name={packageItem.name}
+                    />
+                  </div>
                 ))}
 
                 <Button

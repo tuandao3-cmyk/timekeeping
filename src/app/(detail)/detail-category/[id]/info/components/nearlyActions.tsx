@@ -39,8 +39,14 @@ function NearlyActions(props: NearlyActionsProps) {
         </Button>
       </Stack>
       <Stack flexDirection={'column'} gap={'20px'}>
-        {props.actions.map((action, index) => (
-          <Stack flexDirection={'row'} key={index} gap={'12px'}>
+        {props?.actions?.map((action, index) => (
+          <Stack
+            flexDirection={'row'}
+            key={index}
+            gap={'12px'}
+            data-aos="zoom-in"
+            data-aos-delay={index * 100}
+          >
             <Box>
               <Image
                 onClick={() => router.push('/news/newsdetail')}

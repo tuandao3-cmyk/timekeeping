@@ -17,8 +17,10 @@ function ListField(props: ListFieldProps) {
       borderRadius={'12px'}
       gap={'16px'}
     >
-      {list.map((item, index) => (
+      {list?.map((item, index) => (
         <Stack
+          data-aos="zoom-in"
+          data-aos-delay={index * 100}
           key={index}
           flexDirection={'row'}
           justifyContent={'space-between'}

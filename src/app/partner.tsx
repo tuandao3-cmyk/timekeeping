@@ -79,7 +79,12 @@ const ProjectGrid: React.FC = () => {
         <h2 className="m-0 col-span-2 lg:text-[48px]/[56px] text-[32px]/[40px] tracking-[-0.32px] lg:tracking-[-0.96px] px-16 uppercase text-[#04141A] font-bold aos-init aos-animate">
           Đối tác
         </h2>
-        <a href="https://pindias.com" target="_blank" rel="noopener noreferrer">
+        <a
+          data-aos="zoom-out"
+          href="https://pindias.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <Image
             width={257}
             height={82}

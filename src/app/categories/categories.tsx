@@ -32,8 +32,8 @@ const CategoryPage = (props: CategoryPageProps) => {
   const [projects1, setProjects1] = useState<any>(props.projects1);
   const [projects2, setProjects2] = useState<any>(props.projects2);
   const [projects3, setProjects3] = useState<any>(props.projects3);
-  console.log("project1", projects1);
-  
+  console.log('project1', projects1);
+
   const [page, setPage] = useState<typeof Page>({
     ...props.page1,
   });
@@ -211,12 +211,17 @@ const CategoryPage = (props: CategoryPageProps) => {
         <div className="max-w-[1200px] w-full">
           <div className="flex items-center px-4 flex-wrap justify-center gap-4  pt-[51px]">
             <input
+              data-aos="zoom-out"
               className=" h-[48px]   font-sans text-[16px] flex-grow  border-[1px]  border-[rgba(60, 60, 67, 0.1)],  rounded-lg pl-3 pr-10 text-lg bg-[#EFEFEF] focus:outline-none "
               type="text"
               placeholder="Nhập dự án cần tìm kiếm"
               onChange={(e) => setSearchValue(e.target.value)}
             />
-            <div className="  flex flex-row justify-end gap-4 font-sans flex-grow  items-center">
+            <div
+              data-aos="zoom-out"
+              data-aos-delay="50"
+              className="  flex flex-row justify-end gap-4 font-sans flex-grow  items-center"
+            >
               {/* <p className="font-sans">Hiển thị </p> */}
               <FormControl
                 sx={{
@@ -302,6 +307,8 @@ const CategoryPage = (props: CategoryPageProps) => {
               </FormControl>
             </div>
             <Button
+              data-aos="zoom-out"
+              data-aos-delay="100"
               sx={{
                 flexGrow: 1,
                 fontFamily: 'Inter',
@@ -347,15 +354,21 @@ const CategoryPage = (props: CategoryPageProps) => {
                 }}
               >
                 {projects1?.data?.map((project: any, index: number) => (
-                  <ProjectItem
-                    capital_raising_target={project.capital_raising_target}
-                    images={project.images}
-                    mobilized_fund={project.mobilized_fund}
-                    id={project.id}
-                    industries={project.industries}
+                  <div
+                    data-aos="fade-in"
+                    data-aos-delay={index * 50}
                     key={index}
-                    name={project.name}
-                  />
+                  >
+                    <ProjectItem
+                      capital_raising_target={project.capital_raising_target}
+                      images={project.images}
+                      mobilized_fund={project.mobilized_fund}
+                      id={project.id}
+                      industries={project.industries}
+                      key={index}
+                      name={project.name}
+                    />
+                  </div>
                 ))}
               </Box>
             </div>
@@ -405,15 +418,21 @@ const CategoryPage = (props: CategoryPageProps) => {
                 }}
               >
                 {projects2?.data?.map((project: any, index: number) => (
-                  <ProjectItem
-                    capital_raising_target={project.capital_raising_target}
-                    images={project.images}
-                    mobilized_fund={project.mobilized_fund}
-                    id={project.id}
-                    industries={project.industries}
+                  <div
+                    data-aos="fade-in"
+                    data-aos-delay={index * 50}
                     key={index}
-                    name={project.name}
-                  />
+                  >
+                    <ProjectItem
+                      capital_raising_target={project.capital_raising_target}
+                      images={project.images}
+                      mobilized_fund={project.mobilized_fund}
+                      id={project.id}
+                      industries={project.industries}
+                      key={index}
+                      name={project.name}
+                    />
+                  </div>
                 ))}
               </Box>
             </div>
@@ -463,15 +482,21 @@ const CategoryPage = (props: CategoryPageProps) => {
                 }}
               >
                 {projects3?.data?.map((project: any, index: any) => (
-                  <ProjectItem
-                    capital_raising_target={project.capital_raising_target}
-                    images={project.images}
-                    mobilized_fund={project.mobilized_fund}
-                    id={project.id}
-                    industries={project.industries}
+                  <div
+                    data-aos="fade-in"
+                    data-aos-delay={index * 50}
                     key={index}
-                    name={project.name}
-                  />
+                  >
+                    <ProjectItem
+                      capital_raising_target={project.capital_raising_target}
+                      images={project.images}
+                      mobilized_fund={project.mobilized_fund}
+                      id={project.id}
+                      industries={project.industries}
+                      key={index}
+                      name={project.name}
+                    />
+                  </div>
                 ))}
               </Box>
             </div>
