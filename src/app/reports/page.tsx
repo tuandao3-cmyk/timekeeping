@@ -1,25 +1,20 @@
 'use client';
-import styles from '@/app/reports/report.module.css';
+
 import React from 'react';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
-
-import PdfView from '@/components/pdfView';
 import { Typography } from '@mui/material';
-import { FaDownload, FaEye } from 'react-icons/fa';
 
 import { getReports } from '@/services/reports.service';
 import { Page } from '@/type/page.type';
-import { formatDateTimeVn } from '@/util/util';
+import ReportItem from '@/components/reportItem';
 
 const ReportPage: React.FC = () => {
-  const [activeTab, setActiveTab] = React.useState(0);
   const [page, setPage] = React.useState<typeof Page>(Page);
   const [data1, setData1] = React.useState<any>([]);
   const [data2, setData2] = React.useState<any>([]);
   const [data3, setData3] = React.useState<any>([]);
   const [data4, setData4] = React.useState<any>([]);
-  const [openPdf, setOpenPdf] = React.useState(false);
-  const [file, setFile] = React.useState<string>('');
+
   const queryClient = useQueryClient();
 
   React.useEffect(() => {
@@ -132,23 +127,6 @@ const ReportPage: React.FC = () => {
     }
   }, [reportsOther]);
 
-  const data = activeTab == 0 ? data1 : data2;
-
-  const handlePreview = (file: string) => {
-    setFile(file);
-    setOpenPdf(true);
-    // const googleDocsViewerUrl = `https://docs.google.com/viewer?url=${encodeURIComponent(file)}&embedded=true`;
-    // window.open(googleDocsViewerUrl, '_blank');
-  };
-  const handleDownload = (href: string) => {
-    const link = document.createElement('a');
-    link.href = href;
-    link.setAttribute('download', 'report.pdf');
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   return (
     <>
       <div className="flex flex-col items-center justify-center w-full min-h-[772px] lg:min-h-[520px] bg-[#07212C] bg-[url('/img/report/baocao_bg.png')] bg-no-repeat bg-cover bg-center">
@@ -205,31 +183,7 @@ const ReportPage: React.FC = () => {
                 <div>Loading...</div>
               ) : (
                 data1?.map((report: any, index: number) => (
-                  <div className="flex gap-5 py-5" key={index}>
-                    <div className="bg-[#CCCCCC] w-1 h-auto rounded-full"></div>
-                    <div key={index} className="flex justify-between w-full">
-                      <div className={styles.reportInfo}>
-                        <h3>{report.name}</h3>
-                        <span className={styles.reportDate}>
-                          {formatDateTimeVn(report.updated_at)}
-                        </span>
-                      </div>
-                      <div className={styles.reportActions}>
-                        <button
-                          className={styles.viewButton}
-                          onClick={() => handlePreview(report.file)}
-                        >
-                          <FaEye />
-                        </button>
-                        <button
-                          className={styles.downloadButton}
-                          onClick={() => handleDownload(report.file)}
-                        >
-                          <FaDownload />
-                        </button>
-                      </div>
-                    </div>
-                  </div>
+                  <ReportItem report={report} key={index} />
                 ))
               )}
             </div>
@@ -246,31 +200,7 @@ const ReportPage: React.FC = () => {
                 <div>Loading...</div>
               ) : (
                 data2?.map((report: any, index: number) => (
-                  <div className="flex gap-5 py-5" key={index}>
-                    <div className="bg-[#CCCCCC] w-1 h-auto rounded-full"></div>
-                    <div key={index} className="flex justify-between w-full">
-                      <div className={styles.reportInfo}>
-                        <h3>{report.name}</h3>
-                        <span className={styles.reportDate}>
-                          {formatDateTimeVn(report.updated_at)}
-                        </span>
-                      </div>
-                      <div className={styles.reportActions}>
-                        <button
-                          className={styles.viewButton}
-                          onClick={() => handlePreview(report.file)}
-                        >
-                          <FaEye />
-                        </button>
-                        <button
-                          className={styles.downloadButton}
-                          onClick={() => handleDownload(report.file)}
-                        >
-                          <FaDownload />
-                        </button>
-                      </div>
-                    </div>
-                  </div>
+                  <ReportItem report={report} key={index} />
                 ))
               )}
             </div>
@@ -289,31 +219,7 @@ const ReportPage: React.FC = () => {
                 <div>Loading...</div>
               ) : (
                 data3?.map((report: any, index: number) => (
-                  <div className="flex gap-5 py-5" key={index}>
-                    <div className="bg-[#CCCCCC] w-1 h-auto rounded-full"></div>
-                    <div key={index} className="flex justify-between w-full">
-                      <div className={styles.reportInfo}>
-                        <h3>{report.name}</h3>
-                        <span className={styles.reportDate}>
-                          {formatDateTimeVn(report.updated_at)}
-                        </span>
-                      </div>
-                      <div className={styles.reportActions}>
-                        <button
-                          className={styles.viewButton}
-                          onClick={() => handlePreview(report.file)}
-                        >
-                          <FaEye />
-                        </button>
-                        <button
-                          className={styles.downloadButton}
-                          onClick={() => handleDownload(report.file)}
-                        >
-                          <FaDownload />
-                        </button>
-                      </div>
-                    </div>
-                  </div>
+                  <ReportItem report={report} key={index} />
                 ))
               )}
             </div>
@@ -330,42 +236,13 @@ const ReportPage: React.FC = () => {
                 <div>Loading...</div>
               ) : (
                 data4?.map((report: any, index: number) => (
-                  <div className="flex gap-5 py-5" key={index}>
-                    <div className="bg-[#CCCCCC] w-1 h-auto rounded-full"></div>
-                    <div key={index} className="flex justify-between w-full">
-                      <div className={styles.reportInfo}>
-                        <h3>{report.name}</h3>
-                        <span className={styles.reportDate}>
-                          {formatDateTimeVn(report.updated_at)}
-                        </span>
-                      </div>
-                      <div className={styles.reportActions}>
-                        <button
-                          className={styles.viewButton}
-                          onClick={() => handlePreview(report.file)}
-                        >
-                          <FaEye />
-                        </button>
-                        <button
-                          className={styles.downloadButton}
-                          onClick={() => handleDownload(report.file)}
-                        >
-                          <FaDownload />
-                        </button>
-                      </div>
-                    </div>
-                  </div>
+                  <ReportItem report={report} key={index} />
                 ))
               )}
             </div>
           </div>
         </section>
       </main>
-      {/* </div>
-      </div> */}
-
-      {/* pdf View */}
-      <PdfView openPdf={openPdf} setOpenPdf={setOpenPdf} pdfPath={file} />
     </>
   );
 };

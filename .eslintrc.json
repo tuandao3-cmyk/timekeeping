@@ -15,30 +15,24 @@
     "sourceType": "module"
   },
   "rules": {
-    // Quy tắc bắt buộc
     "no-irregular-whitespace": "off",
-    "no-console": "warn", // Cảnh báo khi sử dụng console.log
-    "eqeqeq": "warn", // Bắt buộc sử dụng === và !== thay vì == và !=
-    "curly": "warn", // Bắt buộc sử dụng dấu ngoặc nhọn cho tất cả các khối lệnh
-    "@typescript-eslint/no-unused-vars": "off", // Tắt quy tắc
+    "no-console": "warn",
+    "eqeqeq": "warn",
+    "curly": "warn",
+    "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/no-explicit-any": "off",
     "react/no-unescaped-entities": "off",
-    "semi": ["warn", "always"], // Bắt buộc sử dụng dấu chấm phẩy
-    "prettier/prettier": "off", // Disable prettier rules
-    "indent": "off", // Disable indentation rules
-    "react/react-in-jsx-scope": "off", // Disable the React scope rule
-    "quotes": ["off"], // Disable single/double quote rules
-    // Quy tắc tùy chọn
+    "semi": ["warn", "always"],
+    "prettier/prettier": "off",
+    "indent": "off",
+    "react/react-in-jsx-scope": "off",
+    "quotes": ["off"],
 
-    "max-len": [
-      "warn",
-      { "code": 80, "ignoreUrls": true, "ignoreComments": true }
-    ], // Giới hạn chiều dài dòng tối đa là 80 ký tự
-    "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }], // Cảnh báo về biến không sử dụng, nhưng bỏ qua biến bắt đầu bằng "_"
+    "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
 
     "react/jsx-filename-extension": [
       1,
       { "extensions": [".jsx", ".tsx", ".ts"] }
-    ] // Chấp nhận file JSX và TSX
+    ]
   }
 }

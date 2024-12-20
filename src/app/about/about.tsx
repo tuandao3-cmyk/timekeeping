@@ -44,19 +44,19 @@ export const leaders = [
       'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.',
     ],
   },
-  {
-    id: 3,
-    name: 'Hoàng Thành Đạt',
-    title: 'Chief Strategy Officer - Founder',
-    fullTitle: 'Chief Strategy Officer - Founder',
-    image: '/img/about/HTD.png',
-    description: [
-      'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
-      'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
-      'Là một người đam mê công nghệ và theo đuổi chiến lược định hình giá trị tương lai bằng các giải pháp công nghệ tham gia mạnh mẽ vào cuộc chuyển đổi kinh tế số.',
-      'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.',
-    ],
-  },
+  // {
+  //   id: 3,
+  //   name: 'Hoàng Thành Đạt',
+  //   title: 'Chief Strategy Officer - Founder',
+  //   fullTitle: 'Chief Strategy Officer - Founder',
+  //   image: '/img/about/HTD.png',
+  //   description: [
+  //     'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
+  //     'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
+  //     'Là một người đam mê công nghệ và theo đuổi chiến lược định hình giá trị tương lai bằng các giải pháp công nghệ tham gia mạnh mẽ vào cuộc chuyển đổi kinh tế số.',
+  //     'Ông Trần Nam Chung được biết đến là một người có tầm nhìn đột phá và táo bạo, truyền cảm hứng mạnh mẽ cho cộng sự và các nhà đầu tư.',
+  //   ],
+  // },
   {
     id: 4,
     name: 'Tuấn Đặng',
@@ -532,8 +532,9 @@ const AboutPage = (props: AboutPageProps) => {
               <Image
                 width={486}
                 height={605}
-                src="/img/about/about1.png"
+                src="/img/about/about1.svg"
                 alt="Vision illustration"
+                quality={100}
                 // layout="responsive"
               />
             </div>
@@ -706,6 +707,7 @@ const AboutPage = (props: AboutPageProps) => {
                 height={494}
                 src="/img/about/sm.jpg"
                 alt="Mission illustration"
+                quality={100}
                 // layout="responsive"
               />
             </div>

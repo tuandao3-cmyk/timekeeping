@@ -25,7 +25,7 @@ const ShortTermSection: React.FC = () => {
   const DataProduct = () => {
     axios
       .get(
-        'https://beta.hyracapital.com/be/api/products?sortBy=id&page=1&take=3&category_id__eq=2&total_invested__lt=column_total_capacity'
+        `${process.env.NEXT_PUBLIC_API_URL}/api/products?sortBy=id&page=1&take=3&category_id__eq=2&total_invested__lt=column_total_capacity`
       )
       .then((response) => {
         setPackages(response?.data?.data || []);

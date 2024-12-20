@@ -23,17 +23,17 @@ const LongTermSection: React.FC = () => {
     'Lợi nhuận hấp dẫn và cố định',
     'Đầu tư an toàn, dễ dàng quản lý',
   ];
+
   const DataProduct = () => {
     axios
       .get(
-        'https://hyracap.lyhai.id.vn/api/products?sortBy=id&page=1&take=3&category_id__eq=1&total_invested__lt=column_total_capacity'
+        `${process.env.NEXT_PUBLIC_API_URL}/api/products?sortBy=id&page=1&take=3&category_id__eq=1&total_invested__lt=column_total_capacity`
       )
       .then((response) => {
-        console.log('dataaaaaaaaaaaaaaaaaaa', response.data.data);
         setPackages(response.data.data);
       })
       .catch((error) => {
-        console.error('Có lỗi xảy ra khi gọi API:', error);
+        console.error(error);
       });
   };
   useEffect(() => {
@@ -447,7 +447,6 @@ const LongTermSection: React.FC = () => {
               </div>
             </div>
           )}
-          {/* </div> */}
         </div>
       </div>
     </>

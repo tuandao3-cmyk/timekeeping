@@ -16,83 +16,20 @@ import Login from './login/page';
 import LogoutSection from './logout/page';
 import DownloadSection from '../download';
 import { Typography } from '@mui/material';
-const PROJECTS = [
-  {
-    id: 1,
-    img: '/img/egabid_pc.png',
-    name: 'EGABID',
-    amount: '$2.000.000',
-    funded: '$1.500.00',
-    progress: 75,
-    category: 'CÔNG NGHỆ',
-    tag: ['seed'],
-  },
-  {
-    id: 2,
-    img: '/img/Salala.png',
-    name: 'SALALA AI',
-    amount: '$2.000.000',
-    funded: '$1.500.00',
-    progress: 75,
-    category: 'CÔNG NGHỆ',
-    tag: ['seed', 'seriesA', 'seriesB'],
-  },
-  {
-    id: 3,
-    img: '/img/hyperas_chain.png',
-    name: 'Hyperas Chain',
-    amount: '$2.000.000',
-    funded: '$1.500.00',
-    progress: 75,
-    category: 'CÔNG NGHỆ',
-    tag: ['seed', 'seriesA', 'seriesB'],
-  },
-  {
-    id: 4,
-    img: '/img/egabid_pc.png',
-    name: 'EGABID',
-    amount: '$2.000.000',
-    funded: '$1.500.00',
-    progress: 75,
-    category: 'CÔNG NGHỆ',
-    tag: ['seed', 'seriesA', 'seriesB'],
-  },
-  {
-    id: 5,
-    img: '/img/Salala.png',
-    name: 'SALALA AI',
-    amount: '$2.000.000',
-    funded: '$1.500.00',
-    progress: 75,
-    category: 'CÔNG NGHỆ',
-    tag: ['seed', 'seriesA', 'seriesB'],
-  },
-  {
-    id: 6,
-    img: '/img/hyperas_chain.png',
-    name: 'Hyperas Chain',
-    amount: '$2.000.000',
-    funded: '$1.500.00',
-    progress: 75,
-    category: 'CÔNG NGHỆ',
-    tag: ['seed', 'seriesA', 'seriesB'],
-  },
-];
 
 const data = [
-  { id: 'signin', text: 'Đăng ký' },
-  { id: 'login', text: 'Đăng nhập' },
-  { id: 'auth', text: 'Xác thực eKYC' },
-  { id: 'contract', text: 'Ký hợp đồng' },
-  { id: 'product', text: 'Thực hiện đầu tư' },
-  { id: 'transaction', text: 'Giao dịch' },
-  { id: 'forgot', text: 'Quên mật khẩu' },
+  { id: 'signin', text: 'Đăng ký', active: 'auth' },
+  { id: 'login', text: 'Đăng nhập', active: 'login' },
+  { id: 'auth', text: 'Xác thực eKYC', active: 'auth' },
+  { id: 'contract', text: 'Ký hợp đồng', active: 'auth' },
+  { id: 'product', text: 'Thực hiện đầu tư', active: 'auth' },
+  { id: 'transaction', text: 'Giao dịch', active: 'auth' },
+  { id: 'forgot', text: 'Quên mật khẩu', active: 'auth' },
 ];
 
 const GuidePage: React.FC = () => {
   const pathname = usePathname();
   const [activeSection, setActiveSection] = useState<string>('signin');
-  const [isNavOpen, setIsNavOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const handleMenuItemClick = (section: string) => {
     setActiveSection(section);

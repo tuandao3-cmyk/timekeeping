@@ -2,6 +2,9 @@ import { useState } from 'react';
 import ProgressBar from '../progress';
 import Image from 'next/image';
 
+import { useInView } from 'react-intersection-observer';
+import Link from 'next/link';
+
 interface ProjectItemProps {
   id?: string;
   images: string[];
@@ -24,10 +27,18 @@ function ProjectItem(props: ProjectItemProps) {
     return (mobilized_fund / capital_raising_target) * 100;
   });
 
+  const { ref, inView, entry } = useInView({
+    threshold: 0.3,
+    triggerOnce: true,
+  });
+
   return (
-    <a
+    <Link
+      ref={ref}
       href={`/detail-category/${id}`}
-      className="flex flex-col justify-center basis-1 items-center flex-grow max-w-[384px] w-full max-h-[484px] rounded-[20px] hover:shadow-lg hover:scale-105  transition-all duration-300 ease-in-out"
+      className={`flex flex-col justify-center basis-1 items-center flex-grow max-w-[384px] w-full max-h-[484px] rounded-[20px] hover:shadow-lg hover:scale-105  transition-all duration-300 ease-in-out ${
+        inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+      }`}
     >
       <div
         className={` group  duration-300 ease-in-out flex flex-col gap-[12px] transform max-w-[384px] w-full`}
@@ -143,7 +154,7 @@ function ProjectItem(props: ProjectItemProps) {
           </a>
         </div>
       </div>
-    </a>
+    </Link>
   );
 }
 

@@ -13,7 +13,8 @@ export const getProjects = async (params: typeof Page) => {
     );
     return response.data;
   } catch (error) {
-    return error;
+    console.error('Error fetching projects:', error);
+    return [];
   }
 };
 
@@ -24,6 +25,7 @@ export const getDetailProject = async (id: string) => {
     );
     return response.data;
   } catch (error) {
-    return error;
+    console.error('Error fetching projects:', error);
+    return {};
   }
 };

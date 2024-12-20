@@ -13,7 +13,9 @@ export const getNews = async (params: typeof Page) => {
     );
     return response.data;
   } catch (error) {
-    return error;
+    console.log('Error fetching news:', error);
+    return [];
+    // return error;
   }
 };
 

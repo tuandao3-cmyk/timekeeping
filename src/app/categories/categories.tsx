@@ -32,6 +32,8 @@ const CategoryPage = (props: CategoryPageProps) => {
   const [projects1, setProjects1] = useState<any>(props.projects1);
   const [projects2, setProjects2] = useState<any>(props.projects2);
   const [projects3, setProjects3] = useState<any>(props.projects3);
+  console.log("project1", projects1);
+  
   const [page, setPage] = useState<typeof Page>({
     ...props.page1,
   });

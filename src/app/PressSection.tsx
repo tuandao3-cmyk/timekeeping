@@ -52,7 +52,7 @@ const pressLogos = [
   {
     name: 'Thông tin và Truyền thông',
     src: '/img/icon/bao8.png',
-    delay: 1000,
+    delay: 700,
     link: 'https://ictvietnam.vn/',
   },
 ];

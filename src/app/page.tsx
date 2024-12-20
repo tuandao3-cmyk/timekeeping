@@ -21,15 +21,25 @@ const Home: React.FC = async () => {
 
   const pageRasing = {
     ...Page,
+    take: 50,
     status__eq: 1,
   };
 
-  const res = await getProjects(page);
-  const resRasing = await getProjects(pageRasing);
-  const newsData = await getNews({
-    ...Page,
-    take: 4,
-  });
+  // const res = await getProjects(page);
+  // const resRasing = await getProjects(pageRasing);
+  // const newsData = await getNews({
+  //   ...Page,
+  //   take: 4,
+  // });
+
+  const [res, resRasing, newsData] = await Promise.all([
+    getProjects(page),
+    getProjects(pageRasing),
+    getNews({
+      ...Page,
+      take: 4,
+    }),
+  ]);
 
   return (
     <div className={styles.container}>
