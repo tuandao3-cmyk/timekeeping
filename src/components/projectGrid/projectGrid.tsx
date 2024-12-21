@@ -173,7 +173,8 @@ const ProjectSlider = (props: ProjectSlideProps) => {
       <div className="w-full ">
         <div className="w-full px-4 md:px-0">
           <h2 className="text-[28px] md:text-[38px] text-[#04141A] font-[700] leading-[36px] md:leading-[57px] mb-8 text-center font-sans">
-            DỰ ÁN ĐANG GỌI VỐN
+            {/* DỰ ÁN ĐANG GỌI VỐN */}
+            Dự án đang gọi vốn
           </h2>
           <Swiper
             loop={true}

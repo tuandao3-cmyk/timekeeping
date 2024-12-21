@@ -139,7 +139,7 @@ function SolutionList() {
       <div className="pb-[40px] items-center flex justify-center">
         <Typography
           component={'p'}
-          textTransform={'uppercase'}
+          // textTransform={'uppercase'}
           // className={`text-[38px] font-bold leading-[48px] text-center text-[#04141A]`}
           sx={{
             color: '#04141A',
@@ -163,7 +163,7 @@ function SolutionList() {
             },
           }}
         >
-          giải pháp đầu tư vượt trội
+          Giải pháp đầu tư vượt trội
         </Typography>
       </div>
 

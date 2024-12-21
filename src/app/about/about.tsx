@@ -20,10 +20,10 @@ import { Page } from '@/type/page.type';
 export const leaders = [
   {
     id: 1,
-    name: 'Trần Nam Chung',
+    name: 'Tuấn Nguyễn',
     title: 'Chief Strategy Officer - Founder',
     fullTitle: 'Chief Strategy Officer - Founder',
-    image: '/img/about/TNC.png',
+    image: '/img/about/TN.png',
     description: [
       'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
       'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',
@@ -33,10 +33,10 @@ export const leaders = [
   },
   {
     id: 2,
-    name: 'Tuấn Nguyễn',
+    name: 'Trần Nam Chung',
     title: 'Chief Strategy Officer - Founder',
     fullTitle: 'Chief Strategy Officer - Founder',
-    image: '/img/about/TN.png',
+    image: '/img/about/TNC.png',
     description: [
       'Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Blockchain.',
       'Ông Trần Nam Chung và cộng sự đã và đang phát triển thành công nhiều giải pháp công nghệ ứng dụng Blockchain, AI với tầm nhìn tiên năng dài hạn.',

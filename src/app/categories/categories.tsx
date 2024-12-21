@@ -170,6 +170,7 @@ const CategoryPage = (props: CategoryPageProps) => {
   return (
     <>
       <div
+        data-aos="zoom-in"  
         ref={ref}
         className="flex flex-col items-center justify-center font-sans w-full min-h-[772px] lg:min-h-[520px] bg-[#07212C] bg-[url('/img/category/categories_bg.png')] bg-no-repeat bg-cover bg-center"
       >

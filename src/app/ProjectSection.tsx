@@ -39,8 +39,9 @@ const ProjectSection = (props: ProjectSectionProps) => {
           ref={ref}
           className="flex flex-col justify-center items-center max-w-screen-xl w-full"
         >
-          <h2 className="text-center text-[28px] md:text-[38px] font-bold leading-[36px] md:leading-[48px] pb-10 uppercase font-sans">
-            DỰ ÁN ĐÃ ĐẦU TƯ VÀ ƯƠM TẠO
+          <h2 className="text-center text-[28px] md:text-[38px] font-bold leading-[36px] md:leading-[48px] pb-10  font-sans">
+            {/* DỰ ÁN ĐÃ ĐẦU TƯ VÀ ƯƠM TẠO */}
+            Dự án đã đầu tư và ươm tạo
           </h2>
           <div className="w-full flex justify-center items-center max-w-[1440px]">
             <div className="4xl:max-w-[2100px] justify-center items-center    3xl:max-w-[1600px] 2xl:max-w-[1400px] 4xl:gap-16 3xl:gap-8 flex flex-col md:flex-row flex-wrap gap-4 mb-8 max-w-[1440px] w-full">

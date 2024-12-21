@@ -20,6 +20,7 @@ import QandA from './components/Q&A';
 import Terminology from './components/terminology';
 import UpdateInfo from './components/updateInformation';
 import ProjectItem from '@/components/projectItem/projectItem';
+import { formatCurrency } from '@/util/util';
 
 interface InfoSectionProps {
   dataP?: any;
@@ -427,9 +428,11 @@ const InfoSection = (props: InfoSectionProps) => {
                       textOverflow={'ellipsis'}
                       overflow={'hidden'}
                     >
-                      {dataP?.data?.project_information[
-                        item.title
-                      ].toLocaleString() || '0'}
+                      {item.title !== 'funding_round'
+                        ? formatCurrency(
+                            +dataP?.data?.project_information[item.title]
+                          )
+                        : dataP?.data?.project_information[item.title]}
                     </Typography>
                     <Typography
                       fontFamily={'Inter'}

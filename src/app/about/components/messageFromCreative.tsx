@@ -11,7 +11,7 @@ function MessageFromCreative() {
     <section className="flex w-full justify-center items-center lg:py-[75px] py-[30px] min-h-[700px] px-[14px] ">
       <div className="flex justify-center items-center w-full max-w-[1440px] min-h-[700px]">
         <div className="flex flex-col justify-center items-center w-full max-w-[1440px] min-h-[528px] h-full relative ">
-          <div className="absolute z-10 lg:left-[20%] bottom-0   lg:top-[-100px] flex flex-col justify-end px-[14px]  items-start pb-[40px] transform translate-all duration-200 bg-[url('/img/about/msc-bg-1.png')] min-h-[320px] h-auto max-h-[528px] md:max-h-[300px] lg:max-h-[500px] max-sm:w-full lg:max-w-[486px] hover:max-w-[1200px]  bg-[length:100%_100%] hover:w-auto  bg-top rounded-[24px] bg-no-repeat gap-[23px] pt-[60px] md:pt-0  md:px-[56px]">
+          <div className="absolute z-10 lg:left-[20%] bottom-0   lg:top-[-100px] flex flex-col justify-center px-[14px]  items-start pb-[40px] transform translate-all duration-200 bg-[#0B3546]  h-auto max-h-[528px] md:max-h-[300px] lg:max-h-[500px] pt-8 max-sm:w-full lg:max-w-[486px] hover:max-w-[1200px]  bg-[length:100%_100%] hover:w-auto  bg-top rounded-[24px] bg-no-repeat gap-[23px]  md:pt-0  md:px-[56px] ">
             <Typography
               sx={{
                 display: '-webkit-box',
