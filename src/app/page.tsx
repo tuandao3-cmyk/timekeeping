@@ -1,4 +1,5 @@
 'use server';
+import { unstable_noStore as noStore } from 'next/cache';
 
 import Partner from '@/app/partner';
 import PressSection from '@/app/PressSection';
@@ -14,6 +15,7 @@ import { getProjects } from '@/services/project.service';
 import { getNews } from '@/services/news.service';
 
 const Home: React.FC = async () => {
+  await noStore();
   const page = {
     ...Page,
     status__eq: 2,
