@@ -1,10 +1,13 @@
 'use server';
 
+import { unstable_noStore as noStore } from 'next/cache';
+
 import CategoryPage from './categories';
 import { Page as Paging } from '@/type/page.type';
 import { getProjects } from '@/services/project.service';
 
 async function Page() {
+  await noStore();
   const page1: typeof Paging = {
     ...Paging,
     status__eq: 0,
