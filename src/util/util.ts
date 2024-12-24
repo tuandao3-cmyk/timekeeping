@@ -7,3 +7,11 @@ export const formatDateTimeVn = (time: string) => {
 export const formatCurrency = (amount: number) => {
   return amount.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
 };
+
+export const formatCurrencyV2 = (amount: number) => {
+  const amountInt = amount.toLocaleString('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  });
+  return amountInt.split('.')[0];
+};

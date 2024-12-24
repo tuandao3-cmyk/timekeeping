@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 // Import Swiper React components
 import Marquee from 'react-fast-marquee';
 import { useInView } from 'react-intersection-observer';
@@ -10,70 +10,32 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-
-import ModalDown from '@/app/products/ModalDownload';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { Box, Button, Stack, Typography } from '@mui/material';
 import Image from 'next/image';
-
 import { useRouter } from 'next/navigation';
-import { Autoplay, Navigation, Pagination } from 'swiper/modules';
-function BannerSwipper() {
+
+import { formatCurrency, formatCurrencyV2 } from '@/util/util';
+import ModalDown from '@/app/products/ModalDownload';
+
+interface BannerSwipperProps {
+  data?: any;
+}
+
+function BannerSwipper(props: BannerSwipperProps) {
+  const { data } = props;
+  console.log('data', data);
+
   const router = useRouter();
-  const { ref, inView, entry } = useInView({
+  const { ref, inView } = useInView({
     threshold: 0.1,
     triggerOnce: true,
   });
-  const {
-    ref: ref1,
-    inView: inView1,
-    entry: entry1,
-  } = useInView({
+  const { ref: ref1, inView: inView1 } = useInView({
     threshold: 0.1,
     triggerOnce: true,
   });
-  const rightFrameRef = useRef<HTMLDivElement>(null);
-  const [isRightFrameVisible, setIsRightFrameVisible] = useState(false);
-  const progressCircle = useRef<any>(null);
-  const progressContent = useRef<any>(null);
-  const [modal, setModal] = useState<boolean>(false);
-  const onAutoplayTimeLeft = (s: any, time: any, progress: any) => {
-    if (!progressCircle.current || !progressContent.current) return;
-    progressCircle.current.style.setProperty('--progress', 1 - progress);
-    progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
-  };
-
-  const handleNavigate = () => {
-    router.push(`/products`);
-  };
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsRightFrameVisible(true);
-          } else {
-            setIsRightFrameVisible(false);
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-      }
-    );
-
-    if (rightFrameRef.current) {
-      observer.observe(rightFrameRef.current);
-    }
-
-    return () => {
-      if (rightFrameRef.current) {
-        observer.unobserve(rightFrameRef.current);
-      }
-    };
-  }, []);
-
-  const items = [
+  const [items, setItems] = useState<any[]>([
     {
       image: '/img/hyperas1.png',
       title: 'Hyperas Chain',
@@ -94,7 +56,50 @@ function BannerSwipper() {
       title: 'Rapital Bank',
       price: '$1.500.000',
     },
-  ];
+  ]);
+
+  const [modal, setModal] = useState<boolean>(false);
+
+  const convertData = useMemo(() => {
+    return data?.map((item: any) => {
+      return {
+        image: item.images[0],
+        title: item.name,
+        price: item.capital_raising_target,
+        ...item,
+      };
+    });
+  }, [data]);
+
+  // console.log('convertData', convertData);
+  useEffect(() => {
+    setItems(convertData);
+  }, [convertData]);
+
+  console.log('items', items);
+
+  // const items = [
+  //   {
+  //     image: '/img/hyperas1.png',
+  //     title: 'Hyperas Chain',
+  //     price: '$1.500.000',
+  //   },
+  //   {
+  //     image: '/img/hyperas1.png',
+  //     title: 'SALALA AI',
+  //     price: '$1.500.000',
+  //   },
+  //   {
+  //     image: '/img/hyperas1.png',
+  //     title: 'Egabid',
+  //     price: '$1.500.000',
+  //   },
+  //   {
+  //     image: '/img/hyperas1.png',
+  //     title: 'Rapital Bank',
+  //     price: '$1.500.000',
+  //   },
+  // ];
   return (
     <Swiper
       navigation={false}
@@ -400,7 +405,7 @@ function BannerSwipper() {
                           className="font-sans text-[#31814B] text-[14px] leading-[24px]"
                           style={{ fontWeight: 500 }}
                         >
-                          {item.price}
+                          {formatCurrency(item.price)}
                         </p>
                       </div>
                     </div>
@@ -449,9 +454,7 @@ function BannerSwipper() {
                   position={'absolute'}
                   left={'-90px'}
                   top={'32px'}
-                  onClick={() =>
-                    router.push(`/detail-category/${items[0].title}`)
-                  }
+                  onClick={() => router.push(`/detail-category/${items[0].id}`)}
                   sx={{
                     transition: 'all 0.5s',
                     opacity: inView ? 1 : 0,
@@ -460,11 +463,12 @@ function BannerSwipper() {
                   }}
                 >
                   <Image
-                    src={'/img/hyperas1.png'}
-                    alt="Hyperas Chain"
-                    layout="responsive"
+                    src={items[0].image || '/img/hyperas1.png'}
+                    alt={items[0].title || 'Hyperas Chain'}
+                    // layout="responsive"
                     width={180}
                     height={98}
+                    className=" w-[180px] h-[98px] "
                   />
                   <Stack flexDirection={'column'} p={'8px'}>
                     <Typography
@@ -474,7 +478,7 @@ function BannerSwipper() {
                       lineHeight={'24px'}
                       color="#04141A"
                     >
-                      HYPERAS CHAIN
+                      {items[0].title || 'Hyperas Chain'}
                     </Typography>
                     <Typography
                       fontFamily={'Inter'}
@@ -485,7 +489,7 @@ function BannerSwipper() {
                       flexDirection={'row'}
                       alignItems={'center'}
                     >
-                      $1.500.000
+                      {formatCurrencyV2(items?.[0]?.price || 1500000)}
                     </Typography>
                     <Typography
                       fontFamily={'Inter'}
@@ -495,7 +499,7 @@ function BannerSwipper() {
                       lineHeight={'20px'}
                       color="#0000008F"
                     >
-                      TECHNOLOGY
+                      {items?.[0]?.industries?.[0]?.name || 'TECHNOLOGY'}
                     </Typography>
                   </Stack>
                 </Stack>
@@ -517,7 +521,53 @@ function BannerSwipper() {
                     transform: inView ? 'translateX(0)' : 'translateX(20px)',
                   }}
                 >
-                  <Stack flexDirection={'row'} gap={'8px'}>
+                  {items?.map((item, index) => (
+                    <Stack
+                      flexDirection={'row'}
+                      gap={'8px'}
+                      key={index}
+                      sx={{
+                        cursor: 'pointer',
+                      }}
+                      onClick={() => router.push(`/detail-category/${item.id}`)}
+                    >
+                      <Image
+                        src={item.image || '/img/icon/salala.png'}
+                        alt={item.title || 'Salala AI'}
+                        layout="responsive"
+                        width={48}
+                        height={48}
+                        style={{
+                          borderRadius: '10px',
+                          maxWidth: '48px',
+                          maxHeight: '48px',
+                        }}
+                      />
+                      <Stack flexDirection={'column'}>
+                        <Typography
+                          fontFamily={'Inter'}
+                          fontWeight={700}
+                          fontSize={'14px'}
+                          lineHeight={'24px'}
+                          color="#04141A"
+                          textTransform={'uppercase'}
+                        >
+                          {item.title || 'Salala AI'}
+                        </Typography>
+                        <Typography
+                          fontFamily={'Inter'}
+                          fontWeight={500}
+                          fontSize={'14px'}
+                          lineHeight={'24px'}
+                          color="#31814B"
+                          flexDirection={'row'}
+                        >
+                          {formatCurrencyV2(item.price || 1500000)}
+                        </Typography>
+                      </Stack>
+                    </Stack>
+                  ))}
+                  {/* <Stack flexDirection={'row'} gap={'8px'}>
                     <Image
                       src={'/img/icon/salala.png'}
                       alt="Salala AI"
@@ -552,8 +602,8 @@ function BannerSwipper() {
                         $1.500.000{' '}
                       </Typography>
                     </Stack>
-                  </Stack>
-                  <Stack flexDirection={'row'} gap={'8px'}>
+                  </Stack> */}
+                  {/* <Stack flexDirection={'row'} gap={'8px'}>
                     <Image
                       src={'/img/icon/rapital.png'}
                       alt="Salala AI"
@@ -624,7 +674,7 @@ function BannerSwipper() {
                         $1.500.000{' '}
                       </Typography>
                     </Stack>
-                  </Stack>
+                  </Stack> */}
                 </Stack>
               </Stack>
             </Box>

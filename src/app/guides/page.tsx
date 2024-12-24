@@ -108,6 +108,7 @@ const GuidePage: React.FC = () => {
         <div className="  flex flex-col w-full h-full items-center pb-[107px]  gap-10 justify-center">
           <div className="flex flex-col items-center justify-end text-center max-w-[1440px] text-[#0B3546] gap-[22px]">
             <Typography
+              data-aos="fade-up"
               sx={{
                 fontWeight: 700,
                 fontSize: '48px',
@@ -119,6 +120,8 @@ const GuidePage: React.FC = () => {
               Hướng dẫn đầu tư vào HyraCap
             </Typography>
             <Typography
+              data-aos="fade-up"
+              data-aos-delay="100"
               sx={{
                 fontWeight: 400,
                 fontSize: '18px',
@@ -134,6 +137,8 @@ const GuidePage: React.FC = () => {
           <div className="px-[20px] h-[56px] w-full max-w-[800px]">
             <div className=" h-[56px] bg-white gap-[24px] w-full max-w-[800px]  p-2 flex  rounded-[20px]  ">
               <input
+                data-aos="fade-up"
+                data-aos-delay="100"
                 type="text"
                 value={searchValue}
                 onChange={(e) => setSearchValue(e.target.value)}
@@ -141,6 +146,8 @@ const GuidePage: React.FC = () => {
                 className="w-full  bg-[#FFFFFF] border-none px-[20px] text-[#686868] font-400 text-[16px] leading-[24px] outline-none"
               />
               <button
+                data-aos="fade-up"
+                data-aos-delay="200"
                 onClick={handleSearch}
                 className="bg-[#48B96D] transition ease-in-out duration-300 hover:bg-[#297241] px-[16px] py-[10px] rounded-[16px] text-[#fff] text-[15px] font-500 leading-[20px] min-w-[140px]"
               >
@@ -154,7 +161,11 @@ const GuidePage: React.FC = () => {
         <aside className="hidden lg:block max-w-[330px] min-w-[210px] w-[23vw] p-5 border-r border-[#E0E0E0]">
           <nav>
             <ul className=" flex flex-col gap-10 text-xl 3xl:text-2xl text-left pt-[50px]  ">
-              <li className="mb-2.5">
+              <li
+                data-aos="fade-up"
+                data-aos-delay="100"
+                className="mb-2.5"
+              >
                 <button
                   onClick={() => setActiveSection('signin')}
                   className={`no-underline font-sans font-bold flex flex-col hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
@@ -166,7 +177,11 @@ const GuidePage: React.FC = () => {
                   Đăng ký
                 </button>
               </li>
-              <li className="mb-2.5">
+              <li
+                data-aos="fade-up"
+                data-aos-delay="200"
+                className="mb-2.5"
+              >
                 <button
                   onClick={() => setActiveSection('login')}
                   className={`no-underline  font-sans font-bold flex flex-col hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
@@ -178,7 +193,11 @@ const GuidePage: React.FC = () => {
                   Đăng nhập
                 </button>
               </li>
-              <li className="mb-2.5">
+              <li
+                data-aos="fade-up"
+                data-aos-delay="300"
+                className="mb-2.5"
+              >
                 <button
                   onClick={() => setActiveSection('auth')}
                   className={`no-underline  font-sans font-bold flex flex-col hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
@@ -190,7 +209,11 @@ const GuidePage: React.FC = () => {
                   Xác thực eKYC
                 </button>
               </li>
-              <li className="mb-2.5">
+              <li
+                data-aos="fade-up"
+                data-aos-delay="400"
+                className="mb-2.5"
+              >
                 <button
                   onClick={() => setActiveSection('contract')}
                   className={`no-underline  font-sans font-bold flex flex-col hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
@@ -202,7 +225,11 @@ const GuidePage: React.FC = () => {
                   Ký hợp đồng
                 </button>
               </li>
-              <li className="mb-2.5">
+              <li
+                data-aos="fade-up"
+                data-aos-delay="500"
+                className="mb-2.5"
+              >
                 <button
                   onClick={() => setActiveSection('product')}
                   className={`no-underline  font-sans font-bold flex flex-col hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
@@ -214,7 +241,11 @@ const GuidePage: React.FC = () => {
                   Thực hiện đầu tư
                 </button>
               </li>
-              <li className="mb-2.5">
+              <li
+                data-aos="fade-up"
+                data-aos-delay="600"
+                className="mb-2.5"
+              >
                 <button
                   onClick={() => setActiveSection('transaction')}
                   className={`no-underline  font-sans font-bold flex flex-col hover:text-[#28a745] cursor-pointer bg-transparent border-none ${
@@ -226,7 +257,11 @@ const GuidePage: React.FC = () => {
                   Giao dịch
                 </button>
               </li>
-              <li className="mb-2.5">
+              <li
+                data-aos="fade-up"
+                data-aos-delay="700"
+                className="mb-2.5"
+              >
                 <button
                   onClick={() => setActiveSection('forgot')}
                   className={`no-underline  font-sans font-bold flex flex-col hover:text-[#28a745] cursor-pointer bg-transparent border-none ${

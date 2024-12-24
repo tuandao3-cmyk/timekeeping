@@ -15,9 +15,6 @@ interface ProductProps {
 }
 
 const Product = (props: ProductProps) => {
-  const { ref, inView, entry } = useInView({
-    threshold: 0.1,
-  });
   const router = useRouter();
   const [products, setProducts] = useState<any[]>([
     {
@@ -27,18 +24,7 @@ const Product = (props: ProductProps) => {
     },
   ]);
 
-  const [timeLeft, setTimeLeft] = useState({
-    days: 2,
-    hours: 3,
-    minutes: 4,
-    seconds: 5,
-  });
-
-  const {
-    ref: ref2,
-    inView: inView2,
-    entry: entry2,
-  } = useInView({
+  const { ref: ref2, inView: inView2 } = useInView({
     threshold: 0.1,
     // triggerOnce: true,
   });

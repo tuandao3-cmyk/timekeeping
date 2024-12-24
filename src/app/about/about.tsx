@@ -951,7 +951,7 @@ const AboutPage = (props: AboutPageProps) => {
                 mình và chúng tôi sẽ nâng tầm bạn thực hiện điều đó. 
               </p>
             </div>
-            <div className="flex flex-row gap-4 w-full mx-auto place-items-center items-center justify-center ">
+            <div className="flex flex-row gap-4 w-full flex-wrap  place-items-center items-center justify-center ">
               {leaders.map((leader, index) => (
                 <Link
                   key={index}
@@ -968,14 +968,14 @@ const AboutPage = (props: AboutPageProps) => {
                   hover:scale-105
                   `}
                   >
-                    <div className="px-6 pt-6  bg-transparent">
+                    <div className="md:px-6 pt-6  bg-transparent">
                       <Image
                         width={215}
                         height={249}
                         className="w-full h-full max-w-[215px] max-h-[249px] object-cover"
                         src={leader.image}
                         alt={leader.name}
-                        layout="responsive"
+                        // layout="responsive"
                       />
                     </div>
                     <div className="w-full relative bg-[#48B96D] rounded-[4px]">

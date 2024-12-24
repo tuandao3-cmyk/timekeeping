@@ -50,7 +50,7 @@ const ContactForm = () => {
 
   return (
     // <form onSubmit={handleSubmit}>
-    <div className=" -black max-h-[645px] min-h-480 max-w-[572px] xl:w-full">
+    <div data-aos="fade-up" className=" -black max-h-[645px] min-h-480 max-w-[572px] xl:w-full">
       <ModalSucses modal={modal} setModal={setModal} />
       <ModalEror modal={modal2} setModal={setModal2} />
       <div className="h-full rounded-3xl ">

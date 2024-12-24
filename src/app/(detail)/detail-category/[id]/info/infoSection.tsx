@@ -6,7 +6,7 @@ import { GlobalIcon, LocationIcon, ProfileTUser } from '@/components/icons';
 import { getProjects } from '@/services/project.service';
 import { getNews } from '@/services/news.service';
 import { Page } from '@/type/page.type';
-import { formatDateTimeVn } from '@/util/util';
+import { formatCurrencyV2, formatDateTimeVn } from '@/util/util';
 import { useQuery } from '@tanstack/react-query';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -185,6 +185,7 @@ const InfoSection = (props: InfoSectionProps) => {
       justifyContent={'center'}
       alignItems={'center'}
       width={'100%'}
+      gap={'10px'}
     >
       <Box
         sx={{
@@ -194,6 +195,7 @@ const InfoSection = (props: InfoSectionProps) => {
           alignItems: 'center',
           width: '100%',
           maxWidth: '1440px',
+
           px: {
             xs: '12px',
             sm: '16px',
@@ -429,7 +431,7 @@ const InfoSection = (props: InfoSectionProps) => {
                       overflow={'hidden'}
                     >
                       {item.title !== 'funding_round'
-                        ? formatCurrency(
+                        ? formatCurrencyV2(
                             +dataP?.data?.project_information[item.title]
                           )
                         : dataP?.data?.project_information[item.title]}
@@ -454,7 +456,7 @@ const InfoSection = (props: InfoSectionProps) => {
                 md: 'block',
               }}
             >
-              <NearlyActions actions={actions} />
+              <NearlyActions actions={listActions} />
             </Box>
           </Stack>
         </Stack>

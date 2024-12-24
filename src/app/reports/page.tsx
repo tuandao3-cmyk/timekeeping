@@ -9,6 +9,7 @@ import { Page } from '@/type/page.type';
 import ReportItem from '@/components/reportItem';
 
 const ReportPage: React.FC = () => {
+
   const [page, setPage] = React.useState<typeof Page>(Page);
   const [data1, setData1] = React.useState<any>([]);
   const [data2, setData2] = React.useState<any>([]);

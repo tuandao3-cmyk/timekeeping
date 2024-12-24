@@ -3,11 +3,12 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
 interface NearlyActionsProps {
-  actions: any[];
+  actions: any;
 }
 
 function NearlyActions(props: NearlyActionsProps) {
   const router = useRouter();
+
   return (
     <Box flexDirection={'column'} display={'flex'} gap={'24px'} pb={'34px'}>
       <Stack
@@ -39,7 +40,7 @@ function NearlyActions(props: NearlyActionsProps) {
         </Button>
       </Stack>
       <Stack flexDirection={'column'} gap={'20px'}>
-        {props?.actions?.map((action, index) => (
+        {props?.actions?.data?.map((action: any, index: any) => (
           <Stack
             flexDirection={'row'}
             key={index}

@@ -103,7 +103,7 @@ export default function LeaderDetail() {
           >
             <IoArrowBack className="w-10 h-10 text-white" />
           </button>
-          <div className="w-full flex justify-center">
+          <div className="w-full flex justify-center gap-[16px]">
             <AnimatePresence>
               {leaders.map((nav, idx) => (
                 <div
@@ -130,7 +130,7 @@ export default function LeaderDetail() {
                       quality={100}
                       src={nav.image}
                       alt={nav.name}
-                      layout="responsive"
+                      // layout="responsive"
                       className={`max-w-[48px] max-h-[48px] lg:w-[64px] lg:h-[64px] rounded-full  object-cover ${idx === activeLeader ? 'bg-[#48B96D]' : 'bg-white'}`}
                     />
                     <div className="hidden lg:block w-full text-center">

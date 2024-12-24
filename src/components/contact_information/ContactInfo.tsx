@@ -1,7 +1,7 @@
 // components/ContactInfo.tsx
 const ContactInfo = () => {
   return (
-    <div className="flex flex-col gap-10 flex-1 max-h-[645px] max-w-[580px] h-full xl:w-full">
+    <div data-aos="fade-up" className="flex flex-col gap-10 flex-1 max-h-[645px] max-w-[580px] h-full xl:w-full">
       <h2 className="font-sans  font-bold text-base leading-6 lg:text-[32px] lg:leading-[40px]">
         Thông tin liên hệ
       </h2>
