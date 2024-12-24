@@ -125,9 +125,12 @@ const Header = () => {
               </button>
             </div>
             <div
+              style={{
+                background: 'rgba(255, 255, 255, 1)',
+              }}
               className={`${
                 isMenuOpen ? 'block ' : 'hidden'
-              } justify-between items-center w-full lg:flex md:py-[4px] md:px-[16px] md:h-[50px] xs:border-none   ${isVisible ? 'md:border-[1px]' : 'md:border-0  '} md:rounded-full lg:w-auto lg:order-1 transition-all duration-300 ease-in-out md:backdrop-blur-3xl md:bg-white/80}`}
+              } justify-between items-center w-full lg:flex md:py-[4px] md:px-[16px] md:h-[50px] xs:border-none   ${isVisible ? 'md:border-[1px]' : 'md:border-0  '} md:rounded-full lg:w-auto lg:order-1 transition-all duration-300 ease-in-out}`}
               id="mobile-menu-2"
             >
               <ul className="flex flex-col text-sm leading-6 font-medium lg:flex-row lg:space-x-6 lg:mt-0">
