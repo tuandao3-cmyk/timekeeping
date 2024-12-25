@@ -7,7 +7,7 @@ interface Prop {
 }
 function ModalDown(props: Prop) {
   const { modal, setModal } = props;
-  const url = process.env.LINK_INTERMEDIATE_QRCODE;
+  const url = 'https://beta.hyracapital.com/download';
   return (
     <div>
       <Modal

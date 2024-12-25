@@ -14,7 +14,7 @@ const DownloadSection = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   const isMediumScreen = useMediaQuery(theme.breakpoints.between('sm', 'md'));
-  const url = process.env.LINK_INTERMEDIATE_QRCODE;
+  const url = 'https://beta.hyracapital.com/download';
   const handleOpenPage = (link: string) => {
     window.open(link, '_blank');
   };

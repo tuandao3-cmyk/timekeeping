@@ -1,19 +1,14 @@
 'use client'; // Đảm bảo rằng file này là Client Component
-
 import { useRouter } from 'next/navigation'; // Sử dụng next/navigation thay vì next/router
 import { useEffect } from 'react';
-
 export default function RedirectPage() {
   const router = useRouter();
-
   useEffect(() => {
     const userAgent = navigator.userAgent.toLowerCase();
-
     const androidLink =
       'https://play.google.com/store/apps/details?id=com.yourapp.android'; // Link Google Play của bạn
     const iosLink = 'https://apps.apple.com/app/your-ios-app-id'; // Link App Store của bạn
     const installedAppLink = 'yourapp://open'; // Deep link mở app nếu đã cài
-
     if (/android/i.test(userAgent)) {
       router.push(androidLink);
     } else if (/iphone|ipad|ipod/i.test(userAgent)) {
