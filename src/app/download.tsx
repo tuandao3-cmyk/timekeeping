@@ -31,7 +31,7 @@ const DownloadSection = () => {
           <div className="  w-[100%]  mb-8 md:mb-0 justify-center sm:ml-10 lg:ml-0 md:pb-10 xl:pb-0 ">
             <p
               ref={ref}
-              className={`md:text-3xl text-[34px] text-left  font-bold mb-4 font-sans duration-300 ease-in-out transform uppercase ${
+              className={` md:w-[90%] text-center  md:text-3xl text-[34px] md:text-left  font-bold mb-4 font-sans duration-300 ease-in-out transform uppercase ${
                 inView
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-10'
@@ -47,7 +47,7 @@ const DownloadSection = () => {
             </p>
             <p
               ref={ref}
-              className={`text-gray-600 mb-8 max-w-[90%] font-sans duration-300 delay-300 ease-in-out transform ${
+              className={`text-gray-600 mb-8 max-w-[100%] font-sans duration-300 delay-300 ease-in-out transform ${
                 inView
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-10'
@@ -56,7 +56,7 @@ const DownloadSection = () => {
               Tải ứng dụng HyraCap để trải nghiệm những tính năng đầu tư sinh
               lời hiệu quả.
             </p>
-            <div className=" w-[100%] md:w-[100%] flex flex-col  beetween sm:flex-row gap-6 mb-8 md:ml-5 lg:ml-0">
+            <div className=" w-[100%] md:w-[90%] flex flex-col  beetween sm:flex-row gap-6 mb-8 md:ml-5 lg:ml-0">
               <button
                 onClick={() =>
                   handleOpenPage(
@@ -122,18 +122,18 @@ const DownloadSection = () => {
             </div>
             <div
               ref={ref}
-              className={`bg-[#000000]/5 p-4 rounded-lg flex md:max-w-[100%] md:ml-5 lg:ml-0 items-center duration-300 delay-700 ease-in-out transform ${
+              className={`bg-[#000000]/5 p-4 rounded-lg flex md:max-w-[90%] gap-10 md:ml-5 lg:ml-0 items-center duration-300 delay-700 ease-in-out transform ${
                 inView ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
               }`}
             >
               <div className="w-24 h-24 bg-[#FBFFFE] mr-4 flex items-center justify-center">
                 <QRCodeCanvas value={`${url}`} size={100} />
               </div>
-              <div>
+              <div className="">
                 <p className="text-normal leading-6 text-[#000000]/60 mb-1 font-sans">
                   Scan to Download
                 </p>
-                <p className="font-semibold text-2xl leading-8 font-inter text-[#04141A] font-sans">
+                <p className="font-semibold text-2xl mt-3 leading-8 font-inter text-[#04141A] font-sans">
                   IOS & Android
                 </p>
               </div>
