@@ -1,6 +1,5 @@
 import { Box, Button, Modal } from '@mui/material';
 import { QRCodeCanvas } from 'qrcode.react';
-import { useState } from 'react';
 
 interface Prop {
   modal: boolean;
@@ -8,7 +7,7 @@ interface Prop {
 }
 function ModalDown(props: Prop) {
   const { modal, setModal } = props;
-  const [url, setUrl] = useState('https://beta.hyracapital.com/download');
+  const url = process.env.LINK_INTERMEDIATE_QRCODE;
   return (
     <div>
       <Modal
@@ -58,7 +57,7 @@ function ModalDown(props: Prop) {
                  `}
                 /> */}
                 <div>
-                  <QRCodeCanvas value={url} size={100} />
+                  <QRCodeCanvas value={`${url}`} size={100} />
                 </div>
               </div>
               <div>
