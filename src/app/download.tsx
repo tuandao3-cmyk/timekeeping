@@ -2,6 +2,8 @@
 
 import { useMediaQuery, useTheme } from '@mui/material';
 import Image from 'next/image';
+import { QRCodeCanvas } from 'qrcode.react';
+import { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 const DownloadSection = () => {
@@ -13,7 +15,7 @@ const DownloadSection = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   const isMediumScreen = useMediaQuery(theme.breakpoints.between('sm', 'md'));
-
+  const [url, setUrl] = useState('https://beta.hyracapital.com/download');
   const handleOpenPage = (link: string) => {
     window.open(link, '_blank');
   };
@@ -126,16 +128,7 @@ const DownloadSection = () => {
               }`}
             >
               <div className="w-24 h-24 bg-[#FBFFFE] mr-4 flex items-center justify-center">
-                <Image
-                  ref={ref}
-                  src={'/img/qr.png'}
-                  alt="App Screenshot"
-                  width={708}
-                  height={812}
-                  layout="responsive"
-                  className={` w-[80px] h-[80px] 
-                 `}
-                />
+                <QRCodeCanvas value={url} size={100} />
               </div>
               <div>
                 <p className="text-normal leading-6 text-[#000000]/60 mb-1 font-sans">

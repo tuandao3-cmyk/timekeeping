@@ -1,12 +1,14 @@
 import { Box, Button, Modal } from '@mui/material';
-import Image from 'next/image';
+import { QRCodeCanvas } from 'qrcode.react';
+import { useState } from 'react';
+
 interface Prop {
   modal: boolean;
   setModal: (v: boolean) => void;
 }
 function ModalDown(props: Prop) {
   const { modal, setModal } = props;
-
+  const [url, setUrl] = useState('https://beta.hyracapital.com/download');
   return (
     <div>
       <Modal
@@ -46,7 +48,7 @@ function ModalDown(props: Prop) {
               className={`bg-[#000000]/5 p-4 rounded-lg flex md:w-[70%] lg:ml-0 items-center duration-300 delay-700 ease-in-out transform `}
             >
               <div className="w-24 h-24 bg-[#FBFFFE] mr-4 flex items-center justify-center">
-                <Image
+                {/* <Image
                   src={'/img/qr.png'}
                   alt="App Screenshot"
                   layout="responsive"
@@ -54,7 +56,10 @@ function ModalDown(props: Prop) {
                   height={812}
                   className={` w-[80px] h-[80px] 
                  `}
-                />
+                /> */}
+                <div>
+                  <QRCodeCanvas value={url} size={100} />
+                </div>
               </div>
               <div>
                 <p className="text-normal leading-6 text-[#000000]/60 mb-1 font-sans">
