@@ -31,7 +31,7 @@ const DownloadSection = () => {
           <div className="  w-[100%]  mb-8 md:mb-0 justify-center sm:ml-10 lg:ml-0 md:pb-10 xl:pb-0 ">
             <p
               ref={ref}
-              className={` md:w-[90%] text-center  md:text-3xl text-[34px] md:text-left  font-bold mb-4 font-sans duration-300 ease-in-out transform uppercase ${
+              className={`md:ml-12 lg:ml-0 md:w-[90%] text-center  md:text-3xl text-[34px] md:text-left  font-bold mb-4 font-sans duration-300 ease-in-out transform uppercase ${
                 inView
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-10'
@@ -47,7 +47,7 @@ const DownloadSection = () => {
             </p>
             <p
               ref={ref}
-              className={`text-gray-600 mb-8 max-w-[100%] font-sans duration-300 delay-300 ease-in-out transform ${
+              className={`md:ml-5 lg:ml-0 text-gray-600 mb-8 max-w-[100%] font-sans duration-300 delay-300 ease-in-out transform ${
                 inView
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-10'

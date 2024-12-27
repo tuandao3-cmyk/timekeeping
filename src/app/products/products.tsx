@@ -2,11 +2,11 @@
 
 import { useInView } from 'react-intersection-observer';
 
-import { Button, Stack, Typography } from '@mui/material';
+import ProjectItem from '@/components/projectItem/projectItem';
+import { Stack, Typography } from '@mui/material';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import DownloadSection from '../download';
-import ProjectItem from '@/components/projectItem/projectItem';
 import LongTermSection from './long-term/page';
 import ShortTermSection from './short-term/page';
 

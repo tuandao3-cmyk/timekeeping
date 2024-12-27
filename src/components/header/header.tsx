@@ -130,10 +130,10 @@ const Header = () => {
               }}
               className={`${
                 isMenuOpen ? 'block ' : 'hidden'
-              } justify-between items-center w-full lg:flex md:py-[4px] md:px-[16px] md:h-[50px] xs:border-none   ${isVisible ? 'md:border-[1px]' : 'md:border-0  '} md:rounded-full lg:w-auto lg:order-1 transition-all duration-300 ease-in-out}`}
+              } justify-between items-center w-full lg:flex lg:py-[4px] lg:px-[16px] lg:h-[50px] xs:border-none   ${isVisible ? 'lg:border-[1px]' : 'lg:border-0  '} lg:rounded-full lg:w-auto lg:order-1 transition-all duration-300 ease-in-out}`}
               id="mobile-menu-2"
             >
-              <ul className="flex flex-col text-sm leading-6 font-medium lg:flex-row lg:space-x-6 lg:mt-0">
+              <ul className=" flex flex-col text-sm leading-6 font-medium lg:flex-row lg:space-x-6 lg:mt-0">
                 {menuItems.map((item, index) => (
                   <li key={index}>
                     <Link

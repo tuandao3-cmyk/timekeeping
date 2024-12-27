@@ -3,10 +3,10 @@
 import React, { useEffect, useState } from 'react';
 
 import axios from 'axios';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useInView } from 'react-intersection-observer';
 import ModalDown from '../ModalDownload';
-import Image from 'next/image';
 
 const LongTermSection: React.FC = () => {
   const pathname = usePathname();
