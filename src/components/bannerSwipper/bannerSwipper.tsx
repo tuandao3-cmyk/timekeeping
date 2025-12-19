@@ -1,22 +1,21 @@
 'use client';
 
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 // Import Swiper React components
-import Marquee from 'react-fast-marquee';
 import { useInView } from 'react-intersection-observer';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
+import { Box, Button, Stack, Typography } from '@mui/material';
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
-import { Box, Button, Stack, Typography } from '@mui/material';
-import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 
-import { formatCurrency, formatCurrencyV2 } from '@/util/util';
 import ModalDown from '@/app/products/ModalDownload';
+import { formatCurrencyV2 } from '@/util/util';
 
 interface BannerSwipperProps {
   data?: any;
@@ -364,7 +363,7 @@ function BannerSwipper(props: BannerSwipperProps) {
               </div>
 
               <div className="absolute w-full bottom-[8px] ">
-                <Marquee
+                {/* <Marquee
                   autoFill
                   style={{
                     display: 'flex',
@@ -410,7 +409,7 @@ function BannerSwipper(props: BannerSwipperProps) {
                       </div>
                     </div>
                   ))}
-                </Marquee>
+                </Marquee> */}
               </div>
             </div>
 
@@ -462,16 +461,16 @@ function BannerSwipper(props: BannerSwipperProps) {
                     transform: inView ? 'translateX(0)' : 'translateX(20px)',
                   }}
                 >
-                  <Image
+                  {/* <Image
                     src={items[0].image || '/img/hyperas1.png'}
                     alt={items[0].title || 'Hyperas Chain'}
                     // layout="responsive"
                     width={180}
                     height={98}
                     className=" w-[180px] h-[98px] "
-                  />
+                  /> */}
                   <Stack flexDirection={'column'} p={'8px'}>
-                    <Typography
+                    {/* <Typography
                       fontFamily={'Inter'}
                       fontWeight={700}
                       fontSize={'14px'}
@@ -479,7 +478,7 @@ function BannerSwipper(props: BannerSwipperProps) {
                       color="#04141A"
                     >
                       {items[0].title || 'Hyperas Chain'}
-                    </Typography>
+                    </Typography> */}
                     <Typography
                       fontFamily={'Inter'}
                       fontWeight={500}

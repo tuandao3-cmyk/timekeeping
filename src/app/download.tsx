@@ -60,7 +60,7 @@ const DownloadSection = () => {
               <button
                 onClick={() =>
                   handleOpenPage(
-                    'https://play.google.com/store/apps/details?id=com.hyra.cap'
+                    'https://play.google.com/store/apps/details?id=1com.hyra.cap'
                   )
                 }
                 ref={ref}

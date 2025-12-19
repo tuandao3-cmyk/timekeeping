@@ -2,9 +2,9 @@
 
 import { unstable_noStore as noStore } from 'next/cache';
 
-import CategoryPage from './categories';
-import { Page as Paging } from '@/type/page.type';
 import { getProjects } from '@/services/project.service';
+import { Page as Paging } from '@/type/page.type';
+import CategoryPage from '.';
 
 async function Page() {
   await noStore();

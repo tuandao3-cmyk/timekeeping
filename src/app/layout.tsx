@@ -1,14 +1,12 @@
-import type { Metadata } from 'next';
-import localFont from 'next/font/local';
-import Header from '@/components/header';
-import Footer from '@/components/footer';
-import './globals.css';
-import ThemeRegistry from './theme-registry';
 import '@fontsource/inter';
 import { HydrationBoundary } from '@tanstack/react-query';
+import type { Metadata } from 'next';
+import localFont from 'next/font/local';
+import './globals.css';
+import ThemeRegistry from './theme-registry';
 
-import ClientOnlyQueryClientProvider from './ClientOnlyQueryClientProvider';
 import AOSProvider from '@/components/AOSProvider';
+import ClientOnlyQueryClientProvider from './ClientOnlyQueryClientProvider';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -60,10 +58,10 @@ export default function RootLayout({
           <ClientOnlyQueryClientProvider>
             <HydrationBoundary>
               <AOSProvider>
-                <Header />
-                <div className="pt-[70px]" />
+                {/* <Header /> */}
+                {/* <div className="pt-[70px]" /> */}
                 {children}
-                <Footer />
+                {/* <Footer /> */}
               </AOSProvider>
             </HydrationBoundary>
           </ClientOnlyQueryClientProvider>
