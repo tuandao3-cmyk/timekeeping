@@ -3,10 +3,9 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 
-import styles from './report.module.css';
 import { formatDateTimeVn } from '@/util/util';
 import { FaDownload, FaEye } from 'react-icons/fa';
-import PdfView from '@/components/pdfView';
+import styles from './report.module.css';
 
 interface ReportItemProps {
   report: any;
@@ -64,7 +63,6 @@ function ReportItem(props: ReportItemProps) {
           </button>
         </div>
       </div>
-      <PdfView openPdf={openPdf} setOpenPdf={setOpenPdf} pdfPath={file} />
     </div>
   );
 }

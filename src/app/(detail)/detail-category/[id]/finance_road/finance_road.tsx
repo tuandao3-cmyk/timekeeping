@@ -1,5 +1,4 @@
 'use client';
-import PdfView from '@/components/pdfView';
 import { formatDateTimeVn } from '@/util/util';
 import { useState } from 'react';
 import { FaDownload, FaEye } from 'react-icons/fa';
@@ -64,11 +63,6 @@ const FinanceRoadSection = (props: FinanceRoadSectionProps) => {
           </div>
         </div>
       ))}
-      <PdfView
-        openPdf={openPdf}
-        setOpenPdf={setOpenPdf}
-        pdfPath={selectedPdf}
-      />
     </section>
   );
 };
