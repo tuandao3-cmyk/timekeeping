@@ -413,7 +413,6 @@ export default function Page() {
       </div>
 
       {/* ===== ANIMATIONS ===== */}
-      <style jsx>{``}</style>
     </>
   );
 }
