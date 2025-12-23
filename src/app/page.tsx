@@ -369,7 +369,6 @@ export default function Page() {
               zIndex: -1,
             }}
           />
-
           <h2
             style={{
               textAlign: 'center',
@@ -381,7 +380,6 @@ export default function Page() {
           >
             ATTENDANCE CORE
           </h2>
-
           {/* <p
             style={{
               textAlign: 'center',
@@ -432,7 +430,6 @@ export default function Page() {
               SYSTEM TIME · VIETNAM
             </div>
           </div>
-
           {/* INPUT */}
           <input
             id="name"
@@ -451,7 +448,6 @@ export default function Page() {
               boxShadow: 'inset 0 0 20px rgba(99,102,241,0.3)',
             }}
           />
-
           {/* CHECK IN */}
           <button
             onClick={() => submit('IN')}
@@ -471,7 +467,6 @@ export default function Page() {
           >
             ▲ CHECK IN
           </button>
-
           {/* CHECK OUT */}
           <button
             onClick={() => submit('OUT')}
@@ -491,17 +486,26 @@ export default function Page() {
           >
             ▼ CHECK OUT
           </button>
-
           <div
             id="result"
             style={{
-              marginTop: 20,
+              marginTop: 0,
               textAlign: 'center',
               fontWeight: 600,
-              color: '#e0e7ff',
+              color: '#ffffff',
               minHeight: 24,
             }}
           />
+          <div
+            style={{
+              marginTop: 30,
+              fontSize: 16,
+              color: '#94a3b8',
+              letterSpacing: 3,
+            }}
+          >
+            Hotline : 0964186901
+          </div>
         </div>
       </div>
     </>
