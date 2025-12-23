@@ -22,7 +22,7 @@ type Row = [string, string, string, 'IN' | 'OUT'];
 type ViewMode = 'TODAY' | 'WEEK' | 'MONTH' | 'YEAR';
 type PeriodView = 'SUMMARY' | 'DETAIL';
 
-const STANDARD_IN = '08:30';
+const STANDARD_IN = '09:00';
 
 /* ================= UTILS ================= */
 
