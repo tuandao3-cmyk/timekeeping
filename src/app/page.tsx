@@ -66,6 +66,85 @@ export default function Page() {
   }
 
   /* ================= SUBMIT (IN / OUT) ================= */
+  // async function submit(type: 'IN' | 'OUT') {
+  //   const nameInput = document.getElementById('name') as HTMLInputElement;
+  //   const result = document.getElementById('result') as HTMLDivElement;
+
+  //   if (!nameInput.value.trim()) {
+  //     alert('Vui lòng nhập đầy đủ họ và tên');
+  //     return;
+  //   }
+
+  //   const confirmMsg =
+  //     type === 'IN'
+  //       ? 'Bạn có chắc chắn muốn CHECK IN hôm nay không?'
+  //       : 'Bạn có chắc chắn muốn CHECK OUT hôm nay không?';
+  //   if (!confirm(confirmMsg)) return;
+
+  //   try {
+  //     setLoading(true);
+  //     result.innerText = '';
+
+  //     const pos = await getLocation();
+  //     const OFFICE = { lat: 21.005835765857555, lng: 105.82344636679828 };
+  //     const d = calcDistance(pos.lat, pos.lng, OFFICE.lat, OFFICE.lng);
+
+  //     if (d > 400 || pos.acc > 100) {
+  //       result.innerText = `❌ Ngoài phạm vi (${d.toFixed(1)} m)`;
+  //       result.style.color = 'red';
+  //       return;
+  //     }
+
+  //     const res = await fetch(
+  //       'https://script.google.com/macros/s/AKfycbwRymPaSRexI4vQH1WYZJszhr865GW1WSy9HzH60-iYFaG8DchMboVd1l4VHrUVqYP6WA/exec',
+  //       {
+  //         method: 'POST',
+  //         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+  //         body: new URLSearchParams({
+  //           name: nameInput.value.trim(),
+  //           type,
+  //           device_id: getDeviceId(nameInput.value),
+  //           ua: navigator.userAgent,
+  //         }),
+  //       }
+  //     );
+
+  //     const data = await res.json();
+
+  //     if (!data.success) {
+  //       if (data.error?.startsWith('DEVICE_ALREADY')) {
+  //         result.innerText =
+  //           type === 'IN'
+  //             ? '❌ Thiết bị đã check IN hôm nay'
+  //             : '❌ Thiết bị đã check OUT hôm nay';
+  //         result.style.color = 'red';
+  //         return;
+  //       }
+
+  //       if (data.error === 'NO_IN_TODAY') {
+  //         result.innerText = '❌ Chưa CHECK IN hôm nay, không thể CHECK OUT';
+  //         result.style.color = 'red';
+  //         return;
+  //       }
+
+  //       throw new Error(data.error || 'Unknown error');
+  //     }
+
+  //     // ✅ Lưu tên sau khi thành công
+  //     saveName(nameInput.value.trim());
+
+  //     result.innerText =
+  //       type === 'IN'
+  //         ? `✅ Check IN thành công (${d.toFixed(1)} m)`
+  //         : `👋 Check OUT thành công (${d.toFixed(1)} m)`;
+  //     result.style.color = 'green';
+  //   } catch (err: any) {
+  //     result.innerText = '❌ Lỗi khi gửi dữ liệu: ' + (err.message || err);
+  //     result.style.color = 'red';
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // }
   async function submit(type: 'IN' | 'OUT') {
     const nameInput = document.getElementById('name') as HTMLInputElement;
     const result = document.getElementById('result') as HTMLDivElement;
@@ -96,7 +175,7 @@ export default function Page() {
       }
 
       const res = await fetch(
-        'https://script.google.com/macros/s/AKfycbwRymPaSRexI4vQH1WYZJszhr865GW1WSy9HzH60-iYFaG8DchMboVd1l4VHrUVqYP6WA/exec',
+        'https://script.google.com/macros/s/AKfycbx8iD21x0fN--WrNvJT8TZcpNyWN7B9Bp2LV1HUJq-bxb_frRRVeKDqIGRDz8Ies_V9-Q/exec',
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -111,12 +190,20 @@ export default function Page() {
 
       const data = await res.json();
 
+      // ❌ Lỗi backend
       if (!data.success) {
-        if (data.error?.startsWith('DEVICE_ALREADY')) {
+        if (data.error === 'UUID_MISMATCH') {
+          result.innerText =
+            '❌ Thiết bị này không được phép check-in cho tên đã đăng ký';
+          result.style.color = 'red';
+          return;
+        }
+
+        if (data.error?.startsWith('ALREADY_')) {
           result.innerText =
             type === 'IN'
-              ? '❌ Thiết bị đã check IN hôm nay'
-              : '❌ Thiết bị đã check OUT hôm nay';
+              ? '❌ Bạn đã CHECK IN hôm nay rồi'
+              : '❌ Bạn đã CHECK OUT hôm nay rồi';
           result.style.color = 'red';
           return;
         }
@@ -130,7 +217,15 @@ export default function Page() {
         throw new Error(data.error || 'Unknown error');
       }
 
-      // ✅ Lưu tên sau khi thành công
+      // 🕒 Chờ duyệt
+      if (data.status === 'PENDING_APPROVAL') {
+        result.innerText =
+          '⏳ Lần đầu check-in. Vui lòng chờ admin duyệt thiết bị.';
+        result.style.color = 'orange';
+        return;
+      }
+
+      // ✅ Thành công (đã duyệt)
       saveName(nameInput.value.trim());
 
       result.innerText =
@@ -181,7 +276,6 @@ export default function Page() {
   /* ================= UI ================= */
   return (
     <>
-      {/* ===== AI LOADING CORE ===== */}
       <div
         id="loading"
         style={{
@@ -222,7 +316,6 @@ export default function Page() {
         </div>
       </div>
 
-      {/* ===== BACKGROUND ===== */}
       <div
         style={{
           minHeight: '100vh',
@@ -411,8 +504,6 @@ export default function Page() {
           />
         </div>
       </div>
-
-      {/* ===== ANIMATIONS ===== */}
     </>
   );
 }

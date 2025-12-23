@@ -20,8 +20,11 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'HyraCap',
-  description: 'HyraCap is a platform for managing your capital.',
+  title: 'Timekeeping',
+  description: 'Timekeeping is a platform for managing your capital.',
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({
@@ -37,7 +40,7 @@ export default function RootLayout({
           content="width=device-width, initial-scale=1.0, user-scalable=no"
         ></meta>
 
-        <link rel="icon" href="/favicon.ico" />
+        {/* <link rel="icon" href="/favicon.ico" /> */}
         <link
           rel="preload"
           href="/fonts/GeistVF.woff"

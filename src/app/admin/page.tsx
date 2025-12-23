@@ -1,10 +1,22 @@
 'use client';
 import { useEffect, useMemo, useState } from 'react';
+import {
+  Bar,
+  BarChart,
+  CartesianGrid,
+  Cell,
+  Pie,
+  PieChart,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from 'recharts';
 
 /* ================= CONFIG ================= */
 
 const WEB_APP_URL =
-  'https://script.google.com/macros/s/AKfycbwuNAsS_a57e1zOjOb3AQl8Nu7inSuy3LZlNDp1QOdrUCjVqEAX9V_V8eVyuJKc7_11Ww/exec';
+  'https://script.google.com/macros/s/AKfycbx8iD21x0fN--WrNvJT8TZcpNyWN7B9Bp2LV1HUJq-bxb_frRRVeKDqIGRDz8Ies_V9-Q/exec';
 
 type Row = [string, string, string, 'IN' | 'OUT'];
 type ViewMode = 'TODAY' | 'WEEK' | 'MONTH' | 'YEAR';
@@ -81,27 +93,39 @@ export default function AttendancePage() {
     let start: Date;
     let end: Date;
 
+    const today = new Date();
+    today.setHours(23, 59, 59, 999);
+
     if (view === 'WEEK') {
       const d = new Date(getWeekKeyFromYearWeek(selectedWeek));
       start = new Date(d);
-      start.setDate(d.getDate() + 1);
+      start.setDate(d.getDate() + 1); // Thứ 2
       end = new Date(start);
-      end.setDate(start.getDate() + 4);
+      end.setDate(start.getDate() + 4); // Thứ 6
     } else if (view === 'MONTH') {
       const [y, m] = selectedMonth.split('-').map(Number);
       start = new Date(y, m - 1, 1);
       end = new Date(y, m, 0);
-    } else {
+    } else if (view === 'YEAR') {
       start = new Date(selectedYear, 0, 1);
       end = new Date(selectedYear, 11, 31);
+    } else {
+      return [];
     }
+
+    /** 🚫 QUAN TRỌNG: không cho vượt quá hôm nay */
+    if (end > today) end = today;
 
     const days: string[] = [];
     const d = new Date(start);
+
     while (d <= end) {
-      if (!isWeekend(d)) days.push(d.toDateString());
+      if (!isWeekend(d)) {
+        days.push(d.toDateString());
+      }
       d.setDate(d.getDate() + 1);
     }
+
     return days;
   }
 
@@ -231,6 +255,39 @@ export default function AttendancePage() {
     }
   }
 
+  const overviewChartData = [
+    { name: 'Check-in', value: overview.checkedIn },
+    { name: 'Đang làm', value: overview.working },
+    { name: 'Check-out', value: overview.checkedOut },
+    { name: 'Vắng', value: overview.absent },
+  ];
+
+  const pieColors = ['#2563eb', '#16a34a', '#f59e0b', '#dc2626'];
+  const topAbsentChartData = useMemo(() => {
+    if (view === 'TODAY') return [];
+
+    return members
+      .map((name) => {
+        const daysWorked = periodData[name] || {};
+        const workingDays = getWorkingDaysOfPeriod(view);
+
+        let work = 0;
+        let late = 0;
+
+        Object.values(daysWorked).forEach((d: any) => {
+          if (!d.ins.length) return;
+          work++;
+          if (!isOnTime(new Date(Math.min(...d.ins)))) late++;
+        });
+
+        const absent = Math.max(workingDays.length - work, 0);
+
+        return { name, work, late, absent };
+      })
+      .sort((a, b) => b.absent - a.absent)
+      .slice(0, 5);
+  }, [members, periodData, view]);
+
   return (
     <div className="min-h-screen bg-gray-100 p-6 font-sans">
       {!isLoggedIn ? (
@@ -345,12 +402,100 @@ export default function AttendancePage() {
               📊 Dashboard Chấm Công
             </h2>
           </div>
+          {/* CHARTS */}
+          {view === 'TODAY' && (
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              {/* BAR CHART */}
+              <div className="bg-white rounded-xl shadow p-4 lg:col-span-2">
+                <h3 className="font-semibold text-gray-700 mb-3">
+                  📊 Trạng thái hôm nay
+                </h3>
+                <ResponsiveContainer width="100%" height={260}>
+                  <BarChart data={overviewChartData}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis allowDecimals={false} />
+                    <Tooltip />
+                    <Bar dataKey="value" radius={[6, 6, 0, 0]} />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+
+              {/* PIE CHART */}
+              <div className="bg-white rounded-xl shadow p-4">
+                <h3 className="font-semibold text-gray-700 mb-3">
+                  🥧 Tỷ lệ nhân sự
+                </h3>
+                <ResponsiveContainer width="100%" height={260}>
+                  <PieChart>
+                    <Pie
+                      data={overviewChartData}
+                      dataKey="value"
+                      nameKey="name"
+                      outerRadius={90}
+                      label
+                    >
+                      {overviewChartData.map((_, i) => (
+                        <Cell key={i} fill={pieColors[i]} />
+                      ))}
+                    </Pie>
+                    <Tooltip />
+                  </PieChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+          )}
+          {view !== 'TODAY' && (
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              {/* TOP ABSENT */}
+              <div className="bg-white rounded-xl shadow p-4 lg:col-span-2">
+                <h3 className="font-semibold text-gray-700 mb-3">
+                  🚫 Top nhân sự nghỉ nhiều (
+                  {view === 'WEEK' ? 'Tuần' : 'Tháng'})
+                </h3>
+
+                <ResponsiveContainer width="100%" height={280}>
+                  <BarChart data={topAbsentChartData}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis allowDecimals={false} />
+                    <Tooltip />
+
+                    <Bar
+                      dataKey="absent"
+                      name="Ngày nghỉ"
+                      fill="#dc2626"
+                      radius={[6, 6, 0, 0]}
+                    />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+              {/* WORK vs LATE */}
+              <div className="bg-white rounded-xl shadow p-4">
+                <h3 className="font-semibold text-gray-700 mb-3">
+                  ⚖️ Ngày làm & Trễ
+                </h3>
+
+                <ResponsiveContainer width="100%" height={280}>
+                  <BarChart data={topAbsentChartData}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis allowDecimals={false} />
+                    <Tooltip />
+
+                    <Bar dataKey="work" fill="#16a34a" name="Ngày làm" />
+                    <Bar dataKey="late" fill="#f59e0b" name="Ngày trễ" />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+          )}
 
           {loading && <p className="text-gray-500">⏳ Đang tải dữ liệu...</p>}
 
           {/* VIEW TABS */}
           <div className="flex gap-2 bg-white p-2 rounded-xl shadow w-fit">
-            {(['TODAY', 'WEEK', 'MONTH', 'YEAR'] as ViewMode[]).map((v) => (
+            {(['TODAY', 'WEEK', 'MONTH'] as ViewMode[]).map((v) => (
               <button
                 key={v}
                 onClick={() => setView(v)}
@@ -361,16 +506,11 @@ export default function AttendancePage() {
                 : 'text-gray-600 hover:bg-gray-100'
             }`}
               >
-                {v === 'TODAY'
-                  ? 'Hôm nay'
-                  : v === 'WEEK'
-                    ? 'Tuần'
-                    : v === 'MONTH'
-                      ? 'Tháng'
-                      : 'Năm'}
+                {v === 'TODAY' ? 'Hôm nay' : v === 'WEEK' ? 'Tuần' : 'Tháng'}
               </button>
             ))}
           </div>
+
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <input
               placeholder="🔍 Tìm theo tên..."
@@ -406,33 +546,15 @@ export default function AttendancePage() {
                   className="px-3 py-2 border rounded-lg"
                 />
               )}
-
-              {view === 'YEAR' && (
-                <select
-                  value={selectedYear}
-                  onChange={(e) => setSelectedYear(Number(e.target.value))}
-                  className="px-3 py-2 border rounded-lg"
-                >
-                  {Array.from({ length: 5 }).map((_, i) => {
-                    const y = new Date().getFullYear() - i;
-                    return (
-                      <option key={y} value={y}>
-                        {y}
-                      </option>
-                    );
-                  })}
-                </select>
-              )}
             </div>
           </div>
-
           {/* TODAY */}
           {view === 'TODAY' && (
             <>
               {/* OVERVIEW */}
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                 {[
-                  ['Tổng NV đi làm', overview.total],
+                  ['Tổng NV', overview.total],
                   ['Check-in', overview.checkedIn],
                   ['Đang làm', overview.working],
                   ['Check-out', overview.checkedOut],
