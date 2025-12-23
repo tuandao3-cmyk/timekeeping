@@ -489,7 +489,7 @@ export default function Page() {
           <div
             id="result"
             style={{
-              marginTop: 0,
+              marginTop: 30,
               textAlign: 'center',
               fontWeight: 600,
               color: '#ffffff',
@@ -498,7 +498,7 @@ export default function Page() {
           />
           <div
             style={{
-              marginTop: 30,
+              marginTop: 20,
               fontSize: 16,
               color: '#94a3b8',
               letterSpacing: 3,
