@@ -1,5 +1,4 @@
 import '@fontsource/inter';
-import { HydrationBoundary } from '@tanstack/react-query';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
@@ -59,14 +58,14 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <ThemeRegistry>
           <ClientOnlyQueryClientProvider>
-            <HydrationBoundary>
-              <AOSProvider>
-                {/* <Header /> */}
-                {/* <div className="pt-[70px]" /> */}
-                {children}
-                {/* <Footer /> */}
-              </AOSProvider>
-            </HydrationBoundary>
+            {/* <HydrationBoundary> */}
+            <AOSProvider>
+              {/* <Header /> */}
+              {/* <div className="pt-[70px]" /> */}
+              {children}
+              {/* <Footer /> */}
+            </AOSProvider>
+            {/* </HydrationBoundary> */}
           </ClientOnlyQueryClientProvider>
         </ThemeRegistry>
       </body>
