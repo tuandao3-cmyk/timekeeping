@@ -290,11 +290,25 @@ export default function AttendancePage() {
 
     if (username === 'admin' && password === 'admin') {
       setIsLoggedIn(true);
+      localStorage.setItem('isLoggedIn', 'true');
+      localStorage.setItem('username', username);
       setLoginError('');
     } else {
       setLoginError('❌ Sai tài khoản hoặc mật khẩu');
     }
   }
+  function handleLogout() {
+    setIsLoggedIn(false);
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('username');
+  }
+
+  useEffect(() => {
+    const savedLogin = localStorage.getItem('isLoggedIn');
+    if (savedLogin === 'true') {
+      setIsLoggedIn(true);
+    }
+  }, []);
 
   const overviewChartData = [
     { name: 'Check-in', value: overview.checkedIn },
@@ -464,7 +478,18 @@ export default function AttendancePage() {
             <h2 className="text-2xl font-bold text-gray-800">
               📊 Dashboard Chấm Công
             </h2>
+            <button
+              onClick={handleLogout}
+              className={`px-4 py-2 rounded-lg ${
+                periodView === 'DETAIL'
+                  ? 'bg-gray-800 text-white'
+                  : 'bg-white border'
+              }`}
+            >
+              📋 logout
+            </button>
           </div>
+
           {/* CHARTS */}
           {view === 'TODAY' && (
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
