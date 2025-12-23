@@ -89,6 +89,47 @@ export default function AttendancePage() {
     new Date().getFullYear()
   );
 
+  // function getFirstCheckinDate(daysWorked: any): Date | null {
+  //   const dates: number[] = [];
+
+  //   Object.values(daysWorked).forEach((d: any) => {
+  //     if (!d.ins?.length) return;
+  //     dates.push(Math.min(...d.ins));
+  //   });
+
+  //   if (!dates.length) return null;
+  //   return new Date(Math.min(...dates));
+  // }
+  function getFirstCheckinDate(daysWorked: any): Date | null {
+    const times: number[] = [];
+
+    Object.values(daysWorked).forEach((d: any) => {
+      if (!d.ins?.length) return;
+      times.push(Math.min(...d.ins));
+    });
+
+    return times.length ? new Date(Math.min(...times)) : null;
+  }
+  function getStartDateOfPeriod(view: ViewMode): Date | null {
+    if (view === 'WEEK') {
+      const d = new Date(getWeekKeyFromYearWeek(selectedWeek));
+      d.setDate(d.getDate() + 1); // Thứ 2
+      d.setHours(0, 0, 0, 0);
+      return d;
+    }
+
+    if (view === 'MONTH') {
+      const [y, m] = selectedMonth.split('-').map(Number);
+      return new Date(y, m - 1, 1);
+    }
+
+    if (view === 'YEAR') {
+      return new Date(selectedYear, 0, 1);
+    }
+
+    return null;
+  }
+
   function getWorkingDaysOfPeriod(view: ViewMode) {
     let start: Date;
     let end: Date;
@@ -275,12 +316,34 @@ export default function AttendancePage() {
         let late = 0;
 
         Object.values(daysWorked).forEach((d: any) => {
-          if (!d.ins.length) return;
+          if (!d.ins?.length) return;
           work++;
           if (!isOnTime(new Date(Math.min(...d.ins)))) late++;
         });
 
-        const absent = Math.max(workingDays.length - work, 0);
+        /** ✅ ngày check-in đầu tiên */
+        const firstCheckinDate = getFirstCheckinDate(daysWorked);
+
+        /** ✅ ngày bắt đầu kỳ */
+        const periodStart = getStartDateOfPeriod(view);
+
+        /** ✅ ngày bắt đầu tính công thực tế */
+        const effectiveStartDate =
+          periodStart && firstCheckinDate
+            ? new Date(
+                Math.max(periodStart.getTime(), firstCheckinDate.getTime())
+              )
+            : periodStart;
+
+        /** ✅ số ngày làm việc hợp lệ */
+        const effectiveWorkingDays = effectiveStartDate
+          ? workingDays.filter((d) => new Date(d) >= effectiveStartDate)
+          : [];
+
+        /** ✅ ngày nghỉ */
+        const absentDays = effectiveWorkingDays.filter((d) => !daysWorked[d]);
+
+        const absent = absentDays.length;
 
         return { name, work, late, absent };
       })
@@ -669,6 +732,22 @@ export default function AttendancePage() {
                         {members
                           .filter((n) => n.toLowerCase().includes(keyword))
                           .map((name, i) => {
+                            // const daysWorked = periodData[name] || {};
+                            // const workingDays = getWorkingDaysOfPeriod(view);
+
+                            // let work = 0;
+                            // let late = 0;
+
+                            // Object.values(daysWorked).forEach((d: any) => {
+                            //   if (!d.ins.length) return;
+                            //   work++;
+                            //   if (!isOnTime(new Date(Math.min(...d.ins))))
+                            //     late++;
+                            // });
+
+                            // const absentDays = workingDays.filter(
+                            //   (d) => !daysWorked[d]
+                            // );
                             const daysWorked = periodData[name] || {};
                             const workingDays = getWorkingDaysOfPeriod(view);
 
@@ -682,7 +761,31 @@ export default function AttendancePage() {
                                 late++;
                             });
 
-                            const absentDays = workingDays.filter(
+                            /** ✅ ngày check-in đầu tiên */
+                            const firstCheckinDate =
+                              getFirstCheckinDate(daysWorked);
+
+                            /** ✅ chỉ tính ngày làm việc từ ngày đó trở đi */
+                            const periodStart = getStartDateOfPeriod(view);
+
+                            /** ✅ ngày bắt đầu tính công = max(đầu kỳ, ngày check-in đầu) */
+                            const effectiveStartDate =
+                              periodStart && firstCheckinDate
+                                ? new Date(
+                                    Math.max(
+                                      periodStart.getTime(),
+                                      firstCheckinDate.getTime()
+                                    )
+                                  )
+                                : periodStart;
+
+                            const effectiveWorkingDays = effectiveStartDate
+                              ? workingDays.filter(
+                                  (d) => new Date(d) >= effectiveStartDate
+                                )
+                              : [];
+
+                            const absentDays = effectiveWorkingDays.filter(
                               (d) => !daysWorked[d]
                             );
 
